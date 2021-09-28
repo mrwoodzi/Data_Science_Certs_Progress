@@ -1,11 +1,11 @@
-hrs = input("Enter Hours:")
+hrs = input("Enter Hours: ")
 rph = input("Enter Rate: ")
 
 try:   
     h = float(hrs)
     r = float(rph)
 except:
-    print("Error, please enter numeric input!")
+    print("Error, please enter a numeric input!")
     quit()
 
 if h > 40 :
