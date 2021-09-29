@@ -1,0 +1,45 @@
+the_numbers = [9, 41, 12, 3, 74, 15]
+
+zork = 0
+print('Before',  zork)
+for thing in [9, 41, 12, 3, 74, 15]: # thing is the iteration value
+    zork = zork + 1
+    print(zork, thing)
+print('After', zork)
+
+#adding
+zorklon = 0
+print('Before',  zorklon)
+for stuff in [9, 41, 12, 3, 74, 15]: # thing is the iteration value
+    zorklon = zorklon + stuff
+    print(zorklon, stuff)
+print('After', zorklon)
+
+#Finding Average
+count = 0
+sum = 0
+print('Before', count, sum)
+for value in [9, 41, 12, 3, 74, 15]: #value is the interation variable
+    count = count + 1
+    sum = sum + value
+    print(count, sum, value)
+print('After', count, sum, sum / count)
+
+#Filtering in a Loop
+print('Before')
+for numbers in [9, 41, 12, 3, 74, 15]:
+    if numbers > 20:
+        print('Large number', numbers)
+print('After')
+
+#Searching with a Boolean Variable
+print('/r')
+found = False
+print('Before', found)
+for value in the_numbers:
+    if value == 3:
+        found = True
+    print(found, value)
+print('After', found)
+
+

@@ -1,0 +1,14 @@
+Operators:
+"is" and "is not"
+    Python has an "is" operator that 
+    can be used in logical expressions
+
+    implies "is the same as"
+
+    similar to, but stronger than ==
+
+    "is not" is also a logical operator
+
+    use "is" for booleans and None types, no floats variables and strings 
+For Example: **************************
+ 0 is 0.0 = False because it's stonger than == and demands that type and value are ==
