@@ -33,7 +33,7 @@ for numbers in [9, 41, 12, 3, 74, 15]:
 print('After')
 
 #Searching with a Boolean Variable
-print('/r')
+
 found = False
 print('Before', found)
 for value in the_numbers:

@@ -11,4 +11,7 @@ Operators:
 
     use "is" for booleans and None types, no floats variables and strings 
 For Example: **************************
- 0 is 0.0 = False because it's stonger than == and demands that type and value are ==
+ 0 is 0.0 = False because it's stonger than == and demands that type and value are == 
+
+ You can you use 'in' as a logical operator and for loops
+
