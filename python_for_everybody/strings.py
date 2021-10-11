@@ -1,3 +1,6 @@
+#Strings
+#All Strings in Python3 are in Unicode
+
 for n in "banana":
     print(n)
 
@@ -12,7 +15,9 @@ if 'a' in fruit:
     print('Found It!')
 
 # STRING COMPARISON
-if work == 'banana':
+# case can mess up the comparison
+
+if word == 'banana':
     print('Alright, bananas')
 
 if word < 'banana':
@@ -21,6 +26,9 @@ elif word > 'banana':
     print('Your word,' + word + ', comes after banan.')
 else:
     print('All right, bananas.')
+
+#String Library - String Object
+
 
 
 
