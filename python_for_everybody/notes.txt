@@ -24,3 +24,16 @@ These functions do not modify the original string, instead they return a new str
 been altered
 
 ************Object oriented is x.whatever() also called a method call
+
+Definitions:
+Algorithms - A set of rules or steps used to solve a problem
+Data Structures - A particular way of organizing data in a computer
+List - A kind of collection, you can have a list inside of a list [1, [4, 5], 4, 5]
+    mutable - we can change an element of a list using the index operator
+    T/F operators are 'in' and 'not in'
+    Built in Functions -  len, max, min, sum, 
+dir - command used when programming that will pull up a potential list of methods
+    dir(whatever_you_need_options_for)
+append - means to add to the end 
+delimiter - used in 'split' function gets rid of white space or can be assigned split(';')
+
