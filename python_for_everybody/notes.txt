@@ -15,3 +15,12 @@ For Example: **************************
 
  You can you use 'in' as a logical operator and for loops
 
+Python has a number of string functions what are in the string library
+
+These functions are already built into every string - we invoke them by appending the
+function to the string variable
+
+These functions do not modify the original string, instead they return a new string that has
+been altered
+
+************Object oriented is x.whatever() also called a method call
