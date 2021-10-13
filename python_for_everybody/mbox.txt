@@ -1,8 +1,15 @@
-#used this file in reading_files.py
-
 Yo What Up
 I am a boring File
 With nothing insteresting in me
 But I need some kind of an example
 So this will have to do
+I need to make some more lines
+For this So that I can 
+Run a dictionary program 
+With it 
+And See how many
+Words there are that are repeating
+repeating repeating repeating repeating
+repeating repeating repeating repeating
+
 
