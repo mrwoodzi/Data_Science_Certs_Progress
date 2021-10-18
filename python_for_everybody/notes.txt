@@ -28,12 +28,34 @@ been altered
 Definitions:
 Algorithms - A set of rules or steps used to solve a problem
 Data Structures - A particular way of organizing data in a computer
-List - A kind of collection, you can have a list inside of a list [1, [4, 5], 4, 5]
+List - A linear collection of values that stay in order, you index to get at the date [0, 1, 2, 3]
+    A kind of collection, you can have a list inside of a list [1, [4, 5], 4, 5]
     mutable - we can change an element of a list using the index operator
     T/F operators are 'in' and 'not in'
     Built in Functions -  len, max, min, sum, 
 dir - command used when programming that will pull up a potential list of methods
     dir(whatever_you_need_options_for)
 append - means to add to the end 
-delimiter - used in 'split' function gets rid of white space or can be assigned split(';')
+delimiter - used in 'split' function gets rid of white space or can be assigned to split a specific character
+            split(';')
+Collection - List and Dictionaries
+Dictionaries - A 'bag' of values, each with its own label
+    the 'bag' has no particular order   
+    index operator can look up what you need
+    Dictionary Literals(Constants)
+        {'Key':Value} 
 
+***Dictionaries are like lists except that they use keys instead of numbers to look up values
+
+lst = list()                        ddd = dict()
+lst.append(21)                      ddd['age'] = 21
+lst.append(183)                     ddd['course'] = 182
+print(lst)                          print(ddd)
+>>>[21, 183]                        >>>{'course': 182, 'age': 21}
+lst[0] = 23                         ddd['age'] = 23
+print(lst)                          print(ddd)
+>>>[23, 183]                        {'course': 182, 'age': 23}
+
+.items in dictionaries will put the key value{'jan' : 100, 'chuck' : 1, 'fred' : 42} pair into a list 
+                                                [('jan', 100), ('chuck', 1), ('fred', 42)]
+                                                
