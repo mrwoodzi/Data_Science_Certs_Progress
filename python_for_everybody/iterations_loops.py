@@ -28,7 +28,7 @@ print('After', count, sum, sum / count)
 #Filtering in a Loop
 print('Before')
 for numbers in [9, 41, 12, 3, 74, 15]:
-    if numbers > 20:
+    if numbers > 20:            # the if statement filters the values
         print('Large number', numbers)
 print('After')
 
