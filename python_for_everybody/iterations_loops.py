@@ -36,10 +36,20 @@ print('After')
 
 found = False
 print('Before', found)
-for value in the_numbers:
+for value in the_numbers: # value is the iteration variable
     if value == 3:
         found = True
     print(found, value)
 print('After', found)
 
+#Finding the smallest value, this keeps us dealing with only the interation variables
 
+smallest = None
+print('Before')
+for value in the_numbers:
+    if smallest is None
+        smallest = value
+    elif value < smallest:
+        smallest = value
+    print(smallest, value)
+print('After', smallest)
