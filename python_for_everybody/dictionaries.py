@@ -64,13 +64,13 @@ handle = open(name)
 counts = dict()
 for line in handle:
     words = line.split()
-    for word in words:
+    for word in words:  #nested loop
         counts[word] = counts.get(word, 0) + 1
     
 bigcount = None
 bigword = None
 for word, count in counts.item():
-    if bigcount is None or count > bigcount:
+    if bigcount is None or count > bigcount: # max loop
         bigword = word
         bigcount = count
 
