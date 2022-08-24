@@ -1,0 +1,37 @@
+Code to Gather in database
+Clean/Process 
+Processed data in new database
+Then you can either analyze or visualize
+
+from platform import architecture
+from sys import orig_argv
+
+
+DataMining
+    https://hadoop.apache.orig_arg
+    http://spark.apache.org/
+
+http://www.py4e.com/code3/geodata.zip
+
+Search Engine architecture  
+    -web crawling
+        -mainly used to create a copy of all visited pages
+        -retrieve a page
+        -look through page for links
+        -add links to  a list of to be retrieved
+        -repeat
+        -http://en.wikipedia.org/wiki/Web_crawler
+        -robots.txt 
+            -way for a website to communicate with web crawlers
+            -informal and voluntary standard
+    -index building
+        -page rank
+    -searching
+
+http://www.py4e.com/code3/pagerank.zip
+
+Data Visualization 
+    -Mailing Lists
+        http://www.py4e.com/code3/gmane.zip
+            -use this for testing
+                http://mbox.dr-chuck.net/sakai.devel/4/5

@@ -1,0 +1,43 @@
+TCP -  Transport Control Protocol / Sockets
+    built on top of ip 
+    assumes IP might lose some data so store and retransmits data if it seems to be lost 
+    handles "flow control" using a transmit window
+    provides a reliable pipe 
+    an internet socket or network socket is an endpoint of bidirectional inter-process communication lfow 
+        accross an Internet Protocol-based computer network, such as the internet 
+    Socket - is a data phone call 
+
+    Port Numbers 
+    Common TCP portal
+    HTTP - PORT 80 . . .
+    accessing ports in python 
+        import sockets 
+
+Application Protocol: Mail and World Wide Web
+    - HTTP Hypertext Transfer Protocol
+        dominant 
+        invented for Web
+        http://   www.dr-chuck.com  /page1.htm  
+        protocol      host              document
+        uniform resource locators
+    
+    Making an HTTP  request is with the GET http://www.whateverwhatever.com/whateverwhatever.html
+
+IETF - Internet Engineering Task Force
+    www.ietf.org
+    standards are called "Request for Comments" = "RFCs"
+
+ASCII - Amercan Standard Code for Information Interchange pronounced "AssKey"
+    characters are put into 8 bit binary 
+    8bits = byte 
+
+Ordinal/ord = function in py that can tell you the number value of a simple ASCII character 
+
+Unicode - character code like ascii that is huge 
+    unicode is much larger, 4x larger than ASCII 
+    UTF-32 is pretty much unicode 
+    Python 3 is all strings are Unicode 
+
+UTF- 8 is the preferred way to exchange data between systems
+    dynamic length of 1-4 bytes
+    ASCII file is UTF-8

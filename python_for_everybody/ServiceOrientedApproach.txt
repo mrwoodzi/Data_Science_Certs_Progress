@@ -1,0 +1,6 @@
+Service Oriented Approach
+most non-trivial web apps use services
+They use services from other applications
+    credit card charge
+    Hotel Reservation systems
+Services publcish the "rules apps must follow to make use of the service(API) 

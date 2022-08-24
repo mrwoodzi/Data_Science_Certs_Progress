@@ -1,5 +1,5 @@
 # Dictionaries - A 'bag' of values, each with its own label
-#Dictionaries are pythons most power data collection tool
+#Dictionaries are pythons most powerful  data collection tool
 #Allow us to do fast database-like operations
 #Dictionaries have different names in different languages
     #Associative Arrays - Perl/php
@@ -58,18 +58,18 @@ print(counts.get('kris', 0))
 
 #*******************Dictionaries and Loops***************
 
-name = input('Enter Filename: ')
-handle = open(name)
+name = input('Enter Filename: ') # user enters file name
+handle = open(name) # opens file
 
 counts = dict()
-for line in handle:
-    words = line.split()
-    for word in words:  #nested loop
+for line in handle: # line iterates words in file(handle)
+    words = line.split() # words iterates and splits file
+    for word in words:  # nested loop
         counts[word] = counts.get(word, 0) + 1
-    
+    ### You have a histogram at this point
 bigcount = None
 bigword = None
-for word, count in counts.item():
+for word,count in counts.item(): # this goes through the key value pairs
     if bigcount is None or count > bigcount: # max loop
         bigword = word
         bigcount = count
@@ -78,5 +78,16 @@ print(bigword, bigcount)
 
 #you can have 2 interation variables
 jjj = {'jan' : 100, 'chuck' : 1, 'fred' : 42}
-for aaa,bbb in jjj.items():
+for aaa,bbb in jjj.items(): # have to have 2 iteration variables, must have .items() to get key:value pairs
     print(aaa, bbb)
+
+# Making a dictionary with tuples
+d = dict()
+d['quincy'] = 1
+d['beau'] = 5
+d['kris'] = 9
+for (k,i) in d.items():
+    print(k, i)
+
+tups = d.items() # prints the new compiled key:value pairs in the dictionary d 
+print(tups)
