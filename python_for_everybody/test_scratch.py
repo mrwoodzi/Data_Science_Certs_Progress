@@ -33,7 +33,6 @@ if new_string != (op[0]) or (op[-1]):
         new_int = int(newlist_0)
         new_int_2 = int(newlist_2)
         new_string = str(newlist_1)
-
         op = ['+', '-']
         whitespace = ""
         whitespace_2 = "  "
@@ -90,4 +89,123 @@ if new_string != (op[0]) or (op[-1]):
       operands += ' ' + newlist_1
       nll += ' ' + newlist_0
       nll2 += ' ' + newlist_2
+    for a in range(len(mylist_0)): # a is = 0 1 2 3 range
 
+    while loopadd < lenalllist:
+      loopadd = loopadd + 1
+      print(loopadd)
+
+
+    alllist += [new_str0] + [new_str1] + [new_str2] + [sum]
+
+    while loopadd < mllen:
+      loopadd = loopadd + 1
+      print(loopadd)
+      for g, f in zip(mylist_0, mylist_2):
+        print(g, f)
+        len_g = len(g)
+        print(len_g)
+        len_f = len(f)
+        print(len_f)
+        if len_g or len_f == 4:
+          lines = '------'
+
+pt1 = len(problems)
+    if pt1 >= 5:
+        print("Error: Too many problems.")
+        quit()
+    for a in problems:
+        string = a
+        new_list = string.split() # turns string into individual lists
+        newlist_0 = new_list[0]
+        newlist_1 = new_list[1]
+        newlist_2 = new_list[2]
+        new_int = int(newlist_0)
+        new_int_2 = int(newlist_2)
+        new_string = str(newlist_1)
+        op = ['+', '-']
+        whitespace = ""
+        whitespace_2 = "  "
+        whitespace_3 = ""
+        lines = ""
+        nll = len(newlist_0) 
+        print(nll) # Just checking the len
+        nll2 = len(newlist_2)
+        print(nll2) # Just checking the len
+        sum = eval(f'{newlist_0}{newlist_1}{newlist_2}')
+        sum_string = str(sum)
+        len_sum = len(sum_string)
+        if (nll <=2 and nll2 <= 2) and (nll == 2 and nll2 == 2) and len_sum == 2:
+            lines = "----"
+            whitespace = "  "
+            whitespace_2 = " "
+            whitespace_3 = "  "
+        elif (nll == 3 or nll2 == 3) and (nll == 3 and nll2 == 2) and len_sum == 3:
+            lines = "-----"
+            whitespace = "  "
+            whitespace_2 = "  "
+            whitespace_3 = "  "
+        elif (nll == 3 or nll2 == 3) and (nll == 2 and nll2 == 3):
+            lines = "-----"
+            whitespace = "   "
+            whitespace_2 = " "
+            whitespace_3 = "  "
+        elif (nll == 4 or nll2 == 4) and (nll == 4 and nll2 == 1):
+            lines = "------"
+            whitespace = "  "
+            whitespace_2 = "    "
+            whitespace_3 = "  "
+        elif (nll == 4 or nll2 == 4) and (nll == 1 and nll2 == 4):
+            lines = "------"
+            whitespace = "     "
+            whitespace_2 = " "
+            whitespace_3 = "  "
+        lll = (len(lines))
+
+        if lll == 4:
+            print(lll)
+        if lll == 5:
+            print(lll)
+        if lll == 6:
+             print(lll)
+             
+        print(f"{whitespace}{newlist_0}\n{newlist_1}{whitespace_2}{newlist_2}\n{lines}")
+        print(f'{whitespace_3}{sum}') # This puts the problem vertically # whitespace now
+         
+        continue
+        return sum
+
+    while loopadd < mllen:
+      loopadd = loopadd + 1
+      print(loopadd)
+
+          if lleng[0] == 2:
+      print('you did it')
+
+      (f'{whitespace_c}{d}{whitespace_problems}\n{o}{whitespace_op}{g}{whitespace_problems}\n{lines}\n')
+      {d}{whitespace_problems}{carriagereturn}{o}{whitespace_op}{g}{whitespace_problems}{carriagereturn}{lines}{carriagereturn}
+
+          reorderedlist = mylist_0 + secondhalflist
+    reorderedstring = mystring_0 + secondhalfstring + sum_string
+    #print(reorderedlist)
+    for inter in reorderedlist: # I need to iterate over each value and op in list
+        n = inter
+        #print(n)
+        nl = n.split() # turns string into individual lists ['32']
+        nl_0 = nl[0] # turns list into 32 printed
+        #print(nl_0)
+
+    print(alllist)
+    print(mllen)
+    print(lleng_int)
+    print(llenf_int)
+    print(lenlist_int)
+    print(lleng)
+    print(llenf)
+    print(lenlist)
+    print(mylist_2)
+
+        for a, b in zip(mylist_0, mylist_2):
+      if a or b != int:
+       print('Error: Numbers must only contain digits.')
+       quit()

@@ -3,6 +3,8 @@
 # Python provides 'in'  and 'not in'
 
 #Changing an item in a list
+
+Iteratinging
 lotto = [2, 14, 26, 41, 63]
 print(lotto)
 lotto[2] = 28 # changes 26 to 28

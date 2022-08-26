@@ -1,0 +1,5 @@
+Iterating over lists.
+    To get the len of the list printed back the list has to look like ['98', '102']
+        -Also a nice way to iterate over a list, prints:
+        98
+        102
