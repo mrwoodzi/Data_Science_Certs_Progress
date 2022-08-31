@@ -1,5 +1,6 @@
 #Strings
 #All Strings in Python3 are in Unicode
+#when trying to print strings and add them my concatenation try [(f'{whatever})]
 
 for n in "banana":
     print(n)

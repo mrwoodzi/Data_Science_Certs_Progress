@@ -209,3 +209,78 @@ pt1 = len(problems)
       if a or b != int:
        print('Error: Numbers must only contain digits.')
        quit()
+
+whitespace = ' '
+      if c == 1 and b == 1:
+        lines = '---'
+        lenlines = len(lines)
+        sum_s = str(s)
+        #print(sum_s)
+        sumlen_s = len(sum_s)
+        #print(sumlen_s)
+        whitespace_c_sum = ''
+        whitespace_f_sum = ''
+        whitespace_sum_sum =  ''
+      elif c == 2 and b == 2:
+        lines = '----'
+        lenlines = len(lines)
+        sum_s = str(s)
+        #print(sum_s)
+        sumlen_s = len(sum_s)
+        #print(sumlen_s)
+        whitespace_c_sum = ''
+        whitespace_f_sum = ''
+        whitespace_sum_sum = ''
+      elif c == 3 and b == 3:
+        lines = '-----'
+        lenlines = len(lines)
+        sum_s = str(s)
+        #print(sum_s)
+        sumlen_s = len(sum_s)
+        #print(sumlen_s)
+        whitespace_c_sum = ''
+        whitespace_f_sum = ''
+        whitespace_sum_sum = whitespace
+      elif c == 4 and b == 4:
+        lines = '------'
+        lenlines = len(lines)
+        sum_s = str(s)
+        #print(sum_s)
+        sumlen_s = len(sum_s)
+        #print(sumlen_s)
+        whitespace_c_sum = '  '
+        whitespace_f_sum = ' '           
+        whitespace_sum_sum = ' '
+      elif (c == 2 and b == 1) or (c == 1 and b == 2):
+        #print(c, b)
+        lines = '----'
+        lenlines = len(lines)
+        if c == 2 and b == 1:
+          whitespace_c_sum = '  '
+          whitespace_f_sum = '  '           
+          whitespace_sum_sum = '  '
+        #print(lenlines2)
+        elif b == 2 and c == 1:
+          whitespace_c_sum = '   '
+          whitespace_f_sum = ' '           
+          whitespace_sum_sum = '  '
+        #print(lenlines2)
+      elif (c == 3 or b <= 3) and (c <= 3 or b == 3):
+        #print(c, b)
+        lines = '-----'
+        lenlines = len(lines)
+        whitespace_c_sum =  '  '
+        whitespace_f_sum = ' '           
+        whitespace_sum_sum = ' '
+        whitespace_f = ' '
+        #print(lenlines3)
+      elif (c == 4 or b <= 4) and (c <= 4 or b == 4):
+        #print(c, b)
+        lines = '------'
+        lenlines = len(lines)
+        whitespace_c_sum = '  '
+        whitespace_f_sum = ' '           
+        whitespace_sum_sum = ' '
+        #print(lenlines4)
+
+    sum_string = ''.join(map(str, sum_list)) # turns sum_list into printable string

@@ -14,24 +14,31 @@ def arithmetic_arranger(problems, SUMnow):
     operands = []
     myoperands = ''
     sum_list = []
-    sum_string = ''
+    sum_string = []
+    sum_len_list = []
     secondhalflist = []
     alllist = []
     secondhalfstring = ''
-    lines = ''
+    lines_sum = []
+    lines_sum_split = []
     whitespace_op = ''
     whitespace_problems = '    '
     whitespace = ' '
+    whitespace_c = '' # first print line whitespaces
+    whitespace_c_sum = []
+    whitespace_f = '' # sum between operand and number in second print line
+    whitespace_f_sum = []
+    whitespace_sum_sum = ''# sum line white spaces
     lleng = []
     llenf = []
     lenlist = []
     lleng_int = []
     llenf_int = []
-    lenlist_int = []
-    problems_list1 = ' \n'
-    problems_list2 = ' \n'
-    problems_list3 = ' \n'
-    problems_list4 = ' \n'
+    lenlist_lines = []
+    problems_list1 = '\n'
+    problems_list2 = '\n'
+    problems_list3 = '\n'
+    problems_list4 = '\n'
     carriagereturn = '\n'
     pt1 = len(problems)
     #print(pt1)
@@ -110,98 +117,125 @@ def arithmetic_arranger(problems, SUMnow):
       new_str2 = (new_list[2])
       sum = eval(f'{new_str0}{new_str1}{new_str2}')
       sum_list += [sum]
+      sum_s = str(sum)
+      #print(sum_s)
+      len_sum = len(sum_s)
+      #print(len_sum)
+      sum_string += sum_s.split()
+      sum_len_list += [len_sum]
       secondhalflist += [new_str1] + [new_str2]
       secondhalfstring += new_str1 + new_str2
       alllist += [new_str0] + [new_str1] + [new_str2] + [sum]
     lenalllist = len(alllist)
     mllen = len(mylist_0[0]) #This looks at the first
     mylen0 = len(mylist_0)
-    sum_string = ''.join(map(str, sum_list)) # turns sum_list into printable string
-    # compiling the 4 lists
-    for c, b, d, o, g, s in zip(lleng_int, llenf_int, mylist_0, operands, mylist_2, sum_list):
-      #print(c, b, o, d, g, s)
-      whitespace = ' '
-      if c == 1 and b == 1:
-        lines = '---'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = ''
-        whitespace_f_sum = ''
-        whitespace_sum_sum =  ''
-      elif c == 2 and b == 2:
-        lines = '----'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = ''
-        whitespace_f_sum = ''
-        whitespace_sum_sum = ''
-      elif c == 3 and b == 3:
-        lines = '-----'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = ''
-        whitespace_f_sum = ''
-        whitespace_sum_sum = whitespace
-      elif c == 4 and b == 4:
-        lines = '------'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = '  '
-        whitespace_f_sum = ' '           
-        whitespace_sum_sum = ' '
-      elif (c == 2 and b == 1) or (c == 1 and b == 2):
-        #print(c, b)
-        lines = '----'
-        lenlines = len(lines)
-        if c == 2 and b == 1:
-          whitespace_c_sum = '  '
-          whitespace_f_sum = '  '           
-          whitespace_sum_sum = '  '
-        #print(lenlines2)
-        elif b == 2 and c == 1:
-          whitespace_c_sum = '   '
-          whitespace_f_sum = ' '           
-          whitespace_sum_sum = '  '
-        #print(lenlines2)
-      elif (c == 3 or b <= 3) and (c <= 3 or b == 3):
-        #print(c, b)
-        lines = '-----'
-        lenlines = len(lines)
-        whitespace_c_sum =  '  '
-        whitespace_f_sum = ' '           
-        whitespace_sum_sum = ' '
-        whitespace_f = ' '
-        #print(lenlines3)
-      elif (c == 4 or b <= 4) and (c <= 4 or b == 4):
-        #print(c, b)
-        lines = '------'
-        lenlines = len(lines)
-        whitespace_c_sum = '  '
-        whitespace_f_sum = ' '           
-        whitespace_sum_sum = ' '
-        #print(lenlines4)
+    #sum_string = ''.join(map(str, sum_list)) # turns sum_list into printable string
+    #print(sum_string)
+    #for i in sum_string:
+    #  print(i)
+    #print(sum_len_list)
 
-      
-      problem1 = (f'{whitespace_c_sum}{d}')
-      problem2 = (f'{o}{whitespace_f_sum}{g}')
-      problem3 = (f'{lines}')
+
+
+    # compiling the list of lines:
+    for c, b in zip(lleng_int, llenf_int):
+      #print(c, b)
+      if (c == 1 and b == 1):
+        lines = '---'
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+      elif (c == 2 and b <= 2) or ( c <= 2 and b == 2):
+        lines = '----'
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+      elif (c == 3 and b <= 3) or ( c <= 3 and b == 3):
+        lines = '-----'
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+      elif (c == 4 and b <= 4) or ( c <= 4 and b == 4):
+        lines = '------'
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+        
+    print(lines_sum)
+    for i in lines_sum:
+      #print(i)
+      len_lines = len(i)
+      #print(len_lines)
+      lenlist_lines += [(f'{len_lines}')]
+    
+    #print(lenlist_lines)
+    for a, b, c in zip(lleng_int, llenf_int, lenlist_lines): #compile whitespace_c_list
+      print(a, b, c)
+      if c == 3:
+        print(c)
+        whitespace_c = '\t\t'
+        whitespace_f = '\t'
+        whitespace_c_sum += [(f'{whitespace_c}')]
+        whitespace_f_sum += [(f'{whitespace_f}')]
+      elif c == 4:
+        print(c)
+        if a == 1 and b == 2:
+          whitespace_c = '\t\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 2 and b == 1:
+          whitespace_c = '\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 2 and b == 2:
+          whitespace_c = '\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+      elif c == 5:
+        if a == 1 and b == 3:     
+          whitespace_c = '\t\t\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 2 and b == 3:
+          whitespace_c = '\t\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 3 and b == 3:
+          whitespace_c = '\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 3 and b == 1:
+          whitespace_c = '\t\t'
+          whitespace_f = '\t\t\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 3 and b == 2:
+          whitespace_c = '\t\t'
+          whitespace_f = '\t\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+        elif a == 3 and b == 3:
+          whitespace_c = '\t\t'
+          whitespace_f = '\t'
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+
+
+    print(whitespace_c_sum)
+    print(whitespace_f_sum)
+    #print(lines_sum_split)
+    for d, o, g, s, u, in zip(mylist_0, operands, mylist_2, sum_list, lines_sum):
+      print( d, o, g, s, u)
+      problem1 =(f'{d}')
+      problem2 = (f'{o}{g}')
+      problem3 = u
       problem4 = (f'{whitespace_sum_sum}{s}')
-      print(problem1)
-      print(problem2)
-      print(problem3)
-      print(problem4)
+      #print(problem1)
+      #print(problem2)
+      #print(problem3)
+      #print(problem4)
       problems_list1 += (f'{problem1}{whitespace_problems}') #each problems list has '\n' at the end at top
       problems_list2 += (f'{problem2}{whitespace_problems}')
       problems_list3 += (f'{problem3}{whitespace_problems}')
@@ -220,6 +254,6 @@ def arithmetic_arranger(problems, SUMnow):
             
 
 
-print(arithmetic_arranger(["8 + 32", "1 - 3801", "9999 + 9999", "523 - 49"], True))
+print(arithmetic_arranger(["8 + 1", "10 - 38", "999 + 999", "523 - 49"], True))
 
 
