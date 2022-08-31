@@ -1,286 +1,501 @@
-if new_string != (op[0]) or (op[-1]):
-              print(op[0])
-              print(len(new_string))
-              print(len(newlist_0))
-              print(string)
-              print(newlist_0)
-              print(newlist_1)
-              print(new_string)
-              print("Error: Operator must be '+' or '-'.")
-              quit()
-            if new_int != int:
-                print("Error: Numbers must only contain digits.")
-                quit()
-            if new_int_2 != int:
-                print("Error: Numbers must only contain digits.")
-                quit()
+def arithmetic_arranger(problems, SUMnow=None):
+    op_plus = '+'
+    op_minus = '-'
+    op_plus_print = ("'+'")
+    op_minus_print = ("'-'")
+    mylist_0 = []
+    mystring_0 = ''
+    mylist_2 = []
+    mystring_2 = ''
+    operands = []
+    myoperands = ''
+    sum_list = []
+    sum_string = []
+    sum_len_list = []
+    secondhalflist = []
+    secondhalfstring = ''
+    lines_sum = []
+    whitespace_problems = '    '
+    whitespace_c = '' # first print line whitespaces
+    whitespace_c_sum = []
+    whitespace_f = '' # sum between operand and number in second print line
+    whitespace_f_sum = []
+    whitespace_sum_sum = [] # sum line white spaces
+    lleng = []
+    llenf = []
+    lenlist = []
+    lleng_int = []
+    llenf_int = []
+    lenlist_lines = []
+    problems_list1 = ''
+    problems_list2 = ''
+    problems_list3 = ''
+    problems_list4 = ''
+    carriage_return = '\n'
 
-                print(newlist_1)
-    plus = '+'
-    minus = '-'
-    if newlist_1 != plus or minus:
-      print("Error: Operator must be '+' or '-'.")
-      quit()
-
-
-    for b in problems:
-        SUMnow = False
-        string = b
-        new_list = string.split() # turns string into individual lists
-        newlist_0 = new_list[0]
-        newlist_1 = new_list[1]
-        newlist_2 = new_list[2]
-        new_int = int(newlist_0)
-        new_int_2 = int(newlist_2)
-        new_string = str(newlist_1)
-        op = ['+', '-']
-        whitespace = ""
-        whitespace_2 = "  "
-        whitespace_3 = ""
-        lines = ""
-        nll = len(newlist_0) 
-        print(nll) # Just checking the len
-        nll2 = len(newlist_2)
-        print(nll2) # Just checking the len
-        sum = eval(f'{newlist_0}{newlist_1}{newlist_2}')
-        sum_string = str(sum)
-        len_sum = len(sum_string)
-        if (nll <=2 and nll2 <= 2) and (nll == 2 and nll2 == 2) and len_sum == 2:
-            lines = "----"
-            whitespace = "  "
-            whitespace_2 = " "
-            whitespace_3 = "  "
-        elif (nll == 3 or nll2 == 3) and (nll == 3 and nll2 == 2) and len_sum == 3:
-            lines = "-----"
-            whitespace = "  "
-            whitespace_2 = "  "
-            whitespace_3 = "  "
-        elif (nll == 3 or nll2 == 3) and (nll == 2 and nll2 == 3):
-            lines = "-----"
-            whitespace = "   "
-            whitespace_2 = " "
-            whitespace_3 = "  "
-        elif (nll == 4 or nll2 == 4) and (nll == 4 and nll2 == 1):
-            lines = "------"
-            whitespace = "  "
-            whitespace_2 = "    "
-            whitespace_3 = "  "
-        elif (nll == 4 or nll2 == 4) and (nll == 1 and nll2 == 4):
-            lines = "------"
-            whitespace = "     "
-            whitespace_2 = " "
-            whitespace_3 = "  "
-        lll = (len(lines))
-
-        if lll == 4:
-            print(lll)
-        if lll == 5:
-            print(lll)
-        if lll == 6:
-             print(lll)
-             
-        print(f"{whitespace}{newlist_0}\n{newlist_1}{whitespace_2}{newlist_2}\n{lines}")
-        print(f'{whitespace_3}{sum}') # This puts the problem vertically # whitespace now
-
-              newlist_0 = new_list[0]
-      newlist_1 = new_list[1]
-      newlist_2 = new_list[2]
-#      mylist += new_list[0] +  + new_list[1] +  + new_list[2]
-      operands += ' ' + newlist_1
-      nll += ' ' + newlist_0
-      nll2 += ' ' + newlist_2
-    for a in range(len(mylist_0)): # a is = 0 1 2 3 range
-
-    while loopadd < lenalllist:
-      loopadd = loopadd + 1
-      print(loopadd)
-
-
-    alllist += [new_str0] + [new_str1] + [new_str2] + [sum]
-
-    while loopadd < mllen:
-      loopadd = loopadd + 1
-      print(loopadd)
-      for g, f in zip(mylist_0, mylist_2):
-        print(g, f)
-        len_g = len(g)
-        print(len_g)
-        len_f = len(f)
-        print(len_f)
-        if len_g or len_f == 4:
-          lines = '------'
-
-pt1 = len(problems)
-    if pt1 >= 5:
-        print("Error: Too many problems.")
+    pt1 = len(problems)
+    if pt1 >= 6:
+        print("'Error: Too many problems.'")
         quit()
-    for a in problems:
-        string = a
-        new_list = string.split() # turns string into individual lists
-        newlist_0 = new_list[0]
-        newlist_1 = new_list[1]
-        newlist_2 = new_list[2]
-        new_int = int(newlist_0)
-        new_int_2 = int(newlist_2)
-        new_string = str(newlist_1)
-        op = ['+', '-']
-        whitespace = ""
-        whitespace_2 = "  "
-        whitespace_3 = ""
-        lines = ""
-        nll = len(newlist_0) 
-        print(nll) # Just checking the len
-        nll2 = len(newlist_2)
-        print(nll2) # Just checking the len
-        sum = eval(f'{newlist_0}{newlist_1}{newlist_2}')
-        sum_string = str(sum)
-        len_sum = len(sum_string)
-        if (nll <=2 and nll2 <= 2) and (nll == 2 and nll2 == 2) and len_sum == 2:
-            lines = "----"
-            whitespace = "  "
-            whitespace_2 = " "
-            whitespace_3 = "  "
-        elif (nll == 3 or nll2 == 3) and (nll == 3 and nll2 == 2) and len_sum == 3:
-            lines = "-----"
-            whitespace = "  "
-            whitespace_2 = "  "
-            whitespace_3 = "  "
-        elif (nll == 3 or nll2 == 3) and (nll == 2 and nll2 == 3):
-            lines = "-----"
-            whitespace = "   "
-            whitespace_2 = " "
-            whitespace_3 = "  "
-        elif (nll == 4 or nll2 == 4) and (nll == 4 and nll2 == 1):
-            lines = "------"
-            whitespace = "  "
-            whitespace_2 = "    "
-            whitespace_3 = "  "
-        elif (nll == 4 or nll2 == 4) and (nll == 1 and nll2 == 4):
-            lines = "------"
-            whitespace = "     "
-            whitespace_2 = " "
-            whitespace_3 = "  "
-        lll = (len(lines))
 
-        if lll == 4:
-            print(lll)
-        if lll == 5:
-            print(lll)
-        if lll == 6:
-             print(lll)
-             
-        print(f"{whitespace}{newlist_0}\n{newlist_1}{whitespace_2}{newlist_2}\n{lines}")
-        print(f'{whitespace_3}{sum}') # This puts the problem vertically # whitespace now
-         
-        continue
-        return sum
+    # compiles list of numbers for first line print, second line print and operands
+    for it in problems:
+      new_list = it.split()
+      new_str0 = (new_list[0])
+      new_str1 = (new_list[1])
+      new_str2 = (new_list[2])
+      mylist_0 += [new_str0]
+      mystring_0 += new_str0 + ''
+      operands += [new_str1]
+      myoperands += new_str1 + ''
+      mylist_2 += [new_str2]
+      mystring_2 += new_str2 + ''
+      # tests wether the string contains something that isn't an int
 
-    while loopadd < mllen:
-      loopadd = loopadd + 1
-      print(loopadd)
+    # compiles the the len of first line list and second line list
+    for g, f in zip(mylist_0, mylist_2):
+      len_g = len(g)
+      len_gstring = str(len_g)
+      len_f = len(f)
+      len_fstring = str(len_f)
+      lenlist += len_gstring + len_fstring
+      lleng += len_gstring
+      llenf += len_fstring
+    lleng_int = [eval(i) for i in lleng] # gives me the len of the top part of the problem
+    llenf_int = [eval(i) for i in llenf] # this is bottom part of problem
 
-          if lleng[0] == 2:
-      print('you did it')
+    for a in mylist_0:
+      a_int = int(a)
+      if type(a_int) != int:
+        print("'Error: Numbers must only contain digits a.'")
+        quit()
+    for b in mylist_2:
+      b_int = int(b)
+      if type(b_int) != int:
+        print("'Error: Numbers must only contain digits b.'")
+        quit()
+    for d, e in zip(lleng_int, llenf_int):
+      if d >= 5 or e >= 5:
+        print("'Error: Numbers cannot be more than four digits.'")
+        quit()
 
-      (f'{whitespace_c}{d}{whitespace_problems}\n{o}{whitespace_op}{g}{whitespace_problems}\n{lines}\n')
-      {d}{whitespace_problems}{carriagereturn}{o}{whitespace_op}{g}{whitespace_problems}{carriagereturn}{lines}{carriagereturn}
+    # test for correct operands
+    for it in operands:
+      val = ((op_plus == it) or (op_minus == it))
+      if val == False:
+        print(f"'Error: Operator must be {op_plus_print} or {op_minus_print}.'")
+        quit()
+    
 
-          reorderedlist = mylist_0 + secondhalflist
-    reorderedstring = mystring_0 + secondhalfstring + sum_string
-    #print(reorderedlist)
-    for inter in reorderedlist: # I need to iterate over each value and op in list
-        n = inter
-        #print(n)
-        nl = n.split() # turns string into individual lists ['32']
-        nl_0 = nl[0] # turns list into 32 printed
-        #print(nl_0)
+    #This rearranges the list into multiple string and int lists to play around with
+    for list in problems:  
+      new_list = list.split()
+      new_str0 = (new_list[0])
+      new_str1 = (new_list[1])
+      new_str2 = (new_list[2])
+      sum = eval(f'{new_str0}{new_str1}{new_str2}')
+      sum_list += [sum]
+      sum_s = str(sum)
+      len_sum = len(sum_s)
+      sum_string += sum_s.split()
+      sum_len_list += [len_sum]
+      secondhalflist += [new_str1] + [new_str2]
+      secondhalfstring += new_str1 + new_str2
 
-    print(alllist)
-    print(mllen)
-    print(lleng_int)
-    print(llenf_int)
-    print(lenlist_int)
-    print(lleng)
-    print(llenf)
-    print(lenlist)
-    print(mylist_2)
 
-        for a, b in zip(mylist_0, mylist_2):
-      if a or b != int:
-       print('Error: Numbers must only contain digits.')
-       quit()
-
-whitespace = ' '
-      if c == 1 and b == 1:
+    # compiling the list of lines:
+    for c, b in zip(lleng_int, llenf_int):
+      #print(c, b)
+      if (c == 1 and b == 1):
         lines = '---'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = ''
-        whitespace_f_sum = ''
-        whitespace_sum_sum =  ''
-      elif c == 2 and b == 2:
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+      elif (c == 2 and b <= 2) or ( c <= 2 and b == 2):
         lines = '----'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = ''
-        whitespace_f_sum = ''
-        whitespace_sum_sum = ''
-      elif c == 3 and b == 3:
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+      elif (c == 3 and b <= 3) or ( c <= 3 and b == 3):
         lines = '-----'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = ''
-        whitespace_f_sum = ''
-        whitespace_sum_sum = whitespace
-      elif c == 4 and b == 4:
+        lines_sum += [(f'{lines}')]
+        #print(lines)
+      elif (c == 4 and b <= 4) or ( c <= 4 and b == 4):
         lines = '------'
-        lenlines = len(lines)
-        sum_s = str(s)
-        #print(sum_s)
-        sumlen_s = len(sum_s)
-        #print(sumlen_s)
-        whitespace_c_sum = '  '
-        whitespace_f_sum = ' '           
-        whitespace_sum_sum = ' '
-      elif (c == 2 and b == 1) or (c == 1 and b == 2):
-        #print(c, b)
-        lines = '----'
-        lenlines = len(lines)
-        if c == 2 and b == 1:
-          whitespace_c_sum = '  '
-          whitespace_f_sum = '  '           
-          whitespace_sum_sum = '  '
-        #print(lenlines2)
-        elif b == 2 and c == 1:
-          whitespace_c_sum = '   '
-          whitespace_f_sum = ' '           
-          whitespace_sum_sum = '  '
-        #print(lenlines2)
-      elif (c == 3 or b <= 3) and (c <= 3 or b == 3):
-        #print(c, b)
-        lines = '-----'
-        lenlines = len(lines)
-        whitespace_c_sum =  '  '
-        whitespace_f_sum = ' '           
-        whitespace_sum_sum = ' '
-        whitespace_f = ' '
-        #print(lenlines3)
-      elif (c == 4 or b <= 4) and (c <= 4 or b == 4):
-        #print(c, b)
-        lines = '------'
-        lenlines = len(lines)
-        whitespace_c_sum = '  '
-        whitespace_f_sum = ' '           
-        whitespace_sum_sum = ' '
-        #print(lenlines4)
+        lines_sum += [(f'{lines}')]
 
-    sum_string = ''.join(map(str, sum_list)) # turns sum_list into printable string
+    # compiles the len of the lines into a list
+    for i in lines_sum:
+      len_lines = len(i)
+      lenlist_lines += [(f'{len_lines}')]
+
+    # this compiles the whitespace into 3 whitespace lists
+    for a, b, c, d in zip(lleng_int, llenf_int, lenlist_lines, sum_len_list): #compiles all whitespace
+      if c == '3':
+        whitespace_c = '  '
+        whitespace_f = ' '
+        whitespace_c_sum += [(f'{whitespace_c}')]
+        whitespace_f_sum += [(f'{whitespace_f}')]
+        if d == 1:
+          whitespace_sum = '  '
+          whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif d == 2:
+          whitespace_sum = ' '
+          whitespace_sum_sum += [(f'{whitespace_sum}')]
+      elif c == '4':
+        if a == 1 and b == 2:
+          whitespace_c = '   '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]  
+        elif a == 2 and b == 1:
+          whitespace_c = '  '
+          whitespace_f = '  '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 2 and b == 2:
+          whitespace_c = '  '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+      elif c == '5':
+        if a == 1 and b == 3:     
+          whitespace_c = '    '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 2 and b == 3:
+          whitespace_c = '   '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 3 and b == 3:
+          whitespace_c = '  '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 3 and b == 1:
+          whitespace_c = '  '
+          whitespace_f = '   '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 3 and b == 2:
+          whitespace_c = '  '
+          whitespace_f = '  '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 3 and b == 3:
+          whitespace_c = '  '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+      if c  == '6':
+        if a == 4 and b == 1:
+          whitespace_c = '  '
+          whitespace_f = '    '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 4 and b == 2:
+          whitespace_c = '  '
+          whitespace_f = '   '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 4 and b == 3:
+          whitespace_c = '  '
+          whitespace_f = '  '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 4 and b == 4:
+          whitespace_c = '  '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 1 and b == 4:
+          whitespace_c = '     '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 2 and b == 4:
+          whitespace_c = '    '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 3 and b == 4:
+          whitespace_c = '   '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+
+
+    for c, f, d, o, g, s, u, z in zip(whitespace_c_sum, whitespace_f_sum, mylist_0, operands, mylist_2, sum_list, lines_sum, whitespace_sum_sum):
+      problem1 =(f'{c}{d}')
+      problem2 = (f'{o}{f}{g}')
+      problem3 = u
+      problem4 = (f'{z}{s}')
+      problems_list1 += (f'{problem1}{whitespace_problems}') #each problems list has '\n' at the end at top
+      problems_list2 += (f'{problem2}{whitespace_problems}')
+      problems_list3 += (f'{problem3}{whitespace_problems}')
+      problems_list4 += (f'{problem4}{whitespace_problems}')
+    
+
+    if SUMnow:
+      arranged_problems = (f'{problems_list1}{carriage_return}{problems_list2}{carriage_return}{problems_list3}{carriage_return}{problems_list4}')
+    else:  
+      arranged_problems = (f'{problems_list1}{carriage_return}{problems_list2}{carriage_return}{problems_list3}')
+    
+
+    return arranged_problems
+            
+
+
+print(arithmetic_arranger(['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380'], True))

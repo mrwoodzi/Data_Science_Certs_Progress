@@ -1,8 +1,4 @@
-
-from string import whitespace
-
-
-def arithmetic_arranger(problems, SUMnow):
+def arithmetic_arranger(problems, SUMnow=None):
     op_plus = '+'
     op_minus = '-'
     op_plus_print = ("'+'")
@@ -17,13 +13,9 @@ def arithmetic_arranger(problems, SUMnow):
     sum_string = []
     sum_len_list = []
     secondhalflist = []
-    alllist = []
     secondhalfstring = ''
     lines_sum = []
-    lines_sum_split = []
-    whitespace_op = ''
     whitespace_problems = '    '
-    whitespace = ' '
     whitespace_c = '' # first print line whitespaces
     whitespace_c_sum = []
     whitespace_f = '' # sum between operand and number in second print line
@@ -35,24 +27,22 @@ def arithmetic_arranger(problems, SUMnow):
     lleng_int = []
     llenf_int = []
     lenlist_lines = []
-    problems_list1 = '\n'
-    problems_list2 = '\n'
-    problems_list3 = '\n'
-    problems_list4 = '\n'
-    carriagereturn = '\n'
+    problems_list1 = ''
+    problems_list2 = ''
+    problems_list3 = ''
+    problems_list4 = ''
+    carriage_return = '\n'
+
     pt1 = len(problems)
-    #print(pt1)
-    if pt1 >= 5:
-        print("Error: Too many problems.")
+    if pt1 >= 6:
+        print("'Error: Too many problems.'")
         quit()
+
+    # compiles list of numbers for first line print, second line print and operands
     for it in problems:
       new_list = it.split()
-      #print(new_list)
-      #print(new_list[0])
       new_str0 = (new_list[0])
-      #print(new_str0)
       new_str1 = (new_list[1])
-      #print(new_str1)
       new_str2 = (new_list[2])
       mylist_0 += [new_str0]
       mystring_0 += new_str0 + ''
@@ -60,81 +50,57 @@ def arithmetic_arranger(problems, SUMnow):
       myoperands += new_str1 + ''
       mylist_2 += [new_str2]
       mystring_2 += new_str2 + ''
-      contains_digit1 = any(map(str.isnumeric, new_list[0])) # tests wether the string contains something that isn't an int
-      if (contains_digit1 == False):
-        #print(contains_digit1)
-        print('Error: Numbers must only contain digits.')
-        quit()
-      contains_digit2 = any(map(str.isnumeric, new_list[2]))
-      if (contains_digit2 == False):
-        #print(contains_digit2)
-        print('Error: Numbers must only contain digits.')
-        quit()
-      if int(len(new_str0)) >= 5 or int(len(new_str2)) >= 5:
-        print('Error: Numbers cannot be more than four digits.')
-        quit()
+      # tests wether the string contains something that isn't an int
 
-    for it in operands:
-      #print(operands)
-      #print(it)
-      val = ((op_plus == it) or (op_minus == it))
-      if val == False:
-        #print(val)
-        #print(f'{op_plus}')
-        #print(f'{op_minus}')
-        #print(f'{new_str1}')
-        print(f'Error: Operator must be {op_plus_print} or {op_minus_print}.')
-        quit()
-    
+    # compiles the the len of first line list and second line list
     for g, f in zip(mylist_0, mylist_2):
-      #print(g, f)
       len_g = len(g)
       len_gstring = str(len_g)
-      #print(len_g)
       len_f = len(f)
       len_fstring = str(len_f)
-      #print(len_f)
       lenlist += len_gstring + len_fstring
       lleng += len_gstring
       llenf += len_fstring
-      #print(lenlist)
     lleng_int = [eval(i) for i in lleng] # gives me the len of the top part of the problem
     llenf_int = [eval(i) for i in llenf] # this is bottom part of problem
-    lenlist_int = [eval(i) for i in lenlist] #this is the then of the entire list
-    #print(mylist_0)
-    #print(operands)
-    #print(mylist_2)
-    #print(mystring_0)
-    #print(mystring_2)
 
-    for list in problems:   #This rearranges the list into multiple string and int lists to play around with
+    for a in mylist_0:
+      a_int = int(a)
+      if type(a_int) != int:
+        print("'Error: Numbers must only contain digits a.'")
+        quit()
+    for b in mylist_2:
+      b_int = int(b)
+      if type(b_int) != int:
+        print("'Error: Numbers must only contain digits b.'")
+        quit()
+    for d, e in zip(lleng_int, llenf_int):
+      if d >= 5 or e >= 5:
+        print("'Error: Numbers cannot be more than four digits.'")
+        quit()
+
+    # test for correct operands
+    for it in operands:
+      val = ((op_plus == it) or (op_minus == it))
+      if val == False:
+        print(f"'Error: Operator must be {op_plus_print} or {op_minus_print}.'")
+        quit()
+    
+
+    #This rearranges the list into multiple string and int lists to play around with
+    for list in problems:  
       new_list = list.split()
-      #print(new_list)
       new_str0 = (new_list[0])
-      #print(new_str0)
       new_str1 = (new_list[1])
-      #print(new_str1)
       new_str2 = (new_list[2])
       sum = eval(f'{new_str0}{new_str1}{new_str2}')
       sum_list += [sum]
       sum_s = str(sum)
-      #print(sum_s)
       len_sum = len(sum_s)
-      #print(len_sum)
       sum_string += sum_s.split()
       sum_len_list += [len_sum]
       secondhalflist += [new_str1] + [new_str2]
       secondhalfstring += new_str1 + new_str2
-      alllist += [new_str0] + [new_str1] + [new_str2] + [sum]
-    lenalllist = len(alllist)
-    mllen = len(mylist_0[0]) #This looks at the first
-    mylen0 = len(mylist_0)
-    #sum_string = ''.join(map(str, sum_list)) # turns sum_list into printable string
-    #print(sum_string)
-    #for i in sum_string:
-    #  print(i)
-    print(sum_len_list)
-
 
 
     # compiling the list of lines:
@@ -155,20 +121,15 @@ def arithmetic_arranger(problems, SUMnow):
       elif (c == 4 and b <= 4) or ( c <= 4 and b == 4):
         lines = '------'
         lines_sum += [(f'{lines}')]
-        #print(lines)
-        
-    #print(lines_sum)
+
+    # compiles the len of the lines into a list
     for i in lines_sum:
-      #print(i)
       len_lines = len(i)
-      #print(len_lines)
       lenlist_lines += [(f'{len_lines}')]
 
-    #print(lenlist_lines)
+    # this compiles the whitespace into 3 whitespace lists
     for a, b, c, d in zip(lleng_int, llenf_int, lenlist_lines, sum_len_list): #compiles all whitespace
-      print(a, b, c, d)
       if c == '3':
-        print(c)
         whitespace_c = '  '
         whitespace_f = ' '
         whitespace_c_sum += [(f'{whitespace_c}')]
@@ -180,7 +141,6 @@ def arithmetic_arranger(problems, SUMnow):
           whitespace_sum = ' '
           whitespace_sum_sum += [(f'{whitespace_sum}')]
       elif c == '4':
-        print(c)
         if a == 1 and b == 2:
           whitespace_c = '   '
           whitespace_f = ' '
@@ -200,7 +160,7 @@ def arithmetic_arranger(problems, SUMnow):
             whitespace_sum_sum += [(f'{whitespace_sum}')]  
         elif a == 2 and b == 1:
           whitespace_c = '  '
-          whitespace_f = ' '
+          whitespace_f = '  '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
           if d == 1:
@@ -517,38 +477,27 @@ def arithmetic_arranger(problems, SUMnow):
             whitespace_sum_sum += [(f'{whitespace_sum}')]
 
 
-
-    print(whitespace_c_sum)
-    print(whitespace_f_sum)
-    #print(lines_sum_split)
-    for c, f, d, o, g, s, u, in zip(whitespace_c_sum, whitespace_f_sum, mylist_0, operands, mylist_2, sum_list, lines_sum):
-      print( d, o, g, s, u)
+    for c, f, d, o, g, s, u, z in zip(whitespace_c_sum, whitespace_f_sum, mylist_0, operands, mylist_2, sum_list, lines_sum, whitespace_sum_sum):
       problem1 =(f'{c}{d}')
       problem2 = (f'{o}{f}{g}')
       problem3 = u
-      problem4 = (f'{whitespace_sum_sum}{s}')
-      #print(problem1)
-      #print(problem2)
-      #print(problem3)
-      #print(problem4)
+      problem4 = (f'{z}{s}')
       problems_list1 += (f'{problem1}{whitespace_problems}') #each problems list has '\n' at the end at top
       problems_list2 += (f'{problem2}{whitespace_problems}')
       problems_list3 += (f'{problem3}{whitespace_problems}')
       problems_list4 += (f'{problem4}{whitespace_problems}')
-    #print(mystring_0)
-    #print(mylist_2)
-    #print(mystring_2)
+    
+
     if SUMnow:
-      arranged_problems = problems_list1 + problems_list2 + problems_list3 + problems_list4
+      arranged_problems = (f'{problems_list1}{carriage_return}{problems_list2}{carriage_return}{problems_list3}{carriage_return}{problems_list4}')
     else:  
-      arranged_problems = problems_list1 + problems_list2 + problems_list3
-    #print(problem)
+      arranged_problems = (f'{problems_list1}{carriage_return}{problems_list2}{carriage_return}{problems_list3}')
     
 
     return arranged_problems
             
 
 
-print(arithmetic_arranger(["85 + 236", "11 - 3800", "999 + 9990", "52 - 493"], True))
+print(arithmetic_arranger(['11 + 4', '3801 - 2999', '1 + 2', '123 + 49', '1 - 9380'], True))
 
 
