@@ -28,7 +28,7 @@ def arithmetic_arranger(problems, SUMnow):
     whitespace_c_sum = []
     whitespace_f = '' # sum between operand and number in second print line
     whitespace_f_sum = []
-    whitespace_sum_sum = ''# sum line white spaces
+    whitespace_sum_sum = [] # sum line white spaces
     lleng = []
     llenf = []
     lenlist = []
@@ -133,7 +133,7 @@ def arithmetic_arranger(problems, SUMnow):
     #print(sum_string)
     #for i in sum_string:
     #  print(i)
-    #print(sum_len_list)
+    print(sum_len_list)
 
 
 
@@ -157,79 +157,374 @@ def arithmetic_arranger(problems, SUMnow):
         lines_sum += [(f'{lines}')]
         #print(lines)
         
-    print(lines_sum)
+    #print(lines_sum)
     for i in lines_sum:
       #print(i)
       len_lines = len(i)
       #print(len_lines)
       lenlist_lines += [(f'{len_lines}')]
-    
+
     #print(lenlist_lines)
-    for a, b, c in zip(lleng_int, llenf_int, lenlist_lines): #compile whitespace_c_list
-      print(a, b, c)
-      if c == 3:
+    for a, b, c, d in zip(lleng_int, llenf_int, lenlist_lines, sum_len_list): #compiles all whitespace
+      print(a, b, c, d)
+      if c == '3':
         print(c)
-        whitespace_c = '\t\t'
-        whitespace_f = '\t'
+        whitespace_c = '  '
+        whitespace_f = ' '
         whitespace_c_sum += [(f'{whitespace_c}')]
         whitespace_f_sum += [(f'{whitespace_f}')]
-      elif c == 4:
+        if d == 1:
+          whitespace_sum = '  '
+          whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif d == 2:
+          whitespace_sum = ' '
+          whitespace_sum_sum += [(f'{whitespace_sum}')]
+      elif c == '4':
         print(c)
         if a == 1 and b == 2:
-          whitespace_c = '\t\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '   '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]  
         elif a == 2 and b == 1:
-          whitespace_c = '\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '  '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
         elif a == 2 and b == 2:
-          whitespace_c = '\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '  '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
-      elif c == 5:
+          if d == 1:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+      elif c == '5':
         if a == 1 and b == 3:     
-          whitespace_c = '\t\t\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '    '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
         elif a == 2 and b == 3:
-          whitespace_c = '\t\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '   '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
         elif a == 3 and b == 3:
-          whitespace_c = '\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '  '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
         elif a == 3 and b == 1:
-          whitespace_c = '\t\t'
-          whitespace_f = '\t\t\t'
+          whitespace_c = '  '
+          whitespace_f = '   '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
         elif a == 3 and b == 2:
-          whitespace_c = '\t\t'
-          whitespace_f = '\t\t'
+          whitespace_c = '  '
+          whitespace_f = '  '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
         elif a == 3 and b == 3:
-          whitespace_c = '\t\t'
-          whitespace_f = '\t'
+          whitespace_c = '  '
+          whitespace_f = ' '
           whitespace_c_sum += [(f'{whitespace_c}')]
           whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+      if c  == '6':
+        if a == 4 and b == 1:
+          whitespace_c = '  '
+          whitespace_f = '    '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 4 and b == 2:
+          whitespace_c = '  '
+          whitespace_f = '   '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 4 and b == 3:
+          whitespace_c = '  '
+          whitespace_f = '  '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 4 and b == 4:
+          whitespace_c = '  '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 1 and b == 4:
+          whitespace_c = '     '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 2 and b == 4:
+          whitespace_c = '    '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+        elif a == 3 and b == 4:
+          whitespace_c = '   '
+          whitespace_f = ' '
+          whitespace_c_sum += [(f'{whitespace_c}')]
+          whitespace_f_sum += [(f'{whitespace_f}')]
+          if d == 1:
+            whitespace_sum = '     '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 2:
+            whitespace_sum = '    '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 3:
+            whitespace_sum = '   '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 4:
+            whitespace_sum = '  '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 5:
+            whitespace_sum = ' '
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+          elif d == 6:
+            whitespace_sum = ''
+            whitespace_sum_sum += [(f'{whitespace_sum}')]
+
 
 
     print(whitespace_c_sum)
     print(whitespace_f_sum)
     #print(lines_sum_split)
-    for d, o, g, s, u, in zip(mylist_0, operands, mylist_2, sum_list, lines_sum):
+    for c, f, d, o, g, s, u, in zip(whitespace_c_sum, whitespace_f_sum, mylist_0, operands, mylist_2, sum_list, lines_sum):
       print( d, o, g, s, u)
-      problem1 =(f'{d}')
-      problem2 = (f'{o}{g}')
+      problem1 =(f'{c}{d}')
+      problem2 = (f'{o}{f}{g}')
       problem3 = u
       problem4 = (f'{whitespace_sum_sum}{s}')
       #print(problem1)
@@ -254,6 +549,6 @@ def arithmetic_arranger(problems, SUMnow):
             
 
 
-print(arithmetic_arranger(["8 + 1", "10 - 38", "999 + 999", "523 - 49"], True))
+print(arithmetic_arranger(["85 + 236", "11 - 3800", "999 + 9990", "52 - 493"], True))
 
 
