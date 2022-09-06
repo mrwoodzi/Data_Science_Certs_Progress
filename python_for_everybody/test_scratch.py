@@ -1,0 +1,1 @@
+    start_timeampm = start_part_day[-2:-1]
