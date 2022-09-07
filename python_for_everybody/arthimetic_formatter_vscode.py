@@ -498,4 +498,4 @@ def arithmetic_arranger(problems, SUMnow=None):
             
 
 
-print(arithmetic_arranger(['4050 + 5927'], True))
+print(arithmetic_arranger(['4769 - 2145', '6838 - 3234', '7647 - 5426', '9056 - 3004'], True))
