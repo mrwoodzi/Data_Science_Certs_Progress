@@ -38,10 +38,13 @@ def add_time(start, duration, day_of_week=None):
     day_of_week_str_lower = str.lower(day_of_week)
     am = None
     pm = None
-    ampm_minutes = None
+    ampm_minutes_old = None
     new_day_week = ''
     days_later = None
     minutes_in_week = None
+    new_ampm = ''
+    next_day = ''
+    new_time = ''
 
     for a in start:
         #print(a)
@@ -74,83 +77,60 @@ def add_time(start, duration, day_of_week=None):
     
     if ampm == 'AM':
         am = True
-        ampm_minutes = (nss_h_int * 60) + nss_m_int
+        ampm_minutes_old = (nss_h_int * 60) + nss_m_int
     elif ampm == 'PM':
-        ampm_minutes = 719 + (nss_h_int * 60) + nss_m_int
+        ampm_minutes_old = 719 + (nss_h_int * 60) + nss_m_int
         pm = True
-    else ampm == None:
-
+    duration_time = (nds_h_int * 60) + nds_m_int
     #print(str(start_time))
-    #print(str(duration_time))
+    print(str(duration_time))
 
-    if day_of_week == True:
-        if day_of_week_str_lower <= 1439:
-            new_day_week = 'sunday'
-            minutes_in_week = ampm_minutes 
-        elif day_of_week_str_lowe >= 1440 <= 2879:
-            new_day_week = 'monday'
-            minutes_in_week = 1440 + ampm_minutes 
-        elif day_of_week_str_lowe >= 2880 <= 4319:
-            new_day_week = 'tuesday'
-            minutes_in_week = 2880 + ampm_minutes 
-        elif day_of_week_str_lowe >= 4320<= 5759:
-             new_day_week = 'wednesday'
-            minutes_in_week = 4320 + ampm_minutes 
-        elif day_of_week_str_lowe >= 5760 <= 7199:
-            new_day_week = 'thursday'
-            minutes_in_week = 5760 + ampm_minutes
-        elif day_of_week_str_lowe >= 7200<= 8639:
-             new_day_week = 'friday'
-            minutes_in_week = 7200 + ampm_minutes
-        elif day_of_week_str_lowe >= 8640 <= 10079:
-            new_day_week = 'saturday'
-            minutes_in_week = 8640 + ampm_minutes
-
-    
-    
-    nt_calc = ampm_minutes + duration_time
-    #print(str(nt_calc)) # This gives me the total minutes from start time to duration when not given a specific week day to start on
 
     if duration_time >= 10080:
-        days_later_num = ((nt_calc/60)/24) #gives me number of days later
-        #print(str(days_later_num))
+        days_later_num = ((duration_time/60)/24) #gives me number of days later
+        print(str(days_later_num))
         dlns_r = round(days_later_num, 2) #rounds the float from days_later_num
-        #print(dlns_r)
+        print(dlns_r)
         dlns_rs = str(dlns_r)
-        days_later, b = map(int,dlns_rs.split(".", 1)) #splits float into days and percentage of a day
-        #print(days_later, b) # checking that I split the float
-        days_later_str = str(a)
-        new_time_day = round((int(b)*.01)*24, 2) # turning b back into decimal and figuring what time of the new day it is
-        #print(new_time_day)
-        while nt_calc > 10080: # this brings the orginal nt_calc down to a real number so we can figure out what day of the week it is
-            nt_calc = nt_calc - 10080
-
-    if nt_calc <= 1439:
-        new_day_week = 'Sunday'
-    elif nt_calc >= 1440 <= 2879:
-         new_day_week = 'Monday'
-    elif nt_calc >= 2880<= 4319:
-         new_day_week = 'Tuesday'
-    elif nt_calc >= 4320<= 5759:
-         new_day_week = 'Wednesday'
-    elif nt_calc >= 5760 <= 7199:
-         new_day_week = 'Thursday'
-    elif nt_calc >= 7200<= 8639:
-         new_day_week = 'Friday'
-    elif nt_calc >= 8640 <= 10079:
-         new_day_week = 'Saturday'
-   
-
-
+        days_later, hours_min = map(int,dlns_rs.split(".", 1)) #splits float into days and percentage of a day
+        print(days_later, hours_min) # checking that I split the float
+        days_later_str = str(days_later)
+        print(days_later_str)
+        new_time_day = round((int(hours_min)*.01)*24, 2) # turning b back into decimal and figuring what time of the new day it is
+        print(new_time_day)
+        new_time_day_str = str(new_time_day)
+        hours, minutes_deci = map(int,new_time_day_str.split(".", 1))
+        print(hours, minutes_deci)
+        print(str(minutes_deci))
+        minutes_int = round((minutes_deci * .01) * 60)
+        new_minutes_day_str = str(minutes_int)
+        new_minutes_day_str_len = len(new_minutes_day_str)
+        if new_minutes_day_str_len == 1:
+            new_minutes_day_str = '0' + new_minutes_day_str
+        print(new_minutes_day_str)
+        if hours <= 12:
+            new_hour_day = hours
+            new_hour_day_str = str(hours)
+            new_ampm = ' AM'
+        elif hours >=13 <= 23:
+            new_hour_day = hours - 12
+            new_hour_day_str = str(new_hour_day)
+            new_ampm = ' PM'
+        while duration_time > 10080: # this brings the orginal nt_calc down to a real number so we can figure out what day of the week it is
+            print(duration_time)
+            duration_time = duration_time - 10080
+    print(duration_time)
+    print(new_hour_day_str, new_minutes_day_str, new_ampm)
 
     
-    #elif day_of_week != True and days_later > 2:
-    #    return(f'{new_time_day} {ampm}, ({days_later_str} days later)')
-    #elif day_of_week == True and days_later > 2:
+
+
+    new_time = (f'{new_hour_day_str}{dots}{new_minutes_day_str}{new_ampm}{next_day}')
+
+    
+    return new_time
     #    return(f'{new_time_day} {ampm}, {new_day_week}, ({days_later_str} days later)')
-        
-
-
+    
 
 
 
