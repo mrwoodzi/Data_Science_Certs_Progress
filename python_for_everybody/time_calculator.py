@@ -19,14 +19,6 @@
 # add_time("6:30 PM", "205:12")
 # Returns: 7:42 AM (9 days later)
 
-
-
-
-
-
-from time import time
-
-
 def add_time(start, duration, day_of_week=None):
     # am = 0-719
     # pm = 720-1439
@@ -41,50 +33,41 @@ def add_time(start, duration, day_of_week=None):
     # min = 1
     # hr = 60min
     # day <= 1439
-    start_s = []
-    duration_d = []
+    start_s = ''
+    duration_d = ''
     start_part_day = ''
-    day_of_week_str = str.lower(day_of_week)
+    day_of_week_str_lower = str.lower(day_of_week)
     am = None
     pm = None
     ampm_minutes = None
     new_day_week = ''
-    days_later = ''
+    days_later = None
 
-    for a, b in zip(start, duration):
-        # print(a, b)
-        start_s += a # puts start into string format
-        duration_d += b # puts duration in string format
 
     for a in start:
-        #print(a)
-        start_part_day += a
-    ampm = start_part_day[-2] + start_part_day[-1] # We extract if it's am or pm
-    new_start = start[0:5]
-    new_duration = duration[0:5]
-    #print(new_start)
-    new_start_strip = new_start.rstrip()
-    #print(new_start_strip)
-    #print(new_duration)
-    new_duration_strip = new_duration.rstrip()
-    #print(new_duration_strip)
-    if len(new_duration_strip) < 5:
-        new_duration_strip = '0' + new_duration_strip
-    if len(new_start_strip) < 5:
-        new_start_strip = '0' + new_start_strip
-
-
-    
-    
+        print(a)
+        start_s += a
+    ampm = start_s[-2] + start_s[-1] # We extract if it's am or pm
+    for b in duration:
+        print(b)
+        duration_d += b
     print(ampm)
-    print(new_start_strip)
-    print(new_duration_strip)
-    print(day_of_week_str)
-    nss_h_int = int(new_start_strip[0:2]) # starting hour
-    nss_m_int = int(new_start_strip[3:5])
-    nds_h_int = int(new_duration_strip[0:2])
-    nds_m_int = int(new_duration_strip[3:5])
-    duration_time = (nds_h_int * 60) + nds_m_int
+    print(start_s)
+    print(duration_d)
+    dots = ':'
+    fds = str(list(pos for pos, char in enumerate(start_s) if char == dots)) # finds : in start
+    fdd = str(list(pos for pos, char in enumerate(duration_d) if char == dots)) # finds : in duration
+    print((fds))
+    print((fdd))
+    fds_int = int(fds[1])
+    fdd_int = int(fdd[1])
+    print(fds_int)
+    print(fdd_int)
+    nss_h_int = int(start_s[0:(fds_int+1)]) # starting hour
+    nss_m_int = int(start_s[3:5])# starting min
+    nds_h_int = int(duration_d[0:(fdd_int+1)])# duration hour
+    nds_m_int = int(duration_d[3:5])# duration min
+    duration_time = (nds_h_int * 60) + nds_m_int # adds total duration time
     
     if ampm == 'AM':
         am = True
@@ -100,22 +83,43 @@ def add_time(start, duration, day_of_week=None):
     nt_calc = start_time + duration_time
     print(str(nt_calc)) # This gives me the total minutes from start time to duration when not given a specific week day to start on
 
-    If nt_calc <= 1439:
+    if duration_time >= 10080:
+        days_later_num = ((nt_calc/60)/24) #gives me number of days later
+        print(str(days_later_num))
+        dlns_r = round(days_later_num, 2) #rounds the float from days_later_num
+        print(dlns_r)
+        dlns_rs = str(dlns_r)
+        days_later, b = map(int,dlns_rs.split(".", 1)) #splits float into days and percentage of a day
+        print(days_later, b) # checking that I split the float
+        days_later_str = str(a)
+        new_time_day = round((int(b)*.01)*24, 2) # turning b back into decimal and figuring what time of the new day it is
+        print(new_time_day)
+        while nt_calc > 10080: # this brings the orginal nt_calc down to a real number so we can figure out what day of the week it is
+            nt_calc = nt_calc - 10080
+
+    if nt_calc <= 1439:
         new_day_week = 'Sunday'
-    elif nt_calc >= 1440 and <= 2879:
+    elif nt_calc >= 1440 <= 2879:
          new_day_week = 'Monday'
-    elif nt_calc >= 2880 and <= 4319:
+    elif nt_calc >= 2880<= 4319:
          new_day_week = 'Tuesday'
-    elif nt_calc >= 4320 and <= 5759:
+    elif nt_calc >= 4320<= 5759:
          new_day_week = 'Wednesday'
-    elif nt_calc >= 5760 and <= 7199:
+    elif nt_calc >= 5760 <= 7199:
          new_day_week = 'Thursday'
-    elif nt_calc >= 7200 and <= 8639:
+    elif nt_calc >= 7200<= 8639:
          new_day_week = 'Friday'
-    elif nt_calc >= 8640 and <= 10079:
+    elif nt_calc >= 8640 <= 10079:
          new_day_week = 'Saturday'
-    elif nt_calc >= 10080:
-        days_later_num = (10080/60)
+   
+
+
+
+    
+    #elif day_of_week != True and days_later > 2:
+    #    return(f'{new_time_day} {ampm}, ({days_later_str} days later)')
+    #elif day_of_week == True and days_later > 2:
+    #    return(f'{new_time_day} {ampm}, {new_day_week}, ({days_later_str} days later)')
         
 
 
@@ -123,4 +127,4 @@ def add_time(start, duration, day_of_week=None):
 
 
 
-print(add_time("2:59 AM", "24:00", "saturDay"))
+print(add_time("8:16 PM", "466:02", "saturDay"))
