@@ -36,16 +36,17 @@ def add_time(start, duration, day_of_week=None):
     start_s = ''
     duration_d = ''
     day_of_week_str_lower = str.lower(day_of_week)
-    am = None
-    pm = None
-    ampm_minutes_old = None
+    old_start_time_day = None
     new_day_week = ''
     days_later = None
-    minutes_in_week = None
     new_ampm = ''
     next_day = ''
     new_time = ''
-
+    new_hour_day_str = ''
+    new_minutes_day_str = ''
+    dots = ':'
+    dot = '.'
+    days_later_num = None
     for a in start:
         #print(a)
         start_s += a
@@ -56,7 +57,6 @@ def add_time(start, duration, day_of_week=None):
     #print(ampm)
     #print(start_s)
     #print(duration_d)
-    dots = ':'
     fds = str(list(pos for pos, char in enumerate(start_s) if char == dots)) # finds : in start
     fdd = str(list(pos for pos, char in enumerate(duration_d) if char == dots)) # finds : in duration
     #print((fds))
@@ -65,29 +65,31 @@ def add_time(start, duration, day_of_week=None):
     fdd_int = int(fdd[1])
     #print(fds_int)
     #print(fdd_int)
-    nss_h_int = int(start_s[0:(fds_int)]) # starting hour
+    nss_h_int = int(start_s[0:(fds_int)]) # starting hour 8
     #print(nss_h_int)
-    nss_m_int = int(start_s[fds_int+1:fds_int+3])# starting min
+    nss_m_int = int(start_s[fds_int+1:fds_int+3])# starting min 16
     #print(nss_m_int)
-    nds_h_int = int(duration_d[0:(fdd_int)])# duration hour
-    print(nds_h_int)
-    nds_m_int = int(duration_d[fdd_int+1:fdd_int+3])# duration min
-    print(nds_m_int)
-    time_single_day_in_minutes = (nds_h_int * 60) + nds_m_int # adds total duration time
+    nds_h_int = int(duration_d[0:(fdd_int)])# duration hour 466
+    #print(nds_h_int)
+    nds_m_int = int(duration_d[fdd_int+1:fdd_int+3])# duration min 2
+    #print(nds_m_int)
     
     if ampm == 'AM':
-        am = True
-        ampm_minutes_old = (nss_h_int * 60) + nss_m_int
+        old_start_time_day = nss_h_int + (nss_m_int/60) # puts start time hours into minutes
     elif ampm == 'PM':
-        ampm_minutes_old = 719 + (nss_h_int * 60) + nss_m_int
-        pm = True
-    duration_time = (nds_h_int * 60) + nds_m_int
+        old_start_time_day = 12 + nss_h_int + (nss_m_int/60) # puts start time hours into minutes
+        print(str(old_start_time_day))
+    duration_time-hours = nds_h_int + nds_m_int + old_start_time_day
+
     #print(str(start_time))
-    print(str(duration_time))
+    print(str(duration_time_hours)) 
+    print(old_start_time_day)
+    days_later_num_unsplit = (duration_time_hours/24) - (old_start_time_day/24)
+    print(str(days_later_num_unsplit))
 
 
-    if duration_time >= 10080:
-        days_later_num = ((duration_time/60)/24) #gives me number of days later
+
+    if duration_time >= 168:
         print(str(days_later_num))
         dlns_r = round(days_later_num, 2) #rounds the float from days_later_num
         print(dlns_r)
@@ -95,19 +97,19 @@ def add_time(start, duration, day_of_week=None):
         days_later, hours_min = map(int,dlns_rs.split(".", 1)) #splits float into days and percentage of a day
         print(days_later, hours_min) # checking that I split the float
         days_later_str = str(days_later)
-        print(days_later_str)
+        #print(days_later_str)
         new_time_day = round((int(hours_min)*.01)*24, 2) # turning b back into decimal and figuring what time of the new day it is
-        print(new_time_day)
+        #print(new_time_day)
         new_time_day_str = str(new_time_day)
         hours, minutes_deci = map(int,new_time_day_str.split(".", 1))
-        print(hours, minutes_deci)
-        print(str(minutes_deci))
+        #print(hours, minutes_deci)
+        #print(str(minutes_deci))
         minutes_int = round((minutes_deci * .01) * 60)
         new_minutes_day_str = str(minutes_int)
         new_minutes_day_str_len = len(new_minutes_day_str)
         if new_minutes_day_str_len == 1:
             new_minutes_day_str = '0' + new_minutes_day_str
-        print(new_minutes_day_str)
+        #print(new_minutes_day_str)
         if hours <= 12:
             new_hour_day = hours
             new_hour_day_str = str(hours)
@@ -116,23 +118,17 @@ def add_time(start, duration, day_of_week=None):
             new_hour_day = hours - 12
             new_hour_day_str = str(new_hour_day)
             new_ampm = ' PM'
-        while duration_time > 10080: # this brings the orginal nt_calc down to a real number so we can figure out what day of the week it is
-            print(duration_time)
-            duration_time = duration_time - 10080
+        while duration_time > 168: # this brings the orginal nt_calc down to a real number so we can figure out what day of the week it is
+            #print(duration_time)
+            duration_time = duration_time - 168
+        next_day = (f' ({days_later_str} days later)')
+
     print(duration_time)
-    print(new_hour_day_str, new_minutes_day_str, new_ampm)
-
     
-
-
     new_time = (f'{new_hour_day_str}{dots}{new_minutes_day_str}{new_ampm}{next_day}')
-
     
     return new_time
-    #    return(f'{new_time_day} {ampm}, {new_day_week}, ({days_later_str} days later)')
     
 
-
-
-
 print(add_time("8:16 PM", "466:02", "saturDay"))
+#expected = "6:18 AM, Monday (20 days later)"
