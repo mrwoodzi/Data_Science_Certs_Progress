@@ -83,16 +83,16 @@ def add_time(start, duration, day_of_week=None):
     
     duration_time_hours = nds_h_int + (nds_m_int/60) 
 
-    print(ampm)
-    print(duration_time_hours)
-    print(old_start_time_day)
+    #print(ampm)
+    #print(duration_time_hours)
+    #print(old_start_time_day)
 
     #this gives me the total number of days later and gives me the hours of the next day in decimal form
     days_later_num_unsplit = duration_time_hours/24 
     days_later_int_deci_str = str((duration_time_hours + old_start_time_day) / 24)
-    print((days_later_int_deci_str))
+    #print((days_later_int_deci_str))
     days_later_str, nope = map(int,days_later_int_deci_str.split(".", 1))
-    print(days_later_str)
+    #print(days_later_str)
     days_later_int = int(days_later_str)
     days_later_num_unsplit_str = str(days_later_num_unsplit)
     old_days_later_str, hours_in_day_deci_int = map(int,days_later_num_unsplit_str.split(".", 1))
@@ -116,67 +116,75 @@ def add_time(start, duration, day_of_week=None):
 
     # this gives me my minutes and starts the hour process
     hours_later_military_deci = old_start_time_day + new_minutes_day_int
-    print(str(hours_later_military_deci))
+    #print(str(hours_later_military_deci))
     new_minutes_day_military_deci = ((hours_later_military_deci % 1))
-    print(str(new_minutes_day_military_deci)) # minutes in decimal
+    #print(str(new_minutes_day_military_deci)) # minutes in decimal
     new_minutes_day_military = round(new_minutes_day_military_deci * 60)
     new_minutes_day_str = str(new_minutes_day_military)
-    print(new_minutes_day_str)
+    #print(new_minutes_day_str)
 
     #gives me the new hour time
     hours_later_military_deci_str = str(hours_later_military_deci)
     hours_later_military, nothing = map(int,hours_later_military_deci_str.split(".", 1))
-    print(str(hours_later_military))
+    #print(str(hours_later_military))
 
     len_minutes = len(new_minutes_day_str) # gives me len of minutes
-    print(str(len_minutes))
-    print(str(days_later_int))
+    #print(str(len_minutes))
+    #print(str(days_later_int))
     if len_minutes == 1:
         new_minutes_day_str = '0' + new_minutes_day_str
     elif len_minutes == 0:
         new_minutes_day_str = '00'    
     hours_later_military_new_day = hours_later_military
-    print(str(hours_later_military_new_day))
+    #print(str(hours_later_military_new_day))
 
 
 
     if days_later_int > 2:
         next_day = (f' ({days_later_str} days later)')
-        comma = ','
+        #print(hours_later_military_new_day)
+        if hours_later_military_new_day > 25:
+            hours_later_military_new_day = hours_later_military_new_day - 24
+        if hours_later_military_new_day == 24:
+                new_ampm = ' AM'
+        if hours_later_military_new_day == 0:
+            hours_later_military_new_day = 12
         if hours_later_military_new_day <=  11:
             if hours_later_military_new_day <= 11:
                 new_hour_day = hours_later_military_new_day
-                print(str(new_hour_day))
+                #print(str(new_hour_day))
                 new_hour_day_str = str(new_hour_day)
                 new_ampm = ' AM'
             elif hours_later_military_new_day >= 12 <= 23:
-                print(hours_later_military)
+                #print(hours_later_military)
                 new_hour_day = hours_later_military_new_day - 12
-                print(new_hour_day)
+                #print(new_hour_day)
                 new_hour_day_str = str(new_hour_day)
                 new_ampm = ' PM'
     elif days_later_int == 2:
         next_day = ' (2 days later)'
-        comma = ','
-        print(str(hours_later_military_new_day))
+        if hours_later_military_new_day > 25:
+            hours_later_military_new_day = hours_later_military_new_day - 24
+        #print(str(hours_later_military_new_day))
         if hours_later_military_new_day == 24:
             new_hour_day_str = '12'
             new_ampm = ' AM'
         elif hours_later_military_new_day <=  11:
             if hours_later_military_new_day <= 11:
                 new_hour_day = hours_later_military_new_day
-                print(str(new_hour_day))
+                #print(str(new_hour_day))
                 new_hour_day_str = str(new_hour_day)
                 new_ampm = ' AM'
             elif hours_later_military_new_day >= 12 <= 23:
-                print(hours_later_military)
+                #print(hours_later_military)
                 new_hour_day = hours_later_military_new_day - 12
-                print(new_hour_day)
+                #print(new_hour_day)
                 new_hour_day_str = str(new_hour_day)
                 new_ampm = ' PM'
     elif days_later_int == 1:
         next_day = ' (next day)'
-        comma = ','
+        if hours_later_military_new_day > 25:
+            hours_later_military_new_day = hours_later_military_new_day - 24
         if hours_later_military_new_day > 24:
             hours_later_military_new_day = hours_later_military_new_day - 24
         if hours_later_military_new_day == 24:
@@ -185,20 +193,20 @@ def add_time(start, duration, day_of_week=None):
         elif hours_later_military_new_day <=  11:
             if hours_later_military_new_day <= 11:
                 new_hour_day = hours_later_military_new_day
-                print(str(new_hour_day))
+                #print(str(new_hour_day))
                 new_hour_day_str = str(new_hour_day)
                 new_ampm = ' AM'
             elif hours_later_military_new_day >= 12 <= 23:
-                print(hours_later_military)
+                #print(hours_later_military)
                 new_hour_day = hours_later_military_new_day - 12
-                print(new_hour_day)
+                #print(new_hour_day)
                 new_hour_day_str = str(new_hour_day)
                 new_ampm = ' PM'
     elif days_later_int == 0:
         next_day = ''
         if hours_later_military_new_day <= 11:
             new_hour_day = hours_later_military
-            print(str(new_hour_day))
+            #print(str(new_hour_day))
             new_hour_day_str = str(new_hour_day)
             new_ampm = ' AM'
         elif hours_later_military_new_day >= 12 <= 23:
@@ -206,14 +214,15 @@ def add_time(start, duration, day_of_week=None):
             if hours_later_military_new_day == 12:
                 new_hour_day_str = (hours_later_military_new_day)
             else:
-                print(hours_later_military)
+                #print(hours_later_military)
                 new_hour_day = hours_later_military_new_day - 12
-                print(new_hour_day)
+                #print(new_hour_day)
                 new_hour_day_str = str(new_hour_day)
             
 
     
     if day_of_week:
+        comma = ','
         day_of_week_str_lower = str.lower(day_of_week)
         if day_of_week_str_lower == 'sunday':
             day_of_week_int_hrs = 0
@@ -229,27 +238,39 @@ def add_time(start, duration, day_of_week=None):
             day_of_week_int_hrs = 120
         elif day_of_week_str_lower == 'saturday':
             day_of_week_int_hrs = 144
-        old_start_time_day_week = float(old_start_time_day) + float(day_of_week_int_hrs)
+        
+        days_later_int_sum = days_later_int * 24
+        old_start_time_day_week = (day_of_week_int_hrs) + (days_later_int_sum)
+
+        print(day_of_week_int_hrs)
         print(old_start_time_day_week)
-        if old_start_time_day_week < 24:
+        if old_start_time_day_week > 168:
+            while old_start_time_day_week > 168:
+                print(str(old_start_time_day_week))
+                old_start_time_day_week = old_start_time_day_week - 168
+        if old_start_time_day_week < 24 or old_start_time_day_week == 168:
             new_day_week = ' Sunday'
-        elif old_start_time_day_week > 24 < 48:
+        elif old_start_time_day_week >= 24  and old_start_time_day_week < 48:
             new_day_week = ' Monday'
-        elif old_start_time_day_week >= 48 < 72:
+        elif old_start_time_day_week >= 48  and old_start_time_day_week< 72:
             new_day_week = ' Tuesday'
-        elif old_start_time_day_week >= 72 < 96:
+        elif old_start_time_day_week >= 72  and old_start_time_day_week< 96:
             new_day_week = ' Wednesday'
-        elif old_start_time_day_week >= 96 < 120:
+        elif old_start_time_day_week >= 96 and old_start_time_day_week < 120:
             new_day_week = ' Thursday'
-        elif old_start_time_day_week >=  120 < 144:
+        elif old_start_time_day_week >=  120  and old_start_time_day_week< 144:
             new_day_week = ' Friday'
-        elif old_start_time_day_week >= 144 < 168:
+        elif old_start_time_day_week >= 144 and old_start_time_day_week < 168:
             new_day_week = ' Saturday'
+
 
     new_time = (f'{new_hour_day_str}{dots}{new_minutes_day_str}{new_ampm}{comma}{new_day_week}{next_day}')
     
     return new_time
     
 
-print(add_time("8:16 PM", "466:02"))
-#expected = "2:45 AM (next day)"
+    
+
+print(add_time("8:16 PM", "466:02", "tuesday"))
+#actual = add_time("8:16 PM", "466:02", "tuesday")
+#expected = "6:18 AM, Monday (20 days later)"
