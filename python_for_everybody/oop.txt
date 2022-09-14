@@ -1,0 +1,14 @@
+https://www.pythonlikeyoumeanit.com/Module4_OOP/Methods.html
+    above link has been super use in starting to understand OOP in pythonlikeyoumeanit
+
+Here we will encounter three varieties of methods:
+
+    instance methods: defined whenever a function definition is specified within the body of a class
+
+    class methods: A class method is similar to an instance method, but it has a class object passed as its first argument.
+        -this was throwing me off in the budget.py
+
+    static methods
+
+class Category:
+    __init__(self, name): # creates an instance object - food = Category("Food")

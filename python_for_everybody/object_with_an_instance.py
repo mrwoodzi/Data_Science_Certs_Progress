@@ -1,3 +1,5 @@
+
+
 class PartyAnimal: # This is a "Constructor" which makes a new object
     x = 0
     name = ""

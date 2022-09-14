@@ -2,23 +2,23 @@
 
 
 class Category:
-  def __init__(self, name): # magic method, creates instance of person/instance object
-    self.name = name
-    self.ledger = []
+  def __init__(self, budget_category): # magic method, creates instance of person/instance object
+    category = str.lower(budget_category)
+    print(category)
+    if category == 'food':
+      self.food = category
+    elif category == 'clothing':
+      self.clothing = category
+    elif category == 'entertainment':
+      self.entertainment = category
 
   def deposit(self, amount=float, s=''):
-    self.deposit = amount
     print(amount, s)
-    
-
+  
   def withdraw(self, amount=float, s=''):
     print(amount, s)
-    self.withdraw = amount
   
-
   def get_balance(self):
-    balance = (self.deposit) + (self.withdraw)
-    return (f'${balance}')
     pass
     
   def transfer(self, amount=float, s=''):
@@ -30,26 +30,29 @@ class Category:
   def ledger(self):
     pass
 
+
+
 def create_spend_chart(categories):
   pass
 
 #def create_spend_chart():
 
-food = Category("Food") #name
+food = Category("Food") #category
 food.deposit(1000, "initial deposit") #price
 food.withdraw(10.15, "groceries") #quantity
 food.withdraw(15.89, "restaurant and more food for dessert") #quantity
 #print(food.get_balance())
 
-clothing = Category("Clothing") #name
+clothing = Category("Clothing") #category
 food.transfer(50, "clothing") #quantity
 clothing.withdraw(25.55)#quantity
 clothing.withdraw(100)#quantity
 
-auto = Category("Auto") #name
+auto = Category("Auto") #category
 auto.deposit(1000, "initial deposit") #price
 auto.withdraw(15)#quantity
 
-print(str(food.get_balance))
+#print(food.repr)
+#print(str(food.get_balance))
 
 
