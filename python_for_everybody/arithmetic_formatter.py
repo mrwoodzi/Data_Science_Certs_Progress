@@ -82,8 +82,6 @@ def arithmetic_arranger(problems, SUMnow=None):
       if d >= 5 or e >= 5:
         return 'Error: Numbers cannot be more than four digits.'
 
-
-
     # test for correct operands
     for it in operands:
       val = ((op_plus == it) or (op_minus == it))
