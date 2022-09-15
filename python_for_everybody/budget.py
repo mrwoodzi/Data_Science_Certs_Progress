@@ -2,40 +2,35 @@
 
 
 class Category:
-  def __init__(self, budget_category): # magic method, creates instance of person/instance object
-    category = str.lower(budget_category)
-    print(category)
-    if category == 'food':
-      self.food = category
-    elif category == 'clothing':
-      self.clothing = category
-    elif category == 'entertainment':
-      self.entertainment = category
+  def __init__(self, name): # magic method, creates instance of person/instance object
+    self.name = name # instance variable
+    self.ledger = [] # ledger instance variable, also know as data attributes, c++ calls it data members
 
-  def deposit(self, amount=float, s=''):
-    print(amount, s)
+  def deposit(self, amount=float, s=''): # instance attribute
+    pass
   
-  def withdraw(self, amount=float, s=''):
-    print(amount, s)
+  def withdraw(self, amount=float, s=''): # instance attribute
+    pass
   
-  def get_balance(self):
+  def get_balance(self): # instance attribute
     pass
     
-  def transfer(self, amount=float, s=''):
+  def transfer(self, amount=float, s=''): # instance attribute
     pass
 
-  def check_funds(self, check_funds):
+  def check_funds(self, check_funds): # instance attribute
     pass
     
   def ledger(self):
-    pass
+    return self.name
 
+  def __str__(self):
+    self_name_str = str(self.name)
+    return self_name_str
 
 
 def create_spend_chart(categories):
   pass
-
-#def create_spend_chart():
 
 food = Category("Food") #category
 food.deposit(1000, "initial deposit") #price

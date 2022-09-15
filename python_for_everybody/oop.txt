@@ -10,5 +10,8 @@ Here we will encounter three varieties of methods:
 
     static methods
 
+method object
+
 class Category:
     __init__(self, name): # creates an instance object - food = Category("Food")
+        self.name = name # instance variable
