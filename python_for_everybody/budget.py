@@ -92,7 +92,7 @@ class Category:
     self.str = to_ledger + self.str
     return self.str
   
-  def __str__(self, to_ledger):
+  def __str__(self, name):
     #f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
     self.str = to_ledger + self.str
     line_num = 30
@@ -121,6 +121,7 @@ auto = Category("Auto") #category
 clothing = Category("Clothing") #category
 food.deposit(100, "deposit")
 food.transfer(200, entertainment)
+print(food)
 #food.deposit(1000, "initial deposit") #price
 #food.withdraw(10.15, "groceries") #quantity
 #food.withdraw(15.89, "restaurant and more food for dessert") #quantity
