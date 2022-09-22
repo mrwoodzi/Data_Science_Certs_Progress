@@ -1,21 +1,19 @@
-# needs a ledger that is a list
-
 class Category:
-  def __init__(self, name): # magic method, creates instance of person/instance object
-    self.name = name # instance variable
-    self.ledger = [] # ledger instance variable, also know as data attributes, c++ calls it data members, # creates a new empty list for each category
-    self.balance = 0
+  def __init__(self, name): # magic method/dunder method
+    self.name = name # instance attribute
+    self.ledger = [] #instance variable, also know as data attributes, c++ calls it data members, # creates a new empty list for each category
+    self.balance = 0 #instance variable
 
-  def __str__(self):
+  def __str__(self): # Instance method
     returnStr = ""
     returnStr += self.name.center(30, '*') + '\n'
     returnStr += "more stuff"
-    for item in self.ledger:
-      
+    #for line in self.ledger:
+    #  print(line[])
     return returnStr
 
 
-  def deposit(self, amount, description=""): # instance attribute, also called class method? #dict.self{"amount": amount, "description": description}
+  def deposit(self, amount, description=""): # Instance Attribute Outside of Init, also called class method? #dict.self{"amount": amount, "description": description}
     #A deposit method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of {"amount": amount, "description": description}.
     self.ledger.append({
       'amount': float(amount), 'description': description
@@ -25,7 +23,7 @@ class Category:
   #A withdraw method that is similar to the deposit method, but the amount passed in should be stored in the ledger as a 
   # negative number. If there are not enough funds, nothing should be added to the ledger. This method should 
   # return True if the withdrawal took place, and False otherwise
-  def withdraw(self, amount, description=""): # instance attribute, also called class method?
+  def withdraw(self, amount, description=""): # Instance Attribute Outside of Init
     if self.check_funds(amount):
       ## Check funds says it's ok. 
       # Go do stuff.
@@ -39,14 +37,7 @@ class Category:
       return False
       
 
-#A transfer method that accepts an amount and another budget category as arguments. The method should add a 
-# withdrawal with the amount and the description 
-# "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category 
-# with the amount and the description
-#  "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either 
-# ledgers. This method should return True if the
-#  transfer took place, and False otherwise.
-  def transfer(self, amount, otherCat):# instance attribute, also called class method?
+  def transfer(self, amount, otherCat): # Instance Attribute Outside of Init
     ## does the class have enough money to do it? Check with check_fundas()
     if self.check_funds(amount):
       ## it DOES have enough money. 
@@ -62,24 +53,18 @@ class Category:
 
 #A get_balance method that returns the current balance of the budget category based on the deposits and withdrawals 
 # that have occurred.
-  def get_balance(self):
+  def get_balance(self): #Instance Attribute Outside of Init
     return self.balance
 
 #A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance 
 # of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer method.
-  def check_funds(self, amount): # instance attribute, also called class method?
+  def check_funds(self, amount): # Instance Attribute Outside of Init
     if amount > self.balance:
       return False
     return  True
 
 
-  #A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance 
-  # of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer 
-  # method.
-  #Output = f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer 
-  #to Entertainme -20.00\nTotal: 834.33"
-
-def create_spend_chart(categories):
+def create_spend_chart(categories): # Regular Method
   pass
 
 
