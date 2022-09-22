@@ -1,5 +1,22 @@
+def __str__(self):
+        returnStr = ""
+        returnStr += self.name.center(30, '*') + '\n'
+        for item in self.ledger:
+            if len(item['description']) > 23:
+                desc = item['description'][:23]
+            else:
+                desc = item['description'].ljust(23)
+            lineAmount = format(item['amount'], '.2f').rjust(7)
+            returnStr += desc + lineAmount + "\n"
+        returnStr += "Total: " + str(self.get_balance())
+        return returnStr
+
+
+
+
 Below is for __str__:
-    #f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
+    #f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac 
+    # -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
     line_num = 30
     len_self = len(self.name)
     name = str(self.name)

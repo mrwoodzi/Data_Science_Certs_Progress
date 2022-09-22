@@ -5,52 +5,39 @@ class Category:
     self.name = name # instance variable
     self.ledger = [] # ledger instance variable, also know as data attributes, c++ calls it data members, # creates a new empty list for each category
     self.balance = 0
-    self.tran_balance = 0
-    self.str = ''''''
+
+  def __str__(self):
+    returnStr = ""
+    returnStr += self.name.center(30, '*') + '\n'
+    returnStr += "more stuff"
+    for item in self.ledger:
+      
+    return returnStr
 
 
-
-  def deposit(self, amount=float, description=None): # instance attribute, also called class method? #dict.self{"amount": amount, "description": description}
-    amount_dstr = str(amount)
-    description_dstr = str(description)
-    if description_dstr == '' or None:
-      description_dstr == """''"""
-    elif description_dstr != '' or None:
-      description_dstr = """'deposit'"""
-    cb_l = '{'
-    cb_r = '}'
-    dots = ':'
-    comma = ','
-    amount_p = """'amount'"""
-    description_p = """'description'"""
-    to_ledger = f'{cb_l}{amount_p}{dots} {amount_dstr }{comma} {description_p}{dots} {description_dstr}{cb_r}'
-    to_balance = amount
-    return self.ledger.append(to_ledger), self.to_balance(to_balance)
+  def deposit(self, amount, description=""): # instance attribute, also called class method? #dict.self{"amount": amount, "description": description}
+    #A deposit method that accepts an amount and description. If no description is given, it should default to an empty string. The method should append an object to the ledger list in the form of {"amount": amount, "description": description}.
+    self.ledger.append({
+      'amount': float(amount), 'description': description
+    })
+    self.balance += float(amount)
 
   #A withdraw method that is similar to the deposit method, but the amount passed in should be stored in the ledger as a 
   # negative number. If there are not enough funds, nothing should be added to the ledger. This method should 
   # return True if the withdrawal took place, and False otherwise
-  def withdraw(self, amount=float, description=None): # instance attribute, also called class method?
-      if amount > self.balance:
-        return False
-      elif amount < self.balance:
-        amount_wneg = amount/-1
-        amount_wstr = str(amount_wneg)
-        description_wstr = str(description)
-        if description_wstr == '' or None:
-          description_wstr == """''"""
-        elif description_wstr != '' or None:
-          description_wstr = """'withdraw'"""
-        cb_l = '{'
-        cb_r = '}'
-        dots = ':'
-        comma = ','
-        amount_p = """'amount'"""
-        description_p = """'description'"""
-        to_ledger = (f'{cb_l}{amount_p}{dots} {amount_wstr}{comma} {description_p}{dots} {description_wstr}{cb_r}')
-        to_balance = amount_wneg
-        return self.ledger.append(to_ledger), self.to_balance(to_balance)
-  
+  def withdraw(self, amount, description=""): # instance attribute, also called class method?
+    if self.check_funds(amount):
+      ## Check funds says it's ok. 
+      # Go do stuff.
+      self.ledger.append({
+      'amount': -float(amount), 'description': description
+    })
+      self.balance -= float(amount)
+      return True
+    else:
+      ## ceck funds says it's NOT ok, not enough money.
+      return False
+      
 
 #A transfer method that accepts an amount and another budget category as arguments. The method should add a 
 # withdrawal with the amount and the description 
@@ -59,59 +46,18 @@ class Category:
 #  "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either 
 # ledgers. This method should return True if the
 #  transfer took place, and False otherwise.
-  def transfer(self, amount=float, description=None):# instance attribute, also called class method?
-    #print(self, amount, description)
-      amount_tneg = amount/-1
-      amount_tstr = str(amount_tneg)
-      #print((self))
-      if description == '' or None:
-        description_str == """''"""
-      elif description != '' or None:
-        description_tstr = f"'Transfer to {description}'"
-      cb_l = '{'
-      cb_r = '}'
-      dots = ':'
-      comma = ','
-      amount_p = """'amount'"""
-      description_p = """'description'"""
-      to_ledger = (f'{cb_l}{amount_p}{dots} {amount_tstr}{comma} {description_p}{dots} {description_tstr}{cb_r}')
-      to_balance = amount_tneg
-      return  self.ledger.append(to_ledger), self.to_balance(to_balance)
-
-    
-
-  def to_transfer(self, description, amount=int):
-    #print(self)
-    #print(self, description, amount)
-    #self_str = (str(description)).lower()
-    #self = Category(self_str) #used this to make it an instance variable again
-    #print(self.name)
-    #print(amount)
-    #print(self.tran_balance)
-    #self.tran_balance = amount + self.tran_balance
-    to_t = amount
-    #print(to_balance)
-    #print(self, to_balance)
-    #print(type(self), type(description))
-    #self = getattr(sys.modules[__name__], str(description))
-    self = description
-    #print(self, amount)
-    self.tran_balance = amount + self.tran_balance
-    # setattr(object,'property',value)
-    # getattr(object,'property',default)
-
-  def to_balance(self, to_balance):
-    #print(self, to_balance)
-    self.balance = to_balance + self.balance
-
-
-  def to_ledger(self, to_ledger):
-    self.ledger += to_ledger
-  
-
-
-  def to_string(self) -> str:
-    return self.str
+  def transfer(self, amount, otherCat):# instance attribute, also called class method?
+    ## does the class have enough money to do it? Check with check_fundas()
+    if self.check_funds(amount):
+      ## it DOES have enough money. 
+      ## deposit the amount into the receiving class
+      otherCat.deposit(amount, 'Transfer from ' + self.name)
+      ## withdraw the money from the first class
+      self.withdraw(amount, 'Transfer to ' + otherCat.name)
+      return True
+    else:
+      ## it does NOT have enough money.
+      return False
 
 
 #A get_balance method that returns the current balance of the budget category based on the deposits and withdrawals 
@@ -121,16 +67,17 @@ class Category:
 
 #A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance 
 # of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer method.
-  def check_funds(self, amount=None): # instance attribute, also called class method?
-    check_funds = None
+  def check_funds(self, amount): # instance attribute, also called class method?
     if amount > self.balance:
       return False
-    elif amount < self.balance:
-      return True
+    return  True
 
-  #A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer method.
-  def __str__(self) -> str:
-      return self.name
+
+  #A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance 
+  # of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer 
+  # method.
+  #Output = f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac -45.67\nTransfer 
+  #to Entertainme -20.00\nTotal: 834.33"
 
 def create_spend_chart(categories):
   pass
@@ -148,17 +95,17 @@ print(food.balance)
 food.deposit(100, "deposit")
 food.deposit(400, "deposit")
 food.transfer(200, entertainment)
-#print(entertainment.name, entertainment.balance)
-#food.deposit(1000, "initial deposit") #price
+print(entertainment.name, entertainment.balance)
+food.deposit(1000, "initial deposit") #price
 food.withdraw(600, "groceries") #quantity
 food.withdraw(15.89, "restaurant and more food for dessert") #quantity
-#print(food.get_balance())
+print(food.get_balance())
 
 
-#food.transfer(50, "clothing") #quantity
-#print(clothing.name, clothing.balance)
-#clothing.withdraw(25.55)#quantity
-#clothing.withdraw(100)#quantity
+
+print(clothing.name, clothing.balance)
+clothing.withdraw(25.55)#quantity
+clothing.withdraw(100)#quantity
 
 auto.deposit(1000, "initial deposit") #price
 auto.withdraw(15)#quantity

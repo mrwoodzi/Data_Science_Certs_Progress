@@ -1,144 +1,47 @@
 class Category:
-# Is this an example of a factory pattern usage?
-  def __init__(self, name): # magic method, creates instance of person/instance object
-    self.name = name # instance variable
-    self.ledger = [] # ledger instance variable, also know as data attributes, c++ calls it data members, # creates a new empty list for each category
-    self.balance = 0
-    self.tran_balance = 0
-    self.str = ''''''
+  def __init__(self, name): # magic method/dunder method
+    self.name = name # instance attribute
+    self.ledger = [] #instance variable
+    self.balance = 0 # instance variable
 
+  def __str__(self): # Instance method
+    returnStr = ""
+    returnStr += self.name.center(30, '*') + '\n'
+    returnStr += "more stuff"
+    return returnStr
 
+  def deposit(self, amount, description=""): #Instance Attribute Outside of Init
+    self.ledger.append({
+      'amount': float(amount), 'description': description
+    })
+    self.balance += float(amount)
 
-  def deposit(self, amount, description=''): # instance attribute, also called class method? #dict.self{"amount": amount, "description": description}
-    amount_dstr = str(amount)
-    description_dstr = str(description)
-    commas = """''"""
-    if description_dstr == '' or None:
-      description_dstr == commas
-    elif description_dstr != '' or None:
-      description_dstr = """'deposit'"""
-    cb_l = '{'
-    cb_r = '}'
-    dots = ':'
-    comma = ','
-    amount_p = """'amount'"""
-    description_p = """'description'"""
-    to_ledger = f'{cb_l}{amount_p}{dots} {amount_dstr }{comma} {description_p}{dots} {description_dstr}{cb_r}'
-    to_balance = amount
-    return self.ledger.append(to_ledger), self.to_balance(to_balance)
-
-  #A withdraw method that is similar to the deposit method, but the amount passed in should be stored in the ledger as a 
-  # negative number. If there are not enough funds, nothing should be added to the ledger. This method should 
-  # return True if the withdrawal took place, and False otherwise
-  def withdraw(self, amount, description=''): # instance attribute, also called class method?
-    def check_funds(self, amount): # instance attribute, also called class method?
-      print(self, amount)
-      if amount > self.balance:
-        return False
-      elif amount < self.balance:
-        return True
-        amount_wneg = amount/-1
-        amount_wstr = str(amount_wneg)
-        description_wstr = str(description)
-        commas = """''"""
-        if len(description_wstr) == 0:
-          description_wstr == commas
-          print(description_wstr)
-        elif description_wstr != '' or None:
-          description_wstr = description_wstr
-        cb_l = '{'
-        cb_r = '}'
-        dots = ':'
-        comma = ','
-        amount_p = """'amount'"""
-        description_p = """'description'"""
-        to_ledger = (f'{cb_l}{amount_p}{dots} {amount_wstr}{comma} {description_p}{dots} {description_wstr}{cb_r}')
-        to_balance = amount_wneg
-        return self.ledger.append(to_ledger), self.to_balance(to_balance)
-  
-
-#A transfer method that accepts an amount and another budget category as arguments. The method should add a 
-# withdrawal with the amount and the description 
-# "Transfer to [Destination Budget Category]". The method should then add a deposit to the other budget category 
-# with the amount and the description
-#  "Transfer from [Source Budget Category]". If there are not enough funds, nothing should be added to either 
-# ledgers. This method should return True if the
-#  transfer took place, and False otherwise.
-  def transfer(self, amount=float, description=''):# instance attribute, also called class method?
-    #print(self, amount, description)
-    if amount > self.balance:
-      return False
+  def withdraw(self, amount, description=""): #Instance Attribute Outside of Init
+    if self.check_funds(amount):
+      self.ledger.append({
+      'amount': -float(amount), 'description': description
+    })
+      self.balance -= float(amount)
+      return True
     else:
-      amount_tneg = amount/-1
-      amount_tstr = str(amount_tneg)
-      #print((self))
-      if description == '' or None:
-        description_str == """''"""
-      elif description != '' or None:
-        description_tstr = f"'Transfer to {description}'"
-      cb_l = '{'
-      cb_r = '}'
-      dots = ':'
-      comma = ','
-      amount_p = """'amount'"""
-      description_p = """'description'"""
-      to_ledger = (f'{cb_l}{amount_p}{dots} {amount_tstr}{comma} {description_p}{dots} {description_tstr}{cb_r}')
-      to_balance = amount_tneg
-      return  self.ledger.append(to_ledger), self.to_balance(to_balance)
+      ## ceck funds says it's NOT ok, not enough money.
+      return False
 
-    
+  def transfer(self, amount, otherCat):#Instance Attribute Outside of Init
+    if self.check_funds(amount):
+      otherCat.deposit(amount, 'Transfer from ' + self.name)
+      self.withdraw(amount, 'Transfer to ' + otherCat.name)
+      return True
+    else:
+      return False
 
-  def to_transfer(self, description, amount=int):
-    #print(self)
-    print(self, description, amount)
-    #self_str = (str(description)).lower()
-    #self = Category(self_str) #used this to make it an instance variable again
-    #print(self.name)
-    #print(amount)
-    #print(self.tran_balance)
-    #self.tran_balance = amount + self.tran_balance
-    to_t = amount
-    #print(to_balance)
-    #print(self, to_balance)
-    #print(type(self), type(description))
-    #self = getattr(sys.modules[__name__], str(description))
-    self = description
-    print(self, amount)
-    self.tran_balance = amount + self.tran_balance
-    # setattr(object,'property',value)
-    # getattr(object,'property',default)
-
-  def to_balance(self, to_balance):
-    #print(self, to_balance)
-    self.balance = to_balance + self.balance
-
-
-  def to_ledger(self, to_ledger):
-    self.ledger += to_ledger
-  
-
-
-  def to_string(self) -> str:
-    return self.str
-
-
-#A get_balance method that returns the current balance of the budget category based on the deposits and withdrawals 
-# that have occurred.
-  def get_balance(self):
+  def get_balance(self): #Instance Attribute Outside of Init
     return self.balance
 
-#A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance 
-# of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer method.
-  def check_funds(self, amount): # instance attribute, also called class method?
-    print(self, amount)
+  def check_funds(self, amount): # Instance Method
     if amount > self.balance:
       return False
-    elif amount < self.balance:
-      return True
-
-  #A check_funds method that accepts an amount as an argument. It returns False if the amount is greater than the balance of the budget category and returns True otherwise. This method should be used by both the withdraw method and transfer method.
-  def __str__(self) -> str:
-      return self.name
+    return  True
 
 def create_spend_chart(categories):
   pass
