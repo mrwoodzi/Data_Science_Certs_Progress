@@ -4,22 +4,22 @@ class Rectangle:
     self.height = height
       
   def set_width(self, a):
-    pass
+    self.width = a
   
   def set_height(self, b):
-    pass
-  
+    self.height = b
+
   def get_area(self):
-    pass # (width * height)
-    #return self.area
+    area = self.width * self.height
+    return area
   
   def get_perimeter(self):
-    pass # (2 * width + 2 * height)
-    #return self.perimeter
+    perimeter = (2 * self.width + 2 * self.height)
+    return perimeter
   
   def get_diagonal(self):
-    pass #  ((width ** 2 + height ** 2) ** .5)
-    #return self.diagonal
+    diagonal = ((self.width ** 2 + self.height ** 2) ** .5)
+    return diagonal
   
   def get_picture(self):
     pass # returns a formated string
@@ -29,26 +29,20 @@ class Rectangle:
     pass
 
   def __str__(self):
-    pass # str format -> Rectangle(width=5, height=10)
-    str = f'Hey Cutie!'
+    str = f'Rectangle(width={self.width}, height={self.height})'
     return str
 
+
 class Square(Rectangle):
-  def __init__(self, height):
-    self.height = height
+  def __init__(self, l):
+    self.width = l
+    self.height = l
     
-  def set_width(self, height):
-    pass
-
-  def set_heigth(self, height):
-    pass
-
   def set_side(self, side):
     pass
     
-  def __str__(self): # do I put square or self here?
-    pass # str format -> Square(side=9)
-    str = f'Hey Baby'
+  def __str__(self):
+    str = f'Square(side={self.width})'
     return str
   
   
