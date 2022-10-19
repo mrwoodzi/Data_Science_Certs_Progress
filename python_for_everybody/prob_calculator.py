@@ -12,18 +12,19 @@ class Hat:
         self.contents.append(c)
         n -= 1
 
- # The Hat class should have a draw method that accepts an argument indicating the number 
-    # of balls to draw from the hat. This method should remove balls at random from contents 
-    # and return those balls as a list of strings. The balls should not go back into the hat 
-    # during the draw, similar to an urn experiment without replacement. If the number of balls 
-    # to draw exceeds the available quantity, return all the balls.
   def draw(self, number):
-    pass
+    new_list = []
+    for i in range(number):
+      contents = random.randrange(len(self.contents))
+      newContents = self.contents.pop(contents)
+      new_list.append(newContents)
+    return new_list
 
   def __str__(self):
     return self.colors
 
-
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+  probability = random.sample
   pass
+
 
