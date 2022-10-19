@@ -1,28 +1,30 @@
-def __str__(self):
-        returnStr = ""
-        returnStr += self.name.center(30, '*') + '\n'
-        for item in self.ledger:
-            if len(item['description']) > 23:
-                desc = item['description'][:23]
-            else:
-                desc = item['description'].ljust(23)
-            lineAmount = format(item['amount'], '.2f').rjust(7)
-            returnStr += desc + lineAmount + "\n"
-        returnStr += "Total: " + str(self.get_balance())
-        return returnStr
+import random
 
+class Hat:
+  def __init__(self, **kwargs):
+    self.colors = kwargs # instance attrbute
+    self.contents = [] # instance variable
+    for c, n  in self.colors.items():
+      n = n - 1
+      while n >= 0:
+        self.contents.append(c)
+        n -= 1
 
+  def draw(self, number):
+    new_list = []
+    for i in range(number):
+      contents = random.randrange(len(self.contents))
+      newContents = self.contents.pop(contents)
+      new_list.append(newContents)
+    return new_list
 
+  def __str__(self):
+    return self.colors
 
-Below is for __str__:
-    #f"*************Food*************\ndeposit                 900.00\nmilk, cereal, eggs, bac 
-    # -45.67\nTransfer to Entertainme -20.00\nTotal: 834.33"
-    line_num = 30
-    len_self = len(self.name)
-    name = str(self.name)
-    #print(len_self)
-    star_num = ((line_num - len_self)/2)
-    stars = '*' * (int(star_num))
-    line = f'{stars}{name}{stars}\n'
-    space = """ """
-    line = to_string
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    d = {}
+  for i in range(num_experiments):
+    
+
+hat = Hat(black=6, red=4, green=3)
+experiment(hat=hat, expected_balls={"red":2,"green":1}, num_balls_drawn=5, num_experiments=20)
