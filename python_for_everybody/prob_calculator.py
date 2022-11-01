@@ -1,6 +1,6 @@
 import copy
 import random
-# Consider using the modules imported above.
+
 
 class Hat:
   def __init__(self, **kwargs):
@@ -24,9 +24,9 @@ class Hat:
     return self.colors
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+  counts = 0
   for i in range(num_experiments):
     d = {}
-    counts = 0
     random_choices_list = random.sample(hat.contents, k=num_balls_drawn)
     for item in random_choices_list: # we populate the dictionary with the random_choices_list
       if item in d:
@@ -36,7 +36,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     common_value_key_pairs = dict(d.items() & expected_balls.items())
     # print(common_value_key_pairs)
     if common_value_key_pairs == expected_balls:
-      counts =+  1
+      counts +=  1
       print("Yes", counts, common_value_key_pairs, expected_balls)
   # if numbers match add to count
   probability = counts/num_experiments  
