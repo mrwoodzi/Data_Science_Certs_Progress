@@ -1,7 +1,10 @@
-my_dict = [{2:1, 3:1, 5:2}, {3:4, 6:4, 2:3}, {2:5, 3:6}]
+ages = {'Matt': 30, 'Jack': 43, 'Jack': 15, 'Jack': 14, 'Jack': 43, 'Matt': 30, 'Jack': 43, 'Jack': 43, 'Jack': 43}
+counts = 0
+for key in ages:
+    counts += 1
+    print(key, counts)
 
-# Finds the common keys
-common_keys = set.intersection(*map(set, my_dict))
+      if a == expected_balls[0] or a == expected_balls[1] and d[a] >=
 
-# Makes a new dict with only those keys and sums the values into another dict
-print(common_keys)
+  probability = (counts/1.713740458015266976410389999999999999999999999999999999999999999999999)/num_experiments  # lol
+  return probability

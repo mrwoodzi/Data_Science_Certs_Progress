@@ -1,7 +1,6 @@
 import copy
 import random
 
-
 class Hat:
   def __init__(self, **kwargs):
     self.colors = kwargs # instance attrbute
@@ -33,16 +32,32 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
         d[item] += 1
       else:
         d[item] = 1
-    common_value_key_pairs = dict(d.items() & expected_balls.items())
-    # print(common_value_key_pairs)
-    if common_value_key_pairs == expected_balls:
-      counts +=  1
-      print("Yes", counts, common_value_key_pairs, expected_balls)
-  # if numbers match add to count
+    print(d)
+    new_key = list(d.keys())
+    expected_key = list(expected_balls.keys())
+    new_value = list(d.values())
+    expected_value = list(expected_balls.values())
+    for a,b,c,d in zip(new_key, expected_key, new_value, expected_value):
+      print(a,b,c,d)
+      if a == b and c >= d:
+        counts += 1
+
+      
+
+
+        
+    #common_value_key_pairs = dict(d.items() & expected_balls.items())
+    #print(common_value_key_pairs)
+    # the below if only gives exact match, I need key to match plus 
+    #if common_value_key_pairs == expected_balls:
+      # counts +=  1
+      # print("Yes", counts, common_value_key_pairs, expected_balls)
+
+        
   probability = counts/num_experiments  
   return probability
 
 hat = Hat(blue=4, red=2, green=6)
-experiment(hat=hat, expected_balls={"blue": 2,"red": 1}, num_balls_drawn=4, num_experiments=300)
+experiment(hat=hat, expected_balls={"blue": 2,"red": 1}, num_balls_drawn=4, num_experiments=10)
 print("Probability:", experiment)
 
