@@ -8,3 +8,8 @@ for key in ages:
 
   probability = (counts/1.713740458015266976410389999999999999999999999999999999999999999999999)/num_experiments  # lol
   return probability
+
+    for a,b,c,d in zip(new_key, expected_key, new_value, expected_value):
+      if a == b and c >= d:
+        counts += 1
+        print('Yes', counts, a,b,c,d, expected_balls)

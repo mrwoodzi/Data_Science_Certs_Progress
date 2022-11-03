@@ -1,5 +1,6 @@
 import copy
 import random
+from collections import OrderedDict
 
 class Hat:
   def __init__(self, **kwargs):
@@ -33,14 +34,30 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
       else:
         d[item] = 1
     print(d)
-    new_key = list(d.keys())
+    print(len(d))
     expected_key = list(expected_balls.keys())
-    new_value = list(d.values())
+    print(expected_key)
+    d_sorted = dict()
+    for key in expected_key:
+      if (len(d)) <= 2:
+        d_sorted[key] = d[key]
+      else:
+        continue
+    print(d_sorted)
+    new_key = list(d_sorted.keys())
+    new_value = list(d_sorted.values())
     expected_value = list(expected_balls.values())
-    for a,b,c,d in zip(new_key, expected_key, new_value, expected_value):
-      print(a,b,c,d)
-      if a == b and c >= d:
+    #print(new_key)
+    #print(expected_key)
+    if new_key[0] in expected_key and new_key[-1] in expected_key:
+      if len(new_key) == 1:
+        continue
+      elif new_value[0] > expected_value[0] and new_value[-1] >= expected_value[1]:
         counts += 1
+        print(new_value[0], expected_value[0], new_value[-1], expected_value[-1])
+        print(counts, expected_balls, d)
+
+    
 
       
 
@@ -58,6 +75,6 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   return probability
 
 hat = Hat(blue=4, red=2, green=6)
-experiment(hat=hat, expected_balls={"blue": 2,"red": 1}, num_balls_drawn=4, num_experiments=10)
+experiment(hat=hat, expected_balls={"blue": 2,"red": 1}, num_balls_drawn=4, num_experiments=30)
 print("Probability:", experiment)
 
