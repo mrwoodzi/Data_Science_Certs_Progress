@@ -1,15 +1,23 @@
-ages = {'Matt': 30, 'Jack': 43, 'Jack': 15, 'Jack': 14, 'Jack': 43, 'Matt': 30, 'Jack': 43, 'Jack': 43, 'Jack': 43}
-counts = 0
-for key in ages:
-    counts += 1
-    print(key, counts)
+import random
+import copy
+contents_me = ["yellow", "yellow","yellow","yellow", "red", "yellow", "green", "green","green", "blue", "blue","blue","blue","blue","blue","blue","blue","blue",  "test"]
+i = 20
+new_list = []
+len_contents = len(contents_me)
+deep_copy = copy.deepcopy(contents_me)
 
-      if a == expected_balls[0] or a == expected_balls[1] and d[a] >=
+while i > 0:
 
-  probability = (counts/1.713740458015266976410389999999999999999999999999999999999999999999999)/num_experiments  # lol
-  return probability
-
-    for a,b,c,d in zip(new_key, expected_key, new_value, expected_value):
-      if a == b and c >= d:
-        counts += 1
-        print('Yes', counts, a,b,c,d, expected_balls)
+  print(i)
+  print(len_contents)
+  print(contents_me)
+  contents = random.randrange(len(contents_me))
+  newContents = contents_me.pop(contents)
+  new_list.append(newContents)
+  i -= 1
+  len_contents -= 1
+  if len_contents == 0 and i >= 1:
+    contents_me = deep_copy
+    len_contents == i
+print(new_list)
+  

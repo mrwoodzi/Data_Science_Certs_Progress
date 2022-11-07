@@ -1,6 +1,5 @@
 import copy
 import random
-from collections import OrderedDict
 
 class Hat:
   def __init__(self, **kwargs):
@@ -25,6 +24,7 @@ class Hat:
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   counts = 0
+  experiment_count = 0
   for i in range(num_experiments):
     d = {}
     random_choices_list = random.sample(hat.contents, k=num_balls_drawn)
@@ -33,48 +33,39 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
         d[item] += 1
       else:
         d[item] = 1
-    print(d)
-    print(len(d))
     expected_key = list(expected_balls.keys())
-    print(expected_key)
     d_sorted = dict()
-    for key in expected_key:
-      if (len(d)) <= 2:
+    for key in expected_key: # this filters and reorders d
+      if len(d) == 1:
+        continue
+      elif key in d:
         d_sorted[key] = d[key]
       else:
         continue
-    print(d_sorted)
     new_key = list(d_sorted.keys())
     new_value = list(d_sorted.values())
     expected_value = list(expected_balls.values())
-    #print(new_key)
-    #print(expected_key)
-    if new_key[0] in expected_key and new_key[-1] in expected_key:
+    experiment_count += 1
+    if len(new_key) == 0:
+      print('len is 0', d, d_sorted, expected_balls)
+      continue
+    elif new_key[0] in expected_key and new_key[-1] in expected_key:
       if len(new_key) == 1:
+        print('len is 1', d, d_sorted, expected_balls)
         continue
-      elif new_value[0] > expected_value[0] and new_value[-1] >= expected_value[1]:
+      elif new_value[0] >= expected_value[0] and new_value[-1] >= expected_value[-1]:
         counts += 1
         print(new_value[0], expected_value[0], new_value[-1], expected_value[-1])
-        print(counts, expected_balls, d)
-
-    
-
-      
-
-
+        print(new_value, expected_value)
+        print(new_key, expected_key)
+        print('this should add', counts, d_sorted, expected_balls, experiment_count)
         
-    #common_value_key_pairs = dict(d.items() & expected_balls.items())
-    #print(common_value_key_pairs)
-    # the below if only gives exact match, I need key to match plus 
-    #if common_value_key_pairs == expected_balls:
-      # counts +=  1
-      # print("Yes", counts, common_value_key_pairs, expected_balls)
 
-        
-  probability = counts/num_experiments  
+  probability = counts/num_experiments
   return probability
 
-hat = Hat(blue=4, red=2, green=6)
-experiment(hat=hat, expected_balls={"blue": 2,"red": 1}, num_balls_drawn=4, num_experiments=30)
+
+hat = Hat(yellow=5,red=1,green=3,blue=9,test=1)
+experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=19, num_experiments=100)
 print("Probability:", experiment)
 
