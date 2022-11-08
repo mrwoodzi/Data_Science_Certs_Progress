@@ -27,7 +27,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   experiment_count = 0
   for i in range(num_experiments):
     d = {}
-    random_choices_list = random.sample(hat.contents, k=num_balls_drawn)
+    random_choices_list = random.choices(hat.contents, k=num_balls_drawn)
     for item in random_choices_list: # we populate the dictionary with the random_choices_list
       if item in d:
         d[item] += 1
@@ -55,9 +55,9 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
         continue
       elif new_value[0] >= expected_value[0] and new_value[-1] >= expected_value[-1]:
         counts += 1
-        print(new_value[0], expected_value[0], new_value[-1], expected_value[-1])
-        print(new_value, expected_value)
-        print(new_key, expected_key)
+        #print(new_value[0], expected_value[0], new_value[-1], expected_value[-1])
+        #print(new_value, expected_value)
+        #print(new_key, expected_key)
         print('this should add', counts, d_sorted, expected_balls, experiment_count)
         
 
@@ -66,6 +66,6 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
 
 
 hat = Hat(yellow=5,red=1,green=3,blue=9,test=1)
-experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=19, num_experiments=100)
+experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=20, num_experiments=100)
 print("Probability:", experiment)
 
