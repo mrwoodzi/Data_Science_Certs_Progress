@@ -12,6 +12,10 @@ class Category:
       returnStr +=  "{:<23}".format(a[:23]) + str(b).rjust(7) + '\n'
     returnStr += 'Total: '.ljust(2) + str(self.balance).rjust(2)
     return returnStr
+  
+  def percentage(self):
+    return percentage
+    pass
 
   def deposit(self, amount, description=""): # Instance Attribute Outside of Init
     self.ledger.append({
@@ -47,8 +51,16 @@ class Category:
       return False
     return  True
 
-def create_spend_chart(categories):
-  pass
+def create_spend_chart(*args):
+  # show percentage spent in each category . . . Food, Clothing, Entertaiment
+  # percentage spent should be calculated only with withdrawals
+  # left side of chart should be label 1-100 in 10s
+  # bars on bar chart should be "o"
+  # each bar is rounded down to the nearest 10
+  # horizontal line should go go 2 spaces past final bar in bar chart
+  # each category name should be written vertically
+  spend_chart = percentage(args)
+  return spend_chart
 
 
 food = Category("Food") #category
@@ -79,11 +91,11 @@ auto.deposit(1000, "initial deposit") #price
 auto.withdraw(15)#quantity
 auto.withdraw(35.60)
 
-print(food)
-print(clothing)
-print(food.name, food.balance)
-print(auto.name, auto.balance)
-print(entertainment.name, entertainment.balance)
+#print(food)
+#print(clothing)
+#print(food.name, food.balance)
+#print(auto.name, auto.balance)
+#print(entertainment.name, entertainment.balance)
 #print(food.ledger)
 #print(entertainment.tran_balance)
 #print(food.tran_balance)
@@ -94,3 +106,4 @@ print(entertainment.name, entertainment.balance)
 #print((auto))
 #print((entertainment))
 #print((business))
+print(create_spend_chart(food))
