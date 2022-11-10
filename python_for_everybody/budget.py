@@ -1,9 +1,12 @@
+import math
+
 class Category:
   def __init__(self, name): # magic method/dunder method
     self.name = name # instance attribute
     self.ledger = [] # instance variable
     self.d = {} # instance variable
     self.balance = 0 # instance variable
+    self.percentage = float(0)
 
   def __str__(self): # Instance method
     returnStr = ""
@@ -13,9 +16,6 @@ class Category:
     returnStr += 'Total: '.ljust(2) + str(self.balance).rjust(2)
     return returnStr
   
-  def percentage(self):
-    return percentage
-    pass
 
   def deposit(self, amount, description=""): # Instance Attribute Outside of Init
     self.ledger.append({
@@ -51,7 +51,10 @@ class Category:
       return False
     return  True
 
-def create_spend_chart(*args):
+  # Can I make a def percentage to pass to spend_chart?
+
+
+def create_spend_chart(args): # How do I put in multiple args since *args not working
   # show percentage spent in each category . . . Food, Clothing, Entertaiment
   # percentage spent should be calculated only with withdrawals
   # left side of chart should be label 1-100 in 10s
@@ -59,8 +62,22 @@ def create_spend_chart(*args):
   # each bar is rounded down to the nearest 10
   # horizontal line should go go 2 spaces past final bar in bar chart
   # each category name should be written vertically
-  spend_chart = percentage(args)
+  total = 0
+  withdraw = 0
+  for d in args.d.values():
+    #print(d)
+    if (float(d)) > 0:
+      #print("Total: ", d)
+      total += (float(d))
+    elif (float(d)) < 0:
+      #print("Withdraw: ", d)
+      withdraw += abs(float((d)))
+  percentage = math.trunc((withdraw/total*10))
+  spend_chart = ""
+  spend_chart += "Percentage spent by category: " + '\n'
+  spend_chart +=  f"{args.name} " + f"{percentage}" + "\n" # This should probably be 1 line printing the chart?
   return spend_chart
+  pass
 
 
 food = Category("Food") #category
@@ -69,21 +86,21 @@ business = Category("Business")
 auto = Category("Auto") #category
 clothing = Category("Clothing") #category        
 food.deposit(100, "deposit")
-print(food.balance)
+#print(food.balance)
 food.withdraw(100.10)
-print(food.balance)
+#print(food.balance)
 food.deposit(100, "deposit")
 food.deposit(400, "deposit")
 food.transfer(200, entertainment)
-print(entertainment.name, entertainment.balance)
+# print(entertainment.name, entertainment.balance)
 food.deposit(1000, "initial deposit") #price
 food.withdraw(600, "groceries") #quantity
 food.withdraw(15.89, "restaurant and more food for dessert") #quantity
-print(food.get_balance())
+# print(food.get_balance())
 
 
 
-print(clothing.name, clothing.balance)
+# print(clothing.name, clothing.balance)
 clothing.withdraw(25.55)#quantity
 clothing.withdraw(100)#quantity
 

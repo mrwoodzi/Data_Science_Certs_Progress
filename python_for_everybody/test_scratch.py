@@ -38,4 +38,33 @@ print(new_list)
     #    self.contents = deep_contents
     #    len_contents = i
     #return new_list
+
+  # Getting Percentage
+total = 0
+withdraw = 0
+for d in args.d.values():
+  print(d)
+  if (float(d)) > 0:
+    print("Total: ", d)
+    total += (float(d))
+  elif (float(d)) < 0:
+    print("Withdraw: ", d)
+    withdraw += abs(float((d)))
+  percentage = round((withdraw/total), 2)
+print(str(food))
+print(total, withdraw)
+print(percentage)
+
+  def percentage(self):
+    total = 0
+    withdraw = 0
+    for d in self.d.values():
+      if (float(d)) > 0:
+        print("Total: ", d)
+        total += (float(d))
+      elif (float(d)) < 0:
+        print("Withdraw: ", d)
+        withdraw += abs(float((d)))
+    percentage = (round((withdraw/total), 2))
+    return percentage
   
