@@ -6,7 +6,7 @@ class Category:
     self.ledger = [] # instance variable
     self.d = {} # instance variable
     self.balance = 0 # instance variable
-    self.percentage = float(0)
+    self.wd = 0
 
   def __str__(self): # Instance method
     returnStr = ""
@@ -31,6 +31,7 @@ class Category:
     })
       self.d[description] = format(-float(amount), '.2f')
       self.balance -= float(amount)
+      self.wd += float(amount)
       return True
     else:
       return False
@@ -55,27 +56,24 @@ class Category:
 
 
 def create_spend_chart(args): # How do I put in multiple args since *args not working
-  # show percentage spent in each category . . . Food, Clothing, Entertaiment
-  # percentage spent should be calculated only with withdrawals
+  # Total withdraws in all Categories divided by total withdraw added up in all categories
   # left side of chart should be label 1-100 in 10s
+  # lside += None
   # bars on bar chart should be "o"
-  # each bar is rounded down to the nearest 10
+  # bside += None
+  # each bar is rounded down to the nearest 10 
   # horizontal line should go go 2 spaces past final bar in bar chart
+  # hline_ += None
   # each category name should be written vertically
+  # cat_name += None
   total = 0
-  withdraw = 0
-  for d in args.d.values():
-    #print(d)
-    if (float(d)) > 0:
-      #print("Total: ", d)
-      total += (float(d))
-    elif (float(d)) < 0:
-      #print("Withdraw: ", d)
-      withdraw += abs(float((d)))
-  percentage = math.trunc((withdraw/total*10))
   spend_chart = ""
-  spend_chart += "Percentage spent by category: " + '\n'
-  spend_chart +=  f"{args.name} " + f"{percentage}" + "\n" # This should probably be 1 line printing the chart?
+  for a in args:
+    total += int(a.wd)
+  for arg in args:
+    spend_chart += "Percentage spent by category: " + f"{arg.name} " + str(math.trunc((arg.wd)/(total)*10)*10) + "\n"
+  
+    
   return spend_chart
   pass
 
@@ -92,16 +90,21 @@ food.withdraw(100.10)
 food.deposit(100, "deposit")
 food.deposit(400, "deposit")
 food.transfer(200, entertainment)
+clothing.deposit(2000, "deposit")
+entertainment.deposit(8938, "entertainment")
+business.deposit(684, "business")
 # print(entertainment.name, entertainment.balance)
 food.deposit(1000, "initial deposit") #price
 food.withdraw(600, "groceries") #quantity
 food.withdraw(15.89, "restaurant and more food for dessert") #quantity
 # print(food.get_balance())
+entertainment.withdraw(234, "stuff")
+business.withdraw(598, "more stuff")
 
 
 
 # print(clothing.name, clothing.balance)
-clothing.withdraw(25.55)#quantity
+clothing.withdraw(250.55)#quantity
 clothing.withdraw(100)#quantity
 
 auto.deposit(1000, "initial deposit") #price
@@ -123,4 +126,4 @@ auto.withdraw(35.60)
 #print((auto))
 #print((entertainment))
 #print((business))
-print(create_spend_chart(food))
+print(create_spend_chart([food, clothing, business, entertainment]))

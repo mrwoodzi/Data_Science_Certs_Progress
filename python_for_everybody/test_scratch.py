@@ -68,3 +68,14 @@ print(percentage)
     percentage = (round((withdraw/total), 2))
     return percentage
   
+total = 0
+withdraw = 0
+  for d in .d.values():
+    #print(d)
+    if (float(d)) > 0:
+      #print("Total: ", d)
+      total += (float(d))
+    elif (float(d)) < 0:
+      #print("Withdraw: ", d)
+      withdraw += abs(float((d)))
+  percentage = math.trunc((withdraw/total*10))
