@@ -46,19 +46,11 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     new_value = list(d_sorted.values())
     expected_value = list(expected_balls.values())
     experiment_count += 1
-    if len(new_key) == 0:
-      print('len is 0', d, d_sorted, expected_balls)
-      continue
-    elif new_key[0] in expected_key and new_key[-1] in expected_key:
-      if len(new_key) == 1:
-        print('len is 1', d, d_sorted, expected_balls)
-        continue
-      elif new_value[0] >= expected_value[0] and new_value[-1] >= expected_value[-1]:
+    for item in expected_key:
+      if item in new_key:
         counts += 1
-        #print(new_value[0], expected_value[0], new_value[-1], expected_value[-1])
-        #print(new_value, expected_value)
-        #print(new_key, expected_key)
-        print('this should add', counts, d_sorted, expected_balls, experiment_count)
+      elif item not in new_key:
+        counts -= 1
         
 
   probability = counts/num_experiments

@@ -510,5 +510,5 @@ def arithmetic_arranger(problems, SUMnow=None):
             
 
 
-print(arithmetic_arranger(['98 + 3g5', '3801 - 2', '45 + 43', '123 + 49'], True))
+print(arithmetic_arranger(['98 + 345', '3801 - 2', '45 + 43', '123 + 49'], True))
 

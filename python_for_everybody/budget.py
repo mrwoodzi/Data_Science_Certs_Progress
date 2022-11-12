@@ -1,4 +1,5 @@
 import math
+import re 
 
 class Category:
   def __init__(self, name): # magic method/dunder method
@@ -67,13 +68,73 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
   # each category name should be written vertically
   # cat_name += None
   total = 0
-  spend_chart = ""
-  for a in args:
-    total += int(a.wd)
-  for arg in args:
-    spend_chart += "Percentage spent by category: " + f"{arg.name} " + str(math.trunc((arg.wd)/(total)*10)*10) + "\n"
+  percent_count = 100
+  lines = "-"
+  spend_chart = "Percentage spent by category\n"
+  cat_percent_d = {}
+  len_biggest_cat = 0
+  cat_str = ""
+  cat_ints = []
+  cat_split = []
+  no = ""
+  ni = ""
+  nt = ""
+
+  for a in args: # we acces self.withdraw
+    total += int(a.wd) # make a total of all withdraw
+
+  for arg in args: # get name and amount of withdraws in each class and the get percent
+    cat_percent_d[f"{arg.name}"] = [(math.trunc((arg.wd)/(total)*10)*10)] # don't need at the moment
+    cat_str += arg.name
+    cat_ints += str((math.trunc((arg.wd)/(total)*10)*10))
+    print(arg.name)
+    print(len(arg.name))
+    print(len_biggest_cat)
+    if (len(arg.name)) > len_biggest_cat: # identifying and storing longest len category
+      len_biggest_cat = len(arg.name)
+      print(len_biggest_cat)
+      continue
   
-    
+  len_cat_keys = len(cat_str) 
+  cat_split = re.findall('[A-Z][^A-Z]*', cat_str)
+  len_cat_split = len(cat_split)
+
+  while percent_count >= 0:
+    spend_chart += f"{percent_count}|".rjust(4) + "\n"
+    percent_count -= 10
+  spend_chart += "".ljust(4) + "".rjust(8, f"{lines}") + "\n" # need to figure out the len of lines
+
+
+  # Splitting Categories into separate lists
+  for v in cat_split[0]:
+    no += v
+  for v in cat_split[1]:
+    ni += v
+  for v in cat_split[2]:
+    nt += v
+  print(len_biggest_cat)
+  print(len_biggest_cat)
+  print(len_biggest_cat)
+  # Getting Character Lengths the same for iteration
+  if len(no) < len_biggest_cat:
+    no = no.ljust(len_biggest_cat-(len(no)))
+    print(len(len_biggest_cat), len(no))
+    print(no, "Um")
+
+  if len(ni) < len_biggest_cat:
+    ni = ni.ljust(len_biggest_cat-(len(ni)))
+    print(len(len_biggest_cat), len(ni))
+    print(ni, "What")
+
+  if len(nt) < len_biggest_cat:
+    print(nt)
+  (nt) =(nt).ljust((len_biggest_cat-(len(nt))))
+
+  print(nt)
+  # while len_biggest_cat > 0:
+  for a,b,c in zip(no, ni,(nt)):
+    spend_chart += f"     {a} {b} {c}\n"
+    pass
   return spend_chart
   pass
 
@@ -83,47 +144,10 @@ entertainment = Category("Entertainment")
 business = Category("Business")
 auto = Category("Auto") #category
 clothing = Category("Clothing") #category        
-food.deposit(100, "deposit")
-#print(food.balance)
-food.withdraw(100.10)
-#print(food.balance)
-food.deposit(100, "deposit")
-food.deposit(400, "deposit")
-food.transfer(200, entertainment)
-clothing.deposit(2000, "deposit")
-entertainment.deposit(8938, "entertainment")
-business.deposit(684, "business")
-# print(entertainment.name, entertainment.balance)
-food.deposit(1000, "initial deposit") #price
-food.withdraw(600, "groceries") #quantity
-food.withdraw(15.89, "restaurant and more food for dessert") #quantity
-# print(food.get_balance())
-entertainment.withdraw(234, "stuff")
-business.withdraw(598, "more stuff")
-
-
-
-# print(clothing.name, clothing.balance)
-clothing.withdraw(250.55)#quantity
-clothing.withdraw(100)#quantity
-
-auto.deposit(1000, "initial deposit") #price
-auto.withdraw(15)#quantity
-auto.withdraw(35.60)
-
-#print(food)
-#print(clothing)
-#print(food.name, food.balance)
-#print(auto.name, auto.balance)
-#print(entertainment.name, entertainment.balance)
-#print(food.ledger)
-#print(entertainment.tran_balance)
-#print(food.tran_balance)
-#print((food.ledger))
-#print((food.deposit))
-#print(str(food.ledger[0]))
-#print((clothing))
-#print((auto))
-#print((entertainment))
-#print((business))
-print(create_spend_chart([food, clothing, business, entertainment]))
+food.deposit(900, "deposit")
+entertainment.deposit(900, "deposit")
+business.deposit(900, "deposit")
+food.withdraw(105.55)
+entertainment.withdraw(33.40)
+business.withdraw(10.99)
+print(create_spend_chart([business, food, entertainment]))

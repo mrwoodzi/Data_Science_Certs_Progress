@@ -79,3 +79,47 @@ withdraw = 0
       #print("Withdraw: ", d)
       withdraw += abs(float((d)))
   percentage = math.trunc((withdraw/total*10))
+
+food.deposit(100, "deposit")
+#print(food.balance)
+food.withdraw(100.10)
+#print(food.balance)
+food.deposit(100, "deposit")
+food.deposit(400, "deposit")
+food.transfer(200, entertainment)
+clothing.deposit(2000, "deposit")
+entertainment.deposit(8938, "entertainment")
+business.deposit(684, "business")
+# print(entertainment.name, entertainment.balance)
+food.deposit(1000, "initial deposit") #price
+food.withdraw(600, "groceries") #quantity
+food.withdraw(15.89, "restaurant and more food for dessert") #quantity
+# print(food.get_balance())
+entertainment.withdraw(234, "stuff")
+business.withdraw(598, "more stuff")
+
+
+
+# print(clothing.name, clothing.balance)
+clothing.withdraw(250.55)#quantity
+clothing.withdraw(100)#quantity
+
+auto.deposit(1000, "initial deposit") #price
+auto.withdraw(15)#quantity
+#auto.withdraw(35.60)
+
+#print(food)
+#print(clothing)
+#print(food.name, food.balance)
+#print(auto.name, auto.balance)
+#print(entertainment.name, entertainment.balance)
+#print(food.ledger)
+#print(entertainment.tran_balance)
+#print(food.tran_balance)
+#print((food.ledger))
+#print((food.deposit))
+#print(str(food.ledger[0]))
+#print((clothing))
+#print((auto))
+#print((entertainment))
+#print((business))
