@@ -86,21 +86,38 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
   for arg in args: # get name and amount of withdraws in each class and the get percent
     cat_percent_d[f"{arg.name}"] = [(math.trunc((arg.wd)/(total)*10)*10)] # don't need at the moment
     cat_str += arg.name
-    cat_ints += str((math.trunc((arg.wd)/(total)*10)*10))
+    cat_ints += str((math.trunc((arg.wd)/(total)*10)))
+    print(cat_ints)
     print(arg.name)
     print(len(arg.name))
     print(len_biggest_cat)
     if (len(arg.name)) > len_biggest_cat: # identifying and storing longest len category
       len_biggest_cat = len(arg.name)
       print(len_biggest_cat)
-      continue
+      
   
   len_cat_keys = len(cat_str) 
   cat_split = re.findall('[A-Z][^A-Z]*', cat_str)
   len_cat_split = len(cat_split)
-
+  
+  # This prints the top half of the bar chart
+  oo = int(cat_ints[0])
+  oi = int(cat_ints[1])
+  ot = int(cat_ints[-1])
   while percent_count >= 0:
-    spend_chart += f"{percent_count}|".rjust(4) + "\n"
+    if int(oo) < (percent_count/10):
+      op = "".ljust(1)
+    elif int(oo) >= (percent_count/10):
+      op = "o"
+    if int(oi) < (percent_count/10):
+      ip = "".ljust(1)
+    elif int(oi) >= (percent_count/10):
+      ip = "o"
+    if int(ot) < (percent_count/10):
+      tp = "".ljust(1)
+    elif int(ot) >= (percent_count/10):
+      tp = "o"
+    spend_chart += f"{percent_count}|".rjust(4, " ") + f" {op}  {ip}  {tp}  \n"
     percent_count -= 10
   spend_chart += "".ljust(4) + "".rjust(10, f"{lines}") + "\n" # need to figure out the len of lines
 
@@ -131,13 +148,13 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
     elif len(nt) < len_biggest_cat:
       nt = nt.ljust(len_biggest_cat-(len(nt)))
   
-  
-  print(len(no), len(ni), len(nt)) # len of 8, 9, 13
   # while len_biggest_cat > 0:
-  for a,b,c in zip(no, ni,nt):
-    spend_chart += f"     {a}  {b}  {c}  \n"
+  for a,b,c in zip(no, ni, nt):
+    spend_chart += f"     {a}  {b}  {c}  \n".rjust(9, " ")
 
   return spend_chart
+
+
 
 
 

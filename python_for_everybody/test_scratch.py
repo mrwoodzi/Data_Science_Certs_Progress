@@ -151,3 +151,8 @@ auto.withdraw(15)#quantity
     print(random_choices_list)
     for item in ex_balls:
       if item in random_choices_list:
+
+              
+    f_percentcount = f"{percent_count}|"
+    if len(f_percentcount) <= 4:
+      ljust = "".ljust((4-(len(f_percentcount))))
