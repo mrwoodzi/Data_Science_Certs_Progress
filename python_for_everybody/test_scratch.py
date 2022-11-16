@@ -142,3 +142,12 @@ auto.withdraw(15)#quantity
           #print('this should add', counts, d_sorted, expected_balls, experiment_count)
     # if counts >= 80 and counts <= 81:
       # print(counts, d, d_sorted, expected_balls, experiment_count)
+
+    for k, v in expected_balls.items():
+        for _ in range(v):
+          ex_balls.append(k)
+    print(expected_balls)
+    print(ex_balls)
+    print(random_choices_list)
+    for item in ex_balls:
+      if item in random_choices_list:
