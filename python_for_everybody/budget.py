@@ -1,5 +1,5 @@
 import math
-import re 
+import re
 
 class Category:
   def __init__(self, name): # magic method/dunder method
@@ -102,7 +102,7 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
   while percent_count >= 0:
     spend_chart += f"{percent_count}|".rjust(4) + "\n"
     percent_count -= 10
-  spend_chart += "".ljust(4) + "".rjust(8, f"{lines}") + "\n" # need to figure out the len of lines
+  spend_chart += "".ljust(4) + "".rjust(10, f"{lines}") + "\n" # need to figure out the len of lines
 
 
   # Splitting Categories into separate lists
@@ -113,30 +113,33 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
   for v in cat_split[2]:
     nt += v
   print(len_biggest_cat)
-  print(len_biggest_cat)
-  print(len_biggest_cat)
+
   # Getting Character Lengths the same for iteration
-  if len(no) < len_biggest_cat:
-    no = no.ljust(len_biggest_cat-(len(no)))
-    print(len(len_biggest_cat), len(no))
-    print(no, "Um")
-
-  if len(ni) < len_biggest_cat:
-    ni = ni.ljust(len_biggest_cat-(len(ni)))
-    print(len(len_biggest_cat), len(ni))
-    print(ni, "What")
-
-  if len(nt) < len_biggest_cat:
-    print(nt)
-  (nt) =(nt).ljust((len_biggest_cat-(len(nt))))
-
-  print(nt)
+  if len(no) <= len_biggest_cat:
+    if len(no) == len_biggest_cat:
+     no = no.ljust(len_biggest_cat)
+    elif len(no) < len_biggest_cat:
+      no = no.ljust(len_biggest_cat-(len(no)))
+  if len(ni) <= len_biggest_cat:
+    if len(ni) == len_biggest_cat:
+     ni = ni.ljust(len_biggest_cat)
+    elif len(ni) < len_biggest_cat:
+      ni = ni.ljust(len_biggest_cat-(len(ni)))
+  if len(nt) <= len_biggest_cat:
+    if len(nt) == len_biggest_cat:
+     nt = nt.ljust(len_biggest_cat)
+    elif len(nt) < len_biggest_cat:
+      nt = nt.ljust(len_biggest_cat-(len(nt)))
+  
+  
+  print(len(no), len(ni), len(nt)) # len of 8, 9, 13
   # while len_biggest_cat > 0:
-  for a,b,c in zip(no, ni,(nt)):
-    spend_chart += f"     {a} {b} {c}\n"
-    pass
+  for a,b,c in zip(no, ni,nt):
+    spend_chart += f"     {a}  {b}  {c}  \n"
+
   return spend_chart
-  pass
+
+
 
 
 food = Category("Food") #category

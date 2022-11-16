@@ -62,10 +62,10 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
           #print(new_value, expected_value)
           #print(new_key, expected_key)
           #print('this should add', counts, d_sorted, expected_balls, experiment_count)
-    # if counts >= 80 and counts <= 81:
-      # print(counts, d, d_sorted, expected_balls, experiment_count)
-
+    if counts >= 80 and counts <= 81:
+      print(counts, d, d_sorted, expected_balls, experiment_count)
   probability = counts/num_experiments
+  print(probability)
   return probability
 
 

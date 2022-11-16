@@ -48,5 +48,10 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
                 flag = False
         if flag:
             nCorrect += 1
-    
-    return nCorrect/nTries
+    probability = nCorrect/nTries
+    print(probability)
+    return probability
+
+hat = Hat(yellow=5,red=1,green=3,blue=9,test=1)
+experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=20, num_experiments=100)
+print("Probability:", experiment)
