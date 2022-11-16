@@ -71,7 +71,6 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
   percent_count = 100
   lines = "-"
   spend_chart = "Percentage spent by category\n"
-  cat_percent_d = {}
   len_biggest_cat = 0
   cat_str = ""
   cat_ints = []
@@ -84,18 +83,9 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
     total += int(a.wd) # make a total of all withdraw
 
   for arg in args: # get name and amount of withdraws in each class and the get percent
-    cat_percent_d[f"{arg.name}"] = [(math.trunc((arg.wd)/(total)*10)*10)] # don't need at the moment
     cat_str += arg.name
     cat_ints += str((math.trunc((arg.wd)/(total)*10)))
-    print(cat_ints)
-    print(arg.name)
-    print(len(arg.name))
-    print(len_biggest_cat)
-    if (len(arg.name)) > len_biggest_cat: # identifying and storing longest len category
-      len_biggest_cat = len(arg.name)
-      print(len_biggest_cat)
       
-  
   len_cat_keys = len(cat_str) 
   cat_split = re.findall('[A-Z][^A-Z]*', cat_str)
   len_cat_split = len(cat_split)
@@ -129,31 +119,20 @@ def create_spend_chart(args): # How do I put in multiple args since *args not wo
     ni += v
   for v in cat_split[2]:
     nt += v
-  print(len_biggest_cat)
-
-  # Getting Character Lengths the same for iteration
-  if len(no) <= len_biggest_cat:
-    if len(no) == len_biggest_cat:
-     no = no.ljust(len_biggest_cat)
-    elif len(no) < len_biggest_cat:
-      no = no.ljust(len_biggest_cat-(len(no)))
-  if len(ni) <= len_biggest_cat:
-    if len(ni) == len_biggest_cat:
-     ni = ni.ljust(len_biggest_cat)
-    elif len(ni) < len_biggest_cat:
-      ni = ni.ljust(len_biggest_cat-(len(ni)))
-  if len(nt) <= len_biggest_cat:
-    if len(nt) == len_biggest_cat:
-     nt = nt.ljust(len_biggest_cat)
-    elif len(nt) < len_biggest_cat:
-      nt = nt.ljust(len_biggest_cat-(len(nt)))
+  len_max = max(len(x) for x in cat_split)
+  print(len_max, cat_str)
+  max_no = no.ljust(len_max, " ")
+  max_ni = ni.ljust(len_max, " ")
+  max_nt = nt.ljust(len_max, " ")
   
-  # while len_biggest_cat > 0:
-  for a,b,c in zip(no, ni, nt):
-    spend_chart += f"     {a}  {b}  {c}  \n".rjust(9, " ")
+  for a,b,c in zip(max_no, max_ni, max_nt):
+    if len_max > 1:
+      spend_chart += f"     {a}  {b}  {c}  \n".rjust(9, " ")
+      len_max -= 1
+    elif len_max <= 1:
+      spend_chart += f"     {a}  {b}  {c}  ".rjust(9, " ")
 
   return spend_chart
-
 
 
 
