@@ -1,10 +1,3 @@
-import random
-import copy
-contents_me = ["yellow", "yellow","yellow","yellow", "red", "yellow", "green", "green","green", "blue", "blue","blue","blue","blue","blue","blue","blue","blue",  "test"]
-i = 20
-new_list = []
-len_contents = len(contents_me)
-deep_copy = copy.deepcopy(contents_me)
 
 while i > 0:
   print(i)
@@ -20,26 +13,7 @@ while i > 0:
     len_contents == i
 print(new_list)
 
-   #def draw(self, number):
-    #i = number
-    #len_contents = len(self.contents)
-    #deep_contents = copy.deepcopy(self.contents)
-    #new_list = []
-    #print(i)
-    #print(len_contents)
-    #print(self.contents)
-    #while i > 0:
-    #  contents = random.randrange(len(self.contents))
-    #  newContents = self.contents.pop(contents)
-    #  new_list.append(newContents)
-    #  i -= 1
-    #  len_contents -= 1
-    #  if len_contents == 0 and i >= 1:
-    #    self.contents = deep_contents
-    #    len_contents = i
-    #return new_list
 
-  # Getting Percentage
 total = 0
 withdraw = 0
 for d in args.d.values():
@@ -137,11 +111,7 @@ auto.withdraw(15)#quantity
       if new_key[0] in expected_key and new_key[1] in expected_key and new_key[-1] in expected_key:
         if new_value[0] >= expected_value[0] and new_value[1] >= expected_value[1] and new_value[-1] >= expected_value[-1]:
           counts += 1
-          #print(new_value, expected_value)
-          #print(new_key, expected_key)
-          #print('this should add', counts, d_sorted, expected_balls, experiment_count)
-    # if counts >= 80 and counts <= 81:
-      # print(counts, d, d_sorted, expected_balls, experiment_count)
+
 
     for k, v in expected_balls.items():
         for _ in range(v):
@@ -152,7 +122,3 @@ auto.withdraw(15)#quantity
     for item in ex_balls:
       if item in random_choices_list:
 
-              
-    f_percentcount = f"{percent_count}|"
-    if len(f_percentcount) <= 4:
-      ljust = "".ljust((4-(len(f_percentcount))))

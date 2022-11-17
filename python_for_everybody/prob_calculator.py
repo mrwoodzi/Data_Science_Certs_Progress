@@ -14,8 +14,8 @@ class Hat:
   def draw(self, number):
     new_list = []
     for i in range(number):
-      contents = random.randrange(len(self.contents))
-      newContents = self.contents.pop(contents)
+      contents = random.randrange(len(self.colors))
+      newContents = self.colors.pop(contents)
       new_list.append(newContents)
     return new_list
 

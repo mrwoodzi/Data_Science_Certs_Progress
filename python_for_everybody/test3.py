@@ -1,6 +1,5 @@
 import copy
 import random
-# Consider using the modules imported above.
 
 class Hat:
     def __init__(self, **kwargs):
@@ -15,7 +14,6 @@ class Hat:
 
     def draw(self, nDraw):
         rList = []
-        
         if nDraw >= len(self.contents):
             copyContents = self.contents.copy()
             self.contents.clear()

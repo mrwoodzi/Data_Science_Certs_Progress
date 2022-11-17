@@ -13,12 +13,13 @@ class Hat:
 
   def draw(self, number):
     new_list = []
+    deepcopy = copy.deepcopy(self.contents)
+    if number >= len(self.contents):
+      self.contents = deepcopy
     for i in range(number):
-      contents = random.randrange(len(self.contents))
-      newContents = self.contents.pop(contents)
-      new_list.append(newContents)
+      contents = random.choice((self.contents))
+      new_list.append(contents)
     return new_list
-
 
   def __str__(self):
     return self.colors
@@ -28,8 +29,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   experiment_count = 0
   for i in range(num_experiments):
     d = {}
-    ex_balls = []
-    random_choices_list = random.choices(hat.contents, k=num_balls_drawn) # Had Sample here and thought the problem was with the draw method
+    random_choices_list = hat.draw(num_balls_drawn)
     for item in random_choices_list: # we populate the dictionary with the random_choices_list
       if item in d:
         d[item] += 1
@@ -63,12 +63,16 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
           counts += 1
           #print(new_value, expected_value)
           #print(new_key, expected_key)
-          #print('this should add', counts, experiment_count, d, d_sorted, expected_balls)
+          #print('this should add', counts, d_sorted, expected_balls, experiment_count)
     if experiment_count == 81:
+      print(counts, "experiments that are True", d, d_sorted, expected_balls, "experiment count", experiment_count)
       print(random_choices_list)
-      print(new_value, expected_value)
-      print(counts, experiment_count, d, d_sorted, expected_balls)
-        
-    
   probability = counts/num_experiments
+  print(probability)
   return probability
+
+
+hat = Hat(yellow=5,red=1,green=3,blue=9,test=1)
+print(hat.contents)
+experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=20, num_experiments=200)
+print("Probability:", experiment)
