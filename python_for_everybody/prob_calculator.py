@@ -12,12 +12,16 @@ class Hat:
         n -= 1
 
   def draw(self, number):
-    new_list = []
-    for i in range(number):
-      contents = random.randrange(len(self.colors))
-      newContents = self.colors.pop(contents)
-      new_list.append(newContents)
-    return new_list
+    list_drawn_balls = []
+    deepcopy = copy.deepcopy(self.contents)
+    while number >= 0:
+      ball_index = random.randrange(len(self.contents))
+      get_balls = self.contents.pop(ball_index)
+      list_drawn_balls.append(get_balls)
+      number -= 1
+      if number == 0:
+        self.contents = deepcopy
+    return list_drawn_balls
 
   def __str__(self):
     return self.colors
@@ -27,7 +31,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   experiment_count = 0
   for i in range(num_experiments):
     d = {}
-    random_choices_list = random.choices(hat.contents, k=num_balls_drawn)
+    random_choices_list = hat.draw(num_balls_drawn)
     for item in random_choices_list: # we populate the dictionary with the random_choices_list
       if item in d:
         d[item] += 1
@@ -62,8 +66,8 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
           #print(new_value, expected_value)
           #print(new_key, expected_key)
           #print('this should add', counts, d_sorted, expected_balls, experiment_count)
-    if counts >= 80 and counts <= 81:
-      print(counts, d, d_sorted, expected_balls, experiment_count)
+    #if counts >= 80 and counts <= 81:
+      #print(counts, d, d_sorted, expected_balls, experiment_count)
   probability = counts/num_experiments
   print(probability)
   return probability
