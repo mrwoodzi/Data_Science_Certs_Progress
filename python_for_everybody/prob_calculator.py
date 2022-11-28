@@ -10,9 +10,12 @@ class Hat:
       while n >= 0:
         self.contents.append(c)
         n -= 1
+    self.deepcopy = copy.deepcopy(self.contents)
 
   def draw(self, number):
+    print(self.contents)
     list_drawn_balls = []
+    print(self.deepcopy)
     deepcopy = copy.deepcopy(self.contents)
     while number >= 0:
       ball_index = random.randrange(len(self.contents))
