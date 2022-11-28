@@ -10,20 +10,20 @@ class Hat:
       while n >= 0:
         self.contents.append(c)
         n -= 1
-    self.deepcopy = copy.deepcopy(self.contents)
+    self.repop = copy.copy(self.contents)
+
+  def repopulate(self):
+    self.contents = copy.copy(self.repop)
 
   def draw(self, number):
-    print(self.contents)
     list_drawn_balls = []
-    print(self.deepcopy)
-    deepcopy = copy.deepcopy(self.contents)
-    while number >= 0:
+    if number >= len(self.contents):
+      self.contents = self.repop
+      return self.contents
+    for a in range(number):
       ball_index = random.randrange(len(self.contents))
       get_balls = self.contents.pop(ball_index)
       list_drawn_balls.append(get_balls)
-      number -= 1
-      if number == 0:
-        self.contents = deepcopy
     return list_drawn_balls
 
   def __str__(self):
@@ -33,6 +33,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   counts = 0
   experiment_count = 0
   for i in range(num_experiments):
+    hat.repopulate()
     d = {}
     random_choices_list = hat.draw(num_balls_drawn)
     for item in random_choices_list: # we populate the dictionary with the random_choices_list
@@ -54,7 +55,6 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     expected_value = list(expected_balls.values())
     experiment_count += 1
     if len(new_key) == 0:
-      #print('len is 0', d, d_sorted, expected_balls)
       continue
     elif len(new_key) == 1:
       continue
@@ -66,17 +66,13 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
       if new_key[0] in expected_key and new_key[1] in expected_key and new_key[-1] in expected_key:
         if new_value[0] >= expected_value[0] and new_value[1] >= expected_value[1] and new_value[-1] >= expected_value[-1]:
           counts += 1
-          #print(new_value, expected_value)
-          #print(new_key, expected_key)
-          #print('this should add', counts, d_sorted, expected_balls, experiment_count)
-    #if counts >= 80 and counts <= 81:
-      #print(counts, d, d_sorted, expected_balls, experiment_count)
+
   probability = counts/num_experiments
-  print(probability)
   return probability
 
 
-hat = Hat(yellow=5,red=1,green=3,blue=9,test=1)
-experiment(hat=hat, expected_balls={"yellow":2,"blue":3,"test":1}, num_balls_drawn=20, num_experiments=100)
+hat = Hat(blue=4, red=2, green=6)
+experiment(hat=hat, expected_balls={"blue": 2,
+                    "red": 1}, num_balls_drawn=4, num_experiments=100)
 print("Probability:", experiment)
 

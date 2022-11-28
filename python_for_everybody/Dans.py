@@ -15,6 +15,7 @@ class Hat:
     def draw(self, nDraw):
         rList = []
         if nDraw >= len(self.contents):
+            print("Yo I repopulated")
             copyContents = self.contents.copy()
             self.contents.clear()
             return copyContents
