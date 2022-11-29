@@ -1,0 +1,100 @@
+Different Components of a modern data ecosystem:
+
+Describe and differentiate between the role different data professionals play in a modern data ecosystem:
+
+Explain what data analysis is, the different types of data analysis, and the key steps in the data analysis process.
+
+Describe the responsibilities and skillsets of a Data Analyst
+
+Summarize a typical day in the life of a Data Analyst.
+
+Fundamentals of data analysis:
+-data gathering
+-data wrangling
+-mining
+-analysis
+-data visualization
+
+Modern Data ecosystem:
+-pull data from source and put into new database
+    -reliability, security and integrity of data at this stage
+-organize, clean and optimize, conform to guidelines
+    -adhere to master data tables
+    -data management, data repositories
+-busines stake holders, apps, prog Analyst
+
+Big Data
+
+Data ecosystem:
+- data holds key to competitive advantage
+data engineer - convert raw data into usable table
+    develop and maintain databases, extract, integrate, and organize data from disparate sources
+    clean transform and prepare data
+    design store and mangage data in repositories
+data Analyst: use data to generate insights
+    transforms data into plain English
+    inspect and clean data
+    find patterns 
+    statistics
+    visualize data
+    answer questions, co-relation
+data scientist - predict future using data from the past
+    analyze data for actionable insights
+    create predictive models using machine learning and deep learning
+    answer questions like 'How many new social media followers am I likely to get next month.'
+    or "What percentage of my customers am I likely to lose to competition in the next quarter."
+    or "Is this 
+business analyist and bi analyist - use all the above to gain insights and predictions
+    leverage work of data analyist and data scientist
+    focus on market forces and external influences that shape their business
+    organize and monitor data on different business functions
+    explore data to extract insights and actionables that improve business performance
+
+Data Analysis:
+    Recognizing patterns and correlations in data
+        -insghts and conclusion drawn
+        -helps to validate a course of actionable
+
+4 types of data analysis:
+
+        Descriptive Analytics
+            -what happened in the past
+        Diagnostic Analytics
+            -why did it happened
+        Predictive Analytics
+            -predict future outcomes, what might happene
+        Prescriptive Analytics
+            -what should be done
+
+
+How to think about analysis:
+    Understand the problem and the desired result
+    Setting a clear metric, what or how it will be measured
+    Gathering data, indentify whats the best tool
+    Cleaning data, fix issues in data that could effect accuracy, outliers, standardize data
+    Anlyze and Mine data, indentify correlations
+    Interpreting results, is analysis defendable
+    Presenting your findings
+
+    Also:
+        Define problem
+        Creating Hypothesis
+        Collect and Clean Data
+        Analyzing Data
+        Presenting to Stakeholders
+
+Defining Data Analysis:
+    What is it- 
+        Collecting Information - Use of Information
+        Analyzing Data
+        Confirming Hypothesis
+        Storytelling with Data
+
+***Difference between Analysis and Analytics:
+        -Analysis - detailed examination of the elements or structure of something, can be done without numbers or data
+        -Analytics - the systematic computational analysis of data or statistics
+
+
+Module 2:
+Random:
+IoT - internet of things
