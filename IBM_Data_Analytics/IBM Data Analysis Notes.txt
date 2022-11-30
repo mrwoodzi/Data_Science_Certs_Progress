@@ -96,5 +96,77 @@ Defining Data Analysis:
 
 
 Module 2:
+
+Responsibilities of a Data Analyst:
+    -creating queries to extract required data
+    -filtering, cleaning, standardizing and reorganizing data
+    -using statistical tools and techniques
+    -anaylyze patterns
+    -prepare repositories
+    -appropriate docs
+
+Sklls - 
+    -Technical
+    -Functional tools   
+        -statistics
+        -analytical skills
+        -problem solving skills
+        -probing skills
+        -data visualization
+        -project management
+    -Soft Skills
+        -Work Collaboratively
+        -Comm effectively
+        -story telling
+        -curiosity
+        -intuition - ability to have sense of future
+
+Day in the life of Data Analyst:
+    -Asquiring data
+    -Create queries
+    -looking for insights
+    -updating dashboards and reports 
+    -interacting with Stakeholders for gathering Information and presenting findings 
+    -clean and prepare data for analysis
+
+    Initial Hypothesis  
+    Identifying Datasets
+    Find potential issues
+    Present to stakeholders and also present the methods used to get to solution
+
+Application of Data Analytics   
+    -used by companies to identiy what information consumers want them to share
+    -its everywhere 
+    -widely applicable across industries, verticals and functions within
+    -used to pay close attention to changes in customers buying habits
+
+The role of a Data Analyst spans across:
+
+    Acquiring data that best serves the use case.
+
+    Preparing and analyzing data to understand what it represents.
+
+    Interpreting and effectively communicating the message to stakeholders who need to act on the findings.
+
+    Ensuring that the process is documented for future reference and repeatability.  
+
+In order to play this role successfully, Data Analysts need a mix of technical, functional, and soft skills.  
+
+    Technical Skills include varying levels of proficiency in using spreadsheets, statistical tools, visualization tools, 
+    programming and querying languages, and the ability to work with different types of data repositories and big data platforms.
+
+    An understanding of Statistics, Analytical techniques, problem-solving, the ability to probe a situation from multiple 
+    perspectives, data visualization, and project management skills – all of which come under Functional Skills a Data Analyst 
+    needs in order to play an effective role.
+
+    Soft Skills include the ability to work collaboratively, communicate effectively, tell a compelling story with data, and 
+    garner support and buy-in from stakeholders. Curiosity to explore different pathways and intuition that helps to give a 
+    sense of the future based on past experiences are also essential skills for being a good Data Analyst.  
+
+
 Random:
-IoT - internet of things
+IoT - Internet of Things
+Data mart 
+Data Warehouse 
+Data Lake
+Data Pipelines
