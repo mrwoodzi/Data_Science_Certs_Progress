@@ -170,3 +170,312 @@ Data mart
 Data Warehouse 
 Data Lake
 Data Pipelines
+
+Data analyist Ecosystem 
+    -infrastructure, software, tools, frameworks, and processes to 
+        -gather, clean, mine visualize
+    
+    Data    
+        Structured - neat, rows and columns, excel
+        Semi-Structured - mix of data that has consistent characteristics and data that does not conform to a rigid structure, email
+        Unstructured - complex data that is qualitative that cannot be structured into rows and columns, photos video, text and social media content
+
+        Data can come from 
+            Relational database and non rdbs
+            API, Web Services, Data Streams
+            Social Platforms and Sensor Devices
+
+        Data repositories:
+            databases
+            data warehouses
+            data marts
+            data lakes
+            big data stores 
+                large value high velocity is needed
+
+                    The type of data, file formats and sources of data help determine which type of repositories 
+
+        languages:
+            Query languages
+            Programming languages
+            Shell and Scripting Languages 
+
+        Automated Tools, frameworks and processes for all stages of the analytics process are part of the Data Analyst ecosystem
+
+    Types of Data:
+        Facts, Oberservations, Perceptions
+        Numbers, Characters, Images
+
+        Categories of Data:
+            Structured, -well defined structure, stored in well defined schemas, represecnted in a tabular manner with rows 
+                and columnas, sql database, online transactions, spreadsheets, online forms, sensors, network and webserver logs
+            Semi-structured, -some organizational properties, not in rows and columns, contains metadata****, emails
+                xml, binary executables, json, 
+            Unstructured -Not easily identifired structure, not in rows or columns, 
+                web pages, social media, baried images, video/audio, powerpoint, media logs, 
+                files/docs, nosql, manual analysis 
+
+        Different Types of File Structures:
+            Delimited text file formats, .CSV-stores data as text, value separated by delimiter
+                -delimiter - a sequence of one or more characters for specifiying the boundary between independent
+                    entites or values
+                     comma, tab, colon, vertical bar, space
+                     comma-separated values, csv and tab-separated values, tsv
+            Microsoft Excel Open, .xml spreadsheet or .xlsx, mulitple worksheets, rows and columns, open file format m
+                more swecure
+            Extensible Markup Language, .xml - set rules for encoding data
+                language readable by humans and machines\
+                self-descriptive language
+                similar to .html, but does not use predefined tags
+                platform independent
+                programming language independent
+                makes it simpler to share data between systems
+            Portable Document Format, .pdf - developed by adobe to present documents independent of app, software, hardware
+                 or os, can be viewed same way on any device
+                 frequently used in legal and financial data
+            JavaScript Object Notation, .json - test-based open standard
+                designed for transmitting structured data over the web
+                language-independent data format 
+                read in any programming language
+                compatible with wide range of browser
+                considered as one of the best tools for sharing data
+
+    Sources of Data:
+        Relational databases - internal apps, sql server, oracle , ibm db2
+            customers sales . . . could be public or private demographic, point of sale , weather data
+            define strategy, predict demand, distribution/marketing decisions
+            flat files, spreadsheet, xml doc
+        Flat files and xml Datasets - plain text separated by delimiters, maps to single table, csv tsv
+            spreadsheet files are flat files    
+                tabular format rows and columns, worksheets, 
+                xls, xlxs, apple office, libra office   
+                    uses tabs, can be complex, hierarchical, Unstructured or sturctureed
+        api and web services - Listen for incoming requests
+            web or network requests 
+            return plain text, json, or media files
+            Ex. twitter or facebok api, stock market api, data lookup and validation api 
+        web scraping - used to extract data from Unstructured   
+            also known as screen scraping, web harvesting, web data extraction
+            downloads specific data based on defined parameters
+            -can extract text, images, videos, product items, 
+            -Ex. collecting product details
+                -sales leads
+                -data from posts and autorh
+                -data sets for API
+            Popular webscraping tools   
+                Beautiful Soup
+                SCrapy
+                Pandas
+                Selenium
+        data streams and feeds - senors . . . social media posts, time stamped with geo tags
+            stock and market tickers
+            retial transcation streams
+            social media 
+            secrutity 
+            web clicks
+            flight events
+            Apps
+                apache- kafka, spark storm
+
+            RSS Really Simple Syndication
+                Updates streamed to user devices
+
+        Languages for data Pros:
+            Python - good for beginners, preformers high-computational tasks
+                Supports multiple programming paradigms
+                    oop, imperative, functional, procedural
+                    easier to learn, open source, windows/linux
+                    Pandas
+                    numpy/scipy
+                    Beautiful soup and SCrapy
+                    matpll
+                    open sea    
+                    
+            R - developing statistical software, creating compelling visualizations
+                open-source, platform-independent, can be paired with other programming languages
+                highley extensible, can handle structured and Unstructured data
+                ggplot2, plotly
+                reports builit in
+                create interactive webs
+            JavaScript - cleaning data, import, export, stats, visualization
+                hadiip hive spark
+            Query, - database 
+                insert, update, delete records, stored prosejuer
+                advantages - portable, wide variety of databases, simple syntax, 
+                    retrieve large amounts of data, runs on interpreter system 
+            programming lang, - Apps
+            shell scripting - timed operational tasks
+                UNIX commands
+                best used for repetitve tasks
+                File manipulation
+                program execution
+                Sys admin stuff
+                instrall scripts for complex programs
+                execute routine backups
+                running batches
+                PowerShell -  ms    
+                    optimized for working with structured data formats, automization
+                        json csv, xml, api 
+                        command line shell
+                        object based - filter sort filter compare 
+                        good for data mining, guis, charts, dashboards and interactive reports
+
+Data Repositories: 
+    General term to data that has been collected, orgaized, and isolated
+    databases - DBMS - is a program, uses querying  
+        -RDBMS optimized for data operations and querying, uses sql
+        -Nosql - free form 
+    Data Warehouses - merges info via ETL process - extract, transform and load into 1 database 
+        historically relational, but can be non relational 
+    Data STores - 
+        distrubted computational 
+
+    RDBMS:
+        postgresql
+        ACID compliance
+        use cases, OLTP-Online Transaction Processing Application
+            Data Warehouses OLAP
+            IoT Solutions
+        Limits:
+            Does not work well with semi structured or Unstructured
+            data values are limited per field
+            migration between can be a challenge if things are set perfect
+    
+    NoSQL:
+        Not only SQL or non-relational database
+        flexible schemas 
+        Built for specific data models 
+        do not use fixed schemas and do not typically support sql
+        Types:
+            Key Value Store:
+                key is attrubute- strings to json
+                user session data
+                real time
+                inmemory 
+                Rdeis memcached Dinamo db2
+            Document based:
+                store each record in a document 
+                enable flexible indexing 
+                preferred for eCommerce platforms, medical records storage, CRM platforms and analytics platforms 
+                not good for complex search queries or perform multi-operational transactions 
+                MongoDB, DocumentDB, CouchDB and Cloudant 
+            Column-based:
+                data stored in cells grouped as columns of data instead of rows
+                logical grouping of columns is referred to as a column family
+                great for systems that require heavy write requests, storing time-series data, weather data and IoT data 
+                Not good for complex queries or changing querying patterns frequently 
+                Cassandra, Apache HBase
+            Graph Based:
+                use a graphical model to represent and store data
+                useful for visualizing, analyzing and finding connections between different pieces of data 
+                excellent choice for working with data that has lots of interconnected relationships
+                Good for social networks, product recommendations, network diagrams, fraud detection, access management
+                Not good for processing high volumes of transactions 
+                new4J, CosmosDB
+        Advantages:
+            ability to run as a distributed system scaled across multiple data centers 
+            efficient and cost-effective scale-out architecture that provides additional capacity and performance with 
+                the addition of new nodes
+            simpler design, better control over availability, and impove scalability that makes it agile, flexible, and support quick itertions
+        Not ACID compliant 
+
+        Data Warehouse:
+        Data Warehouses, that consolidate incoming data into one comprehensive storehouse.  
+            multi purpose storage, already been ETL and ready for analytics, single source of truth
+            operational and performance database 
+            Data Mart: 
+            Data Marts, that are essentially sub-sections of a data warehouse, built to isolate data for a particular business function or use case
+                sub group of data warehouses
+                built for specific group within company
+                provide analytical capabilites for a restricted area of the data warehouses 
+                islotated security and isolated performance
+        Data Lake:
+            Pool of raw data
+                data element is given a unique identifier and is tagged with metatags for further use 
+            data is selected and organized based on the use case you need it for
+            retains all source data without exclusions
+            staging area before data warehouse
+            used for predictive and advanced analytics
+            Data Lakes, that serve as storage repositories for large amounts of structured, semi-structured, and unstructured data in their native format. 
+        ETL Process: 
+            Extract, Transform and Load Process
+                    Automated
+                    converts to analysis ready
+                    clean standardize
+                    load data into repositories 
+                Extract 
+                    Batch Process - large chunks of data moved from source to destination at scheduled intervals 
+                        stitch, blendo
+                    Steam processing - data pulled in real-time from source, transfromed in transit and loaded into data repositories 
+                        samza storm kafka
+                Transform:
+                    standardizing date formats and units of measurement
+                    removing, filtering, enriching(splitting names)(establishing key relationships across tables))(apply business rules)
+                Load:
+                    -transportation of processed data in to a data repository
+                        -intitial loading - populating all of the data in the repository
+                        -incremental loading - applying updates and modifications periodically
+                        -full refresh - erasing a data table and reloading fresh data
+                    -load verification
+                        -missing or null values
+                        -server performance
+                        -load failures
+
+    Big Data Stores, that provide distributed computational and storage infrastructure to store, scale, and process very large data sets.
+    
+        Data Pipelines:
+            Encompasses the entire journey of moving data from one system to another, including the ETL process
+            can be used for both batch and streaming data
+            Typically loads into a data lake
+            Apache Beam, Data Flow, Kafka
+        
+    Big Data:
+        Velocity 
+        Volume 
+        Variety 
+        Veracity  quality, accuracy 80% of data is Unstructured
+        Value need to make data valuable, medical social financial 
+
+        NoSQL and Data Lakes 
+        Apache hadoop - a collection of tools that provides distributed storage and processing of big data 
+                -Java based, distributed storage and processing of large datasets across clusters of computers 
+                -better real time data driven decisions
+                -incorporates emerging data formats not traditionally used in data warehouses
+                -provides real-time self-service access to stakeholders
+                -optimizes and streamlines costs by consolidating data, inlcuding cold data, across the organization
+            HDFS - storage system for big data that runs on multiple commodity hardware connected through the network   
+                -provides scalable and reliable big data storage by partitioning files over multiple nodes
+                -splits large files across multiple computers, allowing parallel acces to them
+                -replicates file blocks on different nodes to prevent data loss
+                    -multiple copies of data for higher availability
+                    better scalability and data locality
+                -fast recovery from hardware failures
+                -better access to streaming data 
+                -accommodation of large data sets 
+                -accommodation of larger data sets due to nodes being scaled to hundreds
+                -super compatible
+            -open-source data warehouse software for reading, writing and managing large data set files that are stored directly in either
+                HDFSor other data storage systems such as Apache HBase
+        Apache hive - data warehouse for data query and analysis
+            -Hive is based on Hadoop
+            -Not suitable for 
+            -transaction processing that involves a high percentage of write operations 
+            -Better suited for warehousing tasks such as ETL, reporting and data analysis
+        Apache Spark - distributed analytics framework for complex, real-time data analytics
+            -general purpose data procesing engine designed to extract and process large volumes of data for a wide range   
+                of Applications
+                    -streams processing
+                    -Machine learning
+                    -interactive Analytics
+                    -Data Integration
+                    -ETL 
+            -Has in memory processing which significatlly increases speed of computations
+            -Provides interfaces for major programming languages such as Java, Scala, Python, R and SQL 
+            -can run using its standalone clustering technology 
+            -can also run on top of other infrastructures such as Hadoop 
+            -can access data in large variety of data sources, including HDFS and Hive 
+            -process streaming data fast
+            -process complex analytics fast
+
+            
+
