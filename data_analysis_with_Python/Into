@@ -15,7 +15,7 @@ What does the loc method allow you to do?
 
 
 To Run JupyterLab: python -m jupyterlab
-
+How to Install NumPy: py -m pip install numpy
 Juypter Notebooks:
     ecosystem of tools
     free open source
@@ -45,4 +45,30 @@ Juypter Notebooks:
     Executing code cntrl and return 
 
     Different option over MatPlotLiv is Bokeh: has interactive charts 
+
+    Numpy: Numeric Computing Library:
+        How to Install NumPy: py -m pip install numpy
+        https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/numpy-introduction-a
+        https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/numpy-introduction-b
+            -link to a good low level explanation of numpy
+            -review how to find out how many bits for a specific array
+        Over 20yrs old
+        useful linear algebra, Fourier transform and random number capabilities
+        tools for integrating c/c++ and Fortran code
+        a powerful N-dimensional array object
+        efficient numberic computation with C primitives
+
+        processing numerical numbers is slow on large data sets in Python
+        Numpy solves this Python issue
+        Numpy is mostly for porcessing numerical Arrays
+
+
+        Example:
+            import numpy as np
+            np.int8(actually gives a bytes list of potential bytes in drop down)
+
     
+    **Can do something new called multi indexing
+
+    
+        
