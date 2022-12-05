@@ -69,6 +69,14 @@ Juypter Notebooks:
 
     
     **Can do something new called multi indexing
+        You can have multiple dimensions
+        Square Matrix:             0  1  2
+        square_matrix = np.array([[1, 2, 3],  0
+                                  [4, 5, 6],  1
+                                  [7, 8, 9]   2 
+                                  ]) 
+            
+            across[:,  down :]
 
     
         
