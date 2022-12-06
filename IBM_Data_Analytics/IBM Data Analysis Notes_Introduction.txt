@@ -477,5 +477,236 @@ Data Repositories:
             -process streaming data fast
             -process complex analytics fast
 
+**********************************
+    Process for Identifying Data:
+        -determine the info you want to collect 
+            specific info you need
+            possible sources for Data
+        -define a plan for collecting data
+            -establish timeframe for collecting data
+            -how much data is sufficient for a credible analysis
+            -define dependencies, risks, and mitigation plan
+        -determine data collection methods
+            -sources of data
+            -type of data
+            -timeframe over which you need the data 
+            -volume of data
+        
+        data you identify, the source of that data and the practices you employ
+        for gathering the data have implications for 
+            quality
+            security
+            privacy
+
+        In order to be reliable, data needs to be:
+            Free of Errors, Accurate, Complete, Relevant, Accessible
+
+        Data Governance policies and procedures relate to the usability, integrity and 
+        availability of data.
+
+        Data privacy issues include:
+            Confidentiality, Compliance to mandated regs., License for use
+                You need to define: **********
+                    Checks, Validations, Auditable trail
+    
+    Data Sources:
+        Internal and External data to an organization   
+            Primary,- data from orgs. CRM, HR, or workflow apps 
+                data you gather directly from surveys, interviews, discussions, Oberservations
+                    and focus group
+            Secondary - external databases, research articles, publications, training material, internet 
+                searches or financial records available as public data, external surveys, interviews,
+                external discussions or external Oberservations and focus groups
+            Third-party - data purchased from aggrators purchased from other organizations
+
+        databases- can be primary, Secondary or third party
+        web- 
+        social media - 
+        sensor data - 
+        data exchange - third party data source 
+        surveys - 
+        Census data - 
+        Interview - for gathering qualitative data 
+        Oberservation studies - could be all 3
+
+        Try to supplement data with all of the different sources, Primary, Secondary and Third
+
+    How to Gather and import data:
+        SQL for relational databases
+        SQL, CQL-Cassandra, GraphQL-Neo4J for non relational
+        APIs - invoked from apps that access and endpoint containing data   
+            endpoint can include databases, web services and data marketplaces
+            -also used for data validation like postal address or zip codes
+        Web Scraping - downloading specific dat from web pages
+                        text, contact info, images, videos, podcast and product items from web property
+            RSS feeds - for capturing
+        Data Streams - Instruments, IoT devices, Apps, Car GPS, social media sites and interactive platforms
+        Data Exchange Platforms - facilitate the exchange of data, 
+            -provide data licensing workflows, de-identification and protection of personal info
+                leagl frameworks, and a quarantined analytics enviroment
+            -Ex. AWS DataExchange, Crunchbase, Lotame, Snowflake
+        Other Sources - 
+            Forrester and Business Insider for marketing trends and ad spending
+            Gartner and Forrester for strategic and operational guidance
+            Agencies for user behavior data, mobile and web usage, market surveys, and 
+                demographic studies.
+
+        Importing Data:
+            Combine data from different sources into data repositories
+                -needs to be optimized
+            Structured data: OLTP systems, spreadsheets, online forms, sensors, network and web logs
+                also nosql
+            Semi-structured data: emails, XML, zipped files, binary executables and TCP/IP protocols
+                -can be stored in NoSQL clusters
+                -XML and JSON are commonly used for storing and exchanging semi-structured data 
+            Unstructured data: web pages, social media feeds, images, videos, documents, media logs
+                                        and surveys 
+                -Can be stored in NoSQL databases and data lakes
+                -ETL tools and data pipelines provide automated functions that facilitate   
+                    the process of importing data   
+                        Ex of programs - talend, informatica and Python, R
+
+What is data Wrangling:
+    Also known as Data Munging:
+        Iterative process that involves data exploration, transformation, validation and marketing
+        it available for credible and meaningful analysis.
+    4 steps: 
+        ***Discovery/exploration   
+            -examining and understanding your data 
+            -creating a plan for cleaning, structuring, organinzing and mapping data 
+        ***Transformation 
+            -bulk of process 
+            -structuring data 
+                -possibly combining data from nrdbms and api    
+                    -with joins or unions potentially
+                        -joins combine tables but keep columns separated
+                        -unions combine single table(video says rows, 
+                                        think vertical integration of tables)
+            -normalizing and denormalizing
+                -normalizing 
+                    -cleaning unused data
+                    -reducing redundancy
+                    -reducing inconsistency
+                -denormalizing
+                    -combining data from multiple tables into a single table for faster querying
+                    of data for reports and analysis
+                        -transactions?
+            -cleaning
+                -fix irregularities in data in order to produce a credible and accurate analysis
+                    - missing data, incomplete data, Biases in data, Null Values, Outliers 
+                        -sale of certain product that did not capture the gender 
+            -enriching 
+                - adding more data points to make analysis more meaning full 
+                    - gathering data from mulitple systems or public data sets  
+                        - sell IT periferals
+                            -look for public data sources   
+                            - meta data 
+        ***Validation 
+            -checking the quality of data after above steps
+            -verifying consistency, quality and security of data
+        ***Publishing
+            - delivering the output of the wrangled data for downstream project needs
+          -Documentation
+            - important to document steps took and your consideration for taking those steps, 
+                to convert raw data into analysis-ready data
+            - Document everything
+    
+    Tools for Data Wrangling: 
+        -Excel Power Query/spreadsheets 
+            - can import using Query
+        -OpenRefine
+            - can import or export data in TSV, CSV, XLS, XML and JSON
+            - open source
+            - can clean, transform/convert format, extend data with web services and external data 
+            - easy to learn and use
+            - offer menus
+        -Google DataPrep
+            - intelligent cloud data service
+            - visually explore, clean and prepare both structured and unstructured data 
+            - fully managed service 
+            - data prep super east
+            - offers suggestions on ideal next steps
+            - automatically detects schemas, data types and anomalies
+        -Watson Studio Refinery
+            - need IBM Watson Studio
+            - discover, cleanse and transform data with built in operations
+            - transforms large amount of raw data  into consummable, quality information ready for analytics
+            - offers flexibility of exploring data residing in a spectrum of data sources
+            - detects data types and classifications automatically
+            - enforces applicable data Governance policies automatically 
+        -Trifacta Wrangler
+            - interactive cloud based service for cleaning and transforming data
+            - takes messy, real-world data and cleans and rearranges it into data tables
+            - can export to excel, tableau and R 
+            - known for its collaboration features ******** 
+        -Python
+            - huge library and packages
+                - Jupyter Notebook
+                - NumPy 
+                -Pandas -data anlalysis operations  
+                    - merging, joining, transforming huge chunks of data using simple, single line commands 
+                    - helps prevent common errors that result from misaligned data coming in from different sources       
+        -R 
+            - also has libraries and packages explicitly for wrangling messy data
+                - investigate, manipulate and analyze data
+                -Dplyr - powerful library for data wrangling with a precise straightforward syntax
+                -Data.table - helps appregate large data sets quickly
+                -Jsonlite - robust JSON parsing tool, great for interacting with web APIs 
+
+        Make the right data tool choice:
+            -case, infrastructure and team
+                -supported data size
+                -data structure
+                -cleaning and transformation capabilites
+                -infrastructure needs
+                -ease of use
+                -learnability
+    
+    Data Cleaning: 
+        Part of the above transformation process
+
+        Data Cleaning Workflow:
+            Inspection
+                -detecting issues and errors
+                -validating against rules and constraints
+                -profiling data to inspect source data
+                -visualizing data using statistical methods 
+            Data Profiling
+                -sturcture 
+                -content
+                -Inter-relationships
+                    - this uncovers anomalies and data quality issues
+                -visualizing
+            Cleaning
+                - will depend on use case and type of issues
+                - missing values 
+                    - filter out or source missing info
+                    - imputation, calculated based on statistical values
+                - duplicate data
+                - irrelevant data   
+                    - not contextual to your case
+                - data type conversion
+                - standardizing data 
+                - syntax errors
+                    - white spaces, extra spaces, typos and formatting issues
+                - outliers  
+                    - examined for accurcay and inclusion
+            Verification
+                - inspecting results to establish effectivness and accuracy achieved as a result 
+                    of the data cleaning
+                - Documentation 
+                    - changes undertaken as part of the data cleaning operational
+                    - reasons for undertaking these changes
+                    - quality of currently stored data  
+
+            Data Preparation and Reliability Viewpoints:
+                -Run summary statistics on data to make sure it is consistent with reality
+                    -mean, median, max
+                - reliable, non biased and free from errors
+                - perform a logic check at high level 
+                - ensure basic data integrity question are addressed before analysis begins 
+
+Overview of Statistical Analysis:
+    
             
 
