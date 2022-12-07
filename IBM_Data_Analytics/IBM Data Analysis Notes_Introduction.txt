@@ -836,6 +836,7 @@ Overview of Statistical Analysis:
         - R - Most widely used languages for performing statistical modeling and computations by statisticians and data miners 
             - libraries operations - regression, classification, data clustering, association mining, text mining, outlier detection, social network anlysis 
             -tm - framework for text mining apps within R 
+            -Tidyverse - loads, aggregate and visualizes data 
             -twitteR - framework for mining tweets 
             -RStudio popular open-source Integrated Development enviroment or IDE for working with R 
         - Python 
@@ -980,15 +981,36 @@ Overview of Communicating and Sharing Data Analysis Findings:
         - R-Studio
             - basic visualizations such as histograms, bar charts, line charts, box plots and scatter plots 
             - advanced visualizations heat maps, mosaic maps, 3d gaphs, and correlograms 
+            - exploratory data analysis 
             - R-Shiny
                 - R package 
                 - can build interactive web apps that can be hosted as stand alone apps on a webpage 
                 - build dashboards, ease helped make it popular 
         - IBM Cognos Analytics 
             - end-to-end analytics solution 
-            - 
+            - AI assistant
+            - importing custom visualizations
+            - forecasting feature that provides times-series data modeling and forecasts  
+            - recommendations for visualizations
+            - conditional formatting, highlighting exceptional data points
+            - known for superior visualizations and overlaying data on physical world using its geospatial capabilities 
         - Tableau 
+            - software company that produces interactive data visualization products 
+            - create interactive graphs, charts in form of dashboards and worksheets, with drag and drop gestures 
+            - option to publist results in form of stories
+            - import R and Python scripts 
+            - compatible with excel, .txt, RDBMS, Google Analytics and Amazon Redshift 
+            - easy to use by everyone for basic aggregation and sorting 
         - Microsoft Power BI 
+            - cloud based business analytics service that enables you to create reports and dashboards 
+            - powerful and flexible tool known for its speed and efficiancy 
+            - drag and drop interface 
+            - compatible with excel, SQL server, cloud-based reppositories 
+            - can collaborate and share dashboards and report securely 
+        
+        Considerations and View Points for Selecting right tool:
+            - Ease of Use
+            - Purpose of Visualization 
 
             
 
