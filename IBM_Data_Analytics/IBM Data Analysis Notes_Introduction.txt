@@ -707,6 +707,288 @@ What is data Wrangling:
                 - ensure basic data integrity question are addressed before analysis begins 
 
 Overview of Statistical Analysis:
+    What is statistics? 
+        - a branch of mathematics dealing with the collection, analysis, interpretation and 
+            presentation of numerical or quantitative data 
+            ex. averages, vaccine data, reducing customer churn
+    Statistical Analysis    
+        - the application of statistical methods to a sample of data
+            in order to develop an understanding of what that data
+            represents
+            - sample - a representative selection drawn from a total population
+                - population - a discrete group of people or things that can be identified by at least 
+                    one common characteristic for puposes of data collection and analysis 
+        
+        - statistical methods help ensure   
+            - data is interpreted correctly
+            - apparent relationships are meaningful 
+
+        - 2 Types of statistics:
+            - Descriptive - summarizing info about the sample
+                - present data in a meaningful way
+                - simpler interpretation of data, summary charts, data and graphs
+                - not a hypothesis
+
+                - central tendency - locating center of data sample 
+                    - mean - average
+                    - median - middle value
+                    - mode - most common value in data set 
+                - dispersion - measure of variability in a datasets
+                    - Variance - how far data point fall from center 
+                        -lower variability - consistent values in a dataset 
+                        - higher variability - data points are dissimilar, likely hood of extreme values
+                    - Standard Deviation - how tightly your data is clustered around the mean 
+                    - Range - distance between the smallest and largest values in your data 
+                - skewness - measure of whether the distribution of values is symmetrical around 
+                                a central value or skewed left or right 
+                            - can affect which types of analyses are valid to perform 
+                            -correlation and scatter plots  
+            - Inferential - making inferences or generalizations about the broader population 
+                    -you can draw generalizations that apply the results of the 
+                        sample population as a whole 
+                
+                - Hypothesis Testing - studying the effectiveness of a vaccine by comparing outcomes    
+                                        in a control group, 
+                                -can tell you whether the efficacy of a vaccine obserbed in a control group
+                                            is likely to exist in the population as well 
+                - Confidence Intervals - incorporte the uncertainty and sample error to create a range of values
+                                             the actual population value is likely to fall within 
+                - Regression Analysis - incoporates hypothesis tests that help determine whether the 
+                                        relationships observed in the sample data actually exist in the population
+                                        rather than just the sample
+
+                Conclusion:
+                    Stats combined with data mining 
+                        - provides measures and methodologies necessary for data mining 
+                        - Identifying patterns that help identify diffs between random noise and signficant fingings 
+            Tools for Statistics:
+                SAS, SPSS, StatSoft
+
+    What is Data Mining?:
+            - the process of extracting knowledge from data
+            - interdisciplinary field that involves the use of pattern recognition technologies, statistical analysis
+                and mathmatical techniques
+            - aims to identify correlations in data, find patterns and variations, understand trends
+                and predict probabilities
+
+        Patterns and Trends:
+            - pattern recognition is the discovery of regularities or commonalities in data
+                - user log data, 
+                    - analysis of user behavior
+            - trend is general tendency of a set of data to change over time    
+                - global warming?!?!?
+
+            Ex. Profiling customers behaviors, needs and disposable income in order to offer tageted campaigns
+             - tracking customer transactions for unusual behaviors and flagging fraudulent transactions using data mining models 
+             - using statistical models to predict a patient's likelihood for specific health conditions and prioritizing treatment 
+             - accessing performance data of students to predict achievement levels and make a focused effort to provide support where required 
+             - helping investigation agencies deploy plice force where the likelhood of crime is higher 
+             -aligning supply and logistics with demand forecasts 
+        
+        Data Mining Techniques:
+            - Descriptive 
+            - Diagnostic
+            - Predictive 
+            - Prescriptive Modeling 
+
+            - Classification 
+                - classifying attributes into target categories 
+            - Clustering    
+                - involves grouping data into clusters so they can be treated as groups 
+                - based on geographic regions 
+            - Anomaly or Outlier Detection 
+                - finding patterns in data that are not normal or unexpected 
+                - spikes in usage of credit Cassandra
+            - Association Rule Mining   
+                - establishing a relationship between two data events 
+                - purchase of laptop with cooling pad 
+            - Sequential Patterns 
+                - tracing a series of events that take place in a sequence
+                - customers shopping trail on online store
+            - Affinity Grouping 
+                - discovering co-occurence in relationships 
+                - recommending products based on other peoples buying habits that are similar 
+            - Decision Tree
+                - building classification models in the form of a tree structure with multiple branches, 
+                    where each branch represents a probable occurence 
+                - helps to define a clear understaning of input and output 
+            - Regression 
+                - identifying the nature of the relationship between two variables, which could be causal or correlation 
+                - based on factors of location and area to predict value of house 
+            
+            Conclusion:
+                - Helps businesses focus on what is relevant 
     
+    Tools for Data Mining:
+        - Spreadsheets 
+            - basic data mining tasks 
+            - hosting data that has been exported from other systems in easily accessible and easy to read format 
+            - pivot tables to showcase specific aspects
+            -easier to compare sets 
+            -Excel addins - allow you to perform common mining tasks such as classification, regresson, association rules, clustering and model building 
+                -Data Mining Client
+                -XLMiner
+                -KnowledgeMiner
+            -Google Sheets add ons- 
+                -Text Analysis 
+                -Text Mining 
+                -Google Analytics 
+        - R - Most widely used languages for performing statistical modeling and computations by statisticians and data miners 
+            - libraries operations - regression, classification, data clustering, association mining, text mining, outlier detection, social network anlysis 
+            -tm - framework for text mining apps within R 
+            -twitteR - framework for mining tweets 
+            -RStudio popular open-source Integrated Development enviroment or IDE for working with R 
+        - Python 
+            - Pandas -  data structures and analysis, can upload data in any format and provides simple platform to organize, sort and manipulate data 
+                - basic numerical computations mean, median, mode and range
+                - calculate statistics and answer questions regarding correlation between data and distribution of data 
+                - explore data visually and quantitatively 
+            - Numpy - tool for mathematical computing and data preparation in Python
+                - offers built in functions and capabilites for data mining 
+            - JupyterLab - tool of choice for Data Scientist and Data Analysts when working with Python to perform data 
+                        mining and statistical analysis 
+        - IBM SPSS Statistics 
+            - Statistical Process for Social Sciences 
+                - popularly used for advanced analytics, text analytics, trend analysis, validation fof assumptions, and 
+                    translation of business problems into data science solutions 
+                - closed source
+                - needs License
+                - minimal coding for complex tasks
+                - efficient data management tools 
+                - popular for its in-depth analysis capabilites and accurate data results 
+        - IBM Watson Studio 
+            - included in IBM Cloud Pak for data 
+                - leverages a collection of open source tools such as Jupyter notebooks
+                    and extends them with closed source IBM tools that make it a powerful   
+                    enviroment for data analysis and data science 
+            - available through a web browser on the public cloud, private cloud and as a descktop app 
+            - enables collaboration, 
+            - includes SPSS Modeller flows that enable you to quickly develop predictive models for your business data 
+        - SAS Enterprise Miner
+            - provides powerful capabilities for interactive data exploration 
+            - can manage information from varous sources, mine and transform data and analyze statistics 
+            - offers graphical user interface 
+            - identify patterns in the data using a range of available modeling techniques
+            - explore relationships and anomalies in data
+            - analyze big data 
+            - validate the reliability of finding from the data analysis process 
+            - easy to use syntax 
+            - high security 
+
+
+
+
+
+Overview of Communicating and Sharing Data Analysis Findings: 
+    Data Projects - 
+        - collaborative efforts across business functions
+        - people with multi-disciplinary skills
+        - finding incorporated into larger business iniciative 
+        - Success of your communication depends on how well others can understand and trust your insights to take further action 
+            -story 
+            -visualization
+            -data 
+        Questions?
+            -Who is my audience? 
+            -What is important to them?
+                -what and how much info is essential 
+                -don't bring out all the data, presentation is not a data dump 
+            -What will help them trust me?
+                -begin presentation by demonstrating your understanding of the business problem 
+                -speak in language of organizations domain 
+                -structure presentation for maximum impact 
+                    -reference your data 
+                    -state your assumptions
+                    -organize representation 
+                    -identify best formats for presenting your data 
+                    -Role of Visualizations 
+                        -graphs, charts, diagrams 
+                -audience needs to trust, understand and relatability
+                    -establish credibility
+                    -present data with a narrative
+                    -support the narrative with visual impressions 
+    
+    Storytelling with Data Analysis:
+        - Storytelling is critical 
+            -be clear, concise and compelling 
+        - develop story while your researching and testing 
+        - find balance between clarity and conveying complexities 
+        - find best way to communicate 
+    
+    Intro to Data Visualization:
+        - discipline of communicating information through the use of visual elements such as graphs, charts and maps. 
+            - Its goal is to make information easy to comprehend, interpret and retain
+        - Choosing Appropriate Visualizations 
+            - What is the relationship that I am trying to establish?
+            - Do I want to compare mulitple values, such as the number of products sold and revenues generated over the last 3 years?
+            - Do I need my audience to see the correlation between 2 variables? 
+            - Do I want to detect anomalies in data? 
+
+            - What is the question I'm trying to answer? 
+                - answer this question for audience with every dataset and information that you visualize 
+                - consider whether the vis. is static or interactive
+                - takeaway for my audience?
+                - what does audience need to know?
+                - what questions do they have? 
+
+        - Common types of Graphs:
+            -Bar charts
+            -Column Charts - effective to show change over time 
+            -Pie Charts - show break down of entity 
+            -Line Charts - showing data value is changing in relation to a continuous variable 
+
+        -Dashboards:
+            - organize and display visualizations coming from multiple data sources into a single graphical interface 
+            - can present both operational and analytical data 
+                - birds eye view of the complete picture while also allowinng you to drill down into tthe next level of info for each parameter 
+                - easy to comprehend by an average user 
+                - make collab easier
+                - generate reports on the go 
+                - almost instant 
+    
+    Introduction to Visualization and Dashboarding Software:
+        - Spreadsheets
+            -most commonly used for graphical representation of data sets
+            -easy to learn
+            -tons of Documentation
+            -Excel
+                -bar charts, line charts, pie charts, pivot charts, scatter charts, trendlines, Gantt charts, Waterfall charts and Combination Charts 
+                - provides recommendations on visual representation 
+                -can add chart title, chang colors of elements, and add labels to data 
+            -Google Sheets 
+                -wide range of charts 
+                -high light data and click chart button for vis. recommendations
+                -preferred for mulitple users 
+        - Jupyter Notebooks and Python libraries
+            -open-source 
+            -explor and create visualizations 
+            -matplotlib
+                -widely used python data visualization Library
+                -probides 2d and 3d plots and the flexibility to create plots in several different ways 
+                - high-quality interacitve graphs and plots with just a few lines of code 
+                - large community support and cross-platform support 
+            -bokey 
+                - interacitve charts and plots 
+                - high performance interactivity over large or streaming datasets
+                - flexibility for applying interation, layouts and different styling options to visualization 
+                - can transform some visualizations written in other Python Libraries, such as matplotlib, seaborn and Ggplot 
+            -Dash 
+                - python framework for creating interactive web-based visualizations
+                - can build highly interacitve web apps using Python 
+                - does not require knowledge of HTML and javascript 
+                - easily maintainable, cross-platform and mobile-ready 
+        - R-Studio
+            - basic visualizations such as histograms, bar charts, line charts, box plots and scatter plots 
+            - advanced visualizations heat maps, mosaic maps, 3d gaphs, and correlograms 
+            - R-Shiny
+                - R package 
+                - can build interactive web apps that can be hosted as stand alone apps on a webpage 
+                - build dashboards, ease helped make it popular 
+        - IBM Cognos Analytics 
+            - end-to-end analytics solution 
+            - 
+        - Tableau 
+        - Microsoft Power BI 
+
             
 

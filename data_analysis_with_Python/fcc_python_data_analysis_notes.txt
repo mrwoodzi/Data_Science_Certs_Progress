@@ -39,6 +39,7 @@ Juypter Notebooks:
     Cut: x
     Paste: v 
     Copy: c 
+    ****Shift + Tab ***** gives you a whole bunch of information
 
     Make cell Markdown with m 
     Make cell Code/Python with y 
@@ -47,6 +48,23 @@ Juypter Notebooks:
     Different option over MatPlotLiv is Bokeh: has interactive charts 
 
     Numpy: Numeric Computing Library:
+        Why use NumPy:
+        https://www.freecodecamp.org/learn/data-analysis-with-python/numpy/what-is-numpy
+            Fast 
+                -Fixed Type
+                    -int32 at 4 bytes, you can also specify what int you want 
+                        Byte then Bit
+                    -less bytes of memory 
+                    -iterates faster cause it doesn't have to check the type of each element
+                -Contiguous memory
+                    -all blocks of memory are right next to each other 
+                    -called SIMD Vector Processing 
+                        -single instruction multiple data 
+                    -effective cache utilization 
+            -Numpy is backend of Pandas, Connect 4 and Digital Photography, 
+            -Machine Learning 
+
+
         How to Install NumPy: py -m pip install numpy
         https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/numpy-introduction-a
         https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/numpy-introduction-b
@@ -78,5 +96,7 @@ Juypter Notebooks:
             
             across[:,  down :]
 
+    Broadcasting and Vectorized operations:
+        a = np.arange(whatever_your_int_range_is)
     
         
