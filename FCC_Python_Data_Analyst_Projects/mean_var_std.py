@@ -2,11 +2,11 @@ import numpy as np
 
 def calculate(list):
     calculations = {}
+    list_numpy = np.array(list) # turns list into numpy array
+    list_array = list_numpy.reshape(3, 3) # reshapes list into numpy matrix
     if len(list) < 9 or len(list) > 9:
       raise ValueError("List must contain nine numbers.")
     else:
-      list_numpy = np.array(list) # turns list into numpy array
-      list_array = list_numpy.reshape(3, 3) # reshapes list into numpy matrix
       axis0_stat = np.mean(list_array[:, 0])
       axis1_stat = np.mean(list_array[:, 1])
       axis2_stat = np.mean(list_array[:, -1])
@@ -51,14 +51,16 @@ def calculate(list):
       flattened_sum = np.sum(list)
       calculations['mean'] = [[axis0_stat, axis1_stat, axis2_stat], [axis0, axis1, axis2], flattened_stat]
       calculations['variance'] = [[axis0_var, axis1_var, axis2_var], [axis0var, axis1var, axis2var], flattened_var]
-      calculations['stdandard deviation'] = [[axis0_std, axis1_std, axis2_std], [axis0std, axis1std, axis2std], flattened_std]
+      calculations['standard deviation'] = [[axis0_std, axis1_std, axis2_std], [axis0std, axis1std, axis2std], flattened_std]
       calculations['max'] = [[axis0_max, axis1_max, axis2_max], [axis0max, axis1max, axis2max], flattened_max]
       calculations['min'] = [[axis0_min, axis1_min, axis2_min], [axis0min, axis1min, axis2min], flattened_min]
       calculations['sum'] = [[axis0_sum, axis1_sum, axis2_sum], [axis0sum, axis1sum, axis2sum], flattened_sum]
 
-
     return calculations
 
 stat_var_std = [2,6,2,8,4,0,1,5,7]
+a = [0,1,2,3,4,5,6,7,8]
+b = [9,1,5,3,3,3,2,9,0]
 print(calculate(stat_var_std))
-
+print(calculate(a))
+print(calculate(b))
