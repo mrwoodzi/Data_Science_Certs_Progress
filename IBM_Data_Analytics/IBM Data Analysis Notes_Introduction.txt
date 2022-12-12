@@ -1012,5 +1012,74 @@ Overview of Communicating and Sharing Data Analysis Findings:
             - Ease of Use
             - Purpose of Visualization 
 
+
+Career Opportunities in Data Analysis:
+    12.3% growth rate to 2027
+    Job Roles:
+        Data Analyst Specialist Roles
+            Principal Analyst
+            Lead Analyst
+            Senior Data Analyst
+            Data Analyst
+            Associate Analyst
+        Domain Specialist Roles(also known as Functional Analyst)
+            -Seen as an authority in their domain, such as, HR, healthcare, sales, finance
+                social media or digital marketing 
+            -May or may not be technically skilled
+            -Carry titles such as HR Analyst, Marketing Analyst, Sales Analyst, healthcare Analyst 
+                or Social Media Analyst 
+        Analytics-enabled Job Roles:
+            - Analytics skills in these job roles lead to greater efficacy and effectiveness 
+            Project Managers
+            Marketing Managers
+            HR Managers 
+        Other Data Professions
+            Data Engineers
+            Data Scientist 
+            Business Analyst
+            Business Intelligence Analyst 
+    
+    What do employers look for in a Data Analyst?
+        -Integrity 
+        -Clear Communication 
+        -fluency with numbers 
+        -understand complex analysis
+        -understand AB tests 
+        -strong sql skills 
+        -growth mindset and willingnes to learn 
+        -detail oriented 
+        -problem solver
+        -over-achievers 
+        -think outside the box 
+        -know what kind of data will solve the given problem 
+        -be dynamic and adaptable 
+        -pick up technical skills quickly 
+    Many Paths to Data Analysis:
+        -academic degree
+        -alternate paths 
+    Career Option for Data professionals:
+        -data Analyst
+        -Data Scientist
+        -statisticians
+        -Data Engineer 
+        -BI Analyst 
+        -Machine Learning/AI Engineer 
+        -Manage other Data Analyst 
+    Advice: 
+        -keep learning don't get discouraged 
+        -don't try to learn everything at once 
+        -develop broad knowledge in several areas 
+        -develop deep understanding in 1 area 
+        -use every job to your advantage 
+        -keep examples ready while talking to potential employers 
+        -how have you used analytics in real life 
+        -build out professional portfolio
+            -look up fun data sets
+            -look for Opportunities to crunch numbers 
+        -follow passion
+        -find job that meets your needs and gives you joy 
+        -find a job that fuels your passion 
+    Women in Data:
+        -?
             
 
