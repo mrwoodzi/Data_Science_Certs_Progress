@@ -1,3 +1,5 @@
+# how can I do this with numpy or nonlocal variable
+
 def recursive_binary_search(list, target):
     if len(list) == 0: # stopping condition
         return False 
