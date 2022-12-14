@@ -115,3 +115,39 @@ the end of the cell's contents	            F2
 Enter the current time	                    Ctrl+Shift+colon (:)
 Enter the current date	                    Ctrl+semi-colon (;)
             
+    Advantages and Limitations of Spreadsheets:
+        Benefits:
+            -really useful in proper context
+            -you can see all data 
+            -funcitionality, pivot tables, charts, formulas
+            -one stop shop for a lots
+            -Erp 
+            -great for simple analysis 
+            -constant imporvement 
+            - 0 - 20,000 lines of data and you are good, not too big 
+            -no fancy tools needed 
+        Limitations:
+            -really hard to reporduce state 
+                -no way to tell what steps have been taken to modify data set 
+            -impossible to know everything excel does 
+            -complex formulas can break the program, keep it simple 
+            -spreadsheets can crash with large data sets 
+            -less flexibility for analysis and presentation 
+
+There are several spreadsheet applications available in the 
+marketplace; the most commonly used and fully-featured spreadsheet 
+application is Microsoft Excel. 
+
+Spreadsheets provide several advantages over manual calculation 
+methods and they help you keep data organized and easily accessible. 
+
+As a Data Analyst, you can use spreadsheets as a tool for your 
+data analysis tasks. 
+
+There are several elements that make up a workbook in 
+a spreadsheet application. 
+
+The ribbon provides access to all the features and tools 
+required to view, enter, edit, manipulate, clean, and analyze data in Excel. 
+
+There are several ways to navigate around a worksheet and workbook in Excel. 

@@ -16,6 +16,8 @@ What does the loc method allow you to do?
 
 To Run JupyterLab: python -m jupyterlab
 How to Install NumPy: py -m pip install numpy
+How to Install Pandas: py -m pip install pandas 
+How to Install PYXL: py -m pip install openpyxl
 Juypter Notebooks:
     ecosystem of tools
     free open source
