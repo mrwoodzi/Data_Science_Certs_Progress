@@ -151,3 +151,132 @@ The ribbon provides access to all the features and tools
 required to view, enter, edit, manipulate, clean, and analyze data in Excel. 
 
 There are several ways to navigate around a worksheet and workbook in Excel. 
+
+
+
+
+
+
+
+Getting Started Using Sheets:
+    split - allows you to split into multiple sections and scroll just those sections
+    freeze panes/rows/columns
+        - 1 row below and 1 column to right of where you want to freeze 
+    ctrl + f6 to quickly switch from workbook to workbook 
+    ctrl + n new worksheet
+    header row - 
+    auto center column length - highlight all columns then double click bar inbetween 
+    editing existing data 
+        - f2 or double click
+    Autofill
+        -for lots of repetitive data in excel
+        -use fill handle
+            -cross at bottom right hand corner of cell 
+            -numerical or month/day of week
+            -it can determine a pattern
+            -ex. like every other day 
+                Mon 
+                Wed 
+    Formatting Data - 
+        -Formatting cells
+            -Bold
+            -color
+            -cntrl+shift+up key or down key to highlight full row or columns 
+            -cell number - custom to format cell 
+            -styles drop down menu 
+                -font
+                -color
+        -Formatting data in cells
+            -currency 
+            -accounting 
+
+    Home 
+        Groups are 
+            undo 
+            clipboard 
+            alignment 
+            styles 
+            cells 
+            editing
+            Number
+            tables  also called group
+                Format as tables
+                    Choose a color to make the table 
+            - you can auto format the whole thing here 
+    
+    
+    Basics of Formulas:
+        = starts formulas
+        then function sum
+        then reference('cells function is calculating')
+        then operators + - * /
+        comparison
+        text concatination
+        reference
+        constants - numbers or values you can reference directly in a formula
+            -whole number
+            -percentage
+            -date 
+            
+        Basic calculations
+            =SUM(E2,E3) or =SUM(E2:E3)
+            =SUM(THEN CLICK YOUR MOUSE TO HIGHLIGHT CELLS WANTED)
+            Autofill - you can drag a function to any cell
+                -double click fill handle(cross bottom right of cell) and it will autofill a whole column 
+            AutoSUM - sum average max min or Alt + = Keyboard short cut 
+        More Functions:
+            Common functions    
+            Avg, Min, Max, Count, Median 
+            AutoSUM does all the above 
+            400+ functions 
+            Formulas 
+                Funcion Library 
+                    Recently Used 
+                    financail
+                    Logical - boolean
+                    Text - concat = concatinate 
+                    Date/time
+                    Lookup & Reference 
+                    Math&Trig cosi sin tan 
+                    More Functions  
+                        statistical
+                        engineering
+                        cube
+                        information
+                        compatibility
+                        web 
+            Insert Function
+                -you can search for function        
+
+        Referencing Data in Formulas:
+            Relative
+                =A1+A3 blue and red highlighted cell
+                    - when moved formula will change there relative position
+                -by default excel uses relative References
+                -when you reference a cell in a formula, you 
+                    are actually referencing its relative position
+                -cell references are automatically changed
+                    in the copied formula
+            Absolute
+                -put $ infront of column or row identifier 
+                    =$A$1+$A$3
+                        -formula stays exactly the same no matter where you move it
+                -when you copy a formula containing absolute references
+                    the cell references stay the same in the copied formula
+            Mixed References 
+                =A$1+$A3
+                combo of relative and absolute
+                =A$+$A3 - absolute column and relative row 
+                -when you copy a formula containing mixed references, the relative cell reference
+                    changes, while the absolute cell reference stays the same in the copied formula 
+            Formula Errors
+                #### - can't see a full date/time or something else
+                    - not technically an error
+                Error codes  
+                        -gives a drop down error message 
+                    #N/A 
+                    #NAME? - using x as multiplication operator
+                    #NULL!
+                    #REF!
+                    #VALUE! 
+                    #DIV/O!
