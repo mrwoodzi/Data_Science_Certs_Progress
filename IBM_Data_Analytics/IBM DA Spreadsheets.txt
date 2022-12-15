@@ -280,3 +280,226 @@ Getting Started Using Sheets:
                     #REF!
                     #VALUE! 
                     #DIV/O!
+
+
+
+
+
+
+Basics if Data Quality and Privacy:
+    5 traits of good data   
+        -accuracy
+            -first and most significant aspect to data quality
+        -completeness
+            -determine data is complete and readily available 
+        -timeliness
+            -availability and accessibility
+            -is data refreshed enough 
+        -reliability
+            -
+        -relevance
+            -is data being assembled really necessary for the project 
+
+    Importing File Data:
+        -other formats, plain text or comma separated
+            -.csv, txt 
+        -text import wizard
+            -will try to auto find out
+                -delimited 
+                    -my data has headers 
+                    step 2 delimiter
+                        -which data is separating data  
+                            -comma, semicolon, space, tab
+                    step 3 data format  
+                        -test, date, general,
+        -fix column widths
+            -auto  adjust with 
+        -deleting columns   
+            -delete drop down menu 
+        -delete row 
+            -
+        -saving 
+            -save as or yellow tool tip save as 
+    
+    Basics of Data Privacy: 
+        Confidentiality
+            -acknowledges that the customers personal information belongs to them
+            -sales forcast 
+            -employee information
+            -patient records 
+            -Personal information or PI 
+                -any type of information that can be traced back to a specific individual
+                -amything from emails to images 
+                -Personally Identifiable Information or PII 
+                    -specific information that could be used to identify 
+                        an individual. 
+                    -SS number, or driver's license number 
+                -Sensitive Personal Information or SPI 
+                    -may not necessarily identify a specific individual, 
+                        but contains private information that needs to be   
+                        protected because if made public it could possibly
+                        be used to harm the individual. 
+                    -race, sex, biometric or genetic information 
+        Collection and Use
+            -by understanding personal data and the associated regulations, 
+                we can efficiently anonymize our data by removing unnecessary
+                information
+            -when searching through  data, the analyst must know the location of the 
+                company collecting the data and the location of the respondent 
+            -General Data Protection Regulation or GDPR
+                -reg. specific to the European Union
+            -LGPD -Lei Geral de Protecao de Dados Pessoais
+                -new data reg. to individuals within Brazil
+                    ignores the location of the data processor 
+            -US does not have one big principal law for data Privacy
+                -Some States do 
+                    -CCPA or California Consumer Privacy Act  
+            -Industry Specific 
+                -HIPAA privacy rules govern the collection and disclosure of 
+                    protected health info. 
+                -PCI - in retail govern credit card data, and failure to safeguard 
+                    cardholder information can result in hefty fines 
+        Compliance 
+            -understanding how to remain compliant is essential 
+                -to stay safe
+                -keep customer confidence high
+            -making data anonymous means to exclude all data which ties 
+                it back to a particular individual 
+
+    Data Quality and Privacy:
+        Data quality is of utmost importance to data analytics 
+            -because "Where did you get the data?"
+            -"How has the data been transformed?"
+            -People like to think they know and understand their business 
+            -Good quality data is the backbone of any succesful data analysis project   
+                -garbage in > garbage out 
+                    -input bad quality data and you can expect bad quality results
+                -nothing more import that data is good 
+                -important to self-check the data yourself 
+            -data accuracy is above all else 
+            -integrity is super important 
+        Data Privacy    
+            -users are getting appropriate levels of data based on their roles and permissions 
+                -who has access to what 
+    
+
+
+
+Removing Duplicated or Inaccurate Data and Empty Rows:
+    This is Data Ckeaning
+        -spell checking 
+            -select data
+            -review tab 
+                -spell check
+        -empty rows 
+            -ctrl+ down arrow - to find empty rows 
+            -manual scroll or 
+            -select all data 
+                -data tab
+                    -filter 
+                        -scroll to bottom and select empty 
+                        -ctrl+shift+end 
+        -Duplicated rows of data 
+            -1 review data first ******************
+            -1st and recommended method to delete data  
+                -select column of data where duplicates are not expected 
+                -Home Tab 
+                -conditional Formatting 
+                    -highlight cells rules  
+                        -duplicate values 
+                                    -duplicates will be identified in red as you scroll down 
+            -2nd method to delete data 
+                -select all 
+                    -data tab
+                        -remove duplicates
+                            -unselect all then select only what you want 
+        -find and replace 
+            -find and select on Home    
+                -find next 
+                    -find all - finds all instances 
+        
+    Dealing with Inconsistencies in Data:
+        Fixing Fomat Case:
+            -Functions 
+                Upper -
+Task B: Use the UPPER function to change text from proper case to upper case
+Select column AG (Generation). Then right-click and choose Insert Columns. In cell AG1, type Generation.
+In cell AG2, type =UPPER(AH2) and press Enter.
+Hover over the bottom-right corner of cell AG2 and double-click the Fill Handle.
+Select column AG, then press CTRL+C.
+Select column AH, right-click and choose Paste Options>Values.
+Select column AG, right-click it and choose Delete Columns. 
+                lower
+                    -helper column or row 
+                        -type =LOWER(CELL REFERENCE)
+                            -then you can auto fill 
+                                -copy and paste 
+                                    -paste values 
+                                        -delete helper column 
+                Proper =PROPER 
+Task A: Use the PROPER function to change text from upper case to proper case
+Select row 2, then right-click it and choose Insert Rows.
+In cell A2, type =PROPER(A1) and press Enter.
+Hover over the bottom-right corner of cell A2, and drag the Fill Handle across to the last column.
+If dragging across is too difficult with the mouse, then select the cells in the row 2 using SHIFT+RIGHT ARROW, 
+then press F2 to put the cursor focus back in cell A2, then hold CTRL while you press Enter.
+Select row 2, then press CTRL+C.
+Select row 1, Right-click and choose Paste Options>Values.
+Select row 2, right-click it and choose Delete Rows. 
+        Date Format change:
+            -Format Cells 
+                -Pick What you want 
+                -can be Custom format you choose 
+                    -format painter or select all and 
+        Unwanted Whitespace change:
+            -Find and Replace Feature 
+                -find and select    
+                    -replace 
+                        -double space - find what 
+                        -single space - replace with
+                    -better practice to replace one at a time or in sequence 
+                -can't use find and replace to remove single space ********
+                    -trim function 
+                        -helper column =TRIM()
+                            -auto 
+                            -copy and paste 
+                                -paste value 
+    
+    More Excel Features for Cleaning Data:
+        Flash Fill - quick method for filling data and data cleaning 
+            -can split columns into 2 names 
+            -can combine columns 
+            -helper column 
+                -first piece of data in proper format 
+                -do 2 cells to show computer what your doing 
+                -press enter and it auto fills 
+                -remove original columns 
+            -Modify naming convention 
+                -changing names to last_name, first_name 
+                -2 cells to show 
+                -press enter 
+            -Text to Columns Feature 
+                -splitting multi part text  
+                -adding 2 new column headers 
+                    -select data columnn 
+                        - data tab
+                            -text to column 
+                                -delimited 
+                                    -space as delimiter
+                                        -arrow next to destination 
+                -function method 
+                    =LEFT(A2,SEARCH("",A2,1)) # in one column
+                    =RIGHT(A2,LEN(A2)-SEARCH("",A2,1)) # in another column 
+
+    Issues with Data Quality 
+        -cleaning, verifying, checking data - lots of time spent doing this 
+        -no data is going to be perfect 
+            -missing data
+            -incorrect format 
+        -data cleansing 
+        -is what I'm looking at correct 
+        -is it relevant 
+        -is this all the data 
+        -go back and look at sources 
+        -make adjustments 
+
