@@ -430,12 +430,12 @@ Select column AG, then press CTRL+C.
 Select column AH, right-click and choose Paste Options>Values.
 Select column AG, right-click it and choose Delete Columns. 
                 lower
-                    -helper column or row 
-                        -type =LOWER(CELL REFERENCE)
-                            -then you can auto fill 
-                                -copy and paste 
-                                    -paste values 
-                                        -delete helper column 
+Select column AC (T_Type). Then right-click and choose Insert Columns. In cell AC1, type T_Type.
+In cell AC2, type =LOWER(AD2) and press Enter.
+Hover over the bottom-right corner of cell AC2 and double-click the Fill Handle.
+Select column AC, then press CTRL+C.
+Select column AD, right-click and choose Paste Options>Values.
+Select column AC, right-click it and choose Delete Columns. 
                 Proper =PROPER 
 Task A: Use the PROPER function to change text from upper case to proper case
 Select row 2, then right-click it and choose Insert Rows.
@@ -448,9 +448,11 @@ Select row 1, Right-click and choose Paste Options>Values.
 Select row 2, right-click it and choose Delete Rows. 
         Date Format change:
             -Format Cells 
-                -Pick What you want 
-                -can be Custom format you choose 
-                    -format painter or select all and 
+Select column Z (Order_Ship_Date).
+On the Home tab, in the Number group click Number Format> More Number Formats.
+In the Category list, select Date.
+In the Format Cells box, under Locale, select English (United States).
+Under Type, select Wednesday, March 14, 2012 and click OK.
         Unwanted Whitespace change:
             -Find and Replace Feature 
                 -find and select    
@@ -466,6 +468,11 @@ Select row 2, right-click it and choose Delete Rows.
                                 -paste value 
     
     More Excel Features for Cleaning Data:
+    Select column A (Cust_Name), right-click and choose Insert Columns.
+In cell A1 type Customer_Name and press Enter.
+In cell A2, type Mr. Allen Perl and press Enter.
+Select column A (Customer_Name), on the Data tab, click Flash Fill.
+Click Undo to undo this step
         Flash Fill - quick method for filling data and data cleaning 
             -can split columns into 2 names 
             -can combine columns 
@@ -490,6 +497,15 @@ Select row 2, right-click it and choose Delete Rows.
                 -function method 
                     =LEFT(A2,SEARCH("",A2,1)) # in one column
                     =RIGHT(A2,LEN(A2)-SEARCH("",A2,1)) # in another column 
+        Select column A (Cust_Name), right-click and choose Insert Columns.
+Select column A again, right-click and choose Insert Columns.
+In cell A1, type Customer_Firstname and in cell B1, type Customer_Lastname.
+Click C1, then on the Home tab, click Format Painter, then drag across to A1 and B1.
+Double-click the divider between columns A and B.
+In cell A2 type =LEFT(C2, SEARCH(" ",C2,1)) and press Enter.
+In cell B2 type =RIGHT(C2,LEN(C2)-SEARCH(" ",C2,1)) and press Enter.
+Double-click the Fill Handle on cell A2.
+Double-click the Fill Handle on cell B2
 
     Issues with Data Quality 
         -cleaning, verifying, checking data - lots of time spent doing this 
