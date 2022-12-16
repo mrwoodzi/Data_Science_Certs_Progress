@@ -519,3 +519,116 @@ Double-click the Fill Handle on cell B2
         -go back and look at sources 
         -make adjustments 
 
+Intro to Analyzing Spreadsheets:
+    Best Method for Analysis    
+        Shaping our Data 
+            -How big is the dataset?
+            -What type of filtering is required to find the necessary information?
+            -How should the data be sorted?
+            -What type of calculations are needed?
+
+            -Most basic step?
+                -filtering and sorting the data 
+                    -delete duplicates 
+                    -wil be able to organize it based on conditions 
+                        -alphabetically or numberically 
+            -using functions 
+                -mathematical 
+                -statistical 
+                    =AVERAGE(B1:B60)
+                -logical 
+                -financial 
+                -date and time 
+            -analyzing data in a table 
+            -pivot tables with charts 
+                -advantages of pivot table 
+                    -shows only required info 
+                    -nice to go with privot table
+                    -manipulate data without using formulas
+                    -quickly summarize large data sets 
+                    -ability to display engaging charts and graphs 
+
+    Filtering and Sorting Data:
+        Select any cell in the data, and click the Data tab, then click Filter.
+    Click the filter drop-down in column AG (Purchase_Status), and select Filter....
+    In the list, only select Frequent and click OK
+        Custom Filter:
+            Click the filter drop-down in column AD (Order_Value), then Number Filters>Top 10....
+            Change the value from 10 to 50 and Click OK.
+            Click the filter drop-down in the column AD, and click Clear Filter From “Order_Value”.
+
+            Sorting:
+                text based alphabetically
+                Number based Numerically
+                Date based Chronologically 
+                makes it easier to conceptuallize and visualize in a more meaningful way 
+On the Data tab, click Custom Sort to open a dialog box like below
+Click the Column drop-down of row Sort By, select Order_Ship_Date.
+Click the Order drop-down of row Sort By, select Sort Ascending.
+Click Add.
+Click the Column drop-down of row Then By, select Order_Value.
+Click the Order drop-down of row Then By, select Sort Descending.
+Click OK.              
+    Viewpoints Filtering and Sorting Data:
+        -allows you to create one view of data 
+            and gives a function for people 
+        -gets to the hear of the data 
+        -helps you to narrow down and get specific 
+        -allows us to have a value that is specific 
+
+    Useful functions for Data Analysis:
+
+
+
+    Use of IF to apply one condition
+Select column AF, right-click, Insert.
+In cell AF1, type Complete?.
+In cell AF2, type =IF(AE2="Complete","Yes","No") and press Enter.
+Double-click the Fill Handle of AF2 to copy down the column     
+
+    NESTED IF to apply multiple conditions:
+Select column AE, right-click, Insert.
+In cell AE1, type Order Size (IF).
+In cell AE2, type =IF(AD2>300,"Large",IF(AD2>100,"Medium",IF(AD2>0,"Small"))) and press Enter.
+Double-click the Fill Handle of AE2 to copy down the column.
+
+    Use of IFS to apply multiple conditions (alternative of Nested IF)
+Select column AE, right-click, Insert.
+In cell AE1, type Order Size (IFS).
+In cell AE2, type =IFS(AD2>300,"Large",AD2>100,"Medium",AD2>0,"Small") and press Enter.
+Double-click the Fill Handle of AE2 to copy down the column.
+
+    Use of COUNTIF to count the number of cells that meet a specified criterion
+Select cell BX2 and type count VISA card.
+Select cell BY2 and type =COUNTIF(N2:N195,"VISA") and press Enter.
+
+    Use of SUMIF function to sum the values within a specified range that meet a specified criterion
+Select cell BX3 and type sum Large order.
+Select cell BY3 and type =SUMIF(AE2:AE195,"Large", AD2:AD195) and press Enter.
+Formula: =SUMIF(range, criteria, [sum range])
+
+    Use of SUMIFS function to sum the values within a specified range that meet multiple specified criteria
+Select cell BX4 and type sum Large order with Baby Gen.
+Select cell BY4 and type =SUMIFS(AD2:AD195, AE2:AE195,"Large", AL2:AL195,"*BABY_BOOMERS*") and press Enter.
+Formula: =SUMIFS ([sum range], range1, criteria1, range2, criteria2, ...).
+
+    Use of VLOOKUP to look up data in a table organized vertically
+Download the file indian_startup_funding_Lab6.xlsx. Upload and open it using Excel for the web.
+In cell K2,L2,M2, type VLOOKUP, Startup Name, Amount in USD respectively.
+Select and copy cells from C9 to C15 and paste in cell L3.
+In cell M3, type =VLOOKUP(L3, C2:I113, 7, FALSE) and press Enter.
+Formula: =VLOOKUP (value, table, col_index, [range_lookup]).
+Hover over the bottom-right corner of cell M3, and drag the Fill Handle down to the cell M9.
+Select cells from M3 to M9 and select Number Format>Currency
+
+    Use of HLOOKUP to look up data in a table organized horizontally
+Download the file Personal_Monthly_Expenditure_Lab6.xlsx. Upload and open it using Excel for the web.
+In cell J2,K2,L2,M2, type HLOOKUP, Month, Food & Dining, Health & Fitness respectively.
+Select and copy cells from A10 to A12 and paste in cell K3.
+In cell L3, type =HLOOKUP(D1, A1:H14, 10, FALSE) and press Enter.
+Formula: =HLOOKUP (value, table, row_index, [range_lookup]).
+Hover over the bottom-right corner of cell L3, and drag the Fill Handle down to the cell L5.
+Select cells from L3 to L5 and select Number Format>Currency.
+In cell M3, type =HLOOKUP(G1, A1:H14, 10, FALSE) and press Enter.
+Hover over the bottom-right corner of cell M3, and drag the Fill Handle down to the cell M5.
+Select cells from M3 to M5 and select Number Format>Currency.

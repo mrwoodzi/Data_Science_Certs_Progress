@@ -1,4 +1,6 @@
 # this is from cyptodatadownload.com
+# https://docs.cloud.coinbase.com/exchange/docs/requests
+# https://algotrading101.com/learn/coinbase-pro-api-guide/#:~:text='%3A%20'197711129.46'%7D-,How%20to%20get%20historical%20data%20with%20Coinbase%20Pro%20API%3F,parameters%20of%20the%20API%20request.
 # Coinbase_BTCUSD_dailydata.csv
 import pandas as pd
 import requests
