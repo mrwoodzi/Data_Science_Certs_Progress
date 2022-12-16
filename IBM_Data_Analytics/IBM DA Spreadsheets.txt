@@ -577,58 +577,108 @@ Click OK.
         -allows us to have a value that is specific 
 
     Useful functions for Data Analysis:
-
+        IF - most used logical function
+            -compares a value against criteria, then returns a result based
+                on a TRUE or FALSE comparison 
+            -IF says: "if something is TRUE, return 'X', 
+                but if it is FALSE, return 'y'"
 
 
     Use of IF to apply one condition
+        =IF(A1="text","True","False")
+        =IF(A1>3000,"Over 3K","Under 3K")
+        -Ideally only use IF for 1 or maybe 2 conditions
 Select column AF, right-click, Insert.
 In cell AF1, type Complete?.
 In cell AF2, type =IF(AE2="Complete","Yes","No") and press Enter.
 Double-click the Fill Handle of AF2 to copy down the column     
 
     NESTED IF to apply multiple conditions:
+        -bings together multiple IF statements 
+        -theoretically supports up to 64 nested IFS but it is not best practice 
+            -large numbers of ifs in a formula is hard to manage and understand 
+
 Select column AE, right-click, Insert.
 In cell AE1, type Order Size (IF).
 In cell AE2, type =IF(AD2>300,"Large",IF(AD2>100,"Medium",IF(AD2>0,"Small"))) and press Enter.
 Double-click the Fill Handle of AE2 to copy down the column.
 
     Use of IFS to apply multiple conditions (alternative of Nested IF)
+        -only supported on excel 2019, excel m365 and excel for web
 Select column AE, right-click, Insert.
 In cell AE1, type Order Size (IFS).
 In cell AE2, type =IFS(AD2>300,"Large",AD2>100,"Medium",AD2>0,"Small") and press Enter.
 Double-click the Fill Handle of AE2 to copy down the column.
 
     Use of COUNTIF to count the number of cells that meet a specified criterion
+        -not case sensitive 
+        -statistical function
+        -COUNTIF counts the number of cell values that meet specified criteria
+            -the number of times x shows up in c 
 Select cell BX2 and type count VISA card.
 Select cell BY2 and type =COUNTIF(N2:N195,"VISA") and press Enter.
 
     Use of SUMIF function to sum the values within a specified range that meet a specified criterion
+        -newer function eliminates need for multiple nested countifs
+            -only supported on excel 2019, excel m365 and excel for web
+        -SUMIF  is a very common mathematical excel function 
+        -sums values in a given range that match a specified criteria
 Select cell BX3 and type sum Large order.
 Select cell BY3 and type =SUMIF(AE2:AE195,"Large", AD2:AD195) and press Enter.
 Formula: =SUMIF(range, criteria, [sum range])
+    wild cards ? and * also 
 
     Use of SUMIFS function to sum the values within a specified range that meet multiple specified criteria
+ 
+        --only supported on excel 2019, excel m365 and excel for web
 Select cell BX4 and type sum Large order with Baby Gen.
 Select cell BY4 and type =SUMIFS(AD2:AD195, AE2:AE195,"Large", AL2:AL195,"*BABY_BOOMERS*") and press Enter.
 Formula: =SUMIFS ([sum range], range1, criteria1, range2, criteria2, ...).
+    wild cards ? and * also 
 
     Use of VLOOKUP to look up data in a table organized vertically
+        -enables you to find data referenced in a lookup table 
+        -vertical lookup - find by row 
+        -works by using a common shared key 
+        -use VLOOKUP if your comparison values were located in a column to the left of the data 
 Download the file indian_startup_funding_Lab6.xlsx. Upload and open it using Excel for the web.
 In cell K2,L2,M2, type VLOOKUP, Startup Name, Amount in USD respectively.
 Select and copy cells from C9 to C15 and paste in cell L3.
-In cell M3, type =VLOOKUP(L3, C2:I113, 7, FALSE) and press Enter.
+In cell M3, type =VLOOKUP(L3, C2:I113, 7, FALSE) and press Enter. #bool is optional parameter 
 Formula: =VLOOKUP (value, table, col_index, [range_lookup]).
 Hover over the bottom-right corner of cell M3, and drag the Fill Handle down to the cell M9.
 Select cells from M3 to M9 and select Number Format>Currency
 
     Use of HLOOKUP to look up data in a table organized horizontally
+        -horizontal lookup - find by column 
+        -works by using a common shared key 
+********-use HLOOKUP if your comparison values are situated in a row along the top of the data table*****************
 Download the file Personal_Monthly_Expenditure_Lab6.xlsx. Upload and open it using Excel for the web.
 In cell J2,K2,L2,M2, type HLOOKUP, Month, Food & Dining, Health & Fitness respectively.
 Select and copy cells from A10 to A12 and paste in cell K3.
-In cell L3, type =HLOOKUP(D1, A1:H14, 10, FALSE) and press Enter.
+In cell L3, type =HLOOKUP(D1, A1:H14, 10, FALSE) and press Enter. #bool is optional parameter 
 Formula: =HLOOKUP (value, table, row_index, [range_lookup]).
 Hover over the bottom-right corner of cell L3, and drag the Fill Handle down to the cell L5.
 Select cells from L3 to L5 and select Number Format>Currency.
 In cell M3, type =HLOOKUP(G1, A1:H14, 10, FALSE) and press Enter.
 Hover over the bottom-right corner of cell M3, and drag the Fill Handle down to the cell M5.
 Select cells from M3 to M5 and select Number Format>Currency.
+
+    XLOOKUP function 
+        -only supported on excel desktop from excel Microsoft 365
+            and on excel for web, also on excel for ipad and iphone
+            and excel for android tablets and phones 
+        -improved version of H and V lookup 
+        -works in any direction 
+        -uses separate lookup array and return array values 
+
+Before shaping your data, you need to visualize the final output, and ask yourself the following questions: 
+How big is the dataset? 
+What type of filtering is required to find the necessary information? 
+How should the data be sorted? 
+What type of calculations are needed? 
+There are several advantages to formatting your data as a table: 
+Automatic calculations even when filtering 
+Column headings never disappear 
+Banded rows to make reading easier 
+Tables will automatically expand when adding new rows 
