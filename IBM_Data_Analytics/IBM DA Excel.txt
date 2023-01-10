@@ -312,6 +312,16 @@ Basics if Data Quality and Privacy:
                             -comma, semicolon, space, tab
                     step 3 data format  
                         -test, date, general,
+
+        DELETING Data
+        DATA TABLE
+            -Filter icon    
+                -select filter icon next to the column header
+                    -select uncheck select All 
+                        -check item called blanks, click OK
+                            -will now show only empty rows at top of sheet  
+                                -select empty rows and delete 
+                                    -
         -fix column widths
             -auto  adjust with 
         -deleting columns   
@@ -386,7 +396,7 @@ Basics if Data Quality and Privacy:
 
 
 Removing Duplicated or Inaccurate Data and Empty Rows:
-    This is Data Ckeaning
+    This is Data Cleaning
         -spell checking 
             -select data
             -review tab 
@@ -473,6 +483,8 @@ In cell A1 type Customer_Name and press Enter.
 In cell A2, type Mr. Allen Perl and press Enter.
 Select column A (Customer_Name), on the Data tab, click Flash Fill.
 Click Undo to undo this step
+
+
         Flash Fill - quick method for filling data and data cleaning 
             -can split columns into 2 names 
             -can combine columns 
