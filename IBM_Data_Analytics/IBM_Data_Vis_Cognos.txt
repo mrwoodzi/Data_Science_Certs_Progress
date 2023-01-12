@@ -425,10 +425,12 @@ From the Navigation panel, select Assistant to open the Cognos Assistant panel.
 In the Ask a question input text box, at the bottom of the left hand pane, type “show Quantity Sold and City” and press Enter
 Click on show related visualizations.
 Select the second chart visualization.
-From the Cognos Assistant panel, select the second chart visualization and drag it to the center of Panel 3, releasing it once you 
+From the Cognos Assistant panel, select the second chart visualization and drag it to the center of Panel 3, 
+    releasing it once you 
     see the drop zone turn blue.
 Click on the Line and column chart in Panel 3 if needed to bring it into focus.
-Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border Color to open the color 
+Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border 
+    Color to open the color 
     options for borders. Apply a “Black” border.
 To save the current work of the dashboard, press CTRL+S.
 Your Panel 3 widget should look like the one below:
@@ -436,25 +438,37 @@ Your Panel 3 widget should look like the one below:
 
 Task D : Using a Manual Method to Create a Visualization for Panel 4
 From the Navigation panel, select Visualizations to open the Visualizations library.
-Select the Packed Bubble chart, and drag it to the center of panel 4 of the dashboard template, releasing it once you see the drop zone turn blue.
-The Packed Bubble chart visualization will open along with the Fields panel for you to set up the data definitions for your visualization.
-From the Sources panel on the left of the screen, drag and drop the Product Line, Quantity Sold, Loyalty Status sources into the Bubbles, Size, Color data slots of the Fields panel respectively.
+Select the Packed Bubble chart, and drag it to the center of panel 4 of the dashboard template, releasing it once 
+    you see the drop zone turn blue.
+The Packed Bubble chart visualization will open along with the Fields panel for you to set up the data definitions 
+    for your visualization.
+From the Sources panel on the left of the screen, drag and drop the Product Line, Quantity Sold, Loyalty Status sources 
+    into the Bubbles, Size, Color data slots of the Fields panel respectively.
 Click on the Fields button to close the panel.
-Click on the Packed bubble chart widget in Panel 4 to bring it into focus. From the on-demand toolbar, click Edit the title. Enter the title “Department Sales by Loyalty Status” to the visualization.
+Click on the Packed bubble chart widget in Panel 4 to bring it into focus. From the on-demand toolbar, click Edit the title. 
+    Enter the title “Department Sales by Loyalty Status” to the visualization.
 Click on the Packed bubble chart in Panel 4 if needed to bring it into focus.
-Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border Color to open the color options for borders. Apply a “Black” border.
+Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border Color to 
+    open the color options for borders. Apply a “Black” border.
 To save the current work of the dashboard, press CTRL+S.
 Your Panel 4 widget should look like the one below:
 
 NEW SECTION::::
 From the Recent section, click on the uploaded data file CustomerLoyaltyProgram.csv.
-The Template window will be displayed, allowing you to select the type of dashboard and the template style. Select the tabbed dashboard style. This will allow you to have multiple pages for your dashboards. Select the five-panel template, then click Create.
-To save the newly created dashboard, press CTRL+S. Select ‘My content’ as the Destination. On the Save as: text field, type “Advanced dashboard”, and click Save.
-As you build the dashboard, the location placement for Widgets in the dashboard template will be referenced using the following Panel numbers.
-From the Data Source panel, select Revenue and drag it to the center of Panel 1, releasing it once you see the drop zone turn blue.
+The Template window will be displayed, allowing you to select the type of dashboard and the template style. 
+Select the tabbed dashboard style. This will allow you to have multiple pages for your dashboards. Select the
+ five-panel template, then click Create.
+To save the newly created dashboard, press CTRL+S. Select ‘My content’ as the Destination. On the Save as: text field, 
+type “Advanced dashboard”, and click Save.
+As you build the dashboard, the location placement for Widgets in the dashboard template will be referenced using the 
+following Panel numbers.
+From the Data Source panel, select Revenue and drag it to the center of Panel 1, releasing it once you see the drop zone 
+turn blue.
 Click on the Summary chart in Panel 1 to bring it into focus. From the on-demand toolbar, click Summarize. Then select Average.
-Click on the Summary chart in Panel 1 if needed to bring it into focus. From the on-demand toolbar, click Edit the title. Enter the title “Average Revenue” to the visualization.
-From the Navigation panel, select Widgets to open the widgets panel. Drag and drop Money coin from Shapes to the center of Panel 1.
+Click on the Summary chart in Panel 1 if needed to bring it into focus. From the on-demand toolbar, click Edit the title. Enter0
+ the title “Average Revenue” to the visualization.
+From the Navigation panel, select Widgets to open the widgets panel. Drag and drop Money coin from Shapes to the center of 
+Panel 1.
 To save the current work in the dashboard, press CTRL+S.
 Your Panel 1 widget should look like the one below:
 
@@ -485,10 +499,13 @@ To save the current work in the dashboard, press CTRL+S.
 Your Panel 3 widget should look like the one below:
 
 Task C : Set Top/Bottom on a Visualization
-From the Data Source panel, press CTRL and select Quantity Sold, City and drag it to the center of Panel 4, releasing it once you see the drop zone turn blue.
+From the Data Source panel, press CTRL and select Quantity Sold, City and drag it to the center of Panel 4, releasing 
+it once you see the drop zone turn blue.
 Click on the chart in panel 4 to bring it into focus and render the on-demand toolbar.
-Click the Change Visualization button in the on-demand toolbar. Use the arrow “>” to expand All Visualizations. Find and select Column.
-Click on the Column chart in panel 4 to bring it into focus. Right-click on the axis label Quantity Sold (Sum) and select Top or bottom.
+Click the Change Visualization button in the on-demand toolbar. Use the arrow “>” to expand All Visualizations. Find and 
+select Column.
+Click on the Column chart in panel 4 to bring it into focus. Right-click on the axis label Quantity Sold (Sum) and 
+select Top or bottom.
 Set the value of Number of results as 10. Select Top count.
 From the on-demand toolbar, click Edit the title. Enter the title “Top 10 Quantity Sold by City” to the visualization.
 To save the current work in the dashboard, press CTRL+S.
