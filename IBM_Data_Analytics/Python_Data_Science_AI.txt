@@ -1,0 +1,46 @@
+You can slice a variable that has a nested lists or tuples with [][]
+List 
+    syntax to clone a variable
+        variable = OtherVariable[:]
+.split() - can use delimiter for the split 
+.index() - to find the index of a known element in list, tuple, ....
+sorted() - sorted(SomeList) -this will also turn a tuple into a list
+
+Dictionary
+    You can access elements in a dictionary if you know the key by Dict['known_key']
+
+    del(Dict['known_key'])
+    'known_key' in Dict  # finds if the 'known_key' is in the dictionary
+        True or False response
+
+# Append value with key into dictionary
+
+release_year_dict['Graduation'] = '2007'
+release_year_dict
+
+Sets
+    -unordered
+    -sets donot have element positions
+    -only 1 element of a set can exist, meaning no duplicates
+    -{} curly brackets
+    -convert list to set 
+    -set(my_list)
+    - to add variable.add(thing_to_add)
+    - to remove variable.remove(thing_to_add)
+    - 'item' in variable_set
+        -returns bool
+    - & to find the intersection of 2 sets 
+        variable_intersection = variable1&variable2
+    - finding a subset 
+        variable.issubset(otherVariable)
+            -returns a bool
+    - fiinding the Difference
+        -variable.difference(variable2)
+    - Union 
+        variable.union(OtherVariable)
+    - SuperSet 
+        set(variable).issuperset(OtherVariable)
+
+
+Conditions and Branching
+    Comparison Operators return a boolean
