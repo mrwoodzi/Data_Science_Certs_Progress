@@ -37,6 +37,7 @@ while(year != 1973):
     
 print("It took ", i ,"repetitions to get out of loop.")
 
+# While loop to print 'orange' and then stop when it's no longer 'orange'
 squares = ['orange', 'orange', 'purple', 'blue ', 'orange']
 new_squares = []
 i = 0
