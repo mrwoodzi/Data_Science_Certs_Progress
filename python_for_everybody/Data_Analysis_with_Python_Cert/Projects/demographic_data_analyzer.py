@@ -1,6 +1,4 @@
 import pandas as pd
-from collections import counter 
-
 
 def calculate_demographic_data(print_data=True):
     # Read data from file

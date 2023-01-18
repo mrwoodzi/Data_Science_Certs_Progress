@@ -58,4 +58,38 @@ Conditions and Branching
             false, true
             false, true 
 
+    Range:
+        -think of it as an unordered list
+    For:
+        -enables you to execute a code block multiple times
+        - exx if you want to print out every element in a list
+
+    Loops:
+        enumerate - iterate through a list and provides the index of each element
+            for iterator,variable in enumerate(variable):
+        Also
+            for i,x in enumerate(['A','B','C']):
+                print(i,x)
+
+    While Loops:
+        variable = ['foo', 'bar', 'stuff', 'foo']
+        new_variable = []
+        iterator = 0
+        while(variable[iterator]=='foo'):  # will exit on slice 1 cause it's bar not foo
+            new_variable.append(variable[iterator])
+            iterator = iterator + 1
+
+# While Loop Example
+
+dates = [1982, 1980, 1973, 2000]
+i = 0
+year = dates[0]
+
+while(year != 1973):    
+    print(year)
+    i = i + 1
+    year = dates[i]
     
+print("It took ", i ,"repetitions to get out of loop.")
+
+Functions:
