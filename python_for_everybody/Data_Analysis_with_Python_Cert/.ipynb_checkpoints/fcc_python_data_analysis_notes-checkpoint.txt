@@ -1,0 +1,106 @@
+pandas- conerstone of our data analysis job with python
+matplotlib - the foundational library for visualizations. 
+numpy - the numeric library that serves as the foundation of all calculations in python
+seaborn - A statistical visualization tool built on top of matplotlib
+statsmodels - a library with many advanced statistical functions
+scipy -  advanced scientific computing, including functions for optimization, linear algebra, 
+    image pocessing and much more
+scikit-learn - the most popular machine learning library for python(not deep learning)
+
+What is a dataframe?
+    The rows and columns that make up the data
+
+What does the loc method allow you to do?
+    Acces a group of rows and columns by label(s) or a boolean array
+
+
+To Run JupyterLab: python -m jupyterlab
+How to Install NumPy: py -m pip install numpy
+How to Install Pandas: py -m pip install pandas 
+How to Install PYXL: py -m pip install openpyxl
+How to Install NodeJS: pip install nodejs
+How to Install matplotlib: python -m pip install -U matplotlib
+Juypter Notebooks:
+    ecosystem of tools
+    free open source
+    What is a Notebook 
+    What is JuypterLab
+        nicer interface of Juypter 
+    **Everything is a Cell**
+    Markdown - is a text formatting tool
+        -can return a formatted document
+    Cell can be  a markdown, code, raw 
+    It is a mode based editor
+        -esc key switches mode to command
+        -return key switches mode to edit
+        -behavior of cell changes depending on mode
+        -command mode - manipulating outside cells 
+        -edit mode - manipulating inside cells
+    Add Cell:
+        a to create above selected or b to create cell below selected
+    Delete Cell: 
+        dd 
+    Cut: x
+    Paste: v 
+    Copy: c 
+    ****Shift + Tab ***** gives you a whole bunch of information
+
+    Make cell Markdown with m 
+    Make cell Code/Python with y 
+    Executing code cntrl and return 
+
+    Different option over MatPlotLiv is Bokeh: has interactive charts 
+
+    Numpy: Numeric Computing Library:
+        Why use NumPy:
+        https://www.freecodecamp.org/learn/data-analysis-with-python/numpy/what-is-numpy
+            Fast 
+                -Fixed Type
+                    -int32 at 4 bytes, you can also specify what int you want 
+                        Byte then Bit
+                    -less bytes of memory 
+                    -iterates faster cause it doesn't have to check the type of each element
+                -Contiguous memory
+                    -all blocks of memory are right next to each other 
+                    -called SIMD Vector Processing 
+                        -single instruction multiple data 
+                    -effective cache utilization 
+            -Numpy is backend of Pandas, Connect 4 and Digital Photography, 
+            -Machine Learning 
+
+
+        How to Install NumPy: py -m pip install numpy
+        https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/numpy-introduction-a
+        https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-course/numpy-introduction-b
+            -link to a good low level explanation of numpy
+            -review how to find out how many bits for a specific array
+        Over 20yrs old
+        useful linear algebra, Fourier transform and random number capabilities
+        tools for integrating c/c++ and Fortran code
+        a powerful N-dimensional array object
+        efficient numberic computation with C primitives
+
+        processing numerical numbers is slow on large data sets in Python
+        Numpy solves this Python issue
+        Numpy is mostly for porcessing numerical Arrays
+
+
+        Example:
+            import numpy as np
+            np.int8(actually gives a bytes list of potential bytes in drop down)
+
+    
+    **Can do something new called multi indexing
+        You can have multiple dimensions
+        Square Matrix:             0  1  2
+        square_matrix = np.array([[1, 2, 3],  0
+                                  [4, 5, 6],  1
+                                  [7, 8, 9]   2 
+                                  ]) 
+            
+            across[:,  down :]
+
+    Broadcasting and Vectorized operations:
+        a = np.arange(whatever_your_int_range_is)
+    
+        

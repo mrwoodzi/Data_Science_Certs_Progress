@@ -44,3 +44,18 @@ Sets
 
 Conditions and Branching
     Comparison Operators return a boolean
+        Or
+            false, false = false
+            false, true = true
+            true, false = true
+            true, true = true
+        and
+            false, false = false
+            false, true = false
+            true, false = false
+            true, true = true 
+        not
+            false, true
+            false, true 
+
+    

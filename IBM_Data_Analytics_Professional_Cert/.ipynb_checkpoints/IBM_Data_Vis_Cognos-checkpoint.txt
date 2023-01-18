@@ -1,0 +1,535 @@
+Excel Shortcuts
+
+Close a workbook	        Ctrl+W
+Open a workbook	            Ctrl+O
+Save a workbook	            Ctrl+S
+Copy	                    Ctrl+C
+Cut	                        Ctrl+X
+Paste	                    Ctrl+V
+Undo	                    Ctrl+Z
+Remove cell contents	    Delete
+Bold	                    Ctrl+B
+Open context menu	        Shift+F10
+Expand or collapse the ribbon	            Ctrl+F1
+Move up one cell in the worksheet	        Up arrow key
+Move down one cell in the worksheet	        Down arrow key
+Move one cell left in the worksheet	        Left arrow key
+Move one cell right in the worksheet	    Right arrow key
+Move to the edge of the current data region in the worksheet (e.g. end of column)	Ctrl+Arrow key (e.g. Ctrl+Down arrow)
+Move to the last cell on a worksheet	    Ctrl+End
+Move to the beginning of a worksheet	    Ctrl+Home
+Extend the selection of cells to the last used cell on a worksheet (lower right corner)	Ctrl+Shift+End
+Move to the cell in the upper-left corner of the window (when Scroll Lock is On)	Home+Scroll Lock
+Move one screen down in a worksheet	        Page Down
+Move one screen up in a worksheet	        Page Up
+Move one screen to the right in a worksheet	Alt+Page Down
+Move one screen to the left in a worksheet	Alt+Page Up
+Move to the next sheet in a workbook	    Ctrl+Page Down
+Move to the previous sheet in a workbook	Ctrl+Page Up
+Edit the active cell and put the cursor at the end of the cell’s contents	F2
+Enter the current time	                    Ctrl+Shift+colon (:)
+Enter the current date	                    Ctrl+semi-colon (;)
+
+
+Intro to Charts:
+    Area Charts 
+        -show data as a series of data points connected by straight lines
+        -have filled area below the connected data points
+        -can show both positive and negative values
+    Line Charts 
+        -compare different but related data sets
+        -can display trends
+        -show how data values change in relation to a continuous variable
+            -if time is a continuous variable how has the sale of a product or multiple products changed?
+    Pie Charts  
+        -can show the breakdown of an entitiy into its sub-patterns
+        -best used when you only have 1 data series**************
+            -data can't cover more than 12 data series
+        -the proportion of the sub parts in relation to one another
+        -each portion represents a static value or Category
+        -sum of all categories equals 100%
+            -Marketing campaign categories  
+                -social sites, native advertising, paid influencers, live events
+    Bar Charts  
+        -most common
+        -easy to create
+        -categories are vertical
+        -values are horizontal
+        -great for comparing related data sets or parts 
+            -we can see the population numbers of 10 different countries and how they compare to one another 
+    Stacked Bar Charts  
+        -each bar is divided into sub bars
+    Column Charts 
+        -can be used effetively to show change over time
+        -values are vertical
+        -categories are horizontal
+        -can also compare values side by side
+        -looks similar to a bar chart 
+            -cannot always be used interchangeably
+        -may be better for showing positive and negative values
+    Tree Maps
+        -useful for displaying comples hierarchies using nested rectangles
+            -state wide employment rectangles
+            -size of the rectangle represents the population
+            -color represents the employment rate 
+    Funnel Charts
+        -trying to display a pipleline of different stages of a continuous process 
+            -can show the conversion rate at each stage of the sales process, from lead generation to the final sale 
+    Scatter Charts
+        -circle colors represent the categories of data
+        -the circle sizes are indicative of the volume of data 
+            -can see each product line by the number of units sold and the revenue it brings 
+        -great for revealing trends, clusters, patterns, and correlations between data points
+    Bubble Charts
+        -variant of scatter charts 
+        -useful for comparing a handful of categories to one another 
+            -understanding areas of significant expenditures in an organizations sales budget
+    Sparklines
+        -do not include an axis
+        -display trends simply and effetively
+        -great for showing the general trend of a variation 
+            -stock market price fluctuations from beginning to end of day
+    
+
+    Importance of Using visualizations to tell a story with data 
+        -Critically important 
+        -a picture is worth a thousand words 
+        -helps to figure out if something important to show or not or what kind of visualizations 
+        -that's how the brain works
+
+    Using Excel Pivot Tables:
+        Area Charts 
+        Column Charts
+        Pivot Charts 
+            -You can filter the data in the chart which you can't do on a regular excel spreadsheet 
+            -you can filter on the fly or whenever and the chart automatically adjusts 
+
+    Create an Area Chart
+Switch to the worksheet named Area Chart.
+Click the filter drop-down in column A (Manufacturer), and select Filter….
+In the list, only select Toyota and click OK.
+Select column B, then hold SHIFT and select column C.
+On the Charts group of the Insert tab, click Area Chart and choose Area from the 2-D Area category.
+Click on the floating chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Data Labels and select Show.
+On the Format group of the Chart tab, click Format.
+On the right side menu bar Format, select Series “Unit Sales” > Fill > Gold, Accent 4.
+
+    Create a Bar Chart from a Pivot Table
+Switch to the worksheet named Bar Chart.
+Click the filter drop-down in column A, and select Manufacturer > Filter….
+In the list, only select Toyota and click OK.
+Double-click cell A4 to expand entire field.
+On the Charts group of the Insert tab, click Bar Chart and choose Clustered Bar from the 2-D Bar category.
+Click on the floating chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Data Labels and select Inside End.
+Your chart should look something like the one below:
+
+    Create a Line Chart from a Pivot Table
+Switch to the worksheet named Line Chart.
+Click the filter drop-down in column A, and select Manufacturer > Filter….
+In the list, only select Acura, Honda, Infiniti, Lexus, Mitsubishi, Nissan, Subaru, Toyota and click OK.
+Click any cell of the pivot table.
+On the Charts group of the Insert tab, click Line Chart and choose Line with Markers from the 2-D Line category.
+Click on the floating chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Chart Title and select Edit Chart Title….
+In the text input area of the dialog box Edit Title, write “Average Retention % of Japanese Auto Manufacturers” and click OK.
+On the Labels group of the Chart tab, click Data Labels and select Below.
+On the Labels group of the Chart tab, click Legend and select None.
+Your chart should look something like the one below:
+
+Creating Treemaps, ScatterCharts, and Histograms:
+    Treemaps:
+        -used to compare values across heirarchy levels
+        -show proportions as rectangles
+        -good way to display lots of data in one graphic
+        -color size and closeness of shapes represents hierarchical data categories 
+        -Ex: Different size and color boxes
+    Scatter Charts:
+        -Compare two sets of numerical data values
+        -show relationships between them
+        -Combines two sets of 'x' and 'y' axis values into single data points
+        -displated in clusters
+        -also known as x,y charts
+        -ex: commonly used to compare statistical, scientific and engineering data values 
+        -compares values
+    Histograms:
+        -looks similar to bar charts, but are very different
+        -in statistical charts category
+        -show distribution of data grouped into 'bins'
+        -bar charts compare data, while Histograms display data distribution
+        
+Creating Filled Map Charts and Sparklines:
+    Filled Map Charts:
+        -A filled map chart is a type of chart used to compare values and show categories across geographical regions
+        -This chart is suitable for data which contains geographical regions like countries, states, or postal codes
+    Sparklines:
+        -Sparklines are mini charts placed inside single cells to represent a selected range of data. 
+        -They are typically used to show data trends, such as seasonal increase-decrease, economic cycles, 
+            and share, rate, or price fluctuations.
+        -They can also be used to highlight max-min values. 
+        -A sparkline provides the greatest impact when it is placed close to the data it represents. 
+        -sparkline line is contained in a single cell 
+    Waterfall Chart:
+        -type is used to show cumulative effect of a series of positive and negative values. 
+        -This is suitable for data which represents inflows and outflows like financial data. 
+    Funnel chart: 
+        -used to show progressively smaller stages in a process. 
+        -This is suitable for data which shows progressively decreasing proportions.
+    Stock chart:
+        -type is used to show the trend of stock’s performance over time. 
+        -This is best suited to data with a series with multiple stock price values like 
+                volume, open, high, low, and close.
+     Surface chart:
+        -type is used to show trends in values across two dimensions in 3-D surface areas or 2-D contoured charts. 
+        -This is most suitable when categories and data series are both numeric
+     Radar chart: 
+        -type is used to show values relative to a center point, and is most suitable when categories are not 
+            directly comparable.
+
+Lab:
+
+
+Task A : Create a Sunburst Chart
+Switch to the worksheet named Sunburst Chart.
+Click the filter drop-down in column A (Manufacturer), and select Filter….
+In the list, only select Nissan and click OK.
+Select column B, then hold SHIFT and select column C.
+On the Charts group of the Insert tab, click Other Charts and choose Sunburst from the Hierarchical category.
+Click on the floating chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Chart Title and select Edit Chart Title….
+In the text input area of the dialog box Edit Title, write “Unit Sales of Nissan Cars” and click OK.
+On the Labels group of the Chart tab, click Legend and select Show Legend at Right.
+Your chart should look something like the one below:
+
+Task B : Create a Scatter Chart
+Switch to the worksheet named Scatter Chart.
+Click the filter drop-down in column A (Manufacturer), and select Filter….
+In the list, only select Audi, BMW, Mercedes-B, Porsche, Volkswagen and click OK.
+Select column E, then hold SHIFT and select column F.
+On the Charts group of the Insert tab, click Scatter Chart and choose Scatter with only Markers from the Scatter category.
+Drag the chart across to the right of the sheet.
+Click on the floating chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Chart Title and select Edit Chart Title….
+In the text input area of the dialog box Edit Title, write “Comparing Price with Year Resale Value of German Cars” 
+    and click OK.
+On the Labels group of the Chart tab, click Axis Titles and select Primary Horizontal Axis Title > Edit Horizontal 
+    Axis Title….
+In the text input area of the dialog box Edit Title, write “Price” and click OK.
+On the Labels group of the Chart tab, click Axis Titles and select Primary Vertical Axis Title > 
+    Edit Vertical Axis Title….
+In the text input area of the dialog box Edit Title, write “Year Resale Value” and click OK.
+On the Labels group of the Chart tab, click Legend and select None.
+
+Task C : Create a Histogram Chart
+Switch to the worksheet named Histogram Chart.
+Click the filter drop-down in column A (Manufacturer), and select Filter….
+In the list, only select Audi, BMW, Mercedes-B, Porsche, Volkswagen and click OK.
+Select column B, then hold SHIFT and select column C.
+On the Charts group of the Insert tab, click Other Charts Chart and choose Histogram from the Statistical category.
+Drag the chart across to the right of the sheet.
+Click on the floating chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Chart Title and select Edit Chart Title….
+In the text input area of the dialog box Edit Title, write “Count of German Car Models by Price Range” and click OK.
+On the Labels group of the Chart tab, click Data Labels and select Center.
+On the Format group of the Chart tab, click Format.
+On the right side menu bar Format, select Series “Price” > Fill > Orange, Accent 2.
+
+
+
+
+
+Dashboarding:
+    -provide key information in one placed
+    -can provide user interaction capabilities, filters, slicers, timelines and mapcharts
+    -users get consolidated and visualized insight into their most important business data and KPIs
+    -get controllable self-service BI interface 
+    -typically created in a data analysis application by using multiple pivot tables and charts 
+    -could be created from a single data source or from multiple data sources
+
+    How can Dashboards help in presenting data results: 
+        -show up most important things you want to see
+        -you can make them pretty
+        -it's important to be specific and succinct
+        -make dashboard capable of being shown on small phone
+        -understand what your stakeholder wants to see 
+        -make people sure are getting value out of what you're doing
+        -read the room 
+        -is an indicator for action 
+        -dashboard should have need to know information 
+
+        Ways IBM Cognos Analytics helps creat better visualizations and Dashboards  
+            -can drag and drop visualizations
+            -visualization Recommender
+            -ifused AI into the offering
+            -You can have a conversation with the assistant and simply say 'generate dashboard'
+            -advanced analytic capabilities through key driver analysis or AI infused forecasting
+            -ability to share dashboards in a few clicks
+
+
+    Creating a simple dashboard:
+        Before Creating a Dashboarding  
+            -Collect and Organize Data
+            -Verify your data is clean, error-free, has no blank rows or columns
+            -Format your data as a table 
+            -create some pivot tables 
+            -create several visualizations
+
+Exercise 1 : Setting up a dashboard in Excel
+In this exercise, you will learn how to set up a simple dashboard with visualizations in Excel.
+
+Click + to add a new worksheet, then double-click Sheet1 tab and rename it to Dashboard, then click OK.
+Drag the Dashboard tab to the far right of the workbook tabs if needed.
+Select the Column, Pie, Sunburst Chart worksheet tab.
+Select the Column chart and press CTRL+C.
+Select the Dashboard tab, click somewhere in the middle of the sheet, and press CTRL+V.
+Select the Column, Pie, Sunburst Chart worksheet tab.
+Select the Pie chart and press CTRL+C.
+Select the Dashboard tab, click somewhere in the middle of the sheet, and press CTRL+V.
+Select the Column, Pie, Sunburst Chart worksheet tab.
+Select the Sunburst chart and press CTRL+C.
+Select the Dashboard tab, click somewhere in the middle of the sheet, and press CTRL+V.
+If you have a copy of Excel Desktop you can continue on here and do both exercises using the first start file provided.
+Note: Excel for the web cannot copy slicers and pivot charts, so if you are using a version of Excel for the web, you will need to stop this exercise here, 
+    then open the provided Car_Sales_Kaggle_DV0130EN_Lab3_Ex2Start.xlsx file, and then continue from Exercise 2 Step 1 below.
+Select the Column, Pie, Sunburst Chart worksheet tab.
+Select the Slicer and press CTRL+C.
+Select the Dashboard tab, click somewhere in the middle of the sheet, and press CTRL+V.
+Select the Bar Chart worksheet tab.
+Select the Bar chart and press CTRL+C.
+Select the Dashboard tab, click somewhere in the middle of the sheet, and press CTRL+V.
+Select the Bar Chart worksheet tab.
+Select the Slicer and press CTRL+C.
+Select the Dashboard tab, click somewhere in the middle of the sheet, and press CTRL+V.
+At the end of this exercise your Dashboard worksheet should look like the image below:
+
+
+
+Exercise 2 : Configuring a dashboard layout in Excel
+In this exercise, you will learn how to organize and layout the content of a dashboard in Excel.
+If you are using Excel for the web, then you need to open the starter file provided in the link above, after Exercise 1 Step 12.
+Select and drag the Bar chart to the top left corner of the sheet.
+Select and drag the Manufacturer slicer to the top of the sheet on the right of the Bar chart.
+Select and drag the Pie chart to the top right of the sheet on the right of the Manufacturer slicer.
+Select and drag the Column chart to the bottom left of the sheet under the Bar chart.
+Select and drag the Sunburst chart to the bottom of the sheet on the right of the Column chart.
+Select and drag the Model slicer to the bottom left of the sheet under the Pie chart.
+Drag and resize all the charts to make them fit better.
+Select the View tab in the ribbon, and uncheck Gridlines and Headings.
+Double-click any tab to collapse the ribbon.
+In the Manufacturer slicer, select Audi and click the Multi-Select button. Then scroll the slicer and select only Audi, BMW, Mercedes-B, Porsche, Volkswagen.
+Click on the Bar chart area to access the Chart tab in the ribbon.
+On the Labels group of the Chart tab, click Chart Title and select Edit Chart Title….
+In the text input area of the dialog box Edit Title, write “Average Price and Year Resale Value of German Car Models” and click OK.
+In the Model slicer, click the Clear Filter button.
+
+Cognos Analytics:
+    -Cognos Analytics is a multifaceted tool allowing you perform both mode 1 and mode 2 type of analysis, all in one product.
+    -It contains a number of different tools, such as the ability to model your data, explore your data, create compelling, advanced 
+        analytics visualizations like our key driver analysis, displaying natural language generated based off of your data, and create
+         reports which are specific and tailored to your individual users, either through filters or through the ability to create bursts. 
+
+         The goal of the Cognos Analytics user interface (UI) is to provide you with a streamlined way to get started using Cognos Analytics and view content and activities pertinent to them. You will begin your general navigation here.
+
+
+
+Click on the Navigation Bar, you can use the Content to work on different Samples The canvas now shows the Recently used files in the Recent section, 
+if any, along with the File drop zone where you can easily upload your external data files.
+
+
+
+Once you begin working with content, the canvas will update with your recently used items. In your Cognos Analytics instance, you may see 
+recent content on the canvas.
+Exercise 3: Create a Simple Dashboard with Cognos Analytics
+In this exercise, you will learn how to upload external data files to Cognos Analytics, and then learn how to start a new dashboard with templates. 
+Lastly, you will learn how to create a simple dashboard.
+Task A: Upload External Data Files
+In this task, you will learn how to upload external data files to Cognos Analytics.
+Download the file CustomerLoyaltyProgram.csv.
+To sign in to the Cognos Analytics platform with your IBMid, go to myibm.ibm.com/dashboard/.
+Enter your IBMid and password.
+Scroll down and click Launch.
+To upload a file, you may either drag and drop this file into the File Drop Zone (highlighted in the image above), or you may click New > 
+Upload files at the bottom left corner to navigate to where the file is saved. For this lab, we will use the second option. Click New > Upload files, 
+then browse to the file download location, select the CSV file, and click Open.
+As the file uploads, notice that under the Switcher Menu, a series of status bars will be visible as the upload process reads and analyzes 
+the data being brought in.
+Once it completes, the status bar will update to show the successful completion before closing.
+In the Recent section, you will see the new uploaded data file.
+
+Task B: Start a New Dashboard with Templates
+In this task, you will learn how to start a new dashboard with templates.
+Click on the uploaded data file CustomerLoyaltyProgram.csv.
+The Template window will display allowing you to select the type of dashboard and the template style. Select the tabbed dashboard style. 
+This will allow you to have multiple pages for your dashboards. Select the three-panel template. Click Create.
+Now you have created a new dashboard using the dashboard template.
+To save the newly created dashboard, press CTRL+S. Select My content as Destination. On the Save as: text field, write “Simple dashboard”, and click Save.
+
+
+Task C: Create a Simple Dashboard
+In this task, you will learn how to create a simple dashboard with Cognos Analytics.
+As you build the dashboard, the location placement for Widgets in the dashboard template will be referenced using the following Panel numbers.
+From the Navigation panel, select Sources to open the data source panel, if it is not already open. The Data Source panel displays the uploaded file “CustomerLoyaltyProgram.csv” as the Selected Source.
+From the Data Source panel, press CTRL and select Order Year, Quantity Sold, Product Line and drag it to the center of Panel 1, releasing them once you see the drop zone turn blue.
+Click on the Line chart in panel 1 to bring it into focus and render the on-demand toolbar.
+From the on-demand toolbar, select the title and enter the title “Product Line Performance by Year” to the visualization.
+Highlight the Title to open the Title on-demand toolbar. From here, you can change the various properties on the title
+Click the Color picker icon, and change the color to Red, then click the font size drop-down and choose 18.
+From the Data Source panel, select Quantity Sold and drag it to the center of Panel 2, releasing it once you see the drop zone turn blue.
+From the Data Source panel, select Revenue and drag it to the center of Panel 3, releasing it once you see the drop zone turn blue.
+Click on the tab name Tab 1 to bring up the Tab’s on-demand toolbar. Select the Edit icon.
+Rename the tab to “A - Product Sales”
+To save the current work of the dashboard, press CTRL+S.
+
+
+From the Navigation panel, select Sources to open the data source panel, if it is not already open. The Data Source panel displays the 
+    uploaded file “CustomerLoyaltyProgram.csv” as the Selected Source.
+From the Data Source panel, expand CustomerLoyaltyProgram.csv, if needed.
+From the Data Source panel, press CTRL and select Latitude, Longitude, Quantity sold and drag them to the center of Panel 1, releasing 
+    them once you see the drop zone turn blue.
+Click on the Map chart in panel 1 to bring it into focus.
+To change the map style, open the Properties panel and click the down arrow next to Chart to see the various options of maps available. 
+    Select Streets for Style.
+Open the Fields panel to view the data slots. From the Sources panel on the left of the screen, drag and drop the Country, Province or State, 
+    Revenue into the Locations, Locations, Location color data slots of Regions of the Fields panel respectively.
+Make sure to drag and drop the Quantity Sold into Point color data slot of Latitude/longitude of the Fields panel if needed.
+Click on the Fields button to close the fields panel.
+Click on the Map chart widget in Panel 1 to bring it into focus if needed. From the on-demand toolbar, click Edit the title. Enter the title 
+    “Revenue and Quantity Sold by Location” to the visualization.
+Click the Properties button in the top-right corner to open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. 
+    Click on Border Color to open the color options for borders. Apply a “Black” border.
+To save the current work of the dashboard, press CTRL+S.
+Your Panel 1 widget should look like the one below:
+
+
+Task B : Using an Automatic Method to Create a Visualization for Panel 
+From the Data Source panel, press CTRL and select Product Line, Coupon Response, Quantity sold and drag them to the center of Panel 2, 
+    releasing them once you see the drop zone turn blue.
+Click on the Line chart in panel 2 to bring it into focus and render the on-demand toolbar.
+Click the Change Visualization button in the on-demand toolbar. Use the arrow “>” to expand All Visualizations. Scroll down and select Radial.
+Click on the Radial chart in Panel 2 to bring it into focus. Click on the Fields button on the Dashboard toolbar to open the Fields Panel.
+Drag and drop Product Line to the Repeat (column) area.
+Next, move the Coupon Response to the Color field.
+Click on the Fields button to close the fields panel.
+Click on the Radial chart widget in Panel 2 to bring it into focus. From the on-demand toolbar, click Edit the title. Enter the title 
+    “Marketing Response by Department” to the visualization.
+Click on the Radial chart in Panel 2 if needed to bring it into focus.
+Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border Color to open the color options 
+    for borders. Apply a “Black” border.
+To save the current work of the dashboard, press CTRL+S.
+Your Panel 2 widget should look like the one below:
+
+
+Task C : Using Cognos Assistant to Create a Visualization for Panel 
+From the Navigation panel, select Assistant to open the Cognos Assistant panel.
+In the Ask a question input text box, at the bottom of the left hand pane, type “show Quantity Sold and City” and press Enter
+Click on show related visualizations.
+Select the second chart visualization.
+From the Cognos Assistant panel, select the second chart visualization and drag it to the center of Panel 3, 
+    releasing it once you 
+    see the drop zone turn blue.
+Click on the Line and column chart in Panel 3 if needed to bring it into focus.
+Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border 
+    Color to open the color 
+    options for borders. Apply a “Black” border.
+To save the current work of the dashboard, press CTRL+S.
+Your Panel 3 widget should look like the one below:
+
+
+Task D : Using a Manual Method to Create a Visualization for Panel 4
+From the Navigation panel, select Visualizations to open the Visualizations library.
+Select the Packed Bubble chart, and drag it to the center of panel 4 of the dashboard template, releasing it once 
+    you see the drop zone turn blue.
+The Packed Bubble chart visualization will open along with the Fields panel for you to set up the data definitions 
+    for your visualization.
+From the Sources panel on the left of the screen, drag and drop the Product Line, Quantity Sold, Loyalty Status sources 
+    into the Bubbles, Size, Color data slots of the Fields panel respectively.
+Click on the Fields button to close the panel.
+Click on the Packed bubble chart widget in Panel 4 to bring it into focus. From the on-demand toolbar, click Edit the title. 
+    Enter the title “Department Sales by Loyalty Status” to the visualization.
+Click on the Packed bubble chart in Panel 4 if needed to bring it into focus.
+Open the Properties panel and click on the General tab. Expand the down arrow next to Appearance. Click on Border Color to 
+    open the color options for borders. Apply a “Black” border.
+To save the current work of the dashboard, press CTRL+S.
+Your Panel 4 widget should look like the one below:
+
+NEW SECTION::::
+From the Recent section, click on the uploaded data file CustomerLoyaltyProgram.csv.
+The Template window will be displayed, allowing you to select the type of dashboard and the template style. 
+Select the tabbed dashboard style. This will allow you to have multiple pages for your dashboards. Select the
+ five-panel template, then click Create.
+To save the newly created dashboard, press CTRL+S. Select ‘My content’ as the Destination. On the Save as: text field, 
+type “Advanced dashboard”, and click Save.
+As you build the dashboard, the location placement for Widgets in the dashboard template will be referenced using the 
+following Panel numbers.
+From the Data Source panel, select Revenue and drag it to the center of Panel 1, releasing it once you see the drop zone 
+turn blue.
+Click on the Summary chart in Panel 1 to bring it into focus. From the on-demand toolbar, click Summarize. Then select Average.
+Click on the Summary chart in Panel 1 if needed to bring it into focus. From the on-demand toolbar, click Edit the title. Enter0
+ the title “Average Revenue” to the visualization.
+From the Navigation panel, select Widgets to open the widgets panel. Drag and drop Money coin from Shapes to the center of 
+Panel 1.
+To save the current work in the dashboard, press CTRL+S.
+Your Panel 1 widget should look like the one below:
+
+
+Exercise 2 : Working with Advanced Cognos Analytics Dashboard Capabilities
+In this exercise, you will practice some advanced Cognos Analytics dashboard capabilities.
+Task A : Create Calculations
+Task B : Keep/Exclude Data Points from a visualization
+Task C : Set Top/Bottom on a visualization
+Task D : Create and Leverage Navigation Paths
+Task E : Filter Data in Current tab
+Task A : Create Calculations
+From the Navigation panel, select Sources to open the data source panel, if it is not already open. The Data Source panel displays the uploaded file “CustomerLoyaltyProgram.csv” as the Selected Source.
+Right-click on the CustomerLoyaltyProgram.csv of data source panel and select Calculation.
+Name the calculation as “Margin”. From panel Components to the field Expression, drag and drop Unit_Sale_Price, type minus - and then drag and drop Unit_Cost. Click OK.
+On the Data Source panel, expand CustomerLoyaltyProgram.csv, if needed. From the Data Source panel, select Margin and drag it to the center of Panel 2, releasing it once you see the drop zone turn blue.
+Click on the Summary chart in Panel 2 to bring it into focus. Right-click on the Summary chart in Panel 2 and select Summarize. Then select Average.
+Right-click on the Summary chart in Panel 2 and select Format. Then select Currency. Finally select $(USD) as the currency.
+Click on the Summary chart in Panel 2 if needed to bring it into focus. From the on-demand toolbar, click Edit the title. Enter the title “Average Margin” to the visualization.
+To save the current work in the dashboard, press CTRL+S.
+Your Panel 2 widget should look like the one below:
+
+Task B : Keep/Exclude Data Points from a Visualization
+On the Data Source panel, expand CustomerLoyaltyProgram.csv, if needed. From the Data Source panel, press CTRL and select Revenue, Product Line and drag it to the center of Panel 3, releasing it once you see the drop zone turn blue.
+From the Data Source panel, press select Location Code and drag it to the drop zone of Color of Panel 3.
+Right-click on the Suburban data point of the panel 3 visualization. Select Exclude
+To save the current work in the dashboard, press CTRL+S.
+Your Panel 3 widget should look like the one below:
+
+Task C : Set Top/Bottom on a Visualization
+From the Data Source panel, press CTRL and select Quantity Sold, City and drag it to the center of Panel 4, releasing 
+it once you see the drop zone turn blue.
+Click on the chart in panel 4 to bring it into focus and render the on-demand toolbar.
+Click the Change Visualization button in the on-demand toolbar. Use the arrow “>” to expand All Visualizations. Find and 
+select Column.
+Click on the Column chart in panel 4 to bring it into focus. Right-click on the axis label Quantity Sold (Sum) and 
+select Top or bottom.
+Set the value of Number of results as 10. Select Top count.
+From the on-demand toolbar, click Edit the title. Enter the title “Top 10 Quantity Sold by City” to the visualization.
+To save the current work in the dashboard, press CTRL+S.
+Your Panel 4 widget should look like the one below:
+
+Task D : Create and Leverage Navigation Paths
+Click on the Create navigation path of Navigation paths of the data source panel.
+In the Create navigation path dialog box, expand CustomerLoyaltyProgram.csv, if needed. Select, drag and release Order Year, Quarter, Country, City sequentially, maintaining the order(shown on the image below) on the right panel. Once done, click OK.
+From the Data Source panel, press CTRL and select Margin, Product Line, Order Year and drag it to the center of Panel 5, releasing it once you see the drop zone turn blue.
+Click on the chart in panel 5 to bring it into focus and render the on-demand toolbar.
+Click the Change Visualization button in the on-demand toolbar. Use the arrow “>” to expand Recommended visualizations. Find and Select Bar.
+Right-click on the axis label Order Year. Select Navigate.
+One by one select Order Year, Quarter, Country, City to navigate among the columns of the navigation paths and observe the resulting panel 5 visualization. Lastly, keep the Order Year selected.
+Alternative interactive way with Drill down/back:
+Click on the chart in panel 5 to bring it into focus if needed.
+Right-click on 2016 Smart Electronics bar of the bar chart.
+Select Drill down.
+Now right-click on Q1 Smart Electronics bar of the bar chart.
+Select Drill back.
+To save the current work in the dashboard, press CTRL+S.
+Your Panel 5 widget should look like the one below:
+
+
+Task E : Filter Data in the Current Tab
+If required, click Filters in the Dashboard Toolbar to display the filters pane.
+From the Data Source panel, select Product Line and drag and release it on the This tab filter panel on the right-hand side.
+Click on the Product Line filter tab of This tab filter panel. Select Computers and Home Office, Photography, TV and Video Gaming. Click OK.
