@@ -12,6 +12,21 @@ def calculate_demographic_data(print_data=True):
 
     # What is the average age of men?
     average_age_men = None
+    sex_dict = {}
+    male_female_values = []
+    sex = df['sex']
+    age = df['age']
+    sorted_sexs = df['sex'].value_counts(sort=True).sort_index() # sorts the sexs and counts them 
+    number_of_males = sorted_sexs[-1]  # gives me total number of males
+    len_df = len(df)
+    for k,v in zip(sex, age): # gives me a dict with total number of males and females
+        if k in sex_dict:
+            sex_dict[k] += v
+        else:
+            sex_dict[k] = v
+
+    for v in sex_dict.values(): # puts male/female values in list
+      male_female_values.append(v)
 
     # What is the percentage of people who have a Bachelor's degree?
     percentage_bachelors = None
