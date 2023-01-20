@@ -93,4 +93,55 @@ while(year != 1973):
 print("It took ", i ,"repetitions to get out of loop.")
 
 Functions:
+
+    printing a stand alone function will not make it return function()
+    calling a function by using print print(function())
+        will on return what is after return
     
+    def print_stuff(stuff):
+        for i,s in enumerate(stuff):  # this prints an index as i and s as whatever stuff you pass
+            print('album', i, 'Rating is', s)
+        
+        album_ratings = [10,8.5,9.5]
+        printStuff(album_ratings)
+
+        album 0 Rating is 10
+
+    SCOPE:
+        -scope of a variable is the part of the program where that variable is accessible.
+        -Variables that are defined outside of any function are said to be within the global 
+            scope, meaning they can be accessed anywhere after they are defined
+
+        Global Variables -  Variables that are defined outside of any function are said to be 
+            within the global scope, meaning they can be accessed anywhere after they are defined
+
+        Local Variables - are variables inside the function
+    *****If local variable is in function Python will automatically go outside 
+            We can assign a global variable by using word global inside a function 
+    
+    Exception Handling:
+        try:
+            pass
+        except IOErrot:
+            print("Print something useful here.") 
+        else: # this would be a basic catch all 
+            print("Something went wrong.")
+        finally:
+            print("C
+            ode to execute at the end of the try except no matter what.")
+
+        You can have multiple excepts with **kwargs
+
+    Objects and Classes:
+        Types of built in classes 
+            int, float, str, list, dict, bool and each is an object
+                Every object has the following: a type, internal representation,
+                 a set of functions called methods to interact with the data. 
+
+    Class to Object to Data Attribute to Method Attribute
+    Instance -instances
+     of an object 
+    dir() gives you data and method attributes
+
+    variable gets passed in circle class and circle class instantiates the variable
+

@@ -45,3 +45,13 @@ while(i < len(squares) and squares[i] == 'orange'):
     new_squares.append(squares[i])
     i = i + 1
 print (new_squares)
+
+# What does a method do to an object? changes or interacts with the object
+
+RedCircle=Circle(10,'red')
+RedCircle.radius=1
+#radius ends up being 1
+
+BlueCircle=Circle(10,'blue')
+BlueCircle.add_radius(20)
+#radius adds to 30
