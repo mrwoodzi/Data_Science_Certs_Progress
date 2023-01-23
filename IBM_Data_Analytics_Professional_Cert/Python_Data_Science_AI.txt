@@ -145,3 +145,30 @@ Functions:
 
     variable gets passed in circle class and circle class instantiates the variable
 
+
+Opening Files:
+    .open('selected_file, 'mode') # mode r for reading(.txt), w writing, a appending #file is a object
+    selected_file.name # gives the name of file
+
+    Use with open('selected_file', 'mode') as file1: # better and will automatically close file
+        file_stuff = file1.read('optional number of characters to read here')
+        print(file_stuff)
+    print(file1.closed)
+    print(file_stuff)
+    .readlines() # outputs lines of file as a list 
+        # if you use this again in exact same manner it will print the 2nd line of file 
+
+# Iterate through the lines
+
+with open(example1,"r") as file1:
+        i = 0;
+        for line in file1:
+            print("Iteration", str(i), ": ", line)
+            i = i + 1
+
+# Read all lines and save as a list
+
+with open(example1, "r") as file1:
+    FileasList = file1.readlines()
+    
+
