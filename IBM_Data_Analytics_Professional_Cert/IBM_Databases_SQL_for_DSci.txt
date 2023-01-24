@@ -1,0 +1,155 @@
+SQL - Structured Query Language
+Welcome to SQL for Data Science:
+    SQL is 1 of top 3 skills for data science
+    boost your professional profile
+    give you a good understanding of relational databases
+
+    What is SQL?
+         SQL is a language used for relational databases to query or get data out of a database. 
+         SQL is also referred to as SQL and is short for its original name Structured English Query Language. 
+         So SQL is a language used for a database to query data. 
+
+    What is Data?
+        Data is a collection of facts in the form of words, numbers, or even pictures. 
+        Data is one of the most critical assets of any business. 
+        It is used and collected practically everywhere. 
+
+    What are Databases?
+        Databases are everywhere and used every day, but they are largely taken for granted. 
+        A database is a repository of data. It is a program that stores data. 
+        A database also provides the functionality for adding, modifying, and querying that data. 
+        There are different kinds of databases of different requirements. 
+        The data can be stored in various forms. 
+        Tabular is columns and rows - relational database 
+
+    DBMS:
+        Database Management System
+        The terms database, database server, database system, data server, and database management 
+            systems are often used interchangeably. 
+        
+    RDBMS
+         Examples of relational database management systems are my SQL, Oracle Database, 
+            DB2 Warehouse, and DB2 on Cloud. 
+
+    5 simple commands:
+        For the majority of people using a database, there are five simple commands to create a table, 
+        insert data to populate the table, 
+        select data from the table, 
+        update data in the table, 
+        delete data from the table.
+    
+    Comparison Operators
+        =, >, <, >=, <=, <>  last is not equal
+
+    SELECT Statement:
+        to see data use SELECT
+        is a Data Manipulation Language(DML) statement used to read and modify data
+            SELECT statement: Query
+            Result from the query: Result set/table
+
+            Select * from <tablename>
+            Select * column1, column2 from <tablename>
+    FROM Clause:
+        specifies from which table to get the data. 
+        can also include JOIN subclause
+            -specifies rules for joining tables
+    WHERE Clause:
+        specifies which rows to retrieve
+        True, False or Unknown
+        Always requires a predicate
+        Select * column1, from <tablename>
+            where column1='str' or 'numeric'
+
+The general syntax of SELECT statments is:
+
+select COLUMN1, COLUMN2, ... from TABLE1 ;
+****To retrieve all columns from the COUNTRY table we could use "*" instead of specifying individual column names:
+select * from COUNTRY ;
+The WHERE clause can be added to your query to filter results or get specific rows of data. To retrieve data for 
+****all rows in the COUNTRY table where the ID is less than 5:
+***select * from COUNTRY where ID < 5 ;
+***In case of character based columns the values of the predicates in the where clause need to be enclosed in 
+****single quotes. To retrieve the data for the country with country code "CA" we would issue:
+select * from COUNTRY where CCODE = 'CA' ;
+
+Why is there a semicolon after the SQL statements?
+
+Some database systems require a semicolon at the end of each SQL statement for execution. 
+It is a standard way to separate one SQL statement from another which allows more than one SQL statement 
+to be executed in the same call to the server. 
+So, it is good practice to use a semicolon at the end of each SQL statement.
+
+SELECT Title, Director, Writer FROM FilmLocations; # only gives those columns
+SELECT colmn1, * From FilmLocations; # will give whole db with column1 as index 
+SELECT Title, ReleaseYear, Locations FROM FilmLocations WHERE ReleaseYear>=2001;
+SELECT Title, ReleaseYear, Locations FROM FilmLocations WHERE ReleaseYear<=2000; 
+SELECT Title, ProductionCompany, Locations, ReleaseYear FROM FilmLocations WHERE Writer<>"James Cameron"; 
+    # Writer on the above is a column name. It does not pull up data from Writer column 
+
+COUNT
+     COUNT is a built-in database function that retrieves the number of rows that match the query criteria
+     or example, get the total number of rows in a given table, select COUNT(*) from tablename. 
+     Kinda like len() for rows 
+     Select COUNT(COUNTRY) from MEDALS where COUNTRY='CANADA.'
+     SELECT COUNT(*) FROM FilmLocations; # counts all rows
+DISTINCT
+    DISTINCT is used to remove duplicate values from a result set. 
+    Like Keys in a Dictionary
+    Example, to retrieve unique values in a column, select DISTINCT columnname from tablename.
+     Select DISTINCT COUNTRY from MEDALS where MEDALTYPE = 'GOLD'. 
+LIMIT
+    LIMIT is used for restricting the number of rows retrieved from the database. 
+    LIke .head() in pandas 
+    SELECT * FROM FilmLocations LIMIT 15 OFFSET 10;
+    Select * from tablename LIMIT 10.
+    Select * from MEDALS where YEAR = 2018 LIMIT 5
+
+FilmLocations(
+    Title:              titles of the films, 
+    ReleaseYear:        time of public release of the films, 
+    Locations:          locations of San Francisco where the films were shot, 
+    FunFacts:           funny facts about the filming locations, 
+    ProductionCompany:  companies who produced the films, 
+    Distributor:        companies who distributed the films, 
+    Director:           people who directed the films, 
+    Writer:             people who wrote the films, 
+    Actor1:             person 1 who acted in the films, 
+    Actor2:             person 2 who acted in the films, 
+    Actor3:             person 3 who acted in the films
+)
+SELECT COUNT(Locations) FROM FilmLocations WHERE Writer="James Cameron";
+    # Retrieve the number of locations of the films which are written by James Cameron.
+
+SELECT COUNT(Locations) FROM FilmLocations WHERE Director="Woody Allen";
+    # Retrieve the number of locations of the films which are directed by Woody Allen.
+
+SELECT COUNT(Title) FROM FilmLocations WHERE Locations="Russian Hill";
+    # Retrieve the number of films shot at Russian Hill.
+
+SELECT COUNT(ReleaseYear) FROM FilmLocations WHERE ReleaseYear<1950;
+    # Retrieve the number of rows having a release year older than 1950 from the “FilmLocations” table.
+
+SELECT COUNT(DISTINCT ReleaseYear) FROM FilmLocations WHERE ProductionCompany="Warner Bros. Pictures";
+    # Retrieve the number of release years of the films distinctly, produced by Warner Bros. Pictures.
+
+SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear>2000;
+    # Retrieve the name of all unique films released in the 21st century and onwards, along with their release years.
+
+SELECT DISTINCT Director, Title FROM FilmLocations WHERE Locations="City Hall";
+    # Retrieve the names of all the directors and their distinct films shot at City Hall
+
+SELECT COUNT(DISTINCT Distributor) FROM FilmLocations WHERE Actor1="Clint Eastwood";
+    # Retrieve the number of distributors distinctly who distributed films acted by Clint Eastwood as 1st actor.
+
+SELECT * FROM FilmLocations LIMIT 15 OFFSET 10;
+    # Retrieve the first 15 rows from the “FilmLocations” table starting from row 11
+
+SELECT DISTINCT Title FROM FilmLocations LIMIT 50;
+    # Retrieve the name of first 50 films distinctly
+
+SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 10;
+    # Retrieve first 10 film names distinctly released in 2015
+
+SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 3 OFFSET 5;
+    # retrieve the next 3 film names distinctly after first 5 films released in 2015.
+
