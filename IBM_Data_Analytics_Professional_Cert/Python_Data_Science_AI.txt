@@ -20,7 +20,7 @@ release_year_dict
 
 Sets
     -unordered
-    -sets donot have element positions
+    -sets do not have element positions
     -only 1 element of a set can exist, meaning no duplicates
     -{} curly brackets
     -convert list to set 
@@ -310,3 +310,95 @@ with open('Example2.txt','r') as readfile:
 # Verify if the copy is successfully executed
 with open('Example3.txt','r') as testwritefile:
     print(testwritefile.read())
+
+
+PANDAS 
+    Reading Excel file  
+        
+            !pip install xlrd
+            !pip install openpyxl
+
+xlsx_path = 'https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Datasets/TopSellingAlbums.xlsx'
+df = pd.read_excel(xlsx_path)
+
+    You can make a dataframe with a dictionary  
+        dict = {'column1' : ['rows', 'under', 'column'], 'column2':['rows', 'under', 'column']}
+        df = pd.DataFrame(dict) # turning dict into dataframe 
+
+    Accessing column    
+        var = df[['column1']] # makes new dataframe
+    How would you access the first-row and first column in the dataframe df?
+        df.ix[0,0]
+
+    Saving Data:
+        Listing Unique elements:
+            df['column1'].unique() # gives only unique elements(rows under column) in dataframe
+            
+            df.to_csv('name_you_want.csv')
+
+    Series
+        To view the column as a series, just use one bracket:
+            var = df['column']
+    DataFrame
+        var = df[['column']]
+    .loc
+        loc[row_label, column_label]
+        # Access the column using the name
+            df.loc[0, 'Salary']
+    .iloc
+        iloc[row_index***stops before last number, column_index]
+
+        Access the 2nd row and the 3rd column of df
+            df.iloc[1, 2]
+    .set_index('column_you_want')
+        df2=df
+        df2=df2.set_index("Name")
+    Slicing:
+        here the start represents the index from where to consider, and stop represents the index one 
+            step BEYOND the row you want to select. You can perform slicing using both the index and 
+            the name of the column.
+        It means you are telling Python to start at index 0 and select rows 0, 1, 2 up to but not including 3
+        Indexing by labels(i.e. using loc()) differs from indexing by integers (i.e. using iloc()). With loc(), 
+            both the start bound and the stop bound are inclusive. When using loc(), integers can be used, but the 
+            integers refer to the index label and not the position.
+        data[start:stop]
+
+        # let us do the slicing using old dataframe df
+            df.iloc[0:2, 0:3]
+        #let us do the slicing using loc() function on old dataframe df where index column is having labels 
+                as 0,1,2
+            df.loc[0:2,'ID':'Department']
+        #let us do the slicing using loc() function on new dataframe df2 where index column is 
+                Name having labels: Rose, John and Jane
+            df2.loc['Rose':'Jane', 'ID':'Department']
+        # Access the 2nd row and the 3rd column of df
+            df.iloc[1, 2]
+
+# Add new row to specifig index name
+df2 = df.append(pd.DataFrame([new_row],index=['7'],columns=df.columns))
+
+import pandas as pd
+import numpy as np
+ 
+column =['a', 'b', 'c', 'd', 'e']
+index =['A', 'B', 'C', 'D', 'E']
+  
+# create a dataframe of random values of array
+df1 = pd.DataFrame(np.random.rand(5, 5),
+       columns = column, index = index)
+ 
+column =['a', 'b', 'c', 'g', 'h']
+ 
+# create the new index for columns
+print(df1.reindex(column, axis ='columns', fill_value ='data missing'))
+
+# Use the following list to convert the dataframe index df to characters and assign it to df_new; 
+# find the element corresponding to the row index a and column 'Artist'. Then select the rows a 
+# through d for the column 'Artist'
+new_index=['a','b','c','d','e','f','g','h']
+df_new=df
+df_new
+df_new.index=new_index
+df_new
+df_new.loc['a', 'Artist']
+df_new.loc['a':'d', 'Artist']

@@ -55,3 +55,20 @@ RedCircle.radius=1
 BlueCircle=Circle(10,'blue')
 BlueCircle.add_radius(20)
 #radius adds to 30
+
+Access the 2nd row and the 3rd column of df
+    df.iloc[1, 2]
+
+# Use the following list to convert the dataframe index df to characters and assign it to df_new; 
+# find the element corresponding to the row index a and column 'Artist'. Then select the rows a 
+# through d for the column 'Artist'
+new_index=['a','b','c','d','e','f','g','h']
+df_new=df
+df_new
+df_new.index=new_index
+df_new
+df_new.loc['a', 'Artist']
+df_new.loc['a':'d', 'Artist']
+
+    .iloc
+        iloc[row_index***stops before last number, column_index]
