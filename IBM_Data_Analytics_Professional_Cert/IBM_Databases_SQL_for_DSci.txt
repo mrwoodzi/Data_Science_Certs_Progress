@@ -41,24 +41,7 @@ Welcome to SQL for Data Science:
     Comparison Operators
         =, >, <, >=, <=, <>  last is not equal
 
-    SELECT Statement:
-        to see data use SELECT
-        is a Data Manipulation Language(DML) statement used to read and modify data
-            SELECT statement: Query
-            Result from the query: Result set/table
 
-            Select * from <tablename>
-            Select * column1, column2 from <tablename>
-    FROM Clause:
-        specifies from which table to get the data. 
-        can also include JOIN subclause
-            -specifies rules for joining tables
-    WHERE Clause:
-        specifies which rows to retrieve
-        True, False or Unknown
-        Always requires a predicate
-        Select * column1, from <tablename>
-            where column1='str' or 'numeric'
 
 The general syntax of SELECT statments is:
 
@@ -84,8 +67,31 @@ SELECT colmn1, * From FilmLocations; # will give whole db with column1 as index
 SELECT Title, ReleaseYear, Locations FROM FilmLocations WHERE ReleaseYear>=2001;
 SELECT Title, ReleaseYear, Locations FROM FilmLocations WHERE ReleaseYear<=2000; 
 SELECT Title, ProductionCompany, Locations, ReleaseYear FROM FilmLocations WHERE Writer<>"James Cameron"; 
+
+
     # Writer on the above is a column name. It does not pull up data from Writer column 
 
+
+
+
+    SELECT Statement:
+        to see data use SELECT
+        is a Data Manipulation Language(DML) statement used to read and modify data
+            SELECT statement: Query
+            Result from the query: Result set/table
+
+            Select * from <tablename>
+            Select * column1, column2 from <tablename>
+    FROM Clause:
+        specifies from which table to get the data. 
+        can also include JOIN subclause
+            -specifies rules for joining tables
+    WHERE Clause:
+        specifies which rows to retrieve
+        True, False or Unknown
+        Always requires a predicate
+        Select * column1, from <tablename>
+            where column1='str' or 'numeric'
 COUNT
      COUNT is a built-in database function that retrieves the number of rows that match the query criteria
      or example, get the total number of rows in a given table, select COUNT(*) from tablename. 
@@ -103,6 +109,58 @@ LIMIT
     SELECT * FROM FilmLocations LIMIT 15 OFFSET 10;
     Select * from tablename LIMIT 10.
     Select * from MEDALS where YEAR = 2018 LIMIT 5
+
+DML Statements:****************************************************************************
+        Data Manipulation Language
+
+The search condition of the WHERE clause uses a predicate to refine the search. 
+COUNT, DISTINCT, and LIMIT are expressions that are used with SELECT statements.
+INSERT, UPDATE, and DELETE are DML statements for populating and changing tables. 
+
+INSERT:
+    populates table with data 
+    INSERT INTO DATABASE_NAME
+    VALUES:
+        this is where row information is
+        ('stuff','stuff','more stuff')
+
+INSERT INTO Instructor(ins_id, lastname, firstname, city, country) # columns
+VALUES(4, 'Saha', 'Sandip', 'Edmonton', 'CA'); #Rows
+
+INSERT INTO Instructor(ins_id, lastname, firstname, city, country)
+VALUES(5, 'Doe', 'John', 'Sydney', 'AU'), (6, 'Doe', 'Jane', 'Dhaka', 'BD');
+
+
+UPDATE:
+    used to alter or modify database table
+    UPDATE Tablename # Select Table
+    SET ColumnName = Value, ColumnName = Value, ColumnName = Value  # Select Column and give new value
+    WHERE Condition  # Selects Row
+        # if you do not specifiy the WHERE statement SQL  will select all rows
+
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ... # columns we want with new data 
+    WHERE ColumnName = row; # this is like the index 
+
+UPDATE Instructor 
+SET city='Toronto' 
+WHERE firstname="Sandip";
+
+UPDATE Instructor 
+SET city='Dubai', country='AE' 
+WHERE ins_id=5;
+
+DELETE:
+    used to read and modify data 
+    DELETE FROM Tablename
+    WHERE Column_You_Want IN ('row_you_want', 'other_row_you_want') 
+        # where is optional but if you do not specifiy it will select all rows
+
+
+DELETE FROM instructor
+WHERE ins_id = 6; # Deletes whole row including index 6
+
+
 
 FilmLocations(
     Title:              titles of the films, 
@@ -153,3 +211,12 @@ SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 10;
 SELECT DISTINCT Title FROM FilmLocations WHERE ReleaseYear=2015 LIMIT 3 OFFSET 5;
     # retrieve the next 3 film names distinctly after first 5 films released in 2015.
 
+Command	Syntax	Description	Example
+SELECT	SELECT column1, column2, ... FROM table_name;	SELECT statement is used to fetch data from a database.	SELECT city FROM placeofinterest;
+WHERE	SELECT column1, column2, ...FROM table_name WHERE condition;	WHERE clause is used to extract only those records that fulfill a specified condition.	SELECT * FROM placeofinterest WHERE city == 'Rome' ;
+COUNT	SELECT COUNT * FROM table_name ;	COUNT is a function that takes the name of a column as argument and counts the number of rows when the column is not NULL.	SELECT COUNT(country) FROM placeofinterest WHERE country='Canada';
+DISTINCT	SELECT DISTINCT columnname FROM table_name;	DISTINCT function is used to specify that the statement is a query which returns unique values in specified columns.	SELECT DISTINCT country FROM placeofinterest WHERE type='historical';
+LIMIT	SELECT * FROM table_name LIMIT number;	LIMIT is a clause to specify the maximum number of rows the result set must have.	SELECT * FROM placeofinterest WHERE airport="pearson" LIMIT 5;
+INSERT	INSERT INTO table_name (column1,column2,column3...) VALUES(value1,value2,value3...);	INSERT is used to insert new rows in the table.	INSERT INTO placeofinterest (name,type,city,country,airport) VALUES('Niagara Waterfalls','Nature','Toronto','Canada','Pearson');
+UPDATE	UPDATE table_name SET[[column1]=[VALUES]] WHERE [condition];	UPDATE used to update the rows in the table.	UPDATE placeofinterest SET name = 'Niagara Falls' WHERE name = "Niagara Waterfalls";
+DELETE	DELETE FROM table_name WHERE [condition];	DELETE statement is used to remove rows from the table which are specified in the WHERE condition.	DELETE FROM placeofinterest WHERE city IN ('Rome','Vienna');

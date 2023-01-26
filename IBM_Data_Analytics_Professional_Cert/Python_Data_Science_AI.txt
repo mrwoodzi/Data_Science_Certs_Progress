@@ -402,3 +402,31 @@ df_new.index=new_index
 df_new
 df_new.loc['a', 'Artist']
 df_new.loc['a':'d', 'Artist']
+
+NUMPY:
+        np.arry([])
+    dtype- gives us data type in array
+    a.size
+    a.ndim - array dimensions
+    a.shape - gives both size and dimension
+
+    Indexing and Slicing:
+        a[1:4] - selects index 1-3 NOT 4
+
+    Basic Operations:
+        Vector Add and Subtract 
+            its like operating horizontally to create a new vector
+
+        Array Multiplication with a Scalar:
+            y=1/2 looks like a fraction
+            z=2y= 2*1/2*2 = 2/4
+
+        Product of 2 Numpy Arrays:
+            u= 1/2 v=3/2
+            z = u teenyCircle v 
+            z = 1*3/2*2
+            it multiplies straight across/at equal indexes
+
+        Dot Product:
+            np.dot(array1, array2)
+            u = (1*3)+(2*1) = 5

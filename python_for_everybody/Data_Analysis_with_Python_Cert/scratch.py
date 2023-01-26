@@ -1,5 +1,5 @@
-def add(a, b):
-    return a + b
+import statistics as s 
+k = [10, 20, 30, 40]
+k[1:3] = [50]
 
-
-print(add(1, 2))
+print(s.multimode(k))

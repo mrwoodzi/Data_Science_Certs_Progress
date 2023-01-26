@@ -62,6 +62,8 @@ Access the 2nd row and the 3rd column of df
 # Use the following list to convert the dataframe index df to characters and assign it to df_new; 
 # find the element corresponding to the row index a and column 'Artist'. Then select the rows a 
 # through d for the column 'Artist'
+My Problem was that I forgot to make a new_index with all values
+you need to havbe a new dataframe
 new_index=['a','b','c','d','e','f','g','h']
 df_new=df
 df_new
