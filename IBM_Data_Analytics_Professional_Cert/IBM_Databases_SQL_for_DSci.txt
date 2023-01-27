@@ -220,3 +220,67 @@ LIMIT	SELECT * FROM table_name LIMIT number;	LIMIT is a clause to specify the ma
 INSERT	INSERT INTO table_name (column1,column2,column3...) VALUES(value1,value2,value3...);	INSERT is used to insert new rows in the table.	INSERT INTO placeofinterest (name,type,city,country,airport) VALUES('Niagara Waterfalls','Nature','Toronto','Canada','Pearson');
 UPDATE	UPDATE table_name SET[[column1]=[VALUES]] WHERE [condition];	UPDATE used to update the rows in the table.	UPDATE placeofinterest SET name = 'Niagara Falls' WHERE name = "Niagara Waterfalls";
 DELETE	DELETE FROM table_name WHERE [condition];	DELETE statement is used to remove rows from the table which are specified in the WHERE condition.	DELETE FROM placeofinterest WHERE city IN ('Rome','Vienna');
+
+
+Database Concepts:
+    ERD table   
+        -entity relationship data modelling
+        -most used data model 
+        -allows for data independence 
+        -data is stored in tables 
+    
+    Entity-Relationship model   ER Model
+        -Common data types include characters such as car and VAR char, numbers such as integer 
+            and decimal, and timestamps including date and time
+        -Used as a tool to design relational databases 
+        -Objects 
+        -The entity book becomes a table in the database and the attributes become the columns in a table
+        - The building blocks of an ER diagram are entities and attributes. 
+            -entities 
+                - independent objects which can have multiple characteristics called attributes. 
+                - name of a table 
+                - like a CLASS in Python
+                - typically a noun 
+                -have attributes which are the data elements that charaterize the entity 
+            -attributes 
+                -become columns in a table 
+                -are certain properties or characteristics of an entity and tell us more about the entity.  
+                -connected to 1 entity 
+                -each attribute stores data in a type
+            -VAR char 
+                -vary in length, we can set the variable character data type for the title column: VAR char
+            -char 
+                - For character columns that do not vary in length, we use character or char. 
+            -carved
+                -both char and numeric 
+         Using the book entity mapping as an example, we can create the tables for the remainder of 
+         our simplified library example using entity names, like author, author list, borrower, loan, 
+         and copy. The entity attributes will be the columns of the tables. 
+            -primary key
+                - unique index 
+                -uniquely identifies each tuple or row in a table, preventing duplication of data and 
+                    providing a way of defining relationships between tables. 
+            -foreign keys 
+                - are primary keys defined in other tables, creating a link between the tables.
+
+        How to Create a Database Instance on Cloud:
+            Advantages:
+                -easy of use 
+                    -api, web interface, cloud or remore apps
+                -scalability and economics
+                    -expand/shink storage and compute resources 
+                    -pay per use
+                -disaster recovery 
+            Examples of databases 
+                -IBM DB2
+                -Databases for PostgreSQL
+                -Oracle Database Cloud Service
+                -Microsoft Azure SQL Database
+                -Amazon Relational Database Services RDS 
+            Database Service Instances:
+                -DBaas provides users with access to Database resources in cloud without    
+                    setting up hardware and installing software 
+                -Database service instance holds data in data objects/tables
+                -Once data is loaded, it can be queried using web interfaces and apps 
+            Creating a DB2 Cloud Instance:
+                
