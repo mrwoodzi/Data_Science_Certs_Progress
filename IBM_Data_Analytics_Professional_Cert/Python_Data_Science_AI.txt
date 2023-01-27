@@ -493,3 +493,21 @@ NUMPY:
             plt.plot(x, y)
 
 ### I stopped at linspace in Lab
+
+TWO Dimensional Numpy Array:
+    element - is same as a cell in excel 
+    np.ndim(var) - rank, number of nested lists, as last index row if 3 rows then it outputs 2
+    np.shape(var) - returns tuple (number of rows/lists, size of each list)
+    np.size(var) - total number of elements 
+
+    Accessing -[rows, columns]
+        aceessing an element/cell   
+            var[row, column] also and = var[1][2]
+    Slicing - [row, column]
+        var[0:2, 2] # accesses first 2 rows on 2nd column
+        var{1, 0:2] # access row 1 columns 0 and 1
+
+
+    Matrix Multiplication   
+        np.dot(var) # Yo this is cool but need to study more 
+        multiplying a row(s) or column(s) 
