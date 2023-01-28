@@ -10,6 +10,14 @@ Bash Tutorial:
         .js 
         .txt 
     make sure you are in the freeCodeCamp folder 
+    echo 
+        printing in terminal 
+        echo text >> filename (You need the arrows)
+            printing to a file 
+            appends to the file is better way to think about it 
+    more 
+        more filename
+        prints contents of file 
     Adding a flag:
         ls the_flag
         long list format =  ls -l (lower case L)
@@ -20,6 +28,8 @@ Bash Tutorial:
         print command 
     touch filename  
         creates a new file
+        touch filename
+        touch dir/dir/filename 
     .gitignore was hidden when we created it
     --help
         command_you_want_help_with --help 
@@ -30,8 +40,27 @@ Bash Tutorial:
         remove file from current directory 
         rm filename 
     mv 
-        rename filename 
+        rename filename or move something 
         mv <filename> <new_filename> 
+        mv <file> <destination>
+        mv <file> <folder/folder>
+    find 
+        allows you to view file tree in current folder 
+        find
+            You can see everything in this website folder and its descendant folders
+        find <folder_name>
+            specific folder 
+        find -name <filename> or <folder>
+            finding a specific file in folder or find a folder 
+        find dir/dir/dir
+    mkdir 
+        mk directoryName
+        mkdir client/<new_folder_name>
+            making folder inside folder 
+    -r, -R, --recursive   remove directories and their contents recursively or copy 
+        -removing dir/folders with their contents 
+        cp -r dirname newdirname 
+            -does a copy paste and rename 
 
 Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
     with it. Log in by typing psql --username=freecodecamp --dbname=postgres into the terminal and pressing enter.
