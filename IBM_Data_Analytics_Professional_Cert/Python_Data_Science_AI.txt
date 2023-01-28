@@ -511,3 +511,43 @@ TWO Dimensional Numpy Array:
     Matrix Multiplication   
         np.dot(var) # Yo this is cool but need to study more 
         multiplying a row(s) or column(s) 
+
+
+SIMPLE APIs
+    Rest apis:
+        REpresentational
+        State 
+        Transfer 
+
+        Client 
+            -can be called a wrapper 
+            -you or your code 
+            -PyCoinGecko 
+        Resource 
+            -the webstuff you want 
+            -also known as endpoint 
+        Can use HTTP to transfer the data back and forth
+            -usually contaings JSON file 
+        API has set rules 
+            -communication
+            -Input or Request 
+            -Output or Response 
+        API Key 
+            -usually happens in first call to api 
+            -authorizes user 
+
+            PyCoinGecko
+         pip install PyCoinGecko
+         from pycoingecko import CoinGeckoAPI
+         cg = CoinGeckoAPI()
+         bitcoin_data = cg.get_coin_maket_chart_by_id(id='bitcoin', vs_currency='usd', days=30)
+        # this returns a dict of nested lists 
+
+        #converting to dataframe 
+        data = pd.DataFrame(bitcoin_price_data, columns=['TimeStamp', 'Price'])
+
+        # appending timestamp column to data 
+        data['Date'] = pd.to_datetime(data['TimeStamp], unit='ms')
+
+        # creating a candlestick plot 
+        candlestick_data = data.groupby(data.Date.dt.date).agg({'Price: ['min, 'max', 'first', 'last']})
