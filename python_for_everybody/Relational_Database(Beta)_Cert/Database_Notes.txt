@@ -1,0 +1,37 @@
+Bash Tutorial:
+    pink - images
+        .jpg
+        .png 
+        .svg 
+    blue - folders
+    white - files 
+        .font
+        .css 
+        .js 
+        .txt 
+    make sure you are in the freeCodeCamp folder 
+    Adding a flag:
+        ls the_flag
+        long list format =  ls -l (lower case L)
+    Look inside a file 
+        more command
+    Go back 2 folders cd ../..
+    echo 
+        print command 
+    touch filename  
+        creates a new file
+    .gitignore was hidden when we created it
+    --help
+        command_you_want_help_with --help 
+    cp 
+        copy a file 
+        cp <file> <destination>
+    rm 
+        remove file from current directory 
+        rm filename 
+    mv 
+        rename filename 
+        mv <filename> <new_filename> 
+
+Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
+    with it. Log in by typing psql --username=freecodecamp --dbname=postgres into the terminal and pressing enter.
