@@ -557,16 +557,18 @@ SIMPLE APIs
         REST APIs & HTTP Requests Part 1:
             Request Module in Python
                 allows you to send HTTP/1.1 requests easily. 
-            
             GET Request /get, create query string 
-                    url_get='http://website_I_want.org/get 
+                    DOES NOT have a body 
+                    url_get=requests.get'http://website_I_want.org/get'
+                   
             Query String 
                     dict={'stuff':'the_stuff','more_stuff','other_stuff'}
                     r=requests.get(url_get,params=dict)
             Post Requests 
+                    ONLY only the POST request has a body:
                     url_post='http://website_I_want.org/post 
                     dict={'stuff':'the_stuff','more_stuff','other_stuff'}
-                    r=requests.post(url_get,params=dict)
+                    r_post=requests.post(url_post,data=dict)
                  used to send data to a server, but the POST request 
                     sends the data in a request body, not the url.
                 In order to send the Post Request in the URL, we 
@@ -584,12 +586,27 @@ SIMPLE APIs
                     http 
                     version number 
                 Request Header 
+                    print(r.request.headers)
                     Apache-Cache 
                     contains info 
                 Request body 
                     sometimes 
                     contains requested file 
+                Response Object
+                    An image is a response object that contains the image as a bytes-like object. 
+                        As a result, we must save it using a file object.
+                        First, we specify the file path and name
+                        path=os.path.join(os.getcwd(),'image.png')
+                        path
+                        '/resources/labs/image.png'
+                        We save the file, in order to access the body of the response we use the attribute 
+                        content then save it using the open function and write method:
+                            with open(path,'wb') as f:
+                                f.write(r.content)
+                        We can view the image:
+                            Image.open(path)  
                 Status Code 
+                    request status code r.status_code
                      the 100s are informational responses; 
                         100 indicates that everything is OK so far. 
                     200s are Successful responses: 
@@ -614,6 +631,27 @@ SIMPLE APIs
                         /images/IDSNlogo.png 
                 http://www.ibm.com/images/IDSNlogo.png 
             URL:
-                Uniform Resource Locator 
+                REQUEST WITH URL PARAMETERS 
+                    url_get='http://httpbin.org/get'
+                    payload={"name":"Joseph","ID":"123"}
+                    r=requests.get(url_get,params=payload)
+                    r.url
+                    print("request body:", r.request.body) # There is no request body
+                Uniform Resource Locator
+
+Question 1: write  wget 
+In the previous section, we used the wget function to retrieve content from the web 
+    server as shown below. Write the python code to perform the same task. The code 
+    should be the same as the one used to download the image, but the file name should 
+    be 'Example1.txt'
+
+url='https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%205/data/Example1.txt'
+path=os.path.join(os.getcwd(),'example1.txt')
+r=requests.get(url)
+with open(path,'wb') as f:
+    f.write(r.content)
+
+EXTRA STUFF ON REQUEST-HTTP 
+https://requests.readthedocs.io/en/latest/?utm_content=000026UJ&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork1005-2022-01-01&utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_term=10006555
            
             
