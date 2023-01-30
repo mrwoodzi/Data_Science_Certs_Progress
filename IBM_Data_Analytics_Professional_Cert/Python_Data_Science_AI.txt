@@ -514,6 +514,7 @@ TWO Dimensional Numpy Array:
 
 
 SIMPLE APIs
+    Pandas is a type of api 
     Rest apis:
         REpresentational
         State 
@@ -551,3 +552,68 @@ SIMPLE APIs
 
         # creating a candlestick plot 
         candlestick_data = data.groupby(data.Date.dt.date).agg({'Price: ['min, 'max', 'first', 'last']})
+
+
+        REST APIs & HTTP Requests Part 1:
+            Request Module in Python
+                allows you to send HTTP/1.1 requests easily. 
+            
+            GET Request /get, create query string 
+                    url_get='http://website_I_want.org/get 
+            Query String 
+                    dict={'stuff':'the_stuff','more_stuff','other_stuff'}
+                    r=requests.get(url_get,params=dict)
+            Post Requests 
+                    url_post='http://website_I_want.org/post 
+                    dict={'stuff':'the_stuff','more_stuff','other_stuff'}
+                    r=requests.post(url_get,params=dict)
+                 used to send data to a server, but the POST request 
+                    sends the data in a request body, not the url.
+                In order to send the Post Request in the URL, we 
+                    change the route to POST
+            httplib module in Python 
+            urllib module in Python 
+            User makes a request that gets turned into HTTP in a JSON File
+            Server finds info and sends in back in HTTP in a JSON File 
+                Resources in Website JSON 
+                    index.html
+                    image.png 
+                    file.txt 
+            Request and Responses Process 
+                Request Start line 
+                    http 
+                    version number 
+                Request Header 
+                    Apache-Cache 
+                    contains info 
+                Request body 
+                    sometimes 
+                    contains requested file 
+                Status Code 
+                     the 100s are informational responses; 
+                        100 indicates that everything is OK so far. 
+                    200s are Successful responses: 
+                        200 The request has succeeded. 
+                    300s
+                        Redirection
+                        Multiple Choices 
+                    400s is bad news. 
+                        401 means the request is unauthorized. 
+                        403 Forbidden
+                     500’s stands for server errors, like 501 for not Implemented.
+                        500 Server Error 
+                        501 Not implemented  
+            HTTP:
+                When an HTTP request is made, an  HTTP method is sent.
+                Scheme: 
+                    http://
+                Internet Address or Base URL
+                    www.ibm.com or ww.gitlab.com 
+                Route
+                    location on the web server 
+                        /images/IDSNlogo.png 
+                http://www.ibm.com/images/IDSNlogo.png 
+            URL:
+                Uniform Resource Locator 
+           
+            
