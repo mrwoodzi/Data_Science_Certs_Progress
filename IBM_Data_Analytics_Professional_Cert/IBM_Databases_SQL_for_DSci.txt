@@ -283,4 +283,59 @@ Database Concepts:
                 -Database service instance holds data in data objects/tables
                 -Once data is loaded, it can be queried using web interfaces and apps 
             Creating a DB2 Cloud Instance:
-                
+
+Types if SQL Statments (DDL vs. DML) 
+    DDL
+        Data Definition Language Statements 
+            -these define, change or drop data 
+            -CREATE - creates columns and tables 
+            -ALTER - alters tables including adding and dropping columns 
+                    and modding data type 
+                    add or remove keys
+                    add or remove constraints 
+            -TRUNCATE - deleting dataq in a table but not table itself
+            -DROP - used for deleting tables 
+
+    DML or CRUD Operations 
+        Data Manipulation Language Statements 
+            -used to read and modify data 
+            -INSERT - inserting a row or many rows of data into table 
+            -SELECT - reads or selects row or rows of data from table 
+            -UPDATE - edits row or rows in table 
+            -DELETE -removes row or rows of data from a table 
+
+        DATATYPES   
+            CHAR, VARCHAR, 
+            BIGINT - holds number up to 19 digits long 
+        
+
+        CREATE TABLE table_name (column_name datatype, column_other datatype)
+
+        CREATE TABLE table_name(
+            column_1 char(2) PRIMARY KEY NOT NULL,
+            column_2 varchar(15) NOT NULL,
+            column_3 varchar(15) NOT NULL,
+            column_4 varchar(40),
+            column_5 char(2)
+        );
+
+        ALTER TABLE table_name  
+            ADD COLUMN column_name datatype
+            ADD COLUMN column_name2 datatype;
+
+            # resetting data type of column
+            ALTER TABLE table_name
+                ALTER COLUMN columnYouWantToAlter SET DATA Types    
+                datatype;
+
+        DROP TABLE 
+            DROP TABLE table_name;
+        
+        TRUNCATE TABLE 
+            # deletes all rows of a table 
+            TRUNCATE TABLE table_name IMMEDIATE; 
+                # IMMEDIATE means right now delete everything and there's 
+                    no going back 
+
+
+        

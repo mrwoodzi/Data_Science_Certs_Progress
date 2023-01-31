@@ -555,8 +555,10 @@ SIMPLE APIs
 
 
         REST APIs & HTTP Requests Part 1:
+        EXCELLENT RESOURCE 
+            https://realpython.com/api-integration-in-python/
             HTTP method	Description
-                GET	    Retrieve an existing resource.
+                GET	    Retrieve an existing resource. READ-ONLY Operation 
                 POST	Create a new resource.
                 PUT	    Update an existing resource.
                 PATCH	Partially update an existing resource.
@@ -689,4 +691,69 @@ with open(path,'wb') as f:
 EXTRA STUFF ON REQUEST-HTTP 
 https://requests.readthedocs.io/en/latest/?utm_content=000026UJ&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDeveloperSkillsNetworkPY0101ENSkillsNetwork1005-2022-01-01&utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_term=10006555
            
-            
+HTML FOR WEBSCRAPING
+    HTML: Hyper Text Markup Language
+        HTML 
+            Basics
+            Composition
+            Trees 
+                html doc can be referred to as a document tree 
+                    html
+                head    body
+            title       h3,p,h3,p,h3,p 
+                        bold 
+            Tables
+                table 
+                    tr 
+                        td    /td 
+                        td    /td
+                    tr 
+                        td    /td 
+                        td    /td
+                /table 
+        Tags tell browser how to display content
+            Tag is like a class 
+                individual tags are like an instance 
+        Doctype
+            html
+            head
+            title 
+            /head 
+
+            body 
+            p 
+            h 
+            /body 
+
+
+            /html 
+
+WEBSCRAPING 
+    Requests and Beautiful Soup
+    from bs4 import BeautifulSoup
+    html="html_we_want_in_nested_data_structure"
+    soup = BeaurifulSoup(html, 'html5lib')
+
+    BeautifulSoup Object 
+        tag_object = soup.title # html title 
+        tag_object = soup.h3 
+
+        Accessing/Finding Objects 
+        parent_tag = tag_child.part 
+            finding the path to thing 
+        Next_sibling Attribute 
+            sibling_1 = tag.object.next_sibling 
+            sibling_2 = sibling_1.next_sibling
+        Navigable String 
+            tag.child.string 
+        Methods 
+            table_row = table.find_all(name='tr') # tr would find data in a table 
+                        since tr identifies a table in html 
+                -this is a python iterable 
+            first_row = table_row[0] # extracting first table cell 
+            # iterating through each table cell
+            for i, row in enumerate(table_rows):
+                print("row", i)
+                cells = row.find_all("td")
+                for j, cell in enumerate(cells):
+                    print("column", j, "cell", cell)
