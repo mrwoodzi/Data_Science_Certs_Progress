@@ -555,6 +555,13 @@ SIMPLE APIs
 
 
         REST APIs & HTTP Requests Part 1:
+            HTTP method	Description
+                GET	    Retrieve an existing resource.
+                POST	Create a new resource.
+                PUT	    Update an existing resource.
+                PATCH	Partially update an existing resource.
+                DELETE	Delete a resource.
+
             Request Module in Python
                 allows you to send HTTP/1.1 requests easily. 
             GET Request /get, create query string 
@@ -606,6 +613,23 @@ SIMPLE APIs
                         We can view the image:
                             Image.open(path)  
                 Status Code 
+                    Code	Meaning	            Description
+                    200	    OK	                The requested action was successful.
+                    201	    Created	            A new resource was created.
+                    202	    Accepted	        The request was received, but no modification has been made yet.
+                    204	    No Content	        The request was successful, but the response has no content.
+                    400	    Bad Request	        The request was malformed.
+                    401	    Unauthorized	    The client is not authorized to perform the requested action.
+                    404	    Not Found	        The requested resource was not found.
+                    415	    Unsupported Media Type	The request data format is not supported by the server.
+                    422	    Unprocessable Entity	The request data was properly formatted but contained invalid or missing data.
+                    500	    Internal Server Error	The server threw an error when processing the request.
+
+                    Code range	    Category
+                    2xx	            Successful operation
+                    3xx	            Redirection
+                    4xx	            Client error
+                    5xx	            Server error
                     request status code r.status_code
                      the 100s are informational responses; 
                         100 indicates that everything is OK so far. 
@@ -621,7 +645,18 @@ SIMPLE APIs
                         500 Server Error 
                         501 Not implemented  
             HTTP:
-                When an HTTP request is made, an  HTTP method is sent.
+            To help clarify this, take a look at the table below. In this table, you’ll 
+            see API endpoints for a hypothetical CRM system. These endpoints are for a 
+            customer resource that represents potential customers in the system:
+
+            HTTP method     API endpoint	            Description
+            GET	            /customers	                Get a list of customers.
+            GET	            /customers/<customer_id>	Get a single customer.
+            POST	        /customers	                Create a new customer.
+            PUT	            /customers/<customer_id>	Update a customer.
+            PATCH	        /customers/<customer_id>	Partially update a customer.
+            DELETE	        /customers/<customer_id>	Delete a customer.
+                            When an HTTP request is made, an  HTTP method is sent.
                 Scheme: 
                     http://
                 Internet Address or Base URL
