@@ -68,12 +68,18 @@ login = psql --username=freecodecamp --dbname=postgresC
 Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
     with it. Log in by typing psql --username=freecodecamp --dbname=postgres into the terminal and pressing enter.
 
+    CURRENT STOPPING POINT:
+        psql --username=freecodecamp --dbname=postgres
+        second_database
+        mario_database
+
         Creating Database 
             create database database_name;
         DATA types  
             int 
             varchar(give it a numeric maximum allowable length)
                 -stands for character varying 
+            bigint 
         list
             \list 
             \d table_name
@@ -98,3 +104,12 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             SELECT * FROM table_name; # star selects all columns 
         INSERT ROW
             insert into table_name(column1, column2) values(int, str);
+        DELETE
+            delete from table_name where column_name='Luigi';
+        ALTER TABLE 
+            alter table second_table drop username; # column names don't have to be in quotes
+        DROP    
+            drop table table_name; 
+        ALTER DATABASE/RENAMING 
+            -renaming 
+                ALTER DATABASE database_name RENAME TO new_database_name;
