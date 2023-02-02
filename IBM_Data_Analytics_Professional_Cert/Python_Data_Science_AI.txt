@@ -771,3 +771,4 @@ DEFINITIONS
     HTML: Hypertext Markup Language
     HTTP: Hypertext Transfer Protocol
     REST: representational State Transfer 
+    URL:  Uniform Resource Locator
