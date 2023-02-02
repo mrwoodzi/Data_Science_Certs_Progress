@@ -733,6 +733,9 @@ WEBSCRAPING
     html="html_we_want_in_nested_data_structure"
     soup = BeaurifulSoup(html, 'html5lib')
 
+    Webscraping with TWINT
+        Python 3.6
+
     BEAUTIFULSOUP  Object 
         -library for pulling data out of HTML and XML files
         - This is accomplished by representing the HTML as a set of 
