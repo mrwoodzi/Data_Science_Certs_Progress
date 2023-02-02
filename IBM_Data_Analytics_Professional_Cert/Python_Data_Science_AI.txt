@@ -516,9 +516,7 @@ TWO Dimensional Numpy Array:
 SIMPLE APIs
     Pandas is a type of api 
     Rest apis:
-        REpresentational
-        State 
-        Transfer 
+        REpresentational State Transfer 
 
         Client 
             -can be called a wrapper 
@@ -555,6 +553,7 @@ SIMPLE APIs
 
 
         REST APIs & HTTP Requests Part 1:
+        REST STANDS FOR  representational state transfer 
         EXCELLENT RESOURCE 
             https://realpython.com/api-integration-in-python/
             HTTP method	Description
@@ -734,7 +733,14 @@ WEBSCRAPING
     html="html_we_want_in_nested_data_structure"
     soup = BeaurifulSoup(html, 'html5lib')
 
-    BeautifulSoup Object 
+    BEAUTIFULSOUP  Object 
+        -library for pulling data out of HTML and XML files
+        - This is accomplished by representing the HTML as a set of 
+            objects with methods used to parse the HTML. We can navigate 
+            the HTML as a tree and/or filter out what we are looking for.
+        -To parse a document, pass it into the BeautifulSoup constructor, 
+            the BeautifulSoup object, which represents the document as a 
+            nested data structure:
         tag_object = soup.title # html title 
         tag_object = soup.h3 
 
@@ -757,3 +763,8 @@ WEBSCRAPING
                 cells = row.find_all("td")
                 for j, cell in enumerate(cells):
                     print("column", j, "cell", cell)
+
+DEFINITIONS 
+    HTML: Hypertext Markup Language
+    HTTP: Hypertext Transfer Protocol
+    REST: representational State Transfer 
