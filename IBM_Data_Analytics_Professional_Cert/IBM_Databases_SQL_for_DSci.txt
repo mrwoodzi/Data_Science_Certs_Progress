@@ -1,4 +1,11 @@
 SQL - Structured Query Language
+
+Database is like a Python Class:
+Column headings are the Class and everything
+    under that column heading is a class attribute. 
+
+
+
 Welcome to SQL for Data Science:
     SQL is 1 of top 3 skills for data science
     boost your professional profile
@@ -33,10 +40,11 @@ Welcome to SQL for Data Science:
 
     5 simple commands:
         For the majority of people using a database, there are five simple commands to create a table, 
-        insert data to populate the table, 
-        select data from the table, 
-        update data in the table, 
-        delete data from the table.
+        CREATE
+        INSERT data to populate the table, 
+        SELECT data from the table, 
+        UPDATE data in the table, 
+        DELETE data from the table.
     
     Comparison Operators
         =, >, <, >=, <=, <>  last is not equal
@@ -348,4 +356,21 @@ The primary key of a relational table uniquely identifies each tuple or row,
     preventing duplication of data and providing a way of defining relationships between tables. 
 SQL statements fall into two different categories: Data Definition Language 
     DDL) statements and Data Manipulation Language (DML) statements.
+Relation - a set of tuples that have the same attributes, Attribute:Tuple or Column:Row 
+    tuple usually represents an object
+    Relation is usually described as a table
+        table is organized into rows and columns
+        Attribute is the Column
+        Tuples are the Row
+
+SQL Cheat Sheet: CREATE TABLE, ALTER, DROP, TRUNCATE
+
+Command	            Example
+CREATE TABLE	    CREATE TABLE employee ( employee_id char(2) PRIMARY KEY, first_name varchar(30) NOT NULL, mobile int);
+ALTER TABLE -       ALTER TABLE employee ADD COLUMN income bigint;
+ALTER TABLE -       ALTER TABLE employee ALTER COLUMN mobile SET DATA TYPE CHAR(20);
+ALTER TABLE -       ALTER TABLE employee DROP COLUMN mobile;
+ALTER TABLE -       ALTER TABLE employee RENAME COLUMN first_name TO name;
+TRUNCATE TABLE	    TRUNCATE TABLE employee IMMEDIATE;
+DROP TABLE	        DROP TABLE employee;
         
