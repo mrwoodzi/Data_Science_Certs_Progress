@@ -374,3 +374,162 @@ ALTER TABLE -       ALTER TABLE employee RENAME COLUMN first_name TO name;
 TRUNCATE TABLE	    TRUNCATE TABLE employee IMMEDIATE;
 DROP TABLE	        DROP TABLE employee;
         
+ADVANCED TECHNIQUES:
+WHERE:
+    WHERE clause always requires a redicate 
+        predicate is an expression that evaluates to True, False or Unknown
+    LIKE 
+        used with WHERE if you don't know exact string pattern of search 
+        EX: WHERE column_name LIKE 'string%'
+            you need % sign 
+            string would represent "WILD CARD CHARACTER"
+
+            SELECT F_NAME , L_NAME
+            FROM EMPLOYEES
+            WHERE ADDRESS LIKE '%Elgin,IL%';
+
+            # retrieving all rows from 1970s
+            SELECT F_NAME, L_NAME 
+            FROM employees
+            WHERE B_DATE like '197%';
+        
+    BOOL  
+        is used after WHERE clause 
+            SELECT column_name1, column2 FROM database_name 
+                WHERE column_name2 >= 349 AND column2 <= 300;
+            
+            # Below will output same as above 
+            # Below would be preferred for readability
+            SELECT column_name1, column2 FROM database_name 
+                WHERE column_name2 between 290 AND 300;
+
+                SELECT *
+                FROM EMPLOYEES
+                WHERE (SALARY BETWEEN 60000 AND 70000) AND DEP_ID = 5;
+    
+    IN 
+        allows us to specify a set of values in a WHERE clause. 
+            This operator takes a list of expressions to compare against
+
+        SELECT column1, column2, column3 FROM db_name
+            WHERE column3='str' OR column3='other_str' OR column3='and_other_str'
+
+        # Below will output same as above 
+        # Below would be preferred for readability 
+        SELECT column1, column2, column3 FROM db_name
+            WHERE column3 IN ('STR', 'STR', 'str', 'str)
+
+
+SORTING RESULT SETS: 
+    ORDER BY 
+        -default sort is ascending order 
+
+        SELECT column_name FROM table_name
+            ORDER BY column_name;
+
+        # To sort in descending order 
+        SELECT column_name FROM table_name
+            ORDER BY column_name DESC;
+
+         # To sort on starting number 
+        SELECT column_name FROM table_name
+            ORDER BY column_name 2;
+
+        SELECT F_NAME, L_NAME, DEP_ID 
+        FROM EMPLOYEES
+        ORDER BY DEP_ID;
+
+        COUNT
+     COUNT is a built-in database function that retrieves the number of rows that match the query criteria
+     or example, get the total number of rows in a given table, select COUNT(*) from tablename. 
+     Kinda like len() for rows 
+     Select COUNT(COUNTRY) from MEDALS where COUNTRY='CANADA.'
+     SELECT COUNT(*) FROM FilmLocations; # counts all rows
+
+--For each department ID retrieve the number of employees in the department.
+SELECT DEP_ID, count(*)
+FROM EMPLOYEES 
+GROUP BY DEP_ID;
+
+--For each department retrieve the number of employees in the department, 
+--and the average employee salary in the department..
+SELECT DEP_ID, count(*), AVG(salary)
+FROM EMPLOYEES 
+GROUP BY DEP_ID;
+
+--Retrieve a list of employees ordered in descending order 
+-----by department ID and within each department ordered alphabetically 
+------in descending order by last name.
+SELECT F_NAME, L_NAME, DEP_ID 
+FROM EMPLOYEES
+ORDER BY DEP_ID, L_NAME DESC;
+
+--In SQL problem 2 (Exercise 2 Problem 2), use department name instead of 
+--department ID. Retrieve a list of employees ordered by department name, 
+--and within each department ordered alphabetically in descending order by last name.
+****************HAVE TO USE "AS" IN THIS**************************
+SELECT D.DEP_NAME , E.F_NAME, E.L_NAME
+FROM EMPLOYEES as E, DEPARTMENTS as D
+WHERE E.DEP_ID = D.DEPT_ID_DEP
+ORDER BY D.DEP_NAME, E.L_NAME DESC;
+
+
+--In SQL problem 3 (Exercise 3 Problem 3), order the result set by Average Salary..
+SELECT DEP_ID, count(*) AS NUM_EMPLOYEES, AVG(salary) AS  AVG_SALARY
+FROM EMPLOYEES 
+GROUP BY DEP_ID
+ORDER BY AVG_SALARY;
+
+
+GROUPING RESULT SETS:
+    DISTINCT - eliminates duplicates from set 
+    GROUP BY 
+        groups a result into subsets that has matching values for one or more columns.
+        groups and counts 
+
+        SELECT column_name, COUNT(column_name)
+            FROM db_name GROUP BY column_name;
+    
+        # assigning the counted column as a new name
+        SELECT column_name, COUNT(column_name) AS New_Column_Name, AVG(column_name) AS ANOTER_COLUMN_NAME 
+        FROM db_name 
+        GROUP BY column_name;
+
+--Label the computed columns in the result set of SQL problem 2 
+--(Exercise 3 Problem 2) as NUM_EMPLOYEES and AVG_SALARY.
+    SELECT DEP_ID, count(*) AS NUM_EMPLOYEES, AVG(salary) AS  AVG_SALARY
+    FROM EMPLOYEES 
+    GROUP BY DEP_ID;
+
+        HAVING:
+            used in combination with the "group by" clause. 
+            It is very important to note that the "where" clause is for the entire 
+                result set, but the "having" clause works only with the "group by" clause
+
+            # only lists results that are greater than 4
+            SELECT column_name, COUNT(column_name)
+                AS New_Column_Name FROM db_name 
+                GROUP BY column_name
+                HAVING COUNT(column_name) > 4;
+
+--In SQL problem 4 (Exercise 3 Problem 4), limit the result to departments with fewer than 4 employees.
+SELECT DEP_ID, count(*) AS NUM_EMPLOYEES, AVG(salary) AS  AVG_SALARY
+FROM EMPLOYEES 
+GROUP BY DEP_ID
+HAVING count(*) < 4
+ORDER BY AVG_SALARY;
+
+
+
+
+
+            GROUP BY	                                                    ORDER BY
+1.	Group by statement is used to group the rows that have the same value.	Whereas Order by statement sort the result-set either in ascending or in descending order.
+2.	It may be allowed in CREATE VIEW statement.	                            While it does not use in CREATE VIEW statement.
+3.	In select statement, it is always used before the order by keyword.	    While in select statement, it is always used after the group by keyword.
+4.	Attribute cannot be in the group by statement under aggregate function.	Whereas in order by statement, attribute can be under aggregate function.
+5.	In group by clause, the tuples are grouped based on the similarity between the attribute values of tuples.	Whereas in order by clause, the result-set is sorted based on ascending or descending order.
+6.	Group by controls the presentation of tuples(rows).	                    While order by clause controls the presentation of columns.
+
+select address from employees
+	where address in ('Elgin') AND ('IL');
