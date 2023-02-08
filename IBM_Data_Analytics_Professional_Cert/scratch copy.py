@@ -1,10 +1,13 @@
-import twint
+import pandas as pd 
+import numpy as np 
 
-c = twint.Config()
-
-c.Search = ['Steven Crowder']       # topic
-c.Limit = 20     # number of Tweets to scrape
-c.Store_csv = True       # store tweets in a csv file
-c.Output = "taylor_swift_tweets.csv"     # path to csv file
-
-twint.run.Search(c)
+l = np.linspace(5.0, 2.0)
+float_list = l.astype(float)
+round_list = float_list.round(1)
+unique_list = np.unique(round_list)
+py_list = str(unique_list.tolist())
+print('"%s"' % py_list )
+quote_list = []
+for iter in unique_list:
+    quote_list.append("%s" % iter)
+print(quote_list)

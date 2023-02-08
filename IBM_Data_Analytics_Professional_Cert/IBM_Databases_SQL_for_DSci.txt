@@ -502,6 +502,7 @@ GROUPING RESULT SETS:
     GROUP BY DEP_ID;
 
         HAVING:
+            HAVING- keyword is used to set a condition for a GROUP BY clause
             used in combination with the "group by" clause. 
             It is very important to note that the "where" clause is for the entire 
                 result set, but the "having" clause works only with the "group by" clause
@@ -533,3 +534,119 @@ ORDER BY AVG_SALARY;
 
 select address from employees
 	where address in ('Elgin') AND ('IL');
+
+
+You can use the WHERE clause to refine your query results.
+You can use the wildcard character (%) as a substitute for unknown characters in a pattern.
+You can use BETWEEN ... AND ... to specify a range of numbers.
+You can sort query results into ascending or descending order, using the ORDER BY clause to specify the column to sort on.
+You can group query results by using the GROUP BY clause. 
+
+LIKE	
+        SELECT column1, column2, ... 
+        FROM table_name 
+        WHERE columnN 
+        LIKE pattern;
+BETWEEN	
+        SELECT column_name(s) 
+        FROM table_name 
+        WHERE column_name 
+        BETWEEN value1 AND value2;
+ORDER BY	
+        SELECT column1, column2, ... 
+        FROM table_name 
+        ORDER BY column1, column2, ... ASC|DESC;
+GROUP BY	
+        SELECT column_name(s) 
+        FROM table_name 
+        WHERE condition 
+        GROUP BY column_name(s) 
+        ORDER BY column_name(s);
+
+
+
+
+
+BUILT-IN DATABASE FUNCTIONS:
+    Aggregate/Column Functions 
+        -takes a collection of like values, such as all of the values in a 
+            column, as input, and returns a single value or null
+        -ex, SUM(), MIN()(, AVG(), MAX()
+        -SUM()
+            -adds all the functions in a column 
+            SELCECT SUM(column_name)
+            -renaming new column from SUM()
+             select SUM(column_name) AS New_Column_Name FROM table_name 
+        ex. 
+            SELECT MIN(column_name) FROM table_name WHERE other_column = 'thing_from_column_name'
+**********************************************************************************************************
+        perform mathematical operations between columns, and then apply aggregate functions on them
+        select AVG(COST/QUANTITY) 
+            from PETRESCUE 
+            where ANIMAL = 'Dog'.
+
+        SCALAR AND STRING FUNCTION:
+            Scalar-
+                Round(), Length(), Ucase, Lcase
+            SELECT ROUND(column_name)
+                FROM table_name
+
+            String Functions(var and varchar):
+                SELECT LENGTH(column_name) (gives the len of char in cell down column)
+                    FROM table_name 
+
+                UCASE, LCASE:
+                    SELECT UCASE(column_name)
+                        FROM table_name # returns all of string in upper case 
+
+                    SELECT * FROM table_name
+                        WHERE LCASE(column_name)='LOL' 
+                        # will find and return all that are at all lower case 
+                            ex. Lol, lol, LoL, lOl 
+
+                    SELECT DISTINCT(UCASE(column_name))
+                        FROM table_name 
+
+    DATE AND TIME SQL FUNCTIONS:
+        DB2 has 
+         Functions exist to extract the year() day()(, month()), dayofmonth(), 
+            dayofweek(), dayofyear(), week(), hour(), minute(), and second()
+            Date: YYYYMMDD 8 DIGITS 
+            Time: HHMMSS 6 DIGITS 
+            TimeStamp: YYYYDDHHMMSSZZZZZZ 20 DIGITS 
+                Timestamp has 20 digits: year, month, day, hour, minute, seconds, and 
+                    microseconds where double X represents month and six Zs or Zs 
+                    represents microseconds. 
+
+            SELECT DAY(day/time_column) 
+                FROM table_name
+                WHERE column_name='Cat';
+
+            # get the number of rescues during the month of may
+            SELECT COUNT(*)
+            FROM table_name
+            WHERE MONTH(day/time_column) = '05';
+
+            # Enter a function that displays the number of 
+                rescues on the 5th month.
+            select SUM(QUANTITY) FROM PETRESCUE 
+            WHERE MONTH(RESCUEDATE)='05';
+
+            # Enter a function that displays the number of rescues on the 14th day of the month.
+            select SUM(QUANTITY) from PETRESCUE 
+            where DAY(RESCUEDATE)='14';
+
+            # Date or Time Arithmetic
+            SELECT (day/time_column + 3 DAYS)
+            FROM table_name;
+
+            # Animals rescued should see the vet within three days of arrivals. Enter a function 
+                that displays the third day from each rescue.
+            select (RESCUEDATE + 3 DAYS) 
+            from PETRESCUE;
+
+            # Find how many days have passed since each rescue date till now
+            SELECT (CURRENT_DATE - day/time_column) 
+            FROM table_name;
+
+
