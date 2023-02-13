@@ -649,4 +649,291 @@ BUILT-IN DATABASE FUNCTIONS:
             SELECT (CURRENT_DATE - day/time_column) 
             FROM table_name;
 
+SUB-QUERIES AND NESTED SELECTS:
 
+    How does a typical Nested SELECT statement syntax look?
+
+        SELECT column_name [, column_name ]
+        FROM table1 [, table2 ]
+        WHERE column_name OPERATOR
+            (SELECT column_name [, column_name ]
+            FROM table1 [, table2 ]
+            WHERE condition);
+
+    Sub-queries or sub selects:
+        -can overcome some of the limitations of aggregate functions
+        -like regular queries but placed within parentheses and nested inside another query. 
+        SELECT column1 FROM table1
+            WHERE column2 = (SELECT MAX(column2) FROM table1)
+
+        retrieve list of employees who earn more than the average salary    
+            SELECT * FROM EMPLOYEES 
+                WHERE salary > AVG(salary) 
+            # above would not work 
+            # below would work  
+            SELECT emp_id, f_name, l_name, salary   
+                FROM employees
+                WHERE salary < (SELECT AVG(salary) FROM employees);
+    
+        COLUMN EXPRESSIONS:
+            -when sub queries are used in other parts of query 
+                -in the list of columns to be selected 
+
+            # Sub Query in List 
+            SELECT emp_id, salary,
+                (SELECT AVG(salary) FROM employees)
+                    AS AVG_SALARY
+                FROM employees;
+
+            # Execute a Column Expression that retrieves all employees records with EMP_ID, 
+                SALARY and maximum salary as MAX_SALARY in every row.
+            SELECT EMP_ID, SALARY,
+                (SELECT MAX(SALARY) FROM EMPLOYEES)
+                    AS MAX_SALARY
+                    FROM employees;
+        
+        
+        DERIVED TABLES/TABLE EXPRESSIONS:
+            - outer query uses the results of the sub-query as a data source
+            -***********************
+            -derived tables can prove to be powerful in more complex situations such as when 
+                working with multiple tables and doing joins *****************
+                ***************************************
+            # Sub Query FROM 
+                SELECT * FROM 
+                    (SELECT emp_id, f_name, l_name, DEP_ID
+                        FROM employees) AS emp4all;
+
+            # Execute a Table Expression for the EMPLOYEES table that excludes columns with sensitive 
+                employee data (i.e. does not include columns: SSN, B_DATE, SEX, ADDRESS, SALARY).
+            select * from 
+                ( select EMP_ID, F_NAME, L_NAME, DEP_ID from employees) 
+                AS EMP4ALL;
+
+WORKING WITH MULTIPLE TABLES:
+    You can access multiple tables with:
+        -Sub-queries
+        -Implicit JOIN
+        -JOIN operators (INNER JOIN, OUTER JOIN, etc.)
+
+         Select * from employees
+            where dep_ID IN 
+            (select dept_ID_dep from departments where loc_ID = 'L0002');
+
+        # retrieve the department ID and department name for employees who earn more than $70,000. 
+        SELECT DEPT_ID_DEP, DEP_NAME FROM DEPARTMENTS
+            WHERE DEPT_ID_DEP IN 
+                (SELECT DEP_ID FROM EMPLOYEES
+                 WHERE SALARY > 70000);
+
+        IMPLICIT JOIN:
+
+            How does an Implicit version of INNER JOIN statement syntax look?
+                SELECT column_name(s)
+                FROM table1, table2
+                WHERE table1.column_name = table2.column_name;
+
+            How does an Implicit version of CROSS JOIN (also known as Cartesian Join) statement syntax look?
+                SELECT column_name(s)
+                FROM table1, table2;
+            -full join or Cartesian Join 
+                - select *  from employees, departments;
+
+            -limiting result set 
+                select * from employees, departments    
+                    where employees.DEP_ID =
+                          departments.DEPT_ID_DEP;
+
+            -using shorter ALIASES 
+                select * from employees E, department D 
+                    where E.DEP_ID = D.DEPT_ID_DEP;
+
+                # this alias also works 
+                select E.EMP_ID, D.DEPT_ID_DEP from 
+                    employees E, departments D 
+                    where E.DEP_ID = D.DEPT_ID_DEP;
+
+            # see the department name for each employee:
+                select EMP_ID, DEP_NAME
+                    from employees E, departments D 
+                    where E.DEP_ID = D.DEPT_ID_DEP;
+
+            # Retrieve only the EMPLOYEES records that correspond to jobs in the JOBS table.
+                Solution
+                select * from employees where JOB_ID IN (select JOB_IDENT from jobs);
+                # I wrote below and it worked same as above 
+                select * from EMPLOYEES, jobs 
+                    where employees.job_id = 
+                        jobs.job_ident;
+
+            # Retrieve only the list of employees whose JOB_TITLE is Jr. Designer.
+                select * from employees where JOB_ID IN (select JOB_IDENT from jobs where JOB_TITLE= 'Jr. Designer');
+
+            # Retrieve JOB information and who earn more than $70,000.
+                select JOB_TITLE, MIN_SALARY,MAX_SALARY,JOB_IDENT 
+                    from jobs 
+                    where JOB_IDENT 
+                    IN (select JOB_ID from employees 
+                        where SALARY > 70000 ); 
+
+            # Retrieve JOB information and whose birth year is after 1976.
+                select JOB_TITLE, MIN_SALARY,MAX_SALARY,JOB_IDENT 
+                    from jobs 
+                    where JOB_IDENT
+                    in ( select JOB_ID from employees 
+                        where YEAR(B_DATE)>1976);
+
+            # Retrieve JOB information for female employees whose birth year is after 1976.
+                select JOB_TITLE, MIN_SALARY,MAX_SALARY,JOB_IDENT 
+                    from jobs
+                    where JOB_IDENT
+                    in (select JOB_ID FROM employees 
+                    	WHERE YEAR(B_DATE)>1976 
+                    	AND SEX='F');
+
+            # Perform an implicit cartesian/cross join between EMPLOYEES and JOBS tables.
+                select * from employees, jobs;
+            
+            # Retrieve only the EMPLOYEES records that correspond to jobs in the JOBS table. 
+                select * from employees E, jobs D 
+                    where E = D;
+
+            # Retrieve only the EMPLOYEES records that correspond to jobs in the JOBS table.
+                select * from employees, jobs where employees.JOB_ID = jobs.JOB_IDENT;
+
+            # Redo the previous query, but retrieve only the Employee ID, Employee Name and Job Title.
+                select EMP_ID, F_NAME, L_NAME, JOB_TITLE 
+                    from employees E, jobs J 
+	                where E.JOB_ID = J.JOB_IDENT;
+
+            # Redo the previous query, but specify the fully qualified column names with aliases in the SELECT clause.
+                select E.EMP_ID,E.F_NAME,E.L_NAME, J.JOB_TITLE 
+                    from employees E, jobs J 
+                    where E.JOB_ID = J.JOB_IDENT;
+
+            # renaming columns in output    
+                select EMP_ID i, F_NAME f, L_NAME l, JOB_TITLE jt
+                        from employees E, jobs J 
+                        where E.JOB_ID = J.JOB_IDENT;
+
+    SUMMARY AND HIGHLIGHTS:
+        Most databases come with built-in functions that you can use in SQL statements to perform operations on 
+            data within the database itself.
+        When you work with large datasets, you may save time by using built-in functions rather than first retrieving the 
+            data into your application and then executing functions on the retrieved data.
+        You can use sub-queries to form more powerful queries than otherwise.
+        You can use a sub-select expression to evaluate some built-in aggregate functions like the average function. 
+        Derived tables or table expressions are sub-queries where the outer query uses the results of the sub-query as a data source.
+
+    SQL Cheat Sheet: FUNCTIONS and Implicit JOIN
+            COUNT	        SELECT COUNT(column_name) 
+                                FROM table_name 
+                                WHERE condition;
+            AVG	            SELECT AVG(column_name) 
+                                FROM table_name 
+                                WHERE condition;
+            SUM	            SELECT SUM(column_name) 
+                                FROM table_name 
+                                WHERE condition;
+            MIN	            SELECT MIN(column_name)     
+                                FROM table_name 
+                                WHERE condition;
+            MAX	            SELECT MAX(column_name) 
+                                FROM table_name 
+                                WHERE condition;
+            ROUND	        SELECT ROUND(2number, decimals, operation) 
+                                AS RoundValue;
+            LENGTH	        SELECT LENGTH(column_name) 
+                                FROM table;
+            UCASE	        SELECT UCASE(column_name) 
+                                FROM table;
+            DISTINCT	    SELECT DISTINCT(column_name) 
+                                FROM table;
+            DAY	            SELECT DAY(column_name) 
+                                FROM table
+        CURRENT DATE	    SELECT (CURRENT DATE - COLUMN) 
+                                FROM table;
+        Subquery	        SELECT column_name [, column_name ] 
+                                FROM table1 [, table2 ] 
+                                WHERE column_name OPERATOR (SELECT column_name [, column_name ] 
+                                FROM table1 [, table2 ] [WHERE])
+        Implicit Inner Join	SELECT column_name(s) 
+                                FROM table1, table2 
+                                WHERE table1.column_name = table2.column_name;
+        Implicit Cross Join	SELECT column_name(s) 
+                                FROM table1, table2;
+
+QUESTIONS 
+Which of the following statements about built-in database functions is correct?
+Built-in database functions reduce the amount of data that is retrieved.
+
+Which of the following SQL queries would return the day of the week each dog was rescued?
+SELECT DAYOFWEEK(RescueDate) From PetRescue WHERE Animal = ‘Dog’;
+
+What is the result of the following query: SELECT (Current_Date – RescueDate) FROM PetRescue
+Returns how long it has been since each resc
+
+Which of the following queries will return the employees who earn less than the average salary?
+SELECT * FROM Employees WHERE Salary < (SELECT AVG(Salary) FROM Employees);
+
+What are the three ways to work with multiple tables in the same query?
+Sub-queries, Implicit joins, JOIN operators
+
+QUESTIONS:
+Question 1
+Which of the following queries will return the data for employees who belong to the department with the highest value of department ID.
+SELECT * FROM EMPLOYEES WHERE DEP_ID = 
+      ( SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS ) 
+
+Question 2
+A DEPARTMENTS table contains DEP_NAME, and DEPT_ID_DEP columns and an EMPLOYEES table contains columns called F_NAME and DEP_ID. We want 
+    to retrieve the Department Name for each Employee. Which of the following queries will correctly accomplish this?
+    SELECT F_NAME, DEP_NAME 
+        FROM EMPLOYEES, DEPARTMENTS 
+        WHERE DEPT_ID_DEP = DEP_ID;
+
+
+Question 3
+You are writing a query that will give you the total cost to the Pet Rescue organization of rescuing animals. The cost of each rescue is 
+    stored in the Cost column. You want the result column to be called “Total_Cost”. Which of the following SQL queries is correct?
+SELECT SUM(Cost) 
+    AS Total_Cost 
+    FROM PetRescue;
+
+
+
+
+
+
+
+
+
+ACCESSING DATABASES USING PYTHON:
+
+     Python ecosystem is very rich and provides easy to use tools for data science. Some of the most popular packages are 
+        NumPy, pandas, matplotlib, and SciPy.
+     Python supports relational database systems
+      Python code connects to the database using API calls.
+
+     Python DB API 
+     Notebooks 
+        Mathematica notebook, 
+        Maple worksheet, 
+        Matlab notebook, 
+        IPython Jupyter, 
+        R Markdown, 
+        Apache Zeppelin, 
+        Apache Spark notebook,
+        Databricks cloud
+
+         Jupyter notebook is an 
+            -open source web application that allows you to 
+            -create and share documents that contain 
+            -live code, equations, visualizations, and narrative texts
+            -Supports 40 programming languages 
+            -R, Julia, and Scala. Notebooks can be shared with others by email, Dropbox,
+                 GitHub, and the Jupyter notebook viewer
+            - interactive output HTML, images, videos, LaTex, and customized types.    
+        
+        SQL API
+            -function calls as an application programming interface, API, for the DBMS
