@@ -914,6 +914,10 @@ ACCESSING DATABASES USING PYTHON:
         NumPy, pandas, matplotlib, and SciPy.
      Python supports relational database systems
       Python code connects to the database using API calls.
+      ease of use
+      portable
+      DB API 
+      
 
      Python DB API 
      Notebooks 
@@ -933,7 +937,82 @@ ACCESSING DATABASES USING PYTHON:
             -Supports 40 programming languages 
             -R, Julia, and Scala. Notebooks can be shared with others by email, Dropbox,
                  GitHub, and the Jupyter notebook viewer
-            - interactive output HTML, images, videos, LaTex, and customized types.    
+            - interactive output HTML, images, videos, LaTex, and customized types.   
+            -share Notebooks
+            -interactive output 
+            -big data integration  
         
         SQL API
+            -connect
+            -send
+            -execute 
+            -status check 
+            -ok 
+            -disconnect 
             -function calls as an application programming interface, API, for the DBMS
+            -application program calls functions in the API, and it calls other functions
+                 to retrieve query results and status information from the DBMS
+            -he application program begins its database access with one or more API calls 
+                that connect the program to the DBMS.
+            -To send the SQL statement to the DBMS, the program builds the statement as a 
+                text string in a buffer and then makes an API call to pass the buffer contents to the DBMS. 
+            -The application program makes API calls to check the status of its DBMS request and to handle errors. 
+            - The application program ends its database access with an API call that disconnects it from the database. 
+
+            MySQL C API provides low level access to the MySQL client server protocol and enables C programs to access database contents.
+            psycopg2 API connects Python applications in PostgreSQL databases
+            IBM_DB API is used to connect Python applications to IBM DB2 databases
+            dblib API is used to connect to SQL server databases.
+            ODBC is used for database access for Microsoft Windows OS. 
+            OCI is used by Oracle databases.
+            JDBC is used by Java applications. 
+
+    WRITING CODE USING DB-API 
+        DB API 
+            -pythons standard api for accessing relational databases 
+            -allows a single program to work with multiple kinds of relational databases 
+            -learn DP-API functions once, use them with any database 
+            -easy to implement and understand 
+            -encourages similarity between the python modules used to access databases 
+            -achieves consistency 
+            -portable across databases 
+            -broad reach of database connectivity from python 
+
+            ibm db2     IBM_DB
+            MYSQL       mysql connector/python
+            PostgreSQL  psycopg2
+            MongoDB     PyMongo 
+
+           TWO MAIN CONCEPTS
+                connection object
+                    -database connections 
+                    -manage transactions 
+                        CONNECTION METHOD 
+                            .cursor()
+                            .commit()
+                            .rollback()
+                            .close()
+
+                query objects/cursor objects 
+                    -database queries 
+                    -scroll through result set 
+                    -retrieve results 
+                        CURSOR METHOD 
+                            .callproc()
+                            .execute()
+                            .executemany()
+                            .fetchone()
+                            .fetchmany()
+                            .fetchall()
+                            .nextset()
+                            .arraysize()
+                            .close()
+                    -database cursor 
+                        - control structure that enables traversal over the records in a database 
+                        -It behaves like a file name or file handle in a programming language.
+                        -Just as a program opens a file to access its contents, it opens a cursor to gain 
+                            access to the query results.
+                        - the program closes a file to end its access and closes a cursor to end access to 
+                            the query results.
+                        -  keeps track of the program's current position within an open file, a cursor keeps 
+                            track of the program's current position within the query results
