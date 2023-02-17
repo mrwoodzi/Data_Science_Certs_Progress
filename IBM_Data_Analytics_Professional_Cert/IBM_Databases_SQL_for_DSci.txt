@@ -1016,3 +1016,18 @@ ACCESSING DATABASES USING PYTHON:
                             the query results.
                         -  keeps track of the program's current position within an open file, a cursor keeps 
                             track of the program's current position within the query results
+
+
+CREATING TABLES, LOADING DATA AND QUERYING DATA remotely with Python for db2
+
+    Creating Table: 
+        ibm_db.exec_immediate()
+            parameters: conn = connection, statement, options 
+            stmt = ibm_db.exec_immediate(conn, "Put in SQL statement here;")
+
+    Fetching data:
+        -think of fretching as returning data 
+        dict = ibm_db.fetch_both(stmt) # this would return a dict 
+
+    Using Pandas to retrieve data from db2 
+        
