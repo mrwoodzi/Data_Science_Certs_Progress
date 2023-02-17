@@ -139,3 +139,4 @@ ORDER BY Course.title, Member.role DESC, User.name
 tsugi.org
     -database visualizer?
 
+#usn-toc-content > div > div.Cell-sc-1abjmm4-0.bGUnCQ.mb0 > div > div > section > div.mb6 > div.BorderedContentBox__OuterContainer-isfoyz-0.leTyjd.OverviewContent__BorderedContentBoxStyled-sc-1yondsr-14.ikkZfL > div > div.Grid-lx2f3i-0.OverviewContent__StyledGrid-sc-1yondsr-7.hTtqzL.eVcarJ > div:nth-child(2) > div > div:nth-child(1) > a
