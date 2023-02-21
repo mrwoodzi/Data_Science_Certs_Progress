@@ -1122,3 +1122,41 @@ WORKING WITH REAL WORLD DATA SETS:
     Restricting the Number of Rows Retrieved 
         select * from census_data LIMIT 3 
 
+    GETTING TABLE AND COLUMN DETAILS 
+
+        Getting a List of Tables from Database 
+            syscat.tables for DB2
+            information_shema.tables for SQL server
+            all_tables or user_tables for Oracle 
+
+        Getting List of tables  
+
+            select * from syscat.tables # this is for db2 
+                # you get all properties of all tables 
+
+        To filter list of tables/getting properties 
+
+            select TABSCHEMA, TABNAME, CREATE_TIME 
+                from sys.tables
+                where tabschema= 'username' 
+        
+        Getting list of columns from database 
+            select *syscat.columns
+                where tabname= 'DOGS' # this will bring up any tablename with 'dogs', 'dogs2', 'dogsdb2'
+
+            Getting Specific column properties 
+                select distinct(name), coltype, length 
+                    from sysibm.syscolumns
+                    where tAbname="SCHOOLS"
+
+                # type in your query to retrieve the number of columns in the SCHOOLS table
+%sql select count(*) from SYSCAT.COLUMNS where TABNAME = 'SCHOOLS'
+
+                # type in your query to retrieve list of all tables in the database for your db2 schema (username)
+%sql select * from SYSCAT.TABLES where TABNAME = 'SCHOOLS'
+
+                # type in your query to retrieve all column names in the SCHOOLS table along with their datatypes and length
+%sql select distinct(NAME), COLTYPE, LENGTH from SYSIBM.SYSCOLUMNS where TBNAME = 'SCHOOLS'
+# what has been caps has to be in caps
+
+        
