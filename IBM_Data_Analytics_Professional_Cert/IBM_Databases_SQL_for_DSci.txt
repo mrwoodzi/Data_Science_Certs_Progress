@@ -1046,3 +1046,79 @@ command like the following in your Jupyter notebook cell:
 %sql select * from tablename
 Although SQL magic simplifies working with databases, it has some limitations. For example, unlike DB-API, there are no explicit 
     methods to close a connection and free up resources.
+
+
+
+
+ANAYLZING DATA WITH PYTHON:
+
+    4 things to do to load data into DB2    
+        source
+        target 
+        define 
+        finalize 
+
+    import seaborn as sns 
+    
+    df.description(include='all')
+        gives a whole bunch of stat info on table 
+
+    df['Sodium'].descrie() 
+    df['Sodium'].idxmax() # computes max value of sodium gives index of item 
+    df.at[82, 'Item'] # gives us the char or numeric of item at 82 
+
+    boxplot, jointplot, swarmplot 
+
+SUMMARY:
+
+You can access a database from a language like Python by using the appropriate API. Examples include ibm_db API for IBM DB2, 
+    psycopg2 for ProstgreSQL, and dblib API for SQL Server.
+DB-API is Python's standard API for accessing relational databases. It allows you to write a single program that works with 
+    multiple kinds of relational databases instead of writing a separate program for each one.
+The DB_API  connect constructor creates a connection to the database and returns a Connection Object, which is then used by 
+    the various connection methods.
+
+The connection methods are:
+The cursor() method, which returns a new cursor object using the connection.
+The commit() method, which is used to commit any pending transaction to the database.
+The rollback() method, which causes the database to roll-back to the start of any pending transaction.
+The close() method, which is used to close a database connection. 
+
+You can use SQL Magic commands to execute queries more easily from Jupyter Notebooks. 
+Magic commands have the general format %sql select * from tablename.
+Cell magics start with a double %% (percent) sign and apply to the entire cell.
+
+WORKING WITH REAL WORLD DATA SETS:
+
+    ***If you have a csv with a the first row as a header for columns make 
+        make sure you click yes for Header in first row 
+
+    ***Use double quotes to specify mixed-case names    
+        select "Id" from DOGS 
+
+
+    QUERYING Column Names with Spaces and Special Characters 
+        Special Characters need to be changed to _ underscore 
+
+    Assigning Variables 
+        selectQuery = 'select "Id" from dogs'
+
+    Multiple Quotes and Backslash
+        selectQuery = 'select * from dogs 
+                        where "Name_of_Dog"=\'Huggy|' ' # the backslash is seen as another quote making it a double quote 
+
+    Splitting Queries to Mulitple lines in Jupyter 
+        use backslash to split quety into multiple lines:
+            %sql select "Id", "Name_of_Dog", \
+                from dogs \
+                where "Name_of_Dog"='Huggy'
+
+    Using SQL Magic 
+            %%sql 
+            select "Id", "Name_of_Dog", 
+                from dogs 
+                where "Name_of_Dog"='Huggy'
+
+    Restricting the Number of Rows Retrieved 
+        select * from census_data LIMIT 3 
+
