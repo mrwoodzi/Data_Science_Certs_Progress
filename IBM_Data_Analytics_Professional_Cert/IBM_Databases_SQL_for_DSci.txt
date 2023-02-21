@@ -1031,3 +1031,18 @@ CREATING TABLES, LOADING DATA AND QUERYING DATA remotely with Python for db2
 
     Using Pandas to retrieve data from db2 
         
+n this reading, you will learn about the SQL magic commands.
+Jupyter notebooks have a concept of Magic commands that can simplify working with Python, and are particularly 
+    useful for data analysis. Your notebooks can have two types of magic commands:
+Cell magics: start with a double %% sign and apply to the entire cell
+Line magics: start with a single % (percent) sign and apply to a particular line in a cell
+Their usage is of the format:
+%magicname arguments
+So far in the course you learned to accessed data from a database using the Python DB-API (and specifically ibm_db). With 
+    this API execution of queries and fetching their results involves multiple steps. You can use the SQL Magic commands to 
+    execute queries more easily.
+For example if you want to execute the a query to select some data from a table and fetch its results, you can simply enter a 
+command like the following in your Jupyter notebook cell:
+%sql select * from tablename
+Although SQL magic simplifies working with databases, it has some limitations. For example, unlike DB-API, there are no explicit 
+    methods to close a connection and free up resources.
