@@ -857,7 +857,7 @@ select COMMUNITY_AREA_NUMBER, COUNT(*) AS COUNT_OF_CRIMES_AREA FROM CHICAGO_CRIM
                                 FROM table;
         Subquery	        SELECT column_name [, column_name ] 
                                 FROM table1 [, table2 ] 
-                                WHERE column_name OPERATOR (SELECT column_name [, column_name ] 
+                                WHERE column_name =,<,> (SELECT column_name [, column_name ] 
                                 FROM table1 [, table2 ] [WHERE])
         Implicit Inner Join	SELECT column_name(s) 
                                 FROM table1, table2 
