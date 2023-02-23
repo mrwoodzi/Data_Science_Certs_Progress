@@ -829,6 +829,8 @@ WORKING WITH MULTIPLE TABLES:
             COUNT	        SELECT COUNT(column_name) 
                                 FROM table_name 
                                 WHERE condition;
+select COMMUNITY_AREA_NUMBER, COUNT(*) AS COUNT_OF_CRIMES_AREA FROM CHICAGO_CRIME_DATA
+	GROUP BY COMMUNITY_AREA_NUMBER;	
             AVG	            SELECT AVG(column_name) 
                                 FROM table_name 
                                 WHERE condition;
