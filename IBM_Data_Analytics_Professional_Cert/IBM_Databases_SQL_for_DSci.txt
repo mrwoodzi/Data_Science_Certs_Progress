@@ -876,7 +876,9 @@ What is the result of the following query: SELECT (Current_Date – RescueDate) 
 Returns how long it has been since each resc
 
 Which of the following queries will return the employees who earn less than the average salary?
-SELECT * FROM Employees WHERE Salary < (SELECT AVG(Salary) FROM Employees);
+SELECT * FROM Employees 
+    WHERE Salary < (SELECT AVG(Salary) 
+        FROM Employees);
 
 What are the three ways to work with multiple tables in the same query?
 Sub-queries, Implicit joins, JOIN operators
@@ -884,8 +886,9 @@ Sub-queries, Implicit joins, JOIN operators
 QUESTIONS:
 Question 1
 Which of the following queries will return the data for employees who belong to the department with the highest value of department ID.
-SELECT * FROM EMPLOYEES WHERE DEP_ID = 
-      ( SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS ) 
+SELECT * FROM EMPLOYEES 
+    WHERE DEP_ID = 
+       (SELECT MAX(DEPT_ID_DEP) FROM DEPARTMENTS ) 
 
 Question 2
 A DEPARTMENTS table contains DEP_NAME, and DEPT_ID_DEP columns and an EMPLOYEES table contains columns called F_NAME and DEP_ID. We want 
