@@ -71,10 +71,10 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
     CURRENT STOPPING POINT:
         psql --username=freecodecamp --dbname=postgres
         second_database
-        mario_database
+        \c mario_database
 
         Creating Database 
-            create database database_name;
+            create database database_name(); yes with parenthesis
         DATA types  
             int 
             varchar(give it a numeric maximum allowable length)
@@ -113,3 +113,11 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         ALTER DATABASE/RENAMING 
             -renaming 
                 ALTER DATABASE database_name RENAME TO new_database_name;
+            -deleting database  
+                DROP DATABASE database_name;
+        TYPE 
+            - ALERT TABLE table_name ADD COLUMN column_name type_name;
+
+            -SERIAL 
+                -column an INT with a NOT NULL constraint, and automatically increment 
+                    the integer when a new row is added
