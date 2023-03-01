@@ -121,3 +121,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             -SERIAL 
                 -column an INT with a NOT NULL constraint, and automatically increment 
                     the integer when a new row is added
+            -VARCHAR*(char_length)
+        UPDATE/CHANGE ROW   
+            -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
+                ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
+            
