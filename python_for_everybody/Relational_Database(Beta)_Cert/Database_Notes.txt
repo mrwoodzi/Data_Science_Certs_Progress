@@ -64,7 +64,7 @@ Bash Tutorial:
 
 
 BUILDING A MARIO DATABASE 
-login = psql --username=freecodecamp --dbname=postgresC
+login = psql --username=freecodecamp --dbname=postgres\d 
 Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
     with it. Log in by typing psql --username=freecodecamp --dbname=postgres into the terminal and pressing enter.
 
@@ -125,5 +125,5 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         UPDATE/CHANGE ROW   
             -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
-    
-    Why does this keep locking up?????????
+        Primary Key 
+            ALTER TABLE table_name ADD PRIMARY KEY(column_name);
