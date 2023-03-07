@@ -108,8 +108,12 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             delete from table_name where column_name='Luigi';
         ALTER TABLE 
             alter table second_table drop username; # column names don't have to be in quotes
+            changing primary key 
+                ALTER TABLE table_name DROP CONSTRAINT constraint_name;
+                    Try using ALTER TABLE characters DROP CONSTRAINT characters_pkey; (constraint name is found select * from TABLE_NAME)
         DROP    
             drop table table_name; 
+            ALTER TABLE table_name DROP CONSTRAINT constraint_name;
         ALTER DATABASE/RENAMING 
             -renaming 
                 ALTER DATABASE database_name RENAME TO new_database_name;
@@ -127,3 +131,5 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
         Primary Key 
             ALTER TABLE table_name ADD PRIMARY KEY(column_name);
+                Deleting Primary Key 
+                    ALTER TABLE table_name DROP CONSTRAINT constraint_name; (constraint name is found select * from TABLE_NAME)
