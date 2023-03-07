@@ -94,10 +94,14 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 \d table_name
         Creating Table 
             create table table_name();
+            CREATE TABLE table_name(column_names . . .)
+            CREATE TABLE table_name(column_name DATATYPE CONSTRAINTS);
         ADD COLUMN 
             ALTER TABLE table_name ADD COLUMN column_name DATATYPE;
+            ALTER TABLE table_name ADD COLUMN column_name VARCHAR(40) NOT NULL UNIQUE;
         ALTER COLUMN    
             ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
+            ALTER TABLE table_name ALTER COLUMN column_name VARCHAR(40) NOT NULL UNIQUE;
         DROP/REMOVE COLUMN 
             ALTER TABLE table_name DROP COLUMN column_name;
         RENAME COLUMN 
@@ -109,6 +113,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             SELECT * FROM table_name; # star selects all columns 
         INSERT ROW/ADD ROW 
             insert into table_name(column1, column2) values(int, str);
+                INSERT MULTIPLE 
+                    INSERT INTO table_name(column_1, column_2) VALUES(value_1, value_2), (value_1, value_2);
         DELETE
             delete from table_name where column_name='Luigi';
         ALTER TABLE 
