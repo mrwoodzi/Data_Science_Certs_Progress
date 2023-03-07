@@ -96,13 +96,18 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             create table table_name();
         ADD COLUMN 
             ALTER TABLE table_name ADD COLUMN column_name DATATYPE;
+        ALTER COLUMN    
+            ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
         DROP/REMOVE COLUMN 
             ALTER TABLE table_name DROP COLUMN column_name;
         RENAME COLUMN 
             ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
+        WHERE 
+            WHERE to view data 
+                SELECT columns FROM table_name WHERE condition;
         Querying Data 
             SELECT * FROM table_name; # star selects all columns 
-        INSERT ROW
+        INSERT ROW/ADD ROW 
             insert into table_name(column1, column2) values(int, str);
         DELETE
             delete from table_name where column_name='Luigi';
@@ -111,6 +116,11 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             changing primary key 
                 ALTER TABLE table_name DROP CONSTRAINT constraint_name;
                     Try using ALTER TABLE characters DROP CONSTRAINT characters_pkey; (constraint name is found select * from TABLE_NAME)
+            Foreign Key 
+                    Try using ALTER TABLE characters DROP CONSTRAINT characters_pkey; (constraint name is found select * from TABLE_NAME)
+            UNIQUE 
+                ALTER TABLE table_name ADD UNIQUE(column_name);
+
         DROP    
             drop table table_name; 
             ALTER TABLE table_name DROP CONSTRAINT constraint_name;
@@ -126,6 +136,13 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 -column an INT with a NOT NULL constraint, and automatically increment 
                     the integer when a new row is added
             -VARCHAR*(char_length)
+            -INT 
+            -DATE 
+            -NUMERIC(4, 1)
+                 has up to four digits and one of them has to be to the right of the decimal.
+            -NOT NULL   
+                this can be add to a row that is already of type INT 
+                ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
         UPDATE/CHANGE ROW   
             -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
@@ -133,3 +150,5 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             ALTER TABLE table_name ADD PRIMARY KEY(column_name);
                 Deleting Primary Key 
                     ALTER TABLE table_name DROP CONSTRAINT constraint_name; (constraint name is found select * from TABLE_NAME)
+        Foreign Key:
+            ALTER TABLE table_name ADD COLUMN column_name DATATYPE REFERENCES referenced_table_name(referenced_column_name);
