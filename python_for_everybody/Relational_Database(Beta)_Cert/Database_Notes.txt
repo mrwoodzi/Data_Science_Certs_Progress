@@ -158,3 +158,6 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                     ALTER TABLE table_name DROP CONSTRAINT constraint_name; (constraint name is found select * from TABLE_NAME)
         Foreign Key:
             ALTER TABLE table_name ADD COLUMN column_name DATATYPE REFERENCES referenced_table_name(referenced_column_name);
+
+"Many to Many" Relationship     
+    many of the characters can perform many actions. 

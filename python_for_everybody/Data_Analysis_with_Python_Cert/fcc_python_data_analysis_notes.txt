@@ -82,7 +82,7 @@ Juypter Notebooks:
 
         processing numerical numbers is slow on large data sets in Python
         Numpy solves this Python issue
-        Numpy is mostly for porcessing numerical Arrays
+        Numpy is mostly for processing numerical Arrays
 
 
         Example:
