@@ -10,6 +10,8 @@ Bash Tutorial:
         .js 
         .txt 
     make sure you are in the freeCodeCamp folder 
+    Delete Database 
+        DROP DATABASE [IF EXISTS] dbname;
     echo 
         printing in terminal 
         echo text >> filename (You need the arrows)
@@ -74,7 +76,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         \c mario_database
 
         Creating Database 
-            create database database_name(); yes with parenthesis
+            create database database_name(); maybe with parenthesis 
         DATA types  
             int 
             varchar(give it a numeric maximum allowable length)
@@ -152,12 +154,89 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         UPDATE/CHANGE ROW   
             -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
-        Primary Key 
+        PRIMARY KEY 
+            COMPOSITE PRIMARY KEY 
+                -used this in junction table in mario_database
+                ALTER TABLE table_name ADD PRIMARY KEY(column1, column2);
             ALTER TABLE table_name ADD PRIMARY KEY(column_name);
                 Deleting Primary Key 
                     ALTER TABLE table_name DROP CONSTRAINT constraint_name; (constraint name is found select * from TABLE_NAME)
         Foreign Key:
             ALTER TABLE table_name ADD COLUMN column_name DATATYPE REFERENCES referenced_table_name(referenced_column_name);
 
-"Many to Many" Relationship     
-    many of the characters can perform many actions. 
+        JOIN
+            FULL JOIN 
+                - "One to One" relationship 
+                SELECT columns FROM table_1 FULL JOIN table_2 ON table_1.primary_key_column = table_2.foreign_key_column;
+                SELECT * FROM characters FULL JOIN more_info ON characters.character_id = more_info.character_id;
+                -'One to Many" 
+                    characters have more than one row because they have many sound
+            FULL JOIN Mulitiple tables 
+                SELECT columns FROM junction_table
+                FULL JOIN table_1 ON junction_table.foreign_key_column = table_1.primary_key_column
+                FULL JOIN table_2 ON junction_table.foreign_key_column = table_2.primary_key_column;    
+                    SELECT * FROM character_actions 
+                        FULL JOIN characters ON character_actions.character_id = characters.character_id 
+                        FULL JOIN actions ON character_actions.action_id = actions.action_id;
+
+
+    JUNCTION TABLE 
+        connets other tables together 
+        "Many to Many" Relationship     
+        -many of the characters can perform many actions. 
+        -usally use a junction table to link two tables together, forming two 'one-to-many' relationships
+
+    COMPOSITE PRIMARY KEY 
+        -used in mario_database junction table character_actions
+        ALTER TABLE table_name ADD PRIMARY KEY(column1, column2);        
+        This table will have multiple rows with the same character_id, and multiple rows the same action_id. So neither of them are unique.
+            But you will never have the same character_id and action_id in a single row. So the two columns together can be used to uniquely identify 
+            each row. View the details of the character_actions table to see your composite key. 
+
+CELESTIAL BODIES Project:
+    Instructions
+For this project, you need to log in to PostgreSQL with psql to create your database. Do that by entering psql --username=freecodecamp --dbname=postgres in the terminal. Make all the tests below pass to complete the project. Be sure to get creative, and have fun!
+
+Don't forget to connect to your database after you create it 😄
+
+Here's some ideas for other column and table names: description, has_life, is_spherical, age_in_millions_of_years, planet_types, galaxy_types, distance_from_earth.
+
+Notes:
+If you leave your virtual machine, your database may not be saved. You can make a dump of it by entering pg_dump -cC --inserts -U freecodecamp 
+    universe > universe.sql in a bash terminal (not the psql one). It will save the commands to rebuild your database in universe.sql. The file 
+        will be located where the command was entered. If it's anything inside the project folder, the file will be saved in the VM. You can 
+            rebuild the database by entering psql -U postgres < universe.sql in a terminal where the .sql file is.
+If you are saving your progress on freeCodeCamp.org, after getting all the tests to pass, follow the instructions above to save a dump of your 
+    database. Save the universe.sql file in a public repository and submit the URL to it on freeCodeCamp.org.
+
+COMPLETE THE TASKS BELOW 
+You should create a database named universe
+Be sure to connect to your database with \c universe. Then, you should add tables named galaxy, star, planet, and moon
+Each table should have a primary key
+Each primary key should automatically increment
+Each table should have a name column
+You should use the INT data type for at least two columns that are not a primary or foreign key
+You should use the NUMERIC data type at least once
+You should use the TEXT data type at least once
+You should use the BOOLEAN data type on at least two columns
+Each "star" should have a foreign key that references one of the rows in galaxy
+Each "planet" should have a foreign key that references one of the rows in star
+Each "moon" should have a foreign key that references one of the rows in planet
+Your database should have at least five tables
+Each table should have at least three rows
+The galaxy and star tables should each have at least six rows
+The planet table should have at least 12 rows
+The moon table should have at least 20 rows
+Each table should have at least three columns
+The galaxy, star, planet, and moon tables should each have at least five columns
+At least two columns per table should not accept NULL values
+At least one column from each table should be required to be UNIQUE
+All columns named name should be of type VARCHAR
+Each primary key column should follow the naming convention table_name_id. For example, the moon table should have a primary key column named moon_id
+Each foreign key column should have the same name as the column it is referencing
+
+VS CODE 
+    'PostgreSQL: New Query' IN COMMAND PALLETE
+
+    Just configure your database connection to dabase:5432 instead of 127.0.0.1:5432 in your app container.
+    
