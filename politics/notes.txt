@@ -1,0 +1,38 @@
+"The main decision a campaign has to make is allocation of resources," 
+    said Kimball Brace, president of Election Data Services
+
+-decisions about how to optimize spending need to be made
+
+
+"There's a need for efficiencies in everything we do and every dollar that we 
+    spend," he said. "It's about figuring out how much it costs to get a vote -- 
+    from zero to a vote, how much does that cost? You need to look at the techniques 
+    to get there, and follow them and measure them and test them against one another over time."
+    -Alex Carabelli, senior political partnerships manager at Civis
+
+there needs to be more standardized data input and collection at the local level, according to Carmichael.
+"The biggest data issues are around data cleanliness," Carmichael said.
+
+"There are people like me who love politics but wouldn't know a data point to save my life," he said. 
+    "Then there are analytics people who can deconstruct something in numerous ways but have no idea 
+    how to connect that to messaging. The next growth area for politics is for people to be political 
+    analytics people who can marry the art and data."
+
+Above stuff is from:
+https://www.techtarget.com/searchbusinessanalytics/feature/Election-campaigns-recognize-need-for-analytics-in-politics
+Published Nov. 3 2022
+
+
+What if the Bexar county republican party was able to aggregate data, analysis and anaylysis tools that
+    would always be available for future campaigns?
+
+What are all the zip codes for District 9
+    78259
+    78258
+    78248
+    78216
+    78232
+    78213
+    
+John Courage is Current District 9 Council Man 
+
