@@ -26,13 +26,62 @@ Published Nov. 3 2022
 What if the Bexar county republican party was able to aggregate data, analysis and anaylysis tools that
     would always be available for future campaigns?
 
-What are all the zip codes for District 9
-    78259
-    78258
-    78248
-    78216
-    78232
-    78213
+
+
+John Courage is Current District 9 Council Man
+
+Let's find everyone in a nursing home that is over the age of 65.
+    -find repetitive addresses 
     
-John Courage is Current District 9 Council Man 
+Tax records on all properties with 65 and older exemptions?
+
+
+Below is from Texas Secreary of State Jane Nelson:
+https://www.sos.texas.gov/elections/voter/reqabbm.shtml
+To be eligible to vote early by mail in Texas, you must:
+be 65 years or older;
+be sick or disabled;
+be out of the county on election day and during the period for early voting by personal appearance; or
+be expected to give birth within three weeks before or after Election Day; or
+be confined in jail, but otherwise eligible.
+
+
+What to base likely mail in voters on?
+
+https://electionupdates.caltech.edu/2020/03/20/some-demographics-on-voting-by-mail/
+Article Posted March 20, 2020
+Based on Voters in 2016 Presidential Election 
+Demographic Data came from Cooperativ3e Congressional Election Study: https://cces.gov.harvard.edu/
+Survey of the Performance of American Elections: https://dataverse.harvard.edu/dataverse/SPAE 
+
+Patterns of mail-ballot usage and support for mail balloting need to be mindful of the fact that 
+states organize mail balloting differently. Relying on the coding first suggested by the National 
+Conference on State Legislatures, I divide states into four regimes: 
+    (1) excuse required for an absentee ballot, 
+    (2) no excuse required for an absentee ballot, 
+    (3) permanent mail ballot list, and 
+    (4) complete vote by mail (or “vote at home”). The following tables maintain this distinction.
+
+    Take-Aways:
+        1. There is very little demographic difference in the use of mail ballots.
+        2. The one exception is related to age, where voters older than 65 are more 
+            likely to use them than younger voters. (Note that some states, even 
+            those that generally require an excuse to vote absentee, allow older 
+            voters to vote by mail without an excuse.)
+        3. The lack of a major difference between demographic groups is contrary 
+            to some claims I have been hearing (and some I believed myself before running the numbers).
+        4. Contrary to the claims of some, African Americans appear to be slightly more supportive of 
+            vote-by-mail reforms than whites.
+        5. Despite being the demographic most likely to take advantage of voting by mail, the age group 
+            most in opposition to expanded voting by mail are those 65 and older.  The relationship is 
+            strongest in non-vote-by-mail states.
+        6. Voters in vote-by-mail states who return their mail ballots in person are more confident their
+            votes were counted than those who mailed them back.
+        7. Mail voters in vote-by-mail states are more confident their vote was counted as cast than mail
+            voters in other states.
+        8. There is still a substantial fraction of voters in vote-by-mail states that believe that all 
+            elections should not be held by mail.
+
+
+
 
