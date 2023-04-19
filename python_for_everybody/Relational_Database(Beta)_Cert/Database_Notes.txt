@@ -131,6 +131,13 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             UNIQUE 
                 ALTER TABLE table_name ADD UNIQUE(column_name);
 
+
+        PUTTING TABLE IN SPECIFIC ORDER
+
+            ORDER BY 
+                SELECT * FROM table ORDER BY column_name/index; 
+                    -this will order your whole table by the column you chose 
+
         DROP    
             drop table table_name; 
             ALTER TABLE table_name DROP CONSTRAINT constraint_name;
@@ -155,6 +162,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
         UPDATE/CHANGE ROW   
             -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
+                -UPDATE characters SET favorite_color='Orange' WHERE name='Daisy'
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
         PRIMARY KEY 
             COMPOSITE PRIMARY KEY 
