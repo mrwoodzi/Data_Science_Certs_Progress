@@ -119,6 +119,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                     INSERT INTO table_name(column_1, column_2) VALUES(value_1, value_2), (value_1, value_2);
         DELETE
             delete from table_name where column_name='Luigi';
+             - you don't have to use DELETE to change a VALUE you can use 
+                UPDATE table_name SET column_name=new_value WHERE condition;
         ALTER TABLE 
             alter table second_table drop username; # column names don't have to be in quotes
             changing primary key 
