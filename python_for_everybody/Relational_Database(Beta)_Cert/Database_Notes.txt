@@ -113,6 +113,11 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 SELECT columns FROM table_name WHERE condition;
         Querying Data 
             SELECT * FROM table_name; # star selects all columns 
+
+            Selecting specific rows
+                SELECT columns FROM table_name WHERE condition;
+                mario_database=> SELECT character_id, name FROM characters WHERE name='Toad';
+
         INSERT ROW/ADD ROW 
             insert into table_name(column1, column2) values(int, str);
                 INSERT MULTIPLE 
@@ -130,6 +135,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                     Try using ALTER TABLE characters DROP CONSTRAINT characters_pkey; (constraint name is found select * from TABLE_NAME)
             UNIQUE 
                 ALTER TABLE table_name ADD UNIQUE(column_name);
+            ALTER COLUMN 
+                ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
 
 
         PUTTING TABLE IN SPECIFIC ORDER
@@ -169,11 +176,14 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 -used this in junction table in mario_database
                 ALTER TABLE table_name ADD PRIMARY KEY(column1, column2);
             ALTER TABLE table_name ADD PRIMARY KEY(column_name);
-                Deleting Primary Key 
+                Deleting Primary Key or Altering Primary Key 
                     ALTER TABLE table_name DROP CONSTRAINT constraint_name; (constraint name is found select * from TABLE_NAME)
+                        ALTER TABLE more_info ADD COLUMN character_id INT REFERENCES characters(character_id);
+
         Foreign Key:
             ALTER TABLE table_name ADD COLUMN column_name DATATYPE REFERENCES referenced_table_name(referenced_column_name);
-
+                adding UNIQUE TO a foreign key 
+                    ALTER TABLE more_info ADD UNIQUE(character_id);
         JOIN
             FULL JOIN 
                 - "One to One" relationship 
