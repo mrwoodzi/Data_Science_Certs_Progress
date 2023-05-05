@@ -3,52 +3,68 @@ Universe Database Architecture:
 Tables:
 
 Galaxy:
-Columns: ({'galaxy_id(Primary Key Auto Incremental, Not Null, Unique)'[],
-            'name(Var Char(40), Not Null)':[], 
-            'stars_types(VAR CHAR(30))':[],
-            'planet_types(VAR CHAR(40), NULL)':[],
-            'life(BOOLEAN, Null)':(will be 0(no_life), 1(life))
+Columns: ({ALTER TABLE galaxy ADD COLUMN galaxy_id SERIAL PRIMARY KEY UNIQUE NOT NULL; 
+            'name VarChar(40) Null)':[], 
+            'galaxy_type VARCHAR(40)  NOT NULL, 
+            'stars_types(VARCHAR(30)) NOT NULL,
+            'planet_types VAR CHAR(40) NOT NULL, 
+            'life(BOOLEAN, NULL);
             })
+            6 rows
 
 
 
-Star: ({star_id(PRIMARY KEY(NOT NULL, AUTO INCREMENT, UNIQUE))
-            'galaxy_id(foreign_key, Not Null)': [],
-            'name(VAR CHAR(40)): []'
-            'star_type(VAR CHAR(40)'): [],
-            'number_planets_circling(INT), NULL: [],
+Star: ({ALTER TABLE star ADD COLUMN star_id SERIAL PRIMARY KEY UNIQUE NOT NULL;,
+            'ALTER TABLE star 
+                ADD COLUMN galaxy_id 
+                INTEGER NOT NULL 
+                REFERENCES galaxy(galaxy_id);  
+            'name VARCHAR(40) NULL
+            'ALTER TABLE star ADD COLUMN star_type VARCHAR(40);
+            'ALTER TABLE star ADD COLUMN number_planets INT NULL;
             })
+            6 rows
 
 
 
-Planet:({'planet_id(PRIMARY KEY(NOT NULL, AUTO INCREMENT, UNIQUE))': [], 
-            'galaxy_id(foreign_key, NOT NULL)': [], 
-            'name(VAR CHAR(40) NULL)' : [], 
-            'star_id(foreign_key, NOT NULL ): [], 
-            'planet_type(foreign_key(planet_types in galaxy table, VAR CHAR(40))': [],
-            'moon_type': [])})
+Planet:({ALTER TABLE planet ADD COLUMN planet_id SERIAL PRIMARY KEY UNIQUE NOT NULL;
+            'name VarChar(40) NOT Null,
+            'ALTER TABLE planet 
+                ADD COLUMN star_id 
+                INTEGER NOT NULL  
+                REFERENCES star(star_id); 
+            'planet_typeS VAR CHAR(40),
+            'number_moons NUMERIC NULL
+            'life BOOLEAN NULL, 
+            })
+            12 rows
 
 
 
-Moon:({moon_id(primary_key(NOT NULL, AUTO INCREMENT, UNIQUE)), 
-            'planet_id(foreign_key(planet_id)): [],
-            'name(VAR CHAR(40), NULL)': [],
-            'moon_type'})
+Moon:({ALTER TABLE moon ADD COLUMN moon_id SERIAL PRIMARY KEY UNIQUE NOT NULL
+            'planet_id(foreign_key(planet_id)  NULL): [],
+            'name VarChar(40) NOT Null,
+            'moon_type NULL,
+            'life BOOLEAN NULL, 
+            })
+            20 rows
 
 
 # I want below to be a Junction table
-Space_Station:({space_station_id(primary_key(NOT NULL, AUTO INCREMENT, UNIQUE)): [],
+Space_Station:({space_station_id(Primary Key, Serial, Not Null, Unique)': [],
             'galaxy_id(foreign_key(galaxy))': [], 
-            'star_id(foreign_key(star))': [], 
-            'name(varchar(40) not null, unique)': [], 
-            'space_station_type(varchar(40) NULL)': [], 
+            'star_id(foreign_key(star), 
+            'name VarChar(40) Null, 
+            'space_station_type varchar(40) NULL, 
+            'number_ships INT NULL
             })
+            3 rows 
 
 
-
-Ships:({ship_id(PRIMARY_ID(NOT NULL, AUTO INCREMENT, UNIQUE)): [], 
+Ships:({ship_id(Primary Key, Serial, Not Null, Unique)': [], 
             'space_station_id(foreign_key(space_station_id)VARCHAR(40)), NULL': [] 
-            'name(varchar(40) NULL)': [],
-            'ship_type(varchar(40) NULL), 
+            'name VarChar(40) Null,
+            'ship_type varchar(40) NULL, 
             })
+            3 rows 
 
