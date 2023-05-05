@@ -5,9 +5,9 @@ Tables:
 Galaxy:
 Columns: ({'galaxy_id(Primary Key Auto Incremental, Not Null, Unique)'[],
             'name(Var Char(40), Not Null)':[], 
-            'stars_types(VAR CHAR(30))'}:[],
+            'stars_types(VAR CHAR(30))':[],
             'planet_types(VAR CHAR(40), NULL)':[],
-            'life(INT, Null)':(will be 0(no_life), 1(life))
+            'life(BOOLEAN, Null)':(will be 0(no_life), 1(life))
             })
 
 
@@ -24,17 +24,31 @@ Star: ({star_id(PRIMARY KEY(NOT NULL, AUTO INCREMENT, UNIQUE))
 Planet:({'planet_id(PRIMARY KEY(NOT NULL, AUTO INCREMENT, UNIQUE))': [], 
             'galaxy_id(foreign_key, NOT NULL)': [], 
             'name(VAR CHAR(40) NULL)' : [], 
-            'star_id(foreign_key, NOT NULL )})
+            'star_id(foreign_key, NOT NULL ): [], 
+            'planet_type(foreign_key(planet_types in galaxy table, VAR CHAR(40))': [],
+            'moon_type': [])})
 
 
 
-Moon:
+Moon:({moon_id(primary_key(NOT NULL, AUTO INCREMENT, UNIQUE)), 
+            'planet_id(foreign_key(planet_id)): [],
+            'name(VAR CHAR(40), NULL)': [],
+            'moon_type'})
+
+
+# I want below to be a Junction table
+Space_Station:({space_station_id(primary_key(NOT NULL, AUTO INCREMENT, UNIQUE)): [],
+            'galaxy_id(foreign_key(galaxy))': [], 
+            'star_id(foreign_key(star))': [], 
+            'name(varchar(40) not null, unique)': [], 
+            'space_station_type(varchar(40) NULL)': [], 
+            })
 
 
 
-Space_Station:
-
-
-
-Ships:
+Ships:({ship_id(PRIMARY_ID(NOT NULL, AUTO INCREMENT, UNIQUE)): [], 
+            'space_station_id(foreign_key(space_station_id)VARCHAR(40)), NULL': [] 
+            'name(varchar(40) NULL)': [],
+            'ship_type(varchar(40) NULL), 
+            })
 
