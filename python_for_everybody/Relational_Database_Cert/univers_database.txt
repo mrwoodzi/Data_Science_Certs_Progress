@@ -14,14 +14,17 @@ Columns: ({'galaxy_id(Primary Key Auto Incremental, Not Null, Unique)'[],
 
 Star: ({star_id(PRIMARY KEY(NOT NULL, AUTO INCREMENT, UNIQUE))
             'galaxy_id(foreign_key, Not Null)': [],
-            'name(VAR CHAR(40): []'
+            'name(VAR CHAR(40)): []'
             'star_type(VAR CHAR(40)'): [],
             'number_planets_circling(INT), NULL: [],
             })
 
 
 
-Planet:
+Planet:({'planet_id(PRIMARY KEY(NOT NULL, AUTO INCREMENT, UNIQUE))': [], 
+            'galaxy_id(foreign_key, NOT NULL)': [], 
+            'name(VAR CHAR(40) NULL)' : [], 
+            'star_id(foreign_key, NOT NULL )})
 
 
 
