@@ -1,0 +1,197 @@
+HTML:
+
+<html> element is the root element of an HTML page,  and <head> element contains meta 
+    information about the HTML page. Next, we have the body, this is what's displayed 
+    on the web page. This is usually the data we are interested in, we see the elements 
+    with an “h3”, this means type 3 heading, makes the text larger and bold. These tags 
+    have the names of the players, notice the data is enclosed in the elements. It starts 
+    with a h3 in brackets and ends in a slash h3 in brackets
+
+    html tags
+    This tag defines a hyperlink, which is used to link from one page to another. 
+    This tag defines a hyperlink, which is used to link from one page to another. 
+
+    We can represent this as a family tree. Each nested tag is a level in the tree. 
+    The tag HTML tag contains the head and body tag. The Head and body tag are the 
+    descendants of the html tag. In particular they are the children of the HTML tag. 
+    HTML tag is their parent. The head and body tag are siblings as they are on the same 
+    level. Title tag is the child of the head tag and its parent is the head tag. The title 
+    tag is a descendant of the HTML tag but not its child. The heading and paragraph tags 
+    are the children of the body tag; and as they are all children of the body tag they are 
+    siblings of each other. The bold tag is a child of the heading tag, the content of the 
+    tag is also part of the tree but this can get unwieldy to draw.
+
+    To define an HTML table we have the table tag. Each table row is defined with a  <tr>  
+    tag, you can also use a table header tag for the first row. The table row cell contains 
+    a set of <td> tags, each defines a table cell. For the first row first cell we have; for 
+    the first row second cell we have; and so on. For the second row we have; and for the 
+    second row first cell we have; for the second row second cell we have; and so on. We now 
+    have some basic knowledge of HTML. 
+
+    WEBSCRAPING:
+    Requests
+
+    Beautiful Soup:
+        find_all
+            table_row=table.find_all(name='tr')
+
+        Iterating threw a table in a webpage
+
+        for i,row in enumerate(table_rows):
+            print('row', i)
+            cells = row.find_all('td')
+
+            for m,cell in enumerate(cells):
+                print('column', j, 'cell', cell)
+
+
+    EXAMPLE:
+        import Requests
+        from bs4 import BeautifulSoup
+
+        page = requests.get('http://thime.it)
+
+        soup - BeautifulSoup(page, 'html.parser')
+
+        artists = soup.find_all("a")
+
+        for artist in artists:
+            names = artist.contents[0]
+            fullLink = artist.get('href')
+            print(names)
+            print(fullLink)
+
+        Navigating/Retrieving using WEBSCRAPING    
+            .attrs
+            .get
+            .string
+        
+        Filtering
+            table = "<asdfioj><asdfkji><k>"
+            table_bs = BeautifulSoup(table, 'html.parser')
+
+            .find_all()
+                table_rows=table_bs.find_all('tr')
+                table_rows
+
+We store the HTML as a Python string and assign two_tables:
+
+            two_tables="<h3>Rocket Launch </h3><p><table class='rocket'><tr><td>Flight No</td><td>Launch site</td> <td>Payload mass</td></tr><tr><td>1</td><td>Florida</td><td>300 kg</td></tr><tr><td>2</td><td>Texas</td><td>94 kg</td></tr><tr><td>3</td><td>Florida </td><td>80 kg</td></tr></table></p><p><h3>Pizza Party  </h3><table class='pizza'><tr><td>Pizza Place</td><td>Orders</td> <td>Slices </td></tr><tr><td>Domino's Pizza</td><td>10</td><td>100</td></tr><tr><td>Little Caesars</td><td>12</td><td >144 </td></tr><tr><td>Papa John's </td><td>15 </td><td>165</td></tr>"
+
+We create a BeautifulSoup object two_tables_bs
+
+        two_tables_bs= BeautifulSoup(two_tables, 'html.parser')
+
+We can find the first table using the tag name table
+
+        two_tables_bs.find("table")
+
+        <table class="rocket"><tr><td>Flight No</td><td>Launch site</td> <td>Payload mass</td></tr><tr><td>1</td><td>Florida</td><td>300 kg</td></tr><tr><td>2</td><td>Texas</td><td>94 kg</td></tr><tr><td>3</td><td>Florida </td><td>80 kg</td></tr></table>
+
+We can filter on the class attribute to find the second table, but because class is a keyword in Python, we add an underscore.
+
+        two_tables_bs.find("table",class_='pizza')
+
+        <table class="pizza"><tr><td>Pizza Place</td><td>Orders</td> <td>Slices </td></tr><tr><td>Domino's Pizza</td><td>10</td><td>100</td></tr><tr><td>Little Caesars</td><td>12</td><td>144 </td></tr><tr><td>Papa John's </td><td>15 </td><td>165</td></tr></table>
+
+
+
+Downloading And Scraping The Contents Of A Web Page
+
+We Download the contents of the web page:
+
+        url = "http://www.ibm.com"
+
+We use get to download the contents of the webpage in text format and store in a variable called data:
+
+        data  = requests.get(url).text 
+
+We create a BeautifulSoup object using the BeautifulSoup constructor
+
+        soup = BeautifulSoup(data,"html.parser")  # create a soup object using the variable 'data'
+
+Scrape all links
+
+        for link in soup.find_all('a',href=True):  # in html anchor/link is represented by the tag <a>
+            print(link.get('href'))
+
+
+Scrape all images Tags
+
+for link in soup.find_all('img'):# in html image is represented by the tag <img>
+
+    print(link)
+
+    print(link.get('src'))
+    
+
+Scrape data from HTML tables
+
+#The below url contains an html table with data about colors and color codes.
+
+        url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/labs/datasets/HTMLColorCodes.html"
+
+Before proceeding to scrape a web site, you need to examine the contents, and the way data is organized on the website. Open the above url in your 
+browser and check how many rows and columns are there in the color table.
+
+# get the contents of the webpage in text format and store in a variable called data
+
+        data  = requests.get(url).text
+
+        soup = BeautifulSoup(data,"html.parser")
+
+#find a html table in the web page
+
+        table = soup.find('table') # in html table is represented by the tag <table>
+
+#Get all rows from the table
+
+        for row in table.find_all('tr'): # in html table row is represented by the tag <tr>
+            # Get all columns in each row.
+            cols = row.find_all('td') # in html a column is represented by the tag <td>
+            color_name = cols[2].string # store the value in column 3 as color_name
+            color_code = cols[3].string # store the value in column 4 as color_code
+            print("{}--->{}".format(color_name,color_code))
+
+
+Working on HTML table
+
+These are the following tags which are used while creating HTML tables.
+    <table> tag: This tag is root tag used to define the start and end of the table. All the content of the table is enclosed within these tags.
+    <tr> tag: This tag is used to define a table row. Each row of the table is defined within this tag.
+    <td> tag: This tag is used to define a table cell. Each cell of the table is defined within this tag. You can specify the content of 
+        the cell between the opening and closing tags.
+    <th> tag: This tag is used to define a header cell in the table. The header cell is used to describe the contents of a column or row. 
+        By default, the text inside a tag is bold and centered.
+    <tbody> tag: This is the main content of the table, which is defined using the tag. It contains one or more rows of elements.
+
+
+Steps to be followed for extracting data
+
+    Send an HTTP request to the webpage using the requests library.
+    Parse the HTML content of the webpage using BeautifulSoup.
+    Identify the HTML tags that contain the data you want to extract.
+    Use BeautifulSoup methods to extract the data from the HTML tags.
+    Print the extracted data
+
+
+
+    Python Project for Data Science:
+        Helpful Links:
+            https://aroussi.com/post/python-yahoo-finance
+                downloading historical data with Python 
+
+
+        Libraries to Import:
+            import yfinance as yf 
+            import pandas as pd 
+            import json # maybe 
+            import requests
+
+
+           
+        Stocks:
+            Tesla
+            Amazon
+            AMD
+            GameStop
