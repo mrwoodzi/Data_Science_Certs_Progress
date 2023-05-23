@@ -1,0 +1,45 @@
+
+Accessing Databases in Python 
+    DB-API 
+        Pythons standard library for accessing dbms 
+            connection object 
+                to cursor object
+            query object
+                cursor objects are used to run the query 
+                cursor()
+                rollback()
+                commit() 
+                close()
+
+Dealing with Missing Values
+    Drop missing Values 
+        drop the variable
+        drop the data entry 
+
+    Replacing the missing values 
+        replace it with an averae of similar datapoints
+        replace it by frequency
+        replace it based on other functions 
+        One standard for placement technique is to replace
+missing values by the average value of the entire variable
+
+Binning 
+    import numpy as np 
+        bins = np.linspace(min(df['price']), max(df['price'], 4))
+        group_names = ['Low', 'Medium', 'High']
+        df['price-binned'] = pd.cut(df['price'], bins, labels=group_names, include_lowest=True)
+
+Converting categorical variables to dummy variables (0 or 1)
+    -automatically generates a list of numbers 
+    pd.get_dummies(df['fuel'])
+
+Count missing values in each column
+
+Using a for loop in Python, we can quickly figure out the number of missing values in each column. 
+As mentioned above, "True" represents a missing value and "False" means the value is present in the 
+dataset. In the body of the for loop the method ".value_counts()" counts the number of "True" values.
+
+        for column in missing_data.columns.values.tolist():
+            print(column)
+            print (missing_data[column].value_counts())
+            print("")    
