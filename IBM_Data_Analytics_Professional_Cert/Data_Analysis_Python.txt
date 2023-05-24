@@ -43,3 +43,144 @@ dataset. In the body of the for loop the method ".value_counts()" counts the num
             print(column)
             print (missing_data[column].value_counts())
             print("")    
+
+Exploratory Data Analysis:
+    Descriptive Statistics
+        describe basic features of data
+            short summaries 
+            -df.describe() 
+                # will give count, mean, std, min, 25%, 50%, 75%, max
+                -df.describe(include=['object'])
+                    # will give count, unique, top, freq
+                -NaN values are excluded 
+                    mean, the total number of data points, the standard deviation,
+                            the quartiles and the extreme values. 
+            -df.value_counts()
+        Box Plots
+            sns.boxplot(x='body_style', y='Price', data = df)
+             great way to visualize numeric data,
+                since you can visualize the various distributions of the data
+            main features that the box plot shows, are the median of the data,
+            which represents where the middle data point is.
+            The upper quartile shows where the 75th percentile is.
+            The lower quartile shows where the 25th percentile is.
+            The data between the upper and
+            lower quartile represents the interquartile range.
+            Next you have the lower and upper extremes.
+            These are calculated as 1.5 times the interquartile range,
+            above the 75th percentile, and as 1.5 times the IQR below the 25th percentile.
+            Finally, box plots also display outliers as individual dots that
+            occur outside the upper and lower extremes. 
+            -easy to compare different groups 
+        Scatter Plot 
+            Engine Size and Price 
+                shows relationship between 2 variables 
+                    Predictor/independent variables on x-axis
+                    Target/dependent variables on y-axis
+                y = df['price']
+                x = df['engine-size']
+                plt.scatter(x, y)
+                plt.title('Scatter Plot Title)
+                plt.xlabel('x label')
+                plt.ylabel('y label')
+    GroupBy
+        df_columns_wanted = df[['column1', 'column2', 'column3']]
+        df_grp = df_columns_wanted.groupby(['column1', 'column2'], as_index = False).mean()
+        df_grp
+
+        Pivot Tables 
+            one variable displayed along the columns and the other 
+                variable displayed along the rows
+            df_pivot = df_grp.pivot(index = 'drive-wheels', columns = 'body-style')
+        HeatMap Plot 
+            Plot taret variable over mutiple variables 
+                -boxes with different gradations of color 
+            plt.pcolor(df_pivot, cmap='RdBu') # RdBu is the color choice 
+            plt.colorbar()
+            plt.show()
+    Correlation
+        sns.regplot(x='engine-size', y='price', data = df)
+        plt.ylim(0, )
+        seaborn regplot
+        Measure to what extent different variables are independent 
+        interdependent 
+        Correlation does not cause causation 
+        plt.regplot
+            This would be a straight line through the scatter plot 
+        Line down is negative linear relationship
+        Line up is positive linear relationship
+        weak correlation is when it can be more horizontal 
+    Correlation - Statistics
+        Pearson Correlation
+            Scipy 
+                person_coef, p-value = stats.pearsonr(df['horsepower'] df['price'])
+                pearson_coef, p_value = stats.pearsonr(df['engine-size'], df['price'])
+                print("The Pearson Correlation Coefficient is", pearson_coef, 
+                    " with a P-value of P =", p_value)
+            Correlation HeatMap 
+                gives you what looks like a diagonal if there is a relationship 
+            measure the strength of the correlation between two features 
+                -correltation coefficient
+                -P-Value 
+            Correlation coefficient 
+                -close to +1: Large Postitive relationship
+                -close to -1: Large Negative relationship
+                -close to 0: No relationship 
+            P-Value 
+                from scipy import stats
+                    -P-value <0.001 Strong certainty in the result 
+                    -P-value <0.005 Moderate certainty in the result
+                    -P-value <0.1 Weak certainty in the result
+                    -P-Value >0.1 No Certainty in the result 
+            Strong Correlation 
+                -Correlation coefficient close to 1 or -1
+                -P-Value less than 0.001 
+
+    Association between two categorical variables:
+        Chi-Square
+            Test for Association (denoted as x2)
+            The test is intende to test how likely it is that an obseverd
+                dstribution is due to chance
+            Tests a null hypothesis that the variables are independent 
+                 Anytime the observed data doesn't fit within the model of the expected
+                    values, the probability that the variables are dependent becomes stronger, thus proving
+                    the null hypothesis incorrect
+                does not tell you the type
+                    of relationship that exists between both variables, but only that a relationship exists. 
+
+            CrossTab Table:
+                a table showing the relationship between two or more variables 
+                when the table only shows the relationship between two categorical variables, 
+                    the crosstab is also known as a CONTINGENCY TABLE 
+                
+                Example:
+                    Table with diesel and gas rows and then NA and Turbo Columns 
+                        With a Total Row and Total Column 
+                    Calculation 
+                        The summation of the observed value i.e., the counts in each group, minus the expected
+                            value, all squared, divided by the expected value
+                        (Row Total * Column Total)/Grand Total
+                        Degree of Freedom = (row-1)*(column-1)
+
+                scipy.stats.chi1_contingency(cont_table, correction = True)
+
+                The function will print out the chi-square
+                    test value twenty-nine point six, the second value is the p-value which is very close to
+                    zero and a degree of freedom of one. If you remember, the chi-square table did not give an exact
+                    p-value but a range in which it falls. Python will give the exact p-value. We can see the
+                    same results as in our previous slides. It also prints out the expected values which
+                    we also calculated by hand. Since the p-value is close to zero, we reject
+                    the null hypothesis that the two variables are independent and conclude that there is
+                    evidence of association between fuel-type and aspiration. 
+
+
+ANOVA: Analysis of Variance
+
+The Analysis of Variance (ANOVA) is a statistical method used to test whether there are significant 
+    differences between the means of two or more groups. ANOVA returns two parameters:
+F-test score: ANOVA assumes the means of all groups are the same, calculates how much the actual means 
+    deviate from the assumption, and reports it as the F-test score. A larger score means there is a 
+    larger difference between the means.
+P-value: P-value tells how statistically significant our calculated score value is.
+If our price variable is strongly correlated with the variable we are analyzing, we expect ANOVA to 
+    return a sizeable F-test score and a small p-value.
