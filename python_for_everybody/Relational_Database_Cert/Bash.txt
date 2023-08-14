@@ -1,0 +1,86 @@
+Scripting In Bash:
+
+Run
+    #!/bin/bash
+        -put this at top of scripting file so you can just run the file like
+            .\filname.sh
+    sh 
+        running in the shell
+    bash 
+        running in bash
+
+help
+    let # view of the potential operators in the terminal 
+
+List 
+    ls 
+    ls -l 
+        this gives you long form 
+
+Passing Arguements
+    $* 
+    echo $? # to view exit status of last command 
+    echo $the_you_type_what_you_want_to_print
+
+Permissions
+    chmod +x filename.sh 
+        -this gives everyone permission to use the file 
+            - the x means everyone can use it 
+
+
+All Variables in Shell/Bash
+    declare -P
+        # declare can also be used to create variables 
+        # will also show variable user makes 
+    var=$(( var - int )) # setting variable with calculation in terminal 
+
+Where is Interpreter 
+    which bash 
+
+Permissions
+    chmod   -x  <filename>
+
+Syntax 
+
+QUESTION1="What's your name?"
+echo $QUESTION1
+read NAME
+
+
+Boolean 
+        -eq (equal), -ne (not equal), 
+        -lt (less than), 
+        -le (less than or equal), 
+        -gt (greater than), 
+        -ge (greater than or equal)
+
+     Returns a status of 0 or 1 depending on the evaluation of the conditional
+    expression EXPRESSION.  Expressions are composed of the same primaries used
+    by the `test' builtin, and may be combined using the following operators:
+    
+      ( EXPRESSION )    Returns the value of EXPRESSION
+      ! EXPRESSION              True if EXPRESSION is false; else false
+      EXPR1 && EXPR2    True if both EXPR1 and EXPR2 are true; else false
+      EXPR1 || EXPR2    True if either EXPR1 or EXPR2 is true; else false
+    
+    When the `==' and `!=' operators are used, the string to the right of
+    the operator is used as a pattern and pattern matching is performed.
+    When the `=~' operator is used, the string to the right of the operator
+    is matched as a regular expression.
+    
+    The && and || operators do not evaluate EXPR2 if EXPR1 is sufficient to
+    determine the expression's value.
+    
+    Exit Status:
+    0 or 1 depending on value of EXPRESSION.
+
+
+    Comment Out:
+
+                    : '   # make sure there is a space between : '
+                    put your comment here 
+                    '
+
+(( this uses python boolean))
+
+[[ this uses the -le, -ge]]

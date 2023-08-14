@@ -1,0 +1,131 @@
+Syllabus
+Week 1 - Introduction to Data Visualization Tools
+    Introduction to Data Visualization
+    Introduction to Matplotlib
+    Basic Plotting with Matplotlib
+    Dataset on Immigration to Canada
+    Line Plots - Line plots capture trends and 
+        changes over time, allowing us to see patterns and fluctuations
+    Lab: Introduction to Matplotlib and Line Plots
+    Quiz: Introduction to Data Visualization Tools
+
+Week 2 - Basic and Specialized Visualization Tools
+    Area Plots
+    Histograms - Histograms illustrate the distribution of data within 
+        specific intervals, allowing us to understand its shape and concentration
+    Bar Charts - Bar plots compare categories or groups, providing 
+        a visual comparison of their values
+    Pie Charts
+    Box Plots - Box plots display the distribution of data, 
+        showcasing the median, quartiles and outliers
+    Scatter Plots - Scatter plots explore relationships between 
+        variables, helping us identify correlations or trends
+    Bubble Plots
+    Lab: Basic Visualization Tools
+    Lab: Specialized Visualization Tools
+    Quiz: Basic Visualization Tools
+    Quiz: Specialized Visualization Tools
+
+Week 3 - Advanced Visualizations and Geospatial Data
+    Waffle Charts
+    Word Clouds
+    Seaborn and Regression Plots
+    Introduction to Folium and Map Styles
+    Maps with Markers
+    Choropleth Maps
+    Lab: Advanced Visualization Tools
+    Lab: Creating Maps and Visualizing Geospatial Data
+    Quiz: Advanced Visualization Tools
+    Quiz: Visualizing Geospatial Data
+    Peer-review Assignment
+
+DarkHorse Analytics 
+    Get Rid of anything that is distracting 
+
+Matplotlib
+    -Originally a ECoG Visualization tool 
+    3 Main Layers 
+        back-end
+            FigureCanvas
+                encompases the area onto which the figure is drawn 
+            Renderer
+                Knows how to draw on the FigureCanvas
+            Event
+                Handles user inputs such as strokes and mouse clicks 
+        artist layer 
+            Comprised of one main object - Artist 
+            artist  
+                Uses Renderer to draw on canvas 
+                    Title, lines, tick labels, and images 
+                2 Types of Artist Objects:
+                    Primitive:
+                        Live2D, Rectangle, Circle, and Text 
+                    Composite: 
+                        Axis, Tick, Axes and Figure 
+                Figure and Axes(Artist Objects) hold most of the methods that are defined in 
+                    Matplotlib
+                Each composite artist may contain other composite artists as 
+                    well as primitive artists
+
+        Artist Layer Using It 
+            This is for programmers
+            from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+            from matplotlib.figure import Figure
+            fig = Figure()
+            canvas = FigureCanvas(fig)
+
+            #create 10000 random numbers using numpy
+            import numpy as np 
+            x = np.random.randn(10000)
+
+            ax = fig.add_subplot(111) # create an axes artist 
+
+            # add a title to the figure and save it 
+            ax.set_title('Normal distribution with $\mu=0, \sigma=1$')
+            fig.savefig('matplotlib_histogram.png')
+
+        Scripting layer 
+            Designed for Scientist who are not programs 
+            Comprised mainly of pyplot, scripting interface that is lighter than
+                the Artist layer
+            
+            # This does the same
+            import matplotlib.pyplot as plt 
+            import numpy as np 
+
+            x = np.random.randn(100000)
+            plt.hist(x, 100)
+            plt.title(r'Normal distribution with $\mu = 0, \sigma = 1$')
+            plt.savefig('matplotlib_histogram.png')
+            plt.show()
+    
+    Line Plots 
+        type of plot which displays information as a series of data points called 'markers' 
+            connected by straight line segments 
+
+
+    Area Plot 
+        Also known as Area Chart or Area Graph 
+        
+
+GroupBy 
+    Split 
+    Combine 
+    Apply 
+
+
+
+
+Folium 
+    Maps Library for Python
+    x = longitude # negative number on ourside of the world
+    y = latitude # positive North of Equator 
+
+Plotly
+    you can create line plots, scatter plots, bar charts, 
+    pie charts, 3D plots, and Choropleth maps, to name a few
+
+PyWaffle
+    you can create waffle charts, square pie charts, 
+    donut charts, and many more types of plots by providing 
+    a unique way to represent proportions

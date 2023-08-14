@@ -184,3 +184,126 @@ F-test score: ANOVA assumes the means of all groups are the same, calculates how
 P-value: P-value tells how statistically significant our calculated score value is.
 If our price variable is strongly correlated with the variable we are analyzing, we expect ANOVA to 
     return a sizeable F-test score and a small p-value.
+
+
+Linear Regression Plot  
+    x = independent variable/features
+    y = dependent variable/target
+
+    Residual Plot represents the error between the actual value 
+
+    Y = oberserved value/response variable # R^2/mean squared y is the response variable 
+    
+    Yhat = predicted value # R^2/mean squared yhat is the estimated value
+    X i= Predictor Variable 
+
+    Linear assumption is incorrect when Residual Plot has big curvature or cone shaped 
+        suggest nonlinear model may be more appropriate 
+
+
+    sns.residplot(df['highway-mpg'], df['price'])
+            independent/feature      dependent/target       
+
+    Distribution Plot 
+        extremely useful for visualizing models with more than one independent variable/feature
+        -counts the predicted value versus the actual value 
+
+Polynomial Regression and PipeLines 
+    When Linear Model isn't best fit when model is curved 
+
+        Quadratic - 2nd Order 
+            - 1 curve/wave 
+
+        Cubic - 3rd Order 
+            - 2 curves/wave
+            f = np.polyfit(x, y, 3)
+            p = np.polyld(f)
+
+            np.polfit()
+                can not do two dimensional second order Polynomial
+                    scikit learn can do this 
+
+        Higher Order 
+            -basically you got quadratic and cubic together 
+            -complex 
+
+    Polynomial Regression with More than One dimensional    
+        pr = PolyNomialFeatures(degree=2, include_bias=False)
+        pr.fit_transform([[1, 2]])
+
+        Pre-processing 
+            from sklearn.preprocessing import StandardScaler 
+            SCALE = StandardScaler()
+            SCALE.fit(x_data[['horsepower', 'highway-mpg']]
+            x_scale = SCALE.transform(x_data[['horsepower', 'highway-mpg']])
+
+        Pipelines 
+            Getting A Prediction 
+                Normalization - transformation 
+                Polynomial Transfrom - transformation 
+                Linear Regression - prediction 
+
+Measure for In-Sample Evaluation 
+
+    Mean Squared Error (MSE)
+        find difference between actual value y and predicted Y hat 
+
+        from sklearn.metrics import mean_square_error
+        mean_square_error(df['price], Y_predict_simple_fit)
+
+    R-squared(R^2)
+        Calculating R^2
+            lm.score(X, Y)
+                -minimum value is 0
+
+            Also called Coefficient of Determination 
+        -measure to determine now close the data is to the fitted regresssion line 
+        -the percentage of variation of the target variable(Y) that is explained by the linear model 
+            it's like comparing a regression model to a simple model.....the mean of the data points 
+        
+        .
+            In this case, because the line is a good fit, the Mean squared error is small, therefore
+            the numerator is small.
+            The Mean squared error of the line is relatively large, as such the numerator is large.
+            A small number divided by a larger number is an even smaller number. Taken to an extreme
+            this value tends to zero. 
+
+        When squares are near equal or equal to 1 they are not a good fit 
+
+
+Prediction and Decision Making
+
+    How to determine if our model is correct 
+
+        First you train the model 
+            lm.fit(df['highway'], df['price])
+        
+        Then predict the price of a car with 30 highway-mpg\
+            lm.predict(np.array(30.0).reshape(-1, 1))
+
+            lm.coef_ # you need the underscore 
+
+
+cross_val_score(lr, x_data[[feature/column]], y_data, cv=)
+    - returns the rediction that was obtained for each element when it was in the test set 
+    lr # linear regression
+    x_data # predictive variable data 
+    y_data # target variable data 
+    cv = int of some kind # means data set is split into (some kind of int) equal partitions 
+
+
+How to pick the best Polynomical Function 
+    oal of Model Selection is to determine the order of
+    the polynomial to provide the best estimate of the function y(x
+
+    UnderFitting
+        model is too simple to fit the data when line is not complex enough 
+        
+
+Ridge Regression 
+    Ridge regression is a regression that is employed in a Multiple regression model when 
+    Multicollinearity occurs. Multicollinearity is when there is a strong relationship among 
+    the independent variables. Ridge regression is very common with polynomial regression.
+
+Linear Regression 
+Polynomial Regression 
