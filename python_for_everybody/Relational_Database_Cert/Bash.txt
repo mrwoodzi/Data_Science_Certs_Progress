@@ -84,3 +84,5 @@ Boolean
 (( this uses python boolean))
 
 [[ this uses the -le, -ge]]
+
+Is this thing up to date?
