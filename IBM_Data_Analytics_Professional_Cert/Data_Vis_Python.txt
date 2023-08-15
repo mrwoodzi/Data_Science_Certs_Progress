@@ -10,21 +10,64 @@ Week 1 - Introduction to Data Visualization Tools
     Quiz: Introduction to Data Visualization Tools
 
 Week 2 - Basic and Specialized Visualization Tools
-    Area Plots
-    Histograms - Histograms illustrate the distribution of data within 
+    Area Plots - 
+        like a line plot but with colors in between lines 
+        Displays magnitutide and proportion of multiple variables 
+        typically represents time or another ordered dimension 
+        Is based on the line plot  
+        used to compare 2 or more quantities 
+        depicts totals using numbers or percentages over time.
+    Histograms 
+        -x axis/ horizontal is the numeric categories(0-120203939)
+        -y axis/ veritical is how many times those numeric categories accure
+        -partitions numeric data into bins 
+        -assigns each data point in the dataset 
+        -counts the number of data points 
+        - Histograms illustrate the distribution of data within 
         specific intervals, allowing us to understand its shape and concentration
-    Bar Charts - Bar plots compare categories or groups, providing 
+    Bar Charts 
+        - Bar plots compare categories or groups, providing 
         a visual comparison of their values
+        -typically compares a variable at a given point in time 
+        -*** You can pass a list of different or repeat alternating colors
+            to a list 
+            c = ['list', 'of', 'a', 'bunch', 'of', 'different', 'colors']
+            df.plot(kind = 'bar', color =c, edgecolor = 'black')
     Pie Charts
-    Box Plots - Box plots display the distribution of data, 
+        -circular statistical graphic divided into segments to illustrate 
+            numerical proportions
+    Box Plots 
+        - 5 primary dimensions 
+            minimum
+            first quartile 
+            median
+            third quartile
+            maximum
+        - Box plots display the distribution of data, 
         showcasing the median, quartiles and outliers
-    Scatter Plots - Scatter plots explore relationships between 
+        - Best used when comparing 5 dimensions of different categories/subjects
+
+    Scatter Plots 
+        ***these work different than some of these others when 
+        actually using code to plot them.
+            You have to set your x and y parameters in the beginning 
+            df.plot(kind='scatter, 
+                x='column1',
+                y='column2')
+                **It takes the columns in a dataframe and doesn't 
+                    auto-set everything 
+        - Scatter plots explore relationships between 
         variables, helping us identify correlations or trends
+        -typically 2 variables 
+        -determines correlation between 2 variables 
     Bubble Plots
-    Lab: Basic Visualization Tools
-    Lab: Specialized Visualization Tools
-    Quiz: Basic Visualization Tools
-    Quiz: Specialized Visualization Tools
+        -Variation of the Bubble Plot 
+    Line Plots  
+        displays relationship between two continuous variables over a 
+            continuous interval, showing the trend or pattern of the data 
+            
+
+
 
 Week 3 - Advanced Visualizations and Geospatial Data
     Waffle Charts
@@ -68,7 +111,9 @@ Matplotlib
                     well as primitive artists
 
         Artist Layer Using It 
+            Object Oriented method
             This is for programmers
+            used to access more advanced ascpects of the plots
             from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
             from matplotlib.figure import Figure
             fig = Figure()
@@ -85,10 +130,22 @@ Matplotlib
             fig.savefig('matplotlib_histogram.png')
 
         Scripting layer 
+            Called the "Procedural method"
+            using 
+                matplotlib.pyplot as plt
             Designed for Scientist who are not programs 
             Comprised mainly of pyplot, scripting interface that is lighter than
                 the Artist layer
-            
+            - higher level interface built on top of the Artist Layer
+                ***********************************************
+            the entire Matplotlib library uses the Artist layer. The scripting 
+            layer (pyplot) is just a part of the Matplotlib library that provides 
+            a simpler interface for quickly creating plots without the need to 
+            interact with the underlying Artist layer components directly. When 
+            you use functions like plt.plot(), plt.bar(), or plt.xlabel(), you 
+            are essentially creating and manipulating Artist layer objects without 
+            needing to manage them explicitly. The pyplot functions internally use 
+            the Artist layer to construct and modify the elements of the plot.
             # This does the same
             import matplotlib.pyplot as plt 
             import numpy as np 
@@ -129,3 +186,9 @@ PyWaffle
     you can create waffle charts, square pie charts, 
     donut charts, and many more types of plots by providing 
     a unique way to represent proportions
+
+
+*****************************
+MULTIPLE PLOTS
+    reference pie chart, box plot, scatter plot jupyterNotes 
+        in IBMDeveloperSkills

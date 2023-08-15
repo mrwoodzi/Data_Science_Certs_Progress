@@ -1,7 +1,7 @@
 Scripting In Bash:
 
 Run
-    #!/bin/bash
+    #!/bin/bash # also known as a shebang
         -put this at top of scripting file so you can just run the file like
             .\filname.sh
     sh 
@@ -11,6 +11,8 @@ Run
 
 help
     let # view of the potential operators in the terminal 
+    man <command> gives information about a command 
+        # this works sometimes other times help will work 
 
 List 
     ls 
@@ -18,7 +20,8 @@ List
         this gives you long form 
 
 Passing Arguements
-    $* 
+    $* # from the terminal it will print all arguements passed to it 
+            from the terminal 
     echo $? # to view exit status of last command 
     echo $the_you_type_what_you_want_to_print
 
@@ -27,6 +30,9 @@ Permissions
         -this gives everyone permission to use the file 
             - the x means everyone can use it 
 
+
+User Input
+    read variable_name_user_input_will_be _stored
 
 All Variables in Shell/Bash
     declare -P
