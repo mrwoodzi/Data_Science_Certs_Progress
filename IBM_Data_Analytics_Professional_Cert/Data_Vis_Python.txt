@@ -71,6 +71,26 @@ Week 2 - Basic and Specialized Visualization Tools
 
 Week 3 - Advanced Visualizations and Geospatial Data
     Waffle Charts
+        Represents categorical data in the form of 
+            Square Tiles 
+            Cells
+        Displays proportion or percentage of different categories
+        simplifies data for all types of audiences 
+        Uses 
+            market share Analysis
+                visualize market share data 
+            demographic representation
+                display demographic data 
+            project progress tracking 
+                represent completion status of tasks or milestones 
+            budget allocation
+                demonstrate allocation of budgetary resources 
+            survey responses
+                summarize survey responses 
+            election results
+                provide a clear visualization of voting outcomes 
+            product sales analysis 
+                illustrate product sales 
     Word Clouds
     Seaborn and Regression Plots
     Introduction to Folium and Map Styles

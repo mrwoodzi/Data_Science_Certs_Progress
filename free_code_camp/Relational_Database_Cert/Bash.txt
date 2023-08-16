@@ -45,6 +45,8 @@ Where is Interpreter
 
 Permissions
     chmod   -x  <filename>
+    [[ -x countdown.sh ]]; echo $?
+        -this will check permissions 
 
 Syntax 
 
@@ -54,11 +56,13 @@ read NAME
 
 
 Boolean 
-        -eq (equal), -ne (not equal), 
-        -lt (less than), 
-        -le (less than or equal), 
-        -gt (greater than), 
-        -ge (greater than or equal)
+    help [[
+        -type this in the terminal to see the boolean help 
+    -eq (equal), -ne (not equal), 
+    -lt (less than), 
+    -le (less than or equal), 
+    -gt (greater than), 
+    -ge (greater than or equal)
 
      Returns a status of 0 or 1 depending on the evaluation of the conditional
     expression EXPRESSION.  Expressions are composed of the same primaries used
@@ -83,6 +87,13 @@ Boolean
             - [[ 4 -le 5 ]]; echo $?
                 -this will print the exit status after you hit enter 
         0 or 1 depending on value of EXPRESSION.
+            0 is True but better thought of as zero erros
+            Anything but 0 means there was an error with the command
+
+    help    
+        help test   
+            - type that in the terminal 
+        -utilizes the built-in commands
 
 
     Comment Out:
@@ -96,8 +107,11 @@ Boolean
 [[ this uses the -le, -ge]]
 
 if statements 
+    if [[ something == something ]]
+    then 
+        echo something
+    fi # this is the reverse of if and closes the if statement 
 
-if [[ something == something ]]
-then 
-    echo something
-fi # this is the reverse of if and closes the if statement 
+for loops
+    -2 different types  
+        -help menu shows the basic format 
