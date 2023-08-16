@@ -78,7 +78,11 @@ Boolean
     determine the expression's value.
     
     Exit Status:
-    0 or 1 depending on value of EXPRESSION.
+        echo $?
+            -type in terminal to see the previous exit status
+            - [[ 4 -le 5 ]]; echo $?
+                -this will print the exit status after you hit enter 
+        0 or 1 depending on value of EXPRESSION.
 
 
     Comment Out:
@@ -91,4 +95,9 @@ Boolean
 
 [[ this uses the -le, -ge]]
 
-Is this thing up to date?
+if statements 
+
+if [[ something == something ]]
+then 
+    echo something
+fi # this is the reverse of if and closes the if statement 
