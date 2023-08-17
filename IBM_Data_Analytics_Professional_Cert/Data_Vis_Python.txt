@@ -92,7 +92,27 @@ Week 3 - Advanced Visualizations and Geospatial Data
             product sales analysis 
                 illustrate product sales 
     Word Clouds
-    Seaborn and Regression Plots
+        presents a concise summary of the textual content by providing a visual
+            overview of the most commonly used words
+        Also known as 
+            tag cloud 
+            text cloud 
+        Popular data vis method to visually present textual data in 
+            an engaging and informative manner
+    Seaborn 
+        Count Plot sns.count
+            can be thought of as a histogram across a categorical, 
+            instead of quantitative, variable
+        Bar Plot sns.bar
+            performs a groupby on a categorical variable and plot
+            aggregated values with confidence intervals 
+            (kinda looks like a partial box plot???)
+        -is a data visualization library 
+        Based on Matplotlib
+        Works well with Numpy and Scipy
+        Regression Plot 
+        Distribution Plot 
+        Categorical Plot 
     Introduction to Folium and Map Styles
     Maps with Markers
     Choropleth Maps
