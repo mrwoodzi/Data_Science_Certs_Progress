@@ -14,10 +14,18 @@ help
     man <command> gives information about a command 
         # this works sometimes other times help will work 
 
+echo     
+    echo -e "\n  ~~ Countdown Timer \n"
+        -don't forget the script -e in the file 
+
 List 
     ls 
     ls -l 
         this gives you long form 
+    ls /
+        lists what's in the root of the file system
+    ls /bin 
+        view what's in bin 
 
 Passing Arguements
     $* # from the terminal it will print all arguements passed to it 
@@ -101,6 +109,8 @@ Boolean
                     : '   # make sure there is a space between : '
                     put your comment here 
                     '
+                    OR 
+                    #comment
 
 (( this uses python boolean))
 
@@ -115,3 +125,11 @@ if statements
 for loops
     -2 different types  
         -help menu shows the basic format 
+
+sleep 
+
+while
+    while [[ CONDITION ]]
+    do
+        STATEMENTS
+    done
