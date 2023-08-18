@@ -104,6 +104,12 @@ Boolean
         -utilizes the built-in commands
 
 
+    environment variables 
+        printenv - in terminal
+        declare -p 
+            -view all variables in the shell 
+
+
     Comment Out:
 
                     : '   # make sure there is a space between : '
@@ -133,3 +139,9 @@ while
     do
         STATEMENTS
     done
+
+Random Number Generator 
+    use $RANDOM variable 
+    modulus operator to put RANDOM in the number range you want 
+    EX.
+        $RANDOM%75
