@@ -101,7 +101,9 @@ Boolean
     help    
         help test   
             - type that in the terminal 
-        -utilizes the built-in commands
+            -utilizes the built-in commands
+        help let 
+            boolean/comparison help menu 
 
 
     environment variables 
@@ -123,10 +125,13 @@ Boolean
 [[ this uses the -le, -ge]]
 
 if statements 
-    if [[ something == something ]]
-    then 
-        echo something
-    fi # this is the reverse of if and closes the if statement 
+    if (( CONDITION )) these use no $ and <= >= < >    
+    then
+        STATEMENTS
+    elif [[ CONDITION ]] these use $ and -le -gt -ge
+    then
+        STATEMENTS
+    fi
 
 for loops
     -2 different types  
@@ -149,3 +154,11 @@ Random Number Generator
 Variables in the Terminal 
     Note that you don't need to prepend variable swith $ inside these parenthesis
         (( I += 10 ))
+        double parenthesis with a $ are how you can assign a variable to some calculation
+        (( ... )) will perform a calculation or operation and output nothing. 
+        $(( ... )) will replace the calculation with the result of it
+    declare -P  
+        view variables in terminal 
+    declare 
+        can be used to create variables 
+    
