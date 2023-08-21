@@ -232,3 +232,59 @@ PyWaffle
 MULTIPLE PLOTS
     reference pie chart, box plot, scatter plot jupyterNotes 
         in IBMDeveloperSkills
+
+Plotly  
+    low level interface for figure, traces and layout 
+    graph objects module 
+        automatically generates heirarchy of classes called graph objects
+        -graph objects represent figures with a top level class plotly.graph_objects.Figure
+        -visualization can be displayed in Jupyter notebooks
+        -saved to html files 
+        -used in developing Python built web applications
+
+    Plotly Graph Objects    
+        -low-level interface to figures, traces, and layout 
+        plotly.graph_objects.Figure
+        import plotly.graph
+
+
+    Plotly Express 
+        -high level wrapper for Plotly
+        -recommended starting point for plotly
+Dash
+    Dash is a Python framework for building web analytic applications
+    dash are applications that are web  servers running Flask and 
+        communitcating JSON packets over HTTP requests.
+    -enterprise ready 
+    -easy to build gui's 
+    -declaritive and reactive 
+    -rendered in web browsers and can be deployed to servers 
+    -inherently cross-platform and mobile ready
+
+    2 Core components 
+        core components
+            Javascript, html and css through the React.js library 
+            ex.
+                slider, input area, check items, datepicker 
+        html components
+            component for every html tag
+            
+
+Panel 
+    quick data exploration tool ro stand alone deployed app in dashboards
+    can be used in Jupyter Notebooks
+    Built on Bokeh
+
+Voila
+    turns jupyter notebooks into standalone web applications 
+    seperate deployable server 
+
+Streamlit
+    turns data scripts into shareable web apps with 3 main principles 
+        embrace python scripting, treat widgets as variables, reuse data and computation
+
+Bokeh
+
+
+Bowtie
+    build dashboards in pure python 
