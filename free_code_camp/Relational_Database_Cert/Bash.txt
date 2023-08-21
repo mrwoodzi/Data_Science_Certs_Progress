@@ -145,3 +145,7 @@ Random Number Generator
     modulus operator to put RANDOM in the number range you want 
     EX.
         $RANDOM%75
+
+Variables in the Terminal 
+    Note that you don't need to prepend variable swith $ inside these parenthesis
+        (( I += 10 ))
