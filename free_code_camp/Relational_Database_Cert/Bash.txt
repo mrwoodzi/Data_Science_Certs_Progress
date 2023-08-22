@@ -189,3 +189,12 @@ Pattern recognision
     =~
         to test if 'el' is in 'hello'
             would return a 0 
+        syntax in terminal 
+            [[ 'hello world' =~ 'lo wor' ]]; echo $?
+
+            to see if it starts with h 
+                [[ 'hello world' =~ ^h ]]; echo $?
+            to see if has at least one character after it and ends with a d
+                [[ 'hello world' =~ ^h.+d$ ]]; echo $?
+            check if something ends with <something>
+                [[ $VAR =~ \<something>$ ]]; echo $?
