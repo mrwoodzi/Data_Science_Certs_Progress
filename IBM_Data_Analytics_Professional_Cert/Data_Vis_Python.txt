@@ -268,7 +268,18 @@ Dash
                 slider, input area, check items, datepicker 
         html components
             component for every html tag
-            
+
+    Callback function
+        -is a python function 
+        -automatically called by Dash 
+        -@app.callback 
+        step 1:
+            create a callback function 
+            def callback_function:
+                return some_result 
+        -takes 2 parameters 
+            -output
+            -input 
 
 Panel 
     quick data exploration tool ro stand alone deployed app in dashboards
