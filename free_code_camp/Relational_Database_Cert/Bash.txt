@@ -104,6 +104,8 @@ Boolean
             -utilizes the built-in commands
         help let 
             boolean/comparison help menu 
+        help [[ expression ]]
+            -to see list of expressions 
 
 
     environment variables 
@@ -137,6 +139,13 @@ for loops
     -2 different types  
         -help menu shows the basic format 
 
+until loop  
+    until [[ $QUESTION == test? ]]
+    do
+        GET_FORTUNE
+    done
+
+
 sleep 
 
 while
@@ -161,4 +170,22 @@ Variables in the Terminal
         view variables in terminal 
     declare 
         can be used to create variables 
+
+
+Arrays
+    creating arrays in the terminal
+    ARR=(<"your stuff" "more stuff")
+    In terminal 
+        echo $ARR{[1]}
+            -to print the second item in an array 
+        echo ${ARR[$]} or replace the $ with a @
+            to print whole array 
+        declare -p ARR
+            for a different type of view of the whole variable 
+
     
+Pattern recognision 
+
+    =~
+        to test if 'el' is in 'hello'
+            would return a 0 
