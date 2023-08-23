@@ -76,7 +76,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         \c mario_database
 
         Creating Database 
-            create database database_name(); maybe with parenthesis 
+            create database database_name; maybe with parenthesis 
         DATA types  
             int 
             varchar(give it a numeric maximum allowable length)
@@ -127,6 +127,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
              - you don't have to use DELETE to change a VALUE you can use 
                 UPDATE table_name SET column_name=new_value WHERE condition;
         ALTER TABLE 
+        ALTER TABLE <table_name> ADD FOREIGN KEY(<column_name>) REFERENCES <referenced_table_name>(<referenced_column_name>);
             alter table second_table drop username; # column names don't have to be in quotes
             changing primary key 
                 ALTER TABLE table_name DROP CONSTRAINT constraint_name;
