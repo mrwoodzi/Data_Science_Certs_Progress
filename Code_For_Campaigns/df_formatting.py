@@ -41,5 +41,5 @@ df['Percentage of Vote'] = df['Percentage of Vote'].str.rstrip('%').astype(float
 # Convert 'Votes' column to int, replace names with 0
 df['Votes'] = pd.to_numeric(df['Votes'], errors='coerce').fillna(0).astype(int)
 
-#removing these rows
+# Display first 50 rows of df
 df.head(50)
