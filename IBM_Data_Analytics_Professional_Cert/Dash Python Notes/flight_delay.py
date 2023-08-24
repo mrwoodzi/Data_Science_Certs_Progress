@@ -1,93 +1,91 @@
 # Import required libraries
 import pandas as pd
-import plotly.graph_objects as go
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
-from dash.dependencies import Input, Output
+from dash import html, dcc
+from dash.dependencies import Input, Output, State
+import plotly.graph_objects as go
 import plotly.express as px
+from dash import no_update
+import datetime as dt
 
-# Read the airline data into pandas dataframe
-airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/airline_data.csv', 
-                            encoding = "ISO-8859-1",
-                            dtype={'Div1Airport': str, 'Div1TailNum': str, 
-                                    'Div2Airport': str, 'Div2TailNum': str})
 
-# Create a dash application
+#Create app
 app = dash.Dash(__name__)
 
+# Clear the layout and do not display exception till callback gets executed
+app.config.suppress_callback_exceptions = True
 
-# Build dash app layout
-# Layout division added using html.Div() and input component added using 
-#   dcc.Input() tag inside the layout division.
-# 5 charts split into three segments. Each segment has a layout division 
-#   added using html.Div() and chart added using dcc.Graph() tag inside the layout division.
-app.layout = html.Div(children=[ html.H1('Flight Delay Time Statistics', style={'textAlign': 'center', 'color': '#503D36', 'font-size': 30}),
-                                html.Div(["Input Year: ", dcc.Input(id='input-year', value=20, type=number, style={'height': '35px', 'font-size': 30})],
-                                style={'font-size': 30}),
-                                html.Br(),
-                                html.Br(), 
-                                html.Div([  # Output Component Segment 1
-                                        html.Div(dcc.Graph(id='carrier-plot')),
-                                        html.Div(dcc.Graph(id='weather-plot'))
-                                ], style={'display': 'flex'}),
-    
-                                html.Div([ # Output Component Segment 2
-                                        html.Div(dcc.Graph(id='nas-plot')),
-                                        html.Div(dcc.Graph(id='security-plot'))
-                                ], style={'display': 'flex'}),
-                                
-                                html.Div(dcc.Graph(id='late-plot'), style={'width':'65%'}) # Output Component Segment 3
-                                ])
-# We are using display as flex for two outer divisions to get graphs side by side in a row.
+# Read the wildfire data into pandas dataframe
+df =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/Historical_Wildfires.csv')
 
-""" Compute_info function description
-This function takes in airline data and selected year as an input and performs computation for creating charts and plots.
-Arguments:
-    airline_data: Input airline data.
-    entered_year: Input year for which computation needs to be performed.
-    
-Returns:
-    Computed average dataframes for carrier delay, weather delay, NAS delay, security delay, and late aircraft delay.
-"""
-def compute_info(airline_data, entered_year):
-    # Select data
-    df =  airline_data[airline_data['Year']==int(entered_year)]
-    # Compute delay averages
-    avg_car = df.groupby(['Month','Reporting_Airline'])['CarrierDelay'].mean().reset_index()
-    avg_weather = df.groupby(['Month','Reporting_Airline'])['WeatherDelay'].mean().reset_index()
-    avg_NAS = df.groupby(['Month','Reporting_Airline'])['NASDelay'].mean().reset_index()
-    avg_sec = df.groupby(['Month','Reporting_Airline'])['SecurityDelay'].mean().reset_index()
-    avg_late = df.groupby(['Month','Reporting_Airline'])['LateAircraftDelay'].mean().reset_index()
-    return avg_car, avg_weather, avg_NAS, avg_sec, avg_late
+#Extract year and month from the date column
+df['Month'] = pd.to_datetime(df['Date']).dt.month_name() #used for the names of the months
+df['Year'] = pd.to_datetime(df['Date']).dt.year
 
-# Callback decorator
-@app.callback( [
-                Output(component_id='carrier-plot', component_property='figure'),
-                ---
-                --- 
-                ---
-                ---
-                ],
-                Input(....))
-# Computation to callback function and return graph
-def get_graph(entered_year):
+#Layout Section of Dash
+#Task 2.1 Add the Title to the Dashboard
+app.layout = html.Div(children=[html.H1('Australia Wildfire Dashboard', style{'textAlign': 'center', 'color': '#503D36', 'font-size': '26'}),
+# TASK 2.2: Add the radio items and a dropdown right below the first inner division
+#outer division starts
+        html.Div([
+                    # First inner divsion for  adding dropdown helper text for Selected Drive wheels
+                    html.Div([
+                            html.H2('Select Region:', style={'margin-right': '2em'}),
+                    #Radio items to select the region
+                    #dcc.RadioItems(['NSW',.....], value ='...', id='...',inline=True)]),
+                    dcc.RadioItems(['NSW','QL','SA','TA','VI','WA'], 'NSW', id='region',inline=True)]),
+
+                    #Or you can do this to replace the current dcc.RadioItems
+                    #    #OR you can use labels:value pair a well in raioditems as below
+                #Radio items to select the region
+                        #dcc.RadioItems([{"label":"New South Wales","value": "NSW"},
+                         #               {"label":"Northern Territory","value": "NT"},
+                          #              {"label":"Queensland","value": "QL"},
+                           #             {"label":"South Australia","value": "SA"},
+                            #            {"label":"Tasmania","value": "TA"},
+                             #           {"label":"Victoria","value": "VI"},
+                              #          {"label":"Western Australia","value": "WA"}],"NSW", id='region',inline=True)]),
+                    #Dropdown to select year
+                    html.Div([
+                            html.H2('Select Year:', style={'margin-right': '2em'}),
+                        dcc.Dropdown(df.Year.unique(), value = 2005,id='year')
+                    ]),
+#Second Inner division for adding 2 inner divisions for 2 output graphs
+#TASK 2.3: Add two empty divisions for output inside the next inner division.
+                    html.Div([
+                
+                        html.Div([ ], id='plo1'),
+                        html.Div([ ], id='plot2')
+                    ], style={'.........}),
+    ])
+    #outer division ends
+])
+#layout ends
+#TASK 2.4: Add the Ouput and input components inside the app.callback decorator.
+#Place to add @app.callback Decorator
+    @app.callback([Output(component_id='plot1', component_property='children'),
+                   Output(component_id='plot2', component_property='children')],
+                   [Input(component_id='region', component_property='value'),
+                    Input(component_id='year', component_property='value')])
     
-    # Compute required information for creating graph from the data
-    avg_car, avg_weather, avg_NAS, avg_sec, avg_late = compute_info(airline_data, entered_year)
-            
-    # Line plot for carrier delay
-    carrier_fig = px.line(avg_car, x='Month', y='CarrierDelay', color='Reporting_Airline', title='Average carrier delay time (minutes) by airline')
-    # Line plot for weather delay
-    weather_fig = ------
-    # Line plot for nas delay
-    nas_fig = ------
-    # Line plot for security delay
-    sec_fig = ------
-    # Line plot for late aircraft delay
-    late_fig = ------
-            
-    return[carrier_fig, weather_fig, nas_fig, sec_fig, late_fig]
-# Run the app
+#TASK 2.5: Add the callback function.
+#Place to define the callback function .
+    def reg_year_display(input_region,input_year):
+        
+        #data
+       region_data = df[df['Region'] == input_region]
+       y_r_data = region_data[region_data['Year']==input_year]
+        #Plot one - Monthly Average Estimated Fire Area
+       
+       est_data = y_r_data.groupby('Month')['Estimated_fire_area'].mean().reset_index()
+     
+       fig1 = px.pie(est_data, values='Estimated_fire_area', names='Month', title="{} : Monthly Average Estimated Fire Area in year {}".format(input_region,input_year))
+       
+         #Plot two - Monthly Average Count of Pixels for Presumed Vegetation Fires
+       veg_data = y_r_data.groupby('Month')['Count'].mean().reset_index()
+       fig2 = px.bar(veg_data, x='Month', y='Count', title='{} : Average Count of Pixels for Presumed Vegetation Fires in year {}'.format(input_region,input_year))
+        
+       return [dcc.Graph(figure=fig1),
+                dcc.Graph(figure=fig2) ]
 if __name__ == '__main__':
     app.run_server()
