@@ -176,6 +176,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             COMPOSITE PRIMARY KEY 
                 -used this in junction table in mario_database
                 ALTER TABLE table_name ADD PRIMARY KEY(column1, column2);
+                ALTER TABLE <table_name> ADD PRIMARY KEY(<column_name>, <column_name>);
             ALTER TABLE table_name ADD PRIMARY KEY(column_name);
                 Deleting Primary Key or Altering Primary Key 
                     ALTER TABLE table_name DROP CONSTRAINT constraint_name; (constraint name is found select * from TABLE_NAME)
