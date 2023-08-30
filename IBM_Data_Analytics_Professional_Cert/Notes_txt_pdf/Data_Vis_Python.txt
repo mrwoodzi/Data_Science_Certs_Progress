@@ -173,7 +173,7 @@ Matplotlib
             Called the "Procedural method"
             using 
                 matplotlib.pyplot as plt
-            Designed for Scientist who are not programs 
+            Designed for Scientist who are not programers
             Comprised mainly of pyplot, scripting interface that is lighter than
                 the Artist layer
             - higher level interface built on top of the Artist Layer
