@@ -10,18 +10,23 @@ from dash import no_update
 import datetime as dt
 #Create app
 app = dash.Dash(__name__)
+
 #Clear the layout and do not display exception till callback gets executed
 app.config.suppress_callback_exceptions = True
+
 # Read the wildfire data into pandas dataframe
 df =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-DV0101EN-SkillsNetwork/Data%20Files/Historical_Wildfires.csv')
+
 #Extract year and month from the date column
 df['Month'] = pd.to_datetime(df['Date']).dt.month_name() #used for the names of the months
 df['Year'] = pd.to_datetime(df['Date']).dt.year
+
 #Layout Section of Dash
 #Task 1 Add the Title to the Dashboard
 app.layout = html.Div(children=[html.H1('Australia Wildfire Dashboard', 
-                                style={'textAlign': 'center', 'color': '#503D36',
-                                'font-size': 26}),
+                                style={'textAlign': 'center', 
+                                       'color': '#503D36',
+                                        'font-size': 26}),
 # TASK 2: Add the radio items and a dropdown right below the first inner division
      #outer division starts
      html.Div([
@@ -40,7 +45,9 @@ app.layout = html.Div(children=[html.H1('Australia Wildfire Dashboard',
                     #Dropdown to select year
                     html.Div([
                             html.H2('Select Year:', style={'margin-right': '2em'}),
-                        dcc.Dropdown(df.Year.unique(), value = 2005,id='year')
+                        dcc.Dropdown(df.Year.unique(), 
+                                     value = 2005,
+                                     id='year')
                     ]),
 #TASK 3: Add two empty divisions for output inside the next inner division. 
          #Second Inner division for adding 2 inner divisions for 2 output graphs
@@ -53,12 +60,14 @@ app.layout = html.Div(children=[html.H1('Australia Wildfire Dashboard',
     #outer division ends
 ])
 #layout ends
+
 #TASK 4: Add the Ouput and input components inside the app.callback decorator.
 #Place to add @app.callback Decorator
 @app.callback([Output(component_id='plot1', component_property='children'),
                Output(component_id='plot2', component_property='children')],
                [Input(component_id='region', component_property='value'),
                 Input(component_id='year', component_property='value')])
+
 #TASK 5: Add the callback function.   
 #Place to define the callback function .
 def reg_year_display(input_region,input_year):  
