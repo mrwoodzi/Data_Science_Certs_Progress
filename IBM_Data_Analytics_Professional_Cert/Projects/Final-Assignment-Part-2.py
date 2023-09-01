@@ -82,7 +82,9 @@ app.layout = html.Div([
     ]),
     
     # Division for displaying output
-    html.Div(id='output-container', className='chart-grid', style={'display': 'flex'})
+    html.Div(id='output-container', 
+             className='chart-grid', 
+             style={'display': 'flex'})
 ])
 
 # Callbacks
