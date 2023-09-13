@@ -1,0 +1,81 @@
+
+Getting Started with Data Science:
+Author: Murtaza Haider
+"The other key ingredient for a successful data scientist is a behavioral trait: curiosity. A data scientist 
+has to be one with a very curious mind, willing to spend significant time and effort to explore her hunches. 
+In journalism, the editors call it having the nose for news. Not all reporters know where the news lies. Only
+those Who have the nose for news get the Story. Curiosity is equally important for data scientists as it is for journalists."
+
+Rachel Schutt is the Chief Data Scientist at News Corp. She teaches a data science course at Columbia University. 
+She is also the author of an excellent book, Doing Data Science. In an interview With the New York Times, Dr Schutt 
+defined a data scientist as someone who is a part computer scientist, part software engineer, and part statistician 
+(Miller, 2013). But that’s the definition of an average data scientist. “The best”, she contended, “tend to be really 
+curious people, thinkers who ask good questions and are O.K. dealing with unstructured situations and trying to find 
+structure in them.”
+
+How Big Data is defined by the Vs: Velocity, Volume, Variety, Veracity, and Value.
+How Hadoop and other tools, combined with distributed computing power,  are used to handle the demands of Big Data.  
+What skills are required to analyse Big Data. 
+About the process of Data Mining, and how it produces results.
+
+Big Data V's:
+Velocity 
+VolumeVariety 
+Veracity 
+Value
+
+Distributive Analysis:
+Apache Spark
+Hadoop - Google big data architecture 
+    mapper process/map 
+    reduce process 
+
+Digital Transformation 
+    affects business operations 
+    updating existing processes
+    operations 
+    creating new operations 
+
+Deep Learning vs. Machine Learning:
+    Data Mining 
+        -process of automatically searching and analyzing data, discovering previously unrevealed patterns
+    Machine Learning    
+        -subset of AI that uses computer algorithms to analyze data and make 
+            intelligent decisions based on what it has learned without being explicitly programmed 
+        -traind with large sets of data and they learn from examples 
+        - do not follow rules based algorithms 
+        -enables machines to solve problems on their own and make accurte predictions using the provided data 
+        -Netflix recommendations 
+    Deep Learning 
+        -Specialized subset of machine learning that uses layered neural networks to simulate human decision making 
+        -algorithms can label and categorize information and identify patterns 
+        -enables AI systems to continuously learn on the job and improve  the quality and accuracy of results by determining 
+            whether decisions were correct 
+        -Neural Networks collection of small computing units called neurons that take incomeing data and 
+            learn to make decisions over time
+            -ofter layer deep and are the reason deep learning algorithms become more efficient  as the data 
+                sets increase in volumne, as opposed to opther machine learning algorithms  that may plateau as data increases
+
+    ********************
+    Data Science 
+        -process and method for extacting knowledge and insights from large volumes 
+            of disparate data. 
+        -interdisciplinary field involving mathematics, statistical analysis, data vis., 
+            machine learning and more 
+        -makes it possible to appropriate information, see patterns, find meaning from large volumes of data 
+            and use it to make decisions that drive business
+        -broad term that encompasses the entire data processing methodology 
+    AI 
+        -everything that aloows computers to learn how to solve problems and make intelligent decisions
+
+Neural Networks vs Deep Learning:
+    Neural Network 
+        -a computer program that will mimc how our brains use neurons to process
+    Deep Learning   
+        -neural networks on steroids
+        -lots of linear algebra calculations 
+            -transformations
+        -High Powered Computational resources 
+        -classifications
+        -Bayesian Analysis 
+        -have to understand what the meanings of predictive techniques 
