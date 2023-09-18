@@ -101,3 +101,169 @@ Conclussion
 references
 acknowledgements
 appendices
+
+
+
+**********************Toosl for Data Science**************************************
+
+Data Science Categories 
+    Data Management 
+    Data Integration and Transformation
+        -etl
+    Data Visualization
+    Model Building 
+    Model Deployment 
+
+Github is good code asset management DAM 
+IBM Watson Studio IDE 
+
+Data Science Tasks:
+Data Asset Managment 
+Code Asset Management 
+Execution Environments 
+
+Open Source Tools
+Pixie Dust 
+    -python library for data vis 
+Jupyter
+    the main difference between Jupyter Lab and Jupyter Notebooks is the ability to open different 
+        types of files, including Jupyter Notebooks, data, and terminals, and then arrange them on the canvas.
+    RStudio unifies programming, execution, debugging, remote data access, data exploration, and visualization into one tool.
+RStudio 
+    -R version of Jupyter
+    -RStudio unifies programming, execution, debugging, remote data access, data exploration, and visualization into one tool.
+Spyder 
+    -Spyder tries to mimic the behavior of RStudio to bring its functionality to the Python world. Although not at par with the 
+        functionality of RStudio, data scientists consider it as an alternative
+        -Spyder tries to mimic the behavior of RStudio to bring its functionality to the Python world.
+        -Spyder integrates code, documentation, and visualizations, among others, into a single canvas
+Apache Spark 
+    -cluster execution environment
+    -most used across industries
+    -linear scalability 
+    -Apache Spark is a batch data processing engine, 
+        capable of processing vast amounts of data one by one or file by file
+Apache Flink 
+    -was developed after Apache Spark continued to gain market share.
+    -key difference between Apache Spark and Apache Flink is that Apache Spark is a batch data processing engine, 
+        capable of processing vast amounts of data one by one or file by file
+    - Apache Flink is a stream-processing image with its main focus on processing real-time data streams
+KNIME 
+    -originated from the University of Konstanz in 2004. As you can see, KNIME has a visual user interface with drag-and-drop capabilities. 
+    -It has built-in visualization capabilities. 
+    -can be extended by programming in R and Python and even has connectors to Apache Spark.
+ORANGE 
+    -another representative of this group of tools. It is less flexible than KNIME but is easier to use
+
+
+Commercial Tools:
+    most of an enterprise’s relevant data is stored in an Oracle Database, in Microsoft SQL Server, or an IBM Db2
+
+    ETL TOOLS:
+        Gartner Magic Quadrant, Informatica PowerCenter and IBM InfoSphere DataStage are the leaders. 
+        These are followed by SAP, Oracle, SAS, Talend, and Microsoft products
+
+    Data Vis:
+        Cognos, Tableau, Power BI 
+
+    Machine Learning:
+        SPSS Modeler, 
+            supports exporting models as predictive model markup language (PMML), which an abundance of other commercial and open software packages can read
+        Watson Studio Desktop
+Fairness Tools:
+    Prometheus 
+    IBM Research Trusted AI 
+        -AI Fariness 360 Open Source Toolkit 
+
+Cloud based Data management:
+    Amazon DynamoDB
+    Cloudant 
+    CouchDB relax
+    IBM Db2
+
+    cloud data integration and transformation 
+        Informatica
+        IBM Data Refinery
+
+    cloud data vis:
+        Datameer 
+            =small
+        IBM cOGNOS ANALYTICS
+        IBM Watson Studio 
+            -3d bar chart
+                visualize target value on the vertical dimension 
+                    dependent on two other values in the horizontal dimensions 
+            -hierarchical edge bundling 
+                depicts correlations and affliations between entites 
+
+    cloud model building 
+        IBM Wateson Machine learning 
+        Google - AI Platform Training 
+        Amazon SAge 
+
+    cloud full scale complete development life cycle for all data science, machine learning, and AI tasks 
+        -Watson STudio 
+        -Watson OpenScale
+
+Data management tools are MySQL, PostgreSQL, MongoDB, Apache CouchDB, Apache Cassandra, Hadoop File System, Ceph, and elastic search.
+Data integration and transformation tools are Apache AirFlow, KubeFlow, Apache Kafka, Apache Nifi, Apache SparkSQL, and NodeRED
+Data Visualization tools are Pixie Dust, Hue, Kibana, and Apache Superset
+Model deployment tools are Apache PredictionIO, Seldon, Kubernetes, Redhat OpenShift, Mleap, TensorFlow service, TensorFlow lite, and TensorFlow dot JS
+Model monitoring tools are ModelDB, Prometheus, IBM AI Fairness 360, IBM Adversarial Robustness 360 Toolbox, and IBM AI Explainability 360.
+Code asset management tools are Git, GitHub, GitLab, and Bitbucket
+data asset management tools are Apache Atlas, ODPi Egeria, and Kylo.
+    Data governance
+    data versioned and annotated
+    data dictionary
+    data lineage
+    data privacy retention 
+
+ Information Governance Catalog 
+    covers functions like a data dictionary, which facilitates the discovery of data assets. 
+    Each data asset is assigned to a data steward or the data owner. 
+    The data owner is responsible for that data asset and can be contacted. 
+    Then, data lineage is covered, allowing tracking back the transformation steps in creating the data assets. 
+    The data lineage also includes a reference to the actual source data. 
+    Rules and policies can be added to reflect complex regulatory and business requirements for data privacy and retention. 
+
+    The Data Science Task Categories include:
+
+Data Management -  storage, management and retrieval of data
+
+Data Integration and Transformation - streamline data pipelines and automate data processing tasks
+
+Data Visualization - provide graphical representation of data and assist with communicating insights
+
+Modelling - enable Building, Deployment, Monitoring and Assessment of Data and Machine Learning models
+
+Data Science Tasks support the following:
+
+Code Asset Management - store & manage code, track changes and allow collaborative development
+
+Data Asset Management - organize and manage data, provide access control, and backup assets
+
+Development Environments - develop, test and deploy code
+
+Execution Environments - provide computational resources and run the code
+
+The data science ecosystem consists of many open source and commercial options, and include both traditional desktop applications and server-based tools, as well as cloud-based services that can be accessed using web-browsers and mobile interfaces.
+
+Data Management Tools: include Relational Databases, NoSQL Databases, and Big Data platforms:
+
+MySQL, and PostgreSQL are examples of Open Source Relational Database Management Systems (RDBMS), and IBM Db2 and SQL Server are examples of commercial RDBMSes and are also available as Cloud services.
+
+MongoDB and Apache Cassandra are examples of NoSQL databases.
+
+Apache Hadoop and Apache Spark are used for Big Data analytics. 
+
+Data Integration and Transformation Tools: include Apache Airflow and Apache Kafka. 
+
+Data Visualization Tools:  include commercial offerings  such as Cognos Analytics, Tableau and PowerBI  and can be used for building dynamic and interactive dashboards.  
+
+Code Asset Management Tools: Git is an essential code asset management tool. GitHub is a popular web-based platform for storing and managing source code. Its features make it an ideal tool for collaborative software development, including version control, issue tracking, and project management. 
+
+Development Environments: Popular development environments for Data Science include Jupyter Notebooks and RStudio. 
+
+Jupyter Notebooks provides an interactive environment for creating and sharing code, descriptive text, data visualizations, and other computational artifacts in a web-browser based interface.  
+
+RStudio is an integrated development environment (IDE) designed specifically for working with 
