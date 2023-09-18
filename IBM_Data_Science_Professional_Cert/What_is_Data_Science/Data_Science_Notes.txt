@@ -267,3 +267,81 @@ Development Environments: Popular development environments for Data Science incl
 Jupyter Notebooks provides an interactive environment for creating and sharing code, descriptive text, data visualizations, and other computational artifacts in a web-browser based interface.  
 
 RStudio is an integrated development environment (IDE) designed specifically for working with 
+
+
+
+Languages of Data Science:
+     popular languages are Python, R, SQL, Scala, Java, C++, and Julia. JavaScript, PHP, Go, Ruby, and Visual Basic all have their own unique use cases as well
+    Open source is more business focused, while free software is more focused on a set of values. 
+
+
+    Python 
+        3/4 of data science jobs use python 
+
+    R
+        Now, let’s discuss the differences between open source and free software. The Open-Source Initiative (OSI) champions open source, while the Free Software 
+            Foundation (FSF) defines free software. Open source is more business focused, while free software is more focused on a set of values. 
+            So, why R? You should learn R because it is free software
+        R 
+            Language's array-oriented syntax makes it easier to translate from math to code for learners with no or minimal programming background
+                R is mostly popular in academia. In addition, companies that use R include IBM, Google, Facebook, Microsoft, Bank of America, Ford, TechCrunch, Uber, and 
+                Trulia. R has become the world’s largest repository of statistical knowledge. 
+            As of 2018, R has more than 15,000 publicly released packages making it possible to conduct complex exploratory data analysis. 
+                R integrates well with other computer languages like C++, Java, C, .Net, and Python. Using R, common mathematical operations like matrix 
+                multiplication give immediate results. And R has stronger object-oriented programming facilities than most statistical computing languages.
+
+The Open-Source Initiative (OSI) champions open source, while the Free Software Foundation (FSF) defines free software. Python is open source, and R is free 
+    software. R language’s array-oriented syntax makes it easier to translate from math to code for learners with none or minimal 
+    programming background. And R has become the world’s largest repository of statistical knowledge.
+        
+Data Science Roles 
+    Business Analyst, Database Engineer, Data Analyst, Data Engineer, Data Scientist, Research Scientist, Software Engineer, Statistician, Product Manager, Project Manager, 
+
+
+SQL:
+    Language elements 
+     Clauses, Expressions, Predicates, Queries, and Statements.
+
+Java 
+    -object oriented programming language 
+
+    Hadoop  
+        cluster systems 
+
+Scala   
+
+    Apache Spark 
+    designed 
+
+C++
+    general purpose language
+    extension of Cassandra
+    -improves processing speed, 
+    -enable ssytem programming 
+    -broader application control 
+
+    Tensorflow 
+        -built on top of C++ 
+        -Python interface 
+
+    MongoDB
+        -C++ application Nosql db 
+
+    Caffe
+        -deep learning algorithm repository 
+        -C++ with Python and matlab bindings  
+    -Caffe supports many different types of deep learning architectures geared towards image classification and image segmentation. 
+        It supports CNN, RCNN, LSTM and fully-connected neural network designs.[8] Caffe supports GPU- and CPU-based acceleration 
+        computational kernel libraries such as Nvidia cuDNN and Intel MKL.[9][10]
+
+Julia 
+    Julia was designed at MIT for high-performance numerical analysis and computational science. Julia provides speedy development 
+        like Python or R, while producing programs that run as fast as C or Fortran programs. It’s compiled which means that Julia 
+        code is executed directly on the processor as executable code. It calls C, Go, Java, MATLAB, R, Fortran, and Python libraries, 
+        and has refined parallelism. Julia as a language is only 8 years old, written in 2012, but there is a lot of promise for its 
+        future impact on the data science industry. One great application of Julia for Data Science is JuliaDB, which is a package for 
+        working with large persistent data sets
+
+
+Libraries for Data Science 
+    

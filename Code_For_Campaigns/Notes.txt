@@ -1,0 +1,6 @@
+Sept. 18, I am working campaign things with data sets that are not public
+    -spent 5hrs working on Cognos dashboard trying to find insights 
+        -but realized data was in complete
+        -spet a lot of time trying different files and they were all outdated files
+        - I did do a little analysis vis and realized 1 of the precincts is very small  
+            200ish voters but only 5 voted
