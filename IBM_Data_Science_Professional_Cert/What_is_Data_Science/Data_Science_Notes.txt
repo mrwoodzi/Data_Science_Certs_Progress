@@ -344,4 +344,66 @@ Julia
 
 
 Libraries for Data Science 
+    PYthon libraries 
+        Pandas
+            -built on top of numpy
+        Numpy
+            arrays 
+            matrixs
+        
+        Data Vis    
+            Matplotlib
+            Seaborn
+        
+        Machine Learning    
+            Scikit learn    
+                regression
+                classification
+                clustering
+            Keras
+                Deep Learning Nearal Networks
+                
+        Deep Learning 
+            TensorFlow  
+                Production and Deployment 
+                low level frame work 
+            PyTorch
+                Deep Learning: 
+                    regression, classification 
+
+        Cluster Computing 
+            Apache Spark 
+                functional with pandas, numpy, scikit-learn
+                pYTHON R Scala SQL 
+
+    Scala   
+        Vegas
+            data Vis
+        Big DL
+            deep learning 
+
+    R 
+        ggplot2 
+            data vis 
+        other libraries that allow you to interface with keras and tensor flow
+        -was defacto data science tool but no longer 
+
+API 
+    REST 
+        representational state transfer 
+        used for interacting with web services 
+            client - me 
+            resource 
+            REST api
+        http
+            response 
+            json
+    
+    Watson text to speech API 
+        client to Watson Text to speech 
+
+    Watson Language-translator API 
+
+
+Data Sets 
     
