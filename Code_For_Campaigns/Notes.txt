@@ -4,3 +4,12 @@ Sept. 18, I am working campaign things with data sets that are not public
         -spet a lot of time trying different files and they were all outdated files
         - I did do a little analysis vis and realized 1 of the precincts is very small  
             200ish voters but only 5 voted
+
+Sept. 19
+    -Spent a lot of time on the campaign finds insights and manipulating data   
+        -realized that the precincts from the d9 file are not geographically the same 
+            as the may 6 pdf
+                -Did they use the wrong maps?
+            -this also meant that I will not push forward on much else 
+                interms of analysis till I get the detailed
+                data set from May 6

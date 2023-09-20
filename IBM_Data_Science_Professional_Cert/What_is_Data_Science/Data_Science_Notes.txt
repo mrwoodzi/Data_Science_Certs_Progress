@@ -500,6 +500,17 @@ Machine Learning Models:
                 use model 
 
 
+R Language and R Studio:
+    dplyr - data manipulation 
+    stringr - string manipulation
+    ggplot - data vis 
+    caret - machine learning 
+
+    Packages/Libraries:
+        ggplot - histograms, bar charts, scatterplots
+        Plotly - Web-based data vis
+        lattice - complex, multi variable data sets 
+        leaflet - Interactive plots 
 
 
 
