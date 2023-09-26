@@ -1,0 +1,73 @@
+What is Machine Learning:
+    Inductive Inference
+    Machine Learning   
+        -used for estimating relationships
+    An AI domain where we extract patterns from the data and analyze 
+        the data and make intelligent predictions on the new data
+        according to the pattern your machine has learnt
+    How machines extract patterns?
+    How we analyze the data?
+    How machines make predictions?
+    Tom Mitchell
+        "A computer program is said to learn from experience E with respect to some task T 
+            and some performance measure P, if its performance on T, as measured by P, 
+            improves with experience E."
+    Experience -> Task -> Performance -> Improve -> Performance -> Improve 
+
+    Experience  
+        -can be past data
+    Task    
+        -the prediction you are trying to make 
+    Performance 
+        -how well your model is performing on new and unseen data
+    Improve 
+        -feedback
+
+Linear Regression:
+    -extracting patterns
+
+    Example:
+        Prepare a marketing plan for a Car Company
+            -manufacturer of the car
+            -model of the car 
+            -engine size of car 
+            -horsepower of the car 
+
+        Making a market plan    
+            -recommend which info of the car to highlight
+                -to make the most of Stakeholders
+            Is there a relationshiop between info of the car and sales?
+            How strong is the relationship between info of the car and sales?
+            Which info contributes to sales?
+            How accurately can we estimate the effect of each info on sales?
+            How accurately can we predict the sales?
+            Is the relationship linear?
+
+
+Module 1:
+    Introduction and Regression
+        
+    Simple Linear Regression 
+    Multiple Linear Regression 
+    Regression Trees 
+
+
+
+Module 2:
+    Classification 
+        Logistic Regression
+        KNN 
+        SVM 
+        Multiclass Prediction 
+        Decision Trees
+            -uses historical data 
+ 
+
+
+Module 3:
+    Clustering 
+        K-means 
+
+
+Module 4:
+    Final Project
