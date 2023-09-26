@@ -3,4 +3,157 @@ thinking about it.
 I will slow this course down compared to the others so I have more time 
 to ingest what I am reading. 
 
+This is an interative methodology:
+Business Understanding
+Analytic Approach 
+
+Data Requirements
+Data Collection
+Data Understanding 
+
+Data Preparation
+Type I Error (False Positive): This occurs when you reject a true null hypothesis 
+    (a statement that should be accepted) in favor of an alternative hypothesis (a statement 
+        that should be rejected). It's essentially a "false alarm."
+
+Type II Error (False Negative): This occurs when you fail to reject a false null hypothesis. 
+    In other words, you miss a genuine effect that exists in the population. It's often 
+        called a "miss."
+
+Type III Error (Less Common): Type III errors are less commonly used terminologies, and 
+    they are not as standardized as Types I and II. Type III errors typically refer to 
+        situations where the researcher or analyst makes an error in the direction of an 
+            effect. For example, if the researcher incorrectly believes that a treatment 
+                had a positive effect when it had a negative effect. Type III errors are 
+                    not as widely recognized or used as Type I and Type II errors.
+Modeling
+
+Evaluation
+Deployment
+Feedback 
+
+
 Doing same thing today and next week will go back and take notes on all videos Monday
+
+Data Modeling 
+        models are based on the analytic approach that was taken, 
+            either statisticaly driven or machine learning driven
+    Descriptive model
+    Predictive model  
+    Training Set
+        historical data in which the outcomes are already known
+        gauge to determine if the model needs to be calibrated 
+
+    John Rollins' descriptive Data Science Methodology
+        1. understand the question 
+        2. select analytic approach or method to solve problem
+        3. obtain, understand, prepare and model data 
+        end goal is to move data scientist to a point where a 
+            data model can be built to answer the question 
+
+    Model Evaluation
+    Deployment
+    Feedback Loops 
+
+    Modeling Case Study
+        Perameter Training
+            -congestive heart failure = yes 
+        Evaluation
+            performed duing modeling and before Deployment
+            does the model used answer the question or does 
+                it need adjustment
+            Predictive  
+                decision tree
+            descriptive 
+                more like a bubble chart 
+            statistical significance testing 
+                finding the optimal model 
+                Optimal model is one that gives optimum
+                    ROC curve
+                        receveier operator characteristic
+                        quantifies how well a binary model performs
+
+
+    Deployment  
+        -Getting Stakeholders familiar with model
+        -maybe deployed selectively 
+        Feedback 
+            used decision tree classification for app
+
+    Feedback
+
+
+    Refine Model    
+        -after initial review of first year of implementation
+        -based on feedback data and knowledge gained
+        -participation in intervention program 
+        -made add in more data that was initially left out 
+        -other refinements that are necessary 
+
+    Redeploy
+
+    Data Preparation    
+        Cleaning-Integration
+        Selection-Transformation
+
+    Data Mining 
+    Patterns
+    Evaluation
+    Knowledge 
+
+    From problem to approach:
+        What is the problem that you are trying to solve?
+        HOw can you use data to answer the question
+    Working with the data:
+        What data do you need to answer the question?
+        Where is the data coming from (identify all sources), and   
+            how well you get it?
+        Is the data that you collected representative of the problem 
+            to be solved?
+        What additional work is required to manipulate and work with 
+            data?
+    Deriving the answer:
+        In what way can the data be visualized to get to the 
+            answer that is required?
+        Does the model used really answer the initial question, 
+            or does it need to be adjusted?
+        Can you put the model into practice?
+        Can you get constructive feedback into answering the 
+            question?
+
+Hospitals need to ensure that patients receive timely and 
+high quality care and also not have staff standing around 
+with nothing to do during down periods. Therefore the hospitals 
+need to schedule their staff, doctors, nurses and other 
+personnel to improve patient care, reduce cost, higher 
+employee satisfaction and efficient resource allocation.
+How can a hospital optimize it's scheduling so that the hospital 
+is not under or over staffed during any given period of time?
+
+Analytic Approach:
+Data Driven Approach
+
+Data Requirements:
+Patient Data: Collect data on patient admissions, discharge times, and peak admission hours. This data will help identify demand patterns.
+Staff Data: Gather data on staff availability, skills, preferences, and contractual constraints. This data will help in understanding the workforce.
+Historical Scheduling Data: Access historical scheduling records to understand how scheduling has been done in the past.
+
+Data Collection:
+Acquire patient data from the hospital's admission and discharge records.
+Collect staff data from HR records, including availability, skills, and preferences.
+Retrieve historical scheduling data from previous schedules and records.
+
+Data Understanding and Preparation:
+Data Cleaning: Clean and preprocess the data to handle missing values and outliers. Ensure consistency and accuracy in the data.
+Feature Engineering: Create relevant features such as patient admission patterns, staff skill levels, historical scheduling data, and staff shift preferences.
+Data Integration: Combine patient and staff data to understand the relationships between patient demand and staff availability.
+Exploratory Data Analysis (EDA): Conduct EDA to visualize data patterns, correlations, and any seasonality in patient admissions.
+
+Modeling and Evaluation:
+Model Selection: Choose an appropriate modeling technique for staff scheduling optimization. Options include linear programming, integer programming, reinforcement learning, or custom algorithms.
+Model Development: Develop the chosen model based on the data. Implement optimization constraints to account for staff availability, skills, preferences, and contractual obligations.
+Evaluation Metrics: Define key performance metrics, such as staff utilization, patient wait times, cost-effectiveness, and compliance with labor laws.
+Model Training: Train the model using historical data and real-world scenarios to fine-tune parameters.
+Model Testing: Test the model with sample data and evaluate its performance against the defined metrics.
+Deployment: Implement the scheduling system into the hospital's workforce management software. Ensure it can handle real-time data and adapt to changing conditions.
+Monitoring and Maintenance: Continuously monitor the scheduling system's performance and make necessary adjustments as patient demand patterns evolve.
