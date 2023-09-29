@@ -5,6 +5,18 @@ to ingest what I am reading.
 
 This is an interative methodology:
 Business Understanding
+Analytic Approach
+Data Requirements
+Data Collection
+Data Understanding
+Data Preparation 
+Modeling
+Evaluation 
+Deployment 
+Feedback 
+
+
+Business Understanding
 Analytic Approach 
 
 Data Requirements

@@ -1,0 +1,48 @@
+Occam's Razor 
+    "All things being equal, a simpler model should be used 
+        in preference to a more complicated model."
+
+Correlation 
+    relationship between strength of association
+Regression  
+    Quatifies nature of the relationship between variables
+
+
+Simple Linear Regression    
+    -relationship between magnitude of one variable(Y)
+        and that of a second(X)
+        -how much will Y change when X changes
+        -tries to find the best line to predict response 
+        Y = response, dependent variable, target
+        X = predictor, feature
+
+
+Multiple Linear Regression 
+    -multiple predictors(X) 
+
+Stepwise Regression - also known as backward elimination
+    -start with full model and successively drop variables that 
+        don't contribute meaningfully
+
+All sub-set Regression  
+    -search through all possible models
+
+Below 3  are classic statistical regression metrics, are all "in-sample":
+R^2 - R squared
+    -measures proportion of variation in the data 
+        that is accounted for in the model
+F-statistics
+p-values
+
+
+b`0 - b zero
+        -also called the intercept or constant
+b'1 - b one 
+        -slope of X 
+
+
+
+fitted values 
+    -predictions, Y-hat 
+residuals 
+    -prediction errors 

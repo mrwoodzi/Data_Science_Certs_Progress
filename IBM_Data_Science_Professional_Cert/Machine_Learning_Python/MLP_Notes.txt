@@ -71,3 +71,17 @@ Module 3:
 
 Module 4:
     Final Project
+
+
+Data Science Methodology Review:
+Business Understanding
+Analytic Approach
+Data Requirements
+Data Collection
+Data Understanding
+Data Preparation 
+Modeling
+Evaluation 
+Deployment 
+Feedback
+***Process is Iterative***
