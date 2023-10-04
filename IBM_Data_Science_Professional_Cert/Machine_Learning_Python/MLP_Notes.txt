@@ -91,4 +91,87 @@ Machine Learning is the subfield of computer science that gives "computers the a
         being explicitly programmed"
 
         Define "without being explicitly programmed."
-            
+
+
+Major Machine Learning Techniques:
+Regression:
+    -predicting continuous values
+Classification:
+    -predicting class or category of a cases 
+Clustering:
+    -finding the structure of data; summarization
+    - ex., grouping of similar cases in a dataset, for example to find similar patients, or for customer segmentation in a bank 
+Associations:
+    -associating frequent co-occurring items/events
+Anomaly detection:
+    -discovering abnormal and unusual cases 
+Sequence mining:
+    -predicting next events; click-stream (Markov Model, HMM)
+Dimension Reduction:
+    -reducing the size of data (PCA) 
+Recommendation systems:
+    -recommending items
+
+
+Python Libraries for Deep Learning:
+    Numpy
+        images
+        functions
+        data types
+    SciPy
+        -signal preprocessing
+        -optomization 
+        -statistics
+    Matplotlib
+        -plotting package that provides 2d plotting and 3d plotting
+    Pandas 
+        -high level library 
+        -data structures, analysis, structures 
+        -operations for maipulating numerical tables and timeseries
+    SciKit Learn 
+        -machine learning library
+        -collection of algorithms 
+        -Popular among data scientist
+            -free 
+            -has most of the typical classification, regression and clustering algorithms
+            -design to work with numpy and scipy 
+            -good documentation
+            -it's easy 
+        -pre-processing of data 
+        -feature selection
+        -freature extraction
+        -train test splitting
+        -defining the algorithm 
+        -fitting models 
+        -tuning parameters
+        -prediction 
+        -Evaluation
+        -exporting model 
+
+
+*****************Supervised Algorithms vs. Unsupervised Algorithms**************
+column_names = attributes
+column_data = features
+row = observation
+
+2 types of Supervised Learning:
+Classification  
+    -process of predicting a discreate class label or category
+Regression
+    -process of predicting a continuous value 
+
+Unsupervised Learning Techniques:
+    -draws conclusions on unlabeled data 
+    -clustering
+        -used for grouping data points or objects that are somehow similar 
+        -also used for discovering structure, summarization and anomaly detection 
+    -dimension Reduction
+        -reduces redundant features to make the classification easier
+    -density estimation 
+        -explores the data to find some particular structure 
+    -market basket analysis 
+        -theory that if you buy a certain group of items, you're more likely to buy another group of items
+
+
+
+    
