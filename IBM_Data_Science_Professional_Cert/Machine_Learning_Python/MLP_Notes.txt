@@ -85,3 +85,10 @@ Evaluation
 Deployment 
 Feedback
 ***Process is Iterative***
+
+
+Machine Learning is the subfield of computer science that gives "computers the ability to learn without 
+        being explicitly programmed"
+
+        Define "without being explicitly programmed."
+            
