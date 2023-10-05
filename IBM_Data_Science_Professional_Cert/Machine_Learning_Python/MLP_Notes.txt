@@ -157,6 +157,7 @@ row = observation
 2 types of Supervised Learning:
 Classification  
     -process of predicting a discreate class label or category
+    -K-nearest neighbor 
 Regression
     -process of predicting a continuous value 
 
@@ -205,3 +206,48 @@ OLS can find the best parameters using the following methods:
 * Solving the model parameters analytically using closed-form equations
 * Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)
     
+
+steps of Linear Regression:
+# 1.
+# Create a LinearRegression model it is instantiated as an object
+regr = linear_model.LinearRegression()
+
+# 2.
+# Prepare the input features (x) and the target variable (y)
+# In this example, x includes 'ENGINESIZE', 'CYLINDERS', and 'FUELCONSUMPTION_COMB'
+x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+y = np.asanyarray(train[['CO2EMISSIONS']])
+
+# 3.
+# Fit the LinearRegression model to the data
+regr.fit (x, y)
+
+# 4.
+# Print the coefficients of the linear model
+print ('Coefficients: ', regr.coef_)
+
+# 5.
+# y_hat are the predictions
+y_hat = regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+
+# 6.
+# Prepare the input features (x) for the test data.
+x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+
+# 7.
+# Prepare the target variable (y) for the test data, which is the actual CO2 emissions.
+y = np.asanyarray(test[['CO2EMISSIONS']])
+
+# 8.
+# Calculate the Mean Squared Error (MSE) between the predicted values (y_hat) and the actual values (y).
+mse = np.mean((y_hat - y) ** 2)
+print("Mean Squared Error (MSE): %.2f" % mse)
+
+# 9.
+# The Explained Variance Score (Variance score) measures how well the model explains the variance in the data.
+# A score of 1 indicates a perfect prediction, while lower scores indicate less accurate predictions.
+variance_score = regr.score(x, y)
+print('Variance score: %.2f' % variance_score)
+
+
+K-nearest neighbor:
