@@ -158,6 +158,14 @@ row = observation
 Classification  
     -process of predicting a discreate class label or category
     -K-nearest neighbor 
+    -decision Trees 
+    -linear discriminant analysis 
+    -naive bayes
+    -linear discriminant analysis
+    -k-nearest neighbor 
+    -logistic regression 
+    -neural networks 
+    -support vector machines 
 Regression
     -process of predicting a continuous value 
 
@@ -251,3 +259,22 @@ print('Variance score: %.2f' % variance_score)
 
 
 K-nearest neighbor:
+Classification
+    -Supervised Learning
+    -Target Attribute is a Categorical Variable
+    -good example of classification is the loan default prediction - column labeled "default"
+        -LOAN DEFAULT PREDICTOR
+            -use existing loan data to predict a 0 or 1 as 'defaulter' or 'not defaulter'
+    -Can be binary or multi-class classification 
+
+
+KNN Steps:
+
+
+Decision Trees:
+
+
+
+Regression Trees:
+
+
