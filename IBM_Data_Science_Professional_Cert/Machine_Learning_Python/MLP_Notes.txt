@@ -257,9 +257,7 @@ print("Mean Squared Error (MSE): %.2f" % mse)
 variance_score = regr.score(x, y)
 print('Variance score: %.2f' % variance_score)
 
-
-K-nearest neighbor:
-Classification
+Classification:
     -Supervised Learning
     -Target Attribute is a Categorical Variable
     -good example of classification is the loan default prediction - column labeled "default"
@@ -268,7 +266,53 @@ Classification
     -Can be binary or multi-class classification 
 
 
-KNN Steps:
+    Classification Accuracy: 
+        -pass the test set to our model and we get y^(y-hat) predicted labels 
+        -compare actual (y) to (y^)
+
+        Evaluation Metrics:
+            Jaccard Index
+                -simplest
+                -also known as Jaccard similarity coefficient
+                -defined Jaccard as the size of the intersection divided by the size of the union of two label sets
+                    -2 circles that are partially overlapping
+                -If the entire set of predicted labels for a sample strictly matches 
+                    with the true set of labels, then the subset accuracy is 1.0
+            F1-score
+            Log Loss
+
+
+K-nearest neighbor:
+
+    x = independent variable(s), rows and columns together
+    y = dependent variable, a column
+        -you can make custom categories for individual rows to be categorized as in 
+            the dependent variable column, the one you are classifying
+    -method for classifying cases based on their similarity to other cases 
+    -cases that are near each other are said to be "neighbors"
+    -based on similar cases with the same lass clabels are near each other
+    -kNN can also be used for regression 
+        -predicting home value by it's features 
+        
+
+
+
+kNN Steps:
+    1. Pick a value for k
+        -k in kNN = number of nearest neighbors to examine 
+        -low value of k causes a highly complex model, possible overfit of the model 
+        -high value becomes overly generalized 
+        -reserve part of data for testing the accuracy of the model 
+    2. calculate the distance of unknown case from all cases 
+            -calculating the similarity/distance in a 1-dimensional space 
+                -this would be 2 customers difference in age 
+                    this would be Minkowsk/Euclidean distance 
+                -2 dimension/2 features 
+                    -age and income
+                -multi dimensional vectors 
+    3. select the K-observations in the training data that are "nearest 
+        to the unknown data point 
+    4. Predict the response of the unknown data point using the most popular response value from the K-nearest neighbors 
 
 
 Decision Trees:
