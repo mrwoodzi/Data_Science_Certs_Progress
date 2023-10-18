@@ -456,6 +456,8 @@ Decision Trees:
 
 Regression Trees:
 
+        IBM Library called Snap ML 
+
         Regression Trees are implemented using `DecisionTreeRegressor` from `sklearn.tree`
         The important parameters of `DecisionTreeRegressor` are
         `criterion`: {"mse", "friedman_mse", "mae", "poisson"} - The function used to measure error
