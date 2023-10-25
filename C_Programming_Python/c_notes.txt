@@ -1,0 +1,1 @@
+It's recommended to place the tasks.json file in the same folder as your C code for a clear and organized project structure.
