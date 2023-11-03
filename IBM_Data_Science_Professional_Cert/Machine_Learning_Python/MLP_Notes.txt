@@ -500,3 +500,10 @@ Regression Trees:
             print(regression_tree.score(X_test, Y_test))
             prediction = regression_tree.predict(X_test)
             print("$",(prediction - Y_test).abs().mean()*1000)
+
+
+Snap ML:
+    refer to Regression_Trees_SnapML.ipynb for the indepth notes
+    
+ advantages of using Snap ML: acceleration of training of classical machine learning models, 
+    such as linear and tree-based models.
