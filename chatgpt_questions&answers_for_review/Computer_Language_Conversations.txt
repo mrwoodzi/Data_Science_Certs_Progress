@@ -1,3 +1,131 @@
+Calculus and Algebra:
+
+Calculus is used to understand how things change. It helps us find rates of change and slopes of curves, which 
+is essential in fields like physics, engineering, economics, and computer science. For example, it helps 
+calculate motion, growth, and optimization problems.
+
+Algebra is used to solve equations and work with unknown values. It's widely used in everyday life for 
+tasks like budgeting, solving real-world problems, and in various technical fields such as engineering, 
+computer programming, and finance. Algebra is fundamental for problem-solving and making sense of data.
+
+*******************************************************************
+C Source Code -> Compiler (C Compiler) -> Executable Binary -> Kernel (Operating System) -> Hardware
+
+
+Kernel Mode: When a system call is made, the CPU switches from user mode (where your Python code runs) to kernel mode. 
+The kernel mode allows the operating system to execute privileged instructions and access hardware directly.
+
+        User Mode and Kernel Mode: When you launch an .exe file, it typically starts as a user-level 
+        process in user mode. User-level processes run in isolation and do not have direct access to 
+        hardware. If the .exe file needs to perform operations that require kernel mode, it makes 
+        system calls to the Windows kernel (ntoskrnl.exe).
+
+Python Script -> 
+    Interpreter (Turns Python to bytecode)  -> 
+        Python Compiler ->
+            Python Virtual Machine (PVM)
+            Python Standard Library ->
+                -Makes System Calls to the Kernel in C 
+    Kernel (Operating System) -> 
+        Allocates memory
+        Does Stuff
+        Sends Machine Code Instructions to CPU 
+    Hardware
+        ROM 
+        RAM 
+        CPU 
+            Turns Machine Code instructions into Machine Code 
+            User Mode
+            Kernel Mode 
+
+PVM System Calls:
+
+        The PVM is the component of the Python interpreter that executes Python bytecode. It manages the execution 
+        of Python code, including memory management and garbage collection.
+
+Here's how it works:
+
+High-Level Code: Your Python script (or any high-level programming language code) makes a system call when 
+it needs to interact with the operating system. For example, opening a file, creating a new process, or 
+allocating memory.
+
+System Call Interface: The operating system provides a well-defined interface for system calls. This interface 
+is typically implemented in low-level languages like C.
+
+Kernel Mode: When a system call is made, the CPU switches from user mode (where your Python code runs) to kernel mode. 
+The kernel mode allows the operating system to execute privileged instructions and access hardware directly.
+
+        User Mode and Kernel Mode: When you launch an .exe file, it typically starts as a user-level 
+        process in user mode. User-level processes run in isolation and do not have direct access to 
+        hardware. If the .exe file needs to perform operations that require kernel mode, it makes 
+        system calls to the Windows kernel (ntoskrnl.exe).
+
+Execution of the System Call: The kernel, using the system call interface implemented in C or assembly language, 
+processes the system call request. It performs the necessary operations, such as reading from a file, managing 
+memory, or controlling hardware devices.
+
+Return to User Mode: After the system call is completed, the operating system switches the CPU back to user mode, 
+and control is returned to the calling Python script or program.
+
+The use of a low-level language like C for implementing system calls allows for fine-grained control over system 
+resources and hardware. It also helps maintain the security and stability of the operating system, as system 
+calls are critical for interacting with the underlying hardware and resources.
+
+In summary, system calls occur in the low-level languages that the operating system's kernel is implemented in, 
+with C being one of the most common choices. Your high-level Python code makes requests through the system call 
+interface provided by the kernel, and the kernel performs the requested operations using its own low-level code.
+
+***************************************************************************************************
+
+The Kernel in Windows, Linux and Mac 
+
+In both Windows and Linux, the kernel is typically written in C. While the kernel itself is primarily implemented in 
+C, it's important to note that the operating system as a whole consists of various components, and some of these 
+components can be written in different languages, including C++.
+
+Here's a breakdown for both Windows and Linux:
+
+Windows:
+
+Kernel: The Windows kernel, known as the Windows NT kernel, is largely written in C. It provides core operating system 
+services and manages system resources.
+User Mode Components: In Windows, various user mode components, including system services, libraries, and applications, 
+can be written in various languages, including C, C++, C#, and more. Windows allows developers to use a variety of 
+languages for user-level applications.
+Linux:
+
+Kernel: The Linux kernel is primarily written in C. It's responsible for managing system resources, hardware, and 
+providing the core functionality of the operating system.
+User Mode Components: In the Linux ecosystem, user mode components can be developed using a variety of programming 
+languages, including C, C++, Python, and many others. The choice of language depends on the specific application or utility.
+While C is commonly used for the core components of both Windows and Linux due to its low-level capabilities and 
+portability, C++ is also used in some parts of these operating systems. For example, C++ may be used in the development 
+of user-level utilities, libraries, and graphical interfaces in both Windows and Linux.
+
+So, to summarize, the kernel of Windows and Linux is typically implemented in C, while user-mode components can be 
+developed using a variety of languages, including C++ when it's appropriate for the task.
+
+
+
+Yes, macOS, just like Windows and Linux, interacts with a kernel. The kernel in macOS is known as the XNU (X is Not Unix) 
+kernel. It is a hybrid kernel that combines elements of the Mach microkernel and components from the Berkeley Software 
+Distribution (BSD) Unix operating system.
+
+The XNU kernel serves as the core of macOS and is responsible for managing system resources, handling hardware, and 
+providing essential operating system services. It is primarily written in C and is the key component that facilitates 
+the interaction between user-level applications and the hardware.
+
+In macOS, just as in other operating systems, system calls are used to communicate between user-level processes 
+(including applications and utilities) and the kernel. These system calls provide a way for user-level programs 
+to request services from the kernel, such as file operations, memory management, process control, and more.
+
+So, macOS, like Windows and Linux, has a kernel (in macOS's case, the XNU kernel) that plays a crucial role in managing 
+and controlling the underlying hardware and resources of the computer. This kernel is responsible for maintaining the 
+stability and functionality of the operating system.
+
+
+*******************************************************************************************
+
 The term "script" in the context of programming often refers to a sequence of instructions 
 or commands that are written in 
 a high-level programming language and executed by an interpreter. Here's why coding is 
