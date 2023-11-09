@@ -1,4 +1,4 @@
-Calculus and Algebra:
+sCalculus and Algebra:
 
 Calculus is used to understand how things change. It helps us find rates of change and slopes of curves, which 
 is essential in fields like physics, engineering, economics, and computer science. For example, it helps 
@@ -26,7 +26,7 @@ Python Script ->
                 into machine code by the CPython interpreter for 
                 performance reasons. This is known as 
                 "just-in-time" (JIT) compilation and is done 
-                on-the-fly.(If necessary machine code to the cpu directly????)
+                on-the-fly.(If necessary sends machine code to the cpu directly????)
             Python Virtual Machine (interprets bytecode)
                 PVM executes the instructions one by one, without 
                 translating the entire program into machine code 
