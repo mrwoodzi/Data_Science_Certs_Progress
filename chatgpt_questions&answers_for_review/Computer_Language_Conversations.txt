@@ -209,17 +209,6 @@ languages and paradigms have evolved.
 
 
 
-User
-what languages compile entire code into machine code before execution
-ChatGPT
-Languages that compile entire code into machine code before execution are typically 
-referred to as "compiled languages." 
-In compiled languages, the source code is transformed into machine code, which is 
-directly executed by the computer's 
-hardware. This compilation step results in faster execution compared to interpreted 
-languages, where code is executed 
-line by line by an interpreter.
-
 Some common examples of compiled languages include:
 
 C: C is a popular low-level programming language known for its efficiency and control 
