@@ -1,0 +1,19 @@
+
+
+What are my findings:
+
+Initial Thoughts
+
+The most found key skills in Job Posting are 
+the Computer Language C by far, nearly 70%
+
+BUT Javascript is the top 10 most used Language
+by respondents of th 2019 StackOverFlow Survey 
+
+The Top 10 Languages used did not include the C Language 
+
+
+Also to note is the Top 10 future Languages that 
+respondents wanted to learn did not include the C Language
+-Nor 
+

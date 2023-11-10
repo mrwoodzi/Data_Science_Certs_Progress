@@ -2,7 +2,7 @@
 
 Overview:
 
- This certification covers concepts such as, read data from sources, CSVs, SQL, and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data. JupyterLab is also covered in the course.
+ This certification covers concepts such as, reading data from different sources, CSVs, SQL, excel and how to use libraries like Numpy, Pandas, Matplotlib, and Seaborn to process and visualize data. JupyterLab is also covered in the course.
 
 Below are some examples of the Python Visualizations in this certification.
 
