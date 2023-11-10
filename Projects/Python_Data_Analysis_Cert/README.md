@@ -10,7 +10,7 @@ Heatmap:
 ![Image 1](Project_Pics/Project_3_HeatMap.png)
 
 Categorical Plot:
-![Image 2](Project_Pics/Project_2_Demographic_Data_Analyzer.png)
+![Image 2](Project_Pics/Project_3_CategoricalPlot.png)
 
 Bar Plot:
 ![Image 3](Project_Pics/Project_4_Bar_Plot.png)
