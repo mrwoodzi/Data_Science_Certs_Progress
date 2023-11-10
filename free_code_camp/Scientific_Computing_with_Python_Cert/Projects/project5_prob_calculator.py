@@ -90,10 +90,10 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
 
 # Test
 hat = Hat(blue=4, red=2, green=6)
-experiment(
+probability = experiment(
     hat=hat,
     expected_balls={"blue": 2, "red": 1},
     num_balls_drawn=4,
     num_experiments=100,
 )
-print("Probability:", experiment)
+print("Probability:", probability)
