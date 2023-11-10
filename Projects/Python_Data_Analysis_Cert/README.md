@@ -18,7 +18,7 @@ Line Plot with Matplotlib:
 Categorical Plot with Seaborn:
 ![Image 3](Project_Pics/Project_3_CategoricalPlot.png)
 
-Box Plots:
+Box Plots with Seaborn:
 ![Image 4](Project_Pics/Project_4_Box_Plot.png)
 
 Bar Plot with Seaborn:
