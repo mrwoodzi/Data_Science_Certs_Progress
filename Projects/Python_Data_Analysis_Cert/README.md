@@ -6,5 +6,19 @@ Overview:
 
 Below are some examples of the work done in this certification.
 
-![Image 1](Project_Pics/Project_1_Probability_Calculator.png)
+Heatmap:
+![Image 1](Project_Pics/Project_3_HeatMap.png)
+
+Categorical Plot:
+![Image 2](Project_Pics/Project_2_Demographic_Data_Analyzer.png)
+
+Bar Plot:
+![Image 3](Project_Pics/Project_4_Bar_Plot.png)
+
+Box Plots:
+![Image 4](Project_Pics/Project_4_Box_Plot.png)
+
+Linear Regression:
+![Image 5](Project_Pics/Project_5_Linear_Regression.png)
+
 
