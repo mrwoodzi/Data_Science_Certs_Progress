@@ -1,4 +1,4 @@
-# Data Analysis with Python Certification: freecodecamp.org
+# Data Analysis with Python Certification:
 
 Overview:
 

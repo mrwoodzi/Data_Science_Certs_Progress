@@ -1,4 +1,4 @@
-# IBM Data Analyst Professional Certificate: coursera.org
+# IBM Data Analyst Professional Certificate:
 
 ## Overview:
 This certification spans 9 courses that cover spreadsheets, python, jupyterlab, pandas, numpy, seaborn, folium, dash app, sql, sqlite, IBM db2, IBM Watson, IBM Cognos, linear regression, requests, and webscraping to name some of the topics covered and culminates in an all incompassing final project that seeks to utilize most of the skills learn in the 9 courses.
