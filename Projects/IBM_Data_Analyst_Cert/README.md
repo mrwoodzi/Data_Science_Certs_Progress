@@ -6,19 +6,19 @@ This certification spans 9 courses that cover spreadsheets, python, jupyterlab, 
 Below is a representation of some of the notes, labs, finals and capstone project for this certification.
 
 Cognos Dashboard Tab 1
-[image 1](Final_CapStone_Project/capstone_pics/full_dash_tabs.png)
+[image 1](capstone_pics/full_dash_tabs.png)
 
 Cognos Dashboard Tab 2
-[image 2](Final_CapStone_Project/capstone_pics/New_Demographics.png)
+[image 2](capstone_pics/New_Demographics.png)
 
 Cognos Dashbaord Tab 3
-[image 3](Final_CapStone_Project/capstone_pics/New_FTT.png)
+[image 3](capstone_pics/New_FTT.png)
 
 Pie Chart with Python
-[image 4](Final_CapStone_Project/capstone_pics/Key_Skills_Pie_Chart.png)
+[image 4](capstone_pics/Key_Skills_Pie_Chart.png)
 
 Bar Chart with Python
-[image 5](Final_CapStone_Project/capstone_pics/Average_Annual_Salary_Bar_Chart.png)
+[image 5](capstone_pics/Average_Annual_Salary_Bar_Chart.png)
 
 Interactive Dash App Locally Hosted 1
 [image 6](.png/Dash_App_Interactive_1.png)
