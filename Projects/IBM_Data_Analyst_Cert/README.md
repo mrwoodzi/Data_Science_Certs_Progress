@@ -6,29 +6,29 @@ This certification spans 9 courses that cover spreadsheets, python, jupyterlab, 
 Below is a representation of some of the notes, labs, finals and capstone project for this certification.
 
 Cognos Dashboard Tab 1
-[Image 1](.png/full_dash_tabs.png)
+![Image 1](.png/full_dash_tabs.png)
 
 Cognos Dashboard Tab 2
-[Image 2](.png/New_Demographics.png)
+![Image 2](.png/New_Demographics.png)
 
 Cognos Dashbaord Tab 3
-[Image 3](.png/New_FTT.png)
+![Image 3](.png/New_FTT.png)
 
 Pie Chart with Python
-[Image 4](.png/Key_Skills_Pie_Chart.png)
+![Image 4](.png/Key_Skills_Pie_Chart.png)
 
 Bar Chart with Python
-[Image 5](.png/Average_Annual_Salary_Bar_Chart.png)
+![Image 5](.png/Average_Annual_Salary_Bar_Chart.png)
 
 Interactive Dash App Locally Hosted 1
-[Image 6](.png/Dash_App_Interactive_1.png)
+![Image 6](.png/Dash_App_Interactive_1.png)
 
 Interactive Dash App Locally Hosted 2
-[Image 7](.png/Dash_App_Interactive_2.png)
+![Image 7](.png/Dash_App_Interactive_2.png)
 
 Regression plot with Seaborn
-[Image 8](.png/RegPlot_Seaborn.png)
+![Image 8](.png/RegPlot_Seaborn.png)
 
 Line Plot with matplotlib
-[Image 9](.png/Line_Plot_with_Code.png)
+![Image 9](.png/Line_Plot_with_Code.png)
 
