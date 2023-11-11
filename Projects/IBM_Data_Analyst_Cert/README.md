@@ -5,13 +5,13 @@ This certification spans 9 courses that cover spreadsheets, python, jupyterlab, 
 
 Below is a representation of some of the notes, labs, finals and capstone project for this certification.
 
-Cognos Dashboard Tab 1
+Interactive Cognos Dashboard Tab 1
 ![Image 1](.png/full_dash_tabs.png)
 
-Cognos Dashboard Tab 2
+Interactive Cognos Dashboard Tab 2
 ![Image 2](.png/New_Demographics.png)
 
-Cognos Dashbaord Tab 3
+Interactive Cognos Dashbaord Tab 3
 ![Image 3](.png/New_FTT.png)
 
 Pie Chart with Python
