@@ -20,8 +20,14 @@ Pie Chart with Python
 Bar Chart with Python
 ![Image 5](.png/Average_Annual_Salary_Bar_Chart.png)
 
+Code Snip for Interactive Dash App:
+![Image 10](.png/Dash_App_Code_1.png)
+
 Interactive Dash App Locally Hosted 1
 ![Image 6](.png/Dash_App_Interactive_1.png)
+
+Code Snipe for Interactive Dash App:
+![Image 11](.png/Dash_App_Code_2.png)
 
 Interactive Dash App Locally Hosted 2
 ![Image 7](.png/Dash_App_Interactive_2.png)
