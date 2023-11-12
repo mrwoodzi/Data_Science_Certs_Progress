@@ -9,6 +9,9 @@ Below are some examples of the Python Visualizations in this certification.
 Heatmap with Seaborn:
 ![Image 1](Project_Pics/Project_3_HeatMap.png)
 
+Code for Linear Regression Plot:
+![Image 9](Project_Pics/Project_5_Linear_Regression_Code.png)
+
 Linear Regression with Matplotlib and Scipy:
 ![Image 6](Project_Pics/Project_5_Linear_Regression.png)
 
