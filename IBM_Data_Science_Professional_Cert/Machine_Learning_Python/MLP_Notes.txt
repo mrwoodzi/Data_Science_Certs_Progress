@@ -509,3 +509,23 @@ Snap ML:
     such as linear and tree-based models.
 
     
+
+Logistics Regression:
+    -Classification
+        -Probability of a Class 
+        -"S" shaped 
+    -Used for predicting the class of each case/ of an observed data point
+        -guides on what would be the most probable class of a data point
+    -Variant of Linear Regression
+    -used when the observed dependent variable, y, is categorical 
+        -produces a formula that predicts the probability of the class label as a function  
+            of the independent variables
+    -fits a special s-shaped curve by taking the linear regression function and transforming the    
+        numeric estrimate into a probability with the following function, which is called the 
+        sigmoid function (greek sign that looks circular)
+    Examples:
+        Helps you to predict what behavior will help you to retain customers
+            -you can analyze all relevant customer data and develop focused customer 
+                retention programs
+    
+    
