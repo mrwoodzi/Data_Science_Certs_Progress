@@ -22,15 +22,3 @@ def nm(initial_guess): #newton's method
 
 print(nm(2))
 
-# Example usage:
-# initial_guess = 1
-# tolerance = 1e-6
-# max_iterations = 100
-
-# result = newton_method(initial_guess))
-
-# if result is not None:
-#     print(f"Newton's method converged to: {result}")
-# else:
-#     print("Newton's method did not converge within the specified iterations.")
-
