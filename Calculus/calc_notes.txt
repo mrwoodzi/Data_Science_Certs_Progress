@@ -77,8 +77,28 @@ Real Line:
                                 -answer == 7.3
     
                 2. When multiplying or dividing, quote your answer to the least
-                    number of significant figures 
+                    number of significant figures(number of digits regardless of the 
+                                                    decimal point) 
+
                         Ex. Rectangle
+                            area = 9.4cm x 2.13cm = 20.022cm
+                                -not all digits are significant 
+                                -9.4 uses 2 significant figures 
+                                -2.13 uses 3 significant figures 
+                                - so we only use 2
+                                -sort of answer == 20 --approximation 
+                                    -you would need to reference the original problem 
+                                        to make sure whoever needs this understands 
+                                        what the 20 actually is
+                                -2.0 x 10cm^2
+                                    -2.0 means the .0 is significant 
+
+                        Ex. Significant Figure, Radius of Earth
+                            = 6,370,000m
+                                -we don't know if any of the 0 are significant 
+                                
+
+
 
             -can't use infinite decimal expansion in real life 
             -we use decimal approximation for infinite decimal 
@@ -102,6 +122,8 @@ Real Line:
 
 
 Significant Figures:
+    -significant figures 
+        -the number of digits regardless of the decimal point 
 
 Approximations:
 
