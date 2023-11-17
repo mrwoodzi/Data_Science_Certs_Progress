@@ -3,7 +3,7 @@ https://www.newyorker.com/magazine/2023/11/20/a-coder-considers-the-waning-days-
 
 Published in the print edition of the November 20, 2023, issue, with the headline “Begin End.”
 
-Ihave always taken it for granted that, just as my parents made sure that I could read and write, I would make sure that my kids could program computers. 
+I have always taken it for granted that, just as my parents made sure that I could read and write, I would make sure that my kids could program computers. 
 It is among the newer arts but also among the most essential, and ever more so by the day, encompassing everything from filmmaking to physics. Fluency with 
 code would round out my children’s literacy—and keep them employable. But as I write this my wife is pregnant with our first child, due in about three weeks. 
 I code professionally, but, by the time that child can type, coding as a valuable skill might have faded from the world.
