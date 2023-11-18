@@ -20,5 +20,5 @@ def nm(initial_guess): #newton's method
 
     return None  # If max_iterations reached without convergence
 
-print(nm(2))
+print(nm(8))
 
