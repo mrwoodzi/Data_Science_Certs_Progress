@@ -1,22 +1,22 @@
-the_numbers = [9, 41, 12, 3, 74, 15] # automatically classifies the list as integers
-zork = 0
-iter = 0 
-print(f"Before the loop zork is {zork}")
-for thing in [9, 41, 12, 3, 74, 15]: # thing is the iteration value
-    zork = zork + 1
-    print(f"Iteration {iter}: zork is now {zork}, the_numbers[{the_numbers[iter]}] is {thing}")
+the_numbers_list = [9, 41, 12, 3, 74, 15] # automatically classifies the list as integers
+number_of_iterations = 0
+iter = 0 # iter has to start at 0 since the list starts at index 0
+print(f"Before the loop number_of_iterations is {number_of_iterations}")
+for iterating_the_numbers in the_numbers_list: # thing is the iteration value
+    number_of_iterations = number_of_iterations + 1
+    print(f"Iteration index {iter}: number_of_iterations is now {number_of_iterations}, first element in the_numbers list is {iterating_the_numbers}")
     iter = iter + 1
-print(f'After the loop zork is {zork}')
+print(f'After the loop number_of_iterations is {number_of_iterations}')
 
 
 
 # #adding
-# zorklon = 0
-# print('Before',  zorklon)
+# number_of_iterationslon = 0
+# print('Before',  number_of_iterationslon)
 # for stuff in [9, 41, 12, 3, 74, 15]: # thing is the iteration value
-#     zorklon = zorklon + stuff
-#     print(zorklon, stuff)
-# print('After', zorklon)
+#     number_of_iterationslon = number_of_iterationslon + stuff
+#     print(number_of_iterationslon, stuff)
+# print('After', number_of_iterationslon)
 
 # #Finding Average
 # count = 0
