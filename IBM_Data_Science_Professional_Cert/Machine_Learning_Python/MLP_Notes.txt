@@ -113,12 +113,8 @@ Recommendation systems:
     -recommending items
 
 
-
-
 Confusion Matrix:
      confusion matrix is that it shows the model’s ability to correctly predict or separate the classes
-
-
 
 
 
@@ -209,11 +205,48 @@ Out of Sample Accurcay:
     percentage of correct prediction that the model makes on data that the model has NOT been trained on. 
 
 When to use Multiple Linear Regression:
-    when we would like to identify the strength of the effect that the independent variables have on a dependent var.
-    when we would like to predict impacts of changes in independent variables on a dependent var. 
-
+    Independent var. (X)
+        -categorical vars. are more common in multiple lin. regr
+        -***but you convert the categorical vars. into continuous via. things
+            like dummy variables***
+    Dependent var. (Y)
+        -when we would like to identify the strength of the effect that the independent variables have on a dependent var.
+        -when we would like to predict impacts of changes in independent variables on a dependent var. 
+        -Multiple linear regression is applicable when we want to understand the relationship between a dependent 
+            variable and multiple independent variables. It allows us to analyze how each independent variable contributes 
+            to the variation in the dependent variable while controlling for other variables.
+    Assumptions of Multiple Linear Regression:
+        Linearity: 
+            There should be a linear relationship between the independent variables and the dependent variable. This means 
+            that the relationship between the variables can be represented by a straight line.
+        Independence: 
+            The observations should be independent of each other. This assumption assumes that there is no relationship or 
+            correlation between the residuals (the differences between the observed and predicted values) of the dependent variable.
+        Homoscedasticity: 
+            Homoscedasticity refers to the assumption that the variance of the residuals is constant across all levels of the 
+            independent variables. In other words, the spread of the residuals should be consistent throughout the range 
+            of the independent variables.
+        Normality: 
+            The residuals should follow a normal distribution. This assumption assumes that the errors or residuals are normally 
+            distributed with a mean of zero.
+        No multicollinearity: 
+            There should be no perfect multicollinearity among the independent variables. Multicollinearity occurs when two or 
+            more independent variables are highly correlated with each other, making it difficult to determine their individual 
+            effects on the dependent variable
 
 Simple Linear Regression:
+    Independent variables (X)
+        -usually continuous in simple regr. 
+    Dependent variable (Y)
+        typically continuous
+        -trying to predict or explain this variable 
+        -In regression analysis, the dependent variable should be continuous, while the independent variables can be continuous 
+            or categorical. The relationship between the variables should be linear, and there should be no perfect 
+            multicollinearity among the independent variables.
+        -Regression Equation: A regression equation represents the relationship between the dependent variable and the independent 
+            variables. The coefficients in the equation indicate the magnitude and direction of the effect of each independent variable 
+            on the dependent variable
+
     For Predicting Continuous Variables/Values, think for numerical prediction
     False: requires a linear relationship between the predictor and the response, but multiple linear regression does not
     True: a linear relationshiop is necessary between the independent variables  and the dependent variable.
@@ -764,6 +797,7 @@ Logistics Regression:
             jaccard_score(y_test, yhat, pos_label=2)
         
 What are the requirements for independent and dependent variables in regression?
+Independent variables can be either categorical or continuous, but dependent variables must be continuous
 
 The key difference between single and multiple regression is:
 
@@ -801,3 +835,44 @@ Adjust model complexity by tuning hyperparameters.
 Check for data leakage and ensure a proper separation between training and testing datasets.
 
 Multiple linear regression is appropriate for:
+
+
+
+False:
+multiple linear regression requires a linear relationship between the predictors and the response
+    but simple linear regression does not
+linear relationship is necessary between the independent and dependent variables as well
+    as in between independent variables
+simple linear regression requires a linear relationship between the predictor and the response
+    but multiple linear regression does not.
+
+
+Overfitting in machine learning models: 
+    Overfitting occurs when a model fits the training data too closely, 
+    resulting in poor performance on new, unseen data. It happens when the model captures noise or random 
+    fluctuations in the training data instead of the underlying pattern.
+
+    Overfitting can be addressed by:
+        Regularization: 
+            Regularization techniques, such as Ridge regression or Lasso regression, add a penalty 
+                term to the model's objective function. This penalty discourages the model from fitting the training 
+                data too closely and helps to control the complexity of the model.
+
+    Cross-validation: 
+            Cross-validation is a technique used to assess the performance of a model on unseen data. By 
+                splitting the data into multiple subsets and training the model on different combinations of these subsets, 
+                we can get a more reliable estimate of the model's performance and detect if it is overfitting.
+
+    Feature selection: 
+        Overfitting can occur when the model is trained on irrelevant or noisy features. Feature 
+                selection techniques, such as backward elimination or forward selection, help to identify and select the most 
+                relevant features for the model, reducing the risk of overfitting.
+
+    Increasing training data: 
+        Having more training data can help to reduce overfitting. With a larger dataset, the 
+                model has more examples to learn from and can better capture the underlying patterns instead of memorizing 
+                specific instances.
+
+    Simplifying the model: 
+        Sometimes, overfitting can be mitigated by using a simpler model with fewer parameters. 
+                This reduces the model's complexity and makes it less prone to overfitting.
