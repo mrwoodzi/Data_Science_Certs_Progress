@@ -763,3 +763,8 @@ Logistics Regression:
             from sklearn.metrics import jaccard_score
             jaccard_score(y_test, yhat, pos_label=2)
         
+What are the requirements for independent and dependent variables in regression?
+The key difference between single and multiple regression is:
+
+What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
+Multiple linear regression is appropriate for:
