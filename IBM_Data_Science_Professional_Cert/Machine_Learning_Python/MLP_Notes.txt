@@ -205,7 +205,18 @@ There are different model evaluation metrics, lets use MSE here to calculate the
             how close the data points are to the fitted regression line. The higher the R-squared value, the better the model 
             fits your data. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse).
 
+Out of Sample Accurcay:
+    percentage of correct prediction that the model makes on data that the model has NOT been trained on. 
 
+When to use Multiple Linear Regression:
+    when we would like to identify the strength of the effect that the independent variables have on a dependent var.
+    when we would like to predict impacts of changes in independent variables on a dependent var. 
+
+
+Simple Linear Regression:
+    For Predicting Continuous Variables/Values, think for numerical prediction
+    False: requires a linear relationship between the predictor and the response, but multiple linear regression does not
+    True: a linear relationshiop is necessary between the independent variables  and the dependent variable.
 As mentioned before, __Coefficient__ and __Intercept__  are the parameters of the fitted line. 
 Given that it is a multiple linear regression model with 3 parameters and that the parameters are 
 the intercept and coefficients of the hyperplane, sklearn can estimate them from our data. 
