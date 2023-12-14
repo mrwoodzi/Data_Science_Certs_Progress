@@ -362,7 +362,7 @@ kNN Steps:
         print("Train set Accuracy: ", metrics.accuracy_score(y_train, neigh.predict(X_train)))
         print("Test set Accuracy: ", metrics.accuracy_score(y_test, yhat))
 
-kNN Calculating accuract for different values of k:
+kNN Calculating accuracy for different values of k:
     1. Calculate Accuracy for different values of k:
             Ks = 10
             mean_acc = np.zeros((Ks-1))
@@ -764,7 +764,40 @@ Logistics Regression:
             jaccard_score(y_test, yhat, pos_label=2)
         
 What are the requirements for independent and dependent variables in regression?
+
 The key difference between single and multiple regression is:
 
 What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
+Overfitting:
+The model is too complex and has learned the training data's noise, leading to poor generalization 
+to new data.
+High-degree polynomial features, deep neural network architectures, or other complex models may 
+be prone to overfitting.
+Not Enough Data:
+The training dataset may be too small, causing the model to memorize the examples rather than 
+learning the underlying patterns.
+Data Mismatch:
+There might be a significant difference between the training and testing datasets, leading to 
+poor generalization. Ensure that the testing data is representative of the real-world scenarios 
+the model will encounter.
+Feature Engineering:
+Incorrect or insufficient feature engineering can lead to overfitting. Ensure that the features 
+used in training are relevant and meaningful for the task.
+Hyperparameter Tuning:
+Model hyperparameters may be tuned too much to the training data, making the model less adaptable 
+to new data. Regularization techniques or adjustments to hyperparameters may be necessary.
+Leakage:
+Information from the testing set may unintentionally influence the training process, leading to 
+leakage. Ensure a clear separation between training and testing data.
+Randomness:
+Some algorithms (especially those involving randomness like certain ensemble methods) may produce 
+different results each time they are trained, leading to overfitting to a specific set of random 
+variations in the training data.
+To address these issues, consider the following steps:
+Use regularization techniques (e.g., L1 or L2 regularization) to penalize overly complex models.
+Increase the amount of training data if possible.
+Validate the model on a separate validation set during training to monitor generalization performance.
+Adjust model complexity by tuning hyperparameters.
+Check for data leakage and ensure a proper separation between training and testing datasets.
+
 Multiple linear regression is appropriate for:
