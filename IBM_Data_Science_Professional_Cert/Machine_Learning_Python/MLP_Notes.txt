@@ -355,6 +355,16 @@ Classification:
 
 K-nearest neighbor:
 
+    Classification algorithm that is used to classify cases based on their similarity   
+        to other cases. It is a type of instance based learning, where the algorithm learns from labeled dat apoints 
+        and uses them to classify new, unlabeled data ponts. 
+    Instance in machine learning    
+        -refers to a single dat apoint or observation within a dataset.
+        -it represents a specific example or case that the algorithm uses to learn patterns and make predictions
+        -each instance typically consists of a set of features or attributes that describe its characteristics
+        -In the K-Nearest Neighbors (KNN) algorithm, instances are crucial as the algorithm calculates the 
+            distance between the new instance and the existing instances in the dataset to determine the 
+            K nearest neighbors. These neighbors are then used to classify the new instance
     x = independent variable(s), rows and columns together
     y = dependent variable, a column
         -you can make custom categories for individual rows to be categorized as in 
@@ -366,7 +376,36 @@ K-nearest neighbor:
         -predicting home value by it's features 
     -build a classifier, to predict the class of unknown cases. 
         We will use a specific type of classification called K nearest neighbour
-        
+    -Where to start when you've decided to use kNN
+        -Choose a value for K: 
+            -K represents the number of nearest neighbors to 
+                consider when classifying a new data point. It is typically specified 
+                by the user.
+                Dataset size:
+                    If you have a small dataset, choosing a small value of K may lead   
+                        to overfitting, while choosing a large value of K may result in underfitting.
+                        For larger datasets, a larger value of K can be considered.
+                Model Complexity:
+                    A low value of K(K=1) will result in a more complex model that can capture noise
+                        and outliers in the data. On the other hand, a high value of K will lead to a more
+                        generalized model. It is important to strike a balance between complexity and generalization
+                Bias-Variance Tradeoff: 
+                    Choosing a low value of K can lead to high variance and low bias, meaning the model may be sensitive 
+                        to individual instances in the dataset. Conversely, a high value of K can result in low variance 
+                        and high bias, making the model less flexible. Consider the tradeoff between bias and variance based
+                        on the specific problem and dataset.
+                Domain Knowledge:
+                    Understandung the domain and characteristics of the data can help in selecting an appropriate value 
+                        for K. Some domains may have inherent patterns or structures that can guide the choice of K.
+                Cross-Validation:
+                    It is recommended to use cross-validation techniques to evaluate the performance of the model for different 
+                        values of K. This involves splitting the dataset into training and validation sets and measuring the 
+                        accuracy or other evaluation metrics for each value of K. The value of K that yields the best performance 
+                        on the validation set can be chosen.
+                Computational Efficiency:
+                    As the value of K increases, the computational complexity of the algorithm also increases. Consider the computational
+                        complexity fo the algorithm also increases. Consider the computational resources available and the time required
+                        to train and predict with different values of K.
 
 
 
@@ -376,7 +415,7 @@ kNN Steps:
     2. Make y variable:
         y = df['custcat also known as dependent variable']
     3. Normalize Data:
-        X - preprocessing.StandardScaler().fit(x).transform(X.astype(float))
+        X = preprocessing.StandardScaler().fit(x).transform(X.astype(float))
     4. Train, Test, Split:
         from sklearn.model_selection import train_test_split
         X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
@@ -447,9 +486,25 @@ kNN Calculating accuracy for different values of k:
 
 
 Decision Trees:
+    -Supervised machine learning algorithm that is used for classification and regression tasks
+    -Handle both categorical and numerical data
+        Categorical:
+            -handle categorical data by splitting the data based on different categories of the attribute
+            -each branch represents a category, and the decision tree will follow the appropriate branch based on the 
+                value of the categorical attribute
+            -Example:
+                -if the attribute is "color" with categories "red," "blue," and "green," the decision tree will have branches 
+                    for each category, and the data will be split accordingly.
+    -flow chart like structure where each internal node represents a feature or attribute, each branch
+        represents the outcome or class label. Decision trees are used to make decisions or predictions by following the path
+        from the root node to the leaf node based on the values of the features. They are easy to understand and interpret, and 
+        can handle both categorical and numerical data.
     -Building a model from data to predict a class 
     -Sklearn Decision Trees do not handle categorical variables. We can still convert these features to numerical 
         values using **pandas.get_dummies() to convert the categorical variable into dummy/indicator variables
+
+
+
     Steps:
     1. Declare X remembering to remove the target set(y):
         # X is the Feature Matrix(data of df)
@@ -802,37 +857,37 @@ Independent variables can be either categorical or continuous, but dependent var
 The key difference between single and multiple regression is:
 
 What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
-Overfitting:
-The model is too complex and has learned the training data's noise, leading to poor generalization 
-to new data.
-High-degree polynomial features, deep neural network architectures, or other complex models may 
-be prone to overfitting.
-Not Enough Data:
-The training dataset may be too small, causing the model to memorize the examples rather than 
-learning the underlying patterns.
-Data Mismatch:
-There might be a significant difference between the training and testing datasets, leading to 
-poor generalization. Ensure that the testing data is representative of the real-world scenarios 
-the model will encounter.
-Feature Engineering:
-Incorrect or insufficient feature engineering can lead to overfitting. Ensure that the features 
-used in training are relevant and meaningful for the task.
-Hyperparameter Tuning:
-Model hyperparameters may be tuned too much to the training data, making the model less adaptable 
-to new data. Regularization techniques or adjustments to hyperparameters may be necessary.
-Leakage:
-Information from the testing set may unintentionally influence the training process, leading to 
-leakage. Ensure a clear separation between training and testing data.
-Randomness:
-Some algorithms (especially those involving randomness like certain ensemble methods) may produce 
-different results each time they are trained, leading to overfitting to a specific set of random 
-variations in the training data.
-To address these issues, consider the following steps:
-Use regularization techniques (e.g., L1 or L2 regularization) to penalize overly complex models.
-Increase the amount of training data if possible.
-Validate the model on a separate validation set during training to monitor generalization performance.
-Adjust model complexity by tuning hyperparameters.
-Check for data leakage and ensure a proper separation between training and testing datasets.
+    Overfitting:
+        The model is too complex and has learned the training data's noise, leading to poor generalization 
+            to new data.
+        High-degree polynomial features, deep neural network architectures, or other complex models may 
+            be prone to overfitting.
+        Not Enough Data:
+            The training dataset may be too small, causing the model to memorize the examples rather than 
+                learning the underlying patterns.
+        Data Mismatch:
+            There might be a significant difference between the training and testing datasets, leading to 
+                poor generalization. Ensure that the testing data is representative of the real-world scenarios 
+                the model will encounter.
+        Feature Engineering:
+            Incorrect or insufficient feature engineering can lead to overfitting. Ensure that the features 
+                used in training are relevant and meaningful for the task.
+        Hyperparameter Tuning:
+            Model hyperparameters may be tuned too much to the training data, making the model less adaptable 
+            to new data. Regularization techniques or adjustments to hyperparameters may be necessary.
+        Leakage:
+            Information from the testing set may unintentionally influence the training process, leading to 
+            leakage. Ensure a clear separation between training and testing data.
+        Randomness:
+            Some algorithms (especially those involving randomness like certain ensemble methods) may produce 
+            different results each time they are trained, leading to overfitting to a specific set of random 
+            variations in the training data.
+        To address these issues, consider the following steps:
+            Use regularization techniques (e.g., L1 or L2 regularization) to penalize overly complex models.
+            Increase the amount of training data if possible.
+            Validate the model on a separate validation set during training to monitor generalization performance.
+            Adjust model complexity by tuning hyperparameters.
+            Check for data leakage and ensure a proper separation between training and testing datasets.
 
 Multiple linear regression is appropriate for:
 
