@@ -354,12 +354,16 @@ Classification:
 
 
 K-nearest neighbor:
-
+    -Supervised Learning algorithm
+    -can be used to estimate values for a continuous target
+    -K 
+        -k too small
+            -model will be highly complex and captures too much noise
     Classification algorithm that is used to classify cases based on their similarity   
-        to other cases. It is a type of instance based learning, where the algorithm learns from labeled dat apoints 
+        to other cases. It is a type of instance based learning, where the algorithm learns from labeled data points 
         and uses them to classify new, unlabeled data ponts. 
     Instance in machine learning    
-        -refers to a single dat apoint or observation within a dataset.
+        -refers to a single data point or observation within a dataset.
         -it represents a specific example or case that the algorithm uses to learn patterns and make predictions
         -each instance typically consists of a set of features or attributes that describe its characteristics
         -In the K-Nearest Neighbors (KNN) algorithm, instances are crucial as the algorithm calculates the 
@@ -371,7 +375,7 @@ K-nearest neighbor:
             the dependent variable column, the one you are classifying
     -method for classifying cases based on their similarity to other cases 
     -cases that are near each other are said to be "neighbors"
-    -based on similar cases with the same lass clabels are near each other
+    -based on similar cases with the same class labels are near each other
     -kNN can also be used for regression 
         -predicting home value by it's features 
     -build a classifier, to predict the class of unknown cases. 
@@ -407,7 +411,51 @@ K-nearest neighbor:
                         complexity fo the algorithm also increases. Consider the computational resources available and the time required
                         to train and predict with different values of K.
 
+Picking a value for K:
+        1. Pick a value for k
+                -k in kNN = number of nearest neighbors to examine 
+                -low value of k causes a highly complex model, possible overfit of the model 
+                -high value becomes overly generalized and underfitted to the data 
+                -reserve part of data for testing the accuracy of the model 
+        2. calculate the distance of unknown case from all cases 
+                -calculating the similarity/distance in a 1-dimensional space 
+                    -this would be 2 customers difference in age 
+                        this would be Minkowsk/Euclidean distance 
+                    -2 dimension/2 features 
+                        -age and income
+                    -multi dimensional vectors 
+        3. select the K-observations in the training data that are "nearest 
+            to the unknown data point 
+        4. Predict the response of the unknown data point using the most popular response value from the K-nearest neighbors 
 
+        k-Nearest Neighbors Selection:
+            Identify the k training examples that are closest to the new observation based on a distance metric (commonly Euclidean distance).
+            "Closest" here refers to the similarity between the feature values of the new observation and the feature values of the training examples.
+
+        Majority Vote for Classification (kNN for Classification):
+            For classification tasks, the class label that occurs most frequently among the k nearest neighbors is assigned to the new observation.
+            This is essentially a majority vote mechanism.
+
+        Average for Regression (kNN for Regression):
+            For regression tasks, where the goal is to predict a continuous value, the predicted value for the new observation is often the 
+                average of the target values of its k nearest neighbors.
+            In summary, when kNN is used for classification with k = 5, the algorithm typically assigns the class label that is most common 
+                among the 5 nearest neighbors. 
+                For regression tasks, the predicted value would be the average of the target values of those 5 neighbors.
+            Keep in mind that the choice of k is a hyperparameter, and the optimal value may depend on the specific dataset and problem 
+                you are working on. 
+
+        k-Nearest Neighbors Selection:
+            Identify the k training examples that are closest to the new observation based on a distance metric (commonly Euclidean distance).
+            "Closest" here refers to the similarity between the feature values of the new observation and the feature values of the training examples.
+
+        Majority Vote for Classification (kNN for Classification):
+            For classification tasks, the class label that occurs most frequently among the k nearest neighbors is assigned to the new observation.
+            This is essentially a majority vote mechanism.
+
+        Average for Regression (kNN for Regression):
+            For regression tasks, where the goal is to predict a continuous value, the predicted value for the new observation is often the average 
+                of the target values of its k nearest neighbors
 
 kNN Steps:
     1. Convert pandas df to numpy array with scikit Learn
@@ -468,26 +516,22 @@ kNN Calculating accuracy for different values of k:
 
 
 
-    1. Pick a value for k
-        -k in kNN = number of nearest neighbors to examine 
-        -low value of k causes a highly complex model, possible overfit of the model 
-        -high value becomes overly generalized 
-        -reserve part of data for testing the accuracy of the model 
-    2. calculate the distance of unknown case from all cases 
-            -calculating the similarity/distance in a 1-dimensional space 
-                -this would be 2 customers difference in age 
-                    this would be Minkowsk/Euclidean distance 
-                -2 dimension/2 features 
-                    -age and income
-                -multi dimensional vectors 
-    3. select the K-observations in the training data that are "nearest 
-        to the unknown data point 
-    4. Predict the response of the unknown data point using the most popular response value from the K-nearest neighbors 
+
 
 
 Decision Trees:
+    -You can use this to help find out what attributes are correlated with others
     -Supervised machine learning algorithm that is used for classification and regression tasks
+    -Building a model from data to predict a class 
+    -built by splitting the training set into distinct nodes
+        -built by recursive partitioning to classify the data
+    -one node in a decision tree contains all of or most of, one category of the data.
+    -decision trees handle categorical data by splitting based on categories, and they handle numerical 
+        data by defining thresholds or ranges to split the data. This flexibility allows decision trees 
+        to handle a wide range of data types and make predictions or classifications based on the values 
+        of the attributes.
     -Handle both categorical and numerical data
+
         Categorical:
             -handle categorical data by splitting the data based on different categories of the attribute
             -each branch represents a category, and the decision tree will follow the appropriate branch based on the 
@@ -495,14 +539,88 @@ Decision Trees:
             -Example:
                 -if the attribute is "color" with categories "red," "blue," and "green," the decision tree will have branches 
                     for each category, and the data will be split accordingly.
+
+        Numerical:
+            -defines thresholds  ranges to split the data
+            -will compare the numerical attribute value with the threshold and follow the appropriate branch based result
+            -Example:
+                - if the attribute is "age" with numerical values, the decision tree can split the data into age ranges 
+                    such as "age < 30," "30 <= age < 50," and "age >= 50."
     -flow chart like structure where each internal node represents a feature or attribute, each branch
         represents the outcome or class label. Decision trees are used to make decisions or predictions by following the path
         from the root node to the leaf node based on the values of the features. They are easy to understand and interpret, and 
         can handle both categorical and numerical data.
-    -Building a model from data to predict a class 
+
     -Sklearn Decision Trees do not handle categorical variables. We can still convert these features to numerical 
         values using **pandas.get_dummies() to convert the categorical variable into dummy/indicator variables
+    
+    Example Desicion Tree:
+        Age
+        Young, Middle-Age, Senior
+        Sex,  Drug B     , Cholesterol  # If middle-aged is def Drug B 
+        F M,             , HIgh Normal 
+        A B,             , A    B     # represents Drug A or Drug B
 
+        Each branch is the result of testing an atrribute and branching out. 
+        Each internal node corresponds to a test 
+        Each branch corresponds to a result of the test 
+        Each leaf node assigns a patient to a class 
+    
+    How to build a desicion tree:
+        -Consider the attributes one by one
+        1. Choose an attribute from your dataset
+        2. Calculate the significance of attribute in splitting of data
+        3. Split data based on the value of the best attribute
+        4. Go to step 1. 
+
+        Think about which attributes are more predictive than the others
+            -If patient is male and the sex can't determine if drug a or b is better 
+                we take another attribute like Cholesterol and see if drug a or b can 
+                predict what the males should take based on Cholesterol
+            -We can use entropy to determine which attributes are good
+            Pure Node:
+                -when 100% of attribute can be predicted 
+
+            Impurity of Node:
+                calculated by entropy
+
+            Entropy:
+                -measure of randomness or uncertainty
+                -amount of information disorder calculated in each node
+                -in decision trees we want nodes with the smallest amount of uncertainty
+                -Entropy = 0 
+                    -of 8
+                        Drug A = 0
+                        Drug B = 8
+                -Entropy = 1 
+                    -of 8
+                        Drug A = 4
+                        Drug B = 4
+
+            Information Gain:
+                - we want attribute with higher information gain?
+                -a measure used in decision trees to determin the importance of an attribute in classifying data    
+                    -quantifies the reduction of entropy/impurity that is achieved by splitting the data based
+                        on a particular attribute
+                -is the information that can increase the level of certainty after splitting
+                -information gain = (entropy before split) - (weighted entropy after split)
+                    -Entropy(S) = - Σ (p(i) * log2(p(i)))
+                        - p(i) represents the proportion of instances in class i
+                -attribute with higher information gain is better after the split
+                How to calculate information gain:
+                    1. we first calculate the entropy of the parent node (before splitting)
+                    2. then calculate the entropy of each child node (after splitting) based on a specific attribute
+                    3. weighted average of the entropies of the child nodes is then subtracted from the entropy 
+                        of the parent node to obtain the information gain
+2. in Practice quiz 
+        If the information gain of the tree by using attribute A is 0.3, what can we infer?
+            entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
+
+4. Predicting whether a customer responds to a particular advertising campaign or not is an example of what?
+        Classification problem
+
+5. For a new observation, how do we predict its response value (categorical) using a KNN model with k = 5?
+        Take the majority vote among 5 points whose features are closest to the new observation
 
 
     Steps:
