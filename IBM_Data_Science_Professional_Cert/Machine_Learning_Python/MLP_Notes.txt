@@ -728,6 +728,56 @@ Snap ML:
     
 
 Logistics Regression:
+    -classification algorithm for categorical variables 
+        -statistical and ml technique for classifying records of a dataset based on the values of the input fields
+    -what kind of problems can be solved with logistic regression
+    -goal of logistic repression is to build a model to predict the class of each sample which in this case is a customer   
+        as well as the probability of each sample belonging to a class
+    -Example: 
+        telecommunication dataset  that we'd like to analyze in order to understand which customers might leave us next month
+            -build a model using historic records. 
+            - tenure, age, address, income, ed, employ, equip, callcard, wireless
+                -independent vars. can be continuous or categorical
+            -churn  
+                -dependent var., categorical variable 
+            - use above independent variables to predict dependnt variable of customer called 'churn' in it's own column
+    -Applications
+        -to predict probability of a person having a heart attack
+            -based on knowledge of person's age, sex, and bmi
+        -to predict the chance of mortality in an injured patient
+        -to predict whether a patient has a given disease such as diabetes based on observed characteristics such as 
+            weight, height, blood pressure and results of blood test
+        -to predict the likelihood of a customer purchasing a product or halting a subscription
+        -to predict probability of failure of a given process, system or product
+        -likelihood of a homeowner defaulting on a mortgage
+        -ALL EXAMPLES NOT ONLY DO WE PREDICT THE CLASS OF EACH CASE, WE ALSO MEASURE THE PROBABILITY OF A CASE BELONGING TO A SPECIFIC CLASS.  
+
+    -Four situations in which logistic regression is a good candidate
+        -when target field in your data is categorical or specifically binary   
+            -zero/one, yes/no, churn/no churn, positive/negative
+        -you need probability of your prediction    
+            -returns a probability score between 0 and 1 for a given sample of data 
+            -predicts the probability of that sample and we map the cases to a discrete class based on that probability
+        -data is linearly separable
+            -decision boundary of logistic regression is a line or a plane or a hyper plane.
+            -classifier will classify all the points on one side of the decision boundary as belonging to one class and all those on the other 
+                side as belonging to the other Class
+            -Example:
+                -if you have just two features and are not applying any polynomial processing we can obtain an inequality like Theta zero   
+                    plus Theta 1x1 plus theat 2x2 is greater than zero which is a half-plane easily plottable
+                -you can also use logistic regression to achieve a complex decision boundary using polynomial processing as well 
+        -you need to understand the impact of a feature 
+            -you can select the best features based on the statistical significance of the logistic regression model coefficients or parameters 
+                -that is after finding optimum parameters, a feature X with the weight Theta one close to zero has a smaller effect on the predicition
+                    than features with large absolute values of Theta one. 
+                - allows us to understand the impact an independent variable has on the dependent variable while controoling other independent variables 
+                
+
+         Logistic Regression vs. Linear Regression:
+            
+
+
+    -in what situations do we use logistic regression
     -Classification
         -Probability of a Class 
         -"S" shaped 
