@@ -773,9 +773,6 @@ Logistics Regression:
                 - allows us to understand the impact an independent variable has on the dependent variable while controoling other independent variables 
                 
 
-         Logistic Regression vs. Linear Regression:
-            
-
 
     -in what situations do we use logistic regression
     -Classification
@@ -918,6 +915,78 @@ Logistics Regression:
           7.d log Loss  
             -measures  the performance of a classifier where the predicted output is a probability 
                     value between 0 and 1
+
+
+
+
+    Logistic Regression vs. Linear Regression:
+    
+            Linear:
+                -Linear can not be used properly for some binary classification problems.
+                -the below was to prove that in the telecommunications dataset linear regression is def not the 
+                    right choice
+                ### -if you can map class labels to integer numbers, you can use linear?
+                ###    -in the telecommunication dataset instead of predicting churn with logistic regression using categorical data   
+                ###        you could use income which is a continuous value.
+                ###        -you could predict  the income of an unknown customer based on their age. 
+
+            Logistic Regression:
+                -goal is to build a model to predict the class and also probability of each sample belonging to a class
+                -great for needing the probability that the dependent/target/class-label variable will fall into a class
+                    -independent variables are used to make the prediction and give the probability
+                -Sigmoid function   
+                    -also called logistic function
+                    -main part of Logistic regression   
+                    -sigmoid of theta is the probability of a point belonging to a class instead  of the value of y directly 
+                    -returns the probability that a Theta transpose x is very big or very small. 
+                    -always returns a value between 0 and 1. 
+                    -theta traspose x 
+                    -We can find Theta through the training process. 
+                        Theta:
+                            -called the weights factor or confidences of the equation, 
+                                -theta and weights factor is used interchangeably
+                            -theta is a vector of parameters 
+                            -There are different ways to change the values of Theta, but one of the most popular ways is gradient descent. 
+                            -There are various ways to stop iterations, but essentially you stop training by calculating the accuracy of your model and stop it when it's satisfactory. 
+                            -Step one, initialize Theta vector with random values as with most machine learning algorithms. For example, minus 1 or 2.
+                            -Step two, calculate the model output, which is sigmoid of Theta transpose x.
+                                -Example:
+                                     For example, customer in your training set. X and Theta transpose x is the feature vector values. For example, 
+                                     the age and income of the customer, for instance, 2 and 5, and Theta is the confidence or weight that you've 
+                                     set in the previous step. The output of this equation is the prediction value, in other words, the probability 
+                                     that the customer belongs to class 1.
+                             -Step three, compare the output of our model, y hat, which could be a value of, let's say, 0.7, with the actual label of the customer, which is for example, 1, for churn. 
+                                -Then, record the difference as our model's error for this customer, which would be 1 minus 0.7, which of course, equals 0.3. 
+                                    This is the error for only one customer out of all the customers in the training set.
+                            -Step four, calculate the error for all customers as we did in the previous steps and add up these errors. 
+                                - The total error is the cost of your model and is calculated by the models cost function. The cost function, by the way, basically represents 
+                                    how to calculate the error of the model which is the difference between the actual and the models predicted values. So, the cost shows how 
+                                    poorly the model is estimating the customers labels. Therefore, the lower the cost, the better the model is at estimating the customers 
+                                    labels correctly. So, what we want to do is to try to minimize this cost.
+                            -Step five, but because the initial values for Theta were chosen randomly, it's very likely that the cost function is very high, so 
+                                we change the Theta in such a way to hopefully reduce the total cost. 
+                            -Step six, after changing the values of Theta, we go back to step two, then we start another iteration and calculate the cost of the model again. 
+                            -We keep doing those steps over and over, changing the values of Theta each time until the cost is low enough. 
+                            -So, this brings up two questions. 
+                                -First, how can we change the values of Theta so that the cost is reduced across iterations? 
+                                -Second, when should we stop the iterations?
+
+
+
+
+                    -In logistic regression, we model the probability that an input, x, belongs to the default class y equals 1, 
+                        and we can write this formally as probability of y equals 1 given x
+                    -We can also write probability of y belongs to class 0 given x is 1 minus probability of y equals 1 given x.
+                        
+                        -Example: 
+                                The probability of a customer staying with the company can be shown as probability of churn equals 1 given 
+                                    a customer's income and age, which can be, for instance, 0.8, and the probability of churn is 0 for 
+                                    the same customer given a customer's income and age can be calculated as 1 minus 0.8 equals 0.2.
+                                So, now our job is to train the model to set its parameter values in such a way that our model is a good 
+                                    estimate of probability of y equals 1 given x.  it should be a good estimate of probability of y belongs 
+                                    to class 0 given x that can be shown as 1 minus sigmoid of Theta transpose x.
+                                    ************************************************************************************************************************************
+                                    - this is what a good classifier model built by logistic regression is supposed to do for us. 
 
 
 
