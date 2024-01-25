@@ -1,0 +1,62 @@
+General Trouble Shooting on Prints:
+    Really good general trouble shooting of prints.
+    https://www.simplify3d.com/resources/print-quality-troubleshooting/
+    https://shop.anet3d.com/blogs/cura-slicer-profile-settings/use-xyz-calibration-cube-to-detect-3d-printing-issues-and-tune-your-3d-printer
+        covers inaccurate xyz cube dimensions & elephanting
+
+Ghosting: 
+    Pointers on Ghosting
+        https://www.3dnatives.com/en/ghosting-3d-printing-03012023/
+
+Poor Surface Above Supports: 
+    https://www.simplify3d.com/resources/print-quality-troubleshooting/poor-surface-above-supports/
+
+        
+Systematic Way of Calibration:
+    https://ellis3dp.com/Print-Tuning-Guide/
+    Note on Line Width:
+        Cura 
+            -must use static line widths
+                -ex.0.4 nozzle, enter 0.48 instead of 120%
+
+    Layer Consistency:
+        -Don't take photos in direct lighting when showing prints, will
+            make a good print look terrible
+        -High Quality Filaments
+
+    Extruder Calibration:
+        https://ellis3dp.com/Print-Tuning-Guide/articles/extruder_calibration.html
+        Ender:
+        Marlin
+            Run M503. In the output, find the M92 line and note your current E value.
+
+            Calculate your new e-steps using this formula:
+                <new_e-steps> = <current_e-steps> * ( 100 / <actual_extrude_distance> )
+            Temporarily set your new e-steps with M92.
+                Example: M92 E421.
+        Marlin
+            Set your new e-steps with M92.
+                Example: M92 E421.
+            Run M500 to save it to EEPROM.
+
+    Build Surface Preparation & Handling:
+        Consider scuffing it up with a kitchen scouring pad.
+        This helps immensely, much like how you would scuff/sand a surface before painting 
+            or gluing something to it.
+        Some people choose not to do this, to keep the glass-like surface finish on their prints. 
+            However, you will be sacrificing adhesion and may need to use brims and/or 
+            adhesives on occasion.
+        ~800-1000 grit sandpaper or the scrubby side of a fresh sponge may also work.
+        You can refresh the surface this way on occasion, just remember to wash 
+            it again afterwards.
+
+    First Layer Squish:
+        ***In General Set First Layer Height to 0.25mm***
+        -Calls it squish to be unambiguous. "Z offset" and "z height" can be conflated
+            with other concepts
+        Prerequisites:
+            Marlin: Baby stepping must be :page_facing_up: enabled in firmware. 
+                (Most printers have it enabled by default).
+        Method:
+            Best to go to the website 
+            https://ellis3dp.com/Print-Tuning-Guide/articles/first_layer_squish.html
