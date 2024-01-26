@@ -1,8 +1,22 @@
+
+
+
+***********************************************************************************************************************************************
+
+*****  Make Sure to Keep the Search Bar in Cura Clear after Using it or it might hide settings and you won't realize it.   *************************
+
+***********************************************************************************************************************************************
+
 General Trouble Shooting on Prints:
     Really good general trouble shooting of prints.
     https://www.simplify3d.com/resources/print-quality-troubleshooting/
     https://shop.anet3d.com/blogs/cura-slicer-profile-settings/use-xyz-calibration-cube-to-detect-3d-printing-issues-and-tune-your-3d-printer
         covers inaccurate xyz cube dimensions & elephanting
+
+
+Drying Old Filament that has Absorbed Moisture:
+    https://www.3dmakerengineering.com/blogs/3d-printing/how-to-dry-3d-printer-filament
+
 
 Ghosting: 
     Pointers on Ghosting
@@ -11,7 +25,7 @@ Ghosting:
 Poor Surface Above Supports: 
     https://www.simplify3d.com/resources/print-quality-troubleshooting/poor-surface-above-supports/
 
-        
+    
 Systematic Way of Calibration:
     https://ellis3dp.com/Print-Tuning-Guide/
     Note on Line Width:
