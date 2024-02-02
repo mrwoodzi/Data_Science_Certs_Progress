@@ -1,0 +1,64 @@
+ROS 2:
+    Beginner Tutorial
+        https://docs.ros.org/en/iron/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html
+    Workspace
+        -location on your system where you're developing with ROS 2
+    Underlay
+        -subsequent local workspaces are called overlays
+
+    SOURCE THE SETUP FILES:
+        source /opt/ros/iron/setup.bash
+            -****************************************************************
+            -Make sure to source setup files every time you open a new shell
+            -without this you will not be able to access ROS 2 commands
+
+    2. If you don't want to source the setup file every time   
+        echo "source /opt/ros/iron/setup.bash" >> ~/.bashrc
+
+    3. CHECK ENVIRONMENT VARIABLES  
+        printenv | grep -i ROS 
+
+        3a. Check 
+
+Choosing a domain ID:
+    Domain ID 
+        -identification of nodes on the same network    
+            -choose domain ID between 0-101, inclusive(highest technically is 232)
+                -Linux (0-101) & (215-232)
+            -domain ID is used by DDS
+    -default middleware that ROS 2 uses for communication is DDS
+        -DDS(Data Distribution Service)
+            -facilitates communication between different nodes in a distributed system
+            -it provides a standardized way for nodes to send and receive messages
+            -seamless communication between nodes across a 
+            -domain ID is used by DDS to compute the UDP ports that 
+                will be used for discovery and communication
+                -link to show how ports are computed
+                    https://community.rti.com/content/forum-topic/statically-configure-firewall-let-omg-dds-traffic-through
+                -UDP port is an unsigned 16-bit integer
+                    -highest port number allocated is 65535 
+        Linux Ports 
+            By default, the Linux kernel uses ports 32768-60999 for ephemeral ports. This 
+                means that domain IDs 0-101 and 215-232 can be safely used without colliding 
+                with ephemeral ports. The ephemeral port range is configurable in Linux by 
+                setting custom values in /proc/sys/net/ipv4/ip_local_port_range. If a custom 
+                ephemeral port range is used, the above numbers may have to be adjusted 
+                accordingly.
+            Ephemeral Ports:
+                Ephemeral ports are temporary ports used by the operating system for outbound communication. They are typically assigned 
+                dynamically by the operating system from a specific range.In the context of ROS 2 and DDS, these ports are relevant 
+                because they are used for communication between different nodes (DDS participants) in a distributed system.
+
+            Default Ephemeral Port Range in Linux:
+                By default, on Linux systems, the kernel uses ports 32768-60999 for ephemeral ports. This range is reserved for dynamic 
+                assignment to outgoing connections.ROS 2 and DDS need to be aware of this range to avoid conflicts with the ephemeral 
+                ports when assigning DDS domain IDs.
+
+            DDS Domain IDs and Ephemeral Ports:
+                DDS uses domain IDs to logically separate different communication domains. These domain IDs are assigned numeric values.
+                To avoid collision with ephemeral ports, certain domain ID ranges are considered safe. The recommended safe ranges are 0-101 and 215-232.
+
+            Configuration of Ephemeral Port Range:
+                The ephemeral port range in Linux is configurable. It can be adjusted by setting custom values in the 
+                /proc/sys/net/ipv4/ip_local_port_range file. If a custom ephemeral port range is configured, the DDS domain ID ranges considered 
+                safe may need to be adjusted accordingly to prevent conflicts with the newly defined ephemeral port range.
