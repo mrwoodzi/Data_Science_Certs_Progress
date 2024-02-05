@@ -12,23 +12,22 @@ Future:
 
   Build Robots 
   -Learn SOLIDWORKS  
+    -print dovetail box for me
+      -have Warren print it 
+    -design/modify battlebots
   -3d print 
-  -learn the motors 
-  -coding editor that works with the robotics languages 
+    -finish fractal vice
+    -get files for battlebots, Christian
+  -Coding
+    -Figure out Linux and ROS(Robot Operating System)
+  -Robotics 
+    -Assemble battlebots
+    -Maybe start with RF before code?? 
 
 Success: 
   Team Work 
-
-Failures: 
-    Construction Planning 
-    -design errors 
-    -stop and think what tools are available 
-    -traction on wheels  
-    -motors spinning at proper speed 
-    Coding Editor Issues 
-    -Learn One 
-    -make sure it's compatible with robotics language 
-    -have multiple computers on hand if one doesn't 
+    -Give Warren and Alex printing Jobs
+    -Warren is going to take over the Ender Pro 3
 
 To Do List: 
     -Can we put a 3d printer in the meeting room 
