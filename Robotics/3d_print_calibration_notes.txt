@@ -7,6 +7,38 @@
 
 ***********************************************************************************************************************************************
 
+
+Calibration Cube MeasureMents:
+
+Current as of 2/5/2024
+FlashForge: 
+	Left Nozzle Purple
+		Z – 19.85mm
+		Y – 19.95mm
+		X – 20.00mm
+	Right Nozzle Orange
+		Z – 19.95mm
+		Y – 19.95mm
+		X – 20.00mm
+	Notes:
+	Let’s Ask the forums and stop guessing so much
+	Slight bit of ghosting on Purple Nozzle and even less on the Orange
+	Slight Elephant Footing once First Layer Height was changed
+		-I like the first layer squish maybe just always use a raft????
+	Top Layers Need to be Adjusted 
+	
+Current as of 2/5/2024
+Ender Pro v.3:
+	Z – 19.80mm
+	Y – 19.95mm
+	X – 20.00mm
+	
+	Notes: 
+	Warren is taking over the Ender Pro 3 printing
+Increase Z steps by .40mm??
+
+
+
 General Trouble Shooting on Prints:
     Really good general trouble shooting of prints.
     https://www.simplify3d.com/resources/print-quality-troubleshooting/

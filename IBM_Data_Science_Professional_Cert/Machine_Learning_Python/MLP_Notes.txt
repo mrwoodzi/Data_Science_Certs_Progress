@@ -979,9 +979,37 @@ A "coefficient" specifically refers to the weights or multiplicative factors ass
 regression or logistic regression, these coefficients represent the change in the dependent variable for a one-unit change in the corresponding predictor variable 
 while holding other variables constant.
 
-In summary, while all coefficients are parameters, not all parameters are coefficients. The term "coefficient" is more specific and typically used when referring to the 
+In summary, while all coefficients are parameters, not all parameters are coefficients. The term "coefficient" is more specific 
+and typically used when referring to the 
 weights in regression models.
 
+Coefficients:
+In statistical modeling, coefficients are the numerical values that multiply the predictor variables in a regression equation.
+In simple linear regression, there is one coefficient representing the slope of the line.
+In multiple linear regression, each predictor variable has its own coefficient, indicating the change in the response variable for a one-unit change in that predictor while holding other variables constant.
+In logistic regression, coefficients represent the log-odds change in the outcome for a one-unit change in the predictor.
+
+Intercept:
+The intercept is the constant term in a regression equation, representing the expected value of the response variable when all predictor variables are zero.
+In simple linear regression, the intercept is the point where the regression line crosses the y-axis.
+In multiple linear regression, it represents the baseline value of the response variable when all predictors are zero.
+
+Variances:
+Variance measures the spread or dispersion of a set of data points.
+In statistics, variance is a key component in calculating standard deviation, a measure of how much individual data points differ from the mean.
+In the context of linear regression, the residual variance (the variance of the differences between observed and predicted values) is crucial in assessing the goodness of fit of the model.
+
+Standard Deviation:
+Standard deviation is a measure of the amount of variation or dispersion in a set of values.
+It is the square root of the variance and provides a more interpretable scale since it's in the same units as the original data.
+
+Hypothesis Testing:
+In statistics, hypothesis testing involves making inferences about population parameters based on sample data.
+Commonly used tests include t-tests and z-tests for means, chi-square tests for independence, and F-tests for variances.
+
+Confidence Intervals:
+Confidence intervals provide a range of values within which the true population parameter is likely to fall with a certain level of confidence.
+For example, a 95% confidence interval implies that there is a 95% chance that the interval contains the true parameter.
 
 
                     -In logistic regression, we model the probability that an input, x, belongs to the default class y equals 1, 
