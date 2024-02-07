@@ -932,8 +932,22 @@ Logistics Regression:
 
             Logistic Regression:
                 -goal is to build a model to predict the class and also probability of each sample belonging to a class
+                -The objective of the __Logistic Regression__ algorithm, is to find the best parameters θ, for $ℎ_\theta(𝑥)$ = 
+                    $\sigma({\theta^TX})$, in such a way that the model best predicts the class of each case.
                 -great for needing the probability that the dependent/target/class-label variable will fall into a class
                     -independent variables are used to make the prediction and give the probability
+                -e≈2.71828
+                θ: This is the parameter vector in logistic regression. It contains the coefficients associated with each feature in your model. The superscript 
+
+                    T represents the transpose operation, which turns the column vector 
+
+                    θ into a row vector. It's like flipping the vector.
+
+                    X: This is the feature vector or matrix. If you have multiple features, each column of 
+
+                    X represents a different feature, and each row corresponds to a different data point. So, θ T X is the dot product of the transpose of the parameter vector 
+                    θ and the feature matrix 
+                    X.
                 -Sigmoid function   
                     -also called logistic function
                     -main part of Logistic regression   
@@ -946,7 +960,15 @@ Logistics Regression:
                             -called the weights factor or confidences of the equation, 
                                 -theta and weights factor is used interchangeably
                             -theta is a vector of parameters 
+                                    -the values of the parameters (theta) are more about their significance in 
+                                        the model rather than their "length."
+                                    -the direction of the "theta" vector is associated with the positive or negative impact of each corresponding feature 
+                                        on the log-odds of the predicted outcome. A positive theta implies an increase in the log-odds, while a negative 
+                                        theta implies a decrease.
                             -There are different ways to change the values of Theta, but one of the most popular ways is gradient descent. 
+                                Gradient Descent:
+                                    -an iterative optimization algorithm used to minimize the cost function in machine learning and optimization problems. The goal of Gradient Descent is to 
+                                        find the minimum of a function by adjusting its parameters iteratively. It's particularly common in training machine learning models
                             -There are various ways to stop iterations, but essentially you stop training by calculating the accuracy of your model and stop it when it's satisfactory. 
                             -Step one, initialize Theta vector with random values as with most machine learning algorithms. For example, minus 1 or 2.
                             -Step two, calculate the model output, which is sigmoid of Theta transpose x.
@@ -1135,29 +1157,29 @@ What could be the cause of a model yielding high training accuracy and low out o
     Overfitting:
         The model is too complex and has learned the training data's noise, leading to poor generalization 
             to new data.
-        High-degree polynomial features, deep neural network architectures, or other complex models may 
-            be prone to overfitting.
-        Not Enough Data:
+                High-degree polynomial features, deep neural network architectures, or other complex models may 
+                    be prone to overfitting.
+    Not Enough Data:
             The training dataset may be too small, causing the model to memorize the examples rather than 
                 learning the underlying patterns.
-        Data Mismatch:
+    Data Mismatch:
             There might be a significant difference between the training and testing datasets, leading to 
                 poor generalization. Ensure that the testing data is representative of the real-world scenarios 
                 the model will encounter.
-        Feature Engineering:
+    Feature Engineering:
             Incorrect or insufficient feature engineering can lead to overfitting. Ensure that the features 
                 used in training are relevant and meaningful for the task.
-        Hyperparameter Tuning:
+    Hyperparameter Tuning:
             Model hyperparameters may be tuned too much to the training data, making the model less adaptable 
             to new data. Regularization techniques or adjustments to hyperparameters may be necessary.
-        Leakage:
+    Leakage:
             Information from the testing set may unintentionally influence the training process, leading to 
             leakage. Ensure a clear separation between training and testing data.
-        Randomness:
+    Randomness:
             Some algorithms (especially those involving randomness like certain ensemble methods) may produce 
             different results each time they are trained, leading to overfitting to a specific set of random 
             variations in the training data.
-        To address these issues, consider the following steps:
+    To address these issues, consider the following steps:
             Use regularization techniques (e.g., L1 or L2 regularization) to penalize overly complex models.
             Increase the amount of training data if possible.
             Validate the model on a separate validation set during training to monitor generalization performance.

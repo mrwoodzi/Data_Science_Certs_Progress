@@ -22,10 +22,14 @@ FlashForge:
 		X – 20.00mm
 	Notes:
 	Let’s Ask the forums and stop guessing so much
+    2/7/2024
+        -Reddit doesn't believe that I'm printing better at such a low temp with door open and fan on
+        -For proof to Reddit we are printing xyz cubes at 220C, 110C bed, Door closed, No Fan
 	Slight bit of ghosting on Purple Nozzle and even less on the Orange
 	Slight Elephant Footing once First Layer Height was changed
 		-I like the first layer squish maybe just always use a raft????
 	Top Layers Need to be Adjusted 
+
 	
 Current as of 2/5/2024
 Ender Pro v.3:
@@ -35,7 +39,9 @@ Ender Pro v.3:
 	
 	Notes: 
 	Warren is taking over the Ender Pro 3 printing
-Increase Z steps by .40mm??
+    -We got the ender to complete ABL but the bed was way close
+        -Why is the bed too close? 
+            -baby step +1.00 and the first layers started looking good
 
 
 
