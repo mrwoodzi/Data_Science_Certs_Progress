@@ -1,6 +1,5 @@
 Make Desicions:
--Competition or Project
--Who wants to learn Python 
+-Club is going to be Project Based and based on individual interests 
 
 
 Ideas:
@@ -8,32 +7,40 @@ Learn Python
 https://www.toptal.com/robotics/programming-a-robot-an-introductory-tutorial 
 github link for above tutorial https://github.com/nmccrea/sobot-rimulator
 
-Future: 
+
 
   Build Robots 
   -Learn SOLIDWORKS  
-    -print dovetail box for me
-      -have Warren print it 
-    -design/modify battlebots
+      -Alex designing basic box and working through SOLIDWORKS problems
+      -have Warren finish calibrating Ender and start printing basic box
+    -Ultimate Goal by May 2024
+      -Design and Build very basic battlebots
   -3d print 
     -finish fractal vice
     -get files for battlebots, Christian
   -Coding
     -Figure out Linux and ROS(Robot Operating System)
+    -deepen understanding of Python
   -Robotics 
     -Assemble battlebots
     -Maybe start with RF before code?? 
 
 Success: 
   Team Work 
-    -Give Warren and Alex printing Jobs
-    -Warren is going to take over the Ender Pro 3
+    Printing:
+      -Warren in charge of Ender Pro 3v2
+      -Chrisitan in charge of his printer
+      -Jonathan printing at home with his resin printer 
+        -Figure out how to calibrate the resin printer
+    CAD:
+      Benjamin
+        -Learning SOLIDWORKS to design things for us currently and in the Future
+    Python Code:
+      Caleb
+        -Learning Python via freecodecamp.org Scientific Computing with Python
+
 
 To Do List: 
-    -Can we put a 3d printer in the meeting room 
-    -Choose a New Competition to compete in for Spring 2024?????
-    -Or Pick Fun Project
-    -Interest in Learning python 
         -freecodecamp.org
             -Certification Python for Scientific Computing
             https://www.freecodecamp.org/learn/scientific-computing-with-python/

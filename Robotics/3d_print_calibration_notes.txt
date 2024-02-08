@@ -36,6 +36,13 @@ Ender Pro v.3:
 	Z – 19.80mm
 	Y – 19.95mm
 	X – 20.00mm
+
+    ABL not working correctly try following steps:
+        G28 is a Home and disable ABL mesh.
+        G29 is sense the bed and store in RAM ONLY.
+        M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a shutdown or reset with...
+        M420 S1 to reactivate the mesh in memory slot 1.
+        Check and double check your BL touch wires.
 	
 	Notes: 
 	Warren is taking over the Ender Pro 3 printing
