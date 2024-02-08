@@ -1,15 +1,7 @@
 Make Desicions:
 -Club is going to be Project Based and based on individual interests 
 
-
-Ideas:
-Learn Python 
-https://www.toptal.com/robotics/programming-a-robot-an-introductory-tutorial 
-github link for above tutorial https://github.com/nmccrea/sobot-rimulator
-
-
-
-  Build Robots 
+3 main areas for robotics in our club:
   -Learn SOLIDWORKS  
       -Alex designing basic box and working through SOLIDWORKS problems
       -have Warren finish calibrating Ender and start printing basic box
@@ -28,15 +20,16 @@ github link for above tutorial https://github.com/nmccrea/sobot-rimulator
 Success: 
   Team Work 
     Printing:
-      -Warren in charge of Ender Pro 3v2
-      -Chrisitan in charge of his printer
-      -Jonathan printing at home with his resin printer 
+      -C - lead
+      -W in charge of Ender Pro 3v2
+      -C in charge of his printer
+      -J printing at home with his resin printer 
         -Figure out how to calibrate the resin printer
     CAD:
-      Benjamin
+      A
         -Learning SOLIDWORKS to design things for us currently and in the Future
     Python Code:
-      Caleb
+      C
         -Learning Python via freecodecamp.org Scientific Computing with Python
 
 

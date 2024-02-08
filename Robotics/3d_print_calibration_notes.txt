@@ -45,10 +45,10 @@ Ender Pro v.3:
         Check and double check your BL touch wires.
 	
 	Notes: 
-	Warren is taking over the Ender Pro 3 printing
-    -We got the ender to complete ABL but the bed was way close
-        -Why is the bed too close? 
-            -baby step +1.00 and the first layers started looking good
+        Warren is taking over the Ender Pro 3 printing
+        -We got the ender to complete ABL but the bed was way close
+            -Why is the bed too close? 
+                -baby step +1.00 and the first layers started looking good
 
 
 

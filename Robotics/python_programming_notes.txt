@@ -1,0 +1,22 @@
+
+
+Programmers:
+    C - lead
+    A
+    W
+
+freecodecamp.org
+    -Certification Python for Scientific Computing
+        https://www.freecodecamp.org/learn/scientific-computing-with-python/
+
+Start working together on Monday mornings before school and during break:
+    Start 1st project for Scientific computing with Python
+
+
+Other ideas to be looked into:
+Ultimately learning ROS to run our Python code. 
+
+Ideas:
+Learn Python 
+https://www.toptal.com/robotics/programming-a-robot-an-introductory-tutorial 
+github link for above tutorial https://github.com/nmccrea/sobot-rimulator
