@@ -10,45 +10,52 @@
 
 Calibration Cube MeasureMents:
 
-Current as of 2/5/2024
+Current as of 2/8/2024
 FlashForge: 
 	Left Nozzle Purple
-		Z – 19.85mm
-		Y – 19.95mm
-		X – 20.00mm
+		Z – 19.00mm
+		Y – 20.00mm
+		X – 20.10mm
 	Right Nozzle Orange
-		Z – 19.95mm
-		Y – 19.95mm
-		X – 20.00mm
+		Z – 19.80mm
+		Y – 20.00mm
+		X – 20.10mm
 	Notes:
 	Let’s Ask the forums and stop guessing so much
-    2/7/2024
-        -Reddit doesn't believe that I'm printing better at such a low temp with door open and fan on
-        -For proof to Reddit we are printing xyz cubes at 220C, 110C bed, Door closed, No Fan
-	Slight bit of ghosting on Purple Nozzle and even less on the Orange
-	Slight Elephant Footing once First Layer Height was changed
-		-I like the first layer squish maybe just always use a raft????
-	Top Layers Need to be Adjusted 
+    2/11/2024
+        -Switching the FlashForge over to PLA 
+        -ABS was fuming too much
 
 	
-Current as of 2/5/2024
+Current as of 2/11/2024
+Ender will stay at home with me till I figure out what is going on with it
 Ender Pro v.3:
 	Z – 19.80mm
 	Y – 19.95mm
 	X – 20.00mm
 
-    ABL not working correctly try following steps:
+    BLTouch not working correctly try following steps:
         G28 is a Home and disable ABL mesh.
         G29 is sense the bed and store in RAM ONLY.
+            This is done in Cura in 
         M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a shutdown or reset with...
         M420 S1 to reactivate the mesh in memory slot 1.
         Check and double check your BL touch wires.
+
+    Setting E-steps:
+        -https://3dprintscape.com/3d-printer-e-step-calibration/
+
+    New BLTouch Mount:
+        X and Y Offsets
+            #define X_PROBE_OFFSET_FROM_EXTRUDER -39.5  // X offset: -left  +right  [of the nozzle]
+            #define Y_PROBE_OFFSET_FROM_EXTRUDER -11.0  // Y offset: -front +behind [the nozzle]
+        Probe Z Offset
+            I've been been using -0.45 
+
+
 	
 	Notes: 
-        Warren is taking over the Ender Pro 3 printing
-        -We got the ender to complete ABL but the bed was way close
-            -Why is the bed too close? 
-                -baby step +1.00 and the first layers started looking good
+        Warren is taking over the FlashForge Creator Pro 2
 
 
 
