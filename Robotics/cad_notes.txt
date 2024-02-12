@@ -1,0 +1,12 @@
+CAD Notes:
+    A - Lead but is the only one with access to SOLIDWORKS
+
+
+    Potential Free CAD program:
+        Found on 2/12/2024
+        cad.onshape.com
+
+    CAD 3d printin notes:
+        Beware of shrinkage of filament and print small parts(particularly with holes/pegs/parts fitting together precisely)
+            -test print small parts of an object first to check size
+            -have a set of digital measurin calipers on hand

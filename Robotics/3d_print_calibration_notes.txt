@@ -37,7 +37,9 @@ Ender Pro v.3:
     BLTouch not working correctly try following steps:
         G28 is a Home and disable ABL mesh.
         G29 is sense the bed and store in RAM ONLY.
-            This is done in Cura in 
+            This is done in Cura in -> preferences -> printers -> Ender -> machine settings -> start G-confidence   
+                -undernearth G28; Home all axes 
+                - G29 ; BLTouch 
         M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a shutdown or reset with...
         M420 S1 to reactivate the mesh in memory slot 1.
         Check and double check your BL touch wires.
