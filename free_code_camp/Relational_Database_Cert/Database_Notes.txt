@@ -77,6 +77,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
 
         Creating Database 
             create database database_name; maybe with parenthesis 
+        Connecting to Database  
+            \c database
         DATA types  
             int 
             varchar(give it a numeric maximum allowable length)
@@ -85,7 +87,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         list
             \list 
             \d table_name
-                will list stuff in table 
+                - displays tables in database you are in
         connect 
             \c database_name
             think about as moving into a folder/dir 

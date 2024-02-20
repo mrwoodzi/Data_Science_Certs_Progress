@@ -40,8 +40,9 @@ Ender Pro v.3:
             This is done in Cura in -> preferences -> printers -> Ender -> machine settings -> start G-confidence   
                 -undernearth G28; Home all axes 
                 - G29 ; BLTouch 
-        M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a shutdown or reset with...
-        M420 S1 to reactivate the mesh in memory slot 1.
+                -M420 S1 ;Load Saved ABL Mesh for BL Touch
+        M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a 
+            shutdown or reset with...M420 S1 to reactivate the mesh in memory slot 1.
         Check and double check your BL touch wires.
 
     Setting E-steps:
