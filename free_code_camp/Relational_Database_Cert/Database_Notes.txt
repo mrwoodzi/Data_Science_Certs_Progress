@@ -106,6 +106,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         ALTER COLUMN    
             ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
             ALTER TABLE table_name ALTER COLUMN column_name VARCHAR(40) NOT NULL UNIQUE;
+            -Adding a foreign key to an existing column
+                ALTER TABLE <table_name> ADD FOREIGN KEY(<column_name>) REFERENCES <referenced_table_name>(<referenced_column_name>);
         DROP/REMOVE COLUMN 
             ALTER TABLE table_name DROP COLUMN column_name;
         RENAME COLUMN 
@@ -163,6 +165,8 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 -column an INT with a NOT NULL constraint, and automatically increment 
                     the integer when a new row is added
             -VARCHAR*(char_length)
+                -*****************************************************************
+                -make sure it is in single quotes ''
             -INT 
             -DATE 
             -NUMERIC(4, 1)
@@ -208,7 +212,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
         connets other tables together 
         "Many to Many" Relationship     
         -many of the characters can perform many actions. 
-        -usally use a junction table to link two tables together, forming two 'one-to-many' relationships
+        -usually use a junction table to link two tables together, forming two 'one-to-many' relationships
 
     COMPOSITE PRIMARY KEY 
         -used in mario_database junction table character_actions

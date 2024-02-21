@@ -27,12 +27,12 @@ FlashForge:
         -ABS was fuming too much
 
 	
-Current as of 2/11/2024
+Current as of 2/21/2024
 Ender will stay at home with me till I figure out what is going on with it
 Ender Pro v.3:
-	Z – 19.80mm
-	Y – 19.95mm
-	X – 20.00mm
+	Z – 19.95mm
+	Y – 20.00mm
+	X – 19.95mm
 
     BLTouch not working correctly try following steps:
         G28 is a Home and disable ABL mesh.
@@ -48,10 +48,7 @@ Ender Pro v.3:
     Setting E-steps:
         -https://3dprintscape.com/3d-printer-e-step-calibration/
 
-    New BLTouch Mount:
-        X and Y Offsets
-            #define X_PROBE_OFFSET_FROM_EXTRUDER -39.5  // X offset: -left  +right  [of the nozzle]
-            #define Y_PROBE_OFFSET_FROM_EXTRUDER -11.0  // Y offset: -front +behind [the nozzle]
+
         Probe Z Offset
             I've been been using -0.45 
 
