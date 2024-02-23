@@ -12,6 +12,7 @@ Calibration Cube MeasureMents:
 
 Current as of 2/8/2024
 FlashForge: 
+    Will becoming home soon
 	Left Nozzle Purple
 		Z – 19.00mm
 		Y – 20.00mm
@@ -20,15 +21,14 @@ FlashForge:
 		Z – 19.80mm
 		Y – 20.00mm
 		X – 20.10mm
-	Notes:
-	Let’s Ask the forums and stop guessing so much
+h
     2/11/2024
         -Switching the FlashForge over to PLA 
         -ABS was fuming too much
 
 	
 Current as of 2/21/2024
-Ender will stay at home with me till I figure out what is going on with it
+Ender will be back at the school soon. 
 Ender Pro v.3:
 	Z – 19.95mm
 	Y – 20.00mm
@@ -55,7 +55,7 @@ Ender Pro v.3:
 
 	
 	Notes: 
-        Warren is taking over the FlashForge Creator Pro 2
+        Warren is in charge of the Ender 3 when it gets back
 
 
 

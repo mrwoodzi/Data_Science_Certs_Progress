@@ -9,6 +9,14 @@ Run
     bash 
         running in bash
 
+
+psql
+    -you can use it to turn a single command and exit 
+    -BUT this needs to be in file you want to run 
+        PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"
+    -query your database like this  
+        $($PSQL "<query_here>")  
+
 help
     let # view of the potential operators in the terminal 
     man <command> gives information about a command 
@@ -17,6 +25,10 @@ help
 echo     
     echo -e "\n  ~~ Countdown Timer \n"
         -don't forget the script -e in the file 
+
+print   
+    cat <filename>
+    echo $variable
 
 List 
     ls 
@@ -38,6 +50,21 @@ Permissions
         -this gives everyone permission to use the file 
             - the x means everyone can use it 
 
+IFS 
+    Internal Field Operator 
+        -variable used to determine word boundaries
+        -defaults to spaces, tabs and new lines 
+
+While loop  
+    cat filename.csv | while IFS="," read THING OTHER_THING
+    do 
+        <statements>
+    done
+    # each new line will be read into variables THING and OTHER_THING
+    # It's looping, but the THING variable is only being set to the first word
+    # There's a default IFS variable in bash. IFS stands for "Internal 
+        Field Separator". View it with declare -p IFS
+    
 
 User Input
     read variable_name_user_input_will_be _stored

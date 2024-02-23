@@ -1,3 +1,26 @@
+Installing PostgreSQL:
+    I have been working on this for a couple hours today and I am having some kind
+        of an issue with my password/connecting to port 5432(standard port used for PostgreSQL)
+        
+    Checking Services in windows
+        Starting PostgreSQL Server in Windows
+            win + r
+            type -> services.msc
+            search -> find the postgreSQL .exe make sure it is running/started
+        Starting PostgreSQL in Git Bash 
+            Start:
+                ./pg_ctl.exe start -D "C:/Program Files/PostgreSQL/16/data"
+            Check Start:
+                ./pg_ctl.exe status -D "C:/Program Files/PostgreSQL/16/data"
+
+
+    Logging in Via Powershell:
+        C:\Program Files\PostgreSQL\16\bin> .\psql.exe -U postgres
+
+    Logging in via dbeaver:
+        user: postgres 
+        pass: ****
+
 Bash Tutorial:
     pink - images
         .jpg
