@@ -1,4 +1,4 @@
-What is Machine Learning:
+ What is Machine Learning:
     Inductive Inference
     Machine Learning   
         -used for estimating relationships
@@ -793,6 +793,28 @@ Logistics Regression:
                 retention programs
 
     LogisticRegression function in sklearn:
+        -ideally you iterate multiple times to reduce the cost function
+        -FINDING THE BEST MODEL MEANS FINDING THE BEST PARAMETERS THETA FOR THAT MODEL
+            -you do this by finding the minimum cost function of the model  
+            -minimize J theta 
+                -meaning it is predicting more accurately 
+                -use Gradient Descent 
+                    Gradient Descent 
+                        -iterative approach to find minimum
+                        -gradient descent is like taking stepls in the current direction of the slope
+                            and learning rate is like the length of the step you take. 
+                        -using derivate of cost functions
+                        https://www.coursera.org/learn/machine-learning-with-python/lecture/2F1zF/logistic-regression-training
+            Predicted Value of Model is sigmoid of theta transpose X
+            cost = Cost(y_hat, y) == 1/2(sigmoid(theta transpose X) - y)squared
+        Training:
+            1. initialize the parameters randomly 
+            2. feed the cost function with training set and calculate the error 
+                ****expect cost to be high as parameters are random on first iteration 
+            3. calculate the gradient of cost function 
+            4. update weights with new parameter values 
+            5. Go to step 2 until cost is small enough. 
+            6. Predict the new customer X
         -implements logistic regression and can use different numerical optimizers 
             to find parameters, including'newton-cg', 'lbfgs', 'liblinear', 'sag',
             'saga' solvers. ***look up pros and cons of these dependent on project.
@@ -1051,7 +1073,26 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
 
 
     SVM(Support Vector Machines):
-
+        -SVM is a supervised algorithm that classifies cases by finding a separator
+        -first maps data to a high dimensional feature space so that data points can be categorized, 
+            even when the data are not otherwise linearly separable.then a separator is estimated for the data
+        -2 categories that can be separtated with a curve but not a line
+            -true of most data sets 
+            -svm algorithm ouptus an optimal hyperplane that categorizes new examples
+        Data Transformation: 
+            -turns non linearly separable data into separable data by using funcion with outputs x and x squared
+            -Does what is called kernelling 
+                -mapping data into a higher dimension of space
+                -Types of kernelling, each has it's own pros and cons 
+                    -Linear 
+                    -Polynomial
+                    -RBF (radial basis function)
+                    -Sigmoid 
+        hyperplane
+            -goal is to choose a hyperplane with as big a margin as possible 
+            -demarcation between data   
+                -2d line
+                -3d sheet 
         offers a choice of kernel function for performing its processing. Basically mapping data into 
             higher dimensional space which is referred to as kernelling. The mathematical function used for 
             the transformation is known as the kernel function, and can be of diffrenent types.
