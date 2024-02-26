@@ -1073,6 +1073,19 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
 
 
     SVM(Support Vector Machines):
+        WHEN SHOULD WE USE SVM?
+            -image analysis tasks 
+                -image classification
+                -hand written digit recognition 
+                -text mining
+                    -detecting spam 
+                    -text category assignment
+                    -sentiment analysis 
+                -gene expression data classification 
+                -can be used for . . .
+                    -regression
+                    -outlier detection 
+                    -clustering 
         -SVM is a supervised algorithm that classifies cases by finding a separator
         -first maps data to a high dimensional feature space so that data points can be categorized, 
             even when the data are not otherwise linearly separable.then a separator is estimated for the data
@@ -1084,6 +1097,7 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
             -Does what is called kernelling 
                 -mapping data into a higher dimension of space
                 -Types of kernelling, each has it's own pros and cons 
+                    -The below functions are tested and chosen based on how well they work with that particular dataset 
                     -Linear 
                     -Polynomial
                     -RBF (radial basis function)
@@ -1105,8 +1119,27 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
         Each of the functions has its characteristics, its pros and cons, and its equation, but as there's
             no easy way of knowing which function performs best with any given dataset. We usually choose 
             different functions in turn and compare the results. 
+        
+        How do we find the right or optimized separator after transformation?
+            -find the best hyperplane and the best does the best job of separating the data 
+                - the best will have the largest margin between the 2 datasets 
+                SUPPORT VECTORS 
+                    -points in dataset that are closest to the hyperplane 
+                    -only SUPPORT VECTORS matter in finding the best hyperplane 
+                    -HYPERPLANE and BOUNDARY DECISION LINE each have their own equations 
+                    -w(transposed)x + b = 1 # top boundary 
+                    -w(transposed)x + b = -1 # bottom boundary
+                HYPERPLANE 
+                    -w(transposed)x + b = 0
 
-
+        SVM Pros and Cons:
+            Pro:
+                -Accurate in high-dimensional spaces 
+                -memory efficiency
+            Cons: 
+                -Prone to over-fitting if number of features is much greater than the number of samples 
+                -No probability estimation directly which are desireable in most classifiction problems 
+                -computationally inefficient in data more than 1000 rows 
         Steps:
 
         1. ETL:
@@ -1304,4 +1337,39 @@ Underfitting:
             This can help mitigate underfitting and improve overall performance.
             
 
-                
+Multiclass Predition 
+
+    Classiifying data into multiple class labels
+        -You can convert logisitic regression to multi-class classification using 
+            multinomial logistic regression or SoftMax Regression 
+            -this is generalized logistic regression 
+
+    SOFTMAX REGRESSION: 
+        -multi-class classification techniques that can convert most two-class 
+            classifiers to a multi-class classifier
+        -similar to logistic regression
+        -training process is almost identical to logistic regression using cross-entropy but prediction is different 
+        -can you it to generate a probability of how likely the sample belongs to each class    
+            -then make a prediciton using the argmax function 
+
+    ONE VS ALL(One-vs-Rest):
+        -you essentially logistic regression and put each class against the one(X) and 
+            each point gets put into class against the one(X)
+        -multi-class classification techniques that can convert most two-class 
+            classifiers to a multi-class classifier
+            -you need to index your different classes 1-4 or 0-3 doesn't matter starting at 0 or 1 
+        -email foldering/tagging: 
+            -Work, Friends, Family, Hobby
+            -y=1, y=2, y=3, y=4
+        -Medical Diagrams: 
+            -Not Ill, Cold, Flu 
+            -y=1, y=2, y=3 
+        -Weather: 
+            -Sunny, Cloudy, Rain, Snow 
+            -y=1, y=2, y=3, y=4 
+
+
+    ONE VS ONE Classification:
+        -multi-class classification techniques that can convert most two-class 
+            classifiers to a multi-class classifier
+
