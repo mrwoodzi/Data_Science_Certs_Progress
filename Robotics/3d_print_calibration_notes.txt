@@ -26,6 +26,11 @@ h
         -Switching the FlashForge over to PLA 
         -ABS was fuming too much
 
+    2/26/2024
+        -FlashForge was brought home 
+        -Ender back at the school 
+        -Club is currently printing the fractal vise and doing it succesfully 
+
 	
 Current as of 2/27/2024
 Ender will be back at the school soon. 
@@ -35,16 +40,53 @@ Ender Pro v.3:
 	Y – 19.90mm     Y - 20.00mm
 	X – 19.95mm     X - 20.25mm
 
-    BLTouch not working correctly try following steps:
-        G28 is a Home and disable ABL mesh.
-        G29 is sense the bed and store in RAM ONLY.
-            This is done in Cura in -> preferences -> printers -> Ender -> machine settings -> start G-confidence   
-                -undernearth G28; Home all axes 
-                - G29 ; BLTouch 
-                -M420 S1 ;Load Saved ABL Mesh for BL Touch
-        M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a 
-            shutdown or reset with...M420 S1 to reactivate the mesh in memory slot 1.
-        Check and double check your BL touch wires.
+    The Calibration cube above had a scar on the top and models from the previous nights prints were all scared on the 
+        top surface below are some issues to check. 
+
+    Retraction Settings: 
+        Ensure that your retraction settings are properly configured. Retraction helps to pull filament back 
+        into the nozzle when the nozzle is moving across empty spaces, reducing the likelihood of stringing. 
+        You may need to adjust the retraction distance and speed in your slicer settings.
+
+    Print Speed: 
+        Lowering the print speed, especially during travel movements, can help reduce the likelihood of stringing 
+        and dragging. Slower speeds give the filament more time to retract properly before moving to the next position.
+
+    Cooling Settings: 
+        Proper cooling can also help prevent stringing. Make sure your cooling fan(s) are functioning 
+        correctly and adjust the cooling settings in your slicer if necessary. Printing at lower temperatures may also 
+        reduce stringing.
+
+    Z-Hop or Lift on Retraction: 
+        Enabling Z-hop or lift on retraction can lift the nozzle slightly while moving between different parts 
+        of the print, reducing the chances of dragging across the top layer. This feature is available in most 
+        slicer software.
+
+    Check for Mechanical Issues: 
+        Ensure that your printer's mechanical components, such as belts, pulleys, and the hotend assembly, are 
+        properly calibrated and tightened. Any looseness or misalignment could contribute to dragging or stringing 
+        issues.
+
+    Print Temperature: 
+        Experimenting with different print temperatures can sometimes help reduce stringing. Lowering the print 
+        temperature slightly may reduce the viscosity of the filament and mitigate stringing.
+
+    Ironing Settings: 
+        If you're specifically experiencing issues after ironing, double-check your ironing settings 
+        in your slicer. Adjusting the ironing flow rate, speed, or other parameters may help improve the finish 
+        without causing dragging.
+
+    # The below issue with ABL not working was fixed with a new 32bit board and a new ABL sensor:
+        BLTouch not working correctly try following steps:
+            G28 is a Home and disable ABL mesh.
+            G29 is sense the bed and store in RAM ONLY.
+                This is done in Cura in -> preferences -> printers -> Ender -> machine settings -> start G-confidence   
+                    -undernearth G28; Home all axes 
+                    - G29 ; BLTouch 
+                    -M420 S1 ;Load Saved ABL Mesh for BL Touch
+            M500 or "save settings" I believe, is save to EPROM non volatile memory so you can retrieve the bed info after a 
+                shutdown or reset with...M420 S1 to reactivate the mesh in memory slot 1.
+            Check and double check your BL touch wires.
 
     Setting E-steps:
         -https://3dprintscape.com/3d-printer-e-step-calibration/

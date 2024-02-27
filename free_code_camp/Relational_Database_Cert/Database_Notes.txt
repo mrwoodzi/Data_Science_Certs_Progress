@@ -17,6 +17,8 @@ Installing PostgreSQL:
     Logging in Via Powershell:
         C:\Program Files\PostgreSQL\16\bin> .\psql.exe -U postgres
 
+        Logging in from free_code_camp
+        & "C:\Program Files\PostgreSQL\16\bin\psql.exe" -U postgres
     Logging in via dbeaver:
         user: postgres 
         pass: ****
