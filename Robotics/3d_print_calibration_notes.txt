@@ -27,12 +27,13 @@ h
         -ABS was fuming too much
 
 	
-Current as of 2/21/2024
+Current as of 2/27/2024
 Ender will be back at the school soon. 
 Ender Pro v.3:
-	Z – 19.95mm
-	Y – 20.00mm
-	X – 19.95mm
+    With Raft:      No Raft:
+	Z – 19.90mm     Z - 19.50mm
+	Y – 19.90mm     Y - 20.00mm
+	X – 19.95mm     X - 20.25mm
 
     BLTouch not working correctly try following steps:
         G28 is a Home and disable ABL mesh.
