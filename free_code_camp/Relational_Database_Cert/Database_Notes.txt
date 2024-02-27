@@ -107,6 +107,15 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             varchar(give it a numeric maximum allowable length)
                 -stands for character varying 
             bigint 
+
+        deleting 
+            -TRUNCATE
+                -delete everything in database   
+                    -TRUNCATE database_name; #that's all you need to do 
+                -   -if foreign keys are connecting tables you need to add those tables to be deleted as well 
+                    -TRUNCATE database_name, databasename, database_name;  
+                    -**this will not delete the column names just the row and their data 
+   
         list
             \list 
             \d table_name

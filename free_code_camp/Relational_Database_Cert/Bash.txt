@@ -22,6 +22,8 @@ help
     man <command> gives information about a command 
         # this works sometimes other times help will work 
 
+
+
 echo     
     echo -e "\n  ~~ Countdown Timer \n"
         -don't forget the script -e in the file 
@@ -65,6 +67,31 @@ While loop
     # There's a default IFS variable in bash. IFS stands for "Internal 
         Field Separator". View it with declare -p IFS
     
+
+    $
+        Variable Expansion: 
+            When followed by a variable name (e.g., $variable), it represents the value of that variable.
+
+        Command Substitution: 
+            When enclosed in backticks (`command`) or within $(command), it indicates that the enclosed 
+                command should be executed, and the output of that command should be substituted.
+
+        Special Variables: 
+            There are special variables in Bash that are preceded by a dollar sign, such as "$@", "$#", "$?", etc., 
+                each with its own specific meaning.
+
+        Math Expansion: 
+            In the context of arithmetic expansion, $((expression)), it denotes mathematical operations.
+
+        Shell Process ID: 
+            $ followed by $$ represents the process ID of the current shell.
+
+        Shell Script Positional Parameters: 
+            $1, $2, etc., represent the positional parameters passed to a shell script or a function.
+
+        Wildcard Expansion: 
+            $* and $? are used in wildcard expansion, where they represent all positional parameters and the exit 
+                status of the last executed command, respectively.
 
 User Input
     read variable_name_user_input_will_be _stored
@@ -172,6 +199,9 @@ until loop
         GET_FORTUNE
     done
 
+QUERYING inside a loop  
+    variable=$($PSQL "<write query here and it spits out the result as the variable>")
+        -make sure to put an variables inside the query in single quotes 
 
 sleep 
 
