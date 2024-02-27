@@ -3,10 +3,13 @@ Installing PostgreSQL:
         of an issue with my password/connecting to port 5432(standard port used for PostgreSQL)
         
     Checking Services in windows
-        Starting PostgreSQL Server in Windows
+        Starting PostgreSQL Server in Windows GUI
             win + r
             type -> services.msc
             search -> find the postgreSQL .exe make sure it is running/started
+        Starting postgreSQL in Powershell from free_code_camp folder:
+            & "C:\Program Files\PostgreSQL\16\bin\pg_ctl.exe" start -D "C:\Program Files\PostgreSQL\16\data"
+
         Starting PostgreSQL in Git Bash 
             Start:
                 ./pg_ctl.exe start -D "C:/Program Files/PostgreSQL/16/data"

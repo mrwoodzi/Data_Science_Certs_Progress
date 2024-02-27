@@ -1,0 +1,48 @@
+
+WorkSpace Area:
+    Data Pane: 
+        On left side of WorkSpace
+        -displays all DATA PANES from the data source
+            -excel, database, etc . . .
+        -DATA PANES have 
+            -data source table 
+                -each data source table is separated by a line which gives you dimensions    
+                -DIMENSIONS
+                    -control the measure of aggregation of the measures in a visualization 
+                    -ID fields are also dimensions 
+                    -can be organized into hierarchies 
+                    -above line:
+                        -fields that contain qualitative and descriptive values(names, dates, or geographic data)
+                    -below line: 
+                        -fields that contain numeric, quantitative values can be aggregated using functions(sum/average, etc...)
+                -drag fields from the data pane to the shelves and cards to build each visualization 
+        -SHELVES
+        -CARDS
+        -VIEW 
+            -data visualization displayed here 
+            - 1 vis per sheet 
+            -combine sheets to create dashboards and stories
+        -TOOLBAR    
+            -at the top below File Data Worksheet Dashboard Analysis Map Format Help 
+            -access commands, analysis and navigation tools 
+
+
+    Steps to Create a Dashboard: 
+        Open Tableau
+        Click Create a Viz 
+        Upload or Connect to Data 
+        Data Source Page Appears after data is uploaded or connected to 
+        Drag a data source to the CANVAS 
+        Data Grid will appear below CANVAS
+        Click "Update Now" in DATA GRID to display the first 100 rows of data(This might happen automatically)
+        NOODLE - when dragging Data Sources onto canvas to create 
+            -this will tell you the basic relationship between data sources 
+                -many to many
+                -inner JOIN
+                -Left Join(Left Outer Join)
+                -blending
+                    -does not require predefined relationships between tables and can be used to combine data based on common
+                        dimensions in the data sources 
+                    -uses concept of primary and scondary data sources to combine data 
+
+
