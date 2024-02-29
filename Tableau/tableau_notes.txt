@@ -9,6 +9,7 @@ WorkSpace Area:
                 -each data source table is separated by a line which gives you dimensions    
 
                 -DIMENSIONS
+                    -categorical
                     -control the measure of aggregation of the measures in a visualization 
                     -ID fields are also dimensions 
                     -can be organized into hierarchies 
@@ -18,7 +19,10 @@ WorkSpace Area:
                         -fields that contain numeric, quantitative values can be aggregated using functions(sum/average, etc...)
                 -drag fields from the data pane to the shelves and cards to build each visualization 
         -SHELVES
+            -drag dimensions fields from data pane to shelves to build viz
         -CARDS
+            -underneath MARKS 
+            -drag dimensions fields from data pane to shelves or cards to build viz. 
         -VIEW 
             -data visualization displayed here 
             - 1 vis per sheet 
@@ -63,6 +67,8 @@ WorkSpace Area:
         -MARKS  
             -next to data tab
             -has color, size, color, text, detail, 
+
+
         -DATA Pane/Tab on right:
 
             -Selecting a DIMENSION and MESUARE at the same time in DATA tab on left side:
