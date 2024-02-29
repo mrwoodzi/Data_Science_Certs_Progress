@@ -7,6 +7,7 @@ WorkSpace Area:
         -DATA PANES have 
             -data source table 
                 -each data source table is separated by a line which gives you dimensions    
+
                 -DIMENSIONS
                     -control the measure of aggregation of the measures in a visualization 
                     -ID fields are also dimensions 
@@ -25,6 +26,50 @@ WorkSpace Area:
         -TOOLBAR    
             -at the top below File Data Worksheet Dashboard Analysis Map Format Help 
             -access commands, analysis and navigation tools 
+        -SHOW ME 
+            -Top right corner when making viz that gives you chart and graph suggestions 
+        -FIELDS 
+            -data columns? that can be put into the rows or columns in the viz can have DISCRETE or CONTINUOUS values 
+                DISCRETE: 
+                    -BLUE - turn this color in fields
+                    -used for categorical data, where each value represents a distinct category or item.
+                    -typically used for categorical data or dimensions. For example, if you have a field called "Region" 
+                        with values like "North America," "Europe," and "Asia," labeling it as discrete would mean that 
+                            Tableau treats each region as a separate entity, and you'd typically see separate headers or 
+                            categories for each region in your visualization.
+                CONTINUOUS: 
+                    -GREEN - turn this color in fields
+                    -numerical data, where values represent points along a continuous scale or range
+                    -Date fields are typically set to be continuous
+                    -typically used for numerical data or measures. For example, if you have a field called "Sales" with 
+                        numerical values representing the sales amount, labeling it as continuous would mean that Tableau 
+                        treats the values as points along a continuous scale, allowing for the creation of continuous axes 
+                        in visualizations such as LINE CHARTS, SCATTER PLOTS, or HEAT MAPS
+        -CARDS 
+            -Put cards underneath MARKS 
+
+        -MARKS  
+            -next to data tab
+            -has color, size, color, text, detail, 
+        -DATA Pane/Tab on right:
+
+            -Selecting a DIMENSION and MESUARE at the same time in DATA tab on left side:
+
+                -Hold Control Key and select the dimension(blue) and measure(green)
+                -CONTEXT MENU, right clicking measure or dimension to get a drop down
+                    -LEVEL OF DETAIL MEASURE on selected dimension and measure 
+
+            -DIMENSION: 
+                -
+
+            -MEASURE: 
+
+
+
+        Swapping rows and columns <-->:
+            -button in TOOLBAR -> TOOLBAR is below the File Data Worksheet Dashboard Analysis Map . . . 
+
+
 
 
     Steps to Create a Dashboard: 
@@ -46,3 +91,130 @@ WorkSpace Area:
                     -uses concept of primary and scondary data sources to combine data 
 
 
+    Calculations: 
+        -In ANALYSIS drop down at top 
+        -Click create calculated field 
+
+
+
+Tableau Prep: 
+    This is Tableau's ETL on the Enterprise version 
+
+        Data Cleaning: 
+                Tableau Prep allows you to clean your data by removing duplicates, filtering rows, handling 
+                    null values, and correcting data inconsistencies.
+
+        Data Aggregation: 
+                You can aggregate data using various functions such as sum, average, count, min, max, etc. 
+                    This is useful for summarizing data before visualizing it.
+
+        Data Joining and Blending: 
+                Tableau Prep enables you to join tables from different data sources based on common fields 
+                    or create data blends where relationships are established without a formal join.
+
+        Data Splitting and Pivoting: 
+                You can split columns into multiple columns based on delimiters or pivot data from multiple 
+                    columns into rows or vice versa.
+
+        Data Type Conversion: 
+                Tableau Prep allows you to change the data type of fields, such as converting strings to 
+                    dates or numbers.
+
+        Calculations: 
+                You can create calculated fields to perform complex transformations or derive new measures 
+                    or dimensions based on existing data.
+
+        Custom Data Cleaning Scripts: 
+                Tableau Prep supports the use of custom cleaning scripts written in R or Python for advanced 
+                    data manipulation tasks.
+
+        Data Sampling: 
+                You can sample data to reduce the size for faster processing or to create test datasets.
+
+        Data Splitting: 
+                You can split your dataset into subsets based on certain criteria, which can be useful for 
+                    testing or analysis.
+
+        Data Output: 
+                Tableau Prep allows you to output your cleaned and transformed data to various formats, 
+                    databases, or directly to Tableau Desktop for visualization.
+
+
+
+
+
+
+Chart/Graph Review:
+
+    Area Chart: 
+        -Line chart where the area between the line and the axis is shaded with color
+
+    Line Chart: 
+
+
+    Scatter Plot:
+
+
+    Heat Maps:
+
+
+    Text Table/CrossTab Table/Pivot Table: 
+
+
+    Packed Bubble Chart: 
+
+
+    Radial Bar Chart: 
+
+
+
+Campaign Notes: 
+    Tableau
+        Made 2 Dashboards
+
+        Top 12,000 Most likely voters
+            Graphs - 
+                Geo-Spatial
+                        -plotted voters via latitude and longitude
+                        -color coded voters 
+                            -High R - Red 
+                            -Low  R - Pink
+                            -each dot was interactive and showed the income and type of voter(high r, low)
+                            -Very important in deciding where to block walk 
+                Heat Map
+                        -used heat map to viz the density of the differnt races present in 12,000
+                            -lots of white people 
+                Bubble Chart
+                        -First split by High R and Low R
+                            -then split by income 
+                                100k+
+                                75-100k
+                                50-75k
+                                0-50k
+                                - interesting to note that there were no Low R below the 75-100k
+                            -Bubbles kept coloring convention in geospatial plot  colored High R - red, Low R - pink 
+                            
+
+        Top 7600 most likely with a few independents(potential swing voters)
+
+                Geo-Spatial
+                        -plotted voters via latitude and longitude
+                                -color coded voters 
+                                    -High R - Red 
+                                    -Low  R - Pink
+                                    -Low  I - light orange
+                                    -each dot was interactive(removed income as it was redundant with other graphs) 
+                                        and type of voter(high r, low)
+                                    -Very important in deciding where to block walk 
+
+                Heat Map:
+                    -reconfirming the race count/density
+                    -kept it simple 
+
+                Bubble Chart:
+                    -count of high r, low r, low i 
+                    -more simplified
+
+                Grouped Bar Chart:
+                    -By Universe - High R, Low R, Low I 
+                        -
