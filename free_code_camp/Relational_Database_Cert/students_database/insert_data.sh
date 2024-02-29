@@ -30,16 +30,11 @@ do
   # if not found
   if [[ -z $COURSE_ID ]]
   then
-    
-
-
+    # insert course
+    INSERT_COURSE_RESULT=$($PSQL "INSERT INTO courses(course) VALUES('$COURSE')")
+    if [[ $INSERT_COURSE_RESULT == "INSERT 0 1" ]]
+    then
+      echo "Inserted into courses, $COURSE"
+    fi
+    # get new course_id
   fi
-
-  # insert course
-
-  # get new course_id
-
-  # insert into majors_courses
-
-  fi
-done
