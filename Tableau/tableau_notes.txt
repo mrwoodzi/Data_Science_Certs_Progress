@@ -47,6 +47,18 @@ WorkSpace Area:
                         in visualizations such as LINE CHARTS, SCATTER PLOTS, or HEAT MAPS
         -CARDS 
             -Put cards underneath MARKS 
+        
+        -FILTERS
+            -click filter vs normal filter
+                -click filter also called "action filters"
+                -normal filter 
+                    -
+            -restricts the data 
+                -extract 
+                -data source 
+                -one touch filters 
+                -dimension filters 
+                -data calculation filters 
 
         -MARKS  
             -next to data tab
@@ -71,8 +83,7 @@ WorkSpace Area:
 
 
 
-
-    Steps to Create a Dashboard: 
+Dashboards: 
         Open Tableau
         Click Create a Viz 
         Upload or Connect to Data 
@@ -96,6 +107,10 @@ WorkSpace Area:
         -Click create calculated field 
 
 
+Tableau Stories:    
+    Different than dashboards 
+    -You can have dashboards in them
+    -What is this and can I use it before 
 
 Tableau Prep: 
     This is Tableau's ETL on the Enterprise version 
@@ -111,6 +126,56 @@ Tableau Prep:
         Data Joining and Blending: 
                 Tableau Prep enables you to join tables from different data sources based on common fields 
                     or create data blends where relationships are established without a formal join.
+                    JOINING:
+                        -where is the data coming from and number of records and connections
+                        -if in 2 different databases you can join via a cross database join
+                        -if joining multiple tables from same database you can join, which is typically better, which will keep things running fast 
+                        -if data is in single source it's better to join it. 
+                    BLENDING:  
+                        -combining SQL, .CSV OR EXCEL . . . 
+                        -main criteria to blend data is that it is going to extract what is needed for performance
+                        -should have 1 similar components to blend 
+
+                    Relationships: 
+                        Many to Many
+                            -requires a junction table 
+                        Many to One:
+                        One to Many:
+                        One to One: 
+
+                    SCHEMA - for database design and analytics:
+                        FACT TABLES: - typically numerical measures or facts represent metrics being analyized
+                        DIMENSION TABLES: - attributes/categorical fields
+
+                        Dimensional Model:  
+                                While the star schema and snowflake schema are specific implementations of the dimensional model, the dimensional model itself 
+                                    refers to any structure that organizes data into dimensions and facts for ease of analysis.
+
+                                Star Scheme:
+                                        Consists of one or more fact tables referencing any number of dimension tables. The fact table typically contains numerical 
+                                            measures or facts that represent the business metrics being analyzed, while dimension tables contain the attributes or 
+                                            dimensions by which the facts are analyzed
+
+                                Snowflake Schema: 
+                                        This schema is an extension of the star schema where dimension tables are normalized into multiple related tables. This 
+                                            normalization can help reduce data redundancy but may require more complex queries to retrieve data.
+
+                                Fact Constellation Schema/Galaxy Schema: 
+                                        Also known as galaxy schema, this model consists of multiple fact tables that share dimension tables. It's used when multiple 
+                                            fact tables share dimensions but don't directly relate to each other.
+
+
+                        Third Normal Form (3NF): 
+                                This is a normalized schema often used in transactional databases. It eliminates redundant data by breaking down tables into 
+                                    smaller, related tables. While not optimized for analytics like star schemas, it's useful for transactional systems to reduce 
+                                    data redundancy and ensure data integrity.
+
+                        Denormalized Schema: 
+                                In contrast to normalized schemas like 3NF, denormalized schemas store data in fewer tables, which can improve query performance 
+                                    but may result in data redundancy. Denormalized schemas are often used in data warehouses for analytics where query performance     
+                                    is crucial.
+
+                    
 
         Data Splitting and Pivoting: 
                 You can split columns into multiple columns based on delimiters or pivot data from multiple 
@@ -171,6 +236,12 @@ Chart/Graph Review:
 Campaign Notes: 
     Tableau
         Made 2 Dashboards
+        -Tried Live on Public
+        -Original data was studied and analyized in a Jupyter Notebook
+            -Extract, Transform and Load was done here
+
+        -Too big so I Extracted via python Jupyter Notebooks into an excel doc
+            -uploaded the Extract 
 
         Top 12,000 Most likely voters
             Graphs - 
@@ -217,4 +288,21 @@ Campaign Notes:
 
                 Grouped Bar Chart:
                     -By Universe - High R, Low R, Low I 
-                        -
+                    -then on y-axis/vertical we had Race 
+                        -Race was split into and visualized as average age and you could move your cursor over and see the count of each race and there universe
+                        
+
+    Specific Questions:
+        How would you display the first 5 and last 5 records in a single view?
+            Create 2 sets 1 with top the other with bottom and then join them. 
+
+        What types of data do you usually include when you create dashboards?
+            -What do I find valuable?
+                Finance: 
+                    Waterfall charts 
+                    bar charts, column chart, box and whisker plots 
+                    text
+
+        How would you structure a good view of a general dashboard?
+            -Do it the way we read, left to right, top to bottom    
+                - 5-6 pieces 
