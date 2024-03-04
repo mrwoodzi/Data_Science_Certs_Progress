@@ -1,5 +1,5 @@
 
-WorkSpace Area:
+WorkSpace Area General Tableau Functions:
     Data Pane: 
         On left side of WorkSpace
         -displays all DATA PANES from the data source
@@ -67,7 +67,13 @@ WorkSpace Area:
         -MARKS  
             -next to data tab
             -has color, size, color, text, detail, 
-
+        -What is the difference between GROUPS and SETS 
+            -GROUPS - dynamic, dimensions and measures 
+            -SETS - static, only dimensions 
+        -GROUPING 
+            -like groupby in Python can use dimensions and measures
+        -SET 
+            -
 
         -DATA Pane/Tab on right:
 
@@ -78,16 +84,40 @@ WorkSpace Area:
                     -LEVEL OF DETAIL MEASURE on selected dimension and measure 
 
             -DIMENSION: 
-                -
+                -categorical
+                -typically DISCRETE and BLUE
+                    -Date fields are typically kept continuous
+                -product categories, customer segments, geographic regions, dates,
 
             -MEASURE: 
+                -numerical or quantitaive fields 
+                -most measures are continuous
+                -typically GREEN and are CONTINUOUS
+            
+            -PARAMETERS: 
+                -dynamic values that allow users to control aspects of their analysis or visualizations. 
+                    Parameters act as placeholders for a specific value that can be changed interactively 
+                    by the user. They enable users to modify certain aspects of the visualization without 
+                    having to edit the underlying data or the workbook itself
+                -defined to accept different types of values, including integers, floats, strings, dates, 
+                    and Boolean values
+                -filtering data dynamically, switching between different measures or dimensions, adjusting 
+                    reference lines or bands, controlling the appearance of the visualization
+                 PARAMETER ACTIONS:
+                    -allow users to interactively change parameter values based on their interactions with the visualization
 
+            -MEASURE NAMES: 
+                -discrete field that contains names of all measures in the data pane
+                -MEASURE VALUES: 
+                    -contains list of all continuous measure values 
+                    -inside of MEASURE NAMES 
 
 
         Swapping rows and columns <-->:
             -button in TOOLBAR -> TOOLBAR is below the File Data Worksheet Dashboard Analysis Map . . . 
-
-
+    ToolTips: 
+        -additional tips when you hover over viz., interactive part 
+        -Edit ToolTips to make it look the way you want it to
 
 Dashboards: 
         Open Tableau
@@ -132,6 +162,8 @@ Tableau Prep:
         Data Joining and Blending: 
                 Tableau Prep enables you to join tables from different data sources based on common fields 
                     or create data blends where relationships are established without a formal join.
+                    Difference between JOINING and BLENDING:
+                        -A join combines the data and then aggregates. A blend aggregates and then combines the data.
                     JOINING:
                         -where is the data coming from and number of records and connections
                         -if in 2 different databases you can join via a cross database join
@@ -230,13 +262,13 @@ Chart/Graph Review:
 
 
     Text Table/CrossTab Table/Pivot Table: 
+        -can be a calculated field 
 
 
     Packed Bubble Chart: 
 
 
     Radial Bar Chart: 
-
 
 
 Campaign Notes: 
@@ -295,8 +327,26 @@ Campaign Notes:
                 Grouped Bar Chart:
                     -By Universe - High R, Low R, Low I 
                     -then on y-axis/vertical we had Race 
-                        -Race was split into and visualized as average age and you could move your cursor over and see the count of each race and there universe
-                        
+                        -Race was split into and visualized as average age and you could move your cursor over and see the 
+                            count of each race and there universe
+    Post-Mortem Analysis: 
+           Campaign Post-Mortem 
+                Scrapped a 800-900 page pdf of public voter results compiled by bexar county using Python.
+                Got all information from only 1 District and put it in a .txt file, continued cleaning data till it was able to be 
+                    turned into a .csv. 
+                -turned it into a .csv and then analyzed it via jupyter notebooks. 
+                -Several precincts were missing from original data set and while looking at the geo-spatials maps of certain 
+                    precincts the precincts from the original dataset were different from the May 6 election results. 
+                -missing precincts which are 3037, 3065, 3116, 3127, 3136, 3139 
+                -D9 Additional had 3037, 3065, 3127, 3136 
+                -D9 Additional has 4 of the 6 precincts. We still need 3116, 3136.  
+                - I was manipulating the data and found that only 0.39% of potential voters in 3037 voted. Hhhm that can't be right 
+                    so I went back and checked the data some more.  The D9 data has 2839 vuid's in precinct 3037, so I went and looked 
+                    at the map for precinct 3037 and there is no way that 2839 vuid could be on that map. I also went to the May 6 pdf 
+                    to verify if only 11 people voted and yes that is correct. So my question is how off were the maps and did that have 
+                    an effect on your voter turnout and are the maps for the next election going to be different or be the ones that 
+                    are currently on the bexar.org website? 
+                -May 6 bexar county maps were checked against maps in Tableau.          
 
     Specific Questions:
         How would you display the first 5 and last 5 records in a single view?
@@ -312,3 +362,26 @@ Campaign Notes:
         How would you structure a good view of a general dashboard?
             -Do it the way we read, left to right, top to bottom    
                 - 5-6 pieces 
+        What is the function to get todays date in Tableau?
+        What is the difference between now and today?
+            -function in a calculated field 
+                -NOW() - current date and time according to system clock
+                -TODAY() - current date but no time according to system clock 
+        What is dual Axis & Blended Axis?
+            -dual axes where there are two independent axes layered in the same pane
+            -A dual-axis map is a map with two sets of geographic data overlaid on top of one another
+                -side by side maps 
+            -Blended Axis 
+                -where multiple measures with different scales are plotted on the same axis
+        How is parameter used in your project?
+        How do you improve dashboard performance and what steps would you take?
+        What is the Difference between Rank and Index()?
+            -Rank() getting top or bottom values
+            -Index() 
+        How to Color only Grand total part in Tableau?
+        How are you going to schedule a workbook in Tableau after publishing it?
+        Write a query to find the duplicate records?
+
+
+
+Teaching Notes Physics:
