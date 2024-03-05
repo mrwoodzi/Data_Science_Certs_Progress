@@ -299,9 +299,9 @@ Chart/Graph Review:
 Campaign Notes: 
     Tableau
         Made 2 Dashboards
-        -Tried Live on Public
+        -Tried Live on Public by it was super slow 
         -Original data was studied and analyized in a Jupyter Notebook
-            -Extract, Transform and Load was done here
+            -Extract, Transform Load and initial analysis was done in a Jupyter Notebook with Python Pandas, Seaborn and matplotlib. 
 
         -Too big so I Extracted via python Jupyter Notebooks into an excel doc
             -uploaded the Extract 
@@ -365,15 +365,25 @@ Campaign Notes:
                 -missing precincts which are 3037, 3065, 3116, 3127, 3136, 3139 
                 -D9 Additional had 3037, 3065, 3127, 3136 
                 -D9 Additional has 4 of the 6 precincts. We still need 3116, 3136.  
-                - I was manipulating the data and found that only 0.39% of potential voters in 3037 voted. Hhhm that can't be right 
-                    so I went back and checked the data some more.  The D9 data has 2839 vuid's in precinct 3037, so I went and looked 
-                    at the map for precinct 3037 and there is no way that 2839 vuid could be on that map. I also went to the May 6 pdf 
-                    to verify if only 11 people voted and yes that is correct. So my question is how off were the maps and did that have 
-                    an effect on your voter turnout and are the maps for the next election going to be different or be the ones that 
-                    are currently on the bexar.org website? 
-                -May 6 bexar county maps were checked against maps in Tableau.          
+                - I was manipulating the data and found that only 0.39%(11 people voted) of potential voters in 3037 voted.( I put the number of votes from 3037 against our data) 
+                    Hhhm that can't be right so I went back and checked the data some more.  The D9 data has 2839 vuid's in precinct 3037, so I went and looked 
+                    at the map for precinct 3037 and there is no way that 2839 vuid could be on that map. I also went to the May 6 pdf (around 100 homes on the map)
+                    to verify if only 11 people voted and yes that is correct. 
 
-    Specific Questions:
+                    THE QUESTION:
+                        How off were the maps and did that have an effect on voter turnout and are the maps for the next election going to be 
+                            different or be the ones that are currently on the bexar.org website? 
+                            -May not have effected campaign strategy due to hyper focus on certain precincts.
+                            -Analysis winning is about the SUM performance in all districts. 
+                                -Relate story of how to make state on instrument. 
+                                    -You have to be good at every etude. 
+                                    -You can't be good at 2 etudes and bomb 1, you'll lose.
+                -May 6 bexar county maps were checked against maps in Tableau.    
+
+
+
+
+Specific Questions:
         How would you display the first 5 and last 5 records in a single view?
             Create 2 sets 1 with top the other with bottom and then join them. 
 
@@ -388,6 +398,7 @@ Campaign Notes:
             -Do it the way we read, left to right, top to bottom    
                 - 5-6 pieces 
         What is the function to get todays date in Tableau?
+            -Today()
         What is the difference between now and today?
             -function in a calculated field 
                 -NOW() - current date and time according to system clock
@@ -399,12 +410,24 @@ Campaign Notes:
             -Blended Axis 
                 -where multiple measures with different scales are plotted on the same axis
         How is parameter used in your project?
+            -parameter is a dynamic control that allows users to interactively change the values of certain aspects within 
+                a visualization or dashboard. Parameters enable users to adjust various elements such as filtering data, 
+                adjusting calculations, or controlling the appearance of visualizations without modifying the underlying 
+                data or workbook structure.
         How do you improve dashboard performance and what steps would you take?
+            -hide unused measures and dimensions 
+            -e
         What is the Difference between Rank and Index()?
             -Rank() getting top or bottom values
             -Index() 
         How to Color only Grand total part in Tableau?
         How are you going to schedule a workbook in Tableau after publishing it?
+            -Make sure workbook is published in Tableau Server 
+            -log in 
+            -find Actions menu, typically 3 dots 
+                -click schedule
+                -set it, email(optional)
+                -check to make sure it is scheduled 
         Write a query to find the duplicate records?
 
 
