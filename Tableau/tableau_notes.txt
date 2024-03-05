@@ -41,6 +41,9 @@ WorkSpace Area General Tableau Functions:
                         with values like "North America," "Europe," and "Asia," labeling it as discrete would mean that 
                             Tableau treats each region as a separate entity, and you'd typically see separate headers or 
                             categories for each region in your visualization.
+                    ALIAS
+                        -
+
                 CONTINUOUS: 
                     -GREEN - turn this color in fields
                     -numerical data, where values represent points along a continuous scale or range
@@ -74,6 +77,18 @@ WorkSpace Area General Tableau Functions:
             -like groupby in Python can use dimensions and measures
         -SET 
             -
+        -CONTEXT MENU 
+            -drop down arrow on a measure or dimension 
+                -Create - LOD 
+                -LOD - Level of Detail expression 
+                    -LOD calculation 
+                        -COMMENTS in Calculation Box 
+                        - // For single line comments 
+                        -/* for multi 
+                         line 
+                         comments*/
+                -Change Data Type 
+                -Geographic Role
 
         -DATA Pane/Tab on right:
 
@@ -86,14 +101,18 @@ WorkSpace Area General Tableau Functions:
             -DIMENSION: 
                 -categorical
                 -typically DISCRETE and BLUE
-                    -Date fields are typically kept continuous
+                    -DISTCRETE - BLUE 
+                    -Date fields are typically kept continuous even though they are a dimension
                 -product categories, customer segments, geographic regions, dates,
 
             -MEASURE: 
                 -numerical or quantitaive fields 
                 -most measures are continuous
                 -typically GREEN and are CONTINUOUS
+                    -CONTINUOUS is green and create axis that go up the y axis as rows
             
+
+
             -PARAMETERS: 
                 -dynamic values that allow users to control aspects of their analysis or visualizations. 
                     Parameters act as placeholders for a specific value that can be changed interactively 
@@ -177,9 +196,13 @@ Tableau Prep:
                     Relationships: 
                         Many to Many
                             -requires a junction table 
+                            -multiple records in one dataset can relate to multiple records in another dataset
                         Many to One:
+                            -multiple records in one dataset correspond to a single record in another dataset
                         One to Many:
+                            -each record in one dataset can correspond to multiple records in another dataset
                         One to One: 
+                            -one dataset corresponds to exactly one record in another dataset.
 
                     SCHEMA - for database design and analytics:
                         FACT TABLES: - typically numerical measures or facts represent metrics being analyized
@@ -202,7 +225,6 @@ Tableau Prep:
                                         Also known as galaxy schema, this model consists of multiple fact tables that share dimension tables. It's used when multiple 
                                             fact tables share dimensions but don't directly relate to each other.
 
-
                         Third Normal Form (3NF): 
                                 This is a normalized schema often used in transactional databases. It eliminates redundant data by breaking down tables into 
                                     smaller, related tables. While not optimized for analytics like star schemas, it's useful for transactional systems to reduce 
@@ -212,20 +234,11 @@ Tableau Prep:
                                 In contrast to normalized schemas like 3NF, denormalized schemas store data in fewer tables, which can improve query performance 
                                     but may result in data redundancy. Denormalized schemas are often used in data warehouses for analytics where query performance     
                                     is crucial.
-
                     
 
         Data Splitting and Pivoting: 
                 You can split columns into multiple columns based on delimiters or pivot data from multiple 
                     columns into rows or vice versa.
-
-        Data Type Conversion: 
-                Tableau Prep allows you to change the data type of fields, such as converting strings to 
-                    dates or numbers.
-
-        Calculations: 
-                You can create calculated fields to perform complex transformations or derive new measures 
-                    or dimensions based on existing data.
 
         Custom Data Cleaning Scripts: 
                 Tableau Prep supports the use of custom cleaning scripts written in R or Python for advanced 
@@ -252,6 +265,7 @@ Chart/Graph Review:
     Area Chart: 
         -Line chart where the area between the line and the axis is shaded with color
 
+
     Line Chart: 
 
 
@@ -269,6 +283,17 @@ Chart/Graph Review:
 
 
     Radial Bar Chart: 
+    
+
+    Candle Stick Chart: 
+
+
+    Waterfall Chart(flying bricks chart or Mario chart): 
+        -used to show the collective influence of successive positive and negative variables on an initial starting point
+        - it furnishes a well-structured and lucid manner of depicting the gradual transitions, emphasizing the intricate 
+            process through which diverse factors contribute to a final consequence, along with their net impact.
+        -https://www.jaspersoft.com/articles/what-is-a-waterfall-chart
+        -an indispensable asset for elucidating financial movements within a specific timeframe in the financial sector
 
 
 Campaign Notes: 
@@ -331,8 +356,8 @@ Campaign Notes:
                             count of each race and there universe
     Post-Mortem Analysis: 
            Campaign Post-Mortem 
-                Scrapped a 800-900 page pdf of public voter results compiled by bexar county using Python.
-                Got all information from only 1 District and put it in a .txt file, continued cleaning data till it was able to be 
+                -Scrapped a 800-900 page pdf of public voter results compiled by bexar county using Python.
+                -Got all information from only 1 District and put it in a .txt file, continued cleaning data till it was able to be 
                     turned into a .csv. 
                 -turned it into a .csv and then analyzed it via jupyter notebooks. 
                 -Several precincts were missing from original data set and while looking at the geo-spatials maps of certain 
