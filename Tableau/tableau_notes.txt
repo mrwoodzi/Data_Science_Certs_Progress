@@ -43,7 +43,6 @@ WorkSpace Area General Tableau Functions:
                             categories for each region in your visualization.
                     ALIAS
                         -
-
                 CONTINUOUS: 
                     -GREEN - turn this color in fields
                     -numerical data, where values represent points along a continuous scale or range
@@ -299,7 +298,6 @@ Chart/Graph Review:
 Campaign Notes: 
     Tableau
         Made 2 Dashboards
-        -Tried Live on Public by it was super slow 
         -Original data was studied and analyized in a Jupyter Notebook
             -Extract, Transform Load and initial analysis was done in a Jupyter Notebook with Python Pandas, Seaborn and matplotlib. 
 
@@ -379,8 +377,6 @@ Campaign Notes:
                                     -You have to be good at every etude. 
                                     -You can't be good at 2 etudes and bomb 1, you'll lose.
                 -May 6 bexar county maps were checked against maps in Tableau.    
-
-
 
 
 Specific Questions:
