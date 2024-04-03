@@ -215,6 +215,7 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
                 -UPDATE characters SET favorite_color='Orange' WHERE name='Daisy'
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
+                
         PRIMARY KEY 
             COMPOSITE PRIMARY KEY 
                 -used this in junction table in mario_database
