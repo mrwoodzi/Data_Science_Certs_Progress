@@ -89,4 +89,13 @@ Notes and planning for this project which is my first kaggle competition:
                 sound event recognition, popularly known as ESC [15], automatic recognition of  speech  [16],  
                 and music category classification [17]. https://www.researchgate.net/publication/345260947_Efficient_Classification_of_Environmental_Sounds_through_Multiple_Features_Aggregation_and_Data_Enhancement_Techniques_for_Spectrogram_Images
 
-        
+            Tonal Centroid is a depiction of a pitch. It is also recognized as a harmonic network
+            Chroma feature includes the division of the audio signal pitch into two components  in  [63].  One  is  chroma,  and the  other is  
+                tone height.facilitate
+            The spectral components have been achieved by performing the fast fourier transform (FFT) on each frame. In the next step, 
+                these components are segregated into six octave-scale-based sub-bands, one by one. At last, the strength of  spectral 
+                valleys and peaks has been  estimated  by the small neighborhood, average value. The detailed expressions have been demonstrated as follows:
+
+                Another important detail that we realized from Table 5 is that the best accuracy achieved by  those  features’ aggregation techniques  were  obtained 
+                from  the  Mel filter bank  approach.  The training time of the triple accumulated features is also less than the double conglomerated features.
+                Our approach is the combination of  two  methodologies  transfer  learning  with  fine-tuning  and  features  aggregation-based  data enhancement techniques.
