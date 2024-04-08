@@ -1,0 +1,92 @@
+
+
+Notes and planning for this project which is my first kaggle competition: 
+    requirements:
+        -basic analysis libraries
+            jupyterlab
+            python
+            numpy
+            pandas
+            matplotlib
+            seaborn
+        
+        -audio processing libraries 
+            -librosa
+
+        -computation libraries  
+            -scikit learn
+            -snapml
+            -joblib
+
+
+    
+    How do I do this?
+
+        MFCC (Mel-Frequency Cepstral Coefficients):
+            -MFCCs are a popular feature extraction method for speech and audio processing. They 
+                involve taking the Mel spectrogram, applying a logarithm, and then performing a 
+                discrete cosine transform (DCT) to obtain a compact representation of the spectrum.
+            -robust to noise and environmental variations.
+
+        Chroma Features:
+            -Chroma features capture the harmonic content and distribution of energy in different pitch classes (i.e., 
+                musical notes) over time. They are particularly useful for tasks involving music 
+                analysis, such as chord recognition and music genre classification.
+            -They are particularly useful for distinguishing between different bird species 
+                based on their vocalizations.
+
+        Spectral Contrast:
+            -Spectral contrast measures the difference in energy between peaks and valleys in the 
+                spectrum. It provides information about the spectral texture of audio signals and 
+                is often used in music genre classification and audio segmentation.
+
+        Zero-Crossing Rate (ZCR):
+            -ZCR measures the rate at which the audio signal changes sign (crosses the zero amplitude axis) 
+                over time. It can be used to estimate properties such as pitch and timbre and is commonly 
+                used in speech and music processing tasks.
+
+        RMS Energy:
+            -Root Mean Square (RMS) energy measures the average energy of the audio signal over time. It 
+                provides information about the overall amplitude or loudness of the signal and can be used 
+                for tasks such as audio event detection and speech recognition.
+
+        Pitch and Spectral Centroid:
+            -Pitch represents the perceived frequency of a sound, while spectral centroid measures the center 
+                of mass of the frequency spectrum. These features are useful for tasks involving pitch estimation 
+                and sound source localization.
+
+        Time-Domain Features:
+            -Time-domain features include statistical measures such as mean, variance, skewness, and kurtosis of 
+                the audio signal. These features provide information about the temporal characteristics of the signal 
+                and can be used for various audio analysis tasks.
+
+
+        Potential Path: 
+            Feature Extraction: 
+                -Extract MFCCs, Chroma features, and spectral contrast features from the bird call recordings using a library like librosa.
+                -time domain & pitch/spectral centroid extraction  - https://www.researchgate.net/publication/271608436_Design_and_Implementation_of_an_Audio_Classification_System_Based_on_SVM
+                -mfcc, high zero-crossing rate ratio, low short-time energy ratio, frequency energy
+            Feature Preprocessing:
+                Normalize the extracted features to ensure that they have zero mean and unit variance.
+            Feature Vector Construction:
+                Concatenate the MFCCs, Chroma features, and spectral contrast features to form a single feature vector for each bird call sample.
+            Labeling:
+                Assign labels to the bird call samples based on their corresponding bird species.
+            Training the SVM Classifier:
+                Split the dataset into training and testing sets.
+            Train an SVM classifier using the combined features as input features and the corresponding labels as target labels.
+                Evaluation:
+            Evaluate the performance of the trained SVM classifier using the testing data.
+                Calculate metrics such as accuracy, precision, recall, and F1-score to assess the classifier's performance in classifying bird calls.
+
+            -SVM notes:
+                -parameter tuning is very important with svm 
+                -maybe,  "For multi-class, the most popular choice is one-vs-all classification"
+
+        
+        General Notes on Audio Classification:
+            The  audio  classification  and  recognition  research  consists  of  three  fundamental  disciplines: 
+                sound event recognition, popularly known as ESC [15], automatic recognition of  speech  [16],  
+                and music category classification [17]. https://www.researchgate.net/publication/345260947_Efficient_Classification_of_Environmental_Sounds_through_Multiple_Features_Aggregation_and_Data_Enhancement_Techniques_for_Spectrogram_Images
+
+        
