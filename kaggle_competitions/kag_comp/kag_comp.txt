@@ -18,8 +18,12 @@ Notes and planning for this project which is my first kaggle competition:
             -snapml
             -joblib
 
+Links to research papers that were helpful: 
+    https://www.researchgate.net/publication/376366076_Vibe_-_With_people_with_hearing_impairment
+    https://www.researchgate.net/publication/271608436_Design_and_Implementation_of_an_Audio_Classification_System_Based_on_SVM
 
-    
+
+
     How do I do this?
 
         MFCC (Mel-Frequency Cepstral Coefficients):
@@ -99,3 +103,97 @@ Notes and planning for this project which is my first kaggle competition:
                 Another important detail that we realized from Table 5 is that the best accuracy achieved by  those  features’ aggregation techniques  were  obtained 
                 from  the  Mel filter bank  approach.  The training time of the triple accumulated features is also less than the double conglomerated features.
                 Our approach is the combination of  two  methodologies  transfer  learning  with  fine-tuning  and  features  aggregation-based  data enhancement techniques.
+
+
+
+
+
+
+    Notes on Neural Networks: 
+        -Convolutional Neural Networks  
+            -particularly effective for image recognition and processing tasks  
+                -inspired by the organization of the animal visual cortex, where individual neuron  respond
+                    to stimuli only in a restricted region of the visual field known as the receptive field
+                -designed to automatically and adatively  learn spatial hierarchies of features from input images 
+            -optimized using Adam Optimizer and the model trained using a cross-entropy loss function
+                -deployed on mobile device 
+
+
+    
+    Research Paper Notes: 
+        UbiEar
+        https://www.researchgate.net/publication/376366076_Vibe_-_With_people_with_hearing_impairment
+            -uses lightweight Deep Convolutional Neural Network 
+                -average accuracy 91.2%
+            -through the integration of EdgeML techniques we aim to create a solution that not only conserves
+                resources but also significantly lowers cost. Our priority lies in achieving the lwest pssible latench 
+                and power consumption...
+
+            Neural Network Architecture: 
+                1. Input Layer (6,435 features):
+                    -first layer of the neural network; this layer will take the preprocessed audio samples as input 
+                2. Reshape layer: 
+                    -input audio signals are first transformed into a spectrogram. The resulting spectrogram is a 2d 
+                        matrix of frequency bins and time frames. However, the input to the neural network must be in the form 
+                        of a 3D tensor, where the third dimension represents the number of input channels 
+                3. 1d convolutional/pool layer (8neurons, three kernel size, one layer):
+                    -would take as input a 1D tensor(i.e., vector) and apply eight filters, each with a size of 3, to 
+                        produce eight feature maps. The ouput would be a 3D tensor with dimensions (batch_size, sequence_lenght - 2, 8),
+                        where batch_size is the number of samples in a batch and sequence_length is the length of the input sequence. 
+                4. Dropout Layer: 
+                    -a rate of 0.25 is added after the first dense layer. During each training iteration, 25% of the neurons 
+                        in the first dense layer will be randomly dropped out. 
+                5. 1D convolutional/pool layer (16neurons, three kernel size, one layer):
+                    -would take a 1d tensor, and apply 16 neurons, each with a size of 3 to produce 16 feature maps. The output would be 
+                        a 3D tensor with dimensions(batch_size, sequence_length - 2, 16), where batch_size is the number of samples in a batch 
+                        and sequence_length is the length of the input sequence. Adding a 1D pooling layer after the convolutional layer would 
+                        further reduce the dimensionality of the output feature maps. A typical choice for the pooling operation in a 1D CNN is 
+                        to use the maximum value in each sliding window of pool.
+                6. Output Layer: 
+                    -responsible for producing the final output of the network based on the input data, final output of the network 
+                        based on the input data, and uses a softmax activateion function to produce a probability distribution over the 
+                        different classes in the classification problem. the class with the highest probability is then selected 
+                        as the predicted output of the network. 
+
+            Methodology: 
+                -data collection
+                -Preprocessing
+                    -subsampling
+                        -subsampled data to 16khz
+                            -reduces the computational complexity of training a neural network and the 
+                                memory requirements of the training and deployment process, helps to prevent 
+                                overfitting(model becomes too specific on training data)
+                                    -p670 [27,28]
+                    -de-noising
+                        -removing distracting sounds
+                            -can be done using spectral subtraction, Weiner filtering and adaptive filtering
+                            -goal is to improve Signal-To_Noise Ratio(SNR)
+                            -used Scipy to design bandpass filters that remove the noise identified frequency range for each sound class
+                            --Definitely want to do this, probably high pass filter since it's bird calls
+                    -silence portion detection and removal
+                        -removing silent portions from the recorded sound files before training a neural network also helps improve the 
+                            accuracy of the model prediction 
+                            -silent portions often  caused by background noise, 
+                                -interference or gaps between sound events. 
+                -feature extraction
+                    -Spectrogram 
+                        -spectrogram parameters are the settings that can be adjusted to control the appearance
+                            and quality of the spectrogram  
+                                -window size: 1000ms
+                                -FTT size: 128
+                                -Frequency range: 0-8khz
+                                -Noise Floor: (-52db) - minimum amplitude threshold for audio samples in the dataset    
+                                    -not sure if noise at -52db will be good for bird calls
+                        -compute Short-Time Fourier Transform of the audio signal   
+                            -divided the signal into overlapping frames and applying a Fourier transform to each frame
+                            -variation in freq content of the audio signal over time is  then presented as a 2-D figure
+                        -the above extracted features from the sample can then be used as inputs to the next stage, i.e., 
+                            training a Convolutional Neural Network 
+                -labeling 
+                -model training 
+                -evaluation 
+                -deployment to edge devices  
+
+
+Random Rabbit Holes: 
+    -TensorFlow LSTM
