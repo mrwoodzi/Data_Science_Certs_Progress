@@ -1372,4 +1372,22 @@ Multiclass Predition
     ONE VS ONE Classification:
         -multi-class classification techniques that can convert most two-class 
             classifiers to a multi-class classifier
+        -if we have class 0,1, and 2, we would train one classifier on the samples 
+            that are class 0 and class 1, a second classifier on samples that are of 
+            class 0 and class 2, and a final classifier on samples of class 1 and 
+            class 2
 
+Gradient Descent: 
+    Goal: 
+        -optimization algorithm used to minimize the cost function in various machine learning 
+            models. 
+        -iteratively update the parameters(coefficients) of the model in the direction that reduces
+            the cost function, ultimately reaching the optimal set of parameters that best fit the data.
+        
+        In Logistic Regression: 
+            -cost function is typically the log loss(or cross-entropy loss), which measures the difference   
+                between the predicted probabilities and the actual labels. The parameters of the logistic regression    
+                model are the coefficients with each feature, and the goal is to find the values of theses coefficients 
+                that minimize the log loss. 
+
+        

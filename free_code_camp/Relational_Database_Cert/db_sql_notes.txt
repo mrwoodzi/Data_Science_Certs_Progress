@@ -295,3 +295,9 @@ Searching/retriving:
             -automatically sorts by ascending(ASC)
             -descending(DESC)
             -SELECT * FROM <table> ORDER BY <column> DESC;
+
+        LIMIT 
+            -SELECT * FROM <table> ORDER BY <column> DESC LIMIT 10; # or whatever number you want
+
+ The keywords you want are SELECT, FROM, WHERE, IS NOT NULL, ORDER BY, and LIMIT, in that order
+            -SELECT * FROM students WHERE gpa IS NOT NULL ORDER BY gpa DESC, first_name LIMIT 10;
