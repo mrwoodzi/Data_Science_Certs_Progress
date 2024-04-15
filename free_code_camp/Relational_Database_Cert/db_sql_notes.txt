@@ -287,3 +287,11 @@ Searching/retriving:
 
         Combining LIKE, NOT ILIKE
         SELECT * FROM courses WHERE course NOT ILIKE '<pattern>' AND course LIKE <pattern> ;
+
+        IS NULL 
+            WHERE <column> IS NULL;
+
+        ORDER BY
+            -automatically sorts by ascending(ASC)
+            -descending(DESC)
+            -SELECT * FROM <table> ORDER BY <column> DESC;
