@@ -301,3 +301,36 @@ Searching/retriving:
 
  The keywords you want are SELECT, FROM, WHERE, IS NOT NULL, ORDER BY, and LIMIT, in that order
             -SELECT * FROM students WHERE gpa IS NOT NULL ORDER BY gpa DESC, first_name LIMIT 10;
+
+Sorting, Stats: 
+    MIN 
+    MAX 
+    AVG 
+    CEIL 
+        -round to nearest whole number 
+        -SELECT CEIL(AVG(<column>)) FROM <table>;
+    FLOOR 
+        -
+    ROUND
+        -round number to nearest whole number or add decimals
+        -ROUND(<number_to_round>, <number_of_decimals_places>)
+    COUNT 
+        -counts number of entries in a table for the specified column
+    ***Distinct and Group By can do the same thing 
+        -BUT occur in different places in the query 
+        -Soo you can add COUNT,MIN, MAX, AVG to GROUP BY
+    DISTINCT
+        -SELECT DISTINCT(<column>) FROM <table>;
+    GROUP BY    
+        -SELECT <column> FROM <table> GROUP BY <column>
+        -SELECT major_id, COUNT(*) FROM students GROUP BY major_id;
+        -SELECT major_id, MIN(gpa), MAX(gpa) FROM students GROUP BY major_id;
+            -returns 2 columns 
+                -major_id with a count of how many in each 
+        -***********************************************************
+        -When using GROUP BY, any columns in the SELECT area must be 
+            included in the GROUP BY area. Other columns must be used 
+            with any of the aggregate functions (MAX, AVG, COUNT, etc). 
+        ************************************************************
+        HAVING:
+            -SELECT <column> FROM <table> GROUP BY <column> HAVING <condition>;

@@ -759,8 +759,6 @@
                         -good way to show that a classifier has a good value for both recall 
                             and precision 
                         
-
-
     Logistic Regresssion Steps:
         1. Extract, Transform, Load 
             -extract features from df
@@ -849,13 +847,9 @@
             -measures  the performance of a classifier where the predicted output is a probability 
                     value between 0 and 1
 
-
-
-
     Logistic Regression vs. Linear Regression:
-    
-            - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
-            - Independent Variables in both Linear and Logistic Regression can be either continuous or categorical
+                - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
+                - Independent Variables in both Linear and Logistic Regression can be either continuous or categorical
             Linear:
                 -Linear can not be used properly for some binary classification problems.
                 -the below was to prove that in the telecommunications dataset linear regression is def not the 
@@ -864,7 +858,6 @@
                 ###    -in the telecommunication dataset instead of predicting churn with logistic regression using categorical data   
                 ###        you could use income which is a continuous value.
                 ###        -you could predict  the income of an unknown customer based on their age. 
-
             Logistic Regression:
                 -goal is to build a model to predict the class and also probability of each sample belonging to a class
                 -The objective of the __Logistic Regression__ algorithm, is to find the best parameters θ, for $ℎ_\theta(𝑥)$ = 
@@ -873,13 +866,9 @@
                     -independent variables are used to make the prediction and give the probability
                 -e≈2.71828
                 θ: This is the parameter vector in logistic regression. It contains the coefficients associated with each feature in your model. The superscript 
-
                     T represents the transpose operation, which turns the column vector 
-
                     θ into a row vector. It's like flipping the vector.
-
                     X: This is the feature vector or matrix. If you have multiple features, each column of 
-
                     X represents a different feature, and each row corresponds to a different data point. So, θ T X is the dot product of the transpose of the parameter vector 
                     θ and the feature matrix 
                     X.
@@ -928,64 +917,68 @@
                                 -First, how can we change the values of Theta so that the cost is reduced across iterations? 
                                 -Second, when should we stop the iterations?
 
-NOTES ON PARAMETERS AND COEFFICIENTS:
-A "parameter" is a more general term that refers to any characteristic or quantity that can help define a system. In statistical models, parameters can include coefficients, 
-intercepts, variances, and other elements that describe the model.
+    NOTES ON PARAMETERS, COEFFICIENTS, Intercept, Variance, Standard Deviation, Hypothesis Testing, Confidence Interval:
+        Overview of Para and Coef:
+            A "parameter" is a more general term that refers to any characteristic or quantity that can help define a system. In statistical models, parameters can include coefficients, 
+            intercepts, variances, and other elements that describe the model.
 
-A "coefficient" specifically refers to the weights or multiplicative factors associated with the predictor variables in a regression model. In the context of linear 
-regression or logistic regression, these coefficients represent the change in the dependent variable for a one-unit change in the corresponding predictor variable 
-while holding other variables constant.
+            A "coefficient" specifically refers to the weights or multiplicative factors associated with the predictor variables in a regression model. In the context of linear 
+            regression or logistic regression, these coefficients represent the change in the dependent variable for a one-unit change in the corresponding predictor variable 
+            while holding other variables constant.
 
-In summary, while all coefficients are parameters, not all parameters are coefficients. The term "coefficient" is more specific 
-and typically used when referring to the 
-weights in regression models.
+            In summary, while all coefficients are parameters, not all parameters are coefficients. The term "coefficient" is more specific 
+            and typically used when referring to the 
+            weights in regression models.
 
-Coefficients:
-In statistical modeling, coefficients are the numerical values that multiply the predictor variables in a regression equation.
-In simple linear regression, there is one coefficient representing the slope of the line.
-In multiple linear regression, each predictor variable has its own coefficient, indicating the change in the response variable for a one-unit change in that predictor while holding other variables constant.
-In logistic regression, coefficients represent the log-odds change in the outcome for a one-unit change in the predictor.
+        Coefficients:
+            In statistical modeling, coefficients are the numerical values that multiply the predictor variables in a regression equation.
+            In simple linear regression, there is one coefficient representing the slope of the line.
+            In multiple linear regression, each predictor variable has its own coefficient, indicating the change in the response variable for a one-unit change in that predictor while holding other variables constant.
+            In logistic regression, coefficients represent the log-odds change in the outcome for a one-unit change in the predictor.
 
-Intercept:
-The intercept is the constant term in a regression equation, representing the expected value of the response variable when all predictor variables are zero.
-In simple linear regression, the intercept is the point where the regression line crosses the y-axis.
-In multiple linear regression, it represents the baseline value of the response variable when all predictors are zero.
+        Intercept:
+            The intercept is the constant term in a regression equation, representing the expected value of the response variable when all predictor variables are zero.
+            In simple linear regression, the intercept is the point where the regression line crosses the y-axis.
+            In multiple linear regression, it represents the baseline value of the response variable when all predictors are zero.
 
-Variances:
-Variance measures the spread or dispersion of a set of data points.
-In statistics, variance is a key component in calculating standard deviation, a measure of how much individual data points differ from the mean.
-In the context of linear regression, the residual variance (the variance of the differences between observed and predicted values) is crucial in assessing the goodness of fit of the model.
+        Variances:
+            Variance measures the spread or dispersion of a set of data points.
+            In statistics, variance is a key component in calculating standard deviation, a measure of how much individual data points differ from the mean.
+            In the context of linear regression, the residual variance (the variance of the differences between observed and predicted values) is crucial in assessing the goodness of fit of the model.
 
-Standard Deviation:
-Standard deviation is a measure of the amount of variation or dispersion in a set of values.
-It is the square root of the variance and provides a more interpretable scale since it's in the same units as the original data.
+        Standard Deviation:
+            Standard deviation is a measure of the amount of variation or dispersion in a set of values.
+            It is the square root of the variance and provides a more interpretable scale since it's in the same units as the original data.
 
-Hypothesis Testing:
-In statistics, hypothesis testing involves making inferences about population parameters based on sample data.
-Commonly used tests include t-tests and z-tests for means, chi-square tests for independence, and F-tests for variances.
+        Hypothesis Testing:
+            In statistics, hypothesis testing involves making inferences about population parameters based on sample data.
+            Commonly used tests include t-tests and z-tests for means, chi-square tests for independence, and F-tests for variances.
 
-Confidence Intervals:
-Confidence intervals provide a range of values within which the true population parameter is likely to fall with a certain level of confidence.
-For example, a 95% confidence interval implies that there is a 95% chance that the interval contains the true parameter.
-
-
-                    -In logistic regression, we model the probability that an input, x, belongs to the default class y equals 1, 
-                        and we can write this formally as probability of y equals 1 given x
-                    -We can also write probability of y belongs to class 0 given x is 1 minus probability of y equals 1 given x.
-                        
-                        -Example: 
-                                The probability of a customer staying with the company can be shown as probability of churn equals 1 given 
-                                    a customer's income and age, which can be, for instance, 0.8, and the probability of churn is 0 for 
-                                    the same customer given a customer's income and age can be calculated as 1 minus 0.8 equals 0.2.
-                                So, now our job is to train the model to set its parameter values in such a way that our model is a good 
-                                    estimate of probability of y equals 1 given x.  it should be a good estimate of probability of y belongs 
-                                    to class 0 given x that can be shown as 1 minus sigmoid of Theta transpose x.
-                                    ************************************************************************************************************************************
-                                    - this is what a good classifier model built by logistic regression is supposed to do for us. 
-
-
+        Confidence Intervals:
+            Confidence intervals provide a range of values within which the true population parameter is likely to fall with a certain level of confidence.
+            For example, a 95% confidence interval implies that there is a 95% chance that the interval contains the true parameter.
+                -In logistic regression, we model the probability that an input, x, belongs to the default class y equals 1, 
+                    and we can write this formally as probability of y equals 1 given x
+                -We can also write probability of y belongs to class 0 given x is 1 minus probability of y equals 1 given x.
+                    -Example: 
+                        The probability of a customer staying with the company can be shown as probability of churn equals 1 given 
+                            a customer's income and age, which can be, for instance, 0.8, and the probability of churn is 0 for 
+                            the same customer given a customer's income and age can be calculated as 1 minus 0.8 equals 0.2.
+                        So, now our job is to train the model to set its parameter values in such a way that our model is a good 
+                            estimate of probability of y equals 1 given x.  it should be a good estimate of probability of y belongs 
+                            to class 0 given x that can be shown as 1 minus sigmoid of Theta transpose x.
+                            ************************************************************************************************************************************
+                            - this is what a good classifier model built by logistic regression is supposed to do for us. 
 
     SVM(Support Vector Machines):
+        Overview:
+            -SVM is a supervised algorithm that classifies cases by finding a separator
+            -NOT BEST WHEN you need multiple decision boundaries with varying weights
+            -first maps data to a high dimensional feature space so that data points can be categorized, 
+                even when the data are not otherwise linearly separable.then a separator is estimated for the data
+            -2 categories that can be separtated with a curve but not a line
+            -true of most data sets 
+            -svm algorithm ouptus an optimal hyperplane that categorizes new examples
         WHEN SHOULD WE USE SVM?
             -image analysis tasks 
                 -image classification
@@ -999,14 +992,7 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
                     -regression
                     -outlier detection 
                     -clustering 
-        -SVM is a supervised algorithm that classifies cases by finding a separator
-        -NOT BEST WHEN you need multiple decision boundaries with varying weights
-        -first maps data to a high dimensional feature space so that data points can be categorized, 
-            even when the data are not otherwise linearly separable.then a separator is estimated for the data
-        -2 categories that can be separtated with a curve but not a line
-            -true of most data sets 
-            -svm algorithm ouptus an optimal hyperplane that categorizes new examples
-        Data Transformation: 
+        Data Transformation, turns non linearly separable data into separable data: 
             -turns non linearly separable data into separable data by using funcion with outputs x and x squared
             -Does what is called kernelling 
                 -mapping data into a higher dimension of space
@@ -1016,7 +1002,7 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
                     -Polynomial
                     -RBF (radial basis function)
                     -Sigmoid 
-        hyperplane
+        Hyperplane:
             -goal is to choose a hyperplane with as big a margin as possible 
             -demarcation between data   
                 -2d line
@@ -1024,16 +1010,13 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
         offers a choice of kernel function for performing its processing. Basically mapping data into 
             higher dimensional space which is referred to as kernelling. The mathematical function used for 
             the transformation is known as the kernel function, and can be of diffrenent types.
-
                 1. Linear
                 2. Polynomial
                 3. Radial basis function (RBF)
                 4. sigmoid
-
         Each of the functions has its characteristics, its pros and cons, and its equation, but as there's
             no easy way of knowing which function performs best with any given dataset. We usually choose 
             different functions in turn and compare the results. 
-        
         How do we find the right or optimized separator after transformation?
             -find the best hyperplane and the best does the best job of separating the data 
                 - the best will have the largest margin between the 2 datasets 
@@ -1045,7 +1028,6 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
                     -w(transposed)x + b = -1 # bottom boundary
                 HYPERPLANE 
                     -w(transposed)x + b = 0
-
         SVM Pros and Cons:
             Pro:
                 -Accurate in high-dimensional spaces 
@@ -1054,130 +1036,113 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
                 -Prone to over-fitting if number of features is much greater than the number of samples 
                 -No probability estimation directly which are desireable in most classifiction problems 
                 -computationally inefficient in data more than 1000 rows 
-        Steps:
+    SVM Steps:
+            1. ETL:
+                -make sure all cells are numerical 
+            2a. Select independent variables:  
+                    feature_df = df[['column1', 'column2', 'column3', 'etc.']]
+                    #l convert feature_df to numpy array    
+                    X = np.asarray(feature_df)
+                    X[0:5]
+            2b. Select dependent variable:
+                    # select column for the dependent variable
+                    df['dependent_var_column'] = df['dependent_var_column].asypte('int')
+                    # Convert the df to a numpy array
+                    y = np.asarray(df['dependent_var_column'])
+            3. Train/Test dataset
+                    from sklearn.model_selection import train_test_split
+                    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=4)
+                    print ('Train set:', X_train.shape,  y_train.shape)
+                    print('Test set:', X_test.shape,  y_test.shape)
+            4. Modeling: SVM
+                from sklearn import svm 
+                clf = svm.SVC(kernel='rbf')
+                clf.fit(X_train, y_train)
+            5. Prediction: yhat 
+                yhat = clf.predict(X_test)
+                yhat[0:5]
+            6.a Evaluation: Classification_Repoart and Confusion Matrix
+                def plot_confusion_matrix(cm, classes,
+                            normalize=False,
+                            title='Confusion matrix',
+                            cmap=plt.cm.Blues):
+                    """
+                    This function prints and plots the confusion matrix.
+                    Normalization can be applied by setting `normalize=True`.
+                    """
+                    if normalize:
+                        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+                        print("Normalized confusion matrix")
+                    else:
+                        print('Confusion matrix, without normalization')
+                    print(cm)
+                    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+                    plt.title(title)
+                    plt.colorbar()
+                    tick_marks = np.arange(len(classes))
+                    plt.xticks(tick_marks, classes, rotation=45)
+                    plt.yticks(tick_marks, classes)
+                    fmt = '.2f' if normalize else 'd'
+                    thresh = cm.max() / 2.
+                    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+                        plt.text(j, i, format(cm[i, j], fmt),
+                                horizontalalignment="center",
+                                color="white" if cm[i, j] > thresh else "black")
+                    plt.tight_layout()
+                    plt.ylabel('True label')
+                    plt.xlabel('Predicted label')
+            6.b
+                from sklearn.metrics import classification_report, confusion_matrix
+                # Compute confusion matrix
+                cnf_matrix = confusion_matrix(y_test, yhat, labels=[2,4])
+                np.set_printoptions(precision=2)
 
-        1. ETL:
-            -make sure all cells are numerical 
-        2a. Select independent variables:  
-                feature_df = df[['column1', 'column2', 'column3', 'etc.']]
-                #l convert feature_df to numpy array    
-                X = np.asarray(feature_df)
-                X[0:5]
-        2b. Select dependent variable:
-                # select column for the dependent variable
-                df['dependent_var_column'] = df['dependent_var_column].asypte('int')
+                print (classification_report(y_test, yhat))
 
-                # Convert the df to a numpy array
-                y = np.asarray(df['dependent_var_column'])
-        3. Train/Test dataset
-                from sklearn.model_selection import train_test_split
-                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=4)
-                print ('Train set:', X_train.shape,  y_train.shape)
-                print('Test set:', X_test.shape,  y_test.shape)
-        4. Modeling: SVM
-            from sklearn import svm 
-            clf = svm.SVC(kernel='rbf')
-            clf.fit(X_train, y_train)
-        5. Prediction: yhat 
-            yhat = clf.predict(X_test)
-            yhat[0:5]
-        6.a Evaluation: Classification_Repoart and Confusion Matrix
-            def plot_confusion_matrix(cm, classes,
-                          normalize=False,
-                          title='Confusion matrix',
-                          cmap=plt.cm.Blues):
-                """
-                This function prints and plots the confusion matrix.
-                Normalization can be applied by setting `normalize=True`.
-                """
-                if normalize:
-                    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-                    print("Normalized confusion matrix")
-                else:
-                    print('Confusion matrix, without normalization')
+                # Plot non-normalized confusion matrix
+                plt.figure()
+                plot_confusion_matrix(cnf_matrix, classes=['Benign(2)','Malignant(4)'],normalize= False,  title='Confusion matrix')
+            6.optional
+                from sklearn.metrics import f1_score
+                f1_score(y_test, yhat, average='weighted')
+                or 
+                from sklearn.metrics import jaccard_score
+                jaccard_score(y_test, yhat, pos_label=2)
 
-                print(cm)
-
-                plt.imshow(cm, interpolation='nearest', cmap=cmap)
-                plt.title(title)
-                plt.colorbar()
-                tick_marks = np.arange(len(classes))
-                plt.xticks(tick_marks, classes, rotation=45)
-                plt.yticks(tick_marks, classes)
-
-                fmt = '.2f' if normalize else 'd'
-                thresh = cm.max() / 2.
-                for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-                    plt.text(j, i, format(cm[i, j], fmt),
-                            horizontalalignment="center",
-                            color="white" if cm[i, j] > thresh else "black")
-
-                plt.tight_layout()
-                plt.ylabel('True label')
-                plt.xlabel('Predicted label')
-        6.b
-            from sklearn.metrics import classification_report, confusion_matrix
-            # Compute confusion matrix
-            cnf_matrix = confusion_matrix(y_test, yhat, labels=[2,4])
-            np.set_printoptions(precision=2)
-
-            print (classification_report(y_test, yhat))
-
-            # Plot non-normalized confusion matrix
-            plt.figure()
-            plot_confusion_matrix(cnf_matrix, classes=['Benign(2)','Malignant(4)'],normalize= False,  title='Confusion matrix')
-
-        6.optional
-            from sklearn.metrics import f1_score
-            f1_score(y_test, yhat, average='weighted')
-
-            or 
-
-            from sklearn.metrics import jaccard_score
-            jaccard_score(y_test, yhat, pos_label=2)
-        
-What are the requirements for independent and dependent variables in linear regression?
-Independent variables can be either categorical or continuous, but dependent variables must be continuous
-
-The key difference between single and multiple regression is:
-
-What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
-    Overfitting:
-        The model is too complex and has learned the training data's noise, leading to poor generalization 
-            to new data.
-                High-degree polynomial features, deep neural network architectures, or other complex models may 
-                    be prone to overfitting.
-    Not Enough Data:
-            The training dataset may be too small, causing the model to memorize the examples rather than 
-                learning the underlying patterns.
-    Data Mismatch:
-            There might be a significant difference between the training and testing datasets, leading to 
-                poor generalization. Ensure that the testing data is representative of the real-world scenarios 
-                the model will encounter.
-    Feature Engineering:
-            Incorrect or insufficient feature engineering can lead to overfitting. Ensure that the features 
-                used in training are relevant and meaningful for the task.
-    Hyperparameter Tuning:
-            Model hyperparameters may be tuned too much to the training data, making the model less adaptable 
-            to new data. Regularization techniques or adjustments to hyperparameters may be necessary.
-    Leakage:
-            Information from the testing set may unintentionally influence the training process, leading to 
-            leakage. Ensure a clear separation between training and testing data.
-    Randomness:
-            Some algorithms (especially those involving randomness like certain ensemble methods) may produce 
-            different results each time they are trained, leading to overfitting to a specific set of random 
-            variations in the training data.
-    To address these issues, consider the following steps:
-            Use regularization techniques (e.g., L1 or L2 regularization) to penalize overly complex models.
-            Increase the amount of training data if possible.
-            Validate the model on a separate validation set during training to monitor generalization performance.
-            Adjust model complexity by tuning hyperparameters.
-            Check for data leakage and ensure a proper separation between training and testing datasets.
+    What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
+        Overfitting:
+            The model is too complex and has learned the training data's noise, leading to poor generalization 
+                to new data.
+                    High-degree polynomial features, deep neural network architectures, or other complex models may 
+                        be prone to overfitting.
+        Not Enough Data:
+                The training dataset may be too small, causing the model to memorize the examples rather than 
+                    learning the underlying patterns.
+        Data Mismatch:
+                There might be a significant difference between the training and testing datasets, leading to 
+                    poor generalization. Ensure that the testing data is representative of the real-world scenarios 
+                    the model will encounter.
+        Feature Engineering:
+                Incorrect or insufficient feature engineering can lead to overfitting. Ensure that the features 
+                    used in training are relevant and meaningful for the task.
+        Hyperparameter Tuning:
+                Model hyperparameters may be tuned too much to the training data, making the model less adaptable 
+                to new data. Regularization techniques or adjustments to hyperparameters may be necessary.
+        Leakage:
+                Information from the testing set may unintentionally influence the training process, leading to 
+                leakage. Ensure a clear separation between training and testing data.
+        Randomness:
+                Some algorithms (especially those involving randomness like certain ensemble methods) may produce 
+                different results each time they are trained, leading to overfitting to a specific set of random 
+                variations in the training data.
+        To address these issues, consider the following steps:
+                Use regularization techniques (e.g., L1 or L2 regularization) to penalize overly complex models.
+                Increase the amount of training data if possible.
+                Validate the model on a separate validation set during training to monitor generalization performance.
+                Adjust model complexity by tuning hyperparameters.
+                Check for data leakage and ensure a proper separation between training and testing datasets.
 
 Multiple linear regression is appropriate for:
-
-
-
 False:
 multiple linear regression requires a linear relationship between the predictors and the response
     but simple linear regression does not
@@ -1186,129 +1151,113 @@ linear relationship is necessary between the independent and dependent variables
 simple linear regression requires a linear relationship between the predictor and the response
     but multiple linear regression does not.
 
+    Overfitting: 
+        Overfitting occurs when a model fits the training data too closely, 
+        resulting in poor performance on new, unseen data. It happens when the model captures noise or random 
+        fluctuations in the training data instead of the underlying pattern.
+        Overfitting can be addressed by:
+            Regularization: 
+                Regularization techniques, such as Ridge regression or Lasso regression, add a penalty 
+                    term to the model's objective function. This penalty discourages the model from fitting the training 
+                    data too closely and helps to control the complexity of the model.
+        Cross-validation: 
+                Cross-validation is a technique used to assess the performance of a model on unseen data. By 
+                    splitting the data into multiple subsets and training the model on different combinations of these subsets, 
+                    we can get a more reliable estimate of the model's performance and detect if it is overfitting.
+        Feature selection: 
+            Overfitting can occur when the model is trained on irrelevant or noisy features. Feature 
+                    selection techniques, such as backward elimination or forward selection, help to identify and select the most 
+                    relevant features for the model, reducing the risk of overfitting.
+        Increasing training data: 
+            Having more training data can help to reduce overfitting. With a larger dataset, the 
+                    model has more examples to learn from and can better capture the underlying patterns instead of memorizing 
+                    specific instances.
+        Simplifying the model: 
+            Sometimes, overfitting can be mitigated by using a simpler model with fewer parameters. 
+                    This reduces the model's complexity and makes it less prone to overfitting.
 
-Overfitting in machine learning models: 
-    Overfitting occurs when a model fits the training data too closely, 
-    resulting in poor performance on new, unseen data. It happens when the model captures noise or random 
-    fluctuations in the training data instead of the underlying pattern.
-
-    Overfitting can be addressed by:
-        Regularization: 
-            Regularization techniques, such as Ridge regression or Lasso regression, add a penalty 
-                term to the model's objective function. This penalty discourages the model from fitting the training 
-                data too closely and helps to control the complexity of the model.
-
-    Cross-validation: 
-            Cross-validation is a technique used to assess the performance of a model on unseen data. By 
-                splitting the data into multiple subsets and training the model on different combinations of these subsets, 
-                we can get a more reliable estimate of the model's performance and detect if it is overfitting.
-
-    Feature selection: 
-        Overfitting can occur when the model is trained on irrelevant or noisy features. Feature 
-                selection techniques, such as backward elimination or forward selection, help to identify and select the most 
-                relevant features for the model, reducing the risk of overfitting.
-
-    Increasing training data: 
-        Having more training data can help to reduce overfitting. With a larger dataset, the 
-                model has more examples to learn from and can better capture the underlying patterns instead of memorizing 
-                specific instances.
-
-    Simplifying the model: 
-        Sometimes, overfitting can be mitigated by using a simpler model with fewer parameters. 
-                This reduces the model's complexity and makes it less prone to overfitting.
-
-Underfitting:
-        a situation in machine learning where a model is too simple or lacks complexity to capture the underlying 
-            patterns in the data. It occurs when the model is unable to adequately fit the training data, resulting 
-            in poor performance in both training and testing phases. In other words, an underfit model fails to 
-            capture the relationships and nuances present in the data, leading to high bias and low variance. This 
-            can happen when the model is too basic or when the training data is insufficient. Underfitting is 
-            characterized by low accuracy and poor predictive power.
-    
-    Addressing Underfitting:
-        Increase model complexity: 
-            Underfitting often occurs when the model is too simple to capture the underlying patterns in the data. 
-            By increasing the complexity of the model, such as adding more features or increasing the degree of 
-            polynomial terms, you can allow the model to better fit the data.
-
-        Collect more data: 
-            Insufficient data can also lead to underfitting. By gathering more data, you provide the model with a 
-            larger and more diverse set of examples to learn from, which can help improve its performance.
-
-        Feature engineering: 
-            Sometimes, the existing features may not be sufficient to capture the relationships in the data. In such 
-            cases, you can create new features by combining or transforming the existing ones. This process, known as 
-            feature engineering, can help the model better represent the underlying patterns.
-
-        Regularization techniques: 
-            Regularization methods, such as Ridge regression and Lasso regression, can help prevent overfitting and 
-            indirectly address underfitting. These techniques introduce a penalty term to the loss function, which 
-            encourages the model to find a balance between simplicity and accuracy.
-
-        Ensemble methods: 
-            Ensemble methods combine multiple models to make predictions. By using techniques like bagging or 
-            boosting, you can create a more complex model by aggregating the predictions of several simpler models. 
-            This can help mitigate underfitting and improve overall performance.
-            
-
-Multiclass Predition 
-
-    Classiifying data into multiple class labels
-        -You can convert logisitic regression to multi-class classification using 
-            multinomial logistic regression or SoftMax Regression 
-            -this is generalized logistic regression 
-
-    SOFTMAX REGRESSION: 
-        -multi-class classification techniques that can convert most two-class 
-            classifiers to a multi-class classifier
-        -similar to logistic regression
-        -training process is almost identical to logistic regression using cross-entropy but prediction is different 
-        -can you it to generate a probability of how likely the sample belongs to each class    
-            -then make a prediciton using the argmax function 
-
-    ONE VS ALL(One-vs-Rest):
-        -you essentially logistic regression and put each class against the one(X) and 
-            each point gets put into class against the one(X)
-        -multi-class classification techniques that can convert most two-class 
-            classifiers to a multi-class classifier
-            -you need to index your different classes 1-4 or 0-3 doesn't matter starting at 0 or 1 
-        -email foldering/tagging: 
-            -Work, Friends, Family, Hobby
-            -y=1, y=2, y=3, y=4
-        -Medical Diagrams: 
-            -Not Ill, Cold, Flu 
-            -y=1, y=2, y=3 
-        -Weather: 
-            -Sunny, Cloudy, Rain, Snow 
-            -y=1, y=2, y=3, y=4 
-        -each class is treated as a binary classification problem, where one class is labeled as the 
-            positive class and all other classes are grouped together as the negative class. This 
-            results in multiple binary classifiers, each trained to distinguish between one class 
-            and the rest of the classes.
-        -the decision boundaries for each class are independent of each other.
-        -typically won't have a region where multiple classes are considered valid outpus simultaneously
-    Binary Classification for Each Class:
-            For each class i, a binary classifier is trained to distinguish between instances of class 
-                i and instances of all other classes combined. This results in k binary classifiers, where 
-                k is the total number of classes.
-    Decision Boundaries:
-            The decision boundary for each binary classifier separates the instances of its corresponding 
-                class from the instances of all other classes. These decision boundaries are independent 
-                of each other and are optimized to maximize the separation between the positive class 
-                and the negative class.
-    Decision Boundaries:
-            The decision boundary for each binary classifier separates the instances of its corresponding 
-                class from the instances of all other classes. These decision boundaries are independent 
-                of each other and are optimized to maximize the separation between the positive class 
-                and the negative class.
-
-    ONE VS ONE Classification:
-        -multi-class classification techniques that can convert most two-class 
-            classifiers to a multi-class classifier
-        -if we have class 0,1, and 2, we would train one classifier on the samples 
-            that are class 0 and class 1, a second classifier on samples that are of 
-            class 0 and class 2, and a final classifier on samples of class 1 and 
-            class 2
+    Underfitting:
+            a situation in machine learning where a model is too simple or lacks complexity to capture the underlying 
+                patterns in the data. It occurs when the model is unable to adequately fit the training data, resulting 
+                in poor performance in both training and testing phases. In other words, an underfit model fails to 
+                capture the relationships and nuances present in the data, leading to high bias and low variance. This 
+                can happen when the model is too basic or when the training data is insufficient. Underfitting is 
+                characterized by low accuracy and poor predictive power.
+        Addressing Underfitting:
+            Increase model complexity: 
+                Underfitting often occurs when the model is too simple to capture the underlying patterns in the data. 
+                By increasing the complexity of the model, such as adding more features or increasing the degree of 
+                polynomial terms, you can allow the model to better fit the data.
+            Collect more data: 
+                Insufficient data can also lead to underfitting. By gathering more data, you provide the model with a 
+                larger and more diverse set of examples to learn from, which can help improve its performance.
+            Feature engineering: 
+                Sometimes, the existing features may not be sufficient to capture the relationships in the data. In such 
+                cases, you can create new features by combining or transforming the existing ones. This process, known as 
+                feature engineering, can help the model better represent the underlying patterns.
+            Regularization techniques: 
+                Regularization methods, such as Ridge regression and Lasso regression, can help prevent overfitting and 
+                indirectly address underfitting. These techniques introduce a penalty term to the loss function, which 
+                encourages the model to find a balance between simplicity and accuracy.
+            Ensemble methods: 
+                Ensemble methods combine multiple models to make predictions. By using techniques like bagging or 
+                boosting, you can create a more complex model by aggregating the predictions of several simpler models. 
+                This can help mitigate underfitting and improve overall performance.
+                
+    Multiclass Prediction 
+        Classiifying data into multiple class labels
+            -You can convert logisitic regression to multi-class classification using 
+                multinomial logistic regression or SoftMax Regression 
+                -this is generalized logistic regression 
+        SOFTMAX REGRESSION: 
+            -multi-class classification techniques that can convert most two-class 
+                classifiers to a multi-class classifier
+            -similar to logistic regression
+            -training process is almost identical to logistic regression using cross-entropy but prediction is different 
+            -can you it to generate a probability of how likely the sample belongs to each class    
+                -then make a prediciton using the argmax function 
+        ONE VS ALL(One-vs-Rest):
+            -you essentially logistic regression and put each class against the one(X) and 
+                each point gets put into class against the one(X)
+            -multi-class classification techniques that can convert most two-class 
+                classifiers to a multi-class classifier
+                -you need to index your different classes 1-4 or 0-3 doesn't matter starting at 0 or 1 
+            -email foldering/tagging: 
+                -Work, Friends, Family, Hobby
+                -y=1, y=2, y=3, y=4
+            -Medical Diagrams: 
+                -Not Ill, Cold, Flu 
+                -y=1, y=2, y=3 
+            -Weather: 
+                -Sunny, Cloudy, Rain, Snow 
+                -y=1, y=2, y=3, y=4 
+            -each class is treated as a binary classification problem, where one class is labeled as the 
+                positive class and all other classes are grouped together as the negative class. This 
+                results in multiple binary classifiers, each trained to distinguish between one class 
+                and the rest of the classes.
+            -the decision boundaries for each class are independent of each other.
+            -typically won't have a region where multiple classes are considered valid outpus simultaneously
+            Binary Classification for Each Class:
+                    For each class i, a binary classifier is trained to distinguish between instances of class 
+                        i and instances of all other classes combined. This results in k binary classifiers, where 
+                        k is the total number of classes.
+            Decision Boundaries:
+                    The decision boundary for each binary classifier separates the instances of its corresponding 
+                        class from the instances of all other classes. These decision boundaries are independent 
+                        of each other and are optimized to maximize the separation between the positive class 
+                        and the negative class.
+            Decision Boundaries:
+                    The decision boundary for each binary classifier separates the instances of its corresponding 
+                        class from the instances of all other classes. These decision boundaries are independent 
+                        of each other and are optimized to maximize the separation between the positive class 
+                        and the negative class.
+        ONE VS ONE Classification:
+            -multi-class classification techniques that can convert most two-class 
+                classifiers to a multi-class classifier
+            -if we have class 0,1, and 2, we would train one classifier on the samples 
+                that are class 0 and class 1, a second classifier on samples that are of 
+                class 0 and class 2, and a final classifier on samples of class 1 and 
+                class 2
 
 
         
