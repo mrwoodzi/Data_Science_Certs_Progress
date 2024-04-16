@@ -1,812 +1,723 @@
  What is Machine Learning:
-    Inductive Inference
-    Machine Learning   
-        -used for estimating relationships
-    An AI domain where we extract patterns from the data and analyze 
-        the data and make intelligent predictions on the new data
-        according to the pattern your machine has learnt
-    How machines extract patterns?
-    How we analyze the data?
-    How machines make predictions?
-    Tom Mitchell
-        "A computer program is said to learn from experience E with respect to some task T 
-            and some performance measure P, if its performance on T, as measured by P, 
-            improves with experience E."
-    Experience -> Task -> Performance -> Improve -> Performance -> Improve 
-
-    Experience  
-        -can be past data
-    Task    
-        -the prediction you are trying to make 
-    Performance 
-        -how well your model is performing on new and unseen data
-    Improve 
-        -feedback
-
-Linear Regression:
-    -extracting patterns
-
-    Example:
-        Prepare a marketing plan for a Car Company
-            -manufacturer of the car
-            -model of the car 
-            -engine size of car 
-            -horsepower of the car 
-
-        Making a market plan    
-            -recommend which info of the car to highlight
-                -to make the most of Stakeholders
-            Is there a relationshiop between info of the car and sales?
-            How strong is the relationship between info of the car and sales?
-            Which info contributes to sales?
-            How accurately can we estimate the effect of each info on sales?
-            How accurately can we predict the sales?
-            Is the relationship linear?
-
-
-Module 1:
-    Introduction and Regression
-        
-    Simple Linear Regression 
-    Multiple Linear Regression 
-    Regression Trees 
-
-
-
-Module 2:
-    Classification 
-        Logistic Regression
-        KNN 
-        SVM 
-        Multiclass Prediction 
-        Decision Trees
-            -uses historical data 
- 
-
-
-Module 3:
-    Clustering 
-        K-means 
-
-
-Module 4:
-    Final Project
-
-
-Data Science Methodology Review:
-Business Understanding
-Analytic Approach
-Data Requirements
-Data Collection
-Data Understanding
-Data Preparation 
-Modeling
-Evaluation 
-Deployment 
-Feedback
-***Process is Iterative***
-
-
-Machine Learning is the subfield of computer science that gives "computers the ability to learn without 
+    What is it
+        Inductive Inference
+        Machine Learning   
+            -used for estimating relationships
+        An AI domain where we extract patterns from the data and analyze 
+            the data and make intelligent predictions on the new data
+            according to the pattern your machine has learnt
+        How machines extract patterns?
+        How we analyze the data?
+        How machines make predictions?
+        Tom Mitchell
+            "A computer program is said to learn from experience E with respect to some task T 
+                and some performance measure P, if its performance on T, as measured by P, 
+                improves with experience E."
+        Experience -> Task -> Performance -> Improve -> Performance -> Improve 
+        Experience  
+            -can be past data
+        Task    
+            -the prediction you are trying to make 
+        Performance 
+            -how well your model is performing on new and unseen data
+        Improve 
+            -feedback
+        Machine Learning is the subfield of computer science that gives "computers the ability to learn without 
         being explicitly programmed"
-
         Define "without being explicitly programmed."
+    Major Machine Learning Techniques:
+        Regression:
+            -predicting continuous values
+        Classification:
+            -predicting class or category of a cases 
+        Clustering:
+            -finding the structure of data; summarization
+            - ex., grouping of similar cases in a dataset, for example to find similar patients, or for customer segmentation in a bank 
+        Associations:
+            -associating frequent co-occurring items/events
+        Anomaly detection:
+            -discovering abnormal and unusual cases 
+        Sequence mining:
+            -predicting next events; click-stream (Markov Model, HMM)
+        Dimension Reduction:
+            -reducing the size of data (PCA) 
+        Recommendation systems:
+            -recommending items
+        Confusion Matrix:
+            confusion matrix is that it shows the model’s ability to correctly predict or separate the classes
+        Python Libraries for Deep Learning:
+            Numpy
+                images
+                functions
+                data types
+            SciPy
+                -signal preprocessing
+                -optomization 
+                -statistics
+            Matplotlib
+                -plotting package that provides 2d plotting and 3d plotting
+            Pandas 
+                -high level library 
+                -data structures, analysis, structures 
+                -operations for maipulating numerical tables and timeseries
+            SciKit Learn 
+                -machine learning library
+                -collection of algorithms 
+                -Popular among data scientist
+                    -free 
+                    -has most of the typical classification, regression and clustering algorithms
+                    -design to work with numpy and scipy 
+                    -good documentation
+                    -it's easy 
+                -pre-processing of data 
+                -feature selection
+                -freature extraction
+                -train test splitting
+                -defining the algorithm
+                -fitting models 
+                -tuning parameters
+                -prediction 
+                -Evaluation
+                -exporting model 
+        Linear Regression:
+            -extracting patterns
+            Example:
+                Prepare a marketing plan for a Car Company
+                    -manufacturer of the car
+                    -model of the car 
+                    -engine size of car 
+                    -horsepower of the car 
 
+                Making a market plan    
+                    -recommend which info of the car to highlight
+                        -to make the most of Stakeholders
+                    Is there a relationshiop between info of the car and sales?
+                    How strong is the relationship between info of the car and sales?
+                    Which info contributes to sales?
+                    How accurately can we estimate the effect of each info on sales?
+                    How accurately can we predict the sales?
+                    Is the relationship linear?
 
-Major Machine Learning Techniques:
-Regression:
-    -predicting continuous values
-Classification:
-    -predicting class or category of a cases 
-Clustering:
-    -finding the structure of data; summarization
-    - ex., grouping of similar cases in a dataset, for example to find similar patients, or for customer segmentation in a bank 
-Associations:
-    -associating frequent co-occurring items/events
-Anomaly detection:
-    -discovering abnormal and unusual cases 
-Sequence mining:
-    -predicting next events; click-stream (Markov Model, HMM)
-Dimension Reduction:
-    -reducing the size of data (PCA) 
-Recommendation systems:
-    -recommending items
-
-
-Confusion Matrix:
-     confusion matrix is that it shows the model’s ability to correctly predict or separate the classes
-
-
-
-Python Libraries for Deep Learning:
-    Numpy
-        images
-        functions
-        data types
-    SciPy
-        -signal preprocessing
-        -optomization 
-        -statistics
-    Matplotlib
-        -plotting package that provides 2d plotting and 3d plotting
-    Pandas 
-        -high level library 
-        -data structures, analysis, structures 
-        -operations for maipulating numerical tables and timeseries
-    SciKit Learn 
-        -machine learning library
-        -collection of algorithms 
-        -Popular among data scientist
-            -free 
-            -has most of the typical classification, regression and clustering algorithms
-            -design to work with numpy and scipy 
-            -good documentation
-            -it's easy 
-        -pre-processing of data 
-        -feature selection
-        -freature extraction
-        -train test splitting
-        -defining the algorithm
-        -fitting models 
-        -tuning parameters
-        -prediction 
-        -Evaluation
-        -exporting model 
-
-
-*****************Supervised Algorithms vs. Unsupervised Algorithms**************
-column_names = attributes
-column_data = features
-row = observation
-
-2 types of Supervised Learning:
-Classification  
-    -process of predicting a discreate class label or category
-    -K-nearest neighbor 
-    -decision Trees 
-    -linear discriminant analysis 
-    -naive bayes
-    -linear discriminant analysis
-    -k-nearest neighbor 
-    -logistic regression 
-    -neural networks 
-    -support vector machines 
-Regression
-    -process of predicting a continuous value 
-
-Unsupervised Learning Techniques:
-    -draws conclusions on unlabeled data 
-    -clustering
-        -used for grouping data points or objects that are somehow similar 
-        -also used for discovering structure, summarization and anomaly detection 
-    -dimension Reduction
-        -reduces redundant features to make the classification easier
-    -density estimation 
-        -explores the data to find some particular structure 
-    -market basket analysis 
-        -theory that if you buy a certain group of items, you're more likely to buy another group of items
-
-There are different model evaluation metrics, lets use MSE here to calculate the accuracy of our model based on the test set: 
-
-* Mean Absolute Error: It is the mean of the absolute value of the errors. This is the easiest of the metrics to understand 
-            since it’s just average error.
-
-* Mean Squared Error (MSE): Mean Squared Error (MSE) is the mean of the squared error. It’s more popular than Mean 
-            Absolute Error because the focus is geared more towards large errors. This is due to the squared term 
-            exponentially increasing larger errors in comparison to smaller ones.
-
-* Root Mean Squared Error (RMSE). 
-
-* R-squared is not an error, but rather a popular metric to measure the performance of your regression model. It represents 
-            how close the data points are to the fitted regression line. The higher the R-squared value, the better the model 
-            fits your data. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse).
-
-Out of Sample Accurcay:
-    percentage of correct prediction that the model makes on data that the model has NOT been trained on. 
-
-When to use Multiple Linear Regression:
-    Independent var. (X)
-        -categorical vars. are more common in multiple lin. regr
-        -***but you convert the categorical vars. into continuous via. things
-            like dummy variables***
-    Dependent var. (Y)
-        -when we would like to identify the strength of the effect that the independent variables have on a dependent var.
-        -when we would like to predict impacts of changes in independent variables on a dependent var. 
-        -Multiple linear regression is applicable when we want to understand the relationship between a dependent 
-            variable and multiple independent variables. It allows us to analyze how each independent variable contributes 
-            to the variation in the dependent variable while controlling for other variables.
-    Assumptions of Multiple Linear Regression:
-        Linearity: 
-            There should be a linear relationship between the independent variables and the dependent variable. This means 
-            that the relationship between the variables can be represented by a straight line.
-        Independence: 
-            The observations should be independent of each other. This assumption assumes that there is no relationship or 
-            correlation between the residuals (the differences between the observed and predicted values) of the dependent variable.
-        Homoscedasticity: 
-            Homoscedasticity refers to the assumption that the variance of the residuals is constant across all levels of the 
-            independent variables. In other words, the spread of the residuals should be consistent throughout the range 
-            of the independent variables.
-        Normality: 
-            The residuals should follow a normal distribution. This assumption assumes that the errors or residuals are normally 
-            distributed with a mean of zero.
-        No multicollinearity: 
-            There should be no perfect multicollinearity among the independent variables. Multicollinearity occurs when two or 
-            more independent variables are highly correlated with each other, making it difficult to determine their individual 
-            effects on the dependent variable
-
-Simple Linear Regression:
-    Independent variables (X)
-        -usually continuous in simple regr. 
-    Dependent variable (Y)
-        typically continuous
-        -trying to predict or explain this variable 
-        -In regression analysis, the dependent variable should be continuous, while the independent variables can be continuous 
-            or categorical. The relationship between the variables should be linear, and there should be no perfect 
-            multicollinearity among the independent variables.
-        -Regression Equation: A regression equation represents the relationship between the dependent variable and the independent 
-            variables. The coefficients in the equation indicate the magnitude and direction of the effect of each independent variable 
-            on the dependent variable
-
-    For Predicting Continuous Variables/Values, think for numerical prediction
-    False: requires a linear relationship between the predictor and the response, but multiple linear regression does not
-    True: a linear relationshiop is necessary between the independent variables  and the dependent variable.
-As mentioned before, __Coefficient__ and __Intercept__  are the parameters of the fitted line. 
-Given that it is a multiple linear regression model with 3 parameters and that the parameters are 
-the intercept and coefficients of the hyperplane, sklearn can estimate them from our data. 
-Scikit-learn uses plain Ordinary Least Squares method to solve this problem.
-
-#### Ordinary Least Squares (OLS)
-OLS is a method for estimating the unknown parameters in a linear regression model. OLS chooses 
-the parameters of a linear function of a set of explanatory variables by minimizing the sum of 
-the squares of the differences between the target dependent variable and those predicted by the 
-linear function. In other words, it tries to minimizes the sum of squared errors (SSE) or mean 
-squared error (MSE) between the target variable (y) and our predicted output ($\hat{y}$) over 
-all samples in the dataset.
-
-OLS can find the best parameters using the following methods:
-* Solving the model parameters analytically using closed-form equations
-* Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)
+    Supervised Algorithms vs. Unsupervised Algorithms
+        Supervised Learneing, 2 types: 
+            Classification  
+                -process of predicting a discreate class label or category
+                -K-nearest neighbor 
+                -decision Trees 
+                -linear discriminant analysis 
+                -naive bayes
+                -linear discriminant analysis
+                -k-nearest neighbor 
+                -logistic regression 
+                -neural networks 
+                -support vector machines 
+            Regression
+                -process of predicting a continuous value 
+        Unsupervised Learning Techniques:
+            -draws conclusions on unlabeled data 
+            -clustering
+                -used for grouping data points or objects that are somehow similar 
+                -also used for discovering structure, summarization and anomaly detection 
+            -dimension Reduction
+                -reduces redundant features to make the classification easier
+            -density estimation 
+                -explores the data to find some particular structure 
+            -market basket analysis 
+                -theory that if you buy a certain group of items, you're more likely to buy another group of items
     
+    Model Evaluation Metrics: 
+        Mean Absolute Error: It is the mean of the absolute value of the errors. This is the easiest of the metrics to understand 
+                    since it’s just average error.
+        Mean Squared Error (MSE): Mean Squared Error (MSE) is the mean of the squared error. It’s more popular than Mean 
+                    Absolute Error because the focus is geared more towards large errors. This is due to the squared term 
+                    exponentially increasing larger errors in comparison to smaller ones.
+        Root Mean Squared Error (RMSE). 
+        R-squared is not an error, but rather a popular metric to measure the performance of your regression model. It represents 
+                    how close the data points are to the fitted regression line. The higher the R-squared value, the better the model 
+                    fits your data. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse).
+        Out of Sample Accurcay:
+            percentage of correct prediction that the model makes on data that the model has NOT been trained on. 
 
-steps of Linear Regression:
-# 1.
-# Create a LinearRegression model it is instantiated as an object
-regr = linear_model.LinearRegression()
+    When to use Multiple Linear Regression:
+        Independent var. (X)
+            -categorical vars. are more common in multiple lin. regr
+            -***but you convert the categorical vars. into continuous via. things
+                like dummy variables***
+        Dependent var. (Y)
+            -when we would like to identify the strength of the effect that the independent variables have on a dependent var.
+            -when we would like to predict impacts of changes in independent variables on a dependent var. 
+            -Multiple linear regression is applicable when we want to understand the relationship between a dependent 
+                variable and multiple independent variables. It allows us to analyze how each independent variable contributes 
+                to the variation in the dependent variable while controlling for other variables.
+        Assumptions of Multiple Linear Regression:
+            Linearity: 
+                There should be a linear relationship between the independent variables and the dependent variable. This means 
+                that the relationship between the variables can be represented by a straight line.
+            Independence: 
+                The observations should be independent of each other. This assumption assumes that there is no relationship or 
+                correlation between the residuals (the differences between the observed and predicted values) of the dependent variable.
+            Homoscedasticity: 
+                Homoscedasticity refers to the assumption that the variance of the residuals is constant across all levels of the 
+                independent variables. In other words, the spread of the residuals should be consistent throughout the range 
+                of the independent variables.
+            Normality: 
+                The residuals should follow a normal distribution. This assumption assumes that the errors or residuals are normally 
+                distributed with a mean of zero.
+            No multicollinearity: 
+                There should be no perfect multicollinearity among the independent variables. Multicollinearity occurs when two or 
+                more independent variables are highly correlated with each other, making it difficult to determine their individual 
+                effects on the dependent variable
 
-# 2.
-# Prepare the input features (x) and the target variable (y)
-# In this example, x includes 'ENGINESIZE', 'CYLINDERS', and 'FUELCONSUMPTION_COMB'
-x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
-y = np.asanyarray(train[['CO2EMISSIONS']])
-
-# 3.
-# Fit the LinearRegression model to the data
-regr.fit (x, y)
-
-# 4.
-# Print the coefficients of the linear model
-print ('Coefficients: ', regr.coef_)
-
-# 5.
-# y_hat are the predictions
-y_hat = regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
-
-# 6.
-# Prepare the input features (x) for the test data.
-x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
-
-# 7.
-# Prepare the target variable (y) for the test data, which is the actual CO2 emissions.
-y = np.asanyarray(test[['CO2EMISSIONS']])
-
-# 8.
-# Calculate the Mean Squared Error (MSE) between the predicted values (y_hat) and the actual values (y).
-mse = np.mean((y_hat - y) ** 2)
-print("Mean Squared Error (MSE): %.2f" % mse)
-
-# 9.
-# The Explained Variance Score (Variance score) measures how well the model explains the variance in the data.
-# A score of 1 indicates a perfect prediction, while lower scores indicate less accurate predictions.
-variance_score = regr.score(x, y)
-print('Variance score: %.2f' % variance_score)
-
-Classification:
-    -Supervised Learning
-    -Target Attribute is a Categorical Variable
-    -good example of classification is the loan default prediction - column labeled "default"
-        -LOAN DEFAULT PREDICTOR
-            -use existing loan data to predict a 0 or 1 as 'defaulter' or 'not defaulter'
-    -Can be binary or multi-class classification 
-
-
-    Classification Accuracy: 
-        -pass the test set to our model and we get y^(y-hat) predicted labels 
-        -compare actual (y) to (y^)
-        -precision = True Positive / (True Positive + False Positive)
-            -Precision is a measure of the accuracy, provided that a class label has been predicted
-        -Recall = True Positive / (True Positive + False Negative)
-            -Recall is the True positive rate
-        -Accuracy classification score computes subset accuracy: the set of labels predicted for a sample must exactly 
-            match the corresponding set of labels in y_true.
-        -multilabel classification, the function returns the subset accuracy. If the entire set of predicted labels 
-            for a sample strictly matches with the true set of labels, then the subset accuracy is 1.0; 
-            otherwise it is 0.0
-        Evaluation Metrics:
-            Jaccard Index
-                -simplest
-                -also known as Jaccard similarity coefficient
-                -defined Jaccard as the size of the intersection divided by the size of the union of two label sets
-                    -2 circles that are partially overlapping
-                -If the entire set of predicted labels for a sample strictly matches 
-                    with the true set of labels, then the subset accuracy is 1.0
-            F1-score
-                -harmonic average of the precision and recall
-                F1 score reaches its best value at 1 (which represents perfect 
-                    precision and recall) and its worst at 0
-                            -precision = True Positive / (True Positive + False Positive)
-                            -Precision is a measure of the accuracy, provided that a class label has been predicted
-                            -Recall = True Positive / (True Positive + False Negative)
-                            -Recall is the True positive rate
-                        -precision = tp/(tp + fp)
-                        -recall = tp/(tp + fn)
-                        -F1-score = 2x(prc x rec)/(prc + rec)
-            Log Loss
-
-
-K-nearest neighbor:
-    -Supervised Learning algorithm
-    -can be used to estimate values for a continuous target
-    -K 
-        -k too small
-            -model will be highly complex and captures too much noise
-    Classification algorithm that is used to classify cases based on their similarity   
-        to other cases. It is a type of instance based learning, where the algorithm learns from labeled data points 
-        and uses them to classify new, unlabeled data ponts. 
-    Instance in machine learning    
-        -refers to a single data point or observation within a dataset.
-        -it represents a specific example or case that the algorithm uses to learn patterns and make predictions
-        -each instance typically consists of a set of features or attributes that describe its characteristics
-        -In the K-Nearest Neighbors (KNN) algorithm, instances are crucial as the algorithm calculates the 
-            distance between the new instance and the existing instances in the dataset to determine the 
-            K nearest neighbors. These neighbors are then used to classify the new instance
-    x = independent variable(s), rows and columns together
-    y = dependent variable, a column
-        -you can make custom categories for individual rows to be categorized as in 
-            the dependent variable column, the one you are classifying
-    -method for classifying cases based on their similarity to other cases 
-    -cases that are near each other are said to be "neighbors"
-    -based on similar cases with the same class labels are near each other
-    -kNN can also be used for regression 
-        -predicting home value by it's features 
-    -build a classifier, to predict the class of unknown cases. 
-        We will use a specific type of classification called K nearest neighbour
-    -Where to start when you've decided to use kNN
-        -Choose a value for K: 
-            -K represents the number of nearest neighbors to 
-                consider when classifying a new data point. It is typically specified 
-                by the user.
-                Dataset size:
-                    If you have a small dataset, choosing a small value of K may lead   
-                        to overfitting, while choosing a large value of K may result in underfitting.
-                        For larger datasets, a larger value of K can be considered.
-                Model Complexity:
-                    A low value of K(K=1) will result in a more complex model that can capture noise
-                        and outliers in the data. On the other hand, a high value of K will lead to a more
-                        generalized model. It is important to strike a balance between complexity and generalization
-                Bias-Variance Tradeoff: 
-                    Choosing a low value of K can lead to high variance and low bias, meaning the model may be sensitive 
-                        to individual instances in the dataset. Conversely, a high value of K can result in low variance 
-                        and high bias, making the model less flexible. Consider the tradeoff between bias and variance based
-                        on the specific problem and dataset.
-                Domain Knowledge:
-                    Understandung the domain and characteristics of the data can help in selecting an appropriate value 
-                        for K. Some domains may have inherent patterns or structures that can guide the choice of K.
-                Cross-Validation:
-                    It is recommended to use cross-validation techniques to evaluate the performance of the model for different 
-                        values of K. This involves splitting the dataset into training and validation sets and measuring the 
-                        accuracy or other evaluation metrics for each value of K. The value of K that yields the best performance 
-                        on the validation set can be chosen.
-                Computational Efficiency:
-                    As the value of K increases, the computational complexity of the algorithm also increases. Consider the computational
-                        complexity fo the algorithm also increases. Consider the computational resources available and the time required
-                        to train and predict with different values of K.
-
-Picking a value for K:
-        1. Pick a value for k
-                -k in kNN = number of nearest neighbors to examine 
-                -low value of k causes a highly complex model, possible overfit of the model 
-                -high value becomes overly generalized and underfitted to the data 
-                -reserve part of data for testing the accuracy of the model 
-        2. calculate the distance of unknown case from all cases 
-                -calculating the similarity/distance in a 1-dimensional space 
-                    -this would be 2 customers difference in age 
-                        this would be Minkowsk/Euclidean distance 
-                    -2 dimension/2 features 
-                        -age and income
-                    -multi dimensional vectors 
-        3. select the K-observations in the training data that are "nearest 
-            to the unknown data point 
-        4. Predict the response of the unknown data point using the most popular response value from the K-nearest neighbors 
-
-        k-Nearest Neighbors Selection:
-            Identify the k training examples that are closest to the new observation based on a distance metric (commonly Euclidean distance).
-            "Closest" here refers to the similarity between the feature values of the new observation and the feature values of the training examples.
-
-        Majority Vote for Classification (kNN for Classification):
-            For classification tasks, the class label that occurs most frequently among the k nearest neighbors is assigned to the new observation.
-            This is essentially a majority vote mechanism.
-
-        Average for Regression (kNN for Regression):
-            For regression tasks, where the goal is to predict a continuous value, the predicted value for the new observation is often the 
-                average of the target values of its k nearest neighbors.
-            In summary, when kNN is used for classification with k = 5, the algorithm typically assigns the class label that is most common 
-                among the 5 nearest neighbors. 
-                For regression tasks, the predicted value would be the average of the target values of those 5 neighbors.
-            Keep in mind that the choice of k is a hyperparameter, and the optimal value may depend on the specific dataset and problem 
-                you are working on. 
-
-        k-Nearest Neighbors Selection:
-            Identify the k training examples that are closest to the new observation based on a distance metric (commonly Euclidean distance).
-            "Closest" here refers to the similarity between the feature values of the new observation and the feature values of the training examples.
-
-        Majority Vote for Classification (kNN for Classification):
-            For classification tasks, the class label that occurs most frequently among the k nearest neighbors is assigned to the new observation.
-            This is essentially a majority vote mechanism.
-
-        Average for Regression (kNN for Regression):
-            For regression tasks, where the goal is to predict a continuous value, the predicted value for the new observation is often the average 
-                of the target values of its k nearest neighbors
-
-kNN Steps:
-    1. Convert pandas df to numpy array with scikit Learn
-        X = df[['column1', 'column2', 'column3', 'column4']]
-    2. Make y variable:
-        y = df['custcat also known as dependent variable']
-    3. Normalize Data:
-        X = preprocessing.StandardScaler().fit(x).transform(X.astype(float))
-    4. Train, Test, Split:
-        from sklearn.model_selection import train_test_split
-        X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
-        print ('Train set:', X_train.shape,  y_train.shape)
-        print ('Test set:', X_test.shape,  y_test.shape)
-    5. kNN  
-        from sklearn.neighbors import KNeighborsClassifier
-        k = 4
-        #Train Model and Predict  
-        neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
-        neigh
-    6. Predicting:
-        yhat = neigh.predict(X_test)
-    7. Accuract Evaluation:
-        from sklearn import metrics
-        print("Train set Accuracy: ", metrics.accuracy_score(y_train, neigh.predict(X_train)))
-        print("Test set Accuracy: ", metrics.accuracy_score(y_test, yhat))
-
-kNN Calculating accuracy for different values of k:
-    1. Calculate Accuracy for different values of k:
-            Ks = 10
-            mean_acc = np.zeros((Ks-1))
-            std_acc = np.zeros((Ks-1))
-
-            for n in range(1,Ks):
+    Simple Linear Regression and other topics related to LR like OLS:
+        Independent variables (X)
+            -usually continuous in simple regr. 
+            -can be EITHER continuous or categorical
+        Dependent variable (Y)
+            typically continuous
+            -trying to predict or explain this variable 
+            -In regression analysis, the dependent variable should be continuous, while the independent variables can be continuous 
+                or categorical. The relationship between the variables should be linear, and there should be no perfect 
+                multicollinearity among the independent variables.
+            -Regression Equation: A regression equation represents the relationship between the dependent variable and the independent 
+                variables. The coefficients in the equation indicate the magnitude and direction of the effect of each independent variable 
+                on the dependent variable
+            For Predicting Continuous Variables/Values, think for numerical prediction
+                False: requires a linear relationship between the predictor and the response, but multiple linear regression does not
+                True: a linear relationshiop is necessary between the independent variables  and the dependent variable.
+                As mentioned before, __Coefficient__ and __Intercept__  are the parameters of the fitted line. 
+                Given that it is a multiple linear regression model with 3 parameters and that the parameters are 
+                the intercept and coefficients of the hyperplane, sklearn can estimate them from our data. 
+                Scikit-learn uses plain Ordinary Least Squares method to solve this problem.
+            Ordinary Least Squares (OLS)
+                OLS is a method for estimating the unknown parameters in a linear regression model. OLS chooses 
+                the parameters of a linear function of a set of explanatory variables by minimizing the sum of 
+                the squares of the differences between the target dependent variable and those predicted by the 
+                linear function. In other words, it tries to minimizes the sum of squared errors (SSE) or mean 
+                squared error (MSE) between the target variable (y) and our predicted output ($\hat{y}$) over 
+                all samples in the dataset.
+            OLS can find the best parameters using the following methods:
+                * Solving the model parameters analytically using closed-form equations
+                * Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)
                 
+    Linear Regression Steps:
+        # 1.
+        # Create a LinearRegression model it is instantiated as an object
+        regr = linear_model.LinearRegression()
+
+        # 2.
+        # Prepare the input features (x) and the target variable (y)
+        # In this example, x includes 'ENGINESIZE', 'CYLINDERS', and 'FUELCONSUMPTION_COMB'
+        x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+        y = np.asanyarray(train[['CO2EMISSIONS']])
+
+        # 3.
+        # Fit the LinearRegression model to the data
+        regr.fit (x, y)
+
+        # 4.
+        # Print the coefficients of the linear model
+        print ('Coefficients: ', regr.coef_)
+
+        # 5.
+        # y_hat are the predictions
+        y_hat = regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+
+        # 6.
+        # Prepare the input features (x) for the test data.
+        x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+
+        # 7.
+        # Prepare the target variable (y) for the test data, which is the actual CO2 emissions.
+        y = np.asanyarray(test[['CO2EMISSIONS']])
+
+        # 8.
+        # Calculate the Mean Squared Error (MSE) between the predicted values (y_hat) and the actual values (y).
+        mse = np.mean((y_hat - y) ** 2)
+        print("Mean Squared Error (MSE): %.2f" % mse)
+
+        # 9.
+        # The Explained Variance Score (Variance score) measures how well the model explains the variance in the data.
+        # A score of 1 indicates a perfect prediction, while lower scores indicate less accurate predictions.
+        variance_score = regr.score(x, y)
+        print('Variance score: %.2f' % variance_score)
+
+    Classification:
+        -Supervised Learning
+        -Target Attribute is a Categorical Variable
+        -good example of classification is the loan default prediction - column labeled "default"
+            -LOAN DEFAULT PREDICTOR
+                -use existing loan data to predict a 0 or 1 as 'defaulter' or 'not defaulter'
+        -Can be binary or multi-class classification 
+        Classification Accuracy: 
+            -pass the test set to our model and we get y^(y-hat) predicted labels 
+            -compare actual (y) to (y^)
+            -precision = True Positive / (True Positive + False Positive)
+                -Precision is a measure of the accuracy, provided that a class label has been predicted
+            -Recall = True Positive / (True Positive + False Negative)
+                -Recall is the True positive rate
+            -Accuracy classification score computes subset accuracy: the set of labels predicted for a sample must exactly 
+                match the corresponding set of labels in y_true.
+            -multilabel classification, the function returns the subset accuracy. If the entire set of predicted labels 
+                for a sample strictly matches with the true set of labels, then the subset accuracy is 1.0; 
+                otherwise it is 0.0
+            Evaluation Metrics:
+                Jaccard Index
+                    -simplest
+                    -also known as Jaccard similarity coefficient
+                    -defined Jaccard as the size of the intersection divided by the size of the union of two label sets
+                        -2 circles that are partially overlapping
+                    -If the entire set of predicted labels for a sample strictly matches 
+                        with the true set of labels, then the subset accuracy is 1.0
+                F1-score
+                    -harmonic average of the precision and recall
+                    F1 score reaches its best value at 1 (which represents perfect 
+                        precision and recall) and its worst at 0
+                                -precision = True Positive / (True Positive + False Positive)
+                                -Precision is a measure of the accuracy, provided that a class label has been predicted
+                                -Recall = True Positive / (True Positive + False Negative)
+                                -Recall is the True positive rate
+                            -precision = tp/(tp + fp)
+                            -recall = tp/(tp + fn)
+                            -F1-score = 2x(prc x rec)/(prc + rec)
+                Log Loss
+
+    K-nearest neighbor:
+        Overview:
+            -Supervised Learning algorithm
+            -can be used to estimate values for a continuous target
+            -K 
+                -k too small
+                    -model will be highly complex and captures too much noise
+            Classification algorithm that is used to classify cases based on their similarity   
+                to other cases. It is a type of instance based learning, where the algorithm learns from labeled data points 
+                and uses them to classify new, unlabeled data ponts. 
+            Instance in machine learning    
+                -refers to a single data point or observation within a dataset.
+                -it represents a specific example or case that the algorithm uses to learn patterns and make predictions
+                -each instance typically consists of a set of features or attributes that describe its characteristics
+                -In the K-Nearest Neighbors (KNN) algorithm, instances are crucial as the algorithm calculates the 
+                    distance between the new instance and the existing instances in the dataset to determine the 
+                    K nearest neighbors. These neighbors are then used to classify the new instance
+            x = independent variable(s), rows and columns together
+            y = dependent variable, a column
+                -you can make custom categories for individual rows to be categorized as in 
+                    the dependent variable column, the one you are classifying
+            -method for classifying cases based on their similarity to other cases 
+            -cases that are near each other are said to be "neighbors"
+            -based on similar cases with the same class labels are near each other
+            -kNN can also be used for regression 
+                -predicting home value by it's features 
+            -build a classifier, to predict the class of unknown cases. 
+                We will use a specific type of classification called K nearest neighbour
+            -Where to start when you've decided to use kNN
+            -Choose a value for K: 
+                -K represents the number of nearest neighbors to 
+                    consider when classifying a new data point. It is typically specified 
+                    by the user.
+                    Dataset size:
+                        If you have a small dataset, choosing a small value of K may lead   
+                            to overfitting, while choosing a large value of K may result in underfitting.
+                            For larger datasets, a larger value of K can be considered.
+                    Model Complexity:
+                        A low value of K(K=1) will result in a more complex model that can capture noise
+                            and outliers in the data. On the other hand, a high value of K will lead to a more
+                            generalized model. It is important to strike a balance between complexity and generalization
+                    Bias-Variance Tradeoff: 
+                        Choosing a low value of K can lead to high variance and low bias, meaning the model may be sensitive 
+                            to individual instances in the dataset. Conversely, a high value of K can result in low variance 
+                            and high bias, making the model less flexible. Consider the tradeoff between bias and variance based
+                            on the specific problem and dataset.
+                    Domain Knowledge:
+                        Understandung the domain and characteristics of the data can help in selecting an appropriate value 
+                            for K. Some domains may have inherent patterns or structures that can guide the choice of K.
+                    Cross-Validation:
+                        It is recommended to use cross-validation techniques to evaluate the performance of the model for different 
+                            values of K. This involves splitting the dataset into training and validation sets and measuring the 
+                            accuracy or other evaluation metrics for each value of K. The value of K that yields the best performance 
+                            on the validation set can be chosen.
+                    Computational Efficiency:
+                        As the value of K increases, the computational complexity of the algorithm also increases. Consider the computational
+                            complexity fo the algorithm also increases. Consider the computational resources available and the time required
+                            to train and predict with different values of K.
+        Picking a value for K:
+                1. Pick a value for k
+                        -k in kNN = number of nearest neighbors to examine 
+                        -low value of k causes a highly complex model, possible overfit of the model 
+                        -high value becomes overly generalized and underfitted to the data 
+                        -reserve part of data for testing the accuracy of the model 
+                2. calculate the distance of unknown case from all cases 
+                        -calculating the similarity/distance in a 1-dimensional space 
+                            -this would be 2 customers difference in age 
+                                this would be Minkowsk/Euclidean distance 
+                            -2 dimension/2 features 
+                                -age and income
+                            -multi dimensional vectors 
+                3. select the K-observations in the training data that are "nearest 
+                    to the unknown data point 
+                4. Predict the response of the unknown data point using the most popular response value from the K-nearest neighbors 
+        k-Nearest Neighbors Selection:
+                    Identify the k training examples that are closest to the new observation based on a distance metric (commonly Euclidean distance).
+                    "Closest" here refers to the similarity between the feature values of the new observation and the feature values of the training examples.
+        Majority Vote for Classification (kNN for Classification):
+                    For classification tasks, the class label that occurs most frequently among the k nearest neighbors is assigned to the new observation.
+                    This is essentially a majority vote mechanism.
+        Average for Regression (kNN for Regression):
+                    For regression tasks, where the goal is to predict a continuous value, the predicted value for the new observation is often the 
+                        average of the target values of its k nearest neighbors.
+                    In summary, when kNN is used for classification with k = 5, the algorithm typically assigns the class label that is most common 
+                        among the 5 nearest neighbors. 
+                        For regression tasks, the predicted value would be the average of the target values of those 5 neighbors.
+                    Keep in mind that the choice of k is a hyperparameter, and the optimal value may depend on the specific dataset and problem 
+                        you are working on. 
+        k-Nearest Neighbors Selection:
+                    Identify the k training examples that are closest to the new observation based on a distance metric (commonly Euclidean distance).
+                    "Closest" here refers to the similarity between the feature values of the new observation and the feature values of the training examples.
+        Majority Vote for Classification (kNN for Classification):
+                    For classification tasks, the class label that occurs most frequently among the k nearest neighbors is assigned to the new observation.
+                    This is essentially a majority vote mechanism.
+                    For regression tasks, where the goal is to predict a continuous value, the predicted value for the new observation is often the average 
+                        of the target values of its k nearest neighbors
+        kNN Steps:
+            1. Convert pandas df to numpy array with scikit Learn
+                X = df[['column1', 'column2', 'column3', 'column4']]
+            2. Make y variable:
+                y = df['custcat also known as dependent variable']
+            3. Normalize Data:
+                X = preprocessing.StandardScaler().fit(x).transform(X.astype(float))
+            4. Train, Test, Split:
+                from sklearn.model_selection import train_test_split
+                X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
+                print ('Train set:', X_train.shape,  y_train.shape)
+                print ('Test set:', X_test.shape,  y_test.shape)
+            5. kNN  
+                from sklearn.neighbors import KNeighborsClassifier
+                k = 4
                 #Train Model and Predict  
-                neigh = KNeighborsClassifier(n_neighbors = n).fit(X_train,y_train)
-                yhat=neigh.predict(X_test)
-                mean_acc[n-1] = metrics.accuracy_score(y_test, yhat)
+                neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
+                neigh
+            6. Predicting:
+                yhat = neigh.predict(X_test)
+            7. Accuract Evaluation:
+                from sklearn import metrics
+                print("Train set Accuracy: ", metrics.accuracy_score(y_train, neigh.predict(X_train)))
+                print("Test set Accuracy: ", metrics.accuracy_score(y_test, yhat))
+        kNN Calculating accuracy for different values of k:
+            1. Calculate Accuracy for different values of k:
+                    Ks = 10
+                    mean_acc = np.zeros((Ks-1))
+                    std_acc = np.zeros((Ks-1))
+                    for n in range(1,Ks):
+                        #Train Model and Predict  
+                        neigh = KNeighborsClassifier(n_neighbors = n).fit(X_train,y_train)
+                        yhat=neigh.predict(X_test)
+                        mean_acc[n-1] = metrics.accuracy_score(y_test, yhat)
+                        std_acc[n-1]=np.std(yhat==y_test)/np.sqrt(yhat.shape[0])
+                    mean_acc
+            2. Plot the Model Accuracy for Different number of neighbors 
+                    plt.plot(range(1,Ks),mean_acc,'g')
+                    plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
+                    plt.fill_between(range(1,Ks),mean_acc - 3 * std_acc,mean_acc + 3 * std_acc, alpha=0.10,color="green")
+                    plt.legend(('Accuracy ', '+/- 1xstd','+/- 3xstd'))
+                    plt.ylabel('Accuracy ')
+                    plt.xlabel('Number of Neighbors (K)')
+                    plt.tight_layout()
+                    plt.show()       
+            3. Which k Has the Best Accuracy:
+                    print( "The best accuracy was with", mean_acc.max(), "with k=", mean_acc.argmax()+1) 
 
-                
-                std_acc[n-1]=np.std(yhat==y_test)/np.sqrt(yhat.shape[0])
+        Decision Trees:
+            Overview:
+                -You can use this to help find out what attributes are correlated with others
+                -Supervised machine learning algorithm that is used for classification and regression tasks
+                -Building a model from data to predict a class 
+                -built by splitting the training set into distinct nodes
+                    -built by recursive partitioning to classify the data
+                -one node in a decision tree contains all of or most of, one category of the data.
+                -decision trees handle categorical data by splitting based on categories, and they handle numerical 
+                    data by defining thresholds or ranges to split the data. This flexibility allows decision trees 
+                    to handle a wide range of data types and make predictions or classifications based on the values 
+                    of the attributes.
+                -Handle both categorical and numerical data
+                    Categorical:
+                        -handle categorical data by splitting the data based on different categories of the attribute
+                        -each branch represents a category, and the decision tree will follow the appropriate branch based on the 
+                            value of the categorical attribute
+                        -Example:
+                            -if the attribute is "color" with categories "red," "blue," and "green," the decision tree will have branches 
+                                for each category, and the data will be split accordingly.
+                    Numerical:
+                        -defines thresholds  ranges to split the data
+                        -will compare the numerical attribute value with the threshold and follow the appropriate branch based result
+                        -Example:
+                            - if the attribute is "age" with numerical values, the decision tree can split the data into age ranges 
+                                such as "age < 30," "30 <= age < 50," and "age >= 50."
+                -flow chart like structure where each internal node represents a feature or attribute, each branch
+                    represents the outcome or class label. Decision trees are used to make decisions or predictions by following the path
+                    from the root node to the leaf node based on the values of the features. They are easy to understand and interpret, and 
+                    can handle both categorical and numerical data.
+                -Sklearn Decision Trees do not handle categorical variables. We can still convert these features to numerical 
+                    values using **pandas.get_dummies() to convert the categorical variable into dummy/indicator variables
+                                    Information Gain:
+                        - we want attribute with higher information gain?
+                        -a measure used in decision trees to determine the importance of an attribute in classifying data    
+                            -quantifies the reduction of entropy/impurity that is achieved by splitting the data based
+                                on a particular attribute
+                        -is the information that can increase the level of certainty after splitting
+                        -information gain = (entropy before split) - (weighted entropy after split)
+                            -Entropy(S) = - Σ (p(i) * log2(p(i)))
+                                - p(i) represents the proportion of instances in class i
+                        -attribute with higher information gain is better after the split
+                        How to calculate information gain:
+                            1. we first calculate the entropy of the parent node (before splitting)
+                            2. then calculate the entropy of each child node (after splitting) based on a specific attribute
+                            3. weighted average of the entropies of the child nodes is then subtracted from the entropy 
+                                of the parent node to obtain the information gain
+            Example Desicion Tree:
+                Age
+                Young, Middle-Age, Senior
+                Sex,  Drug B     , Cholesterol  # If middle-aged is def Drug B 
+                F M,             , HIgh Normal 
+                A B,             , A    B     # represents Drug A or Drug B
+                Each branch is the result of testing an atrribute and branching out. 
+                Each internal node corresponds to a test 
+                Each branch corresponds to a result of the test 
+                Each leaf node assigns a patient to a class 
+            How to build a desicion tree:
+                -Consider the attributes one by one
+                1. Choose an attribute from your dataset
+                2. Calculate the significance of attribute in splitting of data
+                3. Split data based on the value of the best attribute
+                4. Go to step 1. 
+                Think about which attributes are more predictive than the others
+                    -If patient is male and the sex can't determine if drug a or b is better 
+                        we take another attribute like Cholesterol and see if drug a or b can 
+                        predict what the males should take based on Cholesterol
+                    -We can use entropy to determine which attributes are good
+                    Pure Node:
+                        -when 100% of attribute can be predicted 
+                    Impurity of Node:
+                        calculated by entropy
+                    Entropy:
+                        -measure of randomness or uncertainty
+                        -amount of information disorder calculated in each node
+                        -in decision trees we want nodes with the smallest amount of uncertainty
+                        -Entropy = 0 
+                            -of 8
+                                Drug A = 0
+                                Drug B = 8
+                        -Entropy = 1 
+                            -of 8
+                                Drug A = 4
+                                Drug B = 4
+            Decision Tree Steps:
+                1. Declare X remembering to remove the target set(y):
+                    # X is the Feature Matrix(data of df)
+                    # y is the Response Vector(target)
+                    X = df[['Age', 'Sex', 'BP', 'Cholesterol', 'Na_to_K']].values
+                2. 
+                        from sklearn import preprocessing
+                        le_sex = preprocessing.LabelEncoder()
+                        le_sex.fit(['F','M'])
+                        X[:,1] = le_sex.transform(X[:,1]) 
 
-            mean_acc
+                        le_BP = preprocessing.LabelEncoder()
+                        le_BP.fit([ 'LOW', 'NORMAL', 'HIGH'])
+                        X[:,2] = le_BP.transform(X[:,2])
 
-    2. Plot the Model Accuracy for Different number of neighbors 
-            plt.plot(range(1,Ks),mean_acc,'g')
-            plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
-            plt.fill_between(range(1,Ks),mean_acc - 3 * std_acc,mean_acc + 3 * std_acc, alpha=0.10,color="green")
-            plt.legend(('Accuracy ', '+/- 1xstd','+/- 3xstd'))
-            plt.ylabel('Accuracy ')
-            plt.xlabel('Number of Neighbors (K)')
-            plt.tight_layout()
-            plt.show()       
-
-    3. Which k Has the Best Accuracy:
-            print( "The best accuracy was with", mean_acc.max(), "with k=", mean_acc.argmax()+1) 
-
-
-
-
-
-
-
-Decision Trees:
-    -You can use this to help find out what attributes are correlated with others
-    -Supervised machine learning algorithm that is used for classification and regression tasks
-    -Building a model from data to predict a class 
-    -built by splitting the training set into distinct nodes
-        -built by recursive partitioning to classify the data
-    -one node in a decision tree contains all of or most of, one category of the data.
-    -decision trees handle categorical data by splitting based on categories, and they handle numerical 
-        data by defining thresholds or ranges to split the data. This flexibility allows decision trees 
-        to handle a wide range of data types and make predictions or classifications based on the values 
-        of the attributes.
-    -Handle both categorical and numerical data
-
-        Categorical:
-            -handle categorical data by splitting the data based on different categories of the attribute
-            -each branch represents a category, and the decision tree will follow the appropriate branch based on the 
-                value of the categorical attribute
-            -Example:
-                -if the attribute is "color" with categories "red," "blue," and "green," the decision tree will have branches 
-                    for each category, and the data will be split accordingly.
-
-        Numerical:
-            -defines thresholds  ranges to split the data
-            -will compare the numerical attribute value with the threshold and follow the appropriate branch based result
-            -Example:
-                - if the attribute is "age" with numerical values, the decision tree can split the data into age ranges 
-                    such as "age < 30," "30 <= age < 50," and "age >= 50."
-    -flow chart like structure where each internal node represents a feature or attribute, each branch
-        represents the outcome or class label. Decision trees are used to make decisions or predictions by following the path
-        from the root node to the leaf node based on the values of the features. They are easy to understand and interpret, and 
-        can handle both categorical and numerical data.
-
-    -Sklearn Decision Trees do not handle categorical variables. We can still convert these features to numerical 
-        values using **pandas.get_dummies() to convert the categorical variable into dummy/indicator variables
-    
-    Example Desicion Tree:
-        Age
-        Young, Middle-Age, Senior
-        Sex,  Drug B     , Cholesterol  # If middle-aged is def Drug B 
-        F M,             , HIgh Normal 
-        A B,             , A    B     # represents Drug A or Drug B
-
-        Each branch is the result of testing an atrribute and branching out. 
-        Each internal node corresponds to a test 
-        Each branch corresponds to a result of the test 
-        Each leaf node assigns a patient to a class 
-    
-    How to build a desicion tree:
-        -Consider the attributes one by one
-        1. Choose an attribute from your dataset
-        2. Calculate the significance of attribute in splitting of data
-        3. Split data based on the value of the best attribute
-        4. Go to step 1. 
-
-        Think about which attributes are more predictive than the others
-            -If patient is male and the sex can't determine if drug a or b is better 
-                we take another attribute like Cholesterol and see if drug a or b can 
-                predict what the males should take based on Cholesterol
-            -We can use entropy to determine which attributes are good
-            Pure Node:
-                -when 100% of attribute can be predicted 
-
-            Impurity of Node:
-                calculated by entropy
-
-            Entropy:
-                -measure of randomness or uncertainty
-                -amount of information disorder calculated in each node
-                -in decision trees we want nodes with the smallest amount of uncertainty
-                -Entropy = 0 
-                    -of 8
-                        Drug A = 0
-                        Drug B = 8
-                -Entropy = 1 
-                    -of 8
-                        Drug A = 4
-                        Drug B = 4
-
-            Information Gain:
-                - we want attribute with higher information gain?
-                -a measure used in decision trees to determin the importance of an attribute in classifying data    
-                    -quantifies the reduction of entropy/impurity that is achieved by splitting the data based
-                        on a particular attribute
-                -is the information that can increase the level of certainty after splitting
-                -information gain = (entropy before split) - (weighted entropy after split)
-                    -Entropy(S) = - Σ (p(i) * log2(p(i)))
-                        - p(i) represents the proportion of instances in class i
-                -attribute with higher information gain is better after the split
-                How to calculate information gain:
-                    1. we first calculate the entropy of the parent node (before splitting)
-                    2. then calculate the entropy of each child node (after splitting) based on a specific attribute
-                    3. weighted average of the entropies of the child nodes is then subtracted from the entropy 
-                        of the parent node to obtain the information gain
-2. in Practice quiz 
-        If the information gain of the tree by using attribute A is 0.3, what can we infer?
-            entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
-
-4. Predicting whether a customer responds to a particular advertising campaign or not is an example of what?
-        Classification problem
-
-5. For a new observation, how do we predict its response value (categorical) using a KNN model with k = 5?
-        Take the majority vote among 5 points whose features are closest to the new observation
-
-
-    Steps:
-    1. Declare X remembering to remove the target set(y):
-        # X is the Feature Matrix(data of df)
-        # y is the Response Vector(target)
-        X = df[['Age', 'Sex', 'BP', 'Cholesterol', 'Na_to_K']].values
-    2. 
-            from sklearn import preprocessing
-            le_sex = preprocessing.LabelEncoder()
-            le_sex.fit(['F','M'])
-            X[:,1] = le_sex.transform(X[:,1]) 
-
-            le_BP = preprocessing.LabelEncoder()
-            le_BP.fit([ 'LOW', 'NORMAL', 'HIGH'])
-            X[:,2] = le_BP.transform(X[:,2])
-
-            le_Chol = preprocessing.LabelEncoder()
-            le_Chol.fit([ 'NORMAL', 'HIGH'])
-            X[:,3] = le_Chol.transform(X[:,3]) 
-    3. Fill the target variable:
-            y = df['Drug']
-    4. Setting up Decision Tree:
-            from sklearn.model_selection import train_test_split
-    5. Train, Test, Split:
-            X_trainset, X_testset, y_trainset, y_testset = train_test_split(X, y, test_size=0.3, random_state=3)
-    6. Ensure Dimensions Match Train:
-            print(f'Shape of X_trainset: {X_trainset.shape}, Size of y_trainset: {y_trainset.shape}')
-    7. Ensure Dimensions Match Test:
-            print(f'Shape of X_trainset: {X_trainset.shape}, Size of y_trainset: {y_trainset.shape}')
-    8. Create Instance of Decision Tree Classifier:
-            # criterion="entropy" can see the information gain on each node
-            drugTree = DecisionTreeClassifier(criterion="entropy", max_depth = 4)
-            drugTree # it shows the default parameters
-    9. Fit data with training feature matrix X_trainset and train response vector y_trainset    
-            drugTree.fit(X_trainset, y_trainset)
-    10. Making Predictions:
-            predTree = drugTree.predict(X_testset)
-    10.5 If you want to visually compare the predictions to actual values 
-            print (predTree [0:5])
-            print (y_testset [0:5])     
-    11. Check for Accuracy:
-            from sklearn import metrics
-            import matplotlib.pyplot as plt
-            print("DecisionTrees's Accuracy: ", metrics.accuracy_score(y_testset, predTree))            
-    12. Visualize:
-            tree.plot_tree(drugTree)
-            plt.show()
+                        le_Chol = preprocessing.LabelEncoder()
+                        le_Chol.fit([ 'NORMAL', 'HIGH'])
+                        X[:,3] = le_Chol.transform(X[:,3]) 
+                3. Fill the target variable:
+                        y = df['Drug']
+                4. Setting up Decision Tree:
+                        from sklearn.model_selection import train_test_split
+                5. Train, Test, Split:
+                        X_trainset, X_testset, y_trainset, y_testset = train_test_split(X, y, test_size=0.3, random_state=3)
+                6. Ensure Dimensions Match Train:
+                        print(f'Shape of X_trainset: {X_trainset.shape}, Size of y_trainset: {y_trainset.shape}')
+                7. Ensure Dimensions Match Test:
+                        print(f'Shape of X_trainset: {X_trainset.shape}, Size of y_trainset: {y_trainset.shape}')
+                8. Create Instance of Decision Tree Classifier:
+                        # criterion="entropy" can see the information gain on each node
+                        drugTree = DecisionTreeClassifier(criterion="entropy", max_depth = 4)
+                        drugTree # it shows the default parameters
+                9. Fit data with training feature matrix X_trainset and train response vector y_trainset    
+                        drugTree.fit(X_trainset, y_trainset)
+                10. Making Predictions:
+                        predTree = drugTree.predict(X_testset)
+                10.5 If you want to visually compare the predictions to actual values 
+                        print (predTree [0:5])
+                        print (y_testset [0:5])     
+                11. Check for Accuracy:
+                        from sklearn import metrics
+                        import matplotlib.pyplot as plt
+                        print("DecisionTrees's Accuracy: ", metrics.accuracy_score(y_testset, predTree))            
+                12. Visualize:
+                        tree.plot_tree(drugTree)
+                        plt.show()
 
 
-Regression Trees:
+        Regression Trees:
+            Overview:
+                IBM Library called Snap ML 
+                Regression Trees are implemented using `DecisionTreeRegressor` from `sklearn.tree`
+                The important parameters of `DecisionTreeRegressor` are
+                `criterion`: {"mse", "friedman_mse", "mae", "poisson"} - The function used to measure error
+                `max_depth` - The max depth the tree can be
+                `min_samples_split` - The minimum number of samples required to split a node
+                `min_samples_leaf` - The minimum number of samples that a leaf can contain
+                `max_features`: {"auto", "sqrt", "log2"} - The number of feature we examine looking 
+                    for the best one, used to speed up training
+        Regression Tree Steps:
+            1. Import Necessary Libraries:
+                    # Pandas will allow us to create a dataframe of the data so it can be used and manipulated
+                    import pandas as pd
+                    # Regression Tree Algorithm
+                    from sklearn.tree import DecisionTreeRegressor
+                    # Split our data into a training and testing data
+                    from sklearn.model_selection import 
+            2. Split df into features:
+                    X = df.drop(columns=["MEDV"])
+                    Y = df["MEDV"]
+            3. Split into training and testing:
+                    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.2, random_state=1)
+            4. Create Regression Tree:
+                    regression_tree = DecisionTreeRegressor(criterion = "squared_error")
+            5. Train the Model:
+                    regression_tree.fit(X_train, Y_train)
+            6. Evaluation using Score method of DecisionTreeRegressor:
+                    # this number is the $R^2$ value which indicates the coefficient of determination
+                    regression_tree.score(X_test, Y_test)
+            7. Finding Average Error in our testing set, which is the average Error 
+                in median home value prediction:
+                    prediction = regression_tree.predict(X_test)
+                    print("$",(prediction - Y_test).abs().mean()*1000)
+            7a. Example of absolute error whole:
+            # Train regression tree using absolute_error as the criterion
+                    regression_tree = DecisionTreeRegressor(criterion="absolute_error")
+                    regression_tree.fit(X_train, Y_train)
+                    regression_tree.score(X_test, Y_test)
+                    print(regression_tree.score(X_test, Y_test))
+                    prediction = regression_tree.predict(X_test)
+                    print("$",(prediction - Y_test).abs().mean()*1000)
+            Snap ML:
+                refer to Regression_Trees_SnapML.ipynb for the indepth notes
+            advantages of using Snap ML: acceleration of training of classical machine learning models, 
+                such as linear and tree-based models.
 
-        IBM Library called Snap ML 
+    Logistics Regression:
+        -minimizes the mean absolute error(MAE)
+        -classification algorithm for categorical dependent(y) variables 
+            -statistical and ml technique for classifying records of a dataset based on the values of the input fields
+        -what kind of problems can be solved with logistic regression
+        -goal of logistic regression is to build a model to predict the class of each sample which in this case is a customer   
+            as well as the probability of each sample belonging to a class
+        -Independent Variable can be either continuous or categorical
+        -Dependent Variables are usually categorical
+        -Example: 
+            telecommunication dataset  that we'd like to analyze in order to understand which customers might leave us next month
+                -build a model using historic records. 
+                - tenure, age, address, income, ed, employ, equip, callcard, wireless
+                    -independent vars. can be continuous or categorical
+                -churn  
+                    -dependent var., categorical variable 
+                - use above independent variables to predict dependnt variable of customer called 'churn' in it's own column
+        -Applications
+            -to predict probability of a person having a heart attack
+                -based on knowledge of person's age, sex, and bmi
+            -to predict the chance of mortality in an injured patient
+            -to predict whether a patient has a given disease such as diabetes based on observed characteristics such as 
+                weight, height, blood pressure and results of blood test
+            -to predict the likelihood of a customer purchasing a product or halting a subscription
+            -to predict probability of failure of a given process, system or product
+            -likelihood of a homeowner defaulting on a mortgage
+            -ALL EXAMPLES NOT ONLY DO WE PREDICT THE CLASS OF EACH CASE, WE ALSO MEASURE THE PROBABILITY OF A CASE BELONGING TO A SPECIFIC CLASS.  
+        In Logistic Regression: 
+                Cost Function: 
+                    typically the log loss(or cross-entropy loss), which measures the difference   
+                        between the predicted probabilities and the actual labels. The parameters of the logistic regression    
+                        model are the coefficients with each feature, and the goal is to find the values of theses coefficients 
+                        that minimize the log loss. 
 
-        Regression Trees are implemented using `DecisionTreeRegressor` from `sklearn.tree`
-        The important parameters of `DecisionTreeRegressor` are
-        `criterion`: {"mse", "friedman_mse", "mae", "poisson"} - The function used to measure error
-        `max_depth` - The max depth the tree can be
-        `min_samples_split` - The minimum number of samples required to split a node
-        `min_samples_leaf` - The minimum number of samples that a leaf can contain
-        `max_features`: {"auto", "sqrt", "log2"} - The number of feature we examine looking 
-            for the best one, used to speed up training
+                Learning Rate: 
+                    -Learning rate is one of the hyperparameters that gives us control on how fast we move on the surface. 
+                        It’s not definitively better if the value is bigger/smaller.
+                    -hyperparameter that determines the size of the steps taken during the 
+                        optimization process to minimize the cost function and find the optimal parameters 
+                        (coefficients) for the model.
+                    - parameter that controls the step size of the gradient descent algorithm. A smaller 
+                        learning rate will result in smaller steps, which can lead to slower convergence but 
+                        may be more likely to find the global minimum. A larger learning rate will result in 
+                        larger steps, which can lead to faster convergence but may be more likely to get 
+                        stuck in a local minimum.
+                    -Learning rate is a constant that is not updated by the gradient descent.
+                    -learning rate is the step length.
 
-
-    Steps:
-    1. Import Necessary Libraries:
-            # Pandas will allow us to create a dataframe of the data so it can be used and manipulated
-            import pandas as pd
-            # Regression Tree Algorithm
-            from sklearn.tree import DecisionTreeRegressor
-            # Split our data into a training and testing data
-            from sklearn.model_selection import 
-    2. Split df into features:
-            X = df.drop(columns=["MEDV"])
-            Y = df["MEDV"]
-    3. Split into training and testing:
-            X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=.2, random_state=1)
-    4. Create Regression Tree:
-            regression_tree = DecisionTreeRegressor(criterion = "squared_error")
-    5. Train the Model:
-            regression_tree.fit(X_train, Y_train)
-    6. Evaluation using Score method of DecisionTreeRegressor:
-            # this number is the $R^2$ value which indicates the coefficient of determination
-            regression_tree.score(X_test, Y_test)
-    7. Finding Average Error in our testing set, which is the average Error 
-        in median home value prediction:
-            prediction = regression_tree.predict(X_test)
-            print("$",(prediction - Y_test).abs().mean()*1000)
-    7a. Example of absolute error whole:
-    # Train regression tree using absolute_error as the criterion
-            regression_tree = DecisionTreeRegressor(criterion="absolute_error")
-            regression_tree.fit(X_train, Y_train)
-            regression_tree.score(X_test, Y_test)
-            print(regression_tree.score(X_test, Y_test))
-            prediction = regression_tree.predict(X_test)
-            print("$",(prediction - Y_test).abs().mean()*1000)
-
-
-Snap ML:
-    refer to Regression_Trees_SnapML.ipynb for the indepth notes
-    
- advantages of using Snap ML: acceleration of training of classical machine learning models, 
-    such as linear and tree-based models.
-
-    
-
-Logistics Regression:
-    -classification algorithm for categorical variables 
-        -statistical and ml technique for classifying records of a dataset based on the values of the input fields
-    -what kind of problems can be solved with logistic regression
-    -goal of logistic regression is to build a model to predict the class of each sample which in this case is a customer   
-        as well as the probability of each sample belonging to a class
-    -Example: 
-        telecommunication dataset  that we'd like to analyze in order to understand which customers might leave us next month
-            -build a model using historic records. 
-            - tenure, age, address, income, ed, employ, equip, callcard, wireless
-                -independent vars. can be continuous or categorical
-            -churn  
-                -dependent var., categorical variable 
-            - use above independent variables to predict dependnt variable of customer called 'churn' in it's own column
-    -Applications
-        -to predict probability of a person having a heart attack
-            -based on knowledge of person's age, sex, and bmi
-        -to predict the chance of mortality in an injured patient
-        -to predict whether a patient has a given disease such as diabetes based on observed characteristics such as 
-            weight, height, blood pressure and results of blood test
-        -to predict the likelihood of a customer purchasing a product or halting a subscription
-        -to predict probability of failure of a given process, system or product
-        -likelihood of a homeowner defaulting on a mortgage
-        -ALL EXAMPLES NOT ONLY DO WE PREDICT THE CLASS OF EACH CASE, WE ALSO MEASURE THE PROBABILITY OF A CASE BELONGING TO A SPECIFIC CLASS.  
-
-    -Four situations in which logistic regression is a good candidate
-        -when target field in your data is categorical or specifically binary   
-            -zero/one, yes/no, churn/no churn, positive/negative
-        -you need probability of your prediction    
-            -returns a probability score between 0 and 1 for a given sample of data 
-            -predicts the probability of that sample and we map the cases to a discrete class based on that probability
-        -data is linearly separable
-            -decision boundary of logistic regression is a line or a plane or a hyper plane.
-            -classifier will classify all the points on one side of the decision boundary as belonging to one class and all those on the other 
-                side as belonging to the other Class
-            -Example:
-                -if you have just two features and are not applying any polynomial processing we can obtain an inequality like Theta zero   
-                    plus Theta 1x1 plus theat 2x2 is greater than zero which is a half-plane easily plottable
-                -you can also use logistic regression to achieve a complex decision boundary using polynomial processing as well 
-        -you need to understand the impact of a feature 
-            -you can select the best features based on the statistical significance of the logistic regression model coefficients or parameters 
-                -that is after finding optimum parameters, a feature X with the weight Theta one close to zero has a smaller effect on the predicition
-                    than features with large absolute values of Theta one. 
-                - allows us to understand the impact an independent variable has on the dependent variable while controoling other independent variables 
-                
+                Gradient Descent: 
+                    -optimization algorithm used to minimize the cost function(the minimum of a function) in various machine learning 
+                        models. 
+                    -used to find the values of the model parameters that minimize the loss function
+                    -iteratively update the parameters(coefficients) of the model in the direction that reduces
+                        the cost function, ultimately reaching the optimal set of parameters that best fit the data.
+                    -Gradient descent specifies the steps to take in the current slope direction, learning rate is the step length.
 
 
-    -in what situations do we use logistic regression
-    -Classification
-        -Probability of a Class 
-        -"S" shaped 
-    -Used for predicting the class of each case/ of an observed data point
-        -guides on what would be the most probable class of a data point
-    -Variant of Linear Regression
-    -used when the observed dependent variable, y, is categorical 
-        -produces a formula that predicts the probability of the class label as a function  
-            of the independent variables
-    -fits a special s-shaped curve by taking the linear regression function and transforming the    
-        numeric estrimate into a probability with the following function, which is called the 
-        sigmoid function (greek sign that looks circular)
-    Examples:
-        Helps you to predict what behavior will help you to retain customers
-            -you can analyze all relevant customer data and develop focused customer 
-                retention programs
 
-    LogisticRegression function in sklearn:
-        -ideally you iterate multiple times to reduce the cost function
-        -FINDING THE BEST MODEL MEANS FINDING THE BEST PARAMETERS THETA FOR THAT MODEL
-            -you do this by finding the minimum cost function of the model  
-            -minimize J theta 
-                -meaning it is predicting more accurately 
-                -use Gradient Descent 
-                    Gradient Descent 
-                        -iterative approach to find minimum
-                        -gradient descent is like taking stepls in the current direction of the slope
-                            and learning rate is like the length of the step you take. 
-                        -using derivate of cost functions
-                        https://www.coursera.org/learn/machine-learning-with-python/lecture/2F1zF/logistic-regression-training
-            Predicted Value of Model is sigmoid of theta transpose X
-            cost = Cost(y_hat, y) == 1/2(sigmoid(theta transpose X) - y)squared
+        -Four situations in which logistic regression is a good candidate
+            -when target field in your data is categorical or specifically binary   
+                -zero/one, yes/no, churn/no churn, positive/negative
+            -you need probability of your prediction    
+                -returns a probability score between 0 and 1 for a given sample of data 
+                -predicts the probability of that sample and we map the cases to a discrete class based on that probability
+            -data is linearly separable
+                -decision boundary of logistic regression is a line or a plane or a hyper plane.
+                -classifier will classify all the points on one side of the decision boundary as belonging to one class and all those on the other 
+                    side as belonging to the other Class
+                -Example:
+                    -if you have just two features and are not applying any polynomial processing we can obtain an inequality like Theta zero   
+                        plus Theta 1x1 plus theat 2x2 is greater than zero which is a half-plane easily plottable
+                    -you can also use logistic regression to achieve a complex decision boundary using polynomial processing as well 
+            -you need to understand the impact of a feature 
+                -you can select the best features based on the statistical significance of the logistic regression model coefficients or parameters 
+                    -that is after finding optimum parameters, a feature X with the weight Theta one close to zero has a smaller effect on the predicition
+                        than features with large absolute values of Theta one. 
+                    - allows us to understand the impact an independent variable has on the dependent variable while controoling other independent variables 
+                    
+
+
+        -in what situations do we use logistic regression
+        -Classification
+            -Probability of a Class 
+            -"S" shaped 
+        -Used for predicting the class of each case/ of an observed data point
+            -guides on what would be the most probable class of a data point
+        -Variant of Linear Regression
+        -used when the observed dependent variable, y, is categorical 
+            -produces a formula that predicts the probability of the class label as a function  
+                of the independent variables
+        -fits a special s-shaped curve by taking the linear regression function and transforming the    
+            numeric estrimate into a probability with the following function, which is called the 
+            sigmoid function (greek sign that looks circular)
+        Examples:
+            Helps you to predict what behavior will help you to retain customers
+                -you can analyze all relevant customer data and develop focused customer 
+                    retention programs
+
+        LogisticRegression function in sklearn:
+            -ideally you iterate multiple times to reduce the cost function
+            -FINDING THE BEST MODEL MEANS FINDING THE BEST PARAMETERS THETA FOR THAT MODEL
+                -you do this by finding the minimum cost function of the model  
+                -minimize J theta 
+                    -meaning it is predicting more accurately 
+                    -use Gradient Descent 
+                        Gradient Descent 
+                            -iterative approach to find minimum
+                            -gradient descent is like taking stepls in the current direction of the slope
+                                and learning rate is like the length of the step you take. 
+                            -using derivate of cost functions
+                            https://www.coursera.org/learn/machine-learning-with-python/lecture/2F1zF/logistic-regression-training
+                Predicted Value of Model is sigmoid of theta transpose X
+                cost = Cost(y_hat, y) == 1/2(sigmoid(theta transpose X) - y)squared
         Training:
             1. initialize the parameters randomly 
             2. feed the cost function with training set and calculate the error 
@@ -943,6 +854,8 @@ Logistics Regression:
 
     Logistic Regression vs. Linear Regression:
     
+            - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
+            - Independent Variables in both Linear and Logistic Regression can be either continuous or categorical
             Linear:
                 -Linear can not be used properly for some binary classification problems.
                 -the below was to prove that in the telecommunications dataset linear regression is def not the 
@@ -1087,6 +1000,7 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
                     -outlier detection 
                     -clustering 
         -SVM is a supervised algorithm that classifies cases by finding a separator
+        -NOT BEST WHEN you need multiple decision boundaries with varying weights
         -first maps data to a high dimensional feature space so that data points can be categorized, 
             even when the data are not otherwise linearly separable.then a separator is estimated for the data
         -2 categories that can be separtated with a curve but not a line
@@ -1222,7 +1136,7 @@ For example, a 95% confidence interval implies that there is a 95% chance that t
             from sklearn.metrics import jaccard_score
             jaccard_score(y_test, yhat, pos_label=2)
         
-What are the requirements for independent and dependent variables in regression?
+What are the requirements for independent and dependent variables in linear regression?
 Independent variables can be either categorical or continuous, but dependent variables must be continuous
 
 The key difference between single and multiple regression is:
@@ -1367,7 +1281,26 @@ Multiclass Predition
         -Weather: 
             -Sunny, Cloudy, Rain, Snow 
             -y=1, y=2, y=3, y=4 
-
+        -each class is treated as a binary classification problem, where one class is labeled as the 
+            positive class and all other classes are grouped together as the negative class. This 
+            results in multiple binary classifiers, each trained to distinguish between one class 
+            and the rest of the classes.
+        -the decision boundaries for each class are independent of each other.
+        -typically won't have a region where multiple classes are considered valid outpus simultaneously
+    Binary Classification for Each Class:
+            For each class i, a binary classifier is trained to distinguish between instances of class 
+                i and instances of all other classes combined. This results in k binary classifiers, where 
+                k is the total number of classes.
+    Decision Boundaries:
+            The decision boundary for each binary classifier separates the instances of its corresponding 
+                class from the instances of all other classes. These decision boundaries are independent 
+                of each other and are optimized to maximize the separation between the positive class 
+                and the negative class.
+    Decision Boundaries:
+            The decision boundary for each binary classifier separates the instances of its corresponding 
+                class from the instances of all other classes. These decision boundaries are independent 
+                of each other and are optimized to maximize the separation between the positive class 
+                and the negative class.
 
     ONE VS ONE Classification:
         -multi-class classification techniques that can convert most two-class 
@@ -1377,17 +1310,38 @@ Multiclass Predition
             class 0 and class 2, and a final classifier on samples of class 1 and 
             class 2
 
-Gradient Descent: 
-    Goal: 
-        -optimization algorithm used to minimize the cost function in various machine learning 
-            models. 
-        -iteratively update the parameters(coefficients) of the model in the direction that reduces
-            the cost function, ultimately reaching the optimal set of parameters that best fit the data.
-        
-        In Logistic Regression: 
-            -cost function is typically the log loss(or cross-entropy loss), which measures the difference   
-                between the predicted probabilities and the actual labels. The parameters of the logistic regression    
-                model are the coefficients with each feature, and the goal is to find the values of theses coefficients 
-                that minimize the log loss. 
 
         
+-List step of training logistic regression model 
+use cost function on training set 
+update weights with new parameter values
+calculate cost function gradient
+initialize the parameters
+repeat until specified cost or iterations reached
+
+object of SVM in terms of hyperplane
+logistic regression is used to predict the probability of a categorical dependent variable?
+cases we want to consider using SVM 
+-mapping data to a higher dimensional feature space for better separation of classes 
+What are the disadvantages of one-vs-all classification?
+-ambiguous region where multiple classes are valid outputs
+-requires more models to be created compared to one-vs-one
+-cannot output probability estimates of classes
+-does not handle two-class classification well
+            
+Gradient Boosting Machines: 
+    -ensemble method good for multiple decision boundaries with varying weights
+
+Random Forest 
+    -naturally handle complex decision boundaries 
+    -can incorporate multiple weak learners with varying weights
+        
+            2. in Practice quiz 
+                If the information gain of the tree by using attribute A is 0.3, what can we infer?
+                    entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
+
+        4. Predicting whether a customer responds to a particular advertising campaign or not is an example of what?
+                Classification problem
+
+        5. For a new observation, how do we predict its response value (categorical) using a KNN model with k = 5?
+                Take the majority vote among 5 points whose features are closest to the new observation
