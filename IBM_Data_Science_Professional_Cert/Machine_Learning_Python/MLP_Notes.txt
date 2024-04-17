@@ -847,6 +847,13 @@
             -measures  the performance of a classifier where the predicted output is a probability 
                     value between 0 and 1
 
+    Logistic Regression Steps, Quick Version    
+        -use cost function on training set 
+        -update weights with new parameter values
+        -calculate cost function gradient
+        -initialize the parameters
+        -repeat until specified cost or iterations reached
+
     Logistic Regression vs. Linear Regression:
                 - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
                 - Independent Variables in both Linear and Logistic Regression can be either continuous or categorical
@@ -1036,6 +1043,10 @@
                 -Prone to over-fitting if number of features is much greater than the number of samples 
                 -No probability estimation directly which are desireable in most classifiction problems 
                 -computationally inefficient in data more than 1000 rows 
+        Object of SVM in terms of hyperplane
+            -logistic regression is used to predict the probability of a categorical dependent variable?
+            -cases we want to consider using SVM 
+            -mapping data to a higher dimensional feature space for better separation of classes 
     SVM Steps:
             1. ETL:
                 -make sure all cells are numerical 
@@ -1109,6 +1120,57 @@
                 from sklearn.metrics import jaccard_score
                 jaccard_score(y_test, yhat, pos_label=2)
 
+    k-Means Clustering:
+        Overview: 
+            Used for exploratory
+                -exploratory data analysis
+                -summary generation 
+                -reducing the scale 
+                -outlier-detection(fraud dection or noise removal)
+                -finding duplicates, datasets
+                -pre-processing step for either prediction or other mining task or part of a complex system
+            Partition Based Clustering: 
+                -algorithms that produce sphere-like clusters
+                -K-Means 
+                -K-Medians 
+                -Fuzzy c-Means
+                -relatively efficient
+                -used for medium to large datasets
+            Heirarchical Clustering: 
+                -trees of clusters 
+                    -agglomerative algorithm
+                    -divisive algorithm
+
+            -can group data only unsupervised, based on the similarity of customers to each other 
+            -partitions customers into mutually exclusive groups    
+                -customersin each cluster(group) are similar to each other demographically. 
+                -creates a profile for each group(cluster) that considers the common characteristics of each cluster
+                -assigns individuals to groups
+            -then cross join the groups/cluster with a dataset of the product or services that customers purchase from a company 
+            -allows companies to have highly personalized experiences for each segment. 
+        Application/Example: 
+            -Customer dataset and you need to apply customer segmentation onto historical data
+            -One Group might contain customers who are high profit and low risk, more likely to purchase products or subscribe
+                for a service
+            -Retail: used to find associations among customers based on their demographic characteristics and use that 
+                information to identify buying patternsof various customer group
+            -Recommendation Systems: find a group of similar items or similar users and use it for collaborative filtering, to recommend books, movies
+            -Banking: Analyst find clusters of normal transactions to find the patterns of fraudulent credit card usage
+            -Identifying: Clusters of customers 
+                -finding loyal customers vs. churned customer
+            -Insurance Industry fraud detection in claims analysis or evaluate the insurance risk of certain customers based on segment
+            -Publication Media: automatically categorize news based on its content or to tag news   
+                -then recommend it to certain readers
+            -Medicine: characterize patient behavior
+            -Biology clustering is used group genes with similar expression patterns or to cluster genetic marker to identify family ties
+
+        Customer Segmentation:
+            -practice of partitioning a customer base into groups of individuals that have similar characteristics
+            -significant strategy
+            -allows business to target specific groups of customers, so as to more efectively allocate marketing resources
+            -not usually feasible for large volumes of varied data, therefore you need an analytical approach to deriving
+                segments and groups from large datasets.
+            -***important requirement is to use the available data to understand and identify how customers are similar to each other
     What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
         Overfitting:
             The model is too complex and has learned the training data's noise, leading to poor generalization 
@@ -1142,14 +1204,6 @@
                 Adjust model complexity by tuning hyperparameters.
                 Check for data leakage and ensure a proper separation between training and testing datasets.
 
-Multiple linear regression is appropriate for:
-False:
-multiple linear regression requires a linear relationship between the predictors and the response
-    but simple linear regression does not
-linear relationship is necessary between the independent and dependent variables as well
-    as in between independent variables
-simple linear regression requires a linear relationship between the predictor and the response
-    but multiple linear regression does not.
 
     Overfitting: 
         Overfitting occurs when a model fits the training data too closely, 
@@ -1259,39 +1313,35 @@ simple linear regression requires a linear relationship between the predictor an
                 that are class 0 and class 1, a second classifier on samples that are of 
                 class 0 and class 2, and a final classifier on samples of class 1 and 
                 class 2
+        What are the disadvantages of one-vs-all classification?
+            -ambiguous region where multiple classes are valid outputs
+            -requires more models to be created compared to one-vs-one
+            -cannot output probability estimates of classes
+            -does not handle two-class classification well
+          
+    Gradient Boosting Machines: 
+        -ensemble method good for multiple decision boundaries with varying weights
 
-
+    Random Forest 
+        -naturally handle complex decision boundaries 
+        -can incorporate multiple weak learners with varying weights
         
--List step of training logistic regression model 
-use cost function on training set 
-update weights with new parameter values
-calculate cost function gradient
-initialize the parameters
-repeat until specified cost or iterations reached
-
-object of SVM in terms of hyperplane
-logistic regression is used to predict the probability of a categorical dependent variable?
-cases we want to consider using SVM 
--mapping data to a higher dimensional feature space for better separation of classes 
-What are the disadvantages of one-vs-all classification?
--ambiguous region where multiple classes are valid outputs
--requires more models to be created compared to one-vs-one
--cannot output probability estimates of classes
--does not handle two-class classification well
-            
-Gradient Boosting Machines: 
-    -ensemble method good for multiple decision boundaries with varying weights
-
-Random Forest 
-    -naturally handle complex decision boundaries 
-    -can incorporate multiple weak learners with varying weights
-        
-            2. in Practice quiz 
-                If the information gain of the tree by using attribute A is 0.3, what can we infer?
-                    entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
+    Practice Questions: 
+        2. in Practice quiz 
+            If the information gain of the tree by using attribute A is 0.3, what can we infer?
+                entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
 
         4. Predicting whether a customer responds to a particular advertising campaign or not is an example of what?
                 Classification problem
 
         5. For a new observation, how do we predict its response value (categorical) using a KNN model with k = 5?
                 Take the majority vote among 5 points whose features are closest to the new observation
+
+        Multiple linear regression is appropriate for:
+            False:
+            multiple linear regression requires a linear relationship between the predictors and the response
+                but simple linear regression does not
+            linear relationship is necessary between the independent and dependent variables as well
+                as in between independent variables
+            simple linear regression requires a linear relationship between the predictor and the response
+                but multiple linear regression does not.

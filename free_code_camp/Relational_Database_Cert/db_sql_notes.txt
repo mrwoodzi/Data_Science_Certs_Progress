@@ -92,7 +92,6 @@ Bash Tutorial:
         cp -r dirname newdirname 
             -does a copy paste and rename 
 
-
 BUILDING A MARIO DATABASE 
 login = psql --username=freecodecamp --dbname=postgres\d 
 Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
