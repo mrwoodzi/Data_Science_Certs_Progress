@@ -1205,6 +1205,7 @@ simple linear regression requires a linear relationship between the predictor an
                 This can help mitigate underfitting and improve overall performance.
                 
     Multiclass Prediction 
+        https://towardsdatascience.com/multi-class-classification-one-vs-all-one-vs-one-94daed32a87b
         Classiifying data into multiple class labels
             -You can convert logisitic regression to multi-class classification using 
                 multinomial logistic regression or SoftMax Regression 
