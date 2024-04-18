@@ -333,3 +333,15 @@ Sorting, Stats:
         ************************************************************
         HAVING:
             -SELECT <column> FROM <table> GROUP BY <column> HAVING <condition>;
+            -*******
+            - condition must be an aggregate function with a test. An example to might be to use HAVING COUNT(*) > 0
+        AS 
+            - Rename the MIN(gpa) column like this: MIN(gpa) AS min_gpa
+            -SELECT major_id, MIN(gpa) AS min_gpa, MAX(gpa) FROM students GROUP BY major_id HAVING MAX(gpa) = 4.0;
+
+            ******THE BELOW WAS INTERESTING BEWARE************
+            SELECT major_id, COUNT(major_id)  AS number_of_students FROM students GROUP BY major_id;
+             **got a different count from the below
+             SELECT major_id, COUNT(*) AS number_of_students FROM students GROUP BY major_id; 
+            ***The count of the NULL values was 0 in the first and 8 in the second
+                -sooo the top query didn't count the null values 
