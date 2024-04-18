@@ -108,7 +108,10 @@ General Trouble Shooting on Prints:
     https://shop.anet3d.com/blogs/cura-slicer-profile-settings/use-xyz-calibration-cube-to-detect-3d-printing-issues-and-tune-your-3d-printer
         covers inaccurate xyz cube dimensions & elephanting
     https://3dprinterly.com/how-to-fix-ender-3-z-axis-issues-too-short-binding-more/
-    
+
+Cura Speed Settings: 
+    https://support.ultimaker.com/s/article/1667411313568 
+
 
 Drying Old Filament that has Absorbed Moisture:
     https://www.3dmakerengineering.com/blogs/3d-printing/how-to-dry-3d-printer-filament

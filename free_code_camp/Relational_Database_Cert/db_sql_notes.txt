@@ -264,6 +264,7 @@ Searching/retriving:
             use LIKE to find patterns in text like this: WHERE <column> LIKE '<pattern>'. An underscore (_) in a pattern 
                 will return rows that have any character in that spot. View the rows in this table with a course name 
                 that matches the pattern '_lgorithms'.
+            -WHERE IS NULL 
         LIKE
             '_'
                 finds anything '_afterthis'
@@ -345,3 +346,8 @@ Sorting, Stats:
              SELECT major_id, COUNT(*) AS number_of_students FROM students GROUP BY major_id; 
             ***The count of the NULL values was 0 in the first and 8 in the second
                 -sooo the top query didn't count the null values 
+        
+        Selecting Specific Columns from a Join . . . 
+        SELECT major FROM students INNER JOIN majors ON students.major_id = majors.major_id;
+            -This prints/selects only the major row that is a combination of students and major on an INNNER JOIN 
+        

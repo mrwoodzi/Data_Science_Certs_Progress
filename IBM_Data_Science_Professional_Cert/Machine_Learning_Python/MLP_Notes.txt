@@ -1120,34 +1120,113 @@
                 from sklearn.metrics import jaccard_score
                 jaccard_score(y_test, yhat, pos_label=2)
 
-    k-Means Clustering:
+    Clustering:
         Overview: 
-            Used for exploratory
-                -exploratory data analysis
-                -summary generation 
-                -reducing the scale 
-                -outlier-detection(fraud dection or noise removal)
-                -finding duplicates, datasets
-                -pre-processing step for either prediction or other mining task or part of a complex system
-            Partition Based Clustering: 
-                -algorithms that produce sphere-like clusters
-                -K-Means 
-                -K-Medians 
-                -Fuzzy c-Means
-                -relatively efficient
-                -used for medium to large datasets
-            Heirarchical Clustering: 
-                -trees of clusters 
-                    -agglomerative algorithm
-                    -divisive algorithm
-
             -can group data only unsupervised, based on the similarity of customers to each other 
             -partitions customers into mutually exclusive groups    
-                -customersin each cluster(group) are similar to each other demographically. 
-                -creates a profile for each group(cluster) that considers the common characteristics of each cluster
-                -assigns individuals to groups
+            -customers in each cluster(group) are similar to each other demographically. 
+            -creates a profile for each group(cluster) that considers the common characteristics of each cluster
+            -assigns individuals to groups
             -then cross join the groups/cluster with a dataset of the product or services that customers purchase from a company 
             -allows companies to have highly personalized experiences for each segment. 
+            -exploratory data analysis
+            -summary generation 
+            -reducing the scale 
+            -outlier-detection(fraud dection or noise removal)
+            -finding duplicates, datasets
+            -pre-processing step for either prediction or other mining task or part of a complex system
+        Partition Based Clustering: 
+            -algorithms that produce sphere-like clusters
+            -K-Means 
+                Overview: 
+                    -divides the data into K non-overlapping subsets or clusters without any cluster internal structure or labels. 
+                    -unsupervised algorithm
+                    -iterative algorithm
+                    -heuristic algorithm    
+                        -means there is no gaurantee that it will converge to the global minimum error or the most dense clusters. 
+                        -also  no guarantee that it will converge to the global optimum and the result may depend 
+                            on the initial clusters 
+                    -***guaranteed to converge to a result, but the result may be a local optimum i.e. not 
+                            necessarily the best possible outcome. 
+                            -to solve this problem  it is common to run the whole process multiple times with different starting conditions 
+                            -means starting with randomized centroids can potentially give a better outcome
+                    -object with cluster are very similar
+                    -objects across different clusters are very different or dissimilar
+                    -ex. finding similar clusters 
+                Key Concept:
+                    -of k-Means algorithm is that it randomly picks a center point for each cluster 
+                        this means we must initialize K which represents the number of clusters
+                        -determining number of clusters in a datas set or K is a hard problem in k-Means 
+                Main Purpose of k-Means: 
+                    -minimize the distance of data points from the centroid of a cluster and maximize the distance 
+                        from other cluster centroids. 
+                    -customers will fall to a cluster based on their distance from centroids 
+                Centroids: 
+                    -these are the randomly selected center points in the clusters  
+                    -random point 
+                    2 approaches to choosing Centroids:
+                        -choose three observations out of the dataset and use those as the intitial means
+                        -create three random points as centroids of the clusters which is our choice 
+                    After you define the centroid of each cluster:
+                        -assign each customer to the closest center
+                            - we do this by calculating the distance of each data point from the centroid 
+                            -depending on datasets different measures of distance may be used to place items into clusters 
+                Distance Matrix is formed:
+                    -each row represents the distance of a customer from each centroid
+                Within-Cluster Sum of Square Error: 
+                    -error is the total distance of each point from its centroid
+                    -intuitively we try to reduce this error 
+                    -means we should shape clusters in such a way that the total distance of all members of a cluster from its centroid be minimized. 
+                Update Each Cluster to minimize error:
+                    -clusters get updated to the mean for datapoints in its cluster 
+                    -cetroid gets moved according to their cluster members new mean 
+                Recalculate the distance of all points:
+                    -points are reclustered and calculated again 
+                Continue: 
+                    -continue until the centroids no longer move. 
+                Result: 
+                    -clusters with mii
+                Questions: 
+                    -How do we find the similarity of sampling in clustering?
+                    -How do we measure how similar two customers are with regard to their demographics?
+                    -How can we calculate the dissimilarity or distance of two cases such as two clusters?
+                    -How can we turn it into better clusters with less error?
+                Answers Potentially: 
+                    -We can use both similar and dissimilar metrics to form clusters 
+                        -Distance of samples from each other is used to shape clusters 
+                        -Ex. 2 Customers and 1 Feature(Age)
+                            -Use Minkowski distance to calculate the distance of two customers 
+                                -It is the Euclidean Distance 
+                        -Ex. 2 Customers and 2 Features(Age and Income) 
+                            -Same formula just in 2D space  
+                        -Ex. Multi-Dimensional Vectors 
+                            -same formula/distance matrix
+                            -**************
+                            -**Have to normalize feature set to get the accurate dissimilarity measure. 
+                Dissimilarity Measure: 
+                    -Euclidean Distance 
+                Similarity Measure: 
+                    -this highly controls how the clusters are formed, so you need good domain knowledge of dataset and datatype of 
+                        features then choose the meaningful distance measurement
+                    -Euclidean Distance 
+                    -Cosine Similarity 
+                    -Average Distance 
+
+            -K-Medians 
+            -Fuzzy c-Means
+            -relatively efficient
+            -used for medium to large datasets
+        Heirarchical Clustering: 
+            -trees of clusters 
+            -agglomerative algorithm
+            -divisive algorithm
+            -very intuitive
+            -good for small datasets, generally
+        Density-based Clustering:
+            -produces arbitrary shaped clusters
+            -really good when dealing with spatial clusters
+            -really good when noise is in data set 
+            -DB Scan Algorithm
         Application/Example: 
             -Customer dataset and you need to apply customer segmentation onto historical data
             -One Group might contain customers who are high profit and low risk, more likely to purchase products or subscribe
