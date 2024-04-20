@@ -316,7 +316,7 @@ Sorting, Stats:
         -ROUND(<number_to_round>, <number_of_decimals_places>)
     COUNT 
         -counts number of entries in a table for the specified column
-    ***Distinct and Group By can do the same thing 
+        ***Distinct and Group By can do the same thing 
         -BUT occur in different places in the query 
         -Soo you can add COUNT,MIN, MAX, AVG to GROUP BY
     DISTINCT
@@ -332,21 +332,26 @@ Sorting, Stats:
             included in the GROUP BY area. Other columns must be used 
             with any of the aggregate functions (MAX, AVG, COUNT, etc). 
         ************************************************************
-        HAVING:
-            -SELECT <column> FROM <table> GROUP BY <column> HAVING <condition>;
-            -*******
-            - condition must be an aggregate function with a test. An example to might be to use HAVING COUNT(*) > 0
-        AS 
-            - Rename the MIN(gpa) column like this: MIN(gpa) AS min_gpa
-            -SELECT major_id, MIN(gpa) AS min_gpa, MAX(gpa) FROM students GROUP BY major_id HAVING MAX(gpa) = 4.0;
+    HAVING:
+        -SELECT <column> FROM <table> GROUP BY <column> HAVING <condition>;
+        -*******
+        - condition must be an aggregate function with a test. An example to might be to use HAVING COUNT(*) > 0
+    AS 
+        - Rename the MIN(gpa) column like this: MIN(gpa) AS min_gpa
+        -SELECT major_id, MIN(gpa) AS min_gpa, MAX(gpa) FROM students GROUP BY major_id HAVING MAX(gpa) = 4.0;
+        ******THE BELOW WAS INTERESTING BEWARE************
+        SELECT major_id, COUNT(major_id)  AS number_of_students FROM students GROUP BY major_id;
+            **got a different count from the below
+            SELECT major_id, COUNT(*) AS number_of_students FROM students GROUP BY major_id; 
+        ***The count of the NULL values was 0 in the first and 8 in the second
+            -sooo the top query didn't count the null values 
+        SELECT s.major_id FROM students AS s FULL JOIN majors AS m ON s.major_id = m.major_id;
+    USING 
+        -shortcut keyword to join tables if the foreign key column has the same name in both tables
+        -will also only return 1 of the columns that are being used to JOIN the tables 
+        -SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>);
+        -SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>) FULL JOIN <table_3> USING(<column>).
 
-            ******THE BELOW WAS INTERESTING BEWARE************
-            SELECT major_id, COUNT(major_id)  AS number_of_students FROM students GROUP BY major_id;
-             **got a different count from the below
-             SELECT major_id, COUNT(*) AS number_of_students FROM students GROUP BY major_id; 
-            ***The count of the NULL values was 0 in the first and 8 in the second
-                -sooo the top query didn't count the null values 
-        
         Selecting Specific Columns from a Join . . . 
         SELECT major FROM students INNER JOIN majors ON students.major_id = majors.major_id;
             -This prints/selects only the major row that is a combination of students and major on an INNNER JOIN 
