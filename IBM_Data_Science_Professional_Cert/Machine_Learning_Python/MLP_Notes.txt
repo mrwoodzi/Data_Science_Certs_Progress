@@ -1171,6 +1171,9 @@
                             *********Elbow Method: ***********
                                 -so the value of the metric as a function of K is plotted and the elbow is determinded where the rate of decrease sharply shifts. 
                                 meaning it is the right K for clustering
+                    -"Ground Truth" 
+                        -in the context  of clustering, refers to a labeled dataset where you know the true cluster assignments for each data point.
+                        -
                 Key Concept:
                     -of k-Means algorithm is that it randomly picks a center point for each cluster 
                         this means we must initialize K which represents the number of clusters
@@ -1189,7 +1192,6 @@
                         -assign each customer to the closest center
                             - we do this by calculating the distance of each data point from the centroid 
                             -depending on datasets different measures of distance may be used to place items into clusters 
-                
                 Distance Matrix is formed:
                     -each row represents the distance of a customer from each centroid
                 Within-Cluster Sum of Square Error: 
@@ -1268,7 +1270,21 @@
                 -then recommend it to certain readers
             -Medicine: characterize patient behavior
             -Biology clustering is used group genes with similar expression patterns or to cluster genetic marker to identify family ties
-
+        Evaluating Quality of Clusters:
+            -Elbow Method
+                -finds optimal number of clusters(k) in a dataset   
+                -elbow point is where the rate of decrease sharply changes, indicating the optimal number of clusters
+            -Silhouette Score
+                -measures how similar an object is to its own cluster compared to other clusters
+                -score from -1 to 1, score cloaser to 1 indicates that the object is well matched to its own cluster and poorly matched to neightboring clusters 
+                -score 0f 0 indicates overlapping cluster 
+                -score of -1 indicates the the data might have been assigned to the wrong cluster
+            -Davies-Bouldin Index 
+                -measures the average similarity between each cluster and  its most imilar one
+                -lower values indicate better clustering 
+            -Visual Inspection 
+            -Consensus Clustering 
+            -Stability Analysis 
         Customer Segmentation:
             -practice of partitioning a customer base into groups of individuals that have similar characteristics
             -significant strategy
@@ -1276,6 +1292,21 @@
             -not usually feasible for large volumes of varied data, therefore you need an analytical approach to deriving
                 segments and groups from large datasets.
             -***important requirement is to use the available data to understand and identify how customers are similar to each other
+        Questions on Clustering: 
+            -The objective of k-means clustering is; 
+                -separate dissimilar samples and group similar ones. 
+            -Which option correctly orders the steps of k-means clustering?
+                -2,5,3,1,4
+            -How can we gauge the performance of a k-means clustering model when ground truth is not available?
+                -Question Re-Worded 
+                    -How can you evaluate the performance of quality of the clusters created by a k-means algorithm 
+                        when you don't have a labeled dataset(ground truth) for comparison?
+                    -Take the Average of the distance between data points and their cluster centroids
+            -When the parameter for K for k-means clustering increases, what happens to the error?
+                -(Not Correct)It will increase because incorrectly classified points are further from the centroid. 
+                -(Not Correct)It Might increase 
+            -Which of the following is true for partition-based clustering but not heirarchical nor density-based clustering algorithms?
+                -produces sphere like clusters 
     What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
         Overfitting:
             The model is too complex and has learned the training data's noise, leading to poor generalization 
