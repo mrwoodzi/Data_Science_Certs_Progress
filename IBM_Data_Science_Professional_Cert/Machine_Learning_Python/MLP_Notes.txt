@@ -1141,8 +1141,11 @@
                 Overview: 
                     -divides the data into K non-overlapping subsets or clusters without any cluster internal structure or labels. 
                     -unsupervised algorithm
+                    -partition based clustering
+                    -produces sphere like clusters due to the centroids
+                    -drawback si that we should pre-specify the number of clusters
                     -iterative algorithm
-                    -heuristic algorithm    
+                    -heuristic algorithm
                         -means there is no gaurantee that it will converge to the global minimum error or the most dense clusters. 
                         -also  no guarantee that it will converge to the global optimum and the result may depend 
                             on the initial clusters 
@@ -1153,6 +1156,21 @@
                     -object with cluster are very similar
                     -objects across different clusters are very different or dissimilar
                     -ex. finding similar clusters 
+                    -determining the number of clusters in a data set, or k as in the k-Means algorithm is a frequent   
+                        problem in data clustering 
+                    -correct choice of k is often ambiguous  because it's very dependent on the shape and scale of the 
+                        distribution of points in the dataset
+                Approaches to help address the problem of the correct choice of k:
+                    -run the cluster across the different values of k and looking at a metric of accuracy for clustering
+                        -can be mean(distance between data points and their cluster's centroid)
+                        -or to what extent we minimize the error of clustering, then looking at the change 
+                            of this metric, we can find the best value for k.
+                        Problem with this: 
+                            -with increasing number of clusters, the distance of centroids to data points will always reduce. 
+                            -this mean increasing K will always decrease the error. 
+                            *********Elbow Method: ***********
+                                -so the value of the metric as a function of K is plotted and the elbow is determinded where the rate of decrease sharply shifts. 
+                                meaning it is the right K for clustering
                 Key Concept:
                     -of k-Means algorithm is that it randomly picks a center point for each cluster 
                         this means we must initialize K which represents the number of clusters
@@ -1171,6 +1189,7 @@
                         -assign each customer to the closest center
                             - we do this by calculating the distance of each data point from the centroid 
                             -depending on datasets different measures of distance may be used to place items into clusters 
+                
                 Distance Matrix is formed:
                     -each row represents the distance of a customer from each centroid
                 Within-Cluster Sum of Square Error: 
@@ -1191,6 +1210,10 @@
                     -How do we measure how similar two customers are with regard to their demographics?
                     -How can we calculate the dissimilarity or distance of two cases such as two clusters?
                     -How can we turn it into better clusters with less error?
+                    -How do we show how bad a cluster is?
+                        -value is the average between data points within a cluster.
+                        -average of the distances of data points from their cluster centroids can be used as a metric of 
+                            error for the clustering algorithm.
                 Answers Potentially: 
                     -We can use both similar and dissimilar metrics to form clusters 
                         -Distance of samples from each other is used to shape clusters 
@@ -1203,15 +1226,18 @@
                             -same formula/distance matrix
                             -**************
                             -**Have to normalize feature set to get the accurate dissimilarity measure. 
-                Dissimilarity Measure: 
-                    -Euclidean Distance 
-                Similarity Measure: 
-                    -this highly controls how the clusters are formed, so you need good domain knowledge of dataset and datatype of 
-                        features then choose the meaningful distance measurement
+        Dissimilarity Measure
+            Minkowski Similarity
+            Euclidean Distance Measure: 
+                -this is the dissimilarity measure 
+            Cosine Similarity: 
+        Similarity Measure: 
+            -this highly controls how the clusters are formed, so you need good domain knowledge of dataset and datatype of 
+                features then choose the meaningful distance measurement
                     -Euclidean Distance 
                     -Cosine Similarity 
+                    -Minkowski Similiary
                     -Average Distance 
-
             -K-Medians 
             -Fuzzy c-Means
             -relatively efficient
@@ -1246,7 +1272,7 @@
         Customer Segmentation:
             -practice of partitioning a customer base into groups of individuals that have similar characteristics
             -significant strategy
-            -allows business to target specific groups of customers, so as to more efectively allocate marketing resources
+            -allows business to target specific groups of customers, so as to more effectively allocate marketing resources
             -not usually feasible for large volumes of varied data, therefore you need an analytical approach to deriving
                 segments and groups from large datasets.
             -***important requirement is to use the available data to understand and identify how customers are similar to each other

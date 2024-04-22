@@ -92,19 +92,11 @@ Bash Tutorial:
         cp -r dirname newdirname 
             -does a copy paste and rename 
 
-BUILDING A MARIO DATABASE 
-login = psql --username=freecodecamp --dbname=postgres\d 
-Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
-    with it. Log in by typing psql --username=freecodecamp --dbname=postgres into the terminal and pressing enter.
 
-    CURRENT STOPPING POINT:
+    Your virtual machine comes with PostgreSQL installed. You will use the Psql terminal application to interact 
+        with it. Log in by typing psql --username=freecodecamp --dbname=postgres into the terminal and pressing enter.
         psql --username=freecodecamp --dbname=postgres
-        second_database
-        \c mario_database
-
-        Creating Database 
-            create database database_name; maybe with parenthesis 
-        Connecting to Database  
+base  
             \c database
         DATA types  
             int 
@@ -112,13 +104,12 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
                 -stands for character varying 
             bigint 
 
-        deleting 
-            -TRUNCATE
-                -delete everything in database   
-                    -TRUNCATE database_name; #that's all you need to do 
-                -   -if foreign keys are connecting tables you need to add those tables to be deleted as well 
-                    -TRUNCATE database_name, databasename, database_name;  
-                    -**this will not delete the column names just the row and their data 
+        -TRUNCATE
+            -delete everything in database   
+                -TRUNCATE database_name; #that's all you need to do 
+            -   -if foreign keys are connecting tables you need to add those tables to be deleted as well 
+                -TRUNCATE database_name, databasename, database_name;  
+                -**this will not delete the column names just the row and their data 
    
         list
             \list 
@@ -166,26 +157,22 @@ Your virtual machine comes with PostgreSQL installed. You will use the Psql term
             delete from table_name where column_name='Luigi';
              - you don't have to use DELETE to change a VALUE you can use 
                 UPDATE table_name SET column_name=new_value WHERE condition;
-        ALTER TABLE 
         ALTER TABLE <table_name> ADD FOREIGN KEY(<column_name>) REFERENCES <referenced_table_name>(<referenced_column_name>);
             alter table second_table drop username; # column names don't have to be in quotes
             changing primary key 
                 ALTER TABLE table_name DROP CONSTRAINT constraint_name;
                     Try using ALTER TABLE characters DROP CONSTRAINT characters_pkey; (constraint name is found select * from TABLE_NAME)
-            Foreign Key 
+        Foreign Key 
                     Try using ALTER TABLE characters DROP CONSTRAINT characters_pkey; (constraint name is found select * from TABLE_NAME)
-            UNIQUE 
+        UNIQUE 
                 ALTER TABLE table_name ADD UNIQUE(column_name);
-            ALTER COLUMN 
+        ALTER COLUMN 
                 ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
 
 
-        PUTTING TABLE IN SPECIFIC ORDER
-
-            ORDER BY 
-                SELECT * FROM table ORDER BY column_name/index; 
-                    -this will order your whole table by the column you chose 
-
+        ORDER BY 
+            SELECT * FROM table ORDER BY column_name/index; 
+                -this will order your whole table by the column you chose 
         DROP    
             drop table table_name; 
             ALTER TABLE table_name DROP CONSTRAINT constraint_name;
@@ -286,7 +273,7 @@ Searching/retriving:
             . . . '%a%';
 
         Combining LIKE, NOT ILIKE
-        SELECT * FROM courses WHERE course NOT ILIKE '<pattern>' AND course LIKE <pattern> ;
+            SELECT * FROM courses WHERE course NOT ILIKE '<pattern>' AND course LIKE <pattern> ;
 
         IS NULL 
             WHERE <column> IS NULL;
@@ -298,8 +285,7 @@ Searching/retriving:
 
         LIMIT 
             -SELECT * FROM <table> ORDER BY <column> DESC LIMIT 10; # or whatever number you want
-
- The keywords you want are SELECT, FROM, WHERE, IS NOT NULL, ORDER BY, and LIMIT, in that order
+            The keywords you want are SELECT, FROM, WHERE, IS NOT NULL, ORDER BY, and LIMIT, in that order
             -SELECT * FROM students WHERE gpa IS NOT NULL ORDER BY gpa DESC, first_name LIMIT 10;
 
 Sorting, Stats: 
@@ -352,7 +338,7 @@ Sorting, Stats:
         -SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>);
         -SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>) FULL JOIN <table_3> USING(<column>).
 
-        Selecting Specific Columns from a Join . . . 
-        SELECT major FROM students INNER JOIN majors ON students.major_id = majors.major_id;
-            -This prints/selects only the major row that is a combination of students and major on an INNNER JOIN 
+Selecting Specific Columns from a Join . . . 
+SELECT major FROM students INNER JOIN majors ON students.major_id = majors.major_id;
+    -This prints/selects only the major row that is a combination of students and major on an INNNER JOIN 
         
