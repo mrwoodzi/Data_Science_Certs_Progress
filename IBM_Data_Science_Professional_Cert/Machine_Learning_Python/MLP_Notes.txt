@@ -604,105 +604,105 @@
                 refer to Regression_Trees_SnapML.ipynb for the indepth notes
             advantages of using Snap ML: acceleration of training of classical machine learning models, 
                 such as linear and tree-based models.
-
-    Logistics Regression:
-        -minimizes the mean absolute error(MAE)
-        -classification algorithm for categorical dependent(y) variables 
-            -statistical and ml technique for classifying records of a dataset based on the values of the input fields
-        -what kind of problems can be solved with logistic regression
-        -goal of logistic regression is to build a model to predict the class of each sample which in this case is a customer   
-            as well as the probability of each sample belonging to a class
-        -Independent Variable can be either continuous or categorical
-        -Dependent Variables are usually categorical
-        -Example: 
-            telecommunication dataset  that we'd like to analyze in order to understand which customers might leave us next month
-                -build a model using historic records. 
-                - tenure, age, address, income, ed, employ, equip, callcard, wireless
-                    -independent vars. can be continuous or categorical
-                -churn  
-                    -dependent var., categorical variable 
-                - use above independent variables to predict dependnt variable of customer called 'churn' in it's own column
-        -Applications
-            -to predict probability of a person having a heart attack
-                -based on knowledge of person's age, sex, and bmi
-            -to predict the chance of mortality in an injured patient
-            -to predict whether a patient has a given disease such as diabetes based on observed characteristics such as 
-                weight, height, blood pressure and results of blood test
-            -to predict the likelihood of a customer purchasing a product or halting a subscription
-            -to predict probability of failure of a given process, system or product
-            -likelihood of a homeowner defaulting on a mortgage
-            -ALL EXAMPLES NOT ONLY DO WE PREDICT THE CLASS OF EACH CASE, WE ALSO MEASURE THE PROBABILITY OF A CASE BELONGING TO A SPECIFIC CLASS.  
+    Linear Classification:
+        Logistics Regression:
+            Overview:
+                -minimizes the mean absolute error(MAE)
+                -classification algorithm for categorical dependent(y) variables 
+                    -statistical and ml technique for classifying records of a dataset based on the values of the input fields
+                -what kind of problems can be solved with logistic regression
+                -goal of logistic regression is to build a model to predict the class of each sample which in this case is a customer   
+                    as well as the probability of each sample belonging to a class
+                -Independent Variable can be either continuous or categorical(X)
+                -Dependent Variables are usually categorical
+                Weights: 
+                    -Numerical values assigned to each feature in the model     
+                        -represent the importance or influence of each feature on the predicted outcome
+                        -model learns theses weights during the training process by minimizing the cost function
+                        -Weights represent the importance of influence of each feature on the predicted outcome
+            -Example: 
+                telecommunication dataset  that we'd like to analyze in order to understand which customers might leave us next month
+                    -build a model using historic records. 
+                    - tenure, age, address, income, ed, employ, equip, callcard, wireless
+                        -independent vars. can be continuous or categorical
+                    -churn  
+                        -dependent var., categorical variable 
+                    - use above independent variables to predict dependnt variable of customer called 'churn' in it's own column
+            -Applications
+                -to predict probability of a person having a heart attack
+                    -based on knowledge of person's age, sex, and bmi
+                -to predict the chance of mortality in an injured patient
+                -to predict whether a patient has a given disease such as diabetes based on observed characteristics such as 
+                    weight, height, blood pressure and results of blood test
+                -to predict the likelihood of a customer purchasing a product or halting a subscription
+                -to predict probability of failure of a given process, system or product
+                -likelihood of a homeowner defaulting on a mortgage
+                -ALL EXAMPLES NOT ONLY DO WE PREDICT THE CLASS OF EACH CASE, WE ALSO MEASURE THE PROBABILITY OF A CASE BELONGING TO A SPECIFIC CLASS.  
         In Logistic Regression: 
-                Cost Function: 
-                    typically the log loss(or cross-entropy loss), which measures the difference   
-                        between the predicted probabilities and the actual labels. The parameters of the logistic regression    
-                        model are the coefficients with each feature, and the goal is to find the values of theses coefficients 
-                        that minimize the log loss. 
-
-                Learning Rate: 
-                    -Learning rate is one of the hyperparameters that gives us control on how fast we move on the surface. 
-                        It’s not definitively better if the value is bigger/smaller.
-                    -hyperparameter that determines the size of the steps taken during the 
-                        optimization process to minimize the cost function and find the optimal parameters 
-                        (coefficients) for the model.
-                    - parameter that controls the step size of the gradient descent algorithm. A smaller 
-                        learning rate will result in smaller steps, which can lead to slower convergence but 
-                        may be more likely to find the global minimum. A larger learning rate will result in 
-                        larger steps, which can lead to faster convergence but may be more likely to get 
-                        stuck in a local minimum.
-                    -Learning rate is a constant that is not updated by the gradient descent.
-                    -learning rate is the step length.
-
-                Gradient Descent: 
-                    -optimization algorithm used to minimize the cost function(the minimum of a function) in various machine learning 
-                        models. 
-                    -used to find the values of the model parameters that minimize the loss function
-                    -iteratively update the parameters(coefficients) of the model in the direction that reduces
-                        the cost function, ultimately reaching the optimal set of parameters that best fit the data.
-                    -Gradient descent specifies the steps to take in the current slope direction, learning rate is the step length.
-
-
-
-        -Four situations in which logistic regression is a good candidate
-            -when target field in your data is categorical or specifically binary   
-                -zero/one, yes/no, churn/no churn, positive/negative
-            -you need probability of your prediction    
-                -returns a probability score between 0 and 1 for a given sample of data 
-                -predicts the probability of that sample and we map the cases to a discrete class based on that probability
-            -data is linearly separable
-                -decision boundary of logistic regression is a line or a plane or a hyper plane.
-                -classifier will classify all the points on one side of the decision boundary as belonging to one class and all those on the other 
-                    side as belonging to the other Class
-                -Example:
-                    -if you have just two features and are not applying any polynomial processing we can obtain an inequality like Theta zero   
-                        plus Theta 1x1 plus theat 2x2 is greater than zero which is a half-plane easily plottable
-                    -you can also use logistic regression to achieve a complex decision boundary using polynomial processing as well 
-            -you need to understand the impact of a feature 
-                -you can select the best features based on the statistical significance of the logistic regression model coefficients or parameters 
-                    -that is after finding optimum parameters, a feature X with the weight Theta one close to zero has a smaller effect on the predicition
-                        than features with large absolute values of Theta one. 
-                    - allows us to understand the impact an independent variable has on the dependent variable while controoling other independent variables 
-                    
-
-
-        -in what situations do we use logistic regression
-        -Classification
-            -Probability of a Class 
-            -"S" shaped 
-        -Used for predicting the class of each case/ of an observed data point
-            -guides on what would be the most probable class of a data point
-        -Variant of Linear Regression
-        -used when the observed dependent variable, y, is categorical 
-            -produces a formula that predicts the probability of the class label as a function  
-                of the independent variables
-        -fits a special s-shaped curve by taking the linear regression function and transforming the    
-            numeric estrimate into a probability with the following function, which is called the 
-            sigmoid function (greek sign that looks circular)
-        Examples:
-            Helps you to predict what behavior will help you to retain customers
-                -you can analyze all relevant customer data and develop focused customer 
-                    retention programs
-
+            Cost Function: 
+                typically the log loss(or cross-entropy loss), which measures the difference   
+                    between the predicted probabilities and the actual labels. The parameters of the logistic regression    
+                    model are the coefficients with each feature, and the goal is to find the values of theses coefficients 
+                    that minimize the log loss. 
+                -mathematical expression that measures the difference between the predicted values of the model and the 
+                    actual values. It helps evaluate how well the model is performing and identify areas for improvement.
+            Learning Rate: 
+                -Learning rate is one of the hyperparameters that gives us control on how fast we move on the surface. 
+                    It’s not definitively better if the value is bigger/smaller.
+                -hyperparameter that determines the size of the steps taken during the 
+                    optimization process to minimize the cost function and find the optimal parameters 
+                    (coefficients) for the model.
+                - parameter that controls the step size of the gradient descent algorithm. A smaller 
+                    learning rate will result in smaller steps, which can lead to slower convergence but 
+                    may be more likely to find the global minimum. A larger learning rate will result in 
+                    larger steps, which can lead to faster convergence but may be more likely to get 
+                    stuck in a local minimum.
+                -Learning rate is a constant that is not updated by the gradient descent.
+                -learning rate is the step length.
+            Gradient Descent: 
+                -optimization algorithm used to minimize the cost function(the minimum of a function) in various machine learning 
+                    models. 
+                -used to find the values of the model parameters that minimize the loss function
+                -iteratively update the parameters(coefficients) of the model in the direction that reduces
+                    the cost function, ultimately reaching the optimal set of parameters that best fit the data.
+                -Gradient Descent:
+                    -specifies the steps to take in the current slope direction, learning rate is the step length.
+            Four situations in which logistic regression is a good candidate
+                1. When target field in your data is categorical or specifically binary   
+                    -zero/one, yes/no, churn/no churn, positive/negative
+                2. You need probability of your prediction    
+                    -returns a probability score between 0 and 1 for a given sample of data 
+                    -predicts the probability of that sample and we map the cases to a discrete class based on that probability
+                3. Data is linearly separable
+                    -decision boundary of logistic regression is a line or a plane or a hyper plane.
+                    -classifier will classify all the points on one side of the decision boundary as belonging to one class and all those on the other 
+                        side as belonging to the other Class
+                    -Example:
+                        -if you have just two features and are not applying any polynomial processing we can obtain an inequality like Theta zero   
+                            plus Theta 1x1 plus theat 2x2 is greater than zero which is a half-plane easily plottable
+                        -you can also use logistic regression to achieve a complex decision boundary using polynomial processing as well 
+                4. You need to understand the impact of a feature 
+                    -you can select the best features based on the statistical significance of the logistic regression model coefficients or parameters 
+                        -that is after finding optimum parameters, a feature X with the weight Theta one close to zero has a smaller effect on the predicition
+                            than features with large absolute values of Theta one. 
+                        - allows us to understand the impact an independent variable has on the dependent variable while controoling other independent variables 
+            In what situations do we use logistic regression
+                    -Classification
+                        -Probability of a Class 
+                        -"S" shaped 
+                    -Used for predicting the class of each case/ of an observed data point
+                        -guides on what would be the most probable class of a data point
+                    -Variant of Linear Regression
+                    -used when the observed dependent variable, y, is categorical 
+                        -produces a formula that predicts the probability of the class label as a function  
+                            of the independent variables
+                    -fits a special s-shaped curve by taking the linear regression function and transforming the    
+                        numeric estrimate into a probability with the following function, which is called the 
+                        sigmoid function (greek sign that looks circular)
+                    Examples:
+                        Helps you to predict what behavior will help you to retain customers
+                            -you can analyze all relevant customer data and develop focused customer 
+                                retention programs
         LogisticRegression function in sklearn:
             -ideally you iterate multiple times to reduce the cost function
             -FINDING THE BEST MODEL MEANS FINDING THE BEST PARAMETERS THETA FOR THAT MODEL
@@ -726,14 +726,13 @@
             4. update weights with new parameter values 
             5. Go to step 2 until cost is small enough. 
             6. Predict the new customer X
-        -implements logistic regression and can use different numerical optimizers 
+            -implements logistic regression and can use different numerical optimizers 
             to find parameters, including'newton-cg', 'lbfgs', 'liblinear', 'sag',
             'saga' solvers. ***look up pros and cons of these dependent on project.
-        -supports regularization which is technique used to solve the overfitting problem 
-            of machine learning models.
-                            Overfitting review - performs well on the training 
-                            data but fails to generalize effectively to new, unseen data
-
+            -supports regularization which is technique used to solve the overfitting problem 
+                of machine learning models.
+                                Overfitting review - performs well on the training 
+                                data but fails to generalize effectively to new, unseen data
         Evaluation of LogisticRegression, jaccard index and confusion matrix: 
             jaccard index   
                 -accuracy evaluation
@@ -744,185 +743,265 @@
                             otherwise 0.0.
             confusion matrix        
                 -looking at accuracy of the classifier
-
         Classification Report
-            -classification_report
-                -column 'precision'
-                    -measure of the accuracy provided that a class label has been 
-                        predicted. It is defiend by: precision = TP/(TP + FP)
-                -column 'recall 
-                    -true positive rate. deficned as: recall = TP/(TP + FN)
-                -column 'f1-score'
-                    -based on 'precision' and 'recall'
-                    -harmonic average of the precision and recall, where f1-score reaches 
-                            it's best value at 1(perfect precision and recall) and worst at 0. 
-                        -good way to show that a classifier has a good value for both recall 
-                            and precision 
-                        
-    Logistic Regresssion Steps:
-        1. Extract, Transform, Load 
-            -extract features from df
-            -transform target data to integer, as it is required by sklearn algorithm
-        2. Define X and y: 
-            X = np.asarray(df[['column1', 'column2', 'column3', 'etc...']])
-            y = np.asarray(df['target_data_column_converted_to_int'])
-        3. Normalize:
-            X = preprocessing.StandardScaler().fit(X).transform(x)
-            x[0:5]
-        4. Train/Test dataset:
-            from sklearn.model_selection import train_test_split
-            X_train, X_test, y_train, y_test, = train_test_split(X, y, test_size=0.2, random_state=4)
-            print('Train set:', X_train.shape, y_train.shape)
-            print('Test set:', X_test.shape, y_test.shape)
-        5. Build Model:
-                        "The optimization algorithm used to find the parameters 
-                        (coefficients) of the logistic regression model. Common 
-                        solvers include 'liblinear', 'newton-cg', 'lbfgs', 'sag', 
-                        and 'saga'. You should try different solver values"
-            from sklearn.linear_model import LogisticRegression
-            from sklearn.metrics import confusion_matrix 
-            LR = LogisticRegression(C=0.01, solver='liblinear').fit(X_train, y_train)
-            LR
-        6. Prediction:
-            yhat = LR.predict(X_test)
-            yhat 
-        7. Accuracy Evaluation: jaccard index and confusion matrix 
-          7.a jaccard index
-            jaccard_score(y_test, yhat,pos_label=0)
-          7.b.1 confusion matrix
-                def plot_confusion_matrix(cm, classes,
-                            normalize=False,
-                            title='Confusion matrix',
-                            cmap=plt.cm.Blues):
-                    """
-                    This function prints and plots the confusion matrix.
-                    Normalization can be applied by setting `normalize=True`.
-                    """
-                    if normalize:
-                        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-                        print("Normalized confusion matrix")
-                    else:
-                        print('Confusion matrix, without normalization')
+                -classification_report
+                    -column 'precision'
+                        -measure of the accuracy provided that a class label has been 
+                            predicted. It is defiend by: precision = TP/(TP + FP)
+                    -column 'recall 
+                        -true positive rate. deficned as: recall = TP/(TP + FN)
+                    -column 'f1-score'
+                        -based on 'precision' and 'recall'
+                        -harmonic average of the precision and recall, where f1-score reaches 
+                                it's best value at 1(perfect precision and recall) and worst at 0. 
+                            -good way to show that a classifier has a good value for both recall 
+                                and precision 
+        Logistic Regresssion Steps:
+            1. Extract, Transform, Load 
+                -extract features from df
+                -transform target data to integer, as it is required by sklearn algorithm
+            2. Define X and y: 
+                X = np.asarray(df[['column1', 'column2', 'column3', 'etc...']])
+                y = np.asarray(df['target_data_column_converted_to_int'])
+            3. Normalize:
+                X = preprocessing.StandardScaler().fit(X).transform(x)
+                x[0:5]
+            4. Train/Test dataset:
+                from sklearn.model_selection import train_test_split
+                X_train, X_test, y_train, y_test, = train_test_split(X, y, test_size=0.2, random_state=4)
+                print('Train set:', X_train.shape, y_train.shape)
+                print('Test set:', X_test.shape, y_test.shape)
+            5. Build Model:
+                            "The optimization algorithm used to find the parameters 
+                            (coefficients) of the logistic regression model. Common 
+                            solvers include 'liblinear', 'newton-cg', 'lbfgs', 'sag', 
+                            and 'saga'. You should try different solver values"
+                from sklearn.linear_model import LogisticRegression
+                from sklearn.metrics import confusion_matrix 
+                LR = LogisticRegression(C=0.01, solver='liblinear').fit(X_train, y_train)
+                LR
+            6. Prediction:
+                yhat = LR.predict(X_test)
+                yhat 
+            7. Accuracy Evaluation: jaccard index and confusion matrix 
+            7.a jaccard index
+                jaccard_score(y_test, yhat,pos_label=0)
+            7.b.1 confusion matrix
+                    def plot_confusion_matrix(cm, classes,
+                                normalize=False,
+                                title='Confusion matrix',
+                                cmap=plt.cm.Blues):
+                        """
+                        This function prints and plots the confusion matrix.
+                        Normalization can be applied by setting `normalize=True`.
+                        """
+                        if normalize:
+                            cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+                            print("Normalized confusion matrix")
+                        else:
+                            print('Confusion matrix, without normalization')
 
-                    print(cm)
+                        print(cm)
 
-                    plt.imshow(cm, interpolation='nearest', cmap=cmap)
-                    plt.title(title)
-                    plt.colorbar()
-                    tick_marks = np.arange(len(classes))
-                    plt.xticks(tick_marks, classes, rotation=45)
-                    plt.yticks(tick_marks, classes)
+                        plt.imshow(cm, interpolation='nearest', cmap=cmap)
+                        plt.title(title)
+                        plt.colorbar()
+                        tick_marks = np.arange(len(classes))
+                        plt.xticks(tick_marks, classes, rotation=45)
+                        plt.yticks(tick_marks, classes)
 
-                    fmt = '.2f' if normalize else 'd'
-                    thresh = cm.max() / 2.
-                    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-                        plt.text(j, i, format(cm[i, j], fmt),
-                                horizontalalignment="center",
-                                color="white" if cm[i, j] > thresh else "black")
+                        fmt = '.2f' if normalize else 'd'
+                        thresh = cm.max() / 2.
+                        for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+                            plt.text(j, i, format(cm[i, j], fmt),
+                                    horizontalalignment="center",
+                                    color="white" if cm[i, j] > thresh else "black")
 
-                    plt.tight_layout()
-                    plt.ylabel('True label')
-                    plt.xlabel('Predicted label')
-                print(confusion_matrix(y_test, yhat, labels=[1,0]))
+                        plt.tight_layout()
+                        plt.ylabel('True label')
+                        plt.xlabel('Predicted label')
+                    print(confusion_matrix(y_test, yhat, labels=[1,0]))
+            7.b.2 compute confusion matrix and plot non-normalized confusion matrix 
+                import itertools
+                from sklearn.metrics import confusion_matrix
+                from sklearn import svm
+                #compute confusion matrix
+                cnf_matrix = confusion_matrix(y_test, yhat, labels=[1,0])
+                np.set_printoptions(precision=2)
 
-          7.b.2 compute confusion matrix and plot non-normalized confusion matrix 
-            import itertools
-            from sklearn.metrics import confusion_matrix
-            from sklearn import svm
-            #compute confusion matrix
-            cnf_matrix = confusion_matrix(y_test, yhat, labels=[1,0])
-            np.set_printoptions(precision=2)
-
-            #plot non-normalized confustion matrix 
-            plt.figure()
-            plot_confusion_matrix(cnf_matrix, 
-                                    classes=['target_data_column=1', 'target_data_column=0'], 
-                                    normalize=False, 
-                                    title='Confusion Matrix')
-          7.c Get Classification Report:
-            from sklearn.metrics import classification_report
-            print(classification_report(y_test, yhat))
-
-          7.d log Loss  
-            -measures  the performance of a classifier where the predicted output is a probability 
-                    value between 0 and 1
-
-    Logistic Regression Steps, Quick Version    
-        -use cost function on training set 
-        -update weights with new parameter values
-        -calculate cost function gradient
-        -initialize the parameters
-        -repeat until specified cost or iterations reached
-
-    Logistic Regression vs. Linear Regression:
-                - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
-                - Independent Variables in both Linear and Logistic Regression can be either continuous or categorical
-            Linear:
-                -Linear can not be used properly for some binary classification problems.
-                -the below was to prove that in the telecommunications dataset linear regression is def not the 
-                    right choice
-                ### -if you can map class labels to integer numbers, you can use linear?
-                ###    -in the telecommunication dataset instead of predicting churn with logistic regression using categorical data   
-                ###        you could use income which is a continuous value.
-                ###        -you could predict  the income of an unknown customer based on their age. 
-            Logistic Regression:
-                -goal is to build a model to predict the class and also probability of each sample belonging to a class
-                -The objective of the __Logistic Regression__ algorithm, is to find the best parameters θ, for $ℎ_\theta(𝑥)$ = 
-                    $\sigma({\theta^TX})$, in such a way that the model best predicts the class of each case.
-                -great for needing the probability that the dependent/target/class-label variable will fall into a class
-                    -independent variables are used to make the prediction and give the probability
-                -e≈2.71828
-                θ: This is the parameter vector in logistic regression. It contains the coefficients associated with each feature in your model. The superscript 
-                    T represents the transpose operation, which turns the column vector 
-                    θ into a row vector. It's like flipping the vector.
-                    X: This is the feature vector or matrix. If you have multiple features, each column of 
-                    X represents a different feature, and each row corresponds to a different data point. So, θ T X is the dot product of the transpose of the parameter vector 
-                    θ and the feature matrix 
-                    X.
-                -Sigmoid function   
-                    -also called logistic function
-                    -main part of Logistic regression   
-                    -sigmoid of theta is the probability of a point belonging to a class instead  of the value of y directly 
-                    -returns the probability that a Theta transpose x is very big or very small. 
-                    -always returns a value between 0 and 1. 
-                    -theta traspose x 
-                    -We can find Theta through the training process. 
-                        Theta:
-                            -called the weights factor or confidences of the equation, 
-                                -theta and weights factor is used interchangeably
-                            -theta is a vector of parameters 
-                                    -the values of the parameters (theta) are more about their significance in 
-                                        the model rather than their "length."
-                                    -the direction of the "theta" vector is associated with the positive or negative impact of each corresponding feature 
-                                        on the log-odds of the predicted outcome. A positive theta implies an increase in the log-odds, while a negative 
-                                        theta implies a decrease.
-                            -There are different ways to change the values of Theta, but one of the most popular ways is gradient descent. 
-                                Gradient Descent:
-                                    -an iterative optimization algorithm used to minimize the cost function in machine learning and optimization problems. The goal of Gradient Descent is to 
-                                        find the minimum of a function by adjusting its parameters iteratively. It's particularly common in training machine learning models
-                            -There are various ways to stop iterations, but essentially you stop training by calculating the accuracy of your model and stop it when it's satisfactory. 
-                            -Step one, initialize Theta vector with random values as with most machine learning algorithms. For example, minus 1 or 2.
-                            -Step two, calculate the model output, which is sigmoid of Theta transpose x.
-                                -Example:
-                                     For example, customer in your training set. X and Theta transpose x is the feature vector values. For example, 
-                                     the age and income of the customer, for instance, 2 and 5, and Theta is the confidence or weight that you've 
-                                     set in the previous step. The output of this equation is the prediction value, in other words, the probability 
-                                     that the customer belongs to class 1.
-                             -Step three, compare the output of our model, y hat, which could be a value of, let's say, 0.7, with the actual label of the customer, which is for example, 1, for churn. 
-                                -Then, record the difference as our model's error for this customer, which would be 1 minus 0.7, which of course, equals 0.3. 
-                                    This is the error for only one customer out of all the customers in the training set.
-                            -Step four, calculate the error for all customers as we did in the previous steps and add up these errors. 
-                                - The total error is the cost of your model and is calculated by the models cost function. The cost function, by the way, basically represents 
-                                    how to calculate the error of the model which is the difference between the actual and the models predicted values. So, the cost shows how 
-                                    poorly the model is estimating the customers labels. Therefore, the lower the cost, the better the model is at estimating the customers 
-                                    labels correctly. So, what we want to do is to try to minimize this cost.
-                            -Step five, but because the initial values for Theta were chosen randomly, it's very likely that the cost function is very high, so 
-                                we change the Theta in such a way to hopefully reduce the total cost. 
-                            -Step six, after changing the values of Theta, we go back to step two, then we start another iteration and calculate the cost of the model again. 
-                            -We keep doing those steps over and over, changing the values of Theta each time until the cost is low enough. 
-                            -So, this brings up two questions. 
-                                -First, how can we change the values of Theta so that the cost is reduced across iterations? 
-                                -Second, when should we stop the iterations?
+                #plot non-normalized confustion matrix 
+                plt.figure()
+                plot_confusion_matrix(cnf_matrix, 
+                                        classes=['target_data_column=1', 'target_data_column=0'], 
+                                        normalize=False, 
+                                        title='Confusion Matrix')
+            7.c Get Classification Report:
+                from sklearn.metrics import classification_report
+                print(classification_report(y_test, yhat))
+            7.d log Loss  
+                -measures  the performance of a classifier where the predicted output is a probability 
+                        value between 0 and 1
+        Logistic Regression Steps, Quick Version    
+            -use cost function on training set 
+            -update weights with new parameter values
+            -calculate cost function gradient
+            -initialize the parameters
+            -repeat until specified cost or iterations reached
+        Logistic Regression vs. Linear Regression - lots of good stuff about both in here:
+                    - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
+                    - Independent Variables in both Linear and Logistic Regression can be either continuous or categorical
+                Linear:
+                    -Linear can not be used properly for some binary classification problems.
+                    -the below was to prove that in the telecommunications dataset linear regression is def not the 
+                        right choice
+                    ### -if you can map class labels to integer numbers, you can use linear?
+                    ###    -in the telecommunication dataset instead of predicting churn with logistic regression using categorical data   
+                    ###        you could use income which is a continuous value.
+                    ###        -you could predict  the income of an unknown customer based on their age. 
+                Logistic Regression:
+                    -goal is to build a model to predict the class and also probability of each sample belonging to a class
+                    -The objective of the __Logistic Regression__ algorithm, is to find the best parameters θ, for $ℎ_\theta(𝑥)$ = 
+                        $\sigma({\theta^TX})$, in such a way that the model best predicts the class of each case.
+                    -great for needing the probability that the dependent/target/class-label variable will fall into a class
+                        -independent variables are used to make the prediction and give the probability
+                    -e≈2.71828
+                    θ: This is the parameter vector in logistic regression. It contains the coefficients associated with each feature in your model. The superscript 
+                        T represents the transpose operation, which turns the column vector 
+                        θ into a row vector. It's like flipping the vector.
+                        X: This is the feature vector or matrix. If you have multiple features, each column of 
+                        X represents a different feature, and each row corresponds to a different data point. So, θ T X is the dot product of the transpose of the parameter vector 
+                        θ and the feature matrix 
+                        X.
+                    -Sigmoid function   
+                        -also called logistic function
+                        -main part of Logistic regression   
+                        -sigmoid of theta is the probability of a point belonging to a class instead  of the value of y directly 
+                        -returns the probability that a Theta transpose x is very big or very small. 
+                        -always returns a value between 0 and 1. 
+                        -theta traspose x 
+                        -We can find Theta through the training process. 
+                            Theta:
+                                -called the weights factor or confidences of the equation, 
+                                    -theta and weights factor is used interchangeably
+                                -theta is a vector of parameters 
+                                        -the values of the parameters (theta) are more about their significance in 
+                                            the model rather than their "length."
+                                        -the direction of the "theta" vector is associated with the positive or negative impact of each corresponding feature 
+                                            on the log-odds of the predicted outcome. A positive theta implies an increase in the log-odds, while a negative 
+                                            theta implies a decrease.
+                                -There are different ways to change the values of Theta, but one of the most popular ways is gradient descent. 
+                                    Gradient Descent:
+                                        -an iterative optimization algorithm used to minimize the cost function in machine learning and optimization problems. The goal of Gradient Descent is to 
+                                            find the minimum of a function by adjusting its parameters iteratively. It's particularly common in training machine learning models
+                                -There are various ways to stop iterations, but essentially you stop training by calculating the accuracy of your model and stop it when it's satisfactory. 
+                                -Step one, initialize Theta vector with random values as with most machine learning algorithms. For example, minus 1 or 2.
+                                -Step two, calculate the model output, which is sigmoid of Theta transpose x.
+                                    -Example:
+                                        For example, customer in your training set. X and Theta transpose x is the feature vector values. For example, 
+                                        the age and income of the customer, for instance, 2 and 5, and Theta is the confidence or weight that you've 
+                                        set in the previous step. The output of this equation is the prediction value, in other words, the probability 
+                                        that the customer belongs to class 1.
+                                -Step three, compare the output of our model, y hat, which could be a value of, let's say, 0.7, with the actual label of the customer, which is for example, 1, for churn. 
+                                    -Then, record the difference as our model's error for this customer, which would be 1 minus 0.7, which of course, equals 0.3. 
+                                        This is the error for only one customer out of all the customers in the training set.
+                                -Step four, calculate the error for all customers as we did in the previous steps and add up these errors. 
+                                    - The total error is the cost of your model and is calculated by the models cost function. The cost function, by the way, basically represents 
+                                        how to calculate the error of the model which is the difference between the actual and the models predicted values. So, the cost shows how 
+                                        poorly the model is estimating the customers labels. Therefore, the lower the cost, the better the model is at estimating the customers 
+                                        labels correctly. So, what we want to do is to try to minimize this cost.
+                                -Step five, but because the initial values for Theta were chosen randomly, it's very likely that the cost function is very high, so 
+                                    we change the Theta in such a way to hopefully reduce the total cost. 
+                                -Step six, after changing the values of Theta, we go back to step two, then we start another iteration and calculate the cost of the model again. 
+                                -We keep doing those steps over and over, changing the values of Theta each time until the cost is low enough. 
+                                -So, this brings up two questions. 
+                                    -First, how can we change the values of Theta so that the cost is reduced across iterations? 
+                                    -Second, when should we stop the iterations?
+            SVM(Support Vector Machines):
+        SVM:
+            Overview:
+                -SVM is a supervised algorithm that classifies cases by finding a separator
+                -Point is to find the hyperplane that maximizes the margin between the data points of different classes 
+                    -margin represents the distance between the hyperplane and the closest data points from each class. 
+                    -by maximizing this margin, the SVM aims to create a model that is more robust to noise and outliers    
+                        and thus, more likely to generalize weel to unseen data. 
+                -NOT BEST WHEN you need multiple decision boundaries with varying weights
+                -first maps data to a high dimensional feature space so that data points can be categorized, 
+                    even when the data are not otherwise linearly separable.then a separator is estimated for the data
+                -2 categories that can be separtated with a curve but not a line
+                -true of most data sets 
+                -svm algorithm ouptus an optimal hyperplane that categorizes new examples
+            WHEN SHOULD WE USE SVM?
+                -image analysis tasks 
+                    -image classification
+                    -hand written digit recognition 
+                    -text mining
+                        -detecting spam 
+                        -text category assignment
+                        -sentiment analysis 
+                    -gene expression data classification 
+                    -can be used for . . .
+                        -regression
+                        -outlier detection 
+                        -clustering 
+            Data Transformation, turns non linearly separable data into separable data: 
+                -turns non linearly separable data into separable data by using funcion with outputs x and x squared
+                -Does what is called kernelling 
+                    -mapping data into a higher dimension of space
+                    -Types of kernelling, each has it's own pros and cons 
+                        -The below functions are tested and chosen based on how well they work with that particular dataset 
+                        -Linear 
+                        -Polynomial
+                        -RBF (radial basis function)
+                        -Sigmoid 
+            Hyperplane:
+                -goal is to choose a hyperplane with as big a margin as possible 
+                -demarcation between data   
+                    -2d line
+                    -3d sheet 
+                    -offers a choice of kernel function for performing its processing. Basically mapping data into 
+                    -higher dimensional space which is referred to as kernelling. The mathematical function used for 
+                    -the transformation is known as the kernel function, and can be of diffrenent types.
+                    1. Linear
+                    2. Polynomial
+                    3. Radial basis function (RBF)
+                    4. sigmoid
+            Each of the functions has its characteristics, its pros and cons, and its equation, but as there's
+                    no easy way of knowing which function performs best with any given dataset. We usually choose 
+                    different functions in turn and compare the results. 
+            How do we find the right or optimized separator after transformation?
+                    -find the best hyperplane and the best does the best job of separating the data 
+                        - the best will have the largest margin between the 2 datasets 
+                        SUPPORT VECTORS 
+                            -points in dataset that are closest to the hyperplane 
+                            -only SUPPORT VECTORS matter in finding the best hyperplane 
+                            -HYPERPLANE and BOUNDARY DECISION LINE each have their own equations 
+                            -w(transposed)x + b = 1 # top boundary 
+                            -w(transposed)x + b = -1 # bottom boundary
+                        HYPERPLANE 
+                            -w(transposed)x + b = 0
+            SVM Pros and Cons:
+                    Pro:
+                        -Accurate in high-dimensional spaces 
+                        -memory efficiency
+                    Cons: 
+                        -Prone to over-fitting if number of features is much greater than the number of samples 
+                        -No probability estimation directly which are desireable in most classifiction problems 
+                        -computationally inefficient in data more than 1000 rows 
+                Object of SVM in terms of hyperplane
+                    -logistic regression is used to predict the probability of a categorical dependent variable?
+                    -cases we want to consider using SVM 
+                    -mapping data to a higher dimensional feature space for better separation of classes
+            SVM Steps:
+        Questions Linear Classification 
+            Which option lists the steps of training a logistic regression model?
+            What is the objective of SVM in terms of hyperplanes?
+                -Choose the hyperplane that represents the largest margin between the two classes.
+            Logistic regression is used to predict the probability of a:
+                Categorical dependent variable 
+            In which cases would we want to consider using SVM?
+                When mapping the data to a higher dimensional feature space can better separate classes.
+            What is a disadvantage of one-vs-all classification?
+                -
 
     NOTES ON PARAMETERS, COEFFICIENTS, Intercept, Variance, Standard Deviation, Hypothesis Testing, Confidence Interval:
         Overview of Para and Coef:
@@ -936,31 +1015,25 @@
             In summary, while all coefficients are parameters, not all parameters are coefficients. The term "coefficient" is more specific 
             and typically used when referring to the 
             weights in regression models.
-
         Coefficients:
             In statistical modeling, coefficients are the numerical values that multiply the predictor variables in a regression equation.
             In simple linear regression, there is one coefficient representing the slope of the line.
             In multiple linear regression, each predictor variable has its own coefficient, indicating the change in the response variable for a one-unit change in that predictor while holding other variables constant.
             In logistic regression, coefficients represent the log-odds change in the outcome for a one-unit change in the predictor.
-
         Intercept:
             The intercept is the constant term in a regression equation, representing the expected value of the response variable when all predictor variables are zero.
             In simple linear regression, the intercept is the point where the regression line crosses the y-axis.
             In multiple linear regression, it represents the baseline value of the response variable when all predictors are zero.
-
         Variances:
             Variance measures the spread or dispersion of a set of data points.
             In statistics, variance is a key component in calculating standard deviation, a measure of how much individual data points differ from the mean.
             In the context of linear regression, the residual variance (the variance of the differences between observed and predicted values) is crucial in assessing the goodness of fit of the model.
-
         Standard Deviation:
             Standard deviation is a measure of the amount of variation or dispersion in a set of values.
             It is the square root of the variance and provides a more interpretable scale since it's in the same units as the original data.
-
         Hypothesis Testing:
             In statistics, hypothesis testing involves making inferences about population parameters based on sample data.
             Commonly used tests include t-tests and z-tests for means, chi-square tests for independence, and F-tests for variances.
-
         Confidence Intervals:
             Confidence intervals provide a range of values within which the true population parameter is likely to fall with a certain level of confidence.
             For example, a 95% confidence interval implies that there is a 95% chance that the interval contains the true parameter.
@@ -977,77 +1050,7 @@
                             ************************************************************************************************************************************
                             - this is what a good classifier model built by logistic regression is supposed to do for us. 
 
-    SVM(Support Vector Machines):
-        Overview:
-            -SVM is a supervised algorithm that classifies cases by finding a separator
-            -NOT BEST WHEN you need multiple decision boundaries with varying weights
-            -first maps data to a high dimensional feature space so that data points can be categorized, 
-                even when the data are not otherwise linearly separable.then a separator is estimated for the data
-            -2 categories that can be separtated with a curve but not a line
-            -true of most data sets 
-            -svm algorithm ouptus an optimal hyperplane that categorizes new examples
-        WHEN SHOULD WE USE SVM?
-            -image analysis tasks 
-                -image classification
-                -hand written digit recognition 
-                -text mining
-                    -detecting spam 
-                    -text category assignment
-                    -sentiment analysis 
-                -gene expression data classification 
-                -can be used for . . .
-                    -regression
-                    -outlier detection 
-                    -clustering 
-        Data Transformation, turns non linearly separable data into separable data: 
-            -turns non linearly separable data into separable data by using funcion with outputs x and x squared
-            -Does what is called kernelling 
-                -mapping data into a higher dimension of space
-                -Types of kernelling, each has it's own pros and cons 
-                    -The below functions are tested and chosen based on how well they work with that particular dataset 
-                    -Linear 
-                    -Polynomial
-                    -RBF (radial basis function)
-                    -Sigmoid 
-        Hyperplane:
-            -goal is to choose a hyperplane with as big a margin as possible 
-            -demarcation between data   
-                -2d line
-                -3d sheet 
-        offers a choice of kernel function for performing its processing. Basically mapping data into 
-            higher dimensional space which is referred to as kernelling. The mathematical function used for 
-            the transformation is known as the kernel function, and can be of diffrenent types.
-                1. Linear
-                2. Polynomial
-                3. Radial basis function (RBF)
-                4. sigmoid
-        Each of the functions has its characteristics, its pros and cons, and its equation, but as there's
-            no easy way of knowing which function performs best with any given dataset. We usually choose 
-            different functions in turn and compare the results. 
-        How do we find the right or optimized separator after transformation?
-            -find the best hyperplane and the best does the best job of separating the data 
-                - the best will have the largest margin between the 2 datasets 
-                SUPPORT VECTORS 
-                    -points in dataset that are closest to the hyperplane 
-                    -only SUPPORT VECTORS matter in finding the best hyperplane 
-                    -HYPERPLANE and BOUNDARY DECISION LINE each have their own equations 
-                    -w(transposed)x + b = 1 # top boundary 
-                    -w(transposed)x + b = -1 # bottom boundary
-                HYPERPLANE 
-                    -w(transposed)x + b = 0
-        SVM Pros and Cons:
-            Pro:
-                -Accurate in high-dimensional spaces 
-                -memory efficiency
-            Cons: 
-                -Prone to over-fitting if number of features is much greater than the number of samples 
-                -No probability estimation directly which are desireable in most classifiction problems 
-                -computationally inefficient in data more than 1000 rows 
-        Object of SVM in terms of hyperplane
-            -logistic regression is used to predict the probability of a categorical dependent variable?
-            -cases we want to consider using SVM 
-            -mapping data to a higher dimensional feature space for better separation of classes 
-    SVM Steps:
+
             1. ETL:
                 -make sure all cells are numerical 
             2a. Select independent variables:  
@@ -1340,7 +1343,6 @@
                 Adjust model complexity by tuning hyperparameters.
                 Check for data leakage and ensure a proper separation between training and testing datasets.
 
-
     Overfitting: 
         Overfitting occurs when a model fits the training data too closely, 
         resulting in poor performance on new, unseen data. It happens when the model captures noise or random 
@@ -1393,68 +1395,7 @@
                 Ensemble methods combine multiple models to make predictions. By using techniques like bagging or 
                 boosting, you can create a more complex model by aggregating the predictions of several simpler models. 
                 This can help mitigate underfitting and improve overall performance.
-                
-    Multiclass Prediction 
-        https://towardsdatascience.com/multi-class-classification-one-vs-all-one-vs-one-94daed32a87b
-        Classiifying data into multiple class labels
-            -You can convert logisitic regression to multi-class classification using 
-                multinomial logistic regression or SoftMax Regression 
-                -this is generalized logistic regression 
-        SOFTMAX REGRESSION: 
-            -multi-class classification techniques that can convert most two-class 
-                classifiers to a multi-class classifier
-            -similar to logistic regression
-            -training process is almost identical to logistic regression using cross-entropy but prediction is different 
-            -can you it to generate a probability of how likely the sample belongs to each class    
-                -then make a prediciton using the argmax function 
-        ONE VS ALL(One-vs-Rest):
-            -you essentially logistic regression and put each class against the one(X) and 
-                each point gets put into class against the one(X)
-            -multi-class classification techniques that can convert most two-class 
-                classifiers to a multi-class classifier
-                -you need to index your different classes 1-4 or 0-3 doesn't matter starting at 0 or 1 
-            -email foldering/tagging: 
-                -Work, Friends, Family, Hobby
-                -y=1, y=2, y=3, y=4
-            -Medical Diagrams: 
-                -Not Ill, Cold, Flu 
-                -y=1, y=2, y=3 
-            -Weather: 
-                -Sunny, Cloudy, Rain, Snow 
-                -y=1, y=2, y=3, y=4 
-            -each class is treated as a binary classification problem, where one class is labeled as the 
-                positive class and all other classes are grouped together as the negative class. This 
-                results in multiple binary classifiers, each trained to distinguish between one class 
-                and the rest of the classes.
-            -the decision boundaries for each class are independent of each other.
-            -typically won't have a region where multiple classes are considered valid outpus simultaneously
-            Binary Classification for Each Class:
-                    For each class i, a binary classifier is trained to distinguish between instances of class 
-                        i and instances of all other classes combined. This results in k binary classifiers, where 
-                        k is the total number of classes.
-            Decision Boundaries:
-                    The decision boundary for each binary classifier separates the instances of its corresponding 
-                        class from the instances of all other classes. These decision boundaries are independent 
-                        of each other and are optimized to maximize the separation between the positive class 
-                        and the negative class.
-            Decision Boundaries:
-                    The decision boundary for each binary classifier separates the instances of its corresponding 
-                        class from the instances of all other classes. These decision boundaries are independent 
-                        of each other and are optimized to maximize the separation between the positive class 
-                        and the negative class.
-        ONE VS ONE Classification:
-            -multi-class classification techniques that can convert most two-class 
-                classifiers to a multi-class classifier
-            -if we have class 0,1, and 2, we would train one classifier on the samples 
-                that are class 0 and class 1, a second classifier on samples that are of 
-                class 0 and class 2, and a final classifier on samples of class 1 and 
-                class 2
-        What are the disadvantages of one-vs-all classification?
-            -ambiguous region where multiple classes are valid outputs
-            -requires more models to be created compared to one-vs-one
-            -cannot output probability estimates of classes
-            -does not handle two-class classification well
-          
+                  
     Gradient Boosting Machines: 
         -ensemble method good for multiple decision boundaries with varying weights
 

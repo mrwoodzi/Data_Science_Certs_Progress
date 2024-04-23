@@ -248,7 +248,6 @@ base
             But you will never have the same character_id and action_id in a single row. So the two columns together can be used to uniquely identify 
             each row. View the details of the character_actions table to see your composite key. 
 
-
 Searching/retriving:
         WHERE AND OR: 
             use LIKE to find patterns in text like this: WHERE <column> LIKE '<pattern>'. An underscore (_) in a pattern 
