@@ -11,7 +11,6 @@ do
   then
     # get major_id
     MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
-
     # if not found
     if [[ -z $MAJOR_ID ]]
     then
@@ -21,14 +20,12 @@ do
       then
         echo Inserted into majors, $MAJOR
       fi
-
       # get new major_id
       MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
     fi
 
     # get course_id
     COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
-
     # if not found
     if [[ -z $COURSE_ID ]]
     then
@@ -38,7 +35,6 @@ do
       then
         echo Inserted into courses, $COURSE
       fi
-
       # get new course_id
       COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
     fi

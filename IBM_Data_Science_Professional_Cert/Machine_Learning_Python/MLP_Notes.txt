@@ -929,7 +929,7 @@
                     even when the data are not otherwise linearly separable.then a separator is estimated for the data
                 -2 categories that can be separtated with a curve but not a line
                 -true of most data sets 
-                -svm algorithm ouptus an optimal hyperplane that categorizes new examples
+                -svm algorithm outputs an optimal hyperplane that categorizes new examples
             WHEN SHOULD WE USE SVM?
                 -image analysis tasks 
                     -image classification
