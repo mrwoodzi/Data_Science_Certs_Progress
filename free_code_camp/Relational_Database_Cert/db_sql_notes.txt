@@ -1,3 +1,7 @@
+https://www.postgresqltutorial.com/
+https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql-linux/
+https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/  
+
 Installing PostgreSQL:
     I have been working on this for a couple hours today and I am having some kind
         of an issue with my password/connecting to port 5432(standard port used for PostgreSQL)
