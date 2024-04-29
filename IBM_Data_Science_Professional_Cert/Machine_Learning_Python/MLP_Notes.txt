@@ -137,109 +137,144 @@
                     fits your data. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse).
         Out of Sample Accurcay:
             percentage of correct prediction that the model makes on data that the model has NOT been trained on. 
+    Linear Regression & Multiple Linear Regression 
+        When to use Multiple Linear Regression:
+            2 Applications for Multiple Linear Regression:
+                1. can be used when we would like to identify the strength of the effect that the independent varivables have 
+                    on the dependent variable 
+                    Ex: 
+                        Does revision time, test anxiety, lecture attendance and gender have any effect on exam performance of sutdents? 
+                2. It can be used to predict the impact of changes to understand how the dependent variable changes when we change 
+                            the independent variables 
+                    Ex: 
+                        If we were reviewing a person's health data, a multiple linear regression can tell you how much that person's 
+                            blood pressure goes up or down for every unit increase or decrease in a patient's body mass index holding other factors constant 
+            Independent var. (X)/Predictors
+                -categorical vars. are more common in multiple lin. regr
+                -***but you convert the categorical vars. into continuous via. things
+                    like dummy variables***
+            Dependent var. (Y)/Target
+                -when we would like to identify the strength of the effect that the independent variables have on a dependent var.
+                -when we would like to predict impacts of changes in independent variables on a dependent var. 
+                -Multiple linear regression is applicable when we want to understand the relationship between a dependent 
+                    variable and multiple independent variables. It allows us to analyze how each independent variable contributes 
+                    to the variation in the dependent variable while controlling for other variables.
+            Assumptions of Multiple Linear Regression:
+                -recommended to avoid using lots of variables for prediction 
+                Linearity: 
+                    There should be a linear relationship between the independent variables and the dependent variable. This means 
+                    that the relationship between the variables can be represented by a straight line.
+                    Checking for linearity: 
+                        -use scatter plots and then visually check for linearity, if not linear use non-linear(logistic) regression
+                Independence: 
+                    The observations should be independent of each other. This assumption assumes that there is no relationship or 
+                    correlation between the residuals (the differences between the observed and predicted values) of the dependent variable.
+                Homoscedasticity: 
+                    Homoscedasticity refers to the assumption that the variance of the residuals is constant across all levels of the 
+                    independent variables. In other words, the spread of the residuals should be consistent throughout the range 
+                    of the independent variables.
+                Normality: 
+                    The residuals should follow a normal distribution. This assumption assumes that the errors or residuals are normally 
+                    distributed with a mean of zero.
+                No multicollinearity: 
+                    There should be no perfect multicollinearity among the independent variables. Multicollinearity occurs when two or 
+                    more independent variables are highly correlated with each other, making it difficult to determine their individual 
+                    effects on the dependent variable
+        Simple Linear Regression and other topics related to LR like OLS:
+            Independent variables (X)
+                -usually continuous in simple regr. 
+                -can be EITHER continuous or categorical
+            Dependent variable (Y)
+                typically continuous
+                -trying to predict or explain this variable 
+                -In regression analysis, the dependent variable should be continuous, while the independent variables can be continuous 
+                    or categorical. The relationship between the variables should be linear, and there should be no perfect 
+                    multicollinearity among the independent variables.
+                -Regression Equation: A regression equation represents the relationship between the dependent variable and the independent 
+                    variables. The coefficients in the equation indicate the magnitude and direction of the effect of each independent variable 
+                    on the dependent variable
+                For Predicting Continuous Variables/Values, think for numerical prediction
+                    False: requires a linear relationship between the predictor and the response, but multiple linear regression does not
+                    True: a linear relationshiop is necessary between the independent variables  and the dependent variable.
+                    As mentioned before, __Coefficient__ and __Intercept__  are the parameters of the fitted line. 
+                    Given that it is a multiple linear regression model with 3 parameters and that the parameters are 
+                    the intercept and coefficients of the hyperplane, sklearn can estimate them from our data. 
+                    Scikit-learn uses plain Ordinary Least Squares method to solve this problem.
+                Ordinary Least Squares (OLS)
+                    OLS is a method for estimating the unknown parameters in a linear regression model. OLS chooses 
+                    the parameters of a linear function of a set of explanatory variables by minimizing the sum of 
+                    the squares of the differences between the target dependent variable and those predicted by the 
+                    linear function. In other words, it tries to minimizes the sum of squared errors (SSE) or mean 
+                    squared error (MSE) between the target variable (y) and our predicted output ($\hat{y}$) over 
+                    all samples in the dataset.
+                OLS can find the best parameters using the following methods:
+                    * Solving the model parameters analytically using closed-form equations
+                    * Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)
+        Differences Between Simple & Multiple Linear Regression: 
+            Simple LinearRegression 
+                -Only 1 independent(y)/predictor variable 
+                -'theta transpose x' is the equation line -> this would be the eqiuvalent of the hyperplane in multiple
+            Multiple LinearRegression
+                -2 or more independent(y)/predictors variables 
+                -hyperplane 
+            Both: 
+                method of predicting a continuous variable 
+                build a regression model 
+                can be said the error here is the distance from the data point to the fitted regression model
+                    -the MSE(mean of all residual erros) show how bad the model is representing the data set
+        Linear Regression Steps:
+            # 1.
+            # Create a LinearRegression model it is instantiated as an object
+            regr = linear_model.LinearRegression()
 
-    When to use Multiple Linear Regression:
-        Independent var. (X)
-            -categorical vars. are more common in multiple lin. regr
-            -***but you convert the categorical vars. into continuous via. things
-                like dummy variables***
-        Dependent var. (Y)
-            -when we would like to identify the strength of the effect that the independent variables have on a dependent var.
-            -when we would like to predict impacts of changes in independent variables on a dependent var. 
-            -Multiple linear regression is applicable when we want to understand the relationship between a dependent 
-                variable and multiple independent variables. It allows us to analyze how each independent variable contributes 
-                to the variation in the dependent variable while controlling for other variables.
-        Assumptions of Multiple Linear Regression:
-            Linearity: 
-                There should be a linear relationship between the independent variables and the dependent variable. This means 
-                that the relationship between the variables can be represented by a straight line.
-            Independence: 
-                The observations should be independent of each other. This assumption assumes that there is no relationship or 
-                correlation between the residuals (the differences between the observed and predicted values) of the dependent variable.
-            Homoscedasticity: 
-                Homoscedasticity refers to the assumption that the variance of the residuals is constant across all levels of the 
-                independent variables. In other words, the spread of the residuals should be consistent throughout the range 
-                of the independent variables.
-            Normality: 
-                The residuals should follow a normal distribution. This assumption assumes that the errors or residuals are normally 
-                distributed with a mean of zero.
-            No multicollinearity: 
-                There should be no perfect multicollinearity among the independent variables. Multicollinearity occurs when two or 
-                more independent variables are highly correlated with each other, making it difficult to determine their individual 
-                effects on the dependent variable
+            # 2.
+            # Prepare the input features (x) and the target variable (y)
+            # In this example, x includes 'ENGINESIZE', 'CYLINDERS', and 'FUELCONSUMPTION_COMB'
+            x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+            y = np.asanyarray(train[['CO2EMISSIONS']])
 
-    Simple Linear Regression and other topics related to LR like OLS:
-        Independent variables (X)
-            -usually continuous in simple regr. 
-            -can be EITHER continuous or categorical
-        Dependent variable (Y)
-            typically continuous
-            -trying to predict or explain this variable 
-            -In regression analysis, the dependent variable should be continuous, while the independent variables can be continuous 
-                or categorical. The relationship between the variables should be linear, and there should be no perfect 
-                multicollinearity among the independent variables.
-            -Regression Equation: A regression equation represents the relationship between the dependent variable and the independent 
-                variables. The coefficients in the equation indicate the magnitude and direction of the effect of each independent variable 
-                on the dependent variable
-            For Predicting Continuous Variables/Values, think for numerical prediction
-                False: requires a linear relationship between the predictor and the response, but multiple linear regression does not
-                True: a linear relationshiop is necessary between the independent variables  and the dependent variable.
-                As mentioned before, __Coefficient__ and __Intercept__  are the parameters of the fitted line. 
-                Given that it is a multiple linear regression model with 3 parameters and that the parameters are 
-                the intercept and coefficients of the hyperplane, sklearn can estimate them from our data. 
-                Scikit-learn uses plain Ordinary Least Squares method to solve this problem.
-            Ordinary Least Squares (OLS)
-                OLS is a method for estimating the unknown parameters in a linear regression model. OLS chooses 
-                the parameters of a linear function of a set of explanatory variables by minimizing the sum of 
-                the squares of the differences between the target dependent variable and those predicted by the 
-                linear function. In other words, it tries to minimizes the sum of squared errors (SSE) or mean 
-                squared error (MSE) between the target variable (y) and our predicted output ($\hat{y}$) over 
-                all samples in the dataset.
-            OLS can find the best parameters using the following methods:
-                * Solving the model parameters analytically using closed-form equations
-                * Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)
-                
-    Linear Regression Steps:
-        # 1.
-        # Create a LinearRegression model it is instantiated as an object
-        regr = linear_model.LinearRegression()
+            # 3.
+            # Fit the LinearRegression model to the data
+            regr.fit (x, y)
 
-        # 2.
-        # Prepare the input features (x) and the target variable (y)
-        # In this example, x includes 'ENGINESIZE', 'CYLINDERS', and 'FUELCONSUMPTION_COMB'
-        x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
-        y = np.asanyarray(train[['CO2EMISSIONS']])
+            # 4.
+            # Print the coefficients of the linear model
+            print ('Coefficients: ', regr.coef_)
 
-        # 3.
-        # Fit the LinearRegression model to the data
-        regr.fit (x, y)
+            # 5.
+            # y_hat are the predictions
+            y_hat = regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
 
-        # 4.
-        # Print the coefficients of the linear model
-        print ('Coefficients: ', regr.coef_)
+            # 6.
+            # Prepare the input features (x) for the test data.
+            x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
 
-        # 5.
-        # y_hat are the predictions
-        y_hat = regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+            # 7.
+            # Prepare the target variable (y) for the test data, which is the actual CO2 emissions.
+            y = np.asanyarray(test[['CO2EMISSIONS']])
 
-        # 6.
-        # Prepare the input features (x) for the test data.
-        x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+            # 8.
+            # Calculate the Mean Squared Error (MSE) between the predicted values (y_hat) and the actual values (y).
+            mse = np.mean((y_hat - y) ** 2)
+            print("Mean Squared Error (MSE): %.2f" % mse)
 
-        # 7.
-        # Prepare the target variable (y) for the test data, which is the actual CO2 emissions.
-        y = np.asanyarray(test[['CO2EMISSIONS']])
-
-        # 8.
-        # Calculate the Mean Squared Error (MSE) between the predicted values (y_hat) and the actual values (y).
-        mse = np.mean((y_hat - y) ** 2)
-        print("Mean Squared Error (MSE): %.2f" % mse)
-
-        # 9.
-        # The Explained Variance Score (Variance score) measures how well the model explains the variance in the data.
-        # A score of 1 indicates a perfect prediction, while lower scores indicate less accurate predictions.
-        variance_score = regr.score(x, y)
-        print('Variance score: %.2f' % variance_score)
+            # 9.
+            # The Explained Variance Score (Variance score) measures how well the model explains the variance in the data.
+            # A score of 1 indicates a perfect prediction, while lower scores indicate less accurate predictions.
+            variance_score = regr.score(x, y)
+            print('Variance score: %.2f' % variance_score)
+        Questions: 
+            What are the requirements for independent and dependent variables in regression?
+                 --Independent and dependent variables must be continuous 
+            Key difference between simple and multiple regression is.
+                to estimate a single dependent variable, simple regression uses one independent variable whereas multiple regression uses multiple 
+            CO2 emissions 
+                cylinders has higher impact on CO_2 emission amounts in comparison with engine size
+                 - since the coefficient for 'fuel_consumption' is greater than that for 'cylinders', fuel_consumption has lower impact on co2 emissions 
+            What would be the cause of a model yielding high training accuracy and low out-of-sample accuracy? 
+                model is training on the entire dataset, so it is overfitting 
+            Multiple Linear Regression is appropriate for: 
+                predicting tomorrow's rainfall amount based on the wind speed and temperature
 
     Classification:
         -Supervised Learning
@@ -280,7 +315,6 @@
                             -recall = tp/(tp + fn)
                             -F1-score = 2x(prc x rec)/(prc + rec)
                 Log Loss
-
     K-nearest neighbor:
         Overview:
             -Supervised Learning algorithm
@@ -608,13 +642,13 @@
         Logistics Regression:
             Overview:
                 -minimizes the mean absolute error(MAE)
-                -classification algorithm for categorical dependent(y) variables 
+                -classification algorithm for categorical dependent(y)/target variables 
                     -statistical and ml technique for classifying records of a dataset based on the values of the input fields
                 -what kind of problems can be solved with logistic regression
                 -goal of logistic regression is to build a model to predict the class of each sample which in this case is a customer   
                     as well as the probability of each sample belonging to a class
-                -Independent Variable can be either continuous or categorical(X)
-                -Dependent Variables are usually categorical
+                -Independent Variable(Y)/predictor can be either continuous or categorical(X)
+                -Dependent(X)/target Variables are usually categorical
                 Weights: 
                     -Numerical values assigned to each feature in the model     
                         -represent the importance or influence of each feature on the predicted outcome
@@ -841,11 +875,11 @@
             7.d log Loss  
                 -measures  the performance of a classifier where the predicted output is a probability 
                         value between 0 and 1
-        Logistic Regression Steps, Quick Version    
+        Logistic Regression Steps, Quick Version  
+            -initialize the parameter  
             -use cost function on training set 
-            -update weights with new parameter values
             -calculate cost function gradient
-            -initialize the parameters
+            -update weights with new parameter values
             -repeat until specified cost or iterations reached
         Logistic Regression vs. Linear Regression - lots of good stuff about both in here:
                     - linear regression minimizes the mean squared error(MSE), while logistic regression minimizes the mean absolute error(MAE).
@@ -954,7 +988,7 @@
                         -RBF (radial basis function)
                         -Sigmoid 
             Hyperplane:
-                -goal is to choose a hyperplane with as big a margin as possible 
+                -goal is to choose a hyperplane with as big a margin as possible which maximizes the separation between the classes.
                 -demarcation between data   
                     -2d line
                     -3d sheet 
@@ -994,6 +1028,7 @@
             SVM Steps:
         Questions Linear Classification 
             Which option lists the steps of training a logistic regression model?
+                4,1,3,2,5
             What is the objective of SVM in terms of hyperplanes?
                 -Choose the hyperplane that represents the largest margin between the two classes.
             Logistic regression is used to predict the probability of a:
@@ -1001,20 +1036,28 @@
             In which cases would we want to consider using SVM?
                 When mapping the data to a higher dimensional feature space can better separate classes.
             What is a disadvantage of one-vs-all classification?
-                -
+                -there's an ambiguous region where multiple classes are valid outputs
+                -that it can be inefficient for problems with a large number of classes
+                    -this is because it requires training a separate binary classifier for each class, 
+                        which can be computationally expensive
+                    Ex: If you have a dataset with 100 different classes, using 1 vs ALL you would need to train 100 separate binary 
+                            classifiers which would be very time-cosuming and resource-intensive.
 
     NOTES ON PARAMETERS, COEFFICIENTS, Intercept, Variance, Standard Deviation, Hypothesis Testing, Confidence Interval:
         Overview of Para and Coef:
             A "parameter" is a more general term that refers to any characteristic or quantity that can help define a system. In statistical models, parameters can include coefficients, 
             intercepts, variances, and other elements that describe the model.
+                In Regression - theta/weight vector is a parameter
 
             A "coefficient" specifically refers to the weights or multiplicative factors associated with the predictor variables in a regression model. In the context of linear 
             regression or logistic regression, these coefficients represent the change in the dependent variable for a one-unit change in the corresponding predictor variable 
             while holding other variables constant.
+                In Regression - Oridinary least squares tries to estimate the values of coefficients by minimizing the mean square error 
+                -can use a process of optimizing the values of the coefficents by iteratively minimizing the error of the model on your training data 
+                    -gradient descent 
 
             In summary, while all coefficients are parameters, not all parameters are coefficients. The term "coefficient" is more specific 
-            and typically used when referring to the 
-            weights in regression models.
+            and typically used when referring to the  weights in regression models.
         Coefficients:
             In statistical modeling, coefficients are the numerical values that multiply the predictor variables in a regression equation.
             In simple linear regression, there is one coefficient representing the slope of the line.
@@ -1422,3 +1465,44 @@
                 as in between independent variables
             simple linear regression requires a linear relationship between the predictor and the response
                 but multiple linear regression does not.
+
+    Final Questions: 
+        What is the subfield of computer science that gives "computers the ability to learn without being explicityly programed"
+            Machine Learning 
+        Which of the following groups are not Machine Learning techniques?
+            Classification and clustering
+            Numpy, Scipy and Scikit Learn - go with this off the bat since theses are python libraries 
+            Anomaly Detection and Recommendation System 
+        When would you use Multiple Linear Regression? - we do this when we need to predict a continuous value
+          -  None of the Above 
+            Group genetic markers to identify family ties 
+            predict whether or not a customer switches to another brand based on income, education, etc 
+           + when we would like to predict the impacts that weather and temperature have on crop yield 
+        Which of the below is an example of classification problem ?
+            all of the above
+        Which of the following statements are TRUE about Logistic Regression?
+         +   LR is analogous to linear regressionbut takes a categorical/discrete target field instead of a numeric one
+            In LR the dependent variable is always binary 
+         +   LR can be used both for binary classification and multiclass classification 
+            LR finds a regression line through the data to predict the probability of a point belong to a class  
+        Which statement is FALSE aobut k-means clustering? 
+            The objective of k-means, is to form clusters in such a way that similar samples go into a cluster, and dissimilar samples fall into different clusters 
+          +  As k-means is an iterative algorithm, it guarantees that it will always converge to the global optimum 
+            k-means divides the data into non-overlapping clusters without  any cluster-internal structure 
+        Which one best describes the clustering process for k-means clustering? 
+            k-means creates clusters by grouping data points with similar labels 
+            k-means didvides the data into clusters with minimal overlap such that there are low chances of dissimilar samples in the same cluster 
+            km clustering creates a tree of clusters 
+          +  the objective of km is to form clusters in such a way that similar samples go into a cluster and dissimilar samples fall into different clusters 
+        What is a hyperplane in SVM?
+            Decision Boundaries 
+        Suppose you'd liek to determine how a model performs on predicting the min and max temp for a given day. Which metric is the most appropriate to use? 
+           - log loss 
+            f1 score 
+            root mean squared error 
+            false positives 
+        When are decision trees more suitable than regression trees? 
+          _  there are no continuous independent variables 
+            the dependent variable is categorical instead of continuous 
+            the dependent variable is continuous instead of cat. 
+            some of the independent variables are categorical 

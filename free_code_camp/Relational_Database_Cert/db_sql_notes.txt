@@ -175,8 +175,6 @@ base
                     **you must have a datatype for the above to work. 
         ALTER COLUMN 
                 ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
-
-
         ORDER BY 
             SELECT * FROM table ORDER BY column_name/index; 
                 -this will order your whole table by the column you chose 
@@ -204,12 +202,11 @@ base
             -NOT NULL   
                 this can be add to a row that is already of type INT 
                 ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
-        UPDATE/CHANGE ROW   
+        UPDATE/CHANGE ROW
             -UPDATE table_name SET column_name='new_value__for_cell' WHERE different_column_name='index_name' 
                 -UPDATE characters SET favorite_color='Orange' WHERE name='Daisy'
                 ### index_name doesn't have to be an actual index just something sharing the row with the new_value__for_cell
-                
-        PRIMARY KEY 
+                        PRIMARY KEY 
             COMPOSITE PRIMARY KEY 
                 -used this in junction table in mario_database
                 ALTER TABLE table_name ADD PRIMARY KEY(column1, column2);
