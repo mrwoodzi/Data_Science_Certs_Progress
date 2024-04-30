@@ -126,17 +126,36 @@
                 -theory that if you buy a certain group of items, you're more likely to buy another group of items
     
     Model Evaluation Metrics: 
-        Mean Absolute Error: It is the mean of the absolute value of the errors. This is the easiest of the metrics to understand 
-                    since it’s just average error.
-        Mean Squared Error (MSE): Mean Squared Error (MSE) is the mean of the squared error. It’s more popular than Mean 
-                    Absolute Error because the focus is geared more towards large errors. This is due to the squared term 
-                    exponentially increasing larger errors in comparison to smaller ones.
+        Mean Absolute Error: 
+            -It is the mean of the absolute value of the errors. This is the easiest of the metrics to understand 
+                since it’s just average error.
+        Mean Squared Error (MSE): 
+            -Mean Squared Error (MSE) is the mean of the squared error. It’s more popular than Mean 
+            -Absolute Error because the focus is geared more towards large errors. This is due to the squared term 
+            -exponentially increasing larger errors in comparison to smaller ones.
         Root Mean Squared Error (RMSE). 
-        R-squared is not an error, but rather a popular metric to measure the performance of your regression model. It represents 
-                    how close the data points are to the fitted regression line. The higher the R-squared value, the better the model 
-                    fits your data. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse).
+                -good for predicting continuous Variables like MIN, MAX, temp 
+                -good for continuous variables 
+                -provides a measure of the average magnitude of the errors between predicted and actual values 
+                - easy to interpret 
+        R-squared:
+            -is not an error, but rather a popular metric to measure the performance of your regression model. It represents 
+                how close the data points are to the fitted regression line. The higher the R-squared value, the better the model 
+                fits your data. The best possible score is 1.0 and it can be negative (because the model can be arbitrarily worse).
         Out of Sample Accurcay:
             percentage of correct prediction that the model makes on data that the model has NOT been trained on. 
+        F1 Score: 
+            -Primarily used for classification models where outpu is categorical(class labels)
+            -binary classification where you want to balance precision and recall
+            -provides single metric  that considers both precision and recall
+            -is the harmonic mean of precision and reacll giving equal weight to both metrics 
+            -useful when you want a balance between minimizing false positives and false negatives 
+                Ex. 
+                    -when you want to identify as many true positives(cases of illnes) as possible while minimizing 
+                        false positives(incorrect diagnosis)
+        False Positives: 
+            -Primarily used for classification 
+            -when model incorrectly predicts positive outcome when the actual outcome is negative 
     Linear Regression & Multiple Linear Regression 
         When to use Multiple Linear Regression:
             2 Applications for Multiple Linear Regression:
@@ -212,15 +231,16 @@
                     * Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)
         Differences Between Simple & Multiple Linear Regression: 
             Simple LinearRegression 
-                -Only 1 independent(y)/predictor variable 
+                -Only 1 independent(X)/predictor variable 
                 -'theta transpose x' is the equation line -> this would be the eqiuvalent of the hyperplane in multiple
             Multiple LinearRegression
-                -2 or more independent(y)/predictors variables 
+                -2 or more independent(X)/predictors variables 
                 -hyperplane 
             Both: 
-                method of predicting a continuous variable 
-                build a regression model 
-                can be said the error here is the distance from the data point to the fitted regression model
+                -method of predicting a continuous variable 
+                -dependent(y)/target variable must be continuous
+                -build a regression model 
+                -can be said the error here is the distance from the data point to the fitted regression model
                     -the MSE(mean of all residual erros) show how bad the model is representing the data set
         Linear Regression Steps:
             # 1.
@@ -265,12 +285,13 @@
             print('Variance score: %.2f' % variance_score)
         Questions: 
             What are the requirements for independent and dependent variables in regression?
-                 --Independent and dependent variables must be continuous 
+                 + Independent variables can be either categorical or conitnuous. Dependent variables must be continuous
             Key difference between simple and multiple regression is.
                 to estimate a single dependent variable, simple regression uses one independent variable whereas multiple regression uses multiple 
             CO2 emissions 
                 cylinders has higher impact on CO_2 emission amounts in comparison with engine size
                  - since the coefficient for 'fuel_consumption' is greater than that for 'cylinders', fuel_consumption has lower impact on co2 emissions 
+                 - When Cylinders increases by 1 while fuel_consumption remains constant, co2 emission increases by 2.4 units
             What would be the cause of a model yielding high training accuracy and low out-of-sample accuracy? 
                 model is training on the entire dataset, so it is overfitting 
             Multiple Linear Regression is appropriate for: 
@@ -1185,6 +1206,7 @@
             -algorithms that produce sphere-like clusters
             -K-Means 
                 Overview: 
+                    -k represents the number of clusters to be formed in the dataset 
                     -divides the data into K non-overlapping subsets or clusters without any cluster internal structure or labels. 
                     -unsupervised algorithm
                     -partition based clustering
@@ -1340,19 +1362,23 @@
             -***important requirement is to use the available data to understand and identify how customers are similar to each other
         Questions on Clustering: 
             -The objective of k-means clustering is; 
-                -separate dissimilar samples and group similar ones. 
+                separate dissimilar samples and group similar ones. 
             -Which option correctly orders the steps of k-means clustering?
-                -2,5,3,1,4
+                2,5,3,1,4
+                    -choose k random observations to calculate each cluster's mean 
+                    -calculate data point distance to centroids
+                    -update centroid to take cluster mean 
+                    -re-cluster the data points 
+                    -repeat until centroids are constant 
             -How can we gauge the performance of a k-means clustering model when ground truth is not available?
                 -Question Re-Worded 
                     -How can you evaluate the performance of quality of the clusters created by a k-means algorithm 
                         when you don't have a labeled dataset(ground truth) for comparison?
                     -Take the Average of the distance between data points and their cluster centroids
             -When the parameter for K for k-means clustering increases, what happens to the error?
-                -(Not Correct)It will increase because incorrectly classified points are further from the centroid. 
-                -(Not Correct)It Might increase 
+                + It will decrease because distance between data points and centroid will decrease
             -Which of the following is true for partition-based clustering but not heirarchical nor density-based clustering algorithms?
-                -produces sphere like clusters 
+                produces sphere like clusters 
     What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
         Overfitting:
             The model is too complex and has learned the training data's noise, leading to poor generalization 
@@ -1446,7 +1472,7 @@
         -naturally handle complex decision boundaries 
         -can incorporate multiple weak learners with varying weights
         
-    Practice Questions: 
+    Questions: 
         2. in Practice quiz 
             If the information gain of the tree by using attribute A is 0.3, what can we infer?
                 entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
@@ -1468,23 +1494,21 @@
 
     Final Questions: 
         What is the subfield of computer science that gives "computers the ability to learn without being explicityly programed"
-            Machine Learning 
+           + Machine Learning 
         Which of the following groups are not Machine Learning techniques?
-            Classification and clustering
-            Numpy, Scipy and Scikit Learn - go with this off the bat since theses are python libraries 
-            Anomaly Detection and Recommendation System 
+            + Numpy, Scipy and Scikit Learn - go with this off the bat since theses are python libraries
         When would you use Multiple Linear Regression? - we do this when we need to predict a continuous value
-          -  None of the Above 
+            None of the Above 
             Group genetic markers to identify family ties 
             predict whether or not a customer switches to another brand based on income, education, etc 
-           + when we would like to predict the impacts that weather and temperature have on crop yield 
+           + when we would like to predict the impacts that weather and temperature have on crop yield # this because it has a continuous dependent variable and the other options do not 
         Which of the below is an example of classification problem ?
             all of the above
         Which of the following statements are TRUE about Logistic Regression?
          +   LR is analogous to linear regressionbut takes a categorical/discrete target field instead of a numeric one
             In LR the dependent variable is always binary 
          +   LR can be used both for binary classification and multiclass classification 
-            LR finds a regression line through the data to predict the probability of a point belong to a class  
+            LR finds a regression line through the data to predict the probability of a point belong to a class # this is simple linear regression  
         Which statement is FALSE aobut k-means clustering? 
             The objective of k-means, is to form clusters in such a way that similar samples go into a cluster, and dissimilar samples fall into different clusters 
           +  As k-means is an iterative algorithm, it guarantees that it will always converge to the global optimum 
@@ -1493,16 +1517,16 @@
             k-means creates clusters by grouping data points with similar labels 
             k-means didvides the data into clusters with minimal overlap such that there are low chances of dissimilar samples in the same cluster 
             km clustering creates a tree of clusters 
-          +  the objective of km is to form clusters in such a way that similar samples go into a cluster and dissimilar samples fall into different clusters 
+          + the objective of km is to form clusters in such a way that similar samples go into a cluster and dissimilar samples fall into different clusters 
         What is a hyperplane in SVM?
             Decision Boundaries 
-        Suppose you'd liek to determine how a model performs on predicting the min and max temp for a given day. Which metric is the most appropriate to use? 
-           - log loss 
+        Suppose you'd like to determine how a model performs on predicting the min and max temp for a given day. Which metric is the most appropriate to use? 
+            log loss 
             f1 score 
-            root mean squared error 
+          + root mean squared error 
             false positives 
         When are decision trees more suitable than regression trees? 
-          _  there are no continuous independent variables 
-            the dependent variable is categorical instead of continuous 
+            there are no continuous independent variables 
+          + the dependent variable is categorical instead of continuous # super obvious
             the dependent variable is continuous instead of cat. 
             some of the independent variables are categorical 
