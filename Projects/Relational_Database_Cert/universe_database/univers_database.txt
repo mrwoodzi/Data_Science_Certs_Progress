@@ -1,0 +1,310 @@
+Universe Database Architecture:
+
+Tables:
+
+Galaxy:
+Columns: ({ALTER TABLE galaxy ADD COLUMN galaxy_id SERIAL PRIMARY KEY UNIQUE NOT NULL; 
+            'name VarChar(40) Null)':[], 
+            'galaxy_type VARCHAR(40)  NOT NULL, 
+            'stars_types(VARCHAR(30)) NOT NULL,
+            'planet_types VAR CHAR(40) NOT NULL, 
+            'life(BOOLEAN, NULL);
+            })
+            6 rows
+INSERT INTO galaxy(name, galaxy_type, star_types, planet_types, life) 
+    VALUES ('Alpha Quadrant Galaxy', 'Seyfert Galaxy', '34 Types', '654', 'True');
+INSERT INTO galaxy(name, galaxy_type, star_types, planet_types, life) 
+    VALUES ('Milky Way Galaxy', 'Spiral Galaxy', '2376 Types', '983', 'True');
+    INSERT INTO galaxy (name, galaxy_type, star_types, planet_types, life) 
+        VALUES ('Outer Rim Galaxy', 'Blazar Galaxy', '783 Types', '8394', 'True');
+
+Star: ({ALTER TABLE star ADD COLUMN star_id SERIAL PRIMARY KEY UNIQUE NOT NULL;,
+            'ALTER TABLE star 
+                ADD COLUMN galaxy_id 
+                INTEGER NOT NULL 
+                REFERENCES galaxy(galaxy_id);  
+            'name VARCHAR(40) NULL
+            'ALTER TABLE star ADD COLUMN star_type VARCHAR(40);
+            'ALTER TABLE star ADD COLUMN number_planets INT NULL;
+            })
+            6 rows
+INSERT INTO star (name, galaxy_id, star_type, number_planets)
+VALUES ('Star 1', 3, 'Type A', 34);
+
+INSERT INTO star (name, galaxy_id, star_type, number_planets)
+VALUES ('Star 2', 4, 'Type B', 783);
+
+INSERT INTO star (name, galaxy_id, star_type, number_planets)
+VALUES ('Star 3', 5, 'Type C', 2376);
+
+INSERT INTO star (name, galaxy_id, star_type, number_planets)
+VALUES ('Star 4', 3, 'Type A', 654);
+
+INSERT INTO star (name, galaxy_id, star_type, number_planets)
+VALUES ('Star 5', 4, 'Type B', 8394);
+
+INSERT INTO star (name, galaxy_id, star_type, number_planets)
+VALUES ('Star 6', 5, 'Type C', 983);
+
+
+
+Planet:({ALTER TABLE planet ADD COLUMN planet_id SERIAL PRIMARY KEY UNIQUE NOT NULL;
+            'name VarChar(40) NOT Null,
+            'ALTER TABLE planet 
+                ADD COLUMN star_id 
+                INTEGER NOT NULL  
+                REFERENCES star(star_id); 
+            'planet_t VAR CHAR(40),
+            'number_moons NUMERIC NULL
+            'life BOOLEAN NULL, 
+            })
+            12 rows
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 1', 1, 'Type X', 2, true);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 2', 2, 'Type Y', 0, false);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 3', 3, 'Type Z', 4, true);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 4', 4, 'Type X', 1, false);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 5', 5, 'Type Y', 3, true);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 6', 6, 'Type Z', 0, false);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 7', 1, 'Type X', 5, true);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 8', 2, 'Type Y', 2, false);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 9', 3, 'Type Z', 1, true);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 10', 4, 'Type X', 0, false);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 11', 5, 'Type Y', 3, true);
+
+INSERT INTO planet (name, star_id, planet_type, number_moons, life)
+VALUES ('Planet 12', 6, 'Type Z', 2, false);
+
+PLANET UPDATE 
+UPDATE planet
+SET planet_code = 
+  CASE 
+    WHEN planet_id = 1 THEN 'ABC123'
+    WHEN planet_id = 2 THEN 'DEF456'
+    WHEN planet_id = 3 THEN 'GHI789'
+    WHEN planet_id = 4 THEN 'JKL012'
+    WHEN planet_id = 5 THEN 'MNO345'
+    WHEN planet_id = 6 THEN 'PQR678'
+    WHEN planet_id = 7 THEN 'STU901'
+    WHEN planet_id = 8 THEN 'VWX234'
+    WHEN planet_id = 9 THEN 'YZA567'
+    WHEN planet_id = 10 THEN 'BCD890'
+    WHEN planet_id = 11 THEN 'EFG123'
+    WHEN planet_id = 12 THEN 'HIJ456'
+  END;
+
+Moon:({ALTER TABLE moon ADD COLUMN moon_id SERIAL PRIMARY KEY UNIQUE NOT NULL
+            'planet_id(foreign_key(planet_id)  NULL): [],
+            'name VarChar(40) NOT Null,
+            'moon_type NULL,
+            'life BOOLEAN NULL, 
+            'size VARCHAR NULL
+            })
+            20 rows
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 1', 1, true, '3400 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 2', 1, false, '2900 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 3', 1, false, '2200 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 4', 2, true, '1800 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 5', 2, true, '2100 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 6', 2, false, '2500 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 7', 3, false, '1500 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 8', 3, true, '100 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 9', 3, true, '500 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 10', 4, false, '4000 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 11', 4, false, '10 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 12', 4, false, '8000 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 13', 5, true, '600 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 14', 5, true, '50 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 15', 5, false, '4500 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 16', 6, false, '700 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 17', 6, false, '30000 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 18', 6, true, '30 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 19', 6, true, '5000 km');
+
+INSERT INTO moon (name, planet_id, life, size)
+VALUES ('Moon 20', 6, false, '5 km');
+
+
+ALTER TABLE moon ADD COLUMN moon_code VARCHAR(10) UNIQUE;
+UPDATE moon
+SET moon_code = 
+  CASE 
+    WHEN moon_id = 1 THEN 'ABC123'
+    WHEN moon_id = 2 THEN 'DEF456'
+    WHEN moon_id = 3 THEN 'GHI789'
+    WHEN moon_id = 4 THEN 'JKL012'
+    WHEN moon_id = 5 THEN 'MNO345'
+    WHEN moon_id = 6 THEN 'PQR678'
+    WHEN moon_id = 7 THEN 'STU901'
+    WHEN moon_id = 8 THEN 'VWX234'
+    WHEN moon_id = 9 THEN 'YZA567'
+    WHEN moon_id = 10 THEN 'BCD890'
+    WHEN moon_id = 11 THEN 'EFG123'
+    WHEN moon_id = 12 THEN 'HIJ456'
+    WHEN moon_id = 13 THEN 'KLM789'
+    WHEN moon_id = 14 THEN 'NOP012'
+    WHEN moon_id = 15 THEN 'QRS345'
+    WHEN moon_id = 16 THEN 'TUV678'
+    WHEN moon_id = 17 THEN 'WXY901'
+    WHEN moon_id = 18 THEN 'ZAB234'
+    WHEN moon_id = 19 THEN 'CDE567'
+    WHEN moon_id = 20 THEN 'FGH890'
+  END;
+# I want below to be a Junction table
+Space_Station:({space_station_id(Primary Key, Serial, Not Null, Unique)': [],
+            'galaxy_id(foreign_key(galaxy))': [], 
+            'star_id(foreign_key(star), 
+            'name VarChar(40) Null, 
+            'space_station_type varchar(40) NULL, 
+            'number_ships INT NULL
+            })
+            3 rows 
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (3, 1, 'Space Station 1', 'Type A', 10);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (3, 2, 'Space Station 2', 'Type B', 5);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (4, 3, 'Space Station 3', 'Type C', 8);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (4, 4, 'Space Station 4', 'Type A', 15);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (5, 5, 'Space Station 5', 'Type B', 3);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (5, 6, 'Space Station 6', 'Type C', 7);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (3, 3, 'Space Station 7', 'Type A', NULL);
+
+INSERT INTO space_station (galaxy_id, star_id, name, space_station_type, number_ships)
+VALUES (4, 5, 'Space Station 8', 'Type B', NULL);
+
+ALTER TABLE space_station ADD COLUMN space_station_code VARCHAR(10) UNIQUE;
+UPDATE space_station
+SET space_station_code = 
+  CASE 
+    WHEN space_station_id = 1 THEN 'ABC123'
+    WHEN space_station_id = 2 THEN 'DEF456'
+    WHEN space_station_id = 3 THEN 'GHI789'
+    WHEN space_station_id = 4 THEN 'JKL012'
+    WHEN space_station_id = 5 THEN 'MNO345'
+    WHEN space_station_id = 6 THEN 'PQR678'
+    WHEN space_station_id = 7 THEN 'STU901'
+    WHEN space_station_id = 8 THEN 'VWX234'
+    WHEN space_station_id = 9 THEN 'YZA567'
+  END;
+Ships:({ship_id(Primary Key, Serial, Not Null, Unique)': [], 
+            'space_station_id(foreign_key(space_station_id)VARCHAR(40)), NULL': [] 
+            'name VarChar(40) Null,
+            'ship_type varchar(40) NULL, 
+            })
+            3 rows 
+
+INSERT INTO ships (space_station_id, name)
+VALUES (1, 'Millennium Falcon');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (1, 'Star Destroyer');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (2, 'Enterprise');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (2, 'Death Star');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (3, 'X-wing');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (3, 'USS Voyager');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (4, 'TIE Fighter');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (4, 'Klingon Bird of Prey');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (5, 'Slave 1');
+
+INSERT INTO ships (space_station_id, name)
+VALUES (5, 'Millennium Falcon');
+
+UPDATE ships
+SET ship_code = 
+  CASE 
+    WHEN ship_id = 1 THEN 'ABC123'
+    WHEN ship_id = 2 THEN 'DEF456'
+    WHEN ship_id = 3 THEN 'GHI789'
+    WHEN ship_id = 4 THEN 'JKL012'
+    WHEN ship_id = 5 THEN 'MNO345'
+    WHEN ship_id = 6 THEN 'PQR678'
+    WHEN ship_id = 7 THEN 'STU901'
+    WHEN ship_id = 8 THEN 'VWX234'
+    WHEN ship_id = 9 THEN 'YZA567'
+    WHEN ship_id = 10 THEN 'BCD890'
+  END;
