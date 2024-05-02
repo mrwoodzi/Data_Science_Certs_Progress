@@ -126,13 +126,34 @@
                 -theory that if you buy a certain group of items, you're more likely to buy another group of items
     
     Model Evaluation Metrics: 
-        Mean Absolute Error: 
+        Mean Absolute Error(MAE): 
+            -absolute difference/total
+            -average magnitude of the errors between the predicted and actual values.
+            -less sensitive to outliers than MSE
+            -makes it a more robust measure of error when dealing with data that may contain outliers
             -It is the mean of the absolute value of the errors. This is the easiest of the metrics to understand 
                 since it’s just average error.
+            -calculated by taking the absolute value of the difference between each predicted value and its corresponding actual value, 
+                and the averaging those absolute values
+            - calculated by taking the absolute difference between each predicted value and its corresponding actual value, summing up 
+                these differences, and then dividing by the total number of predictions.
+            -common for Classification BUT choice of error metric depends on the specific problem
+                Ex. 
+                    For example, if you're dealing with a classification problem where the data contains a lot of outliers, 
+                    you might choose to use MAE even though it's less sensitive to outliers.
         Mean Squared Error (MSE): 
+            -squareing the difference/total
+            -measures the difference between predicted and actual values
+            -more sensitive to outliers than MAE, meaning that a single large error can have a significant impact on the overall MSE value
             -Mean Squared Error (MSE) is the mean of the squared error. It’s more popular than Mean 
             -Absolute Error because the focus is geared more towards large errors. This is due to the squared term 
             -exponentially increasing larger errors in comparison to smaller ones.
+            -calculated by squaring the difference between each predicted value and its corresponding actual value, 
+                and then averaging those squared differences
+            -common for regression(continuous dependent var.) BUT choice of error metric depends on the specific problem
+                    Ex. 
+                        For example, if you're dealing with a regression problem where the cost of large errors is high, 
+                        you might choose to use MSE even though it's more sensitive to outliers. 
         Root Mean Squared Error (RMSE). 
                 -good for predicting continuous Variables like MIN, MAX, temp 
                 -good for continuous variables 
@@ -147,6 +168,12 @@
         F1 Score: 
             -Primarily used for classification models where outpu is categorical(class labels)
             -binary classification where you want to balance precision and recall
+                Precision:
+                    -measures the proportion of true positives among all predicted positives. 
+                    -It tells you how accurate your model is
+                Recall: 
+                    -meausures the proportion of true positives that were correctly identified. 
+                    -It tells you how complete your model is
             -provides single metric  that considers both precision and recall
             -is the harmonic mean of precision and reacll giving equal weight to both metrics 
             -useful when you want a balance between minimizing false positives and false negatives 
@@ -292,18 +319,19 @@
                 cylinders has higher impact on CO_2 emission amounts in comparison with engine size
                  - since the coefficient for 'fuel_consumption' is greater than that for 'cylinders', fuel_consumption has lower impact on co2 emissions 
                  - When Cylinders increases by 1 while fuel_consumption remains constant, co2 emission increases by 2.4 units
+                 + When Cylinders DECREASES by 1 while fuel_consumption remains constant, co2 emission increases by 2.4 units
             What would be the cause of a model yielding high training accuracy and low out-of-sample accuracy? 
-                model is training on the entire dataset, so it is overfitting 
+                - model is training on the entire dataset, so it is overfitting 
             Multiple Linear Regression is appropriate for: 
                 predicting tomorrow's rainfall amount based on the wind speed and temperature
 
     Classification:
-        -Supervised Learning
-        -Target Attribute is a Categorical Variable
-        -good example of classification is the loan default prediction - column labeled "default"
-            -LOAN DEFAULT PREDICTOR
-                -use existing loan data to predict a 0 or 1 as 'defaulter' or 'not defaulter'
-        -Can be binary or multi-class classification 
+        Overview:
+            -Target Attribute is a Categorical Variable
+            -good example of classification is the loan default prediction - column labeled "default"
+                -LOAN DEFAULT PREDICTOR
+                    -use existing loan data to predict a 0 or 1 as 'defaulter' or 'not defaulter'
+            -Can be binary or multi-class classification 
         Classification Accuracy: 
             -pass the test set to our model and we get y^(y-hat) predicted labels 
             -compare actual (y) to (y^)
@@ -316,7 +344,7 @@
             -multilabel classification, the function returns the subset accuracy. If the entire set of predicted labels 
                 for a sample strictly matches with the true set of labels, then the subset accuracy is 1.0; 
                 otherwise it is 0.0
-            Evaluation Metrics:
+        Evaluation Metrics:
                 Jaccard Index
                     -simplest
                     -also known as Jaccard similarity coefficient
@@ -336,15 +364,15 @@
                             -recall = tp/(tp + fn)
                             -F1-score = 2x(prc x rec)/(prc + rec)
                 Log Loss
-    K-nearest neighbor:
+    K-nearest neighbor Classification:
         Overview:
             -Supervised Learning algorithm
-            -can be used to estimate values for a continuous target
+            -can be used to estimate values for a continuous target(dependent)
             -K 
                 -k too small
                     -model will be highly complex and captures too much noise
-            Classification algorithm that is used to classify cases based on their similarity   
-                to other cases. It is a type of instance based learning, where the algorithm learns from labeled data points 
+            Classification algorithm that is used to classify cases based on their similarity
+                to other cases. It is a type of instance based learning, where the algorithm learns from labeled data points
                 and uses them to classify new, unlabeled data ponts. 
             Instance in machine learning    
                 -refers to a single data point or observation within a dataset.
@@ -659,8 +687,9 @@
                 refer to Regression_Trees_SnapML.ipynb for the indepth notes
             advantages of using Snap ML: acceleration of training of classical machine learning models, 
                 such as linear and tree-based models.
+
     Linear Classification:
-        Logistics Regression:
+        Logistics Regression(MIN the MAE):
             Overview:
                 -minimizes the mean absolute error(MAE)
                 -classification algorithm for categorical dependent(y)/target variables 
@@ -668,15 +697,15 @@
                 -what kind of problems can be solved with logistic regression
                 -goal of logistic regression is to build a model to predict the class of each sample which in this case is a customer   
                     as well as the probability of each sample belonging to a class
-                -Independent Variable(Y)/predictor can be either continuous or categorical(X)
-                -Dependent(X)/target Variables are usually categorical
+                -Independent Variable(x)/predictor can be either continuous or categorical(X)
+                -Dependent(y)/target Variables are usually categorical
                 Weights: 
                     -Numerical values assigned to each feature in the model     
                         -represent the importance or influence of each feature on the predicted outcome
                         -model learns theses weights during the training process by minimizing the cost function
                         -Weights represent the importance of influence of each feature on the predicted outcome
             -Example: 
-                telecommunication dataset  that we'd like to analyze in order to understand which customers might leave us next month
+                telecommunication dataset that we'd like to analyze in order to understand which customers might leave us next month
                     -build a model using historic records. 
                     - tenure, age, address, income, ed, employ, equip, callcard, wireless
                         -independent vars. can be continuous or categorical
@@ -803,8 +832,10 @@
                     -column 'precision'
                         -measure of the accuracy provided that a class label has been 
                             predicted. It is defiend by: precision = TP/(TP + FP)
+                        -It tells you how accurate your model is
                     -column 'recall 
-                        -true positive rate. deficned as: recall = TP/(TP + FN)
+                        -true positive rate. defined as: recall = TP/(TP + FN)
+                        -It tells you how complete your model is
                     -column 'f1-score'
                         -based on 'precision' and 'recall'
                         -harmonic average of the precision and recall, where f1-score reaches 
@@ -934,7 +965,7 @@
                         -returns the probability that a Theta transpose x is very big or very small. 
                         -always returns a value between 0 and 1. 
                         -theta traspose x 
-                        -We can find Theta through the training process. 
+                    -We can find Theta through the training process. 
                             Theta:
                                 -called the weights factor or confidences of the equation, 
                                     -theta and weights factor is used interchangeably
@@ -1196,29 +1227,31 @@
             -assigns individuals to groups
             -then cross join the groups/cluster with a dataset of the product or services that customers purchase from a company 
             -allows companies to have highly personalized experiences for each segment. 
-            -exploratory data analysis
-            -summary generation 
-            -reducing the scale 
-            -outlier-detection(fraud dection or noise removal)
-            -finding duplicates, datasets
-            -pre-processing step for either prediction or other mining task or part of a complex system
+            Uses:
+                -exploratory data analysis
+                -summary generation 
+                -reducing the scale 
+                -outlier-detection(fraud dection or noise removal)
+                -finding duplicates, datasets
+                -pre-processing step for either prediction or other mining task or part of a complex system
         Partition Based Clustering: 
             -algorithms that produce sphere-like clusters
-            -K-Means 
+        K-Means Clustering:
                 Overview: 
+                    -unsupervised learning 
+                    -data is not labeled and the algorithm aims to discover inherent patterns and structures within the data.
                     -k represents the number of clusters to be formed in the dataset 
                     -divides the data into K non-overlapping subsets or clusters without any cluster internal structure or labels. 
                     -unsupervised algorithm
                     -partition based clustering
                     -produces sphere like clusters due to the centroids
-                    -drawback si that we should pre-specify the number of clusters
+                    -drawback is that we should pre-specify the number of clusters
                     -iterative algorithm
                     -heuristic algorithm
                         -means there is no gaurantee that it will converge to the global minimum error or the most dense clusters. 
                         -also  no guarantee that it will converge to the global optimum and the result may depend 
                             on the initial clusters 
-                    -***guaranteed to converge to a result, but the result may be a local optimum i.e. not 
-                            necessarily the best possible outcome. 
+                    -***guaranteed to converge to a result, but the result may be a local optimum i.e. not necessarily the best possible outcome. 
                             -to solve this problem  it is common to run the whole process multiple times with different starting conditions 
                             -means starting with randomized centroids can potentially give a better outcome
                     -object with cluster are very similar
@@ -1241,15 +1274,25 @@
                                 meaning it is the right K for clustering
                     -"Ground Truth" 
                         -in the context  of clustering, refers to a labeled dataset where you know the true cluster assignments for each data point.
-                        -
                 Key Concept:
                     -of k-Means algorithm is that it randomly picks a center point for each cluster 
                         this means we must initialize K which represents the number of clusters
-                        -determining number of clusters in a datas set or K is a hard problem in k-Means 
+                    -determining number of clusters in a datas set or K is a hard problem in k-Means 
                 Main Purpose of k-Means: 
                     -minimize the distance of data points from the centroid of a cluster and maximize the distance 
                         from other cluster centroids. 
                     -customers will fall to a cluster based on their distance from centroids 
+                Quick Steps: 
+                    Initialization: 
+                        Choose the number of clusters (k) and randomly assign data points to each cluster.
+                    Centroid Calculation: 
+                        Calculate the mean of each cluster, which becomes the centroid.
+                    Assignment: 
+                        Assign each data point to the cluster with the closest centroid.
+                    Update Centroids: 
+                        Recalculate the centroids based on the newly assigned data points.
+                    Repeat: 
+                        Repeat steps 3 and 4 until the centroids no longer change or a maximum number of iterations is reached.
                 Centroids: 
                     -these are the randomly selected center points in the clusters  
                     -random point 
@@ -1379,6 +1422,7 @@
                 + It will decrease because distance between data points and centroid will decrease
             -Which of the following is true for partition-based clustering but not heirarchical nor density-based clustering algorithms?
                 produces sphere like clusters 
+
     What could be the cause of a model yielding high training accuracy and low out of sample accuracy?
         Overfitting:
             The model is too complex and has learned the training data's noise, leading to poor generalization 
@@ -1530,3 +1574,40 @@
           + the dependent variable is categorical instead of continuous # super obvious
             the dependent variable is continuous instead of cat. 
             some of the independent variables are categorical 
+
+
+Linear Regression:
+    Simple LR   
+    Multiple LR
+ClassificatioN:
+    Metrics/Reporting:
+        -F1-Score, precision and recall 
+            -harmonic average of the precision and recall
+            -it's best value at 1(perfect precision and recall) and worst at 0
+        -MAE
+            -average magnitude of the errors between the predicted and actual values 
+        -MSE
+        -Jaccard
+        -Confusion Matrix
+    logistic    
+        -supervised
+        -binary classification
+        -probability that a given input belongs to a particular class
+        -sigmoid function
+        -MAE
+        -Eval
+            -jaccard score
+            -confusion matrix
+    SVM
+        -supervised
+        -classifies cases by finding a separator,hyperplane is found/created
+    k-NN
+        -supervised
+    Clustering:
+        k-means
+            -unsupervised
+            -partition cluster method(spherical clusters)
+    Trees:
+
+Overfitting
+Underfitting

@@ -228,7 +228,6 @@ Variables in the Terminal
     declare 
         can be used to create variables 
 
-
 Arrays
     creating arrays in the terminal
     ARR=(<"your stuff" "more stuff")
@@ -240,9 +239,7 @@ Arrays
         declare -p ARR
             for a different type of view of the whole variable 
 
-    
 Pattern recognision 
-
     =~
         to test if 'el' is in 'hello'
             would return a 0 
@@ -255,3 +252,60 @@ Pattern recognision
                 [[ 'hello world' =~ ^h.+d$ ]]; echo $?
             check if something ends with <something>
                 [[ $VAR =~ \<something>$ ]]; echo $?
+
+Standard Output(stout), Standard Error(sterr) 
+    < > 
+    > redirect or writing 
+        echo hello bash > stdout.txt 
+            # > will overwrite hello bash in file with nothing else 
+            # > will overwrite everything in file so be careful 
+            # it also created the file stdout.txt 
+            > stdout.txt 
+                # this redirects nothing to the file so it erases everything in it 
+            echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+                # this writes to the .txt file what is in quotes 
+    echo hello bash >> stdout.txt 
+        # will append(add) an extra hello bash to the file 
+    2> # stderr - redirect standard error 
+        # can used to redirect Standard Error(stderr)
+        # echo Michael | ./script.sh 2> stderr.txt 1> stdout.txt
+    1> stdout redirect 
+        # can be used to redirect Standard Output(stdout)
+        # echo Michael | ./script.sh 2> stderr.txt 1> stdout.txt
+    cat 
+        # cat will print the contents of a file or input to stdout
+        # cat can take a filename as an argument
+        echo NAME | cat
+            # will print NAME, not the variable 
+        cat < name.txt
+            # will print the contents of the name.txt file 
+    
+Standard In(stdin)
+    < (stdin)
+        <command> < <filename_for_stdin>
+        ./script.sh < name.txt
+            # name.txt is set as the input for NAME in ./script.sh
+        -also called 'pipe'
+        -creates a subshell or subprocess
+            -subshell/subprocess is another instance of the shell
+        <command_1> | <command_2>
+            echo NAME | read NAME
+        echo Michael | ./script.sh
+            # this input Michael for read NAME variable 
+
+Combining stdout, stderr, stdin 
+
+        ./script.sh < name.txt 2> stderr.txt > stdout.txt
+
+Commands: 
+    man <insert_command_you_dont_understand>
+
+    wc 
+        -gives number of lines         -l 
+        -gives number of characters    --chars 
+        -also byte count or characters --chars????
+
+Commands that do the essentially the same thing 
+
+    wc < kitty_ipsum_1.txt
+    cat kitty_ipsum_1.txt | wc
