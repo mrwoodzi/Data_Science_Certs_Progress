@@ -169,11 +169,15 @@
             -Primarily used for classification models where outpu is categorical(class labels)
             -binary classification where you want to balance precision and recall
                 Precision:
-                    -measures the proportion of true positives among all predicted positives. 
-                    -It tells you how accurate your model is
-                Recall: 
-                    -meausures the proportion of true positives that were correctly identified. 
-                    -It tells you how complete your model is
+                    -proportion of true positives among all the positive predictions made by the model.
+                    -True positives among POSITIVE PREDICTIONS
+                    -"Of all the instances I PREDICTED as positive, how many WERE ACTUALLY positive"
+                    -It tells you HOW ACCURATE your model is
+                Recall:
+                    -measures the proportion of true positives among all the actual positive cases.
+                    -True positives among ACTUAL POSITIVE CASES 
+                    -"Of all the instances that WERE ACTUALLY positive, how many did I CORRECTLY PREDICT as positive" 
+                    -It tells you HOW COMPLETE your model is
             -provides single metric  that considers both precision and recall
             -is the harmonic mean of precision and reacll giving equal weight to both metrics 
             -useful when you want a balance between minimizing false positives and false negatives 
@@ -206,12 +210,14 @@
                     variable and multiple independent variables. It allows us to analyze how each independent variable contributes 
                     to the variation in the dependent variable while controlling for other variables.
             Assumptions of Multiple Linear Regression:
-                -recommended to avoid using lots of variables for prediction 
+                Avoid: 
+                    -recommended to avoid using lots of variables for prediction 
                 Linearity: 
                     There should be a linear relationship between the independent variables and the dependent variable. This means 
                     that the relationship between the variables can be represented by a straight line.
                     Checking for linearity: 
                         -use scatter plots and then visually check for linearity, if not linear use non-linear(logistic) regression
+                        -the errors should be normally distribute(Bell)
                 Independence: 
                     The observations should be independent of each other. This assumption assumes that there is no relationship or 
                     correlation between the residuals (the differences between the observed and predicted values) of the dependent variable.
@@ -1579,10 +1585,17 @@
 Linear Regression:
     Simple LR   
     Multiple LR
+        -dependent(Y)/target - continuous
+        -independent(X)predictors - continuous or catgorical
+        -approximately linear 
 ClassificatioN:
     Metrics/Reporting:
-        -F1-Score, precision and recall 
-            -harmonic average of the precision and recall
+        -F1-Score, 
+            precision
+                -measure True Positives among Positive PREDICTIONS 
+            recall 
+                -measure True Positives among ACTUALLY Positive Cases 
+            -harmonic average of the precision(Predicted Postivie) and recall(Actually Positve)
             -it's best value at 1(perfect precision and recall) and worst at 0
         -MAE
             -average magnitude of the errors between the predicted and actual values 
@@ -1607,6 +1620,12 @@ ClassificatioN:
         k-means
             -unsupervised
             -partition cluster method(spherical clusters)
+            Steps, 
+                -choose number of clusters
+                -Initialize cluster centroids
+                -assign data points to clusters
+                -recalculate cluster centroids
+                -repeat steps 3 & 4
     Trees:
 
 Overfitting

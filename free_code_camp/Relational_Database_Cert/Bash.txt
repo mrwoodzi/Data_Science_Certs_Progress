@@ -292,6 +292,9 @@ Standard In(stdin)
             echo NAME | read NAME
         echo Michael | ./script.sh
             # this input Michael for read NAME variable 
+    >> append 
+        cat filename |wc flag >> filename
+            cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt cat
 
 Combining stdout, stderr, stdin 
 
@@ -301,11 +304,17 @@ Commands:
     man <insert_command_you_dont_understand>
 
     wc 
-        -gives number of lines         -l 
-        -gives number of characters    --chars 
-        -also byte count or characters --chars????
+        -Print  newline, word, and byte counts for each FILE
+    grep 
+        grep 'thing to search' filename
+        --color 
+            -adds color to the 'thing to search' when it is found 
 
 Commands that do the essentially the same thing 
 
     wc < kitty_ipsum_1.txt
     cat kitty_ipsum_1.txt | wc
+
+    wc -m < kitty_ipsum_1.txt >> kitty_info.txt
+    cat kitty_ipsum_1.txt | wc -m >> kitty_info.txt
+
