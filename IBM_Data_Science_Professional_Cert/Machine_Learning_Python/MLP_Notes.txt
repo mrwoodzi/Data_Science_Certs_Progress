@@ -169,11 +169,14 @@
             -Primarily used for classification models where outpu is categorical(class labels)
             -binary classification where you want to balance precision and recall
                 Precision:
+                    -True Positives: 
+                        -actually positive & identified as positive by the model
                     -proportion of true positives among all the positive predictions made by the model.
-                    -True positives among POSITIVE PREDICTIONS
                     -"Of all the instances I PREDICTED as positive, how many WERE ACTUALLY positive"
                     -It tells you HOW ACCURATE your model is
                 Recall:
+                    -Actual Positives: 
+                        -All instances that are positive in dataset
                     -measures the proportion of true positives among all the actual positive cases.
                     -True positives among ACTUAL POSITIVE CASES 
                     -"Of all the instances that WERE ACTUALLY positive, how many did I CORRECTLY PREDICT as positive" 
@@ -318,16 +321,15 @@
             print('Variance score: %.2f' % variance_score)
         Questions: 
             What are the requirements for independent and dependent variables in regression?
-                 + Independent variables can be either categorical or conitnuous. Dependent variables must be continuous
+                 Independent variables can be either categorical or conitnuous. Dependent variables must be continuous
             Key difference between simple and multiple regression is.
                 to estimate a single dependent variable, simple regression uses one independent variable whereas multiple regression uses multiple 
             CO2 emissions 
                 cylinders has higher impact on CO_2 emission amounts in comparison with engine size
-                 - since the coefficient for 'fuel_consumption' is greater than that for 'cylinders', fuel_consumption has lower impact on co2 emissions 
-                 - When Cylinders increases by 1 while fuel_consumption remains constant, co2 emission increases by 2.4 units
                  + When Cylinders DECREASES by 1 while fuel_consumption remains constant, co2 emission increases by 2.4 units
             What would be the cause of a model yielding high training accuracy and low out-of-sample accuracy? 
-                - model is training on the entire dataset, so it is overfitting 
+                -any overfitting 
+                -model training on small dataset so it is underfitting
             Multiple Linear Regression is appropriate for: 
                 predicting tomorrow's rainfall amount based on the wind speed and temperature
 
@@ -1084,6 +1086,11 @@
                     -cases we want to consider using SVM 
                     -mapping data to a higher dimensional feature space for better separation of classes
             SVM Steps:
+        SVM vs Logistic Regresson: 
+            -LR 
+                -predicts the probability of a data class/case belonging to a class 
+            -SVM    
+                -tries to find the hyperplane that maximize the margin between data points of different classes 
         Questions Linear Classification 
             Which option lists the steps of training a logistic regression model?
                 4,1,3,2,5
@@ -1593,6 +1600,7 @@ ClassificatioN:
         -F1-Score, 
             precision
                 -measure True Positives among Positive PREDICTIONS 
+                    -Of the Positive Predictions which are actually True Positives
             recall 
                 -measure True Positives among ACTUALLY Positive Cases 
             -harmonic average of the precision(Predicted Postivie) and recall(Actually Positve)
