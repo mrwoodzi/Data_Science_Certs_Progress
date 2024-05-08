@@ -309,6 +309,35 @@ Commands:
         grep 'thing to search' filename
         --color 
             -adds color to the 'thing to search' when it is found 
+        -c 
+            -give a count 
+        -n 
+            -tells you at what line 'thing to search' happens
+            -Prefix each line of output with the 1-based line number within its input file.
+        -o 
+            -prints all the matching strings
+            -Print only the matched (non-empty) parts of a matching line, with each such part on a separate output line.
+        -sed 
+            -replacing text that might work 
+            -sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>.
+            -By default, it won't replace the text in the file. It will output it to stdout 
+                -will output something different in terminal but not change it in the file 
+            -sed with a flag   
+                -sed 's/<pattern>/<replacement>/<regex_flags>' <filename>
+                    -sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+                    -g for global 
+                        -replace all instances of a matched pattern 
+                    -i 
+                        -ignore the case of a pattern
+                Example: 
+                    -sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+                        -actually outputs f233C0d3C@mp into terminal with < 
+
+    
+        
+        Examples grep:
+            -grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l
+                -count of how many times those words appear
 
 Commands that do the essentially the same thing 
 
@@ -318,3 +347,5 @@ Commands that do the essentially the same thing
     wc -m < kitty_ipsum_1.txt >> kitty_info.txt
     cat kitty_ipsum_1.txt | wc -m >> kitty_info.txt
 
+    sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+    cat name.txt | sed 's/freecodecamp/f233C0d3C@mp/i'
