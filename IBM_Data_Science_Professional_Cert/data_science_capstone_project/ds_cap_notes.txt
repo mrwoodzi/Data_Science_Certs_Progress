@@ -1,0 +1,24 @@
+I am Data Scientist for Space Y 
+Allon Mask is CEO
+
+My job: 
+    Determine the Price of Each Launch. 
+        -Gather information about Space X 
+            -Create Dashboards for my team. 
+            -Will SpaceX reuse the first stage 
+            -Train machine learning model & use public information to predict if 
+                SpaceX will reuse the first stage. 
+
+Review Collecting Data with an API:
+    -Get data to predict whether SpaceX will attempt to land a rocket or not
+        -use SpaceX Rest API 
+            -url = api.spacedata.com/v4/
+            urlwewant = api.spacexdata.com/v4/launches/past
+        -when using api the response will be in the form of a JSON
+            -view it with .json() 
+        -convert to dataframe with 
+            -json_normalize
+
+Webscraping with BeautifulSoup: 
+    -scrape html tables 
+    -convert to pandas df
