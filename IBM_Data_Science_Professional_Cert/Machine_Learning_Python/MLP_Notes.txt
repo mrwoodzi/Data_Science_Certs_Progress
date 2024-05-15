@@ -1603,15 +1603,13 @@
             focuses more on large errorsweighs small and large errors 
         When do we use regression trees instead of decision trees? 
             when the repsonse is continous instead of categorical 
-        
-    Which of the following is NOT true about machine learning?
-        machine learning gives computers the ability to make decision by writing down rules and methods and being explicitly programmed 
-    Which of the following is true for Multiple Linear Regression?
-        -Multiple independent variables are used to predict a dependent variable # just this
-    Which of the statements is TRUE for k-means clustering?
-        All of the Above
+        Which of the following is NOT true about machine learning?
+            machine learning gives computers the ability to make decision by writing down rules and methods and being explicitly programmed 
+        Which of the following is true for Multiple Linear Regression?
+            -Multiple independent variables are used to predict a dependent variable # just this
+        Which of the statements is TRUE for k-means clustering?
+            All of the Above
     
-
 
 Linear Regression:
     Simple LR   
@@ -1624,7 +1622,7 @@ ClassificatioN:
         -F1-Score, 
             precision
                 -measure True Positives among Positive PREDICTIONS 
-                    -Of the Positive Predictions which are actually True Positives
+                    -Of the Positive Predictions in our model which are actually True Positives
             recall 
                 -measure True Positives among ACTUALLY Positive Cases 
             -harmonic average of the precision(Predicted Postivie) and recall(Actually Positve)

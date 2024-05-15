@@ -20,5 +20,5 @@ Review Collecting Data with an API:
             -json_normalize
 
 Webscraping with BeautifulSoup: 
-    -scrape html tables 
-    -convert to pandas df
+
+Data Wrangling Overview: 
