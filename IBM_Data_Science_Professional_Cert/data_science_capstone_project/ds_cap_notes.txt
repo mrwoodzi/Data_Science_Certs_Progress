@@ -22,3 +22,6 @@ Review Collecting Data with an API:
 Webscraping with BeautifulSoup: 
 
 Data Wrangling Overview: 
+
+    Percentage of missing values in each attribute/column 
+        df.isnull().sum()/len(df)*100
