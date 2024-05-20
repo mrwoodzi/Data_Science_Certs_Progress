@@ -273,21 +273,16 @@ Searching/retriving:
                      . . . '% %';
                 finding second letter of a name 
                     . . . '_e%';
-                
         ILIKE
             -will ignore the case sensitivity of a string 
              . .  .'%a%';
-
         NOT ILIKE   
             -will ignore the case sensitivity of a string
             . . . '%a%';
-
         Combining LIKE, NOT ILIKE
             SELECT * FROM courses WHERE course NOT ILIKE '<pattern>' AND course LIKE <pattern> ;
-
         IS NULL 
             WHERE <column> IS NULL;
-
         ORDER BY
             -automatically sorts by ascending(ASC)
             -descending(DESC)
