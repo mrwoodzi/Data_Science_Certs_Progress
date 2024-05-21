@@ -315,9 +315,12 @@ Commands:
             -tells you at what line 'thing to search' happens
             -Prefix each line of output with the 1-based line number within its input file.
         -o 
+            -only outputs the string you are looking for, NOT the whole line and the string 
             -prints all the matching strings
             -Print only the matched (non-empty) parts of a matching line, with each such part on a separate output line.
         -sed 
+            -used to replace basic text transformations on an input streamq
+
             -replacing text that might work 
             -sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>.
             -By default, it won't replace the text in the file. It will output it to stdout 
@@ -332,7 +335,8 @@ Commands:
                 Example: 
                     -sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
                         -actually outputs f233C0d3C@mp into terminal with < 
-
+                    grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/'
+                        -this outputs the line numbers that have 'meow' in them 
     
         
         Examples grep:

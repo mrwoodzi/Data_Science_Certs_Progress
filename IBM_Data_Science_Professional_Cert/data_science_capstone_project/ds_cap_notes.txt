@@ -24,10 +24,14 @@ Week 1 Collecting/Data Wrangling:
         df.isnull().sum()/len(df)*100
 
 Week 2 Exploratory Data Analysis:  
-    Analysis using SQL 
+    Exploratory Analysis using SQL 
         -Load .csv into an ibm db2 sql database
         -execute sql queries from .ipynb for exploratory data analysis
 
-    Analysis using Pandas and Matplotlib
+    Exploratory Analysis using Pandas and Matplotlib
+        Using Seaborn to plot bar, line and cat plots
+        -.get_dummies
+            features_one_hot = pd.get_dummies(features, columns=['Orbit', 'LaunchSite', 'LandingPad', 'Serial'])
+                # .get_dummies is using OneHotEncoder to convert categorical data to numeric
 
     
