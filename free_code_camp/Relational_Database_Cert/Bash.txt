@@ -307,6 +307,7 @@ Commands:
         -Print  newline, word, and byte counts for each FILE
     grep 
         grep 'thing to search' filename
+        -[string]* any occurance of this in a word 
         --color 
             -adds color to the 'thing to search' when it is found 
         -c 
@@ -318,27 +319,11 @@ Commands:
             -only outputs the string you are looking for, NOT the whole line and the string 
             -prints all the matching strings
             -Print only the matched (non-empty) parts of a matching line, with each such part on a separate output line.
-        -sed 
-            -used to replace basic text transformations on an input streamq
-
-            -replacing text that might work 
-            -sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>.
-            -By default, it won't replace the text in the file. It will output it to stdout 
-                -will output something different in terminal but not change it in the file 
-            -sed with a flag   
-                -sed 's/<pattern>/<replacement>/<regex_flags>' <filename>
-                    -sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
-                    -g for global 
-                        -replace all instances of a matched pattern 
-                    -i 
-                        -ignore the case of a pattern
-                Example: 
-                    -sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
-                        -actually outputs f233C0d3C@mp into terminal with < 
-                    grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/'
-                        -this outputs the line numbers that have 'meow' in them 
-    
-        
+        -E 
+            -allows the reading of extended regular expression see example below 
+        Example: 
+            ./translate.sh kitty_ipsum_1.txt | grep -E --color 'dog[a-z]*|woof[a-z]*'
+                -YOU HAVE TO HAVE -E in after grep so that it reads an 'extended regular expression in 'dog[a-z]*|woof[a-z]*'
         Examples grep:
             -grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l
                 -count of how many times those words appear
@@ -348,6 +333,31 @@ Commands:
                 appends the line numbers that words with 'meow' occur on in file to kitty_info
             -grep -o 'cat[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
                 gives count of how many times 'cat' occurs in a word
+    sed 
+        -used to replace basic text transformations on an input stream
+        -replacing text that might work 
+        -sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>.
+        -By default, it won't replace the text in the file. It will output it to stdout 
+            -will output something different in terminal but not change it in the file 
+        -sed with a flag   
+            -sed 's/<pattern>/<replacement>/<regex_flags>' <filename>
+                -sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+                -g for global 
+                    -replace all instances of a matched pattern 
+                -i 
+                    -ignore the case of a pattern
+        Multiple Patterns: 
+            -sed 's/<pattern_1>/<replacement_1>/; s/<pattern_2>/<replacement_2>/'
+        Example: 
+            -sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+                -actually outputs f233C0d3C@mp into terminal with < 
+            grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/'
+                -this outputs the line numbers that have 'meow' in them 
+    diff
+        -diff <file_1> <file_2> 
+        -looking at the difference between 2 files 
+        
+
 
 Commands that do the essentially the same thing 
 
@@ -359,3 +369,7 @@ Commands that do the essentially the same thing
 
     sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
     cat name.txt | sed 's/freecodecamp/f233C0d3C@mp/i'
+
+    ./translate.sh kitty_ipsum_1.txt
+    ./translate.sh < kitty_ipsum_1.txt
+    cat kitty_ipsum_1.txt | ./translate.sh

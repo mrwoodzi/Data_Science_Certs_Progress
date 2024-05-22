@@ -1,3 +1,6 @@
+
+# Bash Scripting was used to input all the below information from the other files in this folder 
+
 ~~ kitty_ipsum_1.txt info ~~
 
 Number of lines:
