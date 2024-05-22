@@ -1,0 +1,534 @@
+# this is the practice/learning for the first portion of the project before the bash scripting
+# the online env was not working well and I had to reset the lesson almost every lesson
+    1  echo hello bash
+    2  echo hello bash < stdout.txt
+    3  touch stdout.txt
+    4  echo hello bash < stdout.txt
+    5  rm stdout.txt
+    6  ls
+    7  echo hello bash > stdout.txt
+    8  echo hello bash >> stdout.txt
+    9  echo hello bash > stout.txt
+   10  echo hello bash > stdout.txt
+   11  rm stout.txt
+   12  > stdout.txt
+   13  bad_command
+   14  bad_command > stderr.txt
+   15  bad_command > stderr
+   16  2> stderr.txt
+   17  stder 2> stderr.txt
+   18  stderr 2> stderr.txt
+   19  stderr 2> stderr.txt
+   20  bad_command 2> stderr.txt
+   21  echo hello bash 1> stdout.txt
+   22  read NAME
+   23  read NAME
+   24  echo NAME
+   25  echo $NAME
+   26  $NAME > stdout.txt
+   27  echo $NAME > stdout.txt
+   28  echo freeCodeCamop > name.txt
+   29  echo freeCodeCamp > name.txt
+   30  read $NAME < name.txt
+   31  read NAME < name.txt
+   32  echo $NAME
+   33  echo $NAME
+   34  echo NAME | read NAME
+   35  echo $NAME
+   36  cat
+   37  cat name.txt
+   38  cat < name.txt
+   39  echo NAME | cat 
+   40  touch script.sh
+   41  chmod +x script.sh
+   42  ./script.sh
+   43  ./script | echo NAME
+   44  ./script.sh | echo NAME
+   45  ./script.sh
+   46  echo Michael | script.sh
+   47  echo Michael | ./script.sh
+   48  echo Michael > stderr.txt
+   49  echo Michael | ./script.sh
+   50  echo Michael 2> ./script.sh
+   51  echo Michael | ./script.sh 2> stderr.txt
+   52  echo Michael | ./script.sh 2> stderr.txt
+   53  echo Michael | ./script.sh 2> stderr.txt 1> stdout.txt
+   54  echo Michael | ./script.sh 2. stderr.txt 1> name.txt
+   55  echo Michael | ./script.sh 2> stderr.txt 1> name.txt
+   56  ./script.sh < name.txt
+   57  stderr < stderr.txt
+   58  stderr 2> stderr.txt
+   59  stderr.txt 2> stderr
+   60  stderr 2> stderr.txt
+   61  ./script.sh 2> name.txt
+   62  ./script.sh 2> stderr.txt
+   63  ./script.sh < name.txt 2> stderr.txt
+   64  ./script.sh < stdout.txt 2> stderr.txt
+   65  ./script.sh 2> stderr.txt > stdout.txt
+   66  ./ script.sh < name.txt 2> stderr.txt > stdout.txt
+   67  ./script.sh < name.txt 2> stderr.txt > stdout.txt
+   68  clear
+   69  cat kittyipsum_1.txt
+   70  cat ./kittyipsum_1.txt
+   71  chmod +x kittyipsum_1.txt
+   72  chmod +x ./kittyipsum_1.txt
+   73  cat kitty_ipsum_1.txt
+   74  cat kitty_ipsum_2.txt
+   75  wc kitty_ipsum_1.txt
+   76  wc -help
+   77  wc --help
+   78  wc man
+   79  wc --man
+   80  man
+   81  man wc
+   82  history
+   83  clear
+   84  history
+   85  clear 
+   86  wc -l
+   87  wc -l kitty_ipsum_1.txt
+   88  wc -w
+   89  wc -w kitty_ipsum_1.txt
+   90  wc -char kitty_ipsum_1.txt
+   91  man wc
+   92  man -m kitty_ipsum_1.txt
+   93  man wc
+   94  wc --chars kitty_ipsum_1.txt
+   95  wc kitty_ipsum_1.txt
+   96  history
+   97  clear
+   98  cat kitty_ipsum_1.txt | wc
+   99  wc < kitty_ipsum_1.txt
+  100  echo ~~ kitty_ipsum_1.txt info ~~ < kitty_info.txt
+  101  cat ~~ kitty_ipsum_1.txt info ~~ < kitty_info.txt
+  102  cat 'kitty_ipsum_1.txt info ~~' < kitty_info.txt
+  103  cat "kitty_ipsum_1.txt info ~~" < kitty_info.txt
+  104  echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+  105  echo -e "\nNumber of Lines:" > kitty_info.txt
+  106  clear
+  107  history
+  108  echo hello bash
+  109  echo "hello bash" > stdout.txt
+  110  "hello bash" > stdout.txt
+  111  echo hello bash > stdout.txt
+  112  clear
+  113  echo hello bash >> stdout.txt
+  114  echo hello bash > stdout.txt
+  115  clear
+  116  echo > stdout.txt
+  117  > stdout.txt
+  118  > stdout.txt
+  119  > stdout.txt
+  120  bad_command
+  121  bad_command
+  122  bad_command
+  123  bad_command > stderr.txt
+  124  bad_command 2> stderr.txt
+  125  clear
+  126  echo hello bash 1> stdout.txt
+  127  echo "hello bash" 1> stdout.txt
+  128  echo hello bash 1> stdout.txt
+  129  clear
+  130  read NAME
+  131  read NAME
+  132  read NAME
+  133  CLEAR 
+  134  clear
+  135  read NAME
+  136  CLEAR
+  137  clear
+  138  echo $NAME
+  139  echo $NAME
+  140  echo $NAME > stdout.txt
+  141  echo freeCodeCamp > name.txt
+  142  read NAME < name.txt
+  143  read $NAME < name.txt
+  144  read $NAME > name.txt
+  145  clear
+  146  history
+  147  read NAME < name.txt
+  148  clear
+  149  echo $NAME
+  150  echo $NAME
+  151  man -z
+  152  man --help
+  153  clear
+  154  echo NAME | $NAME
+  155  clear
+  156  history
+  157  echo | NAME
+  158  echo | $NAME
+  159  echo NAME | read NAME
+  160  echo $hame
+  161  echo $NAME
+  162  echo $NAME
+  163  lear
+  164  clear
+  165  cat
+  166  cat 
+  167  clear
+  168  cat
+  169  cat name.txt
+  170  cat name.txt
+  171  cat < name.txt
+  172  cat < name.txt
+  173  echo NAME | CAT
+  174  echo NAME | cat
+  175  echo $NAME | cat
+  176  echo $NAME | cat
+  177  echo Michael | cat
+  178  touch script.sh
+  179  chmod +x script.sh
+  180  clear
+  181  ./script.sh
+  182  ./script.sh
+  183  ./script.sh
+  184  ./script.sh | $NAME
+  185  ./script.sh | NAME
+  186  echo Michael | ./script.sh
+  187  echo Michael | ./script.sh
+  188  echo Michael | ./script.sh < stderr.txt
+  189  clear
+  190  echo Michael | ./script.sh
+  191  echo Michael | ./script 2> stderr.txt
+  192  echo Michael | ./script 2> stderr.txt
+  193  echo Michael | ./script.sh 2> stderr.txt
+  194  echo Michael | ./script.sh 2> stderr.txt 1> stdout.txt
+  195  ./script.sh < name.txt
+  196  ./script.sh < name.txt
+  197  clear
+  198  history
+  199  ./script.sh < name.txt 2> stderr.txt
+  200  ./script.sh < name.txt 2> stderr.txt > stdout.txt
+  201  cat kitty_ipsum_1.txt
+  202  cat kitty_ipsum_2.txt
+  203  cat kitty_ipsum_2.txt
+  204  wc kitty_ipsum_1.txt
+  205  wc kitty_ipsum_1.txt
+  206  man wc
+  207  wc -l kitty_ipsum_1.txt
+  208  wc -l kitty_ipsum_1.txt
+  209  wc -m kitty_ipsum_1.txt
+  210  wc --char kitty_ipsum_1.txt
+  211  man wc
+  212  wc -w kitty_ipsum_1.txt
+  213  wc -w kitty_ipsum_1.txt
+  214  man wc
+  215  wc -m kitty_ipsum_1.txt
+  216  wc kitty_ipsum_1.txt
+  217  cat kitty_ipsum_1.txt | wc
+  218  cat kitty_ipsum_1.txt | wc
+  219  cat kitty_ipsum_1.txt > wc
+  220  cat kitty_ipsum_1.txt > wc
+  221  kitty_ipsum_1.txt > wc
+  222  wc < kitty_ipsum_1.txt
+  223  read echo -e "\nNumber of lines:
+  224  read echo -e "\nNumber of lines:" >> kitty_into.txt
+  225  rm kitt_into.txt
+  226  sudo rm kitty_into.txt
+  227  clear
+  228  echo -e "\nNumber of lines:" >> kitty_info.txt
+  229  echo -e "\nNumber of lines: " >> kitty_info.txt
+  230  echo -e "\nNumber of lines:" >> kitty_info.txt
+  231  wc -l kitty_ipsum_1.txt | cat kitty_info.txt
+  232  wc -l kitty_ipsum_1.txt
+  233  cat wc -l kitty_ipsum_1.txt
+  234  cat kitty_info.txt < wc -l kitty_ipsum_1.txt >> kitty_info.txt
+  235  man wc
+  236  clear
+  237  history
+  238  cat kitty_info.txt | wc -l "kitty_ipsum_1.txt
+  239  cat kitty_info.txt | wc -l "kitty_ipsum_1.txt"
+  240  cat kitty_info.txt | wc -l >> "kitty_ipsum_1.txt"
+  241  wc -l >> "kitty_ipsum_1.txt"
+  242  wc -l "kitty_ipsum_1.txt
+  243  wc -l "kitty_ipsum_1.txt"
+  244  cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+  245  echo -e "\nNumber of words:" >> kitty_info.txt
+  246  man wc
+  247  cat kitty_ipsum_1.txt | wc -w >> kitty_info.txt
+  248  man wc
+  249  echo -e "\nNumber of characters:" >> kitty_info.txt
+  250  cat kitty_ipsum_1.txt | wc -m >> kitty_info.txt
+  251  man wc
+  252  cat kitty_ipsum_1.txt | wc -m >> kitty_info.txt
+  253  cat kitty_ipsum_1.txt 1> wc -m >> kitty_info.txt
+  254  kitty_ipsum_1.txt 1> wc -m >> kitty_info.txt
+  255  wc -m < kitty_ipsum_1.txt >> kitty_info.txt
+  256  cat kitty_ipsum_1.txt | wc -m >> kitty_info.txt
+  257  grep 'meow' kitty_ipsum_1.txt
+  258  man grep
+  259  grep --color 'meow' kitty_ipsum_1.txt
+  260  man grep
+  261  man grep
+  262  grep -c 'meow' kitty_ipsum_1.txt
+  263  grep -n 'meow' kitty_ipsum_1.txt
+  264  grep --color -n 'meow' kitty_ipsum_1.txt
+  265  grep --color 'n' meow[a-z*] kitty_ipsum_1.txt
+  266  grep --color -n meow[a-z*] kitty_ipsum_1.txt
+  267  grep --color -n meow[a-z*] kitty_ipsum_1.txt
+  268  grep --color -n 'meow[a-z*]' kitty_ipsum_1.txt
+  269  grep --color -n 'meow[a-z*]' kitty_ipsum_1.txt
+  270  man grep
+  271  history
+  272  grep --color -n 'meow[a-z]*' kitty_ipsum_1.txt
+  273  echo -e 
+  274  echo -e "\nNumber of times meow or meowzer appears:
+  275  echo -e 
+  276  echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+  277  grep --color -n 'meow[a-z]*' kitty_ipsum_1.txt
+  278  grep --color 'meow[a-z]*' kitty_ipsum_1.txt
+  279  grep --color -c 'meow[a-z]*' kitty_ipsum_1.txt
+  280  grep -c 'meow[a-z]*' kitty_ipsum_1.txt
+  281  man grep
+  282  man grep
+  283  history
+  284  grep -o 'meow[a-z]* kitty_ipsum_1.txt
+  285  grep -o 'meow[a-z]*' kitty_ipsum_1.txt
+  286  man grep
+  287  history
+  288  grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -c
+  289  grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l
+  290  grep -o 'meow[a-z]*' kitty_ipsum_1.txt >> kitty_info.txt
+  291  grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+  292  echo -e "\nLines that they appear on" >> kitty_info.txt
+  293  echo -e "\nLines that they appear on:" >> kitty_info.txt
+  294  grep -n 'meow[a-z]*' kitty_ipsum_1.txt
+  295  man grep
+  296  man grep
+  297  cat name.txt
+  298  sed 's/r/2/' name.txt
+  299  sed 's/free/f233/' name.txt
+  300  sed 's/freecodecamp/f233C0d3C@mp/' name.txt
+  301  sed -i 's/freecodecamp/f233C0d3C@mp/' name.txt
+  302  sed 's/freecodecamp/f233C0d3C@mp/' -i name.txt
+  303  sed i 's/freecodecamp/f233C0d3C@mp/' name.txt
+  304  sed 's/freecodecamp/f233C0d3C@mp/i/' name.txt
+  305  sed 's/freecodecamp/f233C0d3C@mp/-i/' name.txt
+  306  sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+  307  sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+  308  cat name.txt | sed 
+  309  clear 
+  310  history
+  311  cat name.txt | sed 
+  312  cat name.txt | sed 's/freecodecamp/f0d3C@mp/i'
+  313  cat name.txt | sed 's/freecodecamp/f233C0d3C@mp/i'
+  314  ls
+  315  echo hello bash
+  316  echo hello bash
+  317  exit
+  318  echo hello bash
+  319  echo hello bash
+  320  echo 'hello bash'
+  321  echo -e 'hello bash'
+  322  echo hello bsh
+  323  echo hello bash
+  324  echo hello bash > stdout.txt
+  325  echo hello bash >> stdout.txt
+  326  echo hello bash > stdout.txt
+  327  > stdout.txt
+  328  > stdout.txt
+  329  bad_command
+  330  bad_command
+  331  bad_command > stderr.txt
+  332  bad_command 2> stderr.txt
+  333  echo hello bash > stdout.txt
+  334  echo hello bash > stdout.txt
+  335  echo hello bash 1> stdout.txt
+  336  read NAME
+  337  read NAME
+  338  read NAME
+  339  echo $NAME
+  340  echo $NAME
+  341  echo $NAME 1> stdout.txt
+  342  echo freeCodeCamp 1> name.txt
+  343  echo freeCodeCamp 1> name.txt
+  344  read $NAME < name.txt
+  345  read NAME < name.txt
+  346  read $NAME < name.txt
+  347  read NAME < name.txt
+  348  echo $NAME
+  349  echo $NAME
+  350  echo $NAME | read NAME
+  351  echo Michael | read NAME
+  352  echo $NAME
+  353  echo $NAME
+  354  at
+  355  cat
+  356  cat
+  357  cat name.txt
+  358  cat name.txt
+  359  cat < name.txt
+  360  cat < name.txt
+  361  echo Michael | cat
+  362  echo Michael | cat
+  363  touch script.sh
+  364  chmod +x
+  365  chmod +x script.sh
+  366  chmod +x script.sh
+  367  cat kitty_ipsum_1.txt
+  368  cat wc kitty_ipsum_1.txt
+  369  man wc
+  370  cat -l kitty_ipsum_1.txt
+  371  cat kitty_ipsum_1.txt | wc
+  372  cat kitty_ipsum_1.txt < wc
+  373  echo -e 
+  374  echo -e 
+  375  echo -e "~~ kitty_ipsum_1.txt info ~~" < kitty_info.txt
+  376  echo -e "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+  377  echo "~~ kitty_ipsum_1.txt info ~~" > kitty_info.txt
+  378  echo -e "\nNumber of lines:
+  379  echo -e "\nNumber of lines:" >> kitty_info.txt
+  380  echo -e "\nNumber of lines:" >> kitty_info.txt
+  381  cat kitty_ipsum_1.txt | wc -l
+  382  cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+  383  cat kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+  384  man cat
+  385  man read
+  386  read $NAME
+  387  echo $NAME
+  388  man
+  389  man man 
+  390  echo -e "\nNumber of words:"
+  391  echo -e "\nNumber of words:" >> kitty_info.txt
+  392  echo -e "\nNumber of words:
+  393  echo -e "\nNumber of words:" >> kitty_info.txt
+  394  history
+  395  clear
+  396  echo -e "\nNumber of words:"
+  397  echo -e "\nNumber of words:" >> kitty_info.txt
+  398  history
+  399  man wc
+  400  echo hello bash
+  401  echo hello bash > stdout.txt
+  402  grep meow | kitty_ipsum_1.txt
+  403  grep 'meow' kitty_ipsum_1.txt
+  404  man grep
+  405  grep --color 'meow' kitty_ipsum_1.txt
+  406  grep --color 'meow' kitty_ipsum_1.txt
+  407  man grep
+  408  grep -n --color 'meow' kitty_ipsum_1.txt
+  409  grep --color -n 'meow' kitty_ipsum_1.txt
+  410  grep 'meow[a-z]*' kitty_ipsum_1.txt
+  411  grep meow[a-z]* kitty_ipsum_1.txt
+  412  grep --color -n 'meow[a-z]*' kitty_ipsum_1.txt
+  413  grep --color on 'meow[a-z]*' kitty_ipsum_1.txt
+  414  grep --color -n 'meow[a-z]*' kitty_ipsum_1.tx
+  415  grep --color -n 'meow[a-z]*' kitty_ipsum_1.txt
+  416  echo -e '\nNumber of times meow or meowzer appears:' >> kitty_info.txt
+  417  echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+  418  grep --color -n 'meow[a-z]*' kitty_ipsum_1.txt
+  419  grep --color 'meow[a-z]*' kitty_ipsum_1.txt
+  420  grep --color 'meow[a-z]*' kitty_ipsum_1.txt
+  421  grep -c 'meow[a-z]*' kitty_ipsum_1.txt
+  422  grep -c 'meow[a-z]*' kitty_ipsum_1.txt
+  423  man grep
+  424  man grep
+  425  grep -o 
+  426  grep -o 'meow[a-z]*' kitty_ipsum_1.txt
+  427  grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l
+  428  grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l
+  429  grep -o 'meow[a-z]*' kitty_ipsum_1.txt >> kitty_info.txt
+  430  grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+  431  echo -e "\nLines that they appear on:" >> kitty_info.txt
+  432  echo -e "\nLines that they appear on:" >> kitty_info.txt
+  433  grep -n 'meow[a-z]*' kitty_ipsum_1.txt
+  434  grep -n 'meow[a-z]*' kitty_ipsum_1.txt
+  435  man grep
+  436  cat name.txt
+  437  cat name.txt
+  438  sed 's/r/2/' name.txt
+  439  sed 's/r/2/' name.txt
+  440  sed 's/free/f233/' name.txt
+  441  sed 's/free/f233/' name.txt
+  442  sed 's/freeCodecamp/f233C0d3C@mp/' name.txt
+  443  sed 's/freeCodecamp/f233C0d3C@mp/' name.txt
+  444  sed 's/freeCodeCamp/f233C0d3C@mp/' name.txt
+  445  sed 's/freecodecamp/f233C0d3C@mp/' name.txt
+  446  sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+  447  sed 's/freecodecamp/f233CdC@mp/i' < name.txt
+  448  sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+  449  sed 's/freecodecamp/f233C0d3C@mp/i' < name.txt
+  450  cat name.txt | sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+  451  cat name.txt | sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+  452  grep --n 'meow[a-z]*' kitty_ipsum_1.txt
+  453  grep -n 'meow[a-z]*' kitty_ipsum_1.txt
+  454  grep -n 'meow[a-z]*' kitty_ipsum_1.txt
+  455  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed 'x/[0-9]/1/'
+  456  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed 'x/[0-9]+/1/'
+  457  grep -n 'meow[a-z]*' kitty_ipsum_1.txt
+  458  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed 'x/[0-9]/'
+  459  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed 'x/[0-9]+/'
+  460  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed 's/[0-9]+/1/'
+  461  man sed
+  462  man sed
+  463  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E  's/[0-9]+/1/
+  464  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/[0-9]+/\1/'
+  465  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+)/\1/'
+  466  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+)/\1/.*'
+  467  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+)/\1/.*'
+  468  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/'
+  469  grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+  470  grep --color 'cat[a-z]*'
+  471  grep --color 'cat[a-z]*' kitty_ipsum_1.txt
+  472  echo -e "\nNumber of times cat, cats, or catnip appears:"
+  473  echo -e "\nNumber of times cat, cats, or catnip appears:" >> kitty_info.txt
+  474  grep --color 'cat[a-z]*' kitty_ipsum_1.txt
+  475  grep 'cat[a-z]*' kitty_ipsum_1.txt
+  476  history
+  477  grep -n 'cat[a-z]*' kitty_ipsum_1.txt
+  478  grep -n 'cat[a-z]*' kitty_ipsum_1.txt
+  479  grep -o 'cat[a-z]*' kitty_ipsum_1.txt
+  480  grep -o 'cat[a-z]*' kitty_ipsum_1.txt | wc -l
+  481  grep -o 'cat[a-z]*' kitty_ipsum_1.txt | wc -l >> kitty_info.txt
+  482  echo -e "\nLines that they appear on:" >> kitty_info.txt
+  483  grep -n 'cat[a-z]*' kitty_ipsum_1.txt
+  484  grep -n 'cat[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/'
+  485  grep -n 'cat[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+  486  echo -e "\n\n~~ kitty_ipsum_2.txt info ~~" >> kitty_info.txt
+  487  echo -e "\n\n~~ kitty_ipsum_2.txt info ~~" >> kitty_info.txt
+  488  echo -e "\nNumber of lines:" >> kitty_info.txt
+  489  history
+  490  man cat
+  491  cat -n kitty_ipsum_2.txt
+  492  history
+  493  wc -l kitty_ipsum_2.txt
+  494  wc -l kiitty_ipsum_2.txt | cat kitty_info.txt
+  495  cat kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+  496  man wc
+  497  echo -e "\nNumber of words:" >> kitty_info.txt
+  498  man cat
+  499  man wc
+  500  wc -w kitty_ipsum_2.txt >> kitty_info.txt
+  501  cat kitty_ipsum_2.txt | wc -w >> kitty_info.txt
+  502  cat kitty_ipsum_2.txt | wc -w >> kitty_info.txt
+  503  cat kitty_ipsum_2.txt | wc -w >> kitty_info.txt
+  504  we -w < kitty_ipsum_2.txt >> kitty_info.txt
+  505  wc -w < kitty_ipsum_2.txt >> kitty_info.txt
+  506  echo -e "\nNumber of characters:" >> kitty_info.txt
+  507  man wc
+  508  wc -m < kitty_ipsum_2.txt >> kitty_info.txt
+  509  grep --color -n 'meow[a-z]*' kitty_ipsum_2.txt
+  510  grep --color -n 'meow[a-z]*' kitty_ipsum_2.txt
+  511  grep --color 'meow[a-z]*' kitty_ipsum_2.txt
+  512  echo -e "\nNumber of times meow or mewozer appears:" >> kitty_info.txt
+  513  echo -e "\nNumber of times meow or mewozer appears:" >> kitty_info.txt
+  514  echo -e "\nNumber of times meow or meowzer appears:" >> kitty_info.txt
+  515  history
+  516  man grep
+  517  grep -o 'cat[a-z]*' kitty_ipsum_1.txt | wc -l >> kitty_info.txt askdfj
+  518  grep -o 'meow[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+  519  echo -e "\nLines that they appear on:" >> kitty_info.txt
+  520  grep -n 'cat[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txtasldkfj
+  521  grep -n 'meow[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+  522  grep --color 'cat[a-z]*' kitty_ipsum_2.txt
+  523  echo -e "
+  524  echo -e "\nNumber of times cat, cats or catnip appears:"
+  525  echo -e "\nNumber of times cat, cats, or catnip appears:" >> kitty_info.txt
+  526  grep -o 'cat[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+  527  echo -e "\nLines that they appear on:" >> kitty_info.txt
+  528  grep -n 'cat[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+  529  history
+  530  history >> bash_history.txt
+# this is the practice/learning for the first portion of the project before the bash scripting
+# the online env was not working well and I had to reset the lesson almost every lesson

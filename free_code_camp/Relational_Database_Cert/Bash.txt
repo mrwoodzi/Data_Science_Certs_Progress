@@ -342,6 +342,12 @@ Commands:
         Examples grep:
             -grep -o 'meow[a-z]*' kitty_ipsum_1.txt | wc -l
                 -count of how many times those words appear
+            -grep -o 'meow[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+                counts the number of times 'meow' occurs in any word in file then appends it to the kitty_info file
+            -grep -n 'meow[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
+                appends the line numbers that words with 'meow' occur on in file to kitty_info
+            -grep -o 'cat[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
+                gives count of how many times 'cat' occurs in a word
 
 Commands that do the essentially the same thing 
 
