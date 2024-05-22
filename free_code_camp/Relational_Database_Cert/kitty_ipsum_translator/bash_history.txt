@@ -1,5 +1,3 @@
-# this is the practice/learning for the first portion of the project before the bash scripting
-# the online env was not working well and I had to reset the lesson almost every lesson
     1  echo hello bash
     2  echo hello bash < stdout.txt
     3  touch stdout.txt
@@ -530,5 +528,50 @@
   528  grep -n 'cat[a-z]*' kitty_ipsum_2.txt | sed -E 's/([0-9]+).*/\1/' >> kitty_info.txt
   529  history
   530  history >> bash_history.txt
-# this is the practice/learning for the first portion of the project before the bash scripting
-# the online env was not working well and I had to reset the lesson almost every lesson
+  531  touch translate.sh
+  532  chmod +x ./translate.sh
+  533  echo #!/bin/bash >> translate.sh
+  534  #!/bin/bash >> translate.sh
+  535  chmod +x ./translate.sh
+  536  chmod +x translate.sh
+  537  sed -i '1s/^/#!\/bin\/bash\n/' translate.sh
+  538  ./translate.sh kitty_ipsum_1.txt
+  539  ./translate.sh > echo
+  540  ./translate.sh < kitty_ipsum_1.txt
+  541  history
+  542  ./translate.sh | cat kitty_ipsum_1.txt
+  543  cat ./translate | kitty_ipsum_1.txt
+  544  cat ./translate.sh | kitty_ipsum_1.txt
+  545  ./translate.sh | cat kitty_ipsum_1.txt
+  546  cat kitty_ipsum_1.txt | ./translate.sh
+  547  history
+  548  ./translate.sh kitty_ipsum_1.txt
+  549  ./translate.sh kitty_ipsum_1.txt
+  550  ./translate.sh kitty_ipsum_1.txt
+  551  ./translate.sh kitty_ipsum_1.txt
+  552  ./translate.sh kitty_ipsum_1.txt | grep --color 'dogchow'
+  553  ./translate.sh kitty_ipsum_1.txt | grep --color 'catnip'
+  554  ./translate.sh kitty_ipsum_1.txt | grep --color 'dog[a-z]*'
+  555  ./translate.sh kitty_ipsum_1.txt | grep --color 'cat[a-z]*'
+  556  ./translate.sh kitty_ipsum_1.txt | grep --color 'dog[a-z]*|woof'
+  557  ./translate.sh kitty_ipsum_1.txt | grep --color 'dog[a-z]*|woof[a-z]*'
+  558  man grep
+  559  ./tranlate.sh kitty_ipsum_1.txt | grep -E --color 'dog[a-z]*|woof[a-z]*'
+  560  ./translate.sh kitty_ipsum_1.txt | grep -E --color 'dog[a-z]*|woof[a-z]*'
+  561  ./translate.sh kitty_ipsum_1.txt | grep -E --color 'dog[a-z]*|woof[a-z]*'
+  562  ./translate.sh kitty_ipsum_1.txt | grep -E --color 'dog[a-z]*|woof[a-z]*'
+  563  history
+  564  ./translate.sh kitty_ipsum_1.txt | grep -E --color 'meow[a-z]*|cat[a-z]*'
+  565  ./translate.sh kitty_ipsum_2.txt | grep -E --color 'meow[a-z]*|cat[a-z]*'
+  566  ./translate.sh kitty_ipsum_1.txt > doggy_ipsum_1.txt
+  567  cat doggy_ipsum_1.txt
+  568  diff kitty_ipsum_1.txt doggy_ipsum_1.txt
+  569  man diff
+  570  man diff
+  571  diff --color kitty_ipsum_1.txt doggy_ipsum_1.txt
+  572  ./translate.sh kitty_ipsum_2.txt > doggy_ipsum_2.txt
+  573  cat doggy_ipsum_2.txt
+  574  diff kitty_ipsum_2.txt doggy_ipsum_2.txt
+  575  diff --color kitty_ipsum_2.txt doggy_ipsum_2.txt
+  576  cat history > bash_history.txt
+  577  history > bash_history.txt
