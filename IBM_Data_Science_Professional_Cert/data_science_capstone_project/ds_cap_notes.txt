@@ -34,4 +34,9 @@ Week 2 Exploratory Data Analysis:
             features_one_hot = pd.get_dummies(features, columns=['Orbit', 'LaunchSite', 'LandingPad', 'Serial'])
                 # .get_dummies is using OneHotEncoder to convert categorical data to numeric
 
+Week 3 Interactive Visual Analytics Dashboards: 
+    Interactive Analytics with Folium: 
+
+    Interactive Dashboard with Plotly Dash: 
+
     
