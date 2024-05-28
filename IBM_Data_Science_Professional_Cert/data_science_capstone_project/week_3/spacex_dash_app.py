@@ -28,8 +28,18 @@ app.layout = html.Div(
                 ),
         # TASK 1: Add a dropdown list to enable Launch Site selection
         # The default select value is for ALL sites
-        # dcc.Dropdown(id='site-dropdown',...)
-        html.Br(),
+        dcc.Dropdown(id='site-dropdown',
+                     options=[
+                         {'label': 'All Sites', 'value': 'ALL'},
+                         {'label': 'CCAFS LC-40', 'value': 'CCAFS LC-40'}, 
+                         {'label': 'VAFB SLC-4E', 'value': 'VAFB SLC-4E'},
+                         {'label': 'KSC LC-39A', 'value': 'KSC LC-39A'},
+                         {'label': 'CCAFS SLC-40', 'value': 'CCAFS SLC-40'},
+                          ],
+                          value='ALL',
+                          placeholder=" ",
+                          searchable=True,
+                     ),
         # TASK 2: Add a pie chart to show the total successful launches count for all sites
         # If a specific launch site was selected, show the Success vs. Failed counts for the site
         # https://dash.plotly.com/dash-html-components/div
@@ -65,4 +75,4 @@ app.layout = html.Div(
 
 # Run the app
 if __name__ == "__main__":
-    app.run_server()
+    app.run_server(debug=True) # debug=True # enables hot reloading so as changes are made, changes are seen
