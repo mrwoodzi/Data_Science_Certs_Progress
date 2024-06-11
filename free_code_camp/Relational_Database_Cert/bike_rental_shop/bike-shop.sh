@@ -27,10 +27,15 @@ RENT_MENU() {
     # send to main menu 
     MAIN_MENU "Sorry, we don't have any bikes available right now."
   else
-  # display available bikes
-  echo -e "\nHere are the bikes we have available:"
-    echo "$AVAILABLE_BIKES"
-  # ask for bike to rent 
+    # display available bikes
+    echo -e "\nHere are the bikes we have available:"
+    echo "$AVAILABLE_BIKES" | while read BIKE_ID BAR TYPE BAR SIZE
+    do
+      echo "$BIKE_ID) $SIZE\" $TYPE Bike"
+    done
+    # ask for bike to rent
+    echo -e "\nWhich one would you like to rent?"
+    read BIKE_ID_TO_RENT # creates a variable to read user input 
   # if input is not a number 
   # send to main menu 
   fi
