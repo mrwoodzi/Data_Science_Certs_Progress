@@ -1,0 +1,21 @@
+
+
+# Should have been taking notes from the start
+
+Resetting ip address of server and proxmox to allow ssh and remote:
+
+    Change Static NIC in iDrac settings and system setup:
+    
+    Changing Static in Proxmox:
+        nano etc/network/interfaces 
+            # there was a misspelling in the interfaces file 
+                that kept me on the hunt much longer than I 
+                should have been
+
+    Changing ip in browser:
+        nano etc/hosts
+            ip-address proxmox.local proxmox
+
+    Change firewall rules to allow only certain ips:
+        nano /etc/pve/nodes/<node-name>/host.fw
+

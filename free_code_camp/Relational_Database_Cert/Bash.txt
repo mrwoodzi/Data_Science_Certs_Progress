@@ -441,3 +441,24 @@ variables, in that order.
         but change the pattern to ^[0-9]$. The ^ signifies the start of the pattern, 
         and $ means the end. So the input will have to start, contain a number 0-9, 
         and end.
+
+[[ a1 =~ ^[0-9] ]]; echo $?
+    1 # false
+    1 is for false, a1 does not match the pattern. 
+
+[[ 1 =~ ^[0-9]$ ]]; echo $?
+    0 # true
+    1 does match the pattern 
+
+[[ 11 =~ ^[0-9]$ ]]; echo $?
+    0
+    Did not match because the pattern only allows a single number. Add a + after the [0-9] to allow
+        any strings that start, contain one or more numbers and end. 
+
+[[ 11 =~ ^[0-9+]+$ ]]; echo $?
+    0
+    This wil match any positive integers
+
+[[ ! 11 =~ ^[0-9]+$ ]]; echo $?
+    1
+    Check to see if the input is not a number 
