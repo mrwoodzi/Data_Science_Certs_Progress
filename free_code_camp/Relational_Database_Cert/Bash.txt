@@ -297,7 +297,7 @@ Pattern recognision
             to see if has at least one character after it and ends with a d
                 [[ 'hello world' =~ ^h.+d$ ]]; echo $?
             check if something ends with <something>
-                [[ $VAR =~ \<something>$ ]]; echo $?
+                [[ $VAR =~ \<something>$ ]]; echo $?j
 
 Standard Output(stout), Standard Error(sterr) 
     < > 
@@ -399,6 +399,21 @@ Commands:
                 -actually outputs f233C0d3C@mp into terminal with < 
             grep -n 'meow[a-z]*' kitty_ipsum_1.txt | sed -E 's/([0-9]+).*/\1/'
                 -this outputs the line numbers that have 'meow' in them 
+            echo '28 | Mountain' | sed 's/ /=/g'
+                # Output
+                28=|=Mountain
+                # g is the regex flag stands for 'global'. Meaning it will replace all instances of the pattern
+            echo '28 | Mountain' | sed 's/ //'
+                # output without g flag
+                28| Mountain 
+            echo "$(echo ' M e ' | sed 's/^ //g')."
+                #O output with ^(carrot) # ^ means it will only replace space at beginning and only 1 space, not multiple spaces  
+                M e .
+            echo "$(echo '   M e ' | sed 's/^ *//g')"
+                # Output, adding * at end will remove all spaces in beginning 
+                M e . 
+
+
     diff
         -diff <file_1> <file_2> 
         -looking at the difference between 2 files 
