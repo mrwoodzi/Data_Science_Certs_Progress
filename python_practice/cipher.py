@@ -15,5 +15,6 @@ def vigenere(message, key):
     print('plain text:', message)
     print('encrypted text:', encrypted_text)
 
+vigenere(text, custom_key)
 # Vigenere cipher 
     # where the key for each letter is determined by another text, called the key 
