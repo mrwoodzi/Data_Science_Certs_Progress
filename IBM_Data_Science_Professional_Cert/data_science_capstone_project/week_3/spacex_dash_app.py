@@ -18,53 +18,53 @@ app = dash.Dash(__name__)
 # https://dash.plotly.com/dash-html-components
 # Create app.layout
 app.layout = html.Div(
-    children=[
-        html.H1(
-            "SpaceX Launch Records Dashboard",
-            style={
-                "textAlign": "center", 
-                "color": "#006400", 
-                "font-size": 40},
-                ),
-        # Dropdown list to enable Launch Site selection
-        # The default select value is for ALL sites
-        dcc.Dropdown(
-                    id='site-dropdown',
-                    options=[
-                        {'label': 'All Sites', 'value': 'ALL'},
-                        {'label': 'CCAFS LC-40', 'value': 'CCAFS LC-40'},
-                        {'label': 'VAFB SLC-4E', 'value': 'VAFB SLC-4E'},
-                        {'label': 'KSC LC-39A', 'value': 'KSC LC-39A'},
-                        {'label': 'CCAFS SLC-40', 'value': 'CCAFS SLC-40'},
-                        ],
-                    value='ALL',
-                    placeholder=" ",
-                    searchable=True,
-                    ),
-        # Add a pie chart to show the total successful launches count for all sites
-        # If a specific launch site was selected, show the Success vs. Failed counts for the site
-        # https://dash.plotly.com/dash-html-components/div
-        html.Div(
-            dcc.Graph(
-                id="launch-site-success-pie-chart")
-                ),
-        html.Br(),
-        # https://dash.plotly.com/dash-html-components/p
-        html.P("Payload range (Kg):"),
-        # Add a slider to select payload range
-        dcc.RangeSlider(id='payload-slider',
-                        min=0, 
-                        max=10000, 
-                        step=1000,
-                        marks={0: '0', 2500: '2500', 5000: '5000', 7500: '7500', 10000: '10000'},
-                        value=[min_payload, max_payload]
-                        ),
-        # Add a scatter chart to show the correlation between payload and launch success
-        html.Div(
-            dcc.Graph(
-                id="success-payload-scatter-chart")
-                ),
-    ])
+                    children=[
+                            html.H1(
+                                "SpaceX Launch Records Dashboard",
+                                style={
+                                    "textAlign": "center", 
+                                    "color": "#006400", 
+                                    "font-size": 40},
+                                    ),
+                            # Dropdown list to enable Launch Site selection
+                            # The default select value is for ALL sites
+                            dcc.Dropdown(
+                                        id='site-dropdown',
+                                        options=[
+                                            {'label': 'All Sites', 'value': 'ALL'},
+                                            {'label': 'CCAFS LC-40', 'value': 'CCAFS LC-40'},
+                                            {'label': 'VAFB SLC-4E', 'value': 'VAFB SLC-4E'},
+                                            {'label': 'KSC LC-39A', 'value': 'KSC LC-39A'},
+                                            {'label': 'CCAFS SLC-40', 'value': 'CCAFS SLC-40'},
+                                            ],
+                                        value='ALL',
+                                        placeholder=" ",
+                                        searchable=True,
+                                        ),
+                            # Add a pie chart to show the total successful launches count for all sites
+                            # If a specific launch site was selected, show the Success vs. Failed counts for the site
+                            # https://dash.plotly.com/dash-html-components/div
+                            html.Div(
+                                dcc.Graph(
+                                    id="launch-site-success-pie-chart")
+                                    ),
+                            html.Br(),
+                            # https://dash.plotly.com/dash-html-components/p
+                            html.P("Payload range (Kg):"),
+                            # Add a slider to select payload range
+                            dcc.RangeSlider(id='payload-slider',
+                                            min=0, 
+                                            max=10000, 
+                                            step=1000,
+                                            marks={0: '0', 2500: '2500', 5000: '5000', 7500: '7500', 10000: '10000'},
+                                            value=[min_payload, max_payload]
+                                            ),
+                            # Add a scatter chart to show the correlation between payload and launch success
+                            html.Div(
+                                dcc.Graph(
+                                    id="success-payload-scatter-chart")
+                                    ),
+                        ])
     
 
 # Add a callback function for `site-dropdown` as input, launch-site-success-pie-chart` as output
