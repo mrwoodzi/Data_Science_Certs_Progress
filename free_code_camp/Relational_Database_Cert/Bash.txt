@@ -380,6 +380,7 @@ Commands:
             -grep -o 'cat[a-z]*' kitty_ipsum_2.txt | wc -l >> kitty_info.txt
                 gives count of how many times 'cat' occurs in a word
     sed 
+        -stream editor q
         -used to replace basic text transformations on an input stream
         -replacing text that might work 
         -sed 's/<pattern_to_replace>/<text_to_replace_it_with>/' <filename>.
@@ -388,10 +389,23 @@ Commands:
         -sed with a flag   
             -sed 's/<pattern>/<replacement>/<regex_flags>' <filename>
                 -sed 's/freecodecamp/f233C0d3C@mp/i' name.txt
+                -s 
+                    - a regex that replace that portion of matched with replacement 
                 -g for global 
                     -replace all instances of a matched pattern 
                 -i 
                     -ignore the case of a pattern
+                -* 
+                    -use in pattern after a character to replace zero or more of that character 
+                    echo "$(echo '   M e   ' | sed 's/ *$//g')." 
+                - |
+                    -can use | as an "or" operator in a matching pattern to replace one pattern or another 
+                -'s/^ *| *$//g'
+                    -replacing all space in a given text 
+                    -###############ABOVE#####################################
+                    -BUT HAS TO BE USED WITH 
+                        -an extended regex
+                        so sed -E 's/^ *| *$//g' # -r will also work 
         Multiple Patterns: 
             -sed 's/<pattern_1>/<replacement_1>/; s/<pattern_2>/<replacement_2>/'
         Example: 
@@ -412,6 +426,13 @@ Commands:
             echo "$(echo '   M e ' | sed 's/^ *//g')"
                 # Output, adding * at end will remove all spaces in beginning 
                 M e . 
+            echo "$(echo '   M e   ' | sed 's/ $//g')."
+                # replaced only 1 space at the end of the text 
+            echo "$(echo '   M e   ' | sed 's/ *$//g')."
+                # replaces all characters after with * after character 
+                   M e.
+
+            
 
 
     diff
