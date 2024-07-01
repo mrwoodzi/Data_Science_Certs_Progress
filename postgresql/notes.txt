@@ -1,0 +1,29 @@
+
+Install postgresql on Ubuntu & VS Code 
+
+sudo apt update 
+sudo apt upgrade 
+
+Install postgresql: 
+sudo apt install postgresql postgresql-contrib
+
+Start postgresql:
+sudo systemctl start postgresql 
+
+Enable postgresql on start up: 
+sudo systemctl enable postgresql 
+
+switch to default postgresql user: 
+sudo -i -u postgres 
+    # this makes you the administrator/root superuser privileges 
+
+Access postgresql prompt:
+psql 
+
+Create a New User and Database: 
+CREATE USER your_username WITH PASSWORD 'your_password'; # this is for setting up other users on the db 
+CREATE DATABASE your_database_name;
+GRANT ALL PRIVILEGES ON DATABASE your_database_name TO your_username;
+
+Exit: 
+\q 
