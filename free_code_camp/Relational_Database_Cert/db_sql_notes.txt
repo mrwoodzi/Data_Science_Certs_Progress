@@ -352,6 +352,7 @@ Sorting, Stats:
         -will also only return 1 of the columns that are being used to JOIN the tables 
         -SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>);
         -SELECT * FROM <table_1> FULL JOIN <table_2> USING(<column>) FULL JOIN <table_3> USING(<column>).
+
     IS NOT NULL 
         # the below query joins 2 tables on winner_id and we only need the winners So we have to use IS NOT NULL since it is a full join and we are left with NULL 
         #values due teams whole lost to the winning teams 
