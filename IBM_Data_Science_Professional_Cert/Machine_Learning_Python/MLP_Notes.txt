@@ -1,4 +1,4 @@
- What is Machine Learning:
+What is Machine Learning:
     What is it
         Inductive Inference
         Machine Learning   
@@ -25,6 +25,7 @@
         Machine Learning is the subfield of computer science that gives "computers the ability to learn without 
         being explicitly programmed"
         Define "without being explicitly programmed."
+
     Major Machine Learning Techniques:
         Regression:
             -predicting continuous values
@@ -1539,7 +1540,6 @@
         -can incorporate multiple weak learners with varying weights
         
     Questions: 
-        2. in Practice quiz 
             If the information gain of the tree by using attribute A is 0.3, what can we infer?
                 entropy of a tree before split minus weighted  entropy after split by attribute A is 0.3
 
