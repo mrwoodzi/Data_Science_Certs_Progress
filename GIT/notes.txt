@@ -20,3 +20,8 @@ git merge origin/main # this will merge you local branch(laptop2) with the main
 git commit -m 'Merging changes from main into laptop2-branch' 
 
 
+# Pulling from origin main to local branch
+git branch
+git switch VM-server
+git pull origin main 
+
