@@ -1,0 +1,23 @@
+
+Having 2 laptops that are on their own branches 
+
+
+#pushing changes to the branch of local laptop/client
+git status
+git add .
+git commit -m 'Your commit message'
+git push origin laptop2-branch
+git switch main 
+git pull origin main 
+git merge laptop2-branch 
+git commit -m 'Merge changes from laptop2-branch'
+git push origin main 
+
+# pulling from the origin main to start a vs code session on any laptop 
+git fetch origin 
+git checkout laptop2-branch 
+git merge origin/main # this will merge you local branch(laptop2) with the main 
+git commit -m 'Merging changes from main into laptop2-branch' 
+
+
+
