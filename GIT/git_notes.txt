@@ -26,28 +26,33 @@ Having 2 laptops that are on their own branches
 
 
 #pushing changes to the branch of local laptop/client
-git status
-git add .
-git commit -m 'Your commit message'
-git push origin laptop2
-git checkout main 
-git pull origin main 
-git merge laptop2-branch 
-git commit -m 'Merge changes from laptop2-branch'
-git push origin main 
+    git status
+    git add .
+    git commit -m 'Your commit message'
+    git push origin laptop2
+    git checkout main 
+    git pull origin main 
+    git merge laptop2-branch 
+    git commit -m 'Merge changes from laptop2-branch'
+    git push origin main 
 
 # pulling from the origin main to start a vs code session on any laptop 
 git fetch origin 
-git checkout laptop2-branch 
+git checkout new-branch 
 git merge origin/main # this will merge you local branch(laptop2) with the main 
 git commit -m 'Merging changes from main into laptop2-branch' 
 
+LocalBranch changes into main: 
+    # Ensure main is up to date
+    git checkout main ## client
+    git pull origin main ## remote 
 
-To push the changes from your VM-server branch to the main branch, you will need to 
-    # didnt realize my local branch wasn't up to date with remote local 
-    1. merge the VM-server branch into the main branch and 
-    2. push the updated main branch to the remote repository. 
-        git switch VM-server
-        git pull origin VM-server 
-        git switch main 
-        git pull origin main 
+    # Merge branch into main ## locally on client
+    git merge branch 
+
+    # Resolve any merge conflicts if needed ## locally on client 
+    git commit 
+
+    # git push origin main command pushes your local main branch to the remote main branch on GitHub
+    git push origin main
+
