@@ -6,7 +6,7 @@ Having 2 laptops that are on their own branches
 git status
 git add .
 git commit -m 'Your commit message'
-git push origin laptop2-branch
+git push origin laptop2
 git checkout main 
 git pull origin main 
 git merge laptop2-branch 
@@ -20,4 +20,11 @@ git merge origin/main # this will merge you local branch(laptop2) with the main
 git commit -m 'Merging changes from main into laptop2-branch' 
 
 
-
+To push the changes from your VM-server branch to the main branch, you will need to 
+    # didnt realize my local branch wasn't up to date with remote local 
+    1. merge the VM-server branch into the main branch and 
+    2. push the updated main branch to the remote repository. 
+        git switch VM-server
+        git pull origin VM-server 
+        git switch main 
+        git pull origin main 
