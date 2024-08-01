@@ -104,7 +104,7 @@ Ender Pro v.3:
 
 General Trouble Shooting on Prints:
     Really good general trouble shooting of prints.
-    https://www.simplify3d.com/resour./ces/print-quality-troubleshooting/
+    https://www.simplify3d.com/resources/print-quality-troubleshooting/
     https://shop.anet3d.com/blogs/cura-slicer-profile-settings/use-xyz-calibration-cube-to-detect-3d-printing-issues-and-tune-your-3d-printer
         covers inaccurate xyz cube dimensions & elephanting
     https://3dprinterly.com/how-to-fix-ender-3-z-axis-issues-too-short-binding-more/
