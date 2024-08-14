@@ -1,11 +1,6 @@
-Git Reference: 
-https://git-scm.com/docs
-
-
 Having 2 laptops that are on their own branches 
 
-
-#pushing changes to the branch of local laptop/client
+#Merging local laptop2-branchinto the main branch and then pushing the changes to the remote repository main
 git status
 git add .
 git commit -m 'Your commit message'
@@ -16,34 +11,23 @@ git merge laptop2-branch
 git commit -m 'Merge changes from laptop2-branch'
 git push origin main 
 
-# pulling from the origin main to start a vs code session on any laptop 
+#You can perform the merge from the laptop1-branch without needing to switch to main first. Here is the revised sequence of steps:
+# Ensures that your laptop1-branch is up to date with the latest changes from the origin/main without needs to switch to main first
 git fetch origin 
-git checkout laptop2-branch 
-git merge origin/main # this will merge you local branch(laptop2) with the main 
-git commit -m 'Merging changes from main into laptop2-branch' 
+git checkout laptop1-branch
+git merge origin/main # this will merge the latest changes from main into your local branch
+git commit -m 'Merging changes from main into laptop1-branch' # if necessary
 
 
-
-
-Having 2 laptops that are on their own branches 
-
-
-#pushing changes to the branch of local laptop/client
-git status
-git add .
-git commit -m 'Your commit message'
-git push origin laptop2
+# pulling from the origin main to start a vs code session on any laptop 
+git fetch origin # can be done while checked out in laptop1-branch or while checked out in main
 git checkout main 
 git pull origin main 
-git merge laptop2-branch 
-git commit -m 'Merge changes from laptop2-branch'
-git push origin main 
+git checkout laptop1-branch
+git merge main # this will merge you local branch with the main 
+git commit -m 'Merging changes from main into laptop1-branch'
 
-# pulling from the origin main to start a vs code session on any laptop 
-git fetch origin 
-git checkout laptop2-branch 
-git merge origin/main # this will merge you local branch(laptop2) with the main 
-git commit -m 'Merging changes from main into laptop2-branch' 
+
 
 
 To push the changes from your VM-server branch to the main branch, you will need to 
