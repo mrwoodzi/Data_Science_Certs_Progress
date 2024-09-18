@@ -17,5 +17,4 @@ Resetting ip address of server and proxmox to allow ssh and remote:
 
     Change firewall rules to allow only certain ips:
         nano /etc/pve/nodes/<node-name>/host.fw
-        # i had my laptop as a static ip that was the only ip allowed to access proxmox 
 

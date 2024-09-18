@@ -1,6 +1,6 @@
 Having 2 laptops that are on their own branches 
 
-#Merging local laptop2-branchinto the main branch and then pushing the changes to the remote repository main
+#Merging local laptop2-branch into the main branch and then pushing the changes to the remote repository main
 git status
 git add .
 git commit -m 'Your commit message'
