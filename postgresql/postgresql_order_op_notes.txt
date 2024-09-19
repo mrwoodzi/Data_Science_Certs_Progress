@@ -1,3 +1,9 @@
+List of Helpful WebPages:
+https://datalemur.com/sql-tutorial
+https://db.grussell.org/
+https://8weeksqlchallenge.com/case-study-1/
+https://github.com/AlexanderConnelly/BrainTree_SQL_Coding_Challenge_Data_Analyst
+
 SQL Engine Order of Operations: mysql and postgresql 
     Basic Order Of Operations:
         FROM: load data from table(s)
@@ -24,6 +30,12 @@ SQL Engine Order of Operations: mysql and postgresql
                             before final projection (SELECT) and aggregation (GROUP BY).
         ORDER BY: -Sort the final output (e.g., ascending or descending)
         LIMIT: -Limit the number of rows in the output (not filtering, but restricting the final results)
+
+        Scalar Functions:
+            ***Scalar functions: are applied immediately to each row or value when the clause they are in is processed. 
+                Here's how scalar functions fit into the stages:
+                    -can be applied in multiple stages of the query, including FROM, WHERE, SELECT, ORDER BY, and HAVING.
+
     
     Order of Operations SubQueries:
             FROM: Evaluated first; provides a derived table for the outer query(CTE using WITH clause) EX: WITH new_temp_table AS (put in subquery here)
@@ -61,4 +73,145 @@ SQL Engine Order of Operations: mysql and postgresql
                             -heap structures 
                         -LIMIT  
                             -in-memory data structures 
-                            -data structures 
+                            -data structures
+    
+
+    Scalar Function: 
+        Operates on individual rows and returns a single value for each row. 
+        Functions like EXTRACT, DATE_PART, or arithmetic operations (like last_post - first_post) 
+        are scalar functions. These functions don't perform operations across multiple rows, 
+        but instead calculate something for each row independently.
+
+    Aggregate Function: 
+        These perform operations on a set of rows and return a single value representing 
+        the entire set (e.g., COUNT, SUM, AVG, MIN, MAX). Aggregate functions reduce multiple rows into a 
+        single result, such as counting how many rows exist in a set.
+
+Mathematical Functions
+        ABS(x): Returns the absolute value of x.
+                    Example: SELECT ABS(-5); → 5
+        CEILING(x): Rounds x up to the nearest integer.
+                    Example: SELECT CEILING(3.14); → 4
+        FLOOR(x): Rounds x down to the nearest integer.
+                    Example: SELECT FLOOR(3.14); → 3
+        ROUND(x, y): Rounds x to y decimal places.
+                    Example: SELECT ROUND(3.14159, 2); → 3.14
+        SQRT(x): Returns the square root of x.
+                    Example: SELECT SQRT(16); → 4
+        POWER(x, y): Returns x raised to the power of y.
+                    Example: SELECT POWER(2, 3); → 8
+        RAND(): Returns a random number between 0 and 1.
+                    Example: SELECT RAND();
+
+
+String Functions
+        LOWER(string): Converts all characters in string to lowercase.
+                    Example: SELECT LOWER('HELLO'); → 'hello'
+        UPPER(string): Converts all characters in string to uppercase.
+                    Example: SELECT UPPER('hello'); → 'HELLO'
+        LTRIM(string): Removes leading spaces from string.
+                    Example: SELECT LTRIM(' hello'); → 'hello'
+        RTRIM(string): Removes trailing spaces from string.
+                    Example: SELECT RTRIM('hello '); → 'hello'
+        TRIM(string): Removes both leading and trailing spaces.
+                    Example: SELECT TRIM(' hello '); → 'hello'
+        SUBSTRING(string, start, length): Extracts a substring starting from position start for length characters.
+                    Example: SELECT SUBSTRING('hello', 2, 3); → 'ell'
+        CONCAT(string1, string2, ...): Concatenates multiple strings.
+                    Example: SELECT CONCAT('hello', ' ', 'world'); → 'hello world'
+        CHAR_LENGTH(string): Returns the number of characters in string.
+                    Example: SELECT CHAR_LENGTH('hello'); → 5
+        REPLACE(string, search, replacement): Replaces all occurrences of search in string with replacement.
+                    Example: SELECT REPLACE('hello world', 'world', 'SQL'); → 'hello SQL'
+
+
+Date/Time Functions
+        NOW(): Returns the current date and time.
+                    Example: SELECT NOW();
+        CURDATE(): Returns the current date.
+                    Example: SELECT CURDATE();
+        EXTRACT(part FROM date): Extracts a specific part (e.g., YEAR, MONTH, DAY) from a date.
+                    Example: SELECT EXTRACT(YEAR FROM '2023-09-19'); → 2023
+        DATE_ADD(date, INTERVAL n unit): Adds a time interval to a date.
+                    Example: SELECT DATE_ADD('2023-09-19', INTERVAL 5 DAY); → '2023-09-24'
+        DATE_SUB(date, INTERVAL n unit): Subtracts a time interval from a date.
+                    Example: SELECT DATE_SUB('2023-09-19', INTERVAL 5 DAY); → '2023-09-14'
+        DATEDIFF(date1, date2): Returns the number of days between date1 and date2.
+                    Example: SELECT DATEDIFF('2023-09-19', '2023-09-14'); → 5
+        FORMAT(date, format): Formats a date according to the specified format.
+                    Example: SELECT DATE_FORMAT(NOW(), '%Y-%m-%d'); → '2023-09-19'
+        TIME(): Extracts the time part from a datetime.
+                    Example: SELECT TIME('2023-09-19 10:30:45'); → '10:30:45'
+        DATE_TRUNC(): Rounds down a date or timestamp to a specified unit of time.
+                    EXAMPLE: SELECT DATE_TRUNC('day', sent_date) AS truncated_to_day
+        INTERVAL(): Adds and Subtracts intervals as '3 days', '5 hours'
+                    EXAMPLE: SELECT sent_date - INTERVAL '3 days' AS minus_3days FROM ...
+
+
+
+Type Conversion Functions
+        CAST(expression AS type): Converts expression to the specified type.
+                    Example: SELECT CAST('123' AS INT); → 123
+        CONVERT(expression, type): Converts expression to the specified type. Often interchangeable with CAST.
+                    Example: SELECT CONVERT('123', DECIMAL(10, 2)); → 123.00
+        Null-Handling Functions
+        COALESCE(value1, value2, ...): Returns the first non-null value from the list.
+                    Example: SELECT COALESCE(NULL, 'default', 'fallback'); → 'default'
+        NULLIF(value1, value2): Returns NULL if value1 equals value2; otherwise, returns value1.
+                    Example: SELECT NULLIF(5, 5); → NULL
+        
+
+
+Conditional/Logical Functions
+        IF(condition, true_value, false_value): Returns true_value if the condition is true, otherwise returns false_value.
+                    Example: SELECT IF(5 > 3, 'yes', 'no'); → 'yes'
+        CASE: Performs conditional logic similar to an IF-statement.
+
+
+Miscellaneous Functions
+        VERSION(): Returns the current version of the database.
+                    Example: SELECT VERSION();
+        USER(): Returns the current database user.
+                    Example: SELECT USER();
+        DATABASE(): Returns the name of the current database.
+                    Example: SELECT DATABASE();
+
+NULL Functions
+        IS NULL and IS NOT NULL: 
+                    Used to identify null and non-null values.
+        COALESCE(): 
+                    Returns the first non-null value from a list of arguments.
+                        -SELECT COALESCE(book_rating, 0) -- COALESCE(column_name, 'expression')
+                        SELECT 
+                            employee_id
+                        COALESCE(email, 
+                                phone_number, 
+                                secondary_email, 
+                                'No contact information available') 
+                            AS preferred_contact
+                        FROM employees;
+
+                            -puts in a 0 for every row that has a NULL value 
+                    Original:
+                                employee_id | email            | phone_number | secondary_email
+                    ---------------------------------------------------------------
+                    1          | NULL             | NULL         | john.doe@example.com
+                    2          | jane.smith@example.com | NULL   | NULL
+                    3          | NULL             | NULL         | NULL
+                    4          | NULL             | 123-456-7890 | NULL
+                    Returns:
+                    employee_id | preferred_contact
+                    --------------------------------
+                    1          | john.doe@example.com
+                    2          | jane.smith@example.com
+                    3          | No contact information available
+                    4          | 123-456-7890
+
+
+        IFNULL(): 
+                    Substitutes null value with a specified value specified.
+        Difference between COALESCE() and IFNULL()
+                COALESCE() and IFNULL() functions serve a similar purpose of handling NULL 
+                    values, there is a key difference between them.
+                    COALESCE() function: Versatile for multiple arguments, it returns the first non-null value among them.'
+                    IFNULL() function: Handles two arguments, returning the second if the first is null; else, it returns the first.
