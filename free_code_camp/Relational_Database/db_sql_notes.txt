@@ -34,9 +34,6 @@ Installing PostgreSQL:
 
     Ubuntu:
         sudo -u postgres psql 
-
-
-Bash Tutorial:
     pink - images
         .jpg
         .png 
