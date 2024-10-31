@@ -19,15 +19,11 @@ git merge origin/main # this will merge the latest changes from main into your l
 git commit -m 'Merging changes from main into laptop1-branch' # if necessary
 
 
-# pulling from the origin main to start a vs code session on any laptop 
-git fetch origin # can be done while checked out in laptop1-branch or while checked out in main
-git checkout main 
+# pulling from the origin main to start a vs code session on any laptop, thus updating the main and the updating the current.local.branch
+git checkout(or switch) main 
 git pull origin main 
-git checkout laptop1-branch
-git merge main # this will merge you local branch with the main 
-git commit -m 'Merging changes from main into laptop1-branch'
-
-
+git checkout(or switch) laptop1-branch
+git merge main # this will merge you local branch with the main
 
 
 To push the changes from your VM-server branch to the main branch, you will need to 
@@ -38,3 +34,9 @@ To push the changes from your VM-server branch to the main branch, you will need
         git pull origin VM-server 
         git switch main 
         git pull origin main 
+
+git branch 
+    -will give you a list of the current branches/main on the client you are on 
+
+git branch -a  
+    -will give you a list of both local and remote branches 
