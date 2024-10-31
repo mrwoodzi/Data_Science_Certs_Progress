@@ -18,3 +18,8 @@ Resetting ip address of server and proxmox to allow ssh and remote:
     Change firewall rules to allow only certain ips:
         nano /etc/pve/nodes/<node-name>/host.fw
 
+
+Using Proxmox Regularly
+    -need to check and make sure that ssh into the server is still functional
+    -multiple drives in RAID 1 set up, probably should set those drives up as a NAS on Proxmox. 
+    -Once NAS is set up start an instance of S3 as a backup
