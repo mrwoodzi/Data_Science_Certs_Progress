@@ -22,4 +22,12 @@ Resetting ip address of server and proxmox to allow ssh and remote:
 Using Proxmox Regularly
     -need to check and make sure that ssh into the server is still functional
     -multiple drives in RAID 1 set up, probably should set those drives up as a NAS on Proxmox. 
+        -*************************************************
+        -Well probably won't forget this put NEVER take all/both drives out of a RAID as you 
+            will either need to wipe/start fresh with loss of data or go into server bios/setup
+            and reactivate the RAID with FOREIGN CONFIGURATION. 
+        -Working on saving it by going into proxmox CLI, getting into the drive and finding the file 
+            that stores the drive information I need to get. Then resaving that information under the
+            ubuntu-server vm  that needs it not the desktop-vm that was associated with the needed data.
+        -setting up a NAS is probably a better idea for certain back ups that need to be accessed by multiple machines
     -Once NAS is set up start an instance of S3 as a backup
