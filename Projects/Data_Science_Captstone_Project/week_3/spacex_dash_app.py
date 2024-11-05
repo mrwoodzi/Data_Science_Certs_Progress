@@ -74,15 +74,20 @@ app.layout = html.Div(
         )
 def launch_site_success_pie_chart(entered_site):
     filtered_df = spacex_df.loc[spacex_df["Launch Site"] == entered_site]
+    color_map = {0: 'green', 1: 'red'}
     if entered_site == "ALL":
-        fig = px.pie(spacex_df, 
+        fig = px.pie(
+                     spacex_df, 
                      values="class", 
                      names="Launch Site", 
                      title="Total Success Launches by Site")
     else:
-        fig = px.pie(filtered_df, 
+        fig = px.pie(
+                     filtered_df, 
                      names="class", 
-                     title="Total Success Launches for Site")
+                     title="Total Success Launches for Site",
+                     color="class",
+                     color_discrete_map=color_map)
     return fig
 
 
