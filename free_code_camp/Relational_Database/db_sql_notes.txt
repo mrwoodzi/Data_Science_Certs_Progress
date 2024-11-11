@@ -620,3 +620,134 @@ Sub-Query:
                                             MAX(order_occurrences)
                                         FROM
                                             items_per_order)
+List of Helpful WebPages:
+https://datalemur.com/sql-tutorial
+https://db.grussell.org/
+https://8weeksqlchallenge.com/case-study-1/
+https://github.com/AlexanderConnelly/BrainTree_SQL_Coding_Challenge_Data_Analyst
+
+SQL Engine Order of Operations: mysql and postgresql 
+    Basic Order Of Operations:
+        FROM: load data from table(s)
+                -subqueries -  CTE
+                    -Evaluated before the main query processes data. The result set of this subquery is
+                        available for the subsequent operations (e.g., JOIN, GROUP BY)
+        WHERE: filter rows
+                -subqueries 
+                    -Evaluated after the FROM clause and before the main WHERE clause filtering. 
+                    -The outer query uses the result to determine which rows to include or exclude.
+                    -Math can be done here without () or with or subquery
+
+        GROUP BY: group rows - prepares data for aggregation
+        Aggregate Functions in various clauses: 
+                -SUM(), COUNT(), AVG(), COALESCE()
+                -these can take place in SELECT, HAVING, ORDER BY  
+        SubQueries:
+            -see Order of Operations SubQueries Below
+        HAVING: - filter groups based on aggregated results
+                -subqueries
+                    -Evaluated after the GROUP BY and aggregation, used to filter aggregated results.
+        SELECT: - Specify which columns or expressions, including aggregates, to show in the final output.'
+                    -subqueries
+                        -Evaluated after the FROM clause and any filtering done by the WHERE clause but 
+                            before final projection (SELECT) and aggregation (GROUP BY).
+        ORDER BY: -Sort the final output (e.g., ascending or descending)
+        LIMIT: -Limit the number of rows in the output (not filtering, but restricting the final results)
+
+        Scalar Functions:
+            ***Scalar functions: are applied immediately to each row or value when the clause they are in is processed. 
+                Here's how scalar functions fit into the stages:
+                    -can be applied in multiple stages of the query, including FROM, WHERE, SELECT, ORDER BY, and HAVING.
+
+    
+    Order of Operations SubQueries:
+            FROM: Evaluated first; provides a derived table for the outer query(CTE using WITH clause) EX: WITH new_temp_table AS (put in subquery here)
+            WHERE: Evaluated after FROM and initial filtering; used to determine which rows to include in the outer query.
+            SELECT: Evaluated after FROM, WHERE, and GROUP BY; used to provide additional columns or calculations.
+            HAVING: Evaluated after GROUP BY and aggregation; filters aggregated results.
+            JOIN: Evaluated as part of the join operation with the outer table.
+            
+    Execution Phases:
+        Phase 1: Data Scanning and Filtering: 
+            The engine scans the data based on the 
+                FROM and WHERE clauses.
+                -Most common data sturctures 
+                    FROM
+                        -hash table, b-trees, sorted arrays
+                    WHERE   
+                        -b-trees, hash tables
+        Phase 2: Grouping and Aggregation: 
+            It then groups the data according to the 
+                GROUP BY clause and computes the aggregations.
+                -Most common data sturctures 
+                    -GROUP BY  
+                        -hash table, sorted arrays
+        Phase 3: Further Processing: 
+            The results from the grouping and aggregation are then passed to the 
+                HAVING, SELECT, ORDER BY, and LIMIT clauses for final output processing.
+                    -Most common data structures        
+                        -HAVING 
+                            -hash tables, sorted arrays
+                        -SELECT 
+                            -in-memory data structures
+                            -hash table 
+                        -ORDER BY   
+                            -sorted arrays/trees
+                            -heap structures 
+                        -LIMIT  
+                            -in-memory data structures 
+                            -data structures
+    
+
+    Scalar Function: 
+        Operates on individual rows and returns a single value for each row. 
+        Functions like EXTRACT, DATE_PART, or arithmetic operations (like last_post - first_post) 
+        are scalar functions. These functions don't perform operations across multiple rows, 
+        but instead calculate something for each row independently.
+
+    Aggregate Function: 
+        These perform operations on a set of rows and return a single value representing 
+        the entire set (e.g., COUNT, SUM, AVG, MIN, MAX). Aggregate functions reduce multiple rows into a 
+        single result, such as counting how many rows exist in a set.
+
+
+    Advantages of Using a Subquery:
+        Single-Value Comparison in WHERE Clauses: 
+        When you need to compare a single value to a result from another query, utilize the 
+        subquery in the WHERE clause to enable dynamic data filtering. This enhances query 
+        flexibility and precision by allowing on-the-fly condition adjustments 
+        based on subquery results.
+                SELECT 
+                    artist_name
+                FROM 
+                    concerts
+                WHERE 
+                    concert_revenue > (SELECT AVG(concert_revenue) FROM concerts);
+
+        Column Creation and Aggregation: 
+            Utilize subqueries to create new columns for real-time 
+            computations and to calculate intermediate values for aggregation 
+            functions within larger queries. This enhances your analysis by 
+            enriching data on the go and enabling more sophisticated aggregation.
+                SELECT 
+                    artist_name, 
+                    genre, 
+                    concert_revenue,
+                    (SELECT AVG(concert_revenue) FROM concerts) AS avg_concert_revenue,
+                    (SELECT MAX(concert_revenue) FROM concerts) AS max_concert_revenue
+                FROM concerts;
+
+        Correlated Subqueries: 
+            Utilize correlated subqueries to retrieve values from the outer query.
+                    SELECT 
+                        artist_name
+                    FROM 
+                        concerts
+                    WHERE 
+                        artist_id IN (SELECT 
+                                        artist_id 
+                                      FROM 
+                                        concert_revenue 
+                                      WHERE 
+                                        concert_revenue > 500000
+                                      );
